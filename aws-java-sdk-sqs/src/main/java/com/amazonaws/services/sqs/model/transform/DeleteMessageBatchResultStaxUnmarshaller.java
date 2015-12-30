@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,30 +27,43 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Delete Message Batch Result StAX Unmarshaller
+ * DeleteMessageBatchResult StAX Unmarshaller
  */
-public class DeleteMessageBatchResultStaxUnmarshaller implements Unmarshaller<DeleteMessageBatchResult, StaxUnmarshallerContext> {
+public class DeleteMessageBatchResultStaxUnmarshaller implements
+        Unmarshaller<DeleteMessageBatchResult, StaxUnmarshallerContext> {
 
-    public DeleteMessageBatchResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DeleteMessageBatchResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         DeleteMessageBatchResult deleteMessageBatchResult = new DeleteMessageBatchResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return deleteMessageBatchResult;
+            if (xmlEvent.isEndDocument())
+                return deleteMessageBatchResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("DeleteMessageBatchResultEntry", targetDepth)) {
-                    deleteMessageBatchResult.getSuccessful().add(DeleteMessageBatchResultEntryStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("DeleteMessageBatchResultEntry",
+                        targetDepth)) {
+                    deleteMessageBatchResult.getSuccessful().add(
+                            DeleteMessageBatchResultEntryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("BatchResultErrorEntry", targetDepth)) {
-                    deleteMessageBatchResult.getFailed().add(BatchResultErrorEntryStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("BatchResultErrorEntry", targetDepth)) {
+                    deleteMessageBatchResult.getFailed().add(
+                            BatchResultErrorEntryStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return deleteMessageBatchResult;
@@ -60,9 +73,10 @@ public class DeleteMessageBatchResultStaxUnmarshaller implements Unmarshaller<De
     }
 
     private static DeleteMessageBatchResultStaxUnmarshaller instance;
+
     public static DeleteMessageBatchResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DeleteMessageBatchResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DeleteMessageBatchResultStaxUnmarshaller();
         return instance;
     }
 }
-    

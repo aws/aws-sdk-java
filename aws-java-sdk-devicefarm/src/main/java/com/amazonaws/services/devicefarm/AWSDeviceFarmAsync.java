@@ -39,6 +39,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the create device pool operation.
      * @return A Java Future containing the result of the CreateDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateDevicePool
      */
     java.util.concurrent.Future<CreateDevicePoolResult> createDevicePoolAsync(
             CreateDevicePoolRequest createDevicePoolRequest);
@@ -57,6 +58,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateDevicePool
      */
     java.util.concurrent.Future<CreateDevicePoolResult> createDevicePoolAsync(
             CreateDevicePoolRequest createDevicePoolRequest,
@@ -71,6 +73,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the create project operation.
      * @return A Java Future containing the result of the CreateProject
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateProject
      */
     java.util.concurrent.Future<CreateProjectResult> createProjectAsync(
             CreateProjectRequest createProjectRequest);
@@ -89,6 +92,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateProject
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateProject
      */
     java.util.concurrent.Future<CreateProjectResult> createProjectAsync(
             CreateProjectRequest createProjectRequest,
@@ -103,6 +107,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the create upload operation.
      * @return A Java Future containing the result of the CreateUpload operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateUpload
      */
     java.util.concurrent.Future<CreateUploadResult> createUploadAsync(
             CreateUploadRequest createUploadRequest);
@@ -121,6 +126,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateUpload operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateUpload
      */
     java.util.concurrent.Future<CreateUploadResult> createUploadAsync(
             CreateUploadRequest createUploadRequest,
@@ -136,6 +142,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the delete device pool operation.
      * @return A Java Future containing the result of the DeleteDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteDevicePool
      */
     java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(
             DeleteDevicePoolRequest deleteDevicePoolRequest);
@@ -155,6 +162,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteDevicePool
      */
     java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(
             DeleteDevicePoolRequest deleteDevicePoolRequest,
@@ -172,6 +180,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the delete project operation.
      * @return A Java Future containing the result of the DeleteProject
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteProject
      */
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
             DeleteProjectRequest deleteProjectRequest);
@@ -193,6 +202,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteProject
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteProject
      */
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
             DeleteProjectRequest deleteProjectRequest,
@@ -210,6 +220,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the delete run operation.
      * @return A Java Future containing the result of the DeleteRun operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteRun
      */
     java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
             DeleteRunRequest deleteRunRequest);
@@ -231,6 +242,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRun operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteRun
      */
     java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
             DeleteRunRequest deleteRunRequest,
@@ -245,6 +257,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the delete upload operation.
      * @return A Java Future containing the result of the DeleteUpload operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteUpload
      */
     java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(
             DeleteUploadRequest deleteUploadRequest);
@@ -263,6 +276,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteUpload operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteUpload
      */
     java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(
             DeleteUploadRequest deleteUploadRequest,
@@ -277,6 +291,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * @param getAccountSettingsRequest
      * @return A Java Future containing the result of the GetAccountSettings
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetAccountSettings
      */
     java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(
             GetAccountSettingsRequest getAccountSettingsRequest);
@@ -295,6 +310,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAccountSettings
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetAccountSettings
      */
     java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(
             GetAccountSettingsRequest getAccountSettingsRequest,
@@ -309,6 +325,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get device request.
      * @return A Java Future containing the result of the GetDevice operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetDevice
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
             GetDeviceRequest getDeviceRequest);
@@ -327,6 +344,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDevice operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetDevice
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
             GetDeviceRequest getDeviceRequest,
@@ -341,6 +359,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get device pool operation.
      * @return A Java Future containing the result of the GetDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetDevicePool
      */
     java.util.concurrent.Future<GetDevicePoolResult> getDevicePoolAsync(
             GetDevicePoolRequest getDevicePoolRequest);
@@ -359,6 +378,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetDevicePool
      */
     java.util.concurrent.Future<GetDevicePoolResult> getDevicePoolAsync(
             GetDevicePoolRequest getDevicePoolRequest,
@@ -374,6 +394,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        operation.
      * @return A Java Future containing the result of the
      *         GetDevicePoolCompatibility operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetDevicePoolCompatibility
      */
     java.util.concurrent.Future<GetDevicePoolCompatibilityResult> getDevicePoolCompatibilityAsync(
             GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest);
@@ -393,6 +414,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GetDevicePoolCompatibility operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetDevicePoolCompatibility
      */
     java.util.concurrent.Future<GetDevicePoolCompatibilityResult> getDevicePoolCompatibilityAsync(
             GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest,
@@ -407,6 +429,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get job operation.
      * @return A Java Future containing the result of the GetJob operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetJob
      */
     java.util.concurrent.Future<GetJobResult> getJobAsync(
             GetJobRequest getJobRequest);
@@ -425,6 +448,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetJob operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetJob
      */
     java.util.concurrent.Future<GetJobResult> getJobAsync(
             GetJobRequest getJobRequest,
@@ -439,6 +463,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get project operation.
      * @return A Java Future containing the result of the GetProject operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetProject
      */
     java.util.concurrent.Future<GetProjectResult> getProjectAsync(
             GetProjectRequest getProjectRequest);
@@ -457,6 +482,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetProject operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetProject
      */
     java.util.concurrent.Future<GetProjectResult> getProjectAsync(
             GetProjectRequest getProjectRequest,
@@ -471,6 +497,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get run operation.
      * @return A Java Future containing the result of the GetRun operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetRun
      */
     java.util.concurrent.Future<GetRunResult> getRunAsync(
             GetRunRequest getRunRequest);
@@ -489,6 +516,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRun operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetRun
      */
     java.util.concurrent.Future<GetRunResult> getRunAsync(
             GetRunRequest getRunRequest,
@@ -503,6 +531,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get suite operation.
      * @return A Java Future containing the result of the GetSuite operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetSuite
      */
     java.util.concurrent.Future<GetSuiteResult> getSuiteAsync(
             GetSuiteRequest getSuiteRequest);
@@ -521,6 +550,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSuite operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetSuite
      */
     java.util.concurrent.Future<GetSuiteResult> getSuiteAsync(
             GetSuiteRequest getSuiteRequest,
@@ -535,6 +565,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get test operation.
      * @return A Java Future containing the result of the GetTest operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetTest
      */
     java.util.concurrent.Future<GetTestResult> getTestAsync(
             GetTestRequest getTestRequest);
@@ -553,6 +584,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTest operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetTest
      */
     java.util.concurrent.Future<GetTestResult> getTestAsync(
             GetTestRequest getTestRequest,
@@ -567,6 +599,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the get upload operation.
      * @return A Java Future containing the result of the GetUpload operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.GetUpload
      */
     java.util.concurrent.Future<GetUploadResult> getUploadAsync(
             GetUploadRequest getUploadRequest);
@@ -585,6 +618,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetUpload operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetUpload
      */
     java.util.concurrent.Future<GetUploadResult> getUploadAsync(
             GetUploadRequest getUploadRequest,
@@ -599,6 +633,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list artifacts operation.
      * @return A Java Future containing the result of the ListArtifacts
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListArtifacts
      */
     java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(
             ListArtifactsRequest listArtifactsRequest);
@@ -617,6 +652,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListArtifacts
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListArtifacts
      */
     java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(
             ListArtifactsRequest listArtifactsRequest,
@@ -631,6 +667,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents the result of a list device pools request.
      * @return A Java Future containing the result of the ListDevicePools
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListDevicePools
      */
     java.util.concurrent.Future<ListDevicePoolsResult> listDevicePoolsAsync(
             ListDevicePoolsRequest listDevicePoolsRequest);
@@ -649,6 +686,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDevicePools
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListDevicePools
      */
     java.util.concurrent.Future<ListDevicePoolsResult> listDevicePoolsAsync(
             ListDevicePoolsRequest listDevicePoolsRequest,
@@ -663,6 +701,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents the result of a list devices request.
      * @return A Java Future containing the result of the ListDevices operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListDevices
      */
     java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
             ListDevicesRequest listDevicesRequest);
@@ -681,6 +720,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDevices operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListDevices
      */
     java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
             ListDevicesRequest listDevicesRequest,
@@ -695,6 +735,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list jobs operation.
      * @return A Java Future containing the result of the ListJobs operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListJobs
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(
             ListJobsRequest listJobsRequest);
@@ -713,6 +754,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListJobs operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListJobs
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(
             ListJobsRequest listJobsRequest,
@@ -727,6 +769,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list projects operation.
      * @return A Java Future containing the result of the ListProjects operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListProjects
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(
             ListProjectsRequest listProjectsRequest);
@@ -745,6 +788,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListProjects operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListProjects
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(
             ListProjectsRequest listProjectsRequest,
@@ -759,6 +803,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list runs operation.
      * @return A Java Future containing the result of the ListRuns operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListRuns
      */
     java.util.concurrent.Future<ListRunsResult> listRunsAsync(
             ListRunsRequest listRunsRequest);
@@ -777,6 +822,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRuns operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListRuns
      */
     java.util.concurrent.Future<ListRunsResult> listRunsAsync(
             ListRunsRequest listRunsRequest,
@@ -791,6 +837,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list samples operation.
      * @return A Java Future containing the result of the ListSamples operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListSamples
      */
     java.util.concurrent.Future<ListSamplesResult> listSamplesAsync(
             ListSamplesRequest listSamplesRequest);
@@ -809,6 +856,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSamples operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListSamples
      */
     java.util.concurrent.Future<ListSamplesResult> listSamplesAsync(
             ListSamplesRequest listSamplesRequest,
@@ -823,6 +871,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list suites operation.
      * @return A Java Future containing the result of the ListSuites operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListSuites
      */
     java.util.concurrent.Future<ListSuitesResult> listSuitesAsync(
             ListSuitesRequest listSuitesRequest);
@@ -841,6 +890,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSuites operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListSuites
      */
     java.util.concurrent.Future<ListSuitesResult> listSuitesAsync(
             ListSuitesRequest listSuitesRequest,
@@ -855,6 +905,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list tests operation.
      * @return A Java Future containing the result of the ListTests operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListTests
      */
     java.util.concurrent.Future<ListTestsResult> listTestsAsync(
             ListTestsRequest listTestsRequest);
@@ -873,6 +924,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTests operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListTests
      */
     java.util.concurrent.Future<ListTestsResult> listTestsAsync(
             ListTestsRequest listTestsRequest,
@@ -887,6 +939,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list unique problems operation.
      * @return A Java Future containing the result of the ListUniqueProblems
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListUniqueProblems
      */
     java.util.concurrent.Future<ListUniqueProblemsResult> listUniqueProblemsAsync(
             ListUniqueProblemsRequest listUniqueProblemsRequest);
@@ -905,6 +958,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUniqueProblems
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListUniqueProblems
      */
     java.util.concurrent.Future<ListUniqueProblemsResult> listUniqueProblemsAsync(
             ListUniqueProblemsRequest listUniqueProblemsRequest,
@@ -919,6 +973,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the list uploads operation.
      * @return A Java Future containing the result of the ListUploads operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ListUploads
      */
     java.util.concurrent.Future<ListUploadsResult> listUploadsAsync(
             ListUploadsRequest listUploadsRequest);
@@ -937,6 +992,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListUploads operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListUploads
      */
     java.util.concurrent.Future<ListUploadsResult> listUploadsAsync(
             ListUploadsRequest listUploadsRequest,
@@ -951,6 +1007,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the schedule run operation.
      * @return A Java Future containing the result of the ScheduleRun operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsync.ScheduleRun
      */
     java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest scheduleRunRequest);
@@ -969,6 +1026,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ScheduleRun operation
      *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ScheduleRun
      */
     java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest scheduleRunRequest,
@@ -985,6 +1043,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the update device pool operation.
      * @return A Java Future containing the result of the UpdateDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateDevicePool
      */
     java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(
             UpdateDevicePoolRequest updateDevicePoolRequest);
@@ -1005,6 +1064,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDevicePool
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateDevicePool
      */
     java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(
             UpdateDevicePoolRequest updateDevicePoolRequest,
@@ -1020,6 +1080,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        Represents a request to the update project operation.
      * @return A Java Future containing the result of the UpdateProject
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateProject
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(
             UpdateProjectRequest updateProjectRequest);
@@ -1039,6 +1100,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateProject
      *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateProject
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(
             UpdateProjectRequest updateProjectRequest,

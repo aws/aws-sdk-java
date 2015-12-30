@@ -119,6 +119,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.CreateCluster
      */
     CreateClusterResult createCluster(CreateClusterRequest createClusterRequest);
 
@@ -215,6 +216,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.CreateService
      */
     CreateServiceResult createService(CreateServiceRequest createServiceRequest);
 
@@ -252,6 +254,7 @@ public interface AmazonECS {
      *         first update the service to reduce its desired task count to 0
      *         and then delete the service. For more information, see
      *         <a>UpdateService</a> and <a>DeleteService</a>.
+     * @sample AmazonECS.DeleteCluster
      */
     DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest);
 
@@ -299,6 +302,7 @@ public interface AmazonECS {
      *         The specified service could not be found. You can view your
      *         available services with <a>ListServices</a>. Amazon ECS services
      *         are cluster-specific and region-specific.
+     * @sample AmazonECS.DeleteService
      */
     DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest);
 
@@ -343,6 +347,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DeregisterContainerInstance
      */
     DeregisterContainerInstanceResult deregisterContainerInstance(
             DeregisterContainerInstanceRequest deregisterContainerInstanceRequest);
@@ -377,6 +382,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.DeregisterTaskDefinition
      */
     DeregisterTaskDefinitionResult deregisterTaskDefinition(
             DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest);
@@ -398,6 +404,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.DescribeClusters
      */
     DescribeClustersResult describeClusters(
             DescribeClustersRequest describeClustersRequest);
@@ -433,6 +440,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DescribeContainerInstances
      */
     DescribeContainerInstancesResult describeContainerInstances(
             DescribeContainerInstancesRequest describeContainerInstancesRequest);
@@ -458,6 +466,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DescribeServices
      */
     DescribeServicesResult describeServices(
             DescribeServicesRequest describeServicesRequest);
@@ -489,6 +498,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.DescribeTaskDefinition
      */
     DescribeTaskDefinitionResult describeTaskDefinition(
             DescribeTaskDefinitionRequest describeTaskDefinitionRequest);
@@ -514,6 +524,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DescribeTasks
      */
     DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest);
 
@@ -539,6 +550,7 @@ public interface AmazonECS {
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.DiscoverPollEndpoint
      */
     DiscoverPollEndpointResult discoverPollEndpoint(
             DiscoverPollEndpointRequest discoverPollEndpointRequest);
@@ -567,6 +579,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.ListClusters
      */
     ListClustersResult listClusters(ListClustersRequest listClustersRequest);
 
@@ -599,6 +612,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.ListContainerInstances
      */
     ListContainerInstancesResult listContainerInstances(
             ListContainerInstancesRequest listContainerInstancesRequest);
@@ -631,6 +645,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.ListServices
      */
     ListServicesResult listServices(ListServicesRequest listServicesRequest);
 
@@ -662,6 +677,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.ListTaskDefinitionFamilies
      */
     ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(
             ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest);
@@ -695,6 +711,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.ListTaskDefinitions
      */
     ListTaskDefinitionsResult listTaskDefinitions(
             ListTaskDefinitionsRequest listTaskDefinitionsRequest);
@@ -735,6 +752,7 @@ public interface AmazonECS {
      *         The specified service could not be found. You can view your
      *         available services with <a>ListServices</a>. Amazon ECS services
      *         are cluster-specific and region-specific.
+     * @sample AmazonECS.ListTasks
      */
     ListTasksResult listTasks(ListTasksRequest listTasksRequest);
 
@@ -767,6 +785,7 @@ public interface AmazonECS {
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.RegisterContainerInstance
      */
     RegisterContainerInstanceResult registerContainerInstance(
             RegisterContainerInstanceRequest registerContainerInstanceRequest);
@@ -795,6 +814,7 @@ public interface AmazonECS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.RegisterTaskDefinition
      */
     RegisterTaskDefinitionResult registerTaskDefinition(
             RegisterTaskDefinitionRequest registerTaskDefinitionRequest);
@@ -827,6 +847,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.RunTask
      */
     RunTaskResult runTask(RunTaskRequest runTaskRequest);
 
@@ -858,6 +879,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.StartTask
      */
     StartTaskResult startTask(StartTaskRequest startTaskRequest);
 
@@ -891,6 +913,7 @@ public interface AmazonECS {
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.StopTask
      */
     StopTaskResult stopTask(StopTaskRequest stopTaskRequest);
 
@@ -915,6 +938,7 @@ public interface AmazonECS {
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.SubmitContainerStateChange
      */
     SubmitContainerStateChangeResult submitContainerStateChange(
             SubmitContainerStateChangeRequest submitContainerStateChangeRequest);
@@ -948,6 +972,7 @@ public interface AmazonECS {
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.SubmitTaskStateChange
      */
     SubmitTaskStateChangeResult submitTaskStateChange(
             SubmitTaskStateChangeRequest submitTaskStateChangeRequest);
@@ -1005,6 +1030,7 @@ public interface AmazonECS {
      *         have enough information to proceed with an update. This could be
      *         because the agent running on the container instance is an older
      *         or custom version that does not use our version information.
+     * @sample AmazonECS.UpdateContainerAgent
      */
     UpdateContainerAgentResult updateContainerAgent(
             UpdateContainerAgentRequest updateContainerAgentRequest);
@@ -1114,6 +1140,7 @@ public interface AmazonECS {
      *         The specified service is not active. You cannot update a service
      *         that is not active. If you have previously deleted a service, you
      *         can re-create it with <a>CreateService</a>.
+     * @sample AmazonECS.UpdateService
      */
     UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest);
 

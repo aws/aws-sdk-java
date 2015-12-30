@@ -101,6 +101,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.CreateHapg
      */
     CreateHapgResult createHapg(CreateHapgRequest createHapgRequest);
 
@@ -120,6 +121,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.CreateHsm
      */
     CreateHsmResult createHsm(CreateHsmRequest createHsmRequest);
 
@@ -138,6 +140,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.CreateLunaClient
      */
     CreateLunaClientResult createLunaClient(
             CreateLunaClientRequest createLunaClientRequest);
@@ -157,6 +160,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DeleteHapg
      */
     DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest);
 
@@ -176,6 +180,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DeleteHsm
      */
     DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest);
 
@@ -193,6 +198,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DeleteLunaClient
      */
     DeleteLunaClientResult deleteLunaClient(
             DeleteLunaClientRequest deleteLunaClientRequest);
@@ -212,6 +218,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DescribeHapg
      */
     DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest);
 
@@ -231,6 +238,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DescribeHsm
      */
     DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest);
 
@@ -256,6 +264,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DescribeLunaClient
      */
     DescribeLunaClientResult describeLunaClient(
             DescribeLunaClientRequest describeLunaClientRequest);
@@ -282,6 +291,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.GetConfig
      */
     GetConfigResult getConfig(GetConfigRequest getConfigRequest);
 
@@ -301,6 +311,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListAvailableZones
      */
     ListAvailableZonesResult listAvailableZones(
             ListAvailableZonesRequest listAvailableZonesRequest);
@@ -332,6 +343,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListHapgs
      */
     ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest);
 
@@ -363,6 +375,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListHsms
      */
     ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest);
 
@@ -393,6 +406,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListLunaClients
      */
     ListLunaClientsResult listLunaClients(
             ListLunaClientsRequest listLunaClientsRequest);
@@ -418,6 +432,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ModifyHapg
      */
     ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest);
 
@@ -436,6 +451,7 @@ public interface AWSCloudHSM {
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ModifyHsm
      */
     ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest);
 
@@ -452,6 +468,7 @@ public interface AWSCloudHSM {
      * @return Result of the ModifyLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @sample AWSCloudHSM.ModifyLunaClient
      */
     ModifyLunaClientResult modifyLunaClient(
             ModifyLunaClientRequest modifyLunaClientRequest);

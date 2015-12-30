@@ -304,6 +304,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      *         The request processing has failed because of an unknown error,
      *         exception or failure (the failure is internal to the service) .
      *         Gives http status code of 500.
+     * @sample AWSElasticsearch.AddTags
      */
     @Override
     public void addTags(AddTagsRequest addTagsRequest) {
@@ -368,6 +369,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.CreateElasticsearchDomain
      */
     @Override
     public CreateElasticsearchDomainResult createElasticsearchDomain(
@@ -428,6 +430,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DeleteElasticsearchDomain
      */
     @Override
     public DeleteElasticsearchDomainResult deleteElasticsearchDomain(
@@ -488,6 +491,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchDomain
      */
     @Override
     public DescribeElasticsearchDomainResult describeElasticsearchDomain(
@@ -550,6 +554,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchDomainConfig
      */
     @Override
     public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(
@@ -608,6 +613,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchDomains
      */
     @Override
     public DescribeElasticsearchDomainsResult describeElasticsearchDomains(
@@ -657,6 +663,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.ListDomainNames
      */
     @Override
     public ListDomainNamesResult listDomainNames(
@@ -715,6 +722,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      *         The request processing has failed because of an unknown error,
      *         exception or failure (the failure is internal to the service) .
      *         Gives http status code of 500.
+     * @sample AWSElasticsearch.ListTags
      */
     @Override
     public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
@@ -769,6 +777,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      *         The request processing has failed because of an unknown error,
      *         exception or failure (the failure is internal to the service) .
      *         Gives http status code of 500.
+     * @sample AWSElasticsearch.RemoveTags
      */
     @Override
     public void removeTags(RemoveTagsRequest removeTagsRequest) {
@@ -831,6 +840,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.UpdateElasticsearchDomainConfig
      */
     @Override
     public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(

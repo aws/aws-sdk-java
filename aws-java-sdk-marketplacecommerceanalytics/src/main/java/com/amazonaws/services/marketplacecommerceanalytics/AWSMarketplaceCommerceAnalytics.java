@@ -107,6 +107,7 @@ public interface AWSMarketplaceCommerceAnalytics {
      * @return Result of the GenerateDataSet operation returned by the service.
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
+     * @sample AWSMarketplaceCommerceAnalytics.GenerateDataSet
      */
     GenerateDataSetResult generateDataSet(
             GenerateDataSetRequest generateDataSetRequest);

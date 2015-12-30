@@ -107,6 +107,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>DescribeStream</i> operation.
      * @return A Java Future containing the result of the DescribeStream
      *         operation returned by the service.
+     * @sample AmazonDynamoDBStreamsAsync.DescribeStream
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(
             DescribeStreamRequest describeStreamRequest);
@@ -142,6 +143,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStream
      *         operation returned by the service.
+     * @sample AmazonDynamoDBStreamsAsyncHandler.DescribeStream
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(
             DescribeStreamRequest describeStreamRequest,
@@ -171,6 +173,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>GetRecords</i> operation.
      * @return A Java Future containing the result of the GetRecords operation
      *         returned by the service.
+     * @sample AmazonDynamoDBStreamsAsync.GetRecords
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
             GetRecordsRequest getRecordsRequest);
@@ -204,6 +207,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRecords operation
      *         returned by the service.
+     * @sample AmazonDynamoDBStreamsAsyncHandler.GetRecords
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
             GetRecordsRequest getRecordsRequest,
@@ -227,6 +231,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>GetShardIterator</i> operation.
      * @return A Java Future containing the result of the GetShardIterator
      *         operation returned by the service.
+     * @sample AmazonDynamoDBStreamsAsync.GetShardIterator
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(
             GetShardIteratorRequest getShardIteratorRequest);
@@ -254,6 +259,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetShardIterator
      *         operation returned by the service.
+     * @sample AmazonDynamoDBStreamsAsyncHandler.GetShardIterator
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(
             GetShardIteratorRequest getShardIteratorRequest,
@@ -275,6 +281,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        Represents the input of a <i>ListStreams</i> operation.
      * @return A Java Future containing the result of the ListStreams operation
      *         returned by the service.
+     * @sample AmazonDynamoDBStreamsAsync.ListStreams
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
             ListStreamsRequest listStreamsRequest);
@@ -300,6 +307,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreams operation
      *         returned by the service.
+     * @sample AmazonDynamoDBStreamsAsyncHandler.ListStreams
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
             ListStreamsRequest listStreamsRequest,

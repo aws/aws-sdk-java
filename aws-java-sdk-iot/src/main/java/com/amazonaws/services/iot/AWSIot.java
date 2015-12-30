@@ -125,6 +125,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.AcceptCertificateTransfer
      */
     void acceptCertificateTransfer(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest);
@@ -151,6 +152,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws LimitExceededException
      *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.AttachPrincipalPolicy
      */
     void attachPrincipalPolicy(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
@@ -176,6 +178,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.AttachThingPrincipal
      */
     AttachThingPrincipalResult attachThingPrincipal(
             AttachThingPrincipalRequest attachThingPrincipalRequest);
@@ -214,6 +217,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CancelCertificateTransfer
      */
     void cancelCertificateTransfer(
             CancelCertificateTransferRequest cancelCertificateTransferRequest);
@@ -290,6 +294,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCertificateFromCsr
      */
     CreateCertificateFromCsrResult createCertificateFromCsr(
             CreateCertificateFromCsrRequest createCertificateFromCsrRequest);
@@ -318,6 +323,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreateKeysAndCertificate
      */
     CreateKeysAndCertificateResult createKeysAndCertificate(
             CreateKeysAndCertificateRequest createKeysAndCertificateRequest);
@@ -349,6 +355,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreatePolicy
      */
     CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest);
 
@@ -385,6 +392,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreatePolicyVersion
      */
     CreatePolicyVersionResult createPolicyVersion(
             CreatePolicyVersionRequest createPolicyVersionRequest);
@@ -409,6 +417,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
+     * @sample AWSIot.CreateThing
      */
     CreateThingResult createThing(CreateThingRequest createThingRequest);
 
@@ -429,6 +438,7 @@ public interface AWSIot {
      *         The resource already exists.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.CreateTopicRule
      */
     void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest);
 
@@ -453,6 +463,7 @@ public interface AWSIot {
      *         The specified resource does not exist.
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
+     * @sample AWSIot.DeleteCertificate
      */
     void deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
 
@@ -492,6 +503,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DeletePolicy
      */
     void deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
@@ -520,6 +532,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DeletePolicyVersion
      */
     void deletePolicyVersion(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
@@ -544,6 +557,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteThing
      */
     DeleteThingResult deleteThing(DeleteThingRequest deleteThingRequest);
 
@@ -562,6 +576,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @sample AWSIot.DeleteTopicRule
      */
     void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest);
 
@@ -586,6 +601,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @sample AWSIot.DescribeCertificate
      */
     DescribeCertificateResult describeCertificate(
             DescribeCertificateRequest describeCertificateRequest);
@@ -606,6 +622,7 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @sample AWSIot.DescribeEndpoint
      */
     DescribeEndpointResult describeEndpoint(
             DescribeEndpointRequest describeEndpointRequest);
@@ -630,6 +647,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeThing
      */
     DescribeThingResult describeThing(DescribeThingRequest describeThingRequest);
 
@@ -652,6 +670,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DetachPrincipalPolicy
      */
     void detachPrincipalPolicy(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
@@ -677,6 +696,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DetachThingPrincipal
      */
     DetachThingPrincipalResult detachThingPrincipal(
             DetachThingPrincipalRequest detachThingPrincipalRequest);
@@ -696,6 +716,7 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.GetLoggingOptions
      */
     GetLoggingOptionsResult getLoggingOptions(
             GetLoggingOptionsRequest getLoggingOptionsRequest);
@@ -721,6 +742,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.GetPolicy
      */
     GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest);
 
@@ -744,6 +766,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.GetPolicyVersion
      */
     GetPolicyVersionResult getPolicyVersion(
             GetPolicyVersionRequest getPolicyVersionRequest);
@@ -764,6 +787,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @sample AWSIot.GetTopicRule
      */
     GetTopicRuleResult getTopicRule(GetTopicRuleRequest getTopicRuleRequest);
 
@@ -789,6 +813,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificates
      */
     ListCertificatesResult listCertificates(
             ListCertificatesRequest listCertificatesRequest);
@@ -811,6 +836,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPolicies
      */
     ListPoliciesResult listPolicies(ListPoliciesRequest listPoliciesRequest);
 
@@ -836,6 +862,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPolicyVersions
      */
     ListPolicyVersionsResult listPolicyVersions(
             ListPolicyVersionsRequest listPolicyVersionsRequest);
@@ -864,6 +891,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPrincipalPolicies
      */
     ListPrincipalPoliciesResult listPrincipalPolicies(
             ListPrincipalPoliciesRequest listPrincipalPoliciesRequest);
@@ -887,6 +915,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPrincipalThings
      */
     ListPrincipalThingsResult listPrincipalThings(
             ListPrincipalThingsRequest listPrincipalThingsRequest);
@@ -910,6 +939,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListThingPrincipals
      */
     ListThingPrincipalsResult listThingPrincipals(
             ListThingPrincipalsRequest listThingPrincipalsRequest);
@@ -934,6 +964,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListThings
      */
     ListThingsResult listThings(ListThingsRequest listThingsRequest);
 
@@ -951,6 +982,7 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.ListTopicRules
      */
     ListTopicRulesResult listTopicRules(
             ListTopicRulesRequest listTopicRulesRequest);
@@ -988,6 +1020,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.RejectCertificateTransfer
      */
     void rejectCertificateTransfer(
             RejectCertificateTransferRequest rejectCertificateTransferRequest);
@@ -1010,6 +1043,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @sample AWSIot.ReplaceTopicRule
      */
     void replaceTopicRule(ReplaceTopicRuleRequest replaceTopicRuleRequest);
 
@@ -1035,6 +1069,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.SetDefaultPolicyVersion
      */
     void setDefaultPolicyVersion(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
@@ -1052,6 +1087,7 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.SetLoggingOptions
      */
     void setLoggingOptions(SetLoggingOptionsRequest setLoggingOptionsRequest);
 
@@ -1096,6 +1132,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.TransferCertificate
      */
     TransferCertificateResult transferCertificate(
             TransferCertificateRequest transferCertificateRequest);
@@ -1131,6 +1168,7 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCertificate
      */
     void updateCertificate(UpdateCertificateRequest updateCertificateRequest);
 
@@ -1154,6 +1192,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @sample AWSIot.UpdateThing
      */
     UpdateThingResult updateThing(UpdateThingRequest updateThingRequest);
 

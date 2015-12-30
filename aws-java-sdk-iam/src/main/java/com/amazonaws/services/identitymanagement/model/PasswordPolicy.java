@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
@@ -22,540 +23,578 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used as a response element in the
- * GetAccountPasswordPolicy action.
+ * <a>GetAccountPasswordPolicy</a> action.
  * </p>
  */
 public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
-     * Minimum length to require for IAM user passwords.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>6 - 128<br/>
+     * Minimum length to require for IAM user passwords.
+     * </p>
      */
     private Integer minimumPasswordLength;
-
     /**
+     * <p>
      * Specifies whether to require symbols for IAM user passwords.
+     * </p>
      */
     private Boolean requireSymbols;
-
     /**
+     * <p>
      * Specifies whether to require numbers for IAM user passwords.
+     * </p>
      */
     private Boolean requireNumbers;
-
     /**
-     * Specifies whether to require uppercase characters for IAM user
-     * passwords.
+     * <p>
+     * Specifies whether to require uppercase characters for IAM user passwords.
+     * </p>
      */
     private Boolean requireUppercaseCharacters;
-
     /**
-     * Specifies whether to require lowercase characters for IAM user
-     * passwords.
+     * <p>
+     * Specifies whether to require lowercase characters for IAM user passwords.
+     * </p>
      */
     private Boolean requireLowercaseCharacters;
-
     /**
+     * <p>
      * Specifies whether IAM users are allowed to change their own password.
+     * </p>
      */
     private Boolean allowUsersToChangePassword;
-
     /**
+     * <p>
      * Indicates whether passwords in the account expire. Returns true if
      * MaxPasswordAge is contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.
+     * </p>
      */
     private Boolean expirePasswords;
-
     /**
-     * The number of days that an IAM user password is valid.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1095<br/>
+     * The number of days that an IAM user password is valid.
+     * </p>
      */
     private Integer maxPasswordAge;
-
     /**
-     * Specifies the number of previous passwords that IAM users are
-     * prevented from reusing.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 24<br/>
+     * Specifies the number of previous passwords that IAM users are prevented
+     * from reusing.
+     * </p>
      */
     private Integer passwordReusePrevention;
-
     /**
+     * <p>
      * Specifies whether IAM users are prevented from setting a new password
      * after their password has expired.
+     * </p>
      */
     private Boolean hardExpiry;
 
     /**
-     * Minimum length to require for IAM user passwords.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>6 - 128<br/>
-     *
-     * @return Minimum length to require for IAM user passwords.
-     */
-    public Integer getMinimumPasswordLength() {
-        return minimumPasswordLength;
-    }
-    
-    /**
      * Minimum length to require for IAM user passwords.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>6 - 128<br/>
-     *
-     * @param minimumPasswordLength Minimum length to require for IAM user passwords.
+     * </p>
+     * 
+     * @param minimumPasswordLength
+     *        Minimum length to require for IAM user passwords.
      */
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
-    
+
     /**
+     * <p>
      * Minimum length to require for IAM user passwords.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>6 - 128<br/>
-     *
-     * @param minimumPasswordLength Minimum length to require for IAM user passwords.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Minimum length to require for IAM user passwords.
      */
-    public PasswordPolicy withMinimumPasswordLength(Integer minimumPasswordLength) {
-        this.minimumPasswordLength = minimumPasswordLength;
+    public Integer getMinimumPasswordLength() {
+        return this.minimumPasswordLength;
+    }
+
+    /**
+     * <p>
+     * Minimum length to require for IAM user passwords.
+     * </p>
+     * 
+     * @param minimumPasswordLength
+     *        Minimum length to require for IAM user passwords.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PasswordPolicy withMinimumPasswordLength(
+            Integer minimumPasswordLength) {
+        setMinimumPasswordLength(minimumPasswordLength);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether to require symbols for IAM user passwords.
-     *
-     * @return Specifies whether to require symbols for IAM user passwords.
-     */
-    public Boolean isRequireSymbols() {
-        return requireSymbols;
-    }
-    
-    /**
-     * Specifies whether to require symbols for IAM user passwords.
-     *
-     * @param requireSymbols Specifies whether to require symbols for IAM user passwords.
+     * </p>
+     * 
+     * @param requireSymbols
+     *        Specifies whether to require symbols for IAM user passwords.
      */
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
     }
-    
+
     /**
-     * Specifies whether to require symbols for IAM user passwords.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requireSymbols Specifies whether to require symbols for IAM user passwords.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether to require symbols for IAM user passwords.
+     * </p>
+     * 
+     * @return Specifies whether to require symbols for IAM user passwords.
+     */
+    public Boolean getRequireSymbols() {
+        return this.requireSymbols;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to require symbols for IAM user passwords.
+     * </p>
+     * 
+     * @param requireSymbols
+     *        Specifies whether to require symbols for IAM user passwords.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PasswordPolicy withRequireSymbols(Boolean requireSymbols) {
-        this.requireSymbols = requireSymbols;
+        setRequireSymbols(requireSymbols);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether to require symbols for IAM user passwords.
-     *
+     * </p>
+     * 
      * @return Specifies whether to require symbols for IAM user passwords.
      */
-    public Boolean getRequireSymbols() {
-        return requireSymbols;
+    public Boolean isRequireSymbols() {
+        return this.requireSymbols;
     }
 
     /**
+     * <p>
      * Specifies whether to require numbers for IAM user passwords.
-     *
-     * @return Specifies whether to require numbers for IAM user passwords.
-     */
-    public Boolean isRequireNumbers() {
-        return requireNumbers;
-    }
-    
-    /**
-     * Specifies whether to require numbers for IAM user passwords.
-     *
-     * @param requireNumbers Specifies whether to require numbers for IAM user passwords.
+     * </p>
+     * 
+     * @param requireNumbers
+     *        Specifies whether to require numbers for IAM user passwords.
      */
     public void setRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
     }
-    
+
     /**
-     * Specifies whether to require numbers for IAM user passwords.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requireNumbers Specifies whether to require numbers for IAM user passwords.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether to require numbers for IAM user passwords.
+     * </p>
+     * 
+     * @return Specifies whether to require numbers for IAM user passwords.
+     */
+    public Boolean getRequireNumbers() {
+        return this.requireNumbers;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to require numbers for IAM user passwords.
+     * </p>
+     * 
+     * @param requireNumbers
+     *        Specifies whether to require numbers for IAM user passwords.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PasswordPolicy withRequireNumbers(Boolean requireNumbers) {
-        this.requireNumbers = requireNumbers;
+        setRequireNumbers(requireNumbers);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether to require numbers for IAM user passwords.
-     *
+     * </p>
+     * 
      * @return Specifies whether to require numbers for IAM user passwords.
      */
-    public Boolean getRequireNumbers() {
-        return requireNumbers;
+    public Boolean isRequireNumbers() {
+        return this.requireNumbers;
     }
 
     /**
-     * Specifies whether to require uppercase characters for IAM user
-     * passwords.
-     *
-     * @return Specifies whether to require uppercase characters for IAM user
-     *         passwords.
-     */
-    public Boolean isRequireUppercaseCharacters() {
-        return requireUppercaseCharacters;
-    }
-    
-    /**
-     * Specifies whether to require uppercase characters for IAM user
-     * passwords.
-     *
-     * @param requireUppercaseCharacters Specifies whether to require uppercase characters for IAM user
-     *         passwords.
+     * <p>
+     * Specifies whether to require uppercase characters for IAM user passwords.
+     * </p>
+     * 
+     * @param requireUppercaseCharacters
+     *        Specifies whether to require uppercase characters for IAM user
+     *        passwords.
      */
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
     }
-    
-    /**
-     * Specifies whether to require uppercase characters for IAM user
-     * passwords.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requireUppercaseCharacters Specifies whether to require uppercase characters for IAM user
-     *         passwords.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PasswordPolicy withRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
-        this.requireUppercaseCharacters = requireUppercaseCharacters;
-        return this;
-    }
 
     /**
-     * Specifies whether to require uppercase characters for IAM user
-     * passwords.
-     *
+     * <p>
+     * Specifies whether to require uppercase characters for IAM user passwords.
+     * </p>
+     * 
      * @return Specifies whether to require uppercase characters for IAM user
      *         passwords.
      */
     public Boolean getRequireUppercaseCharacters() {
-        return requireUppercaseCharacters;
+        return this.requireUppercaseCharacters;
     }
 
     /**
-     * Specifies whether to require lowercase characters for IAM user
-     * passwords.
-     *
-     * @return Specifies whether to require lowercase characters for IAM user
+     * <p>
+     * Specifies whether to require uppercase characters for IAM user passwords.
+     * </p>
+     * 
+     * @param requireUppercaseCharacters
+     *        Specifies whether to require uppercase characters for IAM user
+     *        passwords.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PasswordPolicy withRequireUppercaseCharacters(
+            Boolean requireUppercaseCharacters) {
+        setRequireUppercaseCharacters(requireUppercaseCharacters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to require uppercase characters for IAM user passwords.
+     * </p>
+     * 
+     * @return Specifies whether to require uppercase characters for IAM user
      *         passwords.
      */
-    public Boolean isRequireLowercaseCharacters() {
-        return requireLowercaseCharacters;
+    public Boolean isRequireUppercaseCharacters() {
+        return this.requireUppercaseCharacters;
     }
-    
+
     /**
-     * Specifies whether to require lowercase characters for IAM user
-     * passwords.
-     *
-     * @param requireLowercaseCharacters Specifies whether to require lowercase characters for IAM user
-     *         passwords.
+     * <p>
+     * Specifies whether to require lowercase characters for IAM user passwords.
+     * </p>
+     * 
+     * @param requireLowercaseCharacters
+     *        Specifies whether to require lowercase characters for IAM user
+     *        passwords.
      */
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
     }
-    
-    /**
-     * Specifies whether to require lowercase characters for IAM user
-     * passwords.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requireLowercaseCharacters Specifies whether to require lowercase characters for IAM user
-     *         passwords.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PasswordPolicy withRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
-        this.requireLowercaseCharacters = requireLowercaseCharacters;
-        return this;
-    }
 
     /**
-     * Specifies whether to require lowercase characters for IAM user
-     * passwords.
-     *
+     * <p>
+     * Specifies whether to require lowercase characters for IAM user passwords.
+     * </p>
+     * 
      * @return Specifies whether to require lowercase characters for IAM user
      *         passwords.
      */
     public Boolean getRequireLowercaseCharacters() {
-        return requireLowercaseCharacters;
+        return this.requireLowercaseCharacters;
     }
 
     /**
-     * Specifies whether IAM users are allowed to change their own password.
-     *
-     * @return Specifies whether IAM users are allowed to change their own password.
+     * <p>
+     * Specifies whether to require lowercase characters for IAM user passwords.
+     * </p>
+     * 
+     * @param requireLowercaseCharacters
+     *        Specifies whether to require lowercase characters for IAM user
+     *        passwords.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Boolean isAllowUsersToChangePassword() {
-        return allowUsersToChangePassword;
+    public PasswordPolicy withRequireLowercaseCharacters(
+            Boolean requireLowercaseCharacters) {
+        setRequireLowercaseCharacters(requireLowercaseCharacters);
+        return this;
     }
-    
+
     /**
+     * <p>
+     * Specifies whether to require lowercase characters for IAM user passwords.
+     * </p>
+     * 
+     * @return Specifies whether to require lowercase characters for IAM user
+     *         passwords.
+     */
+    public Boolean isRequireLowercaseCharacters() {
+        return this.requireLowercaseCharacters;
+    }
+
+    /**
+     * <p>
      * Specifies whether IAM users are allowed to change their own password.
-     *
-     * @param allowUsersToChangePassword Specifies whether IAM users are allowed to change their own password.
+     * </p>
+     * 
+     * @param allowUsersToChangePassword
+     *        Specifies whether IAM users are allowed to change their own
+     *        password.
      */
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
     }
-    
+
     /**
-     * Specifies whether IAM users are allowed to change their own password.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param allowUsersToChangePassword Specifies whether IAM users are allowed to change their own password.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether IAM users are allowed to change their own password.
+     * </p>
+     * 
+     * @return Specifies whether IAM users are allowed to change their own
+     *         password.
      */
-    public PasswordPolicy withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
-        this.allowUsersToChangePassword = allowUsersToChangePassword;
+    public Boolean getAllowUsersToChangePassword() {
+        return this.allowUsersToChangePassword;
+    }
+
+    /**
+     * <p>
+     * Specifies whether IAM users are allowed to change their own password.
+     * </p>
+     * 
+     * @param allowUsersToChangePassword
+     *        Specifies whether IAM users are allowed to change their own
+     *        password.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PasswordPolicy withAllowUsersToChangePassword(
+            Boolean allowUsersToChangePassword) {
+        setAllowUsersToChangePassword(allowUsersToChangePassword);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether IAM users are allowed to change their own password.
-     *
-     * @return Specifies whether IAM users are allowed to change their own password.
+     * </p>
+     * 
+     * @return Specifies whether IAM users are allowed to change their own
+     *         password.
      */
-    public Boolean getAllowUsersToChangePassword() {
-        return allowUsersToChangePassword;
+    public Boolean isAllowUsersToChangePassword() {
+        return this.allowUsersToChangePassword;
     }
 
     /**
+     * <p>
      * Indicates whether passwords in the account expire. Returns true if
      * MaxPasswordAge is contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.
-     *
-     * @return Indicates whether passwords in the account expire. Returns true if
-     *         MaxPasswordAge is contains a value greater than 0. Returns false if
-     *         MaxPasswordAge is 0 or not present.
-     */
-    public Boolean isExpirePasswords() {
-        return expirePasswords;
-    }
-    
-    /**
-     * Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
-     * MaxPasswordAge is 0 or not present.
-     *
-     * @param expirePasswords Indicates whether passwords in the account expire. Returns true if
-     *         MaxPasswordAge is contains a value greater than 0. Returns false if
-     *         MaxPasswordAge is 0 or not present.
+     * </p>
+     * 
+     * @param expirePasswords
+     *        Indicates whether passwords in the account expire. Returns true if
+     *        MaxPasswordAge is contains a value greater than 0. Returns false
+     *        if MaxPasswordAge is 0 or not present.
      */
     public void setExpirePasswords(Boolean expirePasswords) {
         this.expirePasswords = expirePasswords;
     }
-    
+
     /**
+     * <p>
      * Indicates whether passwords in the account expire. Returns true if
      * MaxPasswordAge is contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.
+     * </p>
+     * 
+     * @return Indicates whether passwords in the account expire. Returns true
+     *         if MaxPasswordAge is contains a value greater than 0. Returns
+     *         false if MaxPasswordAge is 0 or not present.
+     */
+    public Boolean getExpirePasswords() {
+        return this.expirePasswords;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param expirePasswords Indicates whether passwords in the account expire. Returns true if
-     *         MaxPasswordAge is contains a value greater than 0. Returns false if
-     *         MaxPasswordAge is 0 or not present.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.
+     * </p>
+     * 
+     * @param expirePasswords
+     *        Indicates whether passwords in the account expire. Returns true if
+     *        MaxPasswordAge is contains a value greater than 0. Returns false
+     *        if MaxPasswordAge is 0 or not present.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PasswordPolicy withExpirePasswords(Boolean expirePasswords) {
-        this.expirePasswords = expirePasswords;
+        setExpirePasswords(expirePasswords);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether passwords in the account expire. Returns true if
      * MaxPasswordAge is contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.
-     *
-     * @return Indicates whether passwords in the account expire. Returns true if
-     *         MaxPasswordAge is contains a value greater than 0. Returns false if
-     *         MaxPasswordAge is 0 or not present.
+     * </p>
+     * 
+     * @return Indicates whether passwords in the account expire. Returns true
+     *         if MaxPasswordAge is contains a value greater than 0. Returns
+     *         false if MaxPasswordAge is 0 or not present.
      */
-    public Boolean getExpirePasswords() {
-        return expirePasswords;
+    public Boolean isExpirePasswords() {
+        return this.expirePasswords;
     }
 
     /**
-     * The number of days that an IAM user password is valid.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1095<br/>
-     *
-     * @return The number of days that an IAM user password is valid.
-     */
-    public Integer getMaxPasswordAge() {
-        return maxPasswordAge;
-    }
-    
-    /**
      * The number of days that an IAM user password is valid.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1095<br/>
-     *
-     * @param maxPasswordAge The number of days that an IAM user password is valid.
+     * </p>
+     * 
+     * @param maxPasswordAge
+     *        The number of days that an IAM user password is valid.
      */
     public void setMaxPasswordAge(Integer maxPasswordAge) {
         this.maxPasswordAge = maxPasswordAge;
     }
-    
+
     /**
+     * <p>
      * The number of days that an IAM user password is valid.
+     * </p>
+     * 
+     * @return The number of days that an IAM user password is valid.
+     */
+    public Integer getMaxPasswordAge() {
+        return this.maxPasswordAge;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1095<br/>
-     *
-     * @param maxPasswordAge The number of days that an IAM user password is valid.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The number of days that an IAM user password is valid.
+     * </p>
+     * 
+     * @param maxPasswordAge
+     *        The number of days that an IAM user password is valid.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PasswordPolicy withMaxPasswordAge(Integer maxPasswordAge) {
-        this.maxPasswordAge = maxPasswordAge;
+        setMaxPasswordAge(maxPasswordAge);
         return this;
     }
 
     /**
-     * Specifies the number of previous passwords that IAM users are
-     * prevented from reusing.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 24<br/>
-     *
-     * @return Specifies the number of previous passwords that IAM users are
-     *         prevented from reusing.
-     */
-    public Integer getPasswordReusePrevention() {
-        return passwordReusePrevention;
-    }
-    
-    /**
-     * Specifies the number of previous passwords that IAM users are
-     * prevented from reusing.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 24<br/>
-     *
-     * @param passwordReusePrevention Specifies the number of previous passwords that IAM users are
-     *         prevented from reusing.
+     * Specifies the number of previous passwords that IAM users are prevented
+     * from reusing.
+     * </p>
+     * 
+     * @param passwordReusePrevention
+     *        Specifies the number of previous passwords that IAM users are
+     *        prevented from reusing.
      */
     public void setPasswordReusePrevention(Integer passwordReusePrevention) {
         this.passwordReusePrevention = passwordReusePrevention;
     }
-    
+
     /**
-     * Specifies the number of previous passwords that IAM users are
-     * prevented from reusing.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 24<br/>
-     *
-     * @param passwordReusePrevention Specifies the number of previous passwords that IAM users are
+     * Specifies the number of previous passwords that IAM users are prevented
+     * from reusing.
+     * </p>
+     * 
+     * @return Specifies the number of previous passwords that IAM users are
      *         prevented from reusing.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public PasswordPolicy withPasswordReusePrevention(Integer passwordReusePrevention) {
-        this.passwordReusePrevention = passwordReusePrevention;
+    public Integer getPasswordReusePrevention() {
+        return this.passwordReusePrevention;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of previous passwords that IAM users are prevented
+     * from reusing.
+     * </p>
+     * 
+     * @param passwordReusePrevention
+     *        Specifies the number of previous passwords that IAM users are
+     *        prevented from reusing.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PasswordPolicy withPasswordReusePrevention(
+            Integer passwordReusePrevention) {
+        setPasswordReusePrevention(passwordReusePrevention);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether IAM users are prevented from setting a new password
      * after their password has expired.
-     *
-     * @return Specifies whether IAM users are prevented from setting a new password
-     *         after their password has expired.
-     */
-    public Boolean isHardExpiry() {
-        return hardExpiry;
-    }
-    
-    /**
-     * Specifies whether IAM users are prevented from setting a new password
-     * after their password has expired.
-     *
-     * @param hardExpiry Specifies whether IAM users are prevented from setting a new password
-     *         after their password has expired.
+     * </p>
+     * 
+     * @param hardExpiry
+     *        Specifies whether IAM users are prevented from setting a new
+     *        password after their password has expired.
      */
     public void setHardExpiry(Boolean hardExpiry) {
         this.hardExpiry = hardExpiry;
     }
-    
+
     /**
+     * <p>
      * Specifies whether IAM users are prevented from setting a new password
      * after their password has expired.
+     * </p>
+     * 
+     * @return Specifies whether IAM users are prevented from setting a new
+     *         password after their password has expired.
+     */
+    public Boolean getHardExpiry() {
+        return this.hardExpiry;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param hardExpiry Specifies whether IAM users are prevented from setting a new password
-     *         after their password has expired.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether IAM users are prevented from setting a new password
+     * after their password has expired.
+     * </p>
+     * 
+     * @param hardExpiry
+     *        Specifies whether IAM users are prevented from setting a new
+     *        password after their password has expired.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PasswordPolicy withHardExpiry(Boolean hardExpiry) {
-        this.hardExpiry = hardExpiry;
+        setHardExpiry(hardExpiry);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether IAM users are prevented from setting a new password
      * after their password has expired.
-     *
-     * @return Specifies whether IAM users are prevented from setting a new password
-     *         after their password has expired.
+     * </p>
+     * 
+     * @return Specifies whether IAM users are prevented from setting a new
+     *         password after their password has expired.
      */
-    public Boolean getHardExpiry() {
-        return hardExpiry;
+    public Boolean isHardExpiry() {
+        return this.hardExpiry;
     }
 
     /**
@@ -570,82 +609,166 @@ public class PasswordPolicy implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMinimumPasswordLength() != null) sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ",");
-        if (isRequireSymbols() != null) sb.append("RequireSymbols: " + isRequireSymbols() + ",");
-        if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ",");
-        if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ",");
-        if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ",");
-        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() + ",");
-        if (isExpirePasswords() != null) sb.append("ExpirePasswords: " + isExpirePasswords() + ",");
-        if (getMaxPasswordAge() != null) sb.append("MaxPasswordAge: " + getMaxPasswordAge() + ",");
-        if (getPasswordReusePrevention() != null) sb.append("PasswordReusePrevention: " + getPasswordReusePrevention() + ",");
-        if (isHardExpiry() != null) sb.append("HardExpiry: " + isHardExpiry() );
+        if (getMinimumPasswordLength() != null)
+            sb.append("MinimumPasswordLength: " + getMinimumPasswordLength()
+                    + ",");
+        if (getRequireSymbols() != null)
+            sb.append("RequireSymbols: " + getRequireSymbols() + ",");
+        if (getRequireNumbers() != null)
+            sb.append("RequireNumbers: " + getRequireNumbers() + ",");
+        if (getRequireUppercaseCharacters() != null)
+            sb.append("RequireUppercaseCharacters: "
+                    + getRequireUppercaseCharacters() + ",");
+        if (getRequireLowercaseCharacters() != null)
+            sb.append("RequireLowercaseCharacters: "
+                    + getRequireLowercaseCharacters() + ",");
+        if (getAllowUsersToChangePassword() != null)
+            sb.append("AllowUsersToChangePassword: "
+                    + getAllowUsersToChangePassword() + ",");
+        if (getExpirePasswords() != null)
+            sb.append("ExpirePasswords: " + getExpirePasswords() + ",");
+        if (getMaxPasswordAge() != null)
+            sb.append("MaxPasswordAge: " + getMaxPasswordAge() + ",");
+        if (getPasswordReusePrevention() != null)
+            sb.append("PasswordReusePrevention: "
+                    + getPasswordReusePrevention() + ",");
+        if (getHardExpiry() != null)
+            sb.append("HardExpiry: " + getHardExpiry());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PasswordPolicy == false)
+            return false;
+        PasswordPolicy other = (PasswordPolicy) obj;
+        if (other.getMinimumPasswordLength() == null
+                ^ this.getMinimumPasswordLength() == null)
+            return false;
+        if (other.getMinimumPasswordLength() != null
+                && other.getMinimumPasswordLength().equals(
+                        this.getMinimumPasswordLength()) == false)
+            return false;
+        if (other.getRequireSymbols() == null
+                ^ this.getRequireSymbols() == null)
+            return false;
+        if (other.getRequireSymbols() != null
+                && other.getRequireSymbols().equals(this.getRequireSymbols()) == false)
+            return false;
+        if (other.getRequireNumbers() == null
+                ^ this.getRequireNumbers() == null)
+            return false;
+        if (other.getRequireNumbers() != null
+                && other.getRequireNumbers().equals(this.getRequireNumbers()) == false)
+            return false;
+        if (other.getRequireUppercaseCharacters() == null
+                ^ this.getRequireUppercaseCharacters() == null)
+            return false;
+        if (other.getRequireUppercaseCharacters() != null
+                && other.getRequireUppercaseCharacters().equals(
+                        this.getRequireUppercaseCharacters()) == false)
+            return false;
+        if (other.getRequireLowercaseCharacters() == null
+                ^ this.getRequireLowercaseCharacters() == null)
+            return false;
+        if (other.getRequireLowercaseCharacters() != null
+                && other.getRequireLowercaseCharacters().equals(
+                        this.getRequireLowercaseCharacters()) == false)
+            return false;
+        if (other.getAllowUsersToChangePassword() == null
+                ^ this.getAllowUsersToChangePassword() == null)
+            return false;
+        if (other.getAllowUsersToChangePassword() != null
+                && other.getAllowUsersToChangePassword().equals(
+                        this.getAllowUsersToChangePassword()) == false)
+            return false;
+        if (other.getExpirePasswords() == null
+                ^ this.getExpirePasswords() == null)
+            return false;
+        if (other.getExpirePasswords() != null
+                && other.getExpirePasswords().equals(this.getExpirePasswords()) == false)
+            return false;
+        if (other.getMaxPasswordAge() == null
+                ^ this.getMaxPasswordAge() == null)
+            return false;
+        if (other.getMaxPasswordAge() != null
+                && other.getMaxPasswordAge().equals(this.getMaxPasswordAge()) == false)
+            return false;
+        if (other.getPasswordReusePrevention() == null
+                ^ this.getPasswordReusePrevention() == null)
+            return false;
+        if (other.getPasswordReusePrevention() != null
+                && other.getPasswordReusePrevention().equals(
+                        this.getPasswordReusePrevention()) == false)
+            return false;
+        if (other.getHardExpiry() == null ^ this.getHardExpiry() == null)
+            return false;
+        if (other.getHardExpiry() != null
+                && other.getHardExpiry().equals(this.getHardExpiry()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMinimumPasswordLength() == null) ? 0 : getMinimumPasswordLength().hashCode()); 
-        hashCode = prime * hashCode + ((isRequireSymbols() == null) ? 0 : isRequireSymbols().hashCode()); 
-        hashCode = prime * hashCode + ((isRequireNumbers() == null) ? 0 : isRequireNumbers().hashCode()); 
-        hashCode = prime * hashCode + ((isRequireUppercaseCharacters() == null) ? 0 : isRequireUppercaseCharacters().hashCode()); 
-        hashCode = prime * hashCode + ((isRequireLowercaseCharacters() == null) ? 0 : isRequireLowercaseCharacters().hashCode()); 
-        hashCode = prime * hashCode + ((isAllowUsersToChangePassword() == null) ? 0 : isAllowUsersToChangePassword().hashCode()); 
-        hashCode = prime * hashCode + ((isExpirePasswords() == null) ? 0 : isExpirePasswords().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxPasswordAge() == null) ? 0 : getMaxPasswordAge().hashCode()); 
-        hashCode = prime * hashCode + ((getPasswordReusePrevention() == null) ? 0 : getPasswordReusePrevention().hashCode()); 
-        hashCode = prime * hashCode + ((isHardExpiry() == null) ? 0 : isHardExpiry().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getMinimumPasswordLength() == null) ? 0
+                        : getMinimumPasswordLength().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequireSymbols() == null) ? 0 : getRequireSymbols()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequireNumbers() == null) ? 0 : getRequireNumbers()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequireUppercaseCharacters() == null) ? 0
+                        : getRequireUppercaseCharacters().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequireLowercaseCharacters() == null) ? 0
+                        : getRequireLowercaseCharacters().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAllowUsersToChangePassword() == null) ? 0
+                        : getAllowUsersToChangePassword().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExpirePasswords() == null) ? 0 : getExpirePasswords()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getMaxPasswordAge() == null) ? 0 : getMaxPasswordAge()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPasswordReusePrevention() == null) ? 0
+                        : getPasswordReusePrevention().hashCode());
+        hashCode = prime * hashCode
+                + ((getHardExpiry() == null) ? 0 : getHardExpiry().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PasswordPolicy == false) return false;
-        PasswordPolicy other = (PasswordPolicy)obj;
-        
-        if (other.getMinimumPasswordLength() == null ^ this.getMinimumPasswordLength() == null) return false;
-        if (other.getMinimumPasswordLength() != null && other.getMinimumPasswordLength().equals(this.getMinimumPasswordLength()) == false) return false; 
-        if (other.isRequireSymbols() == null ^ this.isRequireSymbols() == null) return false;
-        if (other.isRequireSymbols() != null && other.isRequireSymbols().equals(this.isRequireSymbols()) == false) return false; 
-        if (other.isRequireNumbers() == null ^ this.isRequireNumbers() == null) return false;
-        if (other.isRequireNumbers() != null && other.isRequireNumbers().equals(this.isRequireNumbers()) == false) return false; 
-        if (other.isRequireUppercaseCharacters() == null ^ this.isRequireUppercaseCharacters() == null) return false;
-        if (other.isRequireUppercaseCharacters() != null && other.isRequireUppercaseCharacters().equals(this.isRequireUppercaseCharacters()) == false) return false; 
-        if (other.isRequireLowercaseCharacters() == null ^ this.isRequireLowercaseCharacters() == null) return false;
-        if (other.isRequireLowercaseCharacters() != null && other.isRequireLowercaseCharacters().equals(this.isRequireLowercaseCharacters()) == false) return false; 
-        if (other.isAllowUsersToChangePassword() == null ^ this.isAllowUsersToChangePassword() == null) return false;
-        if (other.isAllowUsersToChangePassword() != null && other.isAllowUsersToChangePassword().equals(this.isAllowUsersToChangePassword()) == false) return false; 
-        if (other.isExpirePasswords() == null ^ this.isExpirePasswords() == null) return false;
-        if (other.isExpirePasswords() != null && other.isExpirePasswords().equals(this.isExpirePasswords()) == false) return false; 
-        if (other.getMaxPasswordAge() == null ^ this.getMaxPasswordAge() == null) return false;
-        if (other.getMaxPasswordAge() != null && other.getMaxPasswordAge().equals(this.getMaxPasswordAge()) == false) return false; 
-        if (other.getPasswordReusePrevention() == null ^ this.getPasswordReusePrevention() == null) return false;
-        if (other.getPasswordReusePrevention() != null && other.getPasswordReusePrevention().equals(this.getPasswordReusePrevention()) == false) return false; 
-        if (other.isHardExpiry() == null ^ this.isHardExpiry() == null) return false;
-        if (other.isHardExpiry() != null && other.isHardExpiry().equals(this.isHardExpiry()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PasswordPolicy clone() {
         try {
             return (PasswordPolicy) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

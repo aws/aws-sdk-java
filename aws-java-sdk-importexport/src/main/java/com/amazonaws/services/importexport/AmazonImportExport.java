@@ -112,6 +112,7 @@ public interface AmazonImportExport {
      *         authentication must use the same AWS Access Key ID.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.CancelJob
      */
     CancelJobResult cancelJob(CancelJobRequest cancelJobRequest);
 
@@ -173,6 +174,7 @@ public interface AmazonImportExport {
      *         account.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.CreateJob
      */
     CreateJobResult createJob(CreateJobRequest createJobRequest);
 
@@ -199,6 +201,7 @@ public interface AmazonImportExport {
      *         The client tool version is invalid.
      * @throws InvalidParameterException
      *         One or more parameters had an invalid value.
+     * @sample AmazonImportExport.GetShippingLabel
      */
     GetShippingLabelResult getShippingLabel(
             GetShippingLabelRequest getShippingLabelRequest);
@@ -225,6 +228,7 @@ public interface AmazonImportExport {
      *         authentication must use the same AWS Access Key ID.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.GetStatus
      */
     GetStatusResult getStatus(GetStatusRequest getStatusRequest);
 
@@ -246,6 +250,7 @@ public interface AmazonImportExport {
      *         authentication must use the same AWS Access Key ID.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.ListJobs
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
 
@@ -315,6 +320,7 @@ public interface AmazonImportExport {
      *         AWS Import/Export cannot update the job
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.UpdateJob
      */
     UpdateJobResult updateJob(UpdateJobRequest updateJobRequest);
 

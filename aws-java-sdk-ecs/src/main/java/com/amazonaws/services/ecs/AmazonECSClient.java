@@ -303,6 +303,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.CreateCluster
      */
     @Override
     public CreateClusterResult createCluster(
@@ -429,6 +430,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.CreateService
      */
     @Override
     public CreateServiceResult createService(
@@ -498,6 +500,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         first update the service to reduce its desired task count to 0
      *         and then delete the service. For more information, see
      *         <a>UpdateService</a> and <a>DeleteService</a>.
+     * @sample AmazonECS.DeleteCluster
      */
     @Override
     public DeleteClusterResult deleteCluster(
@@ -577,6 +580,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified service could not be found. You can view your
      *         available services with <a>ListServices</a>. Amazon ECS services
      *         are cluster-specific and region-specific.
+     * @sample AmazonECS.DeleteService
      */
     @Override
     public DeleteServiceResult deleteService(
@@ -653,6 +657,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DeregisterContainerInstance
      */
     @Override
     public DeregisterContainerInstanceResult deregisterContainerInstance(
@@ -719,6 +724,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.DeregisterTaskDefinition
      */
     @Override
     public DeregisterTaskDefinitionResult deregisterTaskDefinition(
@@ -772,6 +778,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.DescribeClusters
      */
     @Override
     public DescribeClustersResult describeClusters(
@@ -837,6 +844,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DescribeContainerInstances
      */
     @Override
     public DescribeContainerInstancesResult describeContainerInstances(
@@ -894,6 +902,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DescribeServices
      */
     @Override
     public DescribeServicesResult describeServices(
@@ -957,6 +966,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.DescribeTaskDefinition
      */
     @Override
     public DescribeTaskDefinitionResult describeTaskDefinition(
@@ -1014,6 +1024,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.DescribeTasks
      */
     @Override
     public DescribeTasksResult describeTasks(
@@ -1071,6 +1082,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.DiscoverPollEndpoint
      */
     @Override
     public DiscoverPollEndpointResult discoverPollEndpoint(
@@ -1129,6 +1141,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.ListClusters
      */
     @Override
     public ListClustersResult listClusters(
@@ -1191,6 +1204,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.ListContainerInstances
      */
     @Override
     public ListContainerInstancesResult listContainerInstances(
@@ -1253,6 +1267,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.ListServices
      */
     @Override
     public ListServicesResult listServices(
@@ -1314,6 +1329,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.ListTaskDefinitionFamilies
      */
     @Override
     public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(
@@ -1376,6 +1392,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.ListTaskDefinitions
      */
     @Override
     public ListTaskDefinitionsResult listTaskDefinitions(
@@ -1446,6 +1463,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified service could not be found. You can view your
      *         available services with <a>ListServices</a>. Amazon ECS services
      *         are cluster-specific and region-specific.
+     * @sample AmazonECS.ListTasks
      */
     @Override
     public ListTasksResult listTasks(ListTasksRequest listTasksRequest) {
@@ -1507,6 +1525,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.RegisterContainerInstance
      */
     @Override
     public RegisterContainerInstanceResult registerContainerInstance(
@@ -1567,6 +1586,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECS.RegisterTaskDefinition
      */
     @Override
     public RegisterTaskDefinitionResult registerTaskDefinition(
@@ -1631,6 +1651,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.RunTask
      */
     @Override
     public RunTaskResult runTask(RunTaskRequest runTaskRequest) {
@@ -1693,6 +1714,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.StartTask
      */
     @Override
     public StartTaskResult startTask(StartTaskRequest startTaskRequest) {
@@ -1757,6 +1779,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified cluster could not be found. You can view your
      *         available clusters with <a>ListClusters</a>. Amazon ECS clusters
      *         are region-specific.
+     * @sample AmazonECS.StopTask
      */
     @Override
     public StopTaskResult stopTask(StopTaskRequest stopTaskRequest) {
@@ -1812,6 +1835,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.SubmitContainerStateChange
      */
     @Override
     public SubmitContainerStateChangeResult submitContainerStateChange(
@@ -1874,6 +1898,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         an action or resource on behalf of a user that doesn't have
      *         permission to use the action or resource, or specifying an
      *         identifier that is not valid.
+     * @sample AmazonECS.SubmitTaskStateChange
      */
     @Override
     public SubmitTaskStateChangeResult submitTaskStateChange(
@@ -1963,6 +1988,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         have enough information to proceed with an update. This could be
      *         because the agent running on the container instance is an older
      *         or custom version that does not use our version information.
+     * @sample AmazonECS.UpdateContainerAgent
      */
     @Override
     public UpdateContainerAgentResult updateContainerAgent(
@@ -2104,6 +2130,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *         The specified service is not active. You cannot update a service
      *         that is not active. If you have previously deleted a service, you
      *         can re-create it with <a>CreateService</a>.
+     * @sample AmazonECS.UpdateService
      */
     @Override
     public UpdateServiceResult updateService(

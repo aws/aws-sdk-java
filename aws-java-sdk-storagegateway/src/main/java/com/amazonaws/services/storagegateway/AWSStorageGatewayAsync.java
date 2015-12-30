@@ -87,6 +87,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>ActivateGatewayInput$MediumChangerType</a></li>
      * @return A Java Future containing the result of the ActivateGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ActivateGateway
      */
     java.util.concurrent.Future<ActivateGatewayResult> activateGatewayAsync(
             ActivateGatewayRequest activateGatewayRequest);
@@ -123,6 +124,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ActivateGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ActivateGateway
      */
     java.util.concurrent.Future<ActivateGatewayResult> activateGatewayAsync(
             ActivateGatewayRequest activateGatewayRequest,
@@ -145,6 +147,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param addCacheRequest
      * @return A Java Future containing the result of the AddCache operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.AddCache
      */
     java.util.concurrent.Future<AddCacheResult> addCacheAsync(
             AddCacheRequest addCacheRequest);
@@ -171,6 +174,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddCache operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AddCache
      */
     java.util.concurrent.Future<AddCacheResult> addCacheAsync(
             AddCacheRequest addCacheRequest,
@@ -214,6 +218,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        AddTagsToResourceInput
      * @return A Java Future containing the result of the AddTagsToResource
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AddTagsToResource
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
             AddTagsToResourceRequest addTagsToResourceRequest);
@@ -261,6 +266,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTagsToResource
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AddTagsToResource
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
             AddTagsToResourceRequest addTagsToResourceRequest,
@@ -281,6 +287,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param addUploadBufferRequest
      * @return A Java Future containing the result of the AddUploadBuffer
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AddUploadBuffer
      */
     java.util.concurrent.Future<AddUploadBufferResult> addUploadBufferAsync(
             AddUploadBufferRequest addUploadBufferRequest);
@@ -305,6 +312,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddUploadBuffer
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AddUploadBuffer
      */
     java.util.concurrent.Future<AddUploadBufferResult> addUploadBufferAsync(
             AddUploadBufferRequest addUploadBufferRequest,
@@ -336,6 +344,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>AddWorkingStorageInput$DiskIds</a></li>
      * @return A Java Future containing the result of the AddWorkingStorage
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AddWorkingStorage
      */
     java.util.concurrent.Future<AddWorkingStorageResult> addWorkingStorageAsync(
             AddWorkingStorageRequest addWorkingStorageRequest);
@@ -371,6 +380,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddWorkingStorage
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AddWorkingStorage
      */
     java.util.concurrent.Future<AddWorkingStorageResult> addWorkingStorageAsync(
             AddWorkingStorageRequest addWorkingStorageRequest,
@@ -386,6 +396,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        CancelArchivalInput
      * @return A Java Future containing the result of the CancelArchival
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CancelArchival
      */
     java.util.concurrent.Future<CancelArchivalResult> cancelArchivalAsync(
             CancelArchivalRequest cancelArchivalRequest);
@@ -405,6 +416,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelArchival
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CancelArchival
      */
     java.util.concurrent.Future<CancelArchivalResult> cancelArchivalAsync(
             CancelArchivalRequest cancelArchivalRequest,
@@ -421,6 +433,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        CancelRetrievalInput
      * @return A Java Future containing the result of the CancelRetrieval
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CancelRetrieval
      */
     java.util.concurrent.Future<CancelRetrievalResult> cancelRetrievalAsync(
             CancelRetrievalRequest cancelRetrievalRequest);
@@ -441,6 +454,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelRetrieval
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CancelRetrieval
      */
     java.util.concurrent.Future<CancelRetrievalResult> cancelRetrievalAsync(
             CancelRetrievalRequest cancelRetrievalRequest,
@@ -467,6 +481,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param createCachediSCSIVolumeRequest
      * @return A Java Future containing the result of the
      *         CreateCachediSCSIVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateCachediSCSIVolume
      */
     java.util.concurrent.Future<CreateCachediSCSIVolumeResult> createCachediSCSIVolumeAsync(
             CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest);
@@ -497,6 +512,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateCachediSCSIVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateCachediSCSIVolume
      */
     java.util.concurrent.Future<CreateCachediSCSIVolumeResult> createCachediSCSIVolumeAsync(
             CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest,
@@ -537,6 +553,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>CreateSnapshotInput$VolumeARN</a></li>
      * @return A Java Future containing the result of the CreateSnapshot
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateSnapshot
      */
     java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(
             CreateSnapshotRequest createSnapshotRequest);
@@ -581,6 +598,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSnapshot
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateSnapshot
      */
     java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(
             CreateSnapshotRequest createSnapshotRequest,
@@ -619,6 +637,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @return A Java Future containing the result of the
      *         CreateSnapshotFromVolumeRecoveryPoint operation returned by the
      *         service.
+     * @sample AWSStorageGatewayAsync.CreateSnapshotFromVolumeRecoveryPoint
      */
     java.util.concurrent.Future<CreateSnapshotFromVolumeRecoveryPointResult> createSnapshotFromVolumeRecoveryPointAsync(
             CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest);
@@ -661,6 +680,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @return A Java Future containing the result of the
      *         CreateSnapshotFromVolumeRecoveryPoint operation returned by the
      *         service.
+     * @sample 
+     *         AWSStorageGatewayAsyncHandler.CreateSnapshotFromVolumeRecoveryPoint
      */
     java.util.concurrent.Future<CreateSnapshotFromVolumeRecoveryPointResult> createSnapshotFromVolumeRecoveryPointAsync(
             CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest,
@@ -695,6 +716,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>CreateStorediSCSIVolumeInput$TargetName</a></li>
      * @return A Java Future containing the result of the
      *         CreateStorediSCSIVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateStorediSCSIVolume
      */
     java.util.concurrent.Future<CreateStorediSCSIVolumeResult> createStorediSCSIVolumeAsync(
             CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest);
@@ -733,6 +755,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateStorediSCSIVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateStorediSCSIVolume
      */
     java.util.concurrent.Future<CreateStorediSCSIVolumeResult> createStorediSCSIVolumeAsync(
             CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest,
@@ -751,6 +774,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        CreateTapesInput
      * @return A Java Future containing the result of the CreateTapes operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateTapes
      */
     java.util.concurrent.Future<CreateTapesResult> createTapesAsync(
             CreateTapesRequest createTapesRequest);
@@ -773,6 +797,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTapes operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateTapes
      */
     java.util.concurrent.Future<CreateTapesResult> createTapesAsync(
             CreateTapesRequest createTapesRequest,
@@ -790,6 +815,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param deleteBandwidthRateLimitRequest
      * @return A Java Future containing the result of the
      *         DeleteBandwidthRateLimit operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteBandwidthRateLimit
      */
     java.util.concurrent.Future<DeleteBandwidthRateLimitResult> deleteBandwidthRateLimitAsync(
             DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest);
@@ -811,6 +837,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DeleteBandwidthRateLimit operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteBandwidthRateLimit
      */
     java.util.concurrent.Future<DeleteBandwidthRateLimitResult> deleteBandwidthRateLimitAsync(
             DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest,
@@ -829,6 +856,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>DeleteChapCredentialsInput$TargetARN</a></li>
      * @return A Java Future containing the result of the DeleteChapCredentials
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteChapCredentials
      */
     java.util.concurrent.Future<DeleteChapCredentialsResult> deleteChapCredentialsAsync(
             DeleteChapCredentialsRequest deleteChapCredentialsRequest);
@@ -851,6 +879,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteChapCredentials
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteChapCredentials
      */
     java.util.concurrent.Future<DeleteChapCredentialsResult> deleteChapCredentialsAsync(
             DeleteChapCredentialsRequest deleteChapCredentialsRequest,
@@ -886,6 +915,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the id of the gateway to delete.
      * @return A Java Future containing the result of the DeleteGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteGateway
      */
     java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(
             DeleteGatewayRequest deleteGatewayRequest);
@@ -925,6 +955,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteGateway
      */
     java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(
             DeleteGatewayRequest deleteGatewayRequest,
@@ -953,6 +984,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param deleteSnapshotScheduleRequest
      * @return A Java Future containing the result of the DeleteSnapshotSchedule
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteSnapshotSchedule
      */
     java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(
             DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest);
@@ -985,6 +1017,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSnapshotSchedule
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteSnapshotSchedule
      */
     java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(
             DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest,
@@ -999,6 +1032,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DeleteTapeInput
      * @return A Java Future containing the result of the DeleteTape operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteTape
      */
     java.util.concurrent.Future<DeleteTapeResult> deleteTapeAsync(
             DeleteTapeRequest deleteTapeRequest);
@@ -1017,6 +1051,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTape operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteTape
      */
     java.util.concurrent.Future<DeleteTapeResult> deleteTapeAsync(
             DeleteTapeRequest deleteTapeRequest,
@@ -1031,6 +1066,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DeleteTapeArchiveInput
      * @return A Java Future containing the result of the DeleteTapeArchive
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteTapeArchive
      */
     java.util.concurrent.Future<DeleteTapeArchiveResult> deleteTapeArchiveAsync(
             DeleteTapeArchiveRequest deleteTapeArchiveRequest);
@@ -1049,6 +1085,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTapeArchive
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteTapeArchive
      */
     java.util.concurrent.Future<DeleteTapeArchiveResult> deleteTapeArchiveAsync(
             DeleteTapeArchiveRequest deleteTapeArchiveRequest,
@@ -1082,6 +1119,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        delete.
      * @return A Java Future containing the result of the DeleteVolume operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteVolume
      */
     java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest deleteVolumeRequest);
@@ -1119,6 +1157,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteVolume operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteVolume
      */
     java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest deleteVolumeRequest,
@@ -1142,6 +1181,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway.
      * @return A Java Future containing the result of the
      *         DescribeBandwidthRateLimit operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeBandwidthRateLimit
      */
     java.util.concurrent.Future<DescribeBandwidthRateLimitResult> describeBandwidthRateLimitAsync(
             DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest);
@@ -1169,6 +1209,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeBandwidthRateLimit operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeBandwidthRateLimit
      */
     java.util.concurrent.Future<DescribeBandwidthRateLimitResult> describeBandwidthRateLimitAsync(
             DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest,
@@ -1187,6 +1228,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param describeCacheRequest
      * @return A Java Future containing the result of the DescribeCache
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeCache
      */
     java.util.concurrent.Future<DescribeCacheResult> describeCacheAsync(
             DescribeCacheRequest describeCacheRequest);
@@ -1209,6 +1251,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeCache
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeCache
      */
     java.util.concurrent.Future<DescribeCacheResult> describeCacheAsync(
             DescribeCacheRequest describeCacheRequest,
@@ -1229,6 +1272,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param describeCachediSCSIVolumesRequest
      * @return A Java Future containing the result of the
      *         DescribeCachediSCSIVolumes operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeCachediSCSIVolumes
      */
     java.util.concurrent.Future<DescribeCachediSCSIVolumesResult> describeCachediSCSIVolumesAsync(
             DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest);
@@ -1253,6 +1297,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeCachediSCSIVolumes operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeCachediSCSIVolumes
      */
     java.util.concurrent.Future<DescribeCachediSCSIVolumesResult> describeCachediSCSIVolumesAsync(
             DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest,
@@ -1270,6 +1315,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        iSCSI volume target.
      * @return A Java Future containing the result of the
      *         DescribeChapCredentials operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeChapCredentials
      */
     java.util.concurrent.Future<DescribeChapCredentialsResult> describeChapCredentialsAsync(
             DescribeChapCredentialsRequest describeChapCredentialsRequest);
@@ -1291,6 +1337,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeChapCredentials operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeChapCredentials
      */
     java.util.concurrent.Future<DescribeChapCredentialsResult> describeChapCredentialsAsync(
             DescribeChapCredentialsRequest describeChapCredentialsRequest,
@@ -1308,6 +1355,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the id of the gateway.
      * @return A Java Future containing the result of the
      *         DescribeGatewayInformation operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeGatewayInformation
      */
     java.util.concurrent.Future<DescribeGatewayInformationResult> describeGatewayInformationAsync(
             DescribeGatewayInformationRequest describeGatewayInformationRequest);
@@ -1329,6 +1377,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeGatewayInformation operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeGatewayInformation
      */
     java.util.concurrent.Future<DescribeGatewayInformationResult> describeGatewayInformationAsync(
             DescribeGatewayInformationRequest describeGatewayInformationRequest,
@@ -1345,6 +1394,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway.
      * @return A Java Future containing the result of the
      *         DescribeMaintenanceStartTime operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeMaintenanceStartTime
      */
     java.util.concurrent.Future<DescribeMaintenanceStartTimeResult> describeMaintenanceStartTimeAsync(
             DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest);
@@ -1365,6 +1415,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeMaintenanceStartTime operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeMaintenanceStartTime
      */
     java.util.concurrent.Future<DescribeMaintenanceStartTimeResult> describeMaintenanceStartTimeAsync(
             DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest,
@@ -1382,6 +1433,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume.
      * @return A Java Future containing the result of the
      *         DescribeSnapshotSchedule operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeSnapshotSchedule
      */
     java.util.concurrent.Future<DescribeSnapshotScheduleResult> describeSnapshotScheduleAsync(
             DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest);
@@ -1403,6 +1455,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeSnapshotSchedule operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeSnapshotSchedule
      */
     java.util.concurrent.Future<DescribeSnapshotScheduleResult> describeSnapshotScheduleAsync(
             DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest,
@@ -1421,6 +1474,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
      * @return A Java Future containing the result of the
      *         DescribeStorediSCSIVolumes operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeStorediSCSIVolumes
      */
     java.util.concurrent.Future<DescribeStorediSCSIVolumesResult> describeStorediSCSIVolumesAsync(
             DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest);
@@ -1443,6 +1497,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeStorediSCSIVolumes operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeStorediSCSIVolumes
      */
     java.util.concurrent.Future<DescribeStorediSCSIVolumesResult> describeStorediSCSIVolumesAsync(
             DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest,
@@ -1463,6 +1518,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DescribeTapeArchivesInput
      * @return A Java Future containing the result of the DescribeTapeArchives
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeTapeArchives
      */
     java.util.concurrent.Future<DescribeTapeArchivesResult> describeTapeArchivesAsync(
             DescribeTapeArchivesRequest describeTapeArchivesRequest);
@@ -1487,6 +1543,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTapeArchives
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeTapeArchives
      */
     java.util.concurrent.Future<DescribeTapeArchivesResult> describeTapeArchivesAsync(
             DescribeTapeArchivesRequest describeTapeArchivesRequest,
@@ -1525,6 +1582,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DescribeTapeRecoveryPointsInput
      * @return A Java Future containing the result of the
      *         DescribeTapeRecoveryPoints operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeTapeRecoveryPoints
      */
     java.util.concurrent.Future<DescribeTapeRecoveryPointsResult> describeTapeRecoveryPointsAsync(
             DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest);
@@ -1550,6 +1608,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeTapeRecoveryPoints operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeTapeRecoveryPoints
      */
     java.util.concurrent.Future<DescribeTapeRecoveryPointsResult> describeTapeRecoveryPointsAsync(
             DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest,
@@ -1566,6 +1625,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DescribeTapesInput
      * @return A Java Future containing the result of the DescribeTapes
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeTapes
      */
     java.util.concurrent.Future<DescribeTapesResult> describeTapesAsync(
             DescribeTapesRequest describeTapesRequest);
@@ -1586,6 +1646,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTapes
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeTapes
      */
     java.util.concurrent.Future<DescribeTapesResult> describeTapesAsync(
             DescribeTapesRequest describeTapesRequest,
@@ -1606,6 +1667,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param describeUploadBufferRequest
      * @return A Java Future containing the result of the DescribeUploadBuffer
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeUploadBuffer
      */
     java.util.concurrent.Future<DescribeUploadBufferResult> describeUploadBufferAsync(
             DescribeUploadBufferRequest describeUploadBufferRequest);
@@ -1630,6 +1692,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeUploadBuffer
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeUploadBuffer
      */
     java.util.concurrent.Future<DescribeUploadBufferResult> describeUploadBufferAsync(
             DescribeUploadBufferRequest describeUploadBufferRequest,
@@ -1649,6 +1712,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DescribeVTLDevicesInput
      * @return A Java Future containing the result of the DescribeVTLDevices
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeVTLDevices
      */
     java.util.concurrent.Future<DescribeVTLDevicesResult> describeVTLDevicesAsync(
             DescribeVTLDevicesRequest describeVTLDevicesRequest);
@@ -1672,6 +1736,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVTLDevices
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeVTLDevices
      */
     java.util.concurrent.Future<DescribeVTLDevicesResult> describeVTLDevicesAsync(
             DescribeVTLDevicesRequest describeVTLDevicesRequest,
@@ -1700,6 +1765,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway.
      * @return A Java Future containing the result of the DescribeWorkingStorage
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeWorkingStorage
      */
     java.util.concurrent.Future<DescribeWorkingStorageResult> describeWorkingStorageAsync(
             DescribeWorkingStorageRequest describeWorkingStorageRequest);
@@ -1732,6 +1798,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeWorkingStorage
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeWorkingStorage
      */
     java.util.concurrent.Future<DescribeWorkingStorageResult> describeWorkingStorageAsync(
             DescribeWorkingStorageRequest describeWorkingStorageRequest,
@@ -1753,6 +1820,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        DisableGatewayInput
      * @return A Java Future containing the result of the DisableGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DisableGateway
      */
     java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(
             DisableGatewayRequest disableGatewayRequest);
@@ -1778,6 +1846,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DisableGateway
      */
     java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(
             DisableGatewayRequest disableGatewayRequest,
@@ -1808,6 +1877,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>ListGatewaysInput$Marker</a></li>
      * @return A Java Future containing the result of the ListGateways operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.ListGateways
      */
     java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(
             ListGatewaysRequest listGatewaysRequest);
@@ -1842,6 +1912,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGateways operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListGateways
      */
     java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(
             ListGatewaysRequest listGatewaysRequest,
@@ -1884,6 +1955,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway.
      * @return A Java Future containing the result of the ListLocalDisks
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListLocalDisks
      */
     java.util.concurrent.Future<ListLocalDisksResult> listLocalDisksAsync(
             ListLocalDisksRequest listLocalDisksRequest);
@@ -1913,6 +1985,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListLocalDisks
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListLocalDisks
      */
     java.util.concurrent.Future<ListLocalDisksResult> listLocalDisksAsync(
             ListLocalDisksRequest listLocalDisksRequest,
@@ -1928,6 +2001,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        ListTagsForResourceInput
      * @return A Java Future containing the result of the ListTagsForResource
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListTagsForResource
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest listTagsForResourceRequest);
@@ -1947,6 +2021,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListTagsForResource
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest listTagsForResourceRequest,
@@ -1980,6 +2055,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        ListVolumeInitiatorsInput
      * @return A Java Future containing the result of the ListVolumeInitiators
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListVolumeInitiators
      */
     java.util.concurrent.Future<ListVolumeInitiatorsResult> listVolumeInitiatorsAsync(
             ListVolumeInitiatorsRequest listVolumeInitiatorsRequest);
@@ -2000,6 +2076,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListVolumeInitiators
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListVolumeInitiators
      */
     java.util.concurrent.Future<ListVolumeInitiatorsResult> listVolumeInitiatorsAsync(
             ListVolumeInitiatorsRequest listVolumeInitiatorsRequest,
@@ -2021,6 +2098,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param listVolumeRecoveryPointsRequest
      * @return A Java Future containing the result of the
      *         ListVolumeRecoveryPoints operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListVolumeRecoveryPoints
      */
     java.util.concurrent.Future<ListVolumeRecoveryPointsResult> listVolumeRecoveryPointsAsync(
             ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest);
@@ -2046,6 +2124,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListVolumeRecoveryPoints operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListVolumeRecoveryPoints
      */
     java.util.concurrent.Future<ListVolumeRecoveryPointsResult> listVolumeRecoveryPointsAsync(
             ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest,
@@ -2075,6 +2154,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>ListVolumesInput$Marker</a></li>
      * @return A Java Future containing the result of the ListVolumes operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.ListVolumes
      */
     java.util.concurrent.Future<ListVolumesResult> listVolumesAsync(
             ListVolumesRequest listVolumesRequest);
@@ -2108,6 +2188,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListVolumes operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListVolumes
      */
     java.util.concurrent.Future<ListVolumesResult> listVolumesAsync(
             ListVolumesRequest listVolumesRequest,
@@ -2122,6 +2203,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        RemoveTagsFromResourceInput
      * @return A Java Future containing the result of the RemoveTagsFromResource
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.RemoveTagsFromResource
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
             RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
@@ -2140,6 +2222,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTagsFromResource
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.RemoveTagsFromResource
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
             RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
@@ -2185,6 +2268,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param resetCacheRequest
      * @return A Java Future containing the result of the ResetCache operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.ResetCache
      */
     java.util.concurrent.Future<ResetCacheResult> resetCacheAsync(
             ResetCacheRequest resetCacheRequest);
@@ -2217,6 +2301,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResetCache operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ResetCache
      */
     java.util.concurrent.Future<ResetCacheResult> resetCacheAsync(
             ResetCacheRequest resetCacheRequest,
@@ -2239,6 +2324,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        RetrieveTapeArchiveInput
      * @return A Java Future containing the result of the RetrieveTapeArchive
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.RetrieveTapeArchive
      */
     java.util.concurrent.Future<RetrieveTapeArchiveResult> retrieveTapeArchiveAsync(
             RetrieveTapeArchiveRequest retrieveTapeArchiveRequest);
@@ -2265,6 +2351,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RetrieveTapeArchive
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.RetrieveTapeArchive
      */
     java.util.concurrent.Future<RetrieveTapeArchiveResult> retrieveTapeArchiveAsync(
             RetrieveTapeArchiveRequest retrieveTapeArchiveRequest,
@@ -2287,6 +2374,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        RetrieveTapeRecoveryPointInput
      * @return A Java Future containing the result of the
      *         RetrieveTapeRecoveryPoint operation returned by the service.
+     * @sample AWSStorageGatewayAsync.RetrieveTapeRecoveryPoint
      */
     java.util.concurrent.Future<RetrieveTapeRecoveryPointResult> retrieveTapeRecoveryPointAsync(
             RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest);
@@ -2313,6 +2401,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         RetrieveTapeRecoveryPoint operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.RetrieveTapeRecoveryPoint
      */
     java.util.concurrent.Future<RetrieveTapeRecoveryPointResult> retrieveTapeRecoveryPointAsync(
             RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest,
@@ -2353,6 +2442,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway to shut down.
      * @return A Java Future containing the result of the ShutdownGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ShutdownGateway
      */
     java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(
             ShutdownGatewayRequest shutdownGatewayRequest);
@@ -2397,6 +2487,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ShutdownGateway
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ShutdownGateway
      */
     java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(
             ShutdownGatewayRequest shutdownGatewayRequest,
@@ -2423,6 +2514,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway to start.
      * @return A Java Future containing the result of the StartGateway operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsync.StartGateway
      */
     java.util.concurrent.Future<StartGatewayResult> startGatewayAsync(
             StartGatewayRequest startGatewayRequest);
@@ -2453,6 +2545,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartGateway operation
      *         returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.StartGateway
      */
     java.util.concurrent.Future<StartGatewayResult> startGatewayAsync(
             StartGatewayRequest startGatewayRequest,
@@ -2486,6 +2579,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        </a></li>
      * @return A Java Future containing the result of the
      *         UpdateBandwidthRateLimit operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateBandwidthRateLimit
      */
     java.util.concurrent.Future<UpdateBandwidthRateLimitResult> updateBandwidthRateLimitAsync(
             UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest);
@@ -2523,6 +2617,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateBandwidthRateLimit operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateBandwidthRateLimit
      */
     java.util.concurrent.Future<UpdateBandwidthRateLimitResult> updateBandwidthRateLimitAsync(
             UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest,
@@ -2552,6 +2647,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>UpdateChapCredentialsInput$TargetARN</a></li>
      * @return A Java Future containing the result of the UpdateChapCredentials
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateChapCredentials
      */
     java.util.concurrent.Future<UpdateChapCredentialsResult> updateChapCredentialsAsync(
             UpdateChapCredentialsRequest updateChapCredentialsRequest);
@@ -2585,6 +2681,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateChapCredentials
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateChapCredentials
      */
     java.util.concurrent.Future<UpdateChapCredentialsResult> updateChapCredentialsAsync(
             UpdateChapCredentialsRequest updateChapCredentialsRequest,
@@ -2600,6 +2697,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param updateGatewayInformationRequest
      * @return A Java Future containing the result of the
      *         UpdateGatewayInformation operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateGatewayInformation
      */
     java.util.concurrent.Future<UpdateGatewayInformationResult> updateGatewayInformationAsync(
             UpdateGatewayInformationRequest updateGatewayInformationRequest);
@@ -2619,6 +2717,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateGatewayInformation operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateGatewayInformation
      */
     java.util.concurrent.Future<UpdateGatewayInformationResult> updateGatewayInformationAsync(
             UpdateGatewayInformationRequest updateGatewayInformationRequest,
@@ -2646,6 +2745,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing the of the gateway to update.
      * @return A Java Future containing the result of the
      *         UpdateGatewaySoftwareNow operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateGatewaySoftwareNow
      */
     java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(
             UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest);
@@ -2677,6 +2777,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateGatewaySoftwareNow operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateGatewaySoftwareNow
      */
     java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(
             UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest,
@@ -2697,6 +2798,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a></li>
      * @return A Java Future containing the result of the
      *         UpdateMaintenanceStartTime operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateMaintenanceStartTime
      */
     java.util.concurrent.Future<UpdateMaintenanceStartTimeResult> updateMaintenanceStartTimeAsync(
             UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest);
@@ -2721,6 +2823,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateMaintenanceStartTime operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateMaintenanceStartTime
      */
     java.util.concurrent.Future<UpdateMaintenanceStartTimeResult> updateMaintenanceStartTimeAsync(
             UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest,
@@ -2752,6 +2855,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <li><a>UpdateSnapshotScheduleInput$VolumeARN</a></li>
      * @return A Java Future containing the result of the UpdateSnapshotSchedule
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateSnapshotSchedule
      */
     java.util.concurrent.Future<UpdateSnapshotScheduleResult> updateSnapshotScheduleAsync(
             UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest);
@@ -2787,6 +2891,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSnapshotSchedule
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateSnapshotSchedule
      */
     java.util.concurrent.Future<UpdateSnapshotScheduleResult> updateSnapshotScheduleAsync(
             UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest,
@@ -2804,6 +2909,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        UpdateVTLDeviceTypeInput
      * @return A Java Future containing the result of the UpdateVTLDeviceType
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateVTLDeviceType
      */
     java.util.concurrent.Future<UpdateVTLDeviceTypeResult> updateVTLDeviceTypeAsync(
             UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest);
@@ -2825,6 +2931,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateVTLDeviceType
      *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateVTLDeviceType
      */
     java.util.concurrent.Future<UpdateVTLDeviceTypeResult> updateVTLDeviceTypeAsync(
             UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest,

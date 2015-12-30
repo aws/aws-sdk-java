@@ -309,6 +309,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ActivateGateway
      */
     @Override
     public ActivateGatewayResult activateGateway(
@@ -367,6 +368,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddCache
      */
     @Override
     public AddCacheResult addCache(AddCacheRequest addCacheRequest) {
@@ -446,6 +448,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddTagsToResource
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(
@@ -503,6 +506,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddUploadBuffer
      */
     @Override
     public AddUploadBufferResult addUploadBuffer(
@@ -571,6 +575,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddWorkingStorage
      */
     @Override
     public AddWorkingStorageResult addWorkingStorage(
@@ -623,6 +628,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CancelArchival
      */
     @Override
     public CancelArchivalResult cancelArchival(
@@ -675,6 +681,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CancelRetrieval
      */
     @Override
     public CancelRetrievalResult cancelRetrieval(
@@ -738,6 +745,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateCachediSCSIVolume
      */
     @Override
     public CreateCachediSCSIVolumeResult createCachediSCSIVolume(
@@ -815,6 +823,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateSnapshot
      */
     @Override
     public CreateSnapshotResult createSnapshot(
@@ -889,6 +898,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateSnapshotFromVolumeRecoveryPoint
      */
     @Override
     public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
@@ -961,6 +971,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateStorediSCSIVolume
      */
     @Override
     public CreateStorediSCSIVolumeResult createStorediSCSIVolume(
@@ -1016,6 +1027,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateTapes
      */
     @Override
     public CreateTapesResult createTapes(CreateTapesRequest createTapesRequest) {
@@ -1069,6 +1081,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteBandwidthRateLimit
      */
     @Override
     public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(
@@ -1125,6 +1138,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteChapCredentials
      */
     @Override
     public DeleteChapCredentialsResult deleteChapCredentials(
@@ -1197,6 +1211,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteGateway
      */
     @Override
     public DeleteGatewayResult deleteGateway(
@@ -1262,6 +1277,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteSnapshotSchedule
      */
     @Override
     public DeleteSnapshotScheduleResult deleteSnapshotSchedule(
@@ -1313,6 +1329,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteTape
      */
     @Override
     public DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest) {
@@ -1363,6 +1380,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteTapeArchive
      */
     @Override
     public DeleteTapeArchiveResult deleteTapeArchive(
@@ -1433,6 +1451,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteVolume
      */
     @Override
     public DeleteVolumeResult deleteVolume(
@@ -1493,6 +1512,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeBandwidthRateLimit
      */
     @Override
     public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(
@@ -1548,6 +1568,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeCache
      */
     @Override
     public DescribeCacheResult describeCache(
@@ -1605,6 +1626,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeCachediSCSIVolumes
      */
     @Override
     public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(
@@ -1660,6 +1682,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeChapCredentials
      */
     @Override
     public DescribeChapCredentialsResult describeChapCredentials(
@@ -1715,6 +1738,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeGatewayInformation
      */
     @Override
     public DescribeGatewayInformationResult describeGatewayInformation(
@@ -1769,6 +1793,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeMaintenanceStartTime
      */
     @Override
     public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(
@@ -1824,6 +1849,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeSnapshotSchedule
      */
     @Override
     public DescribeSnapshotScheduleResult describeSnapshotSchedule(
@@ -1880,6 +1906,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeStorediSCSIVolumes
      */
     @Override
     public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(
@@ -1938,6 +1965,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeTapeArchives
      */
     @Override
     public DescribeTapeArchivesResult describeTapeArchives(
@@ -2002,6 +2030,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeTapeRecoveryPoints
      */
     @Override
     public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(
@@ -2055,6 +2084,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeTapes
      */
     @Override
     public DescribeTapesResult describeTapes(
@@ -2112,6 +2142,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeUploadBuffer
      */
     @Override
     public DescribeUploadBufferResult describeUploadBuffer(
@@ -2169,6 +2200,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeVTLDevices
      */
     @Override
     public DescribeVTLDevicesResult describeVTLDevices(
@@ -2235,6 +2267,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeWorkingStorage
      */
     @Override
     public DescribeWorkingStorageResult describeWorkingStorage(
@@ -2293,6 +2326,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DisableGateway
      */
     @Override
     public DisableGatewayResult disableGateway(
@@ -2359,6 +2393,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListGateways
      */
     @Override
     public ListGatewaysResult listGateways(
@@ -2425,6 +2460,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListLocalDisks
      */
     @Override
     public ListLocalDisksResult listLocalDisks(
@@ -2477,6 +2513,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListTagsForResource
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(
@@ -2536,6 +2573,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListVolumeInitiators
      */
     @Override
     public ListVolumeInitiatorsResult listVolumeInitiators(
@@ -2595,6 +2633,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListVolumeRecoveryPoints
      */
     @Override
     public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(
@@ -2661,6 +2700,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListVolumes
      */
     @Override
     public ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest) {
@@ -2711,6 +2751,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.RemoveTagsFromResource
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(
@@ -2781,6 +2822,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ResetCache
      */
     @Override
     public ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest) {
@@ -2839,6 +2881,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.RetrieveTapeArchive
      */
     @Override
     public RetrieveTapeArchiveResult retrieveTapeArchive(
@@ -2899,6 +2942,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.RetrieveTapeRecoveryPoint
      */
     @Override
     public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(
@@ -2976,6 +3020,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ShutdownGateway
      */
     @Override
     public ShutdownGatewayResult shutdownGateway(
@@ -3038,6 +3083,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.StartGateway
      */
     @Override
     public StartGatewayResult startGateway(
@@ -3108,6 +3154,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateBandwidthRateLimit
      */
     @Override
     public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(
@@ -3175,6 +3222,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateChapCredentials
      */
     @Override
     public UpdateChapCredentialsResult updateChapCredentials(
@@ -3228,6 +3276,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateGatewayInformation
      */
     @Override
     public UpdateGatewayInformationResult updateGatewayInformation(
@@ -3293,6 +3342,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateGatewaySoftwareNow
      */
     @Override
     public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(
@@ -3351,6 +3401,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateMaintenanceStartTime
      */
     @Override
     public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(
@@ -3420,6 +3471,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateSnapshotSchedule
      */
     @Override
     public UpdateSnapshotScheduleResult updateSnapshotSchedule(
@@ -3475,6 +3527,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateVTLDeviceType
      */
     @Override
     public UpdateVTLDeviceTypeResult updateVTLDeviceType(

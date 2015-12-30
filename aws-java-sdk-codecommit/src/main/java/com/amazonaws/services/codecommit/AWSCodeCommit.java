@@ -140,6 +140,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchGetRepositories
      */
     BatchGetRepositoriesResult batchGetRepositories(
             BatchGetRepositoriesRequest batchGetRepositoriesRequest);
@@ -187,6 +188,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.CreateBranch
      */
     void createBranch(CreateBranchRequest createBranchRequest);
 
@@ -222,6 +224,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.CreateRepository
      */
     CreateRepositoryResult createRepository(
             CreateRepositoryRequest createRepositoryRequest);
@@ -256,6 +259,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.DeleteRepository
      */
     DeleteRepositoryResult deleteRepository(
             DeleteRepositoryRequest deleteRepositoryRequest);
@@ -295,6 +299,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetBranch
      */
     GetBranchResult getBranch(GetBranchRequest getBranchRequest);
 
@@ -336,6 +341,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetRepository
      */
     GetRepositoryResult getRepository(GetRepositoryRequest getRepositoryRequest);
 
@@ -369,6 +375,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
+     * @sample AWSCodeCommit.ListBranches
      */
     ListBranchesResult listBranches(ListBranchesRequest listBranchesRequest);
 
@@ -386,6 +393,7 @@ public interface AWSCodeCommit {
      *         The specified sort order is not valid.
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
+     * @sample AWSCodeCommit.ListRepositories
      */
     ListRepositoriesResult listRepositories(
             ListRepositoriesRequest listRepositoriesRequest);
@@ -426,6 +434,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdateDefaultBranch
      */
     void updateDefaultBranch(
             UpdateDefaultBranchRequest updateDefaultBranchRequest);
@@ -470,6 +479,7 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdateRepositoryDescription
      */
     void updateRepositoryDescription(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest);
@@ -494,6 +504,7 @@ public interface AWSCodeCommit {
      *         is not valid. Other exceptions occur when a required repository
      *         parameter is missing, or when a specified repository does not
      *         exist.
+     * @sample AWSCodeCommit.UpdateRepositoryName
      */
     void updateRepositoryName(
             UpdateRepositoryNameRequest updateRepositoryNameRequest);

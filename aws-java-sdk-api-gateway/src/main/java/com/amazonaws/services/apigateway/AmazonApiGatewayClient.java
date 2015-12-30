@@ -277,6 +277,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws TooManyRequestsException
      * @throws LimitExceededException
      * @throws BadRequestException
+     * @sample AmazonApiGateway.CreateApiKey
      */
     @Override
     public CreateApiKeyResult createApiKey(
@@ -327,6 +328,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws BadRequestException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateBasePathMapping
      */
     @Override
     public CreateBasePathMappingResult createBasePathMapping(
@@ -380,6 +382,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.CreateDeployment
      */
     @Override
     public CreateDeploymentResult createDeployment(
@@ -427,6 +430,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateDomainName
      */
     @Override
     public CreateDomainNameResult createDomainName(
@@ -478,6 +482,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws LimitExceededException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateModel
      */
     @Override
     public CreateModelResult createModel(CreateModelRequest createModelRequest) {
@@ -526,6 +531,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateResource
      */
     @Override
     public CreateResourceResult createResource(
@@ -573,6 +579,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateRestApi
      */
     @Override
     public CreateRestApiResult createRestApi(
@@ -622,6 +629,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws LimitExceededException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateStage
      */
     @Override
     public CreateStageResult createStage(CreateStageRequest createStageRequest) {
@@ -666,6 +674,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteApiKey
      */
     @Override
     public void deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest) {
@@ -708,6 +717,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteBasePathMapping
      */
     @Override
     public void deleteBasePathMapping(
@@ -748,6 +758,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws NotFoundException
+     * @sample AmazonApiGateway.DeleteClientCertificate
      */
     @Override
     public void deleteClientCertificate(
@@ -795,6 +806,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteDeployment
      */
     @Override
     public void deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest) {
@@ -838,6 +850,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteDomainName
      */
     @Override
     public void deleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest) {
@@ -881,6 +894,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteIntegration
      */
     @Override
     public void deleteIntegration(
@@ -925,6 +939,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     @Override
     public void deleteIntegrationResponse(
@@ -969,6 +984,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteMethod
      */
     @Override
     public void deleteMethod(DeleteMethodRequest deleteMethodRequest) {
@@ -1011,6 +1027,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteMethodResponse
      */
     @Override
     public void deleteMethodResponse(
@@ -1058,6 +1075,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteModel
      */
     @Override
     public void deleteModel(DeleteModelRequest deleteModelRequest) {
@@ -1101,6 +1119,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteResource
      */
     @Override
     public void deleteResource(DeleteResourceRequest deleteResourceRequest) {
@@ -1143,6 +1162,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteRestApi
      */
     @Override
     public void deleteRestApi(DeleteRestApiRequest deleteRestApiRequest) {
@@ -1185,6 +1205,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteStage
      */
     @Override
     public void deleteStage(DeleteStageRequest deleteStageRequest) {
@@ -1228,6 +1249,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.FlushStageCache
      */
     @Override
     public void flushStageCache(FlushStageCacheRequest flushStageCacheRequest) {
@@ -1267,6 +1289,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws LimitExceededException
+     * @sample AmazonApiGateway.GenerateClientCertificate
      */
     @Override
     public GenerateClientCertificateResult generateClientCertificate(
@@ -1315,6 +1338,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAccount
      */
     @Override
     public GetAccountResult getAccount(GetAccountRequest getAccountRequest) {
@@ -1361,6 +1385,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetApiKey
      */
     @Override
     public GetApiKeyResult getApiKey(GetApiKeyRequest getApiKeyRequest) {
@@ -1406,6 +1431,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the GetApiKeys operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetApiKeys
      */
     @Override
     public GetApiKeysResult getApiKeys(GetApiKeysRequest getApiKeysRequest) {
@@ -1452,6 +1478,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetBasePathMapping
      */
     @Override
     public GetBasePathMappingResult getBasePathMapping(
@@ -1501,6 +1528,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetBasePathMappings
      */
     @Override
     public GetBasePathMappingsResult getBasePathMappings(
@@ -1544,6 +1572,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetClientCertificate
      */
     @Override
     public GetClientCertificateResult getClientCertificate(
@@ -1586,6 +1615,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetClientCertificates
      */
     @Override
     public GetClientCertificatesResult getClientCertificates(
@@ -1635,6 +1665,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.GetDeployment
      */
     @Override
     public GetDeploymentResult getDeployment(
@@ -1682,6 +1713,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.GetDeployments
      */
     @Override
     public GetDeploymentsResult getDeployments(
@@ -1730,6 +1762,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws ServiceUnavailableException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDomainName
      */
     @Override
     public GetDomainNameResult getDomainName(
@@ -1775,6 +1808,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the GetDomainNames operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDomainNames
      */
     @Override
     public GetDomainNamesResult getDomainNames(
@@ -1821,6 +1855,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetIntegration
      */
     @Override
     public GetIntegrationResult getIntegration(
@@ -1868,6 +1903,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetIntegrationResponse
      */
     @Override
     public GetIntegrationResponseResult getIntegrationResponse(
@@ -1915,6 +1951,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetMethod
      */
     @Override
     public GetMethodResult getMethod(GetMethodRequest getMethodRequest) {
@@ -1961,6 +1998,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetMethodResponse
      */
     @Override
     public GetMethodResponseResult getMethodResponse(
@@ -2009,6 +2047,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetModel
      */
     @Override
     public GetModelResult getModel(GetModelRequest getModelRequest) {
@@ -2057,6 +2096,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetModelTemplate
      */
     @Override
     public GetModelTemplateResult getModelTemplate(
@@ -2105,6 +2145,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetModels
      */
     @Override
     public GetModelsResult getModels(GetModelsRequest getModelsRequest) {
@@ -2150,6 +2191,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetResource
      */
     @Override
     public GetResourceResult getResource(GetResourceRequest getResourceRequest) {
@@ -2195,6 +2237,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetResources
      */
     @Override
     public GetResourcesResult getResources(
@@ -2242,6 +2285,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRestApi
      */
     @Override
     public GetRestApiResult getRestApi(GetRestApiRequest getRestApiRequest) {
@@ -2287,6 +2331,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the GetRestApis operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRestApis
      */
     @Override
     public GetRestApisResult getRestApis(GetRestApisRequest getRestApisRequest) {
@@ -2328,6 +2373,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetSdk
      */
     @Override
     public GetSdkResult getSdk(GetSdkRequest getSdkRequest) {
@@ -2374,6 +2420,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetStage
      */
     @Override
     public GetStageResult getStage(GetStageRequest getStageRequest) {
@@ -2420,6 +2467,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetStages
      */
     @Override
     public GetStagesResult getStages(GetStagesRequest getStagesRequest) {
@@ -2466,6 +2514,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws BadRequestException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutIntegration
      */
     @Override
     public PutIntegrationResult putIntegration(
@@ -2515,6 +2564,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutIntegrationResponse
      */
     @Override
     public PutIntegrationResponseResult putIntegrationResponse(
@@ -2565,6 +2615,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws LimitExceededException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutMethod
      */
     @Override
     public PutMethodResult putMethod(PutMethodRequest putMethodRequest) {
@@ -2615,6 +2666,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutMethodResponse
      */
     @Override
     public PutMethodResponseResult putMethodResponse(
@@ -2658,6 +2710,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.TestInvokeMethod
      */
     @Override
     public TestInvokeMethodResult testInvokeMethod(
@@ -2707,6 +2760,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws BadRequestException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateAccount
      */
     @Override
     public UpdateAccountResult updateAccount(
@@ -2754,6 +2808,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateApiKey
      */
     @Override
     public UpdateApiKeyResult updateApiKey(
@@ -2804,6 +2859,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateBasePathMapping
      */
     @Override
     public UpdateBasePathMappingResult updateBasePathMapping(
@@ -2848,6 +2904,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws NotFoundException
+     * @sample AmazonApiGateway.UpdateClientCertificate
      */
     @Override
     public UpdateClientCertificateResult updateClientCertificate(
@@ -2898,6 +2955,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.UpdateDeployment
      */
     @Override
     public UpdateDeploymentResult updateDeployment(
@@ -2947,6 +3005,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateDomainName
      */
     @Override
     public UpdateDomainNameResult updateDomainName(
@@ -2996,6 +3055,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateIntegration
      */
     @Override
     public UpdateIntegrationResult updateIntegration(
@@ -3045,6 +3105,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateIntegrationResponse
      */
     @Override
     public UpdateIntegrationResponseResult updateIntegrationResponse(
@@ -3093,6 +3154,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateMethod
      */
     @Override
     public UpdateMethodResult updateMethod(
@@ -3143,6 +3205,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateMethodResponse
      */
     @Override
     public UpdateMethodResponseResult updateMethodResponse(
@@ -3192,6 +3255,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateModel
      */
     @Override
     public UpdateModelResult updateModel(UpdateModelRequest updateModelRequest) {
@@ -3239,6 +3303,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateResource
      */
     @Override
     public UpdateResourceResult updateResource(
@@ -3288,6 +3353,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateRestApi
      */
     @Override
     public UpdateRestApiResult updateRestApi(
@@ -3337,6 +3403,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateStage
      */
     @Override
     public UpdateStageResult updateStage(UpdateStageRequest updateStageRequest) {

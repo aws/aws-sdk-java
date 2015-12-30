@@ -1,139 +1,129 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#getTrafficPolicy(GetTrafficPolicyRequest) GetTrafficPolicy operation}.
  * <p>
  * Gets information about a specific traffic policy version. To get the
- * information, send a <code>GET</code> request to the
- * <code>2013-04-01/trafficpolicy</code> resource.
+ * information, send a GET request to the 2013-04-01/trafficpolicy resource, and
+ * specify the ID and the version of the traffic policy.
  * </p>
- *
- * @see com.amazonaws.services.route53.AmazonRoute53#getTrafficPolicy(GetTrafficPolicyRequest)
  */
-public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The ID of the traffic policy that you want to get information about.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 36<br/>
+     * The ID of the traffic policy that you want to get information about.
+     * </p>
      */
     private String id;
-
     /**
-     * The version number of the traffic policy that you want to get
-     * information about.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
+     * The version number of the traffic policy that you want to get information
+     * about.
+     * </p>
      */
     private Integer version;
 
     /**
-     * The ID of the traffic policy that you want to get information about.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 36<br/>
-     *
-     * @return The ID of the traffic policy that you want to get information about.
-     */
-    public String getId() {
-        return id;
-    }
-    
-    /**
      * The ID of the traffic policy that you want to get information about.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 36<br/>
-     *
-     * @param id The ID of the traffic policy that you want to get information about.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the traffic policy that you want to get information
+     *        about.
      */
     public void setId(String id) {
         this.id = id;
     }
-    
+
     /**
+     * <p>
      * The ID of the traffic policy that you want to get information about.
+     * </p>
+     * 
+     * @return The ID of the traffic policy that you want to get information
+     *         about.
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 36<br/>
-     *
-     * @param id The ID of the traffic policy that you want to get information about.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the traffic policy that you want to get information about.
+     * </p>
+     * 
+     * @param id
+     *        The ID of the traffic policy that you want to get information
+     *        about.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetTrafficPolicyRequest withId(String id) {
-        this.id = id;
+        setId(id);
         return this;
     }
 
     /**
-     * The version number of the traffic policy that you want to get
-     * information about.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
-     *
-     * @return The version number of the traffic policy that you want to get
-     *         information about.
-     */
-    public Integer getVersion() {
-        return version;
-    }
-    
-    /**
-     * The version number of the traffic policy that you want to get
-     * information about.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
-     *
-     * @param version The version number of the traffic policy that you want to get
-     *         information about.
+     * The version number of the traffic policy that you want to get information
+     * about.
+     * </p>
+     * 
+     * @param version
+     *        The version number of the traffic policy that you want to get
+     *        information about.
      */
     public void setVersion(Integer version) {
         this.version = version;
     }
-    
+
     /**
-     * The version number of the traffic policy that you want to get
-     * information about.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 1000<br/>
-     *
-     * @param version The version number of the traffic policy that you want to get
+     * The version number of the traffic policy that you want to get information
+     * about.
+     * </p>
+     * 
+     * @return The version number of the traffic policy that you want to get
      *         information about.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public Integer getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The version number of the traffic policy that you want to get information
+     * about.
+     * </p>
+     * 
+     * @param version
+     *        The version number of the traffic policy that you want to get
+     *        information about.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetTrafficPolicyRequest withVersion(Integer version) {
-        this.version = version;
+        setVersion(version);
         return this;
     }
 
@@ -149,42 +139,51 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() );
+        if (getId() != null)
+            sb.append("Id: " + getId() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetTrafficPolicyRequest == false)
+            return false;
+        GetTrafficPolicyRequest other = (GetTrafficPolicyRequest) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null
+                && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
-        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetTrafficPolicyRequest == false) return false;
-        GetTrafficPolicyRequest other = (GetTrafficPolicyRequest)obj;
-        
-        if (other.getId() == null ^ this.getId() == null) return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
-        if (other.getVersion() == null ^ this.getVersion() == null) return false;
-        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetTrafficPolicyRequest clone() {
-        
-            return (GetTrafficPolicyRequest) super.clone();
+        return (GetTrafficPolicyRequest) super.clone();
     }
-
 }
-    

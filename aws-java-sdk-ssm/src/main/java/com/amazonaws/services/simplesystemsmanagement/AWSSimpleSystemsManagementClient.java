@@ -434,6 +434,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         Terminated.
      * @throws DuplicateInstanceIdException
      *         You cannot specify an instance ID in more than one association.
+     * @sample AWSSimpleSystemsManagement.CancelCommand
      */
     @Override
     public CancelCommandResult cancelCommand(
@@ -506,6 +507,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         You must specify values for all required parameters in the SSM
      *         document. You can only supply values to parameters defined in the
      *         SSM document.
+     * @sample AWSSimpleSystemsManagement.CreateAssociation
      */
     @Override
     public CreateAssociationResult createAssociation(
@@ -579,6 +581,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
      *         instance ID(s).
+     * @sample AWSSimpleSystemsManagement.CreateAssociationBatch
      */
     @Override
     public CreateAssociationBatchResult createAssociationBatch(
@@ -636,6 +639,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         The content for the SSM document is not valid.
      * @throws DocumentLimitExceededException
      *         You can have at most 100 active SSM documents.
+     * @sample AWSSimpleSystemsManagement.CreateDocument
      */
     @Override
     public CreateDocumentResult createDocument(
@@ -699,6 +703,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one
      *         update at a time.
+     * @sample AWSSimpleSystemsManagement.DeleteAssociation
      */
     @Override
     public DeleteAssociationResult deleteAssociation(
@@ -754,6 +759,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws AssociatedInstancesException
      *         You must disassociate an SSM document from all instances before
      *         you can delete it.
+     * @sample AWSSimpleSystemsManagement.DeleteDocument
      */
     @Override
     public DeleteDocumentResult deleteDocument(
@@ -807,6 +813,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         The instance is not in valid state. Valid states are: Running,
      *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
      *         Terminated.
+     * @sample AWSSimpleSystemsManagement.DescribeAssociation
      */
     @Override
     public DescribeAssociationResult describeAssociation(
@@ -854,6 +861,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @sample AWSSimpleSystemsManagement.DescribeDocument
      */
     @Override
     public DescribeDocumentResult describeDocument(
@@ -914,6 +922,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         The specified filter value is not valid.
      * @throws InvalidFilterKeyException
      *         The specified key is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstanceInformation
      */
     @Override
     public DescribeInstanceInformationResult describeInstanceInformation(
@@ -961,6 +970,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @sample AWSSimpleSystemsManagement.GetDocument
      */
     @Override
     public GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest) {
@@ -1006,6 +1016,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         An error occurred on the server side.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListAssociations
      */
     @Override
     public ListAssociationsResult listAssociations(
@@ -1062,6 +1073,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         The specified key is not valid.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListCommandInvocations
      */
     @Override
     public ListCommandInvocationsResult listCommandInvocations(
@@ -1114,6 +1126,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         The specified key is not valid.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListCommands
      */
     @Override
     public ListCommandsResult listCommands(
@@ -1162,6 +1175,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         The specified token is not valid.
      * @throws InvalidFilterKeyException
      *         The specified key is not valid.
+     * @sample AWSSimpleSystemsManagement.ListDocuments
      */
     @Override
     public ListDocumentsResult listDocuments(
@@ -1224,6 +1238,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
      *         instance ID(s).
+     * @sample AWSSimpleSystemsManagement.SendCommand
      */
     @Override
     public SendCommandResult sendCommand(SendCommandRequest sendCommandRequest) {
@@ -1282,6 +1297,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one
      *         update at a time.
+     * @sample AWSSimpleSystemsManagement.UpdateAssociationStatus
      */
     @Override
     public UpdateAssociationStatusResult updateAssociationStatus(

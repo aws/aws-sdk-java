@@ -111,6 +111,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.AttachInstances
      */
     void attachInstances(AttachInstancesRequest attachInstancesRequest);
 
@@ -136,6 +137,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.AttachLoadBalancers
      */
     AttachLoadBalancersResult attachLoadBalancers(
             AttachLoadBalancersRequest attachLoadBalancersRequest);
@@ -182,6 +184,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CompleteLifecycleAction
      */
     CompleteLifecycleActionResult completeLifecycleAction(
             CompleteLifecycleActionRequest completeLifecycleActionRequest);
@@ -212,6 +215,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CreateAutoScalingGroup
      */
     void createAutoScalingGroup(
             CreateAutoScalingGroupRequest createAutoScalingGroupRequest);
@@ -242,6 +246,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CreateLaunchConfiguration
      */
     void createLaunchConfiguration(
             CreateLaunchConfigurationRequest createLaunchConfigurationRequest);
@@ -282,6 +287,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CreateOrUpdateTags
      */
     void createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
 
@@ -320,6 +326,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteAutoScalingGroup
      */
     void deleteAutoScalingGroup(
             DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest);
@@ -341,6 +348,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteLaunchConfiguration
      */
     void deleteLaunchConfiguration(
             DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest);
@@ -361,6 +369,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteLifecycleHook
      */
     DeleteLifecycleHookResult deleteLifecycleHook(
             DeleteLifecycleHookRequest deleteLifecycleHookRequest);
@@ -374,6 +383,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteNotificationConfiguration
      */
     void deleteNotificationConfiguration(
             DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest);
@@ -391,6 +401,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeletePolicy
      */
     void deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
@@ -403,6 +414,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteScheduledAction
      */
     void deleteScheduledAction(
             DeleteScheduledActionRequest deleteScheduledActionRequest);
@@ -416,6 +428,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteTags
      */
     void deleteTags(DeleteTagsRequest deleteTagsRequest);
 
@@ -437,6 +450,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAccountLimits
      */
     DescribeAccountLimitsResult describeAccountLimits(
             DescribeAccountLimitsRequest describeAccountLimitsRequest);
@@ -460,6 +474,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAdjustmentTypes
      */
     DescribeAdjustmentTypesResult describeAdjustmentTypes(
             DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest);
@@ -486,6 +501,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAutoScalingGroups
      */
     DescribeAutoScalingGroupsResult describeAutoScalingGroups(
             DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest);
@@ -512,6 +528,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAutoScalingInstances
      */
     DescribeAutoScalingInstancesResult describeAutoScalingInstances(
             DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest);
@@ -535,6 +552,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAutoScalingNotificationTypes
      */
     DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
             DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest);
@@ -561,6 +579,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLaunchConfigurations
      */
     DescribeLaunchConfigurationsResult describeLaunchConfigurations(
             DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest);
@@ -584,6 +603,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLifecycleHookTypes
      */
     DescribeLifecycleHookTypesResult describeLifecycleHookTypes(
             DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest);
@@ -607,6 +627,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLifecycleHooks
      */
     DescribeLifecycleHooksResult describeLifecycleHooks(
             DescribeLifecycleHooksRequest describeLifecycleHooksRequest);
@@ -622,6 +643,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLoadBalancers
      */
     DescribeLoadBalancersResult describeLoadBalancers(
             DescribeLoadBalancersRequest describeLoadBalancersRequest);
@@ -642,6 +664,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeMetricCollectionTypes
      */
     DescribeMetricCollectionTypesResult describeMetricCollectionTypes(
             DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest);
@@ -668,6 +691,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeNotificationConfigurations
      */
     DescribeNotificationConfigurationsResult describeNotificationConfigurations(
             DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest);
@@ -692,6 +716,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribePolicies
      */
     DescribePoliciesResult describePolicies(
             DescribePoliciesRequest describePoliciesRequest);
@@ -719,6 +744,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeScalingActivities
      */
     DescribeScalingActivitiesResult describeScalingActivities(
             DescribeScalingActivitiesRequest describeScalingActivitiesRequest);
@@ -743,6 +769,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeScalingProcessTypes
      */
     DescribeScalingProcessTypesResult describeScalingProcessTypes(
             DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest);
@@ -770,6 +797,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeScheduledActions
      */
     DescribeScheduledActionsResult describeScheduledActions(
             DescribeScheduledActionsRequest describeScheduledActionsRequest);
@@ -805,6 +833,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeTags
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
@@ -826,6 +855,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeTerminationPolicyTypes
      */
     DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(
             DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest);
@@ -862,6 +892,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DetachInstances
      */
     DetachInstancesResult detachInstances(
             DetachInstancesRequest detachInstancesRequest);
@@ -883,6 +914,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DetachLoadBalancers
      */
     DetachLoadBalancersResult detachLoadBalancers(
             DetachLoadBalancersRequest detachLoadBalancersRequest);
@@ -904,6 +936,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DisableMetricsCollection
      */
     void disableMetricsCollection(
             DisableMetricsCollectionRequest disableMetricsCollectionRequest);
@@ -922,6 +955,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.EnableMetricsCollection
      */
     void enableMetricsCollection(
             EnableMetricsCollectionRequest enableMetricsCollectionRequest);
@@ -942,6 +976,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.EnterStandby
      */
     EnterStandbyResult enterStandby(EnterStandbyRequest enterStandbyRequest);
 
@@ -957,6 +992,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.ExecutePolicy
      */
     void executePolicy(ExecutePolicyRequest executePolicyRequest);
 
@@ -976,6 +1012,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.ExitStandby
      */
     ExitStandbyResult exitStandby(ExitStandbyRequest exitStandbyRequest);
 
@@ -1029,6 +1066,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutLifecycleHook
      */
     PutLifecycleHookResult putLifecycleHook(
             PutLifecycleHookRequest putLifecycleHookRequest);
@@ -1057,6 +1095,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutNotificationConfiguration
      */
     void putNotificationConfiguration(
             PutNotificationConfigurationRequest putNotificationConfigurationRequest);
@@ -1086,6 +1125,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutScalingPolicy
      */
     PutScalingPolicyResult putScalingPolicy(
             PutScalingPolicyRequest putScalingPolicyRequest);
@@ -1114,6 +1154,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
      */
     void putScheduledUpdateGroupAction(
             PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest);
@@ -1154,6 +1195,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.RecordLifecycleActionHeartbeat
      */
     RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(
             RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest);
@@ -1177,6 +1219,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.ResumeProcesses
      */
     void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest);
 
@@ -1197,6 +1240,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SetDesiredCapacity
      */
     void setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest);
 
@@ -1214,6 +1258,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SetInstanceHealth
      */
     void setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest);
 
@@ -1237,6 +1282,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SetInstanceProtection
      */
     SetInstanceProtectionResult setInstanceProtection(
             SetInstanceProtectionRequest setInstanceProtectionRequest);
@@ -1270,6 +1316,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SuspendProcesses
      */
     void suspendProcesses(SuspendProcessesRequest suspendProcessesRequest);
 
@@ -1292,6 +1339,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.TerminateInstanceInAutoScalingGroup
      */
     TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
             TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest);
@@ -1349,6 +1397,7 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.UpdateAutoScalingGroup
      */
     void updateAutoScalingGroup(
             UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest);

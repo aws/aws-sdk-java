@@ -1,223 +1,209 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest) CreateRole operation}.
- * <p>
- * Creates a new role for your AWS account. For more information about
- * roles, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in the <i>IAM User Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest)
+ * 
  */
-public class CreateRoleRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateRoleRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
+     * The path to the role. For more information about paths, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
      */
     private String path;
-
     /**
-     * The name of the role to create.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * The name of the role to create.
+     * </p>
      */
     private String roleName;
-
     /**
-     * The trust relationship policy document that grants an entity
-     * permission to assume the role.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     * The trust relationship policy document that grants an entity permission
+     * to assume the role.
+     * </p>
      */
     private String assumeRolePolicyDocument;
 
     /**
-     * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @return The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/).
-     */
-    public String getPath() {
-        return path;
-    }
-    
-    /**
-     * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
+     * The path to the role. For more information about paths, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @param path The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/).
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
+     * 
+     * @param path
+     *        The path to the role. For more information about paths, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, it defaults to
+     *        a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
     }
-    
+
     /**
-     * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The path to the role. For more information about paths, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @param path The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
+     * 
+     * @return The path to the role. For more information about paths, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *         <p>
+     *         This parameter is optional. If it is not included, it defaults to
+     *         a slash (/).
+     */
+    public String getPath() {
+        return this.path;
+    }
+
+    /**
+     * <p>
+     * The path to the role. For more information about paths, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
+     * 
+     * @param path
+     *        The path to the role. For more information about paths, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, it defaults to
+     *        a slash (/).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateRoleRequest withPath(String path) {
-        this.path = path;
+        setPath(path);
         return this;
     }
 
     /**
-     * The name of the role to create.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name of the role to create.
-     */
-    public String getRoleName() {
-        return roleName;
-    }
-    
-    /**
      * The name of the role to create.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param roleName The name of the role to create.
+     * </p>
+     * 
+     * @param roleName
+     *        The name of the role to create.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-    
+
     /**
+     * <p>
      * The name of the role to create.
+     * </p>
+     * 
+     * @return The name of the role to create.
+     */
+    public String getRoleName() {
+        return this.roleName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param roleName The name of the role to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the role to create.
+     * </p>
+     * 
+     * @param roleName
+     *        The name of the role to create.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateRoleRequest withRoleName(String roleName) {
-        this.roleName = roleName;
+        setRoleName(roleName);
         return this;
     }
 
     /**
-     * The trust relationship policy document that grants an entity
-     * permission to assume the role.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @return The trust relationship policy document that grants an entity
-     *         permission to assume the role.
-     */
-    public String getAssumeRolePolicyDocument() {
-        return assumeRolePolicyDocument;
-    }
-    
-    /**
-     * The trust relationship policy document that grants an entity
-     * permission to assume the role.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @param assumeRolePolicyDocument The trust relationship policy document that grants an entity
-     *         permission to assume the role.
+     * The trust relationship policy document that grants an entity permission
+     * to assume the role.
+     * </p>
+     * 
+     * @param assumeRolePolicyDocument
+     *        The trust relationship policy document that grants an entity
+     *        permission to assume the role.
      */
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
     }
-    
+
     /**
-     * The trust relationship policy document that grants an entity
-     * permission to assume the role.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @param assumeRolePolicyDocument The trust relationship policy document that grants an entity
+     * The trust relationship policy document that grants an entity permission
+     * to assume the role.
+     * </p>
+     * 
+     * @return The trust relationship policy document that grants an entity
      *         permission to assume the role.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public CreateRoleRequest withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
-        this.assumeRolePolicyDocument = assumeRolePolicyDocument;
+    public String getAssumeRolePolicyDocument() {
+        return this.assumeRolePolicyDocument;
+    }
+
+    /**
+     * <p>
+     * The trust relationship policy document that grants an entity permission
+     * to assume the role.
+     * </p>
+     * 
+     * @param assumeRolePolicyDocument
+     *        The trust relationship policy document that grants an entity
+     *        permission to assume the role.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateRoleRequest withAssumeRolePolicyDocument(
+            String assumeRolePolicyDocument) {
+        setAssumeRolePolicyDocument(assumeRolePolicyDocument);
         return this;
     }
 
@@ -233,46 +219,65 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");
-        if (getAssumeRolePolicyDocument() != null) sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() );
+        if (getPath() != null)
+            sb.append("Path: " + getPath() + ",");
+        if (getRoleName() != null)
+            sb.append("RoleName: " + getRoleName() + ",");
+        if (getAssumeRolePolicyDocument() != null)
+            sb.append("AssumeRolePolicyDocument: "
+                    + getAssumeRolePolicyDocument());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateRoleRequest == false)
+            return false;
+        CreateRoleRequest other = (CreateRoleRequest) obj;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null
+                && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getRoleName() == null ^ this.getRoleName() == null)
+            return false;
+        if (other.getRoleName() != null
+                && other.getRoleName().equals(this.getRoleName()) == false)
+            return false;
+        if (other.getAssumeRolePolicyDocument() == null
+                ^ this.getAssumeRolePolicyDocument() == null)
+            return false;
+        if (other.getAssumeRolePolicyDocument() != null
+                && other.getAssumeRolePolicyDocument().equals(
+                        this.getAssumeRolePolicyDocument()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
-        hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode()); 
-        hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode
+                + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAssumeRolePolicyDocument() == null) ? 0
+                        : getAssumeRolePolicyDocument().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateRoleRequest == false) return false;
-        CreateRoleRequest other = (CreateRoleRequest)obj;
-        
-        if (other.getPath() == null ^ this.getPath() == null) return false;
-        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
-        if (other.getRoleName() == null ^ this.getRoleName() == null) return false;
-        if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false) return false; 
-        if (other.getAssumeRolePolicyDocument() == null ^ this.getAssumeRolePolicyDocument() == null) return false;
-        if (other.getAssumeRolePolicyDocument() != null && other.getAssumeRolePolicyDocument().equals(this.getAssumeRolePolicyDocument()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateRoleRequest clone() {
-        
-            return (CreateRoleRequest) super.clone();
+        return (CreateRoleRequest) super.clone();
     }
-
 }
-    

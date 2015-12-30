@@ -1,0 +1,718 @@
+/*
+    This file is a compilation of the styles from several other css files which 
+    were in the css path. In process.
+    
+    We orignally had aws-docs overriding aws-dev-content, unless it was 
+    IE. Then we had aws-docs-IE overriding.
+    
+    This file brings the styles to CSS 2.1 and special cases IE 6 and prior.
+*/
+
+
+/* New approved color palette 3/14/2011
+Black/White:
+    black (#000)  
+    very dark gray (#333)  
+    medium gray (#ccc) 
+    white (#fff)
+Red/Orange:   
+    pure red (#f00) --  Use sparingly. Currently only for Remarks. 
+    dark orange (#c60)
+Blue:   
+    Amazon blue (#069) 
+    dark blue (#006)
+ */
+
+body, div, td, th {
+    font-family: verdana, arial, sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+
+/* (method based on new study) min width = 55em, max = 95em  */
+body{
+    width: 80%;
+    min-width: 55em;
+    max-width: 95em;
+}   
+
+p {
+    font-family: verdana, arial, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 1em;
+}
+
+
+/*-------------------------------*/
+/*         Headings              */
+/*-------------------------------*/
+
+h1 {
+    font-family: verdana, arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;      /* Dark gray  */
+    padding-top: 12px;
+}
+
+h2 {
+  color:#c60;     /*  dark orange  */
+  font-size: 14px;
+  font-weight:bold;
+}
+
+h3 {
+  color:#069;   /*  Amazon Blue   */
+  font-size: 12px;
+  font-weight:bold;
+  padding:0;
+}
+
+h3.orange {
+  color:#c60;    /*  dark orange  */
+}
+
+h4 {
+  color:#c60;    /*  dark orange  */
+  font-size: 12px;
+  font-style: italic;
+  font-weight:bold;
+  padding:0;
+}
+
+h5 {
+  color:#333;     /* dark gray   */
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  padding:0;
+}
+
+title, .topictitle{                                                  
+	font-family: verdana, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;	
+}
+
+dt {
+	margin-bottom: 5px;
+}
+
+.topictitle {                                                         
+	padding-bottom: 5px;
+	border-bottom: none;
+	border-top: 1px solid #ccc;      /* medium gray  */
+}
+/* ---------- End Headings --------------------  */
+
+
+/* Remove borders from linked images */
+a:link  { text-decoration: none; padding: 0px; }
+
+/* format href links   new 9/27/07 */
+a {text-decoration: none; color: #006;}  /* Added text color, dark blue, 3/14/11  */
+a:visited {text-decoration: none;}
+a:active {text-decoration: none;}
+a:hover {text-decoration: none; color: #CC6600;}       /*  dark orange  */
+a:visited:hover {text-decoration: none; color: #CC6600;}       /*  dark orange  */
+/* ------- end anchors -------*/
+
+a.clsFeedback {text-decoration: none; color: #006699;}	/* Amazon blue */
+a.clsFeedback:hover {text-decoration: none; color: #CC6600;}       /*  dark orange  */
+a.clsFeedback:visited:hover {text-decoration: none; color: #CC6600;}       /*  dark orange  */
+
+/*code, note, and example styles*/
+pre {
+    font-family: "Courier New", Courier, mono;
+    font-size: 12px;
+	color: #006;  
+	background-color: #eee;  		/* 3/14/11 changed color to light gray from pale blue  */
+	border: 1px dashed #333333;     /* Dark gray  */
+	padding: 1em;       			/* 10/25/07 changed top and bottom padding back to 5px; browser sniffer removes IE  problem */
+	margin-top: 5px;
+	margin-bottom: 5px;
+    overflow: auto;
+	width: 95%;
+}
+
+code {
+    font-family: "Courier New", Courier, mono;
+    font-size: 12px;
+}
+
+
+/** Admonitions **/
+.aws-note {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-top-color: #CCCCCC;      /* medium gray  */
+    border-right-color: #CCCCCC;      /* medium gray  */
+    border-bottom-color: #CCCCCC;      /* medium gray  */
+    border-left-color: #CCCCCC;      /* medium gray  */
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+div.caution{
+	padding: 0.5em;
+}
+
+div.important{
+	padding: 0.5em;
+}
+
+div.note{
+	padding: 0.5em;
+}
+
+div.tip{
+	padding: 0.5em;
+}
+/*-------  end admonitions   -------*/
+
+/*table ID selector styles*/
+
+
+/* Note: These styles are used only in release notes. */
+#aws-table {
+    border-top: 1px solid #cccccc;      /* medium gray  */
+    border-left: 1px solid #cccccc;      /* medium gray  */
+    margin-right: 20px;
+}
+
+#aws-table td {
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid #cccccc;      /* medium gray  */
+    border-right: 1px solid #cccccc;      /* medium gray  */
+    vertical-align: top;
+}
+
+#aws-table th {
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid #cccccc;      /* medium gray  */
+    border-right: 1px solid #cccccc;      /* medium gray  */
+    vertical-align: top;
+    background-color: #eeeeee;        /* light gray  */
+    color: #333333;      /* Dark gray  */
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.aws-code {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: #ccc;        /* 3/14/11 changed to light gray from pale blue  */
+	border: 1px dashed #333;      /* Dark gray  */
+	overflow: auto;
+	max-height: 500px;
+	margin-right: 20px;
+}
+
+.email {                                                             
+	font-family: verdana, arial, sans-serif;
+	font-style: italic;
+}
+
+.formpara{                                                                    /* 5/1/08  Introduced Formal paragraph titles   */
+	font-family: arial;
+ 	font-weight: bold;
+ 	font-size: 12px;
+}
+
+.guilabel {    /* Don't change this one back to italics! */                                                      
+	font-weight: bold;
+}
+
+
+img {
+	border-style: hidden;
+	border-width :0px 0px 0px 0px;
+	border-color : #ffffff;      /* white  */
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+
+#language-filter {                                                   
+    float: right;
+}
+
+
+.navheader table td, .navheader table th, .navfooter table td, .navfooter table th {     
+    border: 0px;
+    background-color: #fff;  /* 3/8/11 changed color to white from blue-gray  */
+    color: #000000;
+}
+
+.navfooter table, .navheader table {   
+    border-top: 1px solid #ccc;   /* 3/11/11 changed border from none, medium gray */                     
+    border-spacing: 0px;
+}
+
+.page-header {                                                        
+	height:30px;
+	z-index:1;
+	overflow:hidden;
+	text-align:right;
+	padding-right: 10px;
+}
+
+div.process{                     /* 3/24/11 Added complete style for process lists. */
+    border: 1px solid #ccc;      /* medium gray  */
+    margin-left: 2em; 
+    padding: 0em 2em 2em 2em;   /* top right bottom left */
+}
+
+.fauxButton {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background: transparent url(images/faux-button-sprite.png) no-repeat right bottom;
+    border-radius: 2px;
+    border: 1px solid #999;
+    color: #004b91;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 11px;
+    padding-right: 32px;
+    text-decoration: none;
+}
+.fauxButton:hover {
+    background-position: right top;
+}
+
+div.process{
+    border: 1px solid #ccc;      /* medium gray  */
+}
+
+.question{
+	font-weight: bold;
+}
+
+.remark {
+	color: #FF0000;   
+}
+
+.replaceable {
+	/* color: #c60; */ 
+	font-weight: 900;
+}
+
+.segmentedlist{
+	padding-bottom: 15px;
+}
+
+.seg p{
+	margin-bottom: 0em;
+}
+
+/* ------------ZB 1.8.17 styles ----------------*/
+
+#title-frame
+{
+    background-color: #006699;   /*  Amazon Blue   */
+    margin: 0px;
+    padding: 0px;
+    border:none;
+}
+
+span #not-latest-message 
+{
+    visibility:hidden;
+}
+
+
+
+/*-------------------------------*/
+/*         Tables                */
+/*-------------------------------*/
+
+td p:first-child {
+  margin-top: 0px;                                                               
+}
+
+td p:last-child {
+  margin-bottom: 0px;
+}
+
+td ul:first-child {
+  margin-top: 0px;                                                                               /*  new 8/22/07 */
+}
+
+td ol:first-child {
+  margin-top: 0px;                                                                               /*  new 8/22/07 */
+}
+
+/* Formal Table Settings */
+
+div.table-contents{
+	padding: 0.5em;
+}
+
+.table-contents table{
+  border-top: 1px solid #cccccc;      /* medium gray  */
+  border-left: 1px solid #cccccc;      /* medium gray  */
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.table-contents td{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px; 
+  border-bottom: 1px solid #cccccc;      /* medium gray  */
+  border-right: 1px solid #cccccc;      /* medium gray  */
+  border-left: 0px;
+  border-top: 0px;
+  vertical-align:top;
+}
+
+.table-contents th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;      /* medium gray  */
+  border-right: 1px solid #cccccc;      /* medium gray  */
+  border-left: 0px;
+  border-top: 0px;
+  vertical-align:top;
+  background-color: #eeeeee;        /* light gray  */
+  color: #333333;      /* Dark gray  */
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* informal tables  */
+
+div.informaltable{
+	padding: 0.5em;
+}
+
+/* borderless tables */
+
+.simplesect table{
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.simplesect td{
+  font-size: 12px;
+  padding: 0px 0px 0px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+}
+
+/*------- End tables -------*/
+
+
+
+.topcom{
+   font-weight: bold;
+}
+
+.userinput {                                                          
+	font-family: "Courier New", Courier, mono;
+	font-weight: bold;
+}
+
+
+/*------------------*/
+/*   Breadcrumbs    */
+/*------------------*/
+
+div.breadcrumb { 
+	padding-top: 5px;
+    font-size: 9px;
+	text-decoration:none;
+}
+
+div.breadcrumb a, div.breadcrumb a, div.breadcrumb a:visited, div.breadcrumb a:active {                                        
+    color:#006;   /*  Changed to dark blue from Amazon Blue   */
+}
+
+div.breadcrumb a:hover, div.breadcrumb a:visited:hover {
+    color:#CC6600;       /*  dark orange  */
+}
+
+span.breadcrumb { 
+	padding-top: 5px;
+    font-size: 9px;
+	text-decoration:none;
+}
+
+/*-------  end breadcrumbs   -------*/
+
+
+
+.simpara{                                                                     
+  margin-top: -.4em;
+}
+
+.informaltable table{
+  border-top: .25px solid #cccccc;      /* medium gray  */
+  border-left: .25px solid #cccccc;      /* medium gray  */
+  border-bottom: .25px solid #cccccc;      /* medium gray  */
+  border-right: .25px solid #cccccc;       /* medium gray  */
+  border-spacing: 0px;
+}
+
+.informaltable td{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-top: .25px solid #cccccc;      /* medium gray  */
+  border-left: .25px solid #cccccc;      /* medium gray  */
+  border-bottom: .25px solid #cccccc;      /* medium gray  */
+  border-right: .25px solid #cccccc;      /* medium gray  */
+  vertical-align:top;
+}
+
+.informaltable th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-right: .25px solid #cccccc;      /* medium gray  */
+  border-left: .25px solid #cccccc;      /* medium gray  */
+  border-top: .25px solid #cccccc;       /* medium gray  */
+  border-bottom: .25px solid #cccccc;        /* medium gray  */
+  vertical-align:top;
+  background-color: #eeeeee;        /* light gray  */
+  color: #333333;      /* Dark gray  */
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+
+/* IE versions, trying level 6 */
+
+<!--[if IE lte 6]>
+
+div.breadcrumb { 
+	padding-top: 25px;
+    font-size: 9px;
+	text-decoration:none;
+}
+
+div.breadcrumb a, div.breadcrumb a:visited, div.breadcrumb a:active {                                        
+    color:#006699;   /*  Amazon Blue   */
+}
+
+div.breadcrumb a:hover, div.breadcrumb a:visited:hover {
+    color:#CC6600;      /*  dark orange  */
+}
+
+span.breadcrumb { 
+	padding-top: 5px;
+    font-size: 9px;
+	text-decoration:none;
+}
+
+
+.simpara{
+  margin-top: -.05em;
+}
+
+.informaltable table{
+  border-top: 1px solid #cccccc;      /* medium gray  */
+  border-left: 1px solid #cccccc;      /* medium gray  */
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.informaltable td{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;      /* medium gray  */
+  border-right: 1px solid #cccccc;      /* medium gray  */
+  border-left: 0px;
+  border-top: 0px;
+  vertical-align:top;
+}
+
+.informaltable th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;      /* medium gray  */
+  border-right: 1px solid #cccccc;      /* medium gray  */
+  border-left: 0px;
+  border-top: 0px;
+  vertical-align:top;
+  background-color: #eeeeee;        /* light gray  */
+  color: #333333;      /* Dark gray  */
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+<![endif]-->
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*  Admonition Tables                                                                                                       */
+/*   ATTENTION!      These must be the very last styles in the entire style sheet, so that they can                         */
+/*                   override all preceding table formattings                                                               */
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+.caution table{
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.caution td{
+  font-size: 12px;
+  padding: 0px 0px 0px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+}
+
+.caution th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.important table{
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.important td{
+  font-size: 12px;
+  padding: 0px 0px 0px 5px;  
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+}
+
+.important th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.note table{
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.note td{
+  font-size: 12px;
+  padding: 0px 0px 0px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+}
+
+.note th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.tip table{
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+}
+
+.tip td{
+  font-size: 12px;
+  padding: 0px 0px 0px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+}
+
+.tip th{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-spacing: 0px;
+  vertical-align:top;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/*  Remember: The admonition tables must be the very last styles in this document.    */

@@ -76,6 +76,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * 
      * @param deleteConfigRuleRequest
+     * @sample AmazonConfigAsync.DeleteConfigRule
      */
     java.util.concurrent.Future<Void> deleteConfigRuleAsync(
             DeleteConfigRuleRequest deleteConfigRuleRequest);
@@ -101,6 +102,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.DeleteConfigRule
      */
     java.util.concurrent.Future<Void> deleteConfigRuleAsync(
             DeleteConfigRuleRequest deleteConfigRuleRequest,
@@ -120,6 +122,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param deleteDeliveryChannelRequest
      *        The input for the <a>DeleteDeliveryChannel</a> action. The action
      *        accepts the following data in JSON format.
+     * @sample AmazonConfigAsync.DeleteDeliveryChannel
      */
     java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest);
@@ -143,6 +146,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.DeleteDeliveryChannel
      */
     java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest,
@@ -167,6 +171,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>DeliverConfigSnapshot</a> action.
      * @return A Java Future containing the result of the DeliverConfigSnapshot
      *         operation returned by the service.
+     * @sample AmazonConfigAsync.DeliverConfigSnapshot
      */
     java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(
             DeliverConfigSnapshotRequest deliverConfigSnapshotRequest);
@@ -195,6 +200,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeliverConfigSnapshot
      *         operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DeliverConfigSnapshot
      */
     java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(
             DeliverConfigSnapshotRequest deliverConfigSnapshotRequest,
@@ -234,6 +240,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param describeComplianceByConfigRuleRequest
      * @return A Java Future containing the result of the
      *         DescribeComplianceByConfigRule operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeComplianceByConfigRule
      */
     java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest);
@@ -277,6 +284,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeComplianceByConfigRule operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeComplianceByConfigRule
      */
     java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest,
@@ -335,6 +343,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param describeComplianceByResourceRequest
      * @return A Java Future containing the result of the
      *         DescribeComplianceByResource operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeComplianceByResource
      */
     java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
             DescribeComplianceByResourceRequest describeComplianceByResourceRequest);
@@ -379,6 +388,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeComplianceByResource operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeComplianceByResource
      */
     java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
             DescribeComplianceByResourceRequest describeComplianceByResourceRequest,
@@ -414,6 +424,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         DescribeConfigRuleEvaluationStatus operation returned by the
      *         service.
+     * @sample AmazonConfigAsync.DescribeConfigRuleEvaluationStatus
      */
     java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest);
@@ -435,6 +446,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         DescribeConfigRuleEvaluationStatus operation returned by the
      *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeConfigRuleEvaluationStatus
      */
     java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest,
@@ -466,6 +478,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param describeConfigRulesRequest
      * @return A Java Future containing the result of the DescribeConfigRules
      *         operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeConfigRules
      */
     java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(
             DescribeConfigRulesRequest describeConfigRulesRequest);
@@ -483,6 +496,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeConfigRules
      *         operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeConfigRules
      */
     java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(
             DescribeConfigRulesRequest describeConfigRulesRequest,
@@ -520,6 +534,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         DescribeConfigurationRecorderStatus operation returned by the
      *         service.
+     * @sample AmazonConfigAsync.DescribeConfigurationRecorderStatus
      */
     java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest);
@@ -544,6 +559,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         DescribeConfigurationRecorderStatus operation returned by the
      *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeConfigurationRecorderStatus
      */
     java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest,
@@ -583,6 +599,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>DescribeConfigurationRecorders</a> action.
      * @return A Java Future containing the result of the
      *         DescribeConfigurationRecorders operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeConfigurationRecorders
      */
     java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest);
@@ -608,6 +625,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeConfigurationRecorders operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeConfigurationRecorders
      */
     java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest,
@@ -644,6 +662,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>DeliveryChannelStatus</a> action.
      * @return A Java Future containing the result of the
      *         DescribeDeliveryChannelStatus operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeDeliveryChannelStatus
      */
     java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest);
@@ -666,6 +685,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeDeliveryChannelStatus operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeDeliveryChannelStatus
      */
     java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest,
@@ -705,6 +725,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>DescribeDeliveryChannels</a> action.
      * @return A Java Future containing the result of the
      *         DescribeDeliveryChannels operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeDeliveryChannels
      */
     java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(
             DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest);
@@ -730,6 +751,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeDeliveryChannels operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeDeliveryChannels
      */
     java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(
             DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest,
@@ -765,6 +787,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         GetComplianceDetailsByConfigRule operation returned by the
      *         service.
+     * @sample AmazonConfigAsync.GetComplianceDetailsByConfigRule
      */
     java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest);
@@ -786,6 +809,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         GetComplianceDetailsByConfigRule operation returned by the
      *         service.
+     * @sample AmazonConfigAsyncHandler.GetComplianceDetailsByConfigRule
      */
     java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest,
@@ -802,6 +826,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param getComplianceDetailsByResourceRequest
      * @return A Java Future containing the result of the
      *         GetComplianceDetailsByResource operation returned by the service.
+     * @sample AmazonConfigAsync.GetComplianceDetailsByResource
      */
     java.util.concurrent.Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(
             GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest);
@@ -822,6 +847,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GetComplianceDetailsByResource operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetComplianceDetailsByResource
      */
     java.util.concurrent.Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(
             GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest,
@@ -837,6 +863,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         GetComplianceSummaryByConfigRule operation returned by the
      *         service.
+     * @sample AmazonConfigAsync.GetComplianceSummaryByConfigRule
      */
     java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest);
@@ -856,6 +883,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         GetComplianceSummaryByConfigRule operation returned by the
      *         service.
+     * @sample AmazonConfigAsyncHandler.GetComplianceSummaryByConfigRule
      */
     java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest,
@@ -890,6 +918,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         GetComplianceSummaryByResourceType operation returned by the
      *         service.
+     * @sample AmazonConfigAsync.GetComplianceSummaryByResourceType
      */
     java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest);
@@ -910,6 +939,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @return A Java Future containing the result of the
      *         GetComplianceSummaryByResourceType operation returned by the
      *         service.
+     * @sample AmazonConfigAsyncHandler.GetComplianceSummaryByResourceType
      */
     java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest,
@@ -960,6 +990,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        The input for the <a>GetResourceConfigHistory</a> action.
      * @return A Java Future containing the result of the
      *         GetResourceConfigHistory operation returned by the service.
+     * @sample AmazonConfigAsync.GetResourceConfigHistory
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(
             GetResourceConfigHistoryRequest getResourceConfigHistoryRequest);
@@ -996,6 +1027,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GetResourceConfigHistory operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetResourceConfigHistory
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(
             GetResourceConfigHistoryRequest getResourceConfigHistoryRequest,
@@ -1025,6 +1057,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param listDiscoveredResourcesRequest
      * @return A Java Future containing the result of the
      *         ListDiscoveredResources operation returned by the service.
+     * @sample AmazonConfigAsync.ListDiscoveredResources
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(
             ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
@@ -1058,6 +1091,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListDiscoveredResources operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.ListDiscoveredResources
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(
             ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
@@ -1117,6 +1151,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * 
      * @param putConfigRuleRequest
+     * @sample AmazonConfigAsync.PutConfigRule
      */
     java.util.concurrent.Future<Void> putConfigRuleAsync(
             PutConfigRuleRequest putConfigRuleRequest);
@@ -1180,6 +1215,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.PutConfigRule
      */
     java.util.concurrent.Future<Void> putConfigRuleAsync(
             PutConfigRuleRequest putConfigRuleRequest,
@@ -1209,6 +1245,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * 
      * @param putConfigurationRecorderRequest
      *        The input for the <a>PutConfigurationRecorder</a> action.
+     * @sample AmazonConfigAsync.PutConfigurationRecorder
      */
     java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest);
@@ -1242,6 +1279,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.PutConfigurationRecorder
      */
     java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest,
@@ -1268,6 +1306,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * 
      * @param putDeliveryChannelRequest
      *        The input for the <a>PutDeliveryChannel</a> action.
+     * @sample AmazonConfigAsync.PutDeliveryChannel
      */
     java.util.concurrent.Future<Void> putDeliveryChannelAsync(
             PutDeliveryChannelRequest putDeliveryChannelRequest);
@@ -1298,6 +1337,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.PutDeliveryChannel
      */
     java.util.concurrent.Future<Void> putDeliveryChannelAsync(
             PutDeliveryChannelRequest putDeliveryChannelRequest,
@@ -1313,6 +1353,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param putEvaluationsRequest
      * @return A Java Future containing the result of the PutEvaluations
      *         operation returned by the service.
+     * @sample AmazonConfigAsync.PutEvaluations
      */
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(
             PutEvaluationsRequest putEvaluationsRequest);
@@ -1332,6 +1373,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutEvaluations
      *         operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutEvaluations
      */
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(
             PutEvaluationsRequest putEvaluationsRequest,
@@ -1349,6 +1391,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * 
      * @param startConfigurationRecorderRequest
      *        The input for the <a>StartConfigurationRecorder</a> action.
+     * @sample AmazonConfigAsync.StartConfigurationRecorder
      */
     java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest);
@@ -1370,6 +1413,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.StartConfigurationRecorder
      */
     java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest,
@@ -1385,6 +1429,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        <p>
      *        The input for the <a>StopConfigurationRecorder</a> action.
      *        </p>
+     * @sample AmazonConfigAsync.StopConfigurationRecorder
      */
     java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest);
@@ -1404,6 +1449,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonConfigAsyncHandler.StopConfigurationRecorder
      */
     java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest,

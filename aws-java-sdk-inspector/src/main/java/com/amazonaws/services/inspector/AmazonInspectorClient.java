@@ -275,6 +275,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.AddAttributesToFindings
      */
     @Override
     public AddAttributesToFindingsResult addAttributesToFindings(
@@ -324,6 +325,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.AttachAssessmentAndRulesPackage
      */
     @Override
     public AttachAssessmentAndRulesPackageResult attachAssessmentAndRulesPackage(
@@ -377,6 +379,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.CreateApplication
      */
     @Override
     public CreateApplicationResult createApplication(
@@ -425,6 +428,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.CreateAssessment
      */
     @Override
     public CreateAssessmentResult createAssessment(
@@ -475,6 +479,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InternalException
      * @throws InvalidInputException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.CreateResourceGroup
      */
     @Override
     public CreateResourceGroupResult createResourceGroup(
@@ -524,6 +529,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws OperationInProgressException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DeleteApplication
      */
     @Override
     public DeleteApplicationResult deleteApplication(
@@ -572,6 +578,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws OperationInProgressException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DeleteAssessment
      */
     @Override
     public DeleteAssessmentResult deleteAssessment(
@@ -619,6 +626,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DeleteRun
      */
     @Override
     public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
@@ -665,6 +673,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeApplication
      */
     @Override
     public DescribeApplicationResult describeApplication(
@@ -713,6 +722,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeAssessment
      */
     @Override
     public DescribeAssessmentResult describeAssessment(
@@ -759,6 +769,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      *         by the service.
      * @throws InternalException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.DescribeCrossAccountAccessRole
      */
     @Override
     public DescribeCrossAccountAccessRoleResult describeCrossAccountAccessRole(
@@ -806,6 +817,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeFinding
      */
     @Override
     public DescribeFindingResult describeFinding(
@@ -853,6 +865,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeResourceGroup
      */
     @Override
     public DescribeResourceGroupResult describeResourceGroup(
@@ -901,6 +914,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeRulesPackage
      */
     @Override
     public DescribeRulesPackageResult describeRulesPackage(
@@ -948,6 +962,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeRun
      */
     @Override
     public DescribeRunResult describeRun(DescribeRunRequest describeRunRequest) {
@@ -995,6 +1010,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DetachAssessmentAndRulesPackage
      */
     @Override
     public DetachAssessmentAndRulesPackageResult detachAssessmentAndRulesPackage(
@@ -1044,6 +1060,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.GetAssessmentTelemetry
      */
     @Override
     public GetAssessmentTelemetryResult getAssessmentTelemetry(
@@ -1093,6 +1110,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InternalException
      * @throws InvalidInputException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.ListApplications
      */
     @Override
     public ListApplicationsResult listApplications(
@@ -1141,6 +1159,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAssessmentAgents
      */
     @Override
     public ListAssessmentAgentsResult listAssessmentAgents(
@@ -1189,6 +1208,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAssessments
      */
     @Override
     public ListAssessmentsResult listAssessments(
@@ -1237,6 +1257,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAttachedAssessments
      */
     @Override
     public ListAttachedAssessmentsResult listAttachedAssessments(
@@ -1286,6 +1307,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAttachedRulesPackages
      */
     @Override
     public ListAttachedRulesPackagesResult listAttachedRulesPackages(
@@ -1333,6 +1355,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListFindings
      */
     @Override
     public ListFindingsResult listFindings(
@@ -1379,6 +1402,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InternalException
      * @throws InvalidInputException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.ListRulesPackages
      */
     @Override
     public ListRulesPackagesResult listRulesPackages(
@@ -1427,6 +1451,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListRuns
      */
     @Override
     public ListRunsResult listRuns(ListRunsRequest listRunsRequest) {
@@ -1473,6 +1498,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListTagsForResource
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(
@@ -1521,6 +1547,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.LocalizeText
      */
     @Override
     public LocalizeTextResult localizeText(
@@ -1570,6 +1597,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
      * @throws InvalidCrossAccountRoleException
+     * @sample AmazonInspector.PreviewAgentsForResourceGroup
      */
     @Override
     public PreviewAgentsForResourceGroupResult previewAgentsForResourceGroup(
@@ -1619,6 +1647,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws InvalidCrossAccountRoleException
+     * @sample AmazonInspector.RegisterCrossAccountAccessRole
      */
     @Override
     public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(
@@ -1669,6 +1698,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.RemoveAttributesFromFindings
      */
     @Override
     public RemoveAttributesFromFindingsResult removeAttributesFromFindings(
@@ -1717,6 +1747,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.RunAssessment
      */
     @Override
     public RunAssessmentResult runAssessment(
@@ -1765,6 +1796,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.SetTagsForResource
      */
     @Override
     public SetTagsForResourceResult setTagsForResource(
@@ -1816,6 +1848,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
      * @throws InvalidCrossAccountRoleException
+     * @sample AmazonInspector.StartDataCollection
      */
     @Override
     public StartDataCollectionResult startDataCollection(
@@ -1864,6 +1897,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.StopDataCollection
      */
     @Override
     public StopDataCollectionResult stopDataCollection(
@@ -1912,6 +1946,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.UpdateApplication
      */
     @Override
     public UpdateApplicationResult updateApplication(
@@ -1959,6 +1994,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.UpdateAssessment
      */
     @Override
     public UpdateAssessmentResult updateAssessment(

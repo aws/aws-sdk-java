@@ -168,6 +168,7 @@ public interface AmazonDynamoDBStreams {
      *         The operation tried to access a nonexistent stream.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDBStreams.DescribeStream
      */
     DescribeStreamResult describeStream(
             DescribeStreamRequest describeStreamRequest);
@@ -228,6 +229,7 @@ public interface AmazonDynamoDBStreams {
      *         in a <i>GetRecords</i> request, a stream record in the shard
      *         exceeds the 24 hour period and is trimmed. This causes the
      *         iterator to access a record that no longer exists.</li>
+     * @sample AmazonDynamoDBStreams.GetRecords
      */
     GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest);
 
@@ -268,6 +270,7 @@ public interface AmazonDynamoDBStreams {
      *         in a <i>GetRecords</i> request, a stream record in the shard
      *         exceeds the 24 hour period and is trimmed. This causes the
      *         iterator to access a record that no longer exists.</li>
+     * @sample AmazonDynamoDBStreams.GetShardIterator
      */
     GetShardIteratorResult getShardIterator(
             GetShardIteratorRequest getShardIteratorRequest);
@@ -291,6 +294,7 @@ public interface AmazonDynamoDBStreams {
      *         The operation tried to access a nonexistent stream.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDBStreams.ListStreams
      */
     ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest);
 

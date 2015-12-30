@@ -125,6 +125,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
      */
     void abortEnvironmentUpdate(
             AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
@@ -145,6 +146,7 @@ public interface AWSElasticBeanstalk {
      *        Results message indicating whether a CNAME is available.
      * @return Result of the CheckDNSAvailability operation returned by the
      *         service.
+     * @sample AWSElasticBeanstalk.CheckDNSAvailability
      */
     CheckDNSAvailabilityResult checkDNSAvailability(
             CheckDNSAvailabilityRequest checkDNSAvailabilityRequest);
@@ -169,6 +171,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.ComposeEnvironments
      */
     ComposeEnvironmentsResult composeEnvironments(
             ComposeEnvironmentsRequest composeEnvironmentsRequest);
@@ -184,6 +187,7 @@ public interface AWSElasticBeanstalk {
      *         service.
      * @throws TooManyApplicationsException
      *         The specified account has reached its limit of applications.
+     * @sample AWSElasticBeanstalk.CreateApplication
      */
     CreateApplicationResult createApplication(
             CreateApplicationRequest createApplicationRequest);
@@ -211,6 +215,7 @@ public interface AWSElasticBeanstalk {
      * @throws S3LocationNotInServiceRegionException
      *         The specified S3 bucket does not belong to the S3 region in which
      *         the service is running.
+     * @sample AWSElasticBeanstalk.CreateApplicationVersion
      */
     CreateApplicationVersionResult createApplicationVersion(
             CreateApplicationVersionRequest createApplicationVersionRequest);
@@ -239,6 +244,7 @@ public interface AWSElasticBeanstalk {
      * @throws TooManyConfigurationTemplatesException
      *         The specified account has reached its limit of configuration
      *         templates.
+     * @sample AWSElasticBeanstalk.CreateConfigurationTemplate
      */
     CreateConfigurationTemplateResult createConfigurationTemplate(
             CreateConfigurationTemplateRequest createConfigurationTemplateRequest);
@@ -257,6 +263,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.CreateEnvironment
      */
     CreateEnvironmentResult createEnvironment(
             CreateEnvironmentRequest createEnvironmentRequest);
@@ -279,6 +286,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.CreateStorageLocation
      */
     CreateStorageLocationResult createStorageLocation(
             CreateStorageLocationRequest createStorageLocationRequest);
@@ -304,6 +312,7 @@ public interface AWSElasticBeanstalk {
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
      *         progress.
+     * @sample AWSElasticBeanstalk.DeleteApplication
      */
     void deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -329,6 +338,7 @@ public interface AWSElasticBeanstalk {
      * @throws S3LocationNotInServiceRegionException
      *         The specified S3 bucket does not belong to the S3 region in which
      *         the service is running.
+     * @sample AWSElasticBeanstalk.DeleteApplicationVersion
      */
     void deleteApplicationVersion(
             DeleteApplicationVersionRequest deleteApplicationVersionRequest);
@@ -347,6 +357,7 @@ public interface AWSElasticBeanstalk {
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
      *         progress.
+     * @sample AWSElasticBeanstalk.DeleteConfigurationTemplate
      */
     void deleteConfigurationTemplate(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
@@ -366,6 +377,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param deleteEnvironmentConfigurationRequest
+     * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
      */
     void deleteEnvironmentConfiguration(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
@@ -380,6 +392,7 @@ public interface AWSElasticBeanstalk {
      *        Result message containing a list of configuration descriptions.
      * @return Result of the DescribeApplicationVersions operation returned by
      *         the service.
+     * @sample AWSElasticBeanstalk.DescribeApplicationVersions
      */
     DescribeApplicationVersionsResult describeApplicationVersions(
             DescribeApplicationVersionsRequest describeApplicationVersionsRequest);
@@ -400,6 +413,7 @@ public interface AWSElasticBeanstalk {
      * @param describeApplicationsRequest
      * @return Result of the DescribeApplications operation returned by the
      *         service.
+     * @sample AWSElasticBeanstalk.DescribeApplications
      */
     DescribeApplicationsResult describeApplications(
             DescribeApplicationsRequest describeApplicationsRequest);
@@ -425,6 +439,7 @@ public interface AWSElasticBeanstalk {
      *        descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by
      *         the service.
+     * @sample AWSElasticBeanstalk.DescribeConfigurationOptions
      */
     DescribeConfigurationOptionsResult describeConfigurationOptions(
             DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest);
@@ -454,6 +469,7 @@ public interface AWSElasticBeanstalk {
      *        specified solution stack or configuration template.
      * @return Result of the DescribeConfigurationSettings operation returned by
      *         the service.
+     * @sample AWSElasticBeanstalk.DescribeConfigurationSettings
      */
     DescribeConfigurationSettingsResult describeConfigurationSettings(
             DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest);
@@ -474,6 +490,7 @@ public interface AWSElasticBeanstalk {
      *         input parameters and try the operation again.
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentHealth
      */
     DescribeEnvironmentHealthResult describeEnvironmentHealth(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
@@ -489,6 +506,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentResources
      */
     DescribeEnvironmentResourcesResult describeEnvironmentResources(
             DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest);
@@ -501,6 +519,7 @@ public interface AWSElasticBeanstalk {
      * @param describeEnvironmentsRequest
      * @return Result of the DescribeEnvironments operation returned by the
      *         service.
+     * @sample AWSElasticBeanstalk.DescribeEnvironments
      */
     DescribeEnvironmentsResult describeEnvironments(
             DescribeEnvironmentsRequest describeEnvironmentsRequest);
@@ -522,6 +541,7 @@ public interface AWSElasticBeanstalk {
      * 
      * @param describeEventsRequest
      * @return Result of the DescribeEvents operation returned by the service.
+     * @sample AWSElasticBeanstalk.DescribeEvents
      */
     DescribeEventsResult describeEvents(
             DescribeEventsRequest describeEventsRequest);
@@ -550,6 +570,7 @@ public interface AWSElasticBeanstalk {
      *         input parameters and try the operation again.
      * @throws ElasticBeanstalkServiceException
      *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeInstancesHealth
      */
     DescribeInstancesHealthResult describeInstancesHealth(
             DescribeInstancesHealthRequest describeInstancesHealthRequest);
@@ -562,6 +583,7 @@ public interface AWSElasticBeanstalk {
      * @param listAvailableSolutionStacksRequest
      * @return Result of the ListAvailableSolutionStacks operation returned by
      *         the service.
+     * @sample AWSElasticBeanstalk.ListAvailableSolutionStacks
      */
     ListAvailableSolutionStacksResult listAvailableSolutionStacks(
             ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest);
@@ -585,6 +607,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.RebuildEnvironment
      */
     void rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
@@ -615,6 +638,7 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
+     * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
      */
     void requestEnvironmentInfo(
             RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
@@ -626,6 +650,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param restartAppServerRequest
+     * @sample AWSElasticBeanstalk.RestartAppServer
      */
     void restartAppServer(RestartAppServerRequest restartAppServerRequest);
 
@@ -644,6 +669,7 @@ public interface AWSElasticBeanstalk {
      * @param retrieveEnvironmentInfoRequest
      * @return Result of the RetrieveEnvironmentInfo operation returned by the
      *         service.
+     * @sample AWSElasticBeanstalk.RetrieveEnvironmentInfo
      */
     RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(
             RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest);
@@ -655,6 +681,7 @@ public interface AWSElasticBeanstalk {
      * 
      * @param swapEnvironmentCNAMEsRequest
      *        Swaps the CNAMEs of two environments.
+     * @sample AWSElasticBeanstalk.SwapEnvironmentCNAMEs
      */
     void swapEnvironmentCNAMEs(
             SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
@@ -677,6 +704,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.TerminateEnvironment
      */
     TerminateEnvironmentResult terminateEnvironment(
             TerminateEnvironmentRequest terminateEnvironmentRequest);
@@ -692,6 +720,7 @@ public interface AWSElasticBeanstalk {
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the
      *         service.
+     * @sample AWSElasticBeanstalk.UpdateApplication
      */
     UpdateApplicationResult updateApplication(
             UpdateApplicationRequest updateApplicationRequest);
@@ -708,6 +737,7 @@ public interface AWSElasticBeanstalk {
      * @param updateApplicationVersionRequest
      * @return Result of the UpdateApplicationVersion operation returned by the
      *         service.
+     * @sample AWSElasticBeanstalk.UpdateApplicationVersion
      */
     UpdateApplicationVersionResult updateApplicationVersion(
             UpdateApplicationVersionRequest updateApplicationVersionRequest);
@@ -735,6 +765,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
      */
     UpdateConfigurationTemplateResult updateConfigurationTemplate(
             UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest);
@@ -764,6 +795,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.UpdateEnvironment
      */
     UpdateEnvironmentResult updateEnvironment(
             UpdateEnvironmentRequest updateEnvironmentRequest);
@@ -786,6 +818,7 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
      */
     ValidateConfigurationSettingsResult validateConfigurationSettings(
             ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest);

@@ -290,6 +290,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.AllocateConnectionOnInterconnect
      */
     @Override
     public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(
@@ -353,6 +354,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.AllocatePrivateVirtualInterface
      */
     @Override
     public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(
@@ -416,6 +418,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.AllocatePublicVirtualInterface
      */
     @Override
     public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(
@@ -472,6 +475,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.ConfirmConnection
      */
     @Override
     public ConfirmConnectionResult confirmConnection(
@@ -530,6 +534,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.ConfirmPrivateVirtualInterface
      */
     @Override
     public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(
@@ -588,6 +593,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.ConfirmPublicVirtualInterface
      */
     @Override
     public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(
@@ -649,6 +655,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreateConnection
      */
     @Override
     public CreateConnectionResult createConnection(
@@ -718,6 +725,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreateInterconnect
      */
     @Override
     public CreateInterconnectResult createInterconnect(
@@ -772,6 +780,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreatePrivateVirtualInterface
      */
     @Override
     public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(
@@ -827,6 +836,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreatePublicVirtualInterface
      */
     @Override
     public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(
@@ -883,6 +893,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DeleteConnection
      */
     @Override
     public DeleteConnectionResult deleteConnection(
@@ -934,6 +945,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DeleteInterconnect
      */
     @Override
     public DeleteInterconnectResult deleteInterconnect(
@@ -986,6 +998,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DeleteVirtualInterface
      */
     @Override
     public DeleteVirtualInterfaceResult deleteVirtualInterface(
@@ -1041,6 +1054,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeConnections
      */
     @Override
     public DescribeConnectionsResult describeConnections(
@@ -1099,6 +1113,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeConnectionsOnInterconnect
      */
     @Override
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(
@@ -1155,6 +1170,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeInterconnects
      */
     @Override
     public DescribeInterconnectsResult describeInterconnects(
@@ -1212,6 +1228,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeLocations
      */
     @Override
     public DescribeLocationsResult describeLocations(
@@ -1274,6 +1291,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeVirtualGateways
      */
     @Override
     public DescribeVirtualGatewaysResult describeVirtualGateways(
@@ -1345,6 +1363,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeVirtualInterfaces
      */
     @Override
     public DescribeVirtualInterfacesResult describeVirtualInterfaces(

@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
@@ -24,415 +25,460 @@ import java.io.Serializable;
 public class PipelineOutputConfig implements Serializable, Cloneable {
 
     /**
-     * The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are
-     * true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     * and playlists (if any) together in one bucket.</li> <li>You do not
-     * want to specify the users or groups who have access to the transcoded
-     * files, thumbnails, and playlists.</li> <li>You do not want to specify
-     * the permissions that Elastic Transcoder grants to the files. </li>
-     * <li>You want to associate the transcoded files and thumbnails with the
-     * Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another
-     * bucket, specify which users can access the transcoded files or the
-     * permissions the users have, or change the Amazon S3 storage class,
-     * omit OutputBucket and specify values for <code>ContentConfig</code>
-     * and <code>ThumbnailConfig</code> instead.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
+     * The Amazon S3 bucket in which you want Elastic Transcoder to save the
+     * transcoded files. Specify this value when all of the following are true:
+     * <ul>
+     * <li>You want to save transcoded files, thumbnails (if any), and playlists
+     * (if any) together in one bucket.</li>
+     * <li>You do not want to specify the users or groups who have access to the
+     * transcoded files, thumbnails, and playlists.</li>
+     * <li>You do not want to specify the permissions that Elastic Transcoder
+     * grants to the files.</li>
+     * <li>You want to associate the transcoded files and thumbnails with the
+     * Amazon S3 Standard storage class.</li>
+     * </ul>
+     * If you want to save transcoded files and playlists in one bucket and
+     * thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon
+     * S3 storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
+     * </p>
      */
     private String bucket;
-
     /**
+     * <p>
      * The Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the video files and playlists that it stores in your Amazon
-     * S3 bucket.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^ReducedRedundancy$)|(^Standard$)<br/>
+     * assign to the video files and playlists that it stores in your Amazon S3
+     * bucket.
+     * </p>
      */
     private String storageClass;
-
     /**
+     * <p>
      * Optional. The <code>Permissions</code> object specifies which users
-     * and/or predefined Amazon S3 groups you want to have access to
-     * transcoded files and playlists, and the type of access you want them
-     * to have. You can grant permissions to a maximum of 30 users and/or
-     * predefined Amazon S3 groups. <p>If you include
-     * <code>Permissions</code>, Elastic Transcoder grants only the
-     * permissions that you specify. It does not grant full permissions to
-     * the owner of the role specified by <code>Role</code>. If you want that
-     * user to have full control, you must explicitly grant full control to
-     * the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     * grants full control over the transcoded files and playlists to the
-     * owner of the role specified by <code>Role</code>, and grants no other
-     * permissions to any other user or group.
+     * and/or predefined Amazon S3 groups you want to have access to transcoded
+     * files and playlists, and the type of access you want them to have. You
+     * can grant permissions to a maximum of 30 users and/or predefined Amazon
+     * S3 groups.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 30<br/>
+     * If you include <code>Permissions</code>, Elastic Transcoder grants only
+     * the permissions that you specify. It does not grant full permissions to
+     * the owner of the role specified by <code>Role</code>. If you want that
+     * user to have full control, you must explicitly grant full control to the
+     * user.
+     * </p>
+     * <p>
+     * If you omit <code>Permissions</code>, Elastic Transcoder grants full
+     * control over the transcoded files and playlists to the owner of the role
+     * specified by <code>Role</code>, and grants no other permissions to any
+     * other user or group.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissions;
+    private com.amazonaws.internal.SdkInternalList<Permission> permissions;
 
     /**
-     * The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are
-     * true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     * and playlists (if any) together in one bucket.</li> <li>You do not
-     * want to specify the users or groups who have access to the transcoded
-     * files, thumbnails, and playlists.</li> <li>You do not want to specify
-     * the permissions that Elastic Transcoder grants to the files. </li>
-     * <li>You want to associate the transcoded files and thumbnails with the
-     * Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another
-     * bucket, specify which users can access the transcoded files or the
-     * permissions the users have, or change the Amazon S3 storage class,
-     * omit OutputBucket and specify values for <code>ContentConfig</code>
-     * and <code>ThumbnailConfig</code> instead.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
-     *
-     * @return The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     *         transcoded files. Specify this value when all of the following are
-     *         true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     *         and playlists (if any) together in one bucket.</li> <li>You do not
-     *         want to specify the users or groups who have access to the transcoded
-     *         files, thumbnails, and playlists.</li> <li>You do not want to specify
-     *         the permissions that Elastic Transcoder grants to the files. </li>
-     *         <li>You want to associate the transcoded files and thumbnails with the
-     *         Amazon S3 Standard storage class.</li> </ul> If you want to save
-     *         transcoded files and playlists in one bucket and thumbnails in another
-     *         bucket, specify which users can access the transcoded files or the
-     *         permissions the users have, or change the Amazon S3 storage class,
-     *         omit OutputBucket and specify values for <code>ContentConfig</code>
-     *         and <code>ThumbnailConfig</code> instead.
-     */
-    public String getBucket() {
-        return bucket;
-    }
-    
-    /**
      * The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are
-     * true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     * and playlists (if any) together in one bucket.</li> <li>You do not
-     * want to specify the users or groups who have access to the transcoded
-     * files, thumbnails, and playlists.</li> <li>You do not want to specify
-     * the permissions that Elastic Transcoder grants to the files. </li>
+     * transcoded files. Specify this value when all of the following are true:
+     * <ul>
+     * <li>You want to save transcoded files, thumbnails (if any), and playlists
+     * (if any) together in one bucket.</li>
+     * <li>You do not want to specify the users or groups who have access to the
+     * transcoded files, thumbnails, and playlists.</li>
+     * <li>You do not want to specify the permissions that Elastic Transcoder
+     * grants to the files.</li>
      * <li>You want to associate the transcoded files and thumbnails with the
-     * Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another
-     * bucket, specify which users can access the transcoded files or the
-     * permissions the users have, or change the Amazon S3 storage class,
-     * omit OutputBucket and specify values for <code>ContentConfig</code>
-     * and <code>ThumbnailConfig</code> instead.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
-     *
-     * @param bucket The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     *         transcoded files. Specify this value when all of the following are
-     *         true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     *         and playlists (if any) together in one bucket.</li> <li>You do not
-     *         want to specify the users or groups who have access to the transcoded
-     *         files, thumbnails, and playlists.</li> <li>You do not want to specify
-     *         the permissions that Elastic Transcoder grants to the files. </li>
-     *         <li>You want to associate the transcoded files and thumbnails with the
-     *         Amazon S3 Standard storage class.</li> </ul> If you want to save
-     *         transcoded files and playlists in one bucket and thumbnails in another
-     *         bucket, specify which users can access the transcoded files or the
-     *         permissions the users have, or change the Amazon S3 storage class,
-     *         omit OutputBucket and specify values for <code>ContentConfig</code>
-     *         and <code>ThumbnailConfig</code> instead.
+     * Amazon S3 Standard storage class.</li>
+     * </ul>
+     * If you want to save transcoded files and playlists in one bucket and
+     * thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon
+     * S3 storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
+     * </p>
+     * 
+     * @param bucket
+     *        The Amazon S3 bucket in which you want Elastic Transcoder to save
+     *        the transcoded files. Specify this value when all of the following
+     *        are true:
+     *        <ul>
+     *        <li>You want to save transcoded files, thumbnails (if any), and
+     *        playlists (if any) together in one bucket.</li>
+     *        <li>You do not want to specify the users or groups who have access
+     *        to the transcoded files, thumbnails, and playlists.</li>
+     *        <li>You do not want to specify the permissions that Elastic
+     *        Transcoder grants to the files.</li>
+     *        <li>You want to associate the transcoded files and thumbnails with
+     *        the Amazon S3 Standard storage class.</li>
+     *        </ul>
+     *        If you want to save transcoded files and playlists in one bucket
+     *        and thumbnails in another bucket, specify which users can access
+     *        the transcoded files or the permissions the users have, or change
+     *        the Amazon S3 storage class, omit OutputBucket and specify values
+     *        for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
+     *        instead.
      */
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
-    
+
     /**
+     * <p>
      * The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are
-     * true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     * and playlists (if any) together in one bucket.</li> <li>You do not
-     * want to specify the users or groups who have access to the transcoded
-     * files, thumbnails, and playlists.</li> <li>You do not want to specify
-     * the permissions that Elastic Transcoder grants to the files. </li>
+     * transcoded files. Specify this value when all of the following are true:
+     * <ul>
+     * <li>You want to save transcoded files, thumbnails (if any), and playlists
+     * (if any) together in one bucket.</li>
+     * <li>You do not want to specify the users or groups who have access to the
+     * transcoded files, thumbnails, and playlists.</li>
+     * <li>You do not want to specify the permissions that Elastic Transcoder
+     * grants to the files.</li>
      * <li>You want to associate the transcoded files and thumbnails with the
-     * Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another
-     * bucket, specify which users can access the transcoded files or the
-     * permissions the users have, or change the Amazon S3 storage class,
-     * omit OutputBucket and specify values for <code>ContentConfig</code>
-     * and <code>ThumbnailConfig</code> instead.
+     * Amazon S3 Standard storage class.</li>
+     * </ul>
+     * If you want to save transcoded files and playlists in one bucket and
+     * thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon
+     * S3 storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
+     * </p>
+     * 
+     * @return The Amazon S3 bucket in which you want Elastic Transcoder to save
+     *         the transcoded files. Specify this value when all of the
+     *         following are true:
+     *         <ul>
+     *         <li>You want to save transcoded files, thumbnails (if any), and
+     *         playlists (if any) together in one bucket.</li>
+     *         <li>You do not want to specify the users or groups who have
+     *         access to the transcoded files, thumbnails, and playlists.</li>
+     *         <li>You do not want to specify the permissions that Elastic
+     *         Transcoder grants to the files.</li>
+     *         <li>You want to associate the transcoded files and thumbnails
+     *         with the Amazon S3 Standard storage class.</li>
+     *         </ul>
+     *         If you want to save transcoded files and playlists in one bucket
+     *         and thumbnails in another bucket, specify which users can access
+     *         the transcoded files or the permissions the users have, or change
+     *         the Amazon S3 storage class, omit OutputBucket and specify values
+     *         for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
+     *         instead.
+     */
+    public String getBucket() {
+        return this.bucket;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
-     *
-     * @param bucket The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     *         transcoded files. Specify this value when all of the following are
-     *         true: <ul> <li>You want to save transcoded files, thumbnails (if any),
-     *         and playlists (if any) together in one bucket.</li> <li>You do not
-     *         want to specify the users or groups who have access to the transcoded
-     *         files, thumbnails, and playlists.</li> <li>You do not want to specify
-     *         the permissions that Elastic Transcoder grants to the files. </li>
-     *         <li>You want to associate the transcoded files and thumbnails with the
-     *         Amazon S3 Standard storage class.</li> </ul> If you want to save
-     *         transcoded files and playlists in one bucket and thumbnails in another
-     *         bucket, specify which users can access the transcoded files or the
-     *         permissions the users have, or change the Amazon S3 storage class,
-     *         omit OutputBucket and specify values for <code>ContentConfig</code>
-     *         and <code>ThumbnailConfig</code> instead.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon S3 bucket in which you want Elastic Transcoder to save the
+     * transcoded files. Specify this value when all of the following are true:
+     * <ul>
+     * <li>You want to save transcoded files, thumbnails (if any), and playlists
+     * (if any) together in one bucket.</li>
+     * <li>You do not want to specify the users or groups who have access to the
+     * transcoded files, thumbnails, and playlists.</li>
+     * <li>You do not want to specify the permissions that Elastic Transcoder
+     * grants to the files.</li>
+     * <li>You want to associate the transcoded files and thumbnails with the
+     * Amazon S3 Standard storage class.</li>
+     * </ul>
+     * If you want to save transcoded files and playlists in one bucket and
+     * thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon
+     * S3 storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
+     * </p>
+     * 
+     * @param bucket
+     *        The Amazon S3 bucket in which you want Elastic Transcoder to save
+     *        the transcoded files. Specify this value when all of the following
+     *        are true:
+     *        <ul>
+     *        <li>You want to save transcoded files, thumbnails (if any), and
+     *        playlists (if any) together in one bucket.</li>
+     *        <li>You do not want to specify the users or groups who have access
+     *        to the transcoded files, thumbnails, and playlists.</li>
+     *        <li>You do not want to specify the permissions that Elastic
+     *        Transcoder grants to the files.</li>
+     *        <li>You want to associate the transcoded files and thumbnails with
+     *        the Amazon S3 Standard storage class.</li>
+     *        </ul>
+     *        If you want to save transcoded files and playlists in one bucket
+     *        and thumbnails in another bucket, specify which users can access
+     *        the transcoded files or the permissions the users have, or change
+     *        the Amazon S3 storage class, omit OutputBucket and specify values
+     *        for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
+     *        instead.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PipelineOutputConfig withBucket(String bucket) {
-        this.bucket = bucket;
+        setBucket(bucket);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the video files and playlists that it stores in your Amazon
-     * S3 bucket.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^ReducedRedundancy$)|(^Standard$)<br/>
-     *
-     * @return The Amazon S3 storage class, <code>Standard</code> or
-     *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     *         assign to the video files and playlists that it stores in your Amazon
-     *         S3 bucket.
-     */
-    public String getStorageClass() {
-        return storageClass;
-    }
-    
-    /**
-     * The Amazon S3 storage class, <code>Standard</code> or
-     * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the video files and playlists that it stores in your Amazon
-     * S3 bucket.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^ReducedRedundancy$)|(^Standard$)<br/>
-     *
-     * @param storageClass The Amazon S3 storage class, <code>Standard</code> or
-     *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     *         assign to the video files and playlists that it stores in your Amazon
-     *         S3 bucket.
+     * assign to the video files and playlists that it stores in your Amazon S3
+     * bucket.
+     * </p>
+     * 
+     * @param storageClass
+     *        The Amazon S3 storage class, <code>Standard</code> or
+     *        <code>ReducedRedundancy</code>, that you want Elastic Transcoder
+     *        to assign to the video files and playlists that it stores in your
+     *        Amazon S3 bucket.
      */
     public void setStorageClass(String storageClass) {
         this.storageClass = storageClass;
     }
-    
+
     /**
+     * <p>
      * The Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the video files and playlists that it stores in your Amazon
-     * S3 bucket.
+     * assign to the video files and playlists that it stores in your Amazon S3
+     * bucket.
+     * </p>
+     * 
+     * @return The Amazon S3 storage class, <code>Standard</code> or
+     *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder
+     *         to assign to the video files and playlists that it stores in your
+     *         Amazon S3 bucket.
+     */
+    public String getStorageClass() {
+        return this.storageClass;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^ReducedRedundancy$)|(^Standard$)<br/>
-     *
-     * @param storageClass The Amazon S3 storage class, <code>Standard</code> or
-     *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     *         assign to the video files and playlists that it stores in your Amazon
-     *         S3 bucket.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon S3 storage class, <code>Standard</code> or
+     * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
+     * assign to the video files and playlists that it stores in your Amazon S3
+     * bucket.
+     * </p>
+     * 
+     * @param storageClass
+     *        The Amazon S3 storage class, <code>Standard</code> or
+     *        <code>ReducedRedundancy</code>, that you want Elastic Transcoder
+     *        to assign to the video files and playlists that it stores in your
+     *        Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PipelineOutputConfig withStorageClass(String storageClass) {
-        this.storageClass = storageClass;
+        setStorageClass(storageClass);
         return this;
     }
 
     /**
-     * Optional. The <code>Permissions</code> object specifies which users
-     * and/or predefined Amazon S3 groups you want to have access to
-     * transcoded files and playlists, and the type of access you want them
-     * to have. You can grant permissions to a maximum of 30 users and/or
-     * predefined Amazon S3 groups. <p>If you include
-     * <code>Permissions</code>, Elastic Transcoder grants only the
-     * permissions that you specify. It does not grant full permissions to
-     * the owner of the role specified by <code>Role</code>. If you want that
-     * user to have full control, you must explicitly grant full control to
-     * the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     * grants full control over the transcoded files and playlists to the
-     * owner of the role specified by <code>Role</code>, and grants no other
-     * permissions to any other user or group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 30<br/>
-     *
-     * @return Optional. The <code>Permissions</code> object specifies which users
-     *         and/or predefined Amazon S3 groups you want to have access to
-     *         transcoded files and playlists, and the type of access you want them
-     *         to have. You can grant permissions to a maximum of 30 users and/or
-     *         predefined Amazon S3 groups. <p>If you include
-     *         <code>Permissions</code>, Elastic Transcoder grants only the
-     *         permissions that you specify. It does not grant full permissions to
-     *         the owner of the role specified by <code>Role</code>. If you want that
-     *         user to have full control, you must explicitly grant full control to
-     *         the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     *         grants full control over the transcoded files and playlists to the
-     *         owner of the role specified by <code>Role</code>, and grants no other
+     * Optional. The <code>Permissions</code> object specifies which users
+     * and/or predefined Amazon S3 groups you want to have access to transcoded
+     * files and playlists, and the type of access you want them to have. You
+     * can grant permissions to a maximum of 30 users and/or predefined Amazon
+     * S3 groups.
+     * </p>
+     * <p>
+     * If you include <code>Permissions</code>, Elastic Transcoder grants only
+     * the permissions that you specify. It does not grant full permissions to
+     * the owner of the role specified by <code>Role</code>. If you want that
+     * user to have full control, you must explicitly grant full control to the
+     * user.
+     * </p>
+     * <p>
+     * If you omit <code>Permissions</code>, Elastic Transcoder grants full
+     * control over the transcoded files and playlists to the owner of the role
+     * specified by <code>Role</code>, and grants no other permissions to any
+     * other user or group.
+     * </p>
+     * 
+     * @return Optional. The <code>Permissions</code> object specifies which
+     *         users and/or predefined Amazon S3 groups you want to have access
+     *         to transcoded files and playlists, and the type of access you
+     *         want them to have. You can grant permissions to a maximum of 30
+     *         users and/or predefined Amazon S3 groups.</p>
+     *         <p>
+     *         If you include <code>Permissions</code>, Elastic Transcoder
+     *         grants only the permissions that you specify. It does not grant
+     *         full permissions to the owner of the role specified by
+     *         <code>Role</code>. If you want that user to have full control,
+     *         you must explicitly grant full control to the user.
+     *         </p>
+     *         <p>
+     *         If you omit <code>Permissions</code>, Elastic Transcoder grants
+     *         full control over the transcoded files and playlists to the owner
+     *         of the role specified by <code>Role</code>, and grants no other
      *         permissions to any other user or group.
      */
     public java.util.List<Permission> getPermissions() {
         if (permissions == null) {
-              permissions = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>();
-              permissions.setAutoConstruct(true);
+            permissions = new com.amazonaws.internal.SdkInternalList<Permission>();
         }
         return permissions;
     }
-    
+
     /**
-     * Optional. The <code>Permissions</code> object specifies which users
-     * and/or predefined Amazon S3 groups you want to have access to
-     * transcoded files and playlists, and the type of access you want them
-     * to have. You can grant permissions to a maximum of 30 users and/or
-     * predefined Amazon S3 groups. <p>If you include
-     * <code>Permissions</code>, Elastic Transcoder grants only the
-     * permissions that you specify. It does not grant full permissions to
-     * the owner of the role specified by <code>Role</code>. If you want that
-     * user to have full control, you must explicitly grant full control to
-     * the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     * grants full control over the transcoded files and playlists to the
-     * owner of the role specified by <code>Role</code>, and grants no other
-     * permissions to any other user or group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 30<br/>
-     *
-     * @param permissions Optional. The <code>Permissions</code> object specifies which users
-     *         and/or predefined Amazon S3 groups you want to have access to
-     *         transcoded files and playlists, and the type of access you want them
-     *         to have. You can grant permissions to a maximum of 30 users and/or
-     *         predefined Amazon S3 groups. <p>If you include
-     *         <code>Permissions</code>, Elastic Transcoder grants only the
-     *         permissions that you specify. It does not grant full permissions to
-     *         the owner of the role specified by <code>Role</code>. If you want that
-     *         user to have full control, you must explicitly grant full control to
-     *         the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     *         grants full control over the transcoded files and playlists to the
-     *         owner of the role specified by <code>Role</code>, and grants no other
-     *         permissions to any other user or group.
+     * Optional. The <code>Permissions</code> object specifies which users
+     * and/or predefined Amazon S3 groups you want to have access to transcoded
+     * files and playlists, and the type of access you want them to have. You
+     * can grant permissions to a maximum of 30 users and/or predefined Amazon
+     * S3 groups.
+     * </p>
+     * <p>
+     * If you include <code>Permissions</code>, Elastic Transcoder grants only
+     * the permissions that you specify. It does not grant full permissions to
+     * the owner of the role specified by <code>Role</code>. If you want that
+     * user to have full control, you must explicitly grant full control to the
+     * user.
+     * </p>
+     * <p>
+     * If you omit <code>Permissions</code>, Elastic Transcoder grants full
+     * control over the transcoded files and playlists to the owner of the role
+     * specified by <code>Role</code>, and grants no other permissions to any
+     * other user or group.
+     * </p>
+     * 
+     * @param permissions
+     *        Optional. The <code>Permissions</code> object specifies which
+     *        users and/or predefined Amazon S3 groups you want to have access
+     *        to transcoded files and playlists, and the type of access you want
+     *        them to have. You can grant permissions to a maximum of 30 users
+     *        and/or predefined Amazon S3 groups.</p>
+     *        <p>
+     *        If you include <code>Permissions</code>, Elastic Transcoder grants
+     *        only the permissions that you specify. It does not grant full
+     *        permissions to the owner of the role specified by
+     *        <code>Role</code>. If you want that user to have full control, you
+     *        must explicitly grant full control to the user.
+     *        </p>
+     *        <p>
+     *        If you omit <code>Permissions</code>, Elastic Transcoder grants
+     *        full control over the transcoded files and playlists to the owner
+     *        of the role specified by <code>Role</code>, and grants no other
+     *        permissions to any other user or group.
      */
     public void setPermissions(java.util.Collection<Permission> permissions) {
         if (permissions == null) {
             this.permissions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>(permissions.size());
-        permissionsCopy.addAll(permissions);
-        this.permissions = permissionsCopy;
+
+        this.permissions = new com.amazonaws.internal.SdkInternalList<Permission>(
+                permissions);
     }
-    
+
     /**
+     * <p>
      * Optional. The <code>Permissions</code> object specifies which users
-     * and/or predefined Amazon S3 groups you want to have access to
-     * transcoded files and playlists, and the type of access you want them
-     * to have. You can grant permissions to a maximum of 30 users and/or
-     * predefined Amazon S3 groups. <p>If you include
-     * <code>Permissions</code>, Elastic Transcoder grants only the
-     * permissions that you specify. It does not grant full permissions to
+     * and/or predefined Amazon S3 groups you want to have access to transcoded
+     * files and playlists, and the type of access you want them to have. You
+     * can grant permissions to a maximum of 30 users and/or predefined Amazon
+     * S3 groups.
+     * </p>
+     * <p>
+     * If you include <code>Permissions</code>, Elastic Transcoder grants only
+     * the permissions that you specify. It does not grant full permissions to
      * the owner of the role specified by <code>Role</code>. If you want that
-     * user to have full control, you must explicitly grant full control to
-     * the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     * grants full control over the transcoded files and playlists to the
-     * owner of the role specified by <code>Role</code>, and grants no other
-     * permissions to any other user or group.
+     * user to have full control, you must explicitly grant full control to the
+     * user.
+     * </p>
+     * <p>
+     * If you omit <code>Permissions</code>, Elastic Transcoder grants full
+     * control over the transcoded files and playlists to the owner of the role
+     * specified by <code>Role</code>, and grants no other permissions to any
+     * other user or group.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPermissions(java.util.Collection)} or {@link
-     * #withPermissions(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 30<br/>
-     *
-     * @param permissions Optional. The <code>Permissions</code> object specifies which users
-     *         and/or predefined Amazon S3 groups you want to have access to
-     *         transcoded files and playlists, and the type of access you want them
-     *         to have. You can grant permissions to a maximum of 30 users and/or
-     *         predefined Amazon S3 groups. <p>If you include
-     *         <code>Permissions</code>, Elastic Transcoder grants only the
-     *         permissions that you specify. It does not grant full permissions to
-     *         the owner of the role specified by <code>Role</code>. If you want that
-     *         user to have full control, you must explicitly grant full control to
-     *         the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     *         grants full control over the transcoded files and playlists to the
-     *         owner of the role specified by <code>Role</code>, and grants no other
-     *         permissions to any other user or group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setPermissions(java.util.Collection)} or
+     * {@link #withPermissions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param permissions
+     *        Optional. The <code>Permissions</code> object specifies which
+     *        users and/or predefined Amazon S3 groups you want to have access
+     *        to transcoded files and playlists, and the type of access you want
+     *        them to have. You can grant permissions to a maximum of 30 users
+     *        and/or predefined Amazon S3 groups.</p>
+     *        <p>
+     *        If you include <code>Permissions</code>, Elastic Transcoder grants
+     *        only the permissions that you specify. It does not grant full
+     *        permissions to the owner of the role specified by
+     *        <code>Role</code>. If you want that user to have full control, you
+     *        must explicitly grant full control to the user.
+     *        </p>
+     *        <p>
+     *        If you omit <code>Permissions</code>, Elastic Transcoder grants
+     *        full control over the transcoded files and playlists to the owner
+     *        of the role specified by <code>Role</code>, and grants no other
+     *        permissions to any other user or group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PipelineOutputConfig withPermissions(Permission... permissions) {
-        if (getPermissions() == null) setPermissions(new java.util.ArrayList<Permission>(permissions.length));
-        for (Permission value : permissions) {
-            getPermissions().add(value);
+        if (this.permissions == null) {
+            setPermissions(new com.amazonaws.internal.SdkInternalList<Permission>(
+                    permissions.length));
+        }
+        for (Permission ele : permissions) {
+            this.permissions.add(ele);
         }
         return this;
     }
-    
-    /**
-     * Optional. The <code>Permissions</code> object specifies which users
-     * and/or predefined Amazon S3 groups you want to have access to
-     * transcoded files and playlists, and the type of access you want them
-     * to have. You can grant permissions to a maximum of 30 users and/or
-     * predefined Amazon S3 groups. <p>If you include
-     * <code>Permissions</code>, Elastic Transcoder grants only the
-     * permissions that you specify. It does not grant full permissions to
-     * the owner of the role specified by <code>Role</code>. If you want that
-     * user to have full control, you must explicitly grant full control to
-     * the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     * grants full control over the transcoded files and playlists to the
-     * owner of the role specified by <code>Role</code>, and grants no other
-     * permissions to any other user or group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 30<br/>
-     *
-     * @param permissions Optional. The <code>Permissions</code> object specifies which users
-     *         and/or predefined Amazon S3 groups you want to have access to
-     *         transcoded files and playlists, and the type of access you want them
-     *         to have. You can grant permissions to a maximum of 30 users and/or
-     *         predefined Amazon S3 groups. <p>If you include
-     *         <code>Permissions</code>, Elastic Transcoder grants only the
-     *         permissions that you specify. It does not grant full permissions to
-     *         the owner of the role specified by <code>Role</code>. If you want that
-     *         user to have full control, you must explicitly grant full control to
-     *         the user. <p> If you omit <code>Permissions</code>, Elastic Transcoder
-     *         grants full control over the transcoded files and playlists to the
-     *         owner of the role specified by <code>Role</code>, and grants no other
-     *         permissions to any other user or group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PipelineOutputConfig withPermissions(java.util.Collection<Permission> permissions) {
-        if (permissions == null) {
-            this.permissions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>(permissions.size());
-            permissionsCopy.addAll(permissions);
-            this.permissions = permissionsCopy;
-        }
 
+    /**
+     * <p>
+     * Optional. The <code>Permissions</code> object specifies which users
+     * and/or predefined Amazon S3 groups you want to have access to transcoded
+     * files and playlists, and the type of access you want them to have. You
+     * can grant permissions to a maximum of 30 users and/or predefined Amazon
+     * S3 groups.
+     * </p>
+     * <p>
+     * If you include <code>Permissions</code>, Elastic Transcoder grants only
+     * the permissions that you specify. It does not grant full permissions to
+     * the owner of the role specified by <code>Role</code>. If you want that
+     * user to have full control, you must explicitly grant full control to the
+     * user.
+     * </p>
+     * <p>
+     * If you omit <code>Permissions</code>, Elastic Transcoder grants full
+     * control over the transcoded files and playlists to the owner of the role
+     * specified by <code>Role</code>, and grants no other permissions to any
+     * other user or group.
+     * </p>
+     * 
+     * @param permissions
+     *        Optional. The <code>Permissions</code> object specifies which
+     *        users and/or predefined Amazon S3 groups you want to have access
+     *        to transcoded files and playlists, and the type of access you want
+     *        them to have. You can grant permissions to a maximum of 30 users
+     *        and/or predefined Amazon S3 groups.</p>
+     *        <p>
+     *        If you include <code>Permissions</code>, Elastic Transcoder grants
+     *        only the permissions that you specify. It does not grant full
+     *        permissions to the owner of the role specified by
+     *        <code>Role</code>. If you want that user to have full control, you
+     *        must explicitly grant full control to the user.
+     *        </p>
+     *        <p>
+     *        If you omit <code>Permissions</code>, Elastic Transcoder grants
+     *        full control over the transcoded files and playlists to the owner
+     *        of the role specified by <code>Role</code>, and grants no other
+     *        permissions to any other user or group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PipelineOutputConfig withPermissions(
+            java.util.Collection<Permission> permissions) {
+        setPermissions(permissions);
         return this;
     }
 
@@ -448,54 +494,69 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
-        if (getStorageClass() != null) sb.append("StorageClass: " + getStorageClass() + ",");
-        if (getPermissions() != null) sb.append("Permissions: " + getPermissions() );
+        if (getBucket() != null)
+            sb.append("Bucket: " + getBucket() + ",");
+        if (getStorageClass() != null)
+            sb.append("StorageClass: " + getStorageClass() + ",");
+        if (getPermissions() != null)
+            sb.append("Permissions: " + getPermissions());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PipelineOutputConfig == false)
+            return false;
+        PipelineOutputConfig other = (PipelineOutputConfig) obj;
+        if (other.getBucket() == null ^ this.getBucket() == null)
+            return false;
+        if (other.getBucket() != null
+                && other.getBucket().equals(this.getBucket()) == false)
+            return false;
+        if (other.getStorageClass() == null ^ this.getStorageClass() == null)
+            return false;
+        if (other.getStorageClass() != null
+                && other.getStorageClass().equals(this.getStorageClass()) == false)
+            return false;
+        if (other.getPermissions() == null ^ this.getPermissions() == null)
+            return false;
+        if (other.getPermissions() != null
+                && other.getPermissions().equals(this.getPermissions()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode()); 
-        hashCode = prime * hashCode + ((getStorageClass() == null) ? 0 : getStorageClass().hashCode()); 
-        hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStorageClass() == null) ? 0 : getStorageClass()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PipelineOutputConfig == false) return false;
-        PipelineOutputConfig other = (PipelineOutputConfig)obj;
-        
-        if (other.getBucket() == null ^ this.getBucket() == null) return false;
-        if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false) return false; 
-        if (other.getStorageClass() == null ^ this.getStorageClass() == null) return false;
-        if (other.getStorageClass() != null && other.getStorageClass().equals(this.getStorageClass()) == false) return false; 
-        if (other.getPermissions() == null ^ this.getPermissions() == null) return false;
-        if (other.getPermissions() != null && other.getPermissions().equals(this.getPermissions()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PipelineOutputConfig clone() {
         try {
             return (PipelineOutputConfig) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

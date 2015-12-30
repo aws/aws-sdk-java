@@ -1,56 +1,47 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest) ListDeadLetterSourceQueues operation}.
- * <p>
- * Returns a list of your queues that have the RedrivePolicy queue
- * attribute configured with a dead letter queue.
- * </p>
- * <p>
- * For more information about using dead letter queues, see
- * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.sqs.AmazonSQS#listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest)
+ * 
  */
-public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
-    /**
-     * The queue URL of a dead letter queue.
-     */
+    /** The queue URL of a dead letter queue. */
     private String queueUrl;
 
     /**
-     * Default constructor for a new ListDeadLetterSourceQueuesRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for ListDeadLetterSourceQueuesRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    public ListDeadLetterSourceQueuesRequest() {}
-    
+    public ListDeadLetterSourceQueuesRequest() {
+    }
+
     /**
-     * Constructs a new ListDeadLetterSourceQueuesRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ListDeadLetterSourceQueuesRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param queueUrl The queue URL of a dead letter queue.
+     * @param queueUrl
+     *        The queue URL of a dead letter queue.
      */
     public ListDeadLetterSourceQueuesRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -58,34 +49,33 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest i
 
     /**
      * The queue URL of a dead letter queue.
-     *
-     * @return The queue URL of a dead letter queue.
-     */
-    public String getQueueUrl() {
-        return queueUrl;
-    }
-    
-    /**
-     * The queue URL of a dead letter queue.
-     *
-     * @param queueUrl The queue URL of a dead letter queue.
+     * 
+     * @param queueUrl
+     *        The queue URL of a dead letter queue.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
-    
+
     /**
      * The queue URL of a dead letter queue.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param queueUrl The queue URL of a dead letter queue.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * 
+     * @return The queue URL of a dead letter queue.
+     */
+    public String getQueueUrl() {
+        return this.queueUrl;
+    }
+
+    /**
+     * The queue URL of a dead letter queue.
+     * 
+     * @param queueUrl
+     *        The queue URL of a dead letter queue.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListDeadLetterSourceQueuesRequest withQueueUrl(String queueUrl) {
-        this.queueUrl = queueUrl;
+        setQueueUrl(queueUrl);
         return this;
     }
 
@@ -101,38 +91,42 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() );
+        if (getQueueUrl() != null)
+            sb.append("QueueUrl: " + getQueueUrl());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListDeadLetterSourceQueuesRequest == false)
+            return false;
+        ListDeadLetterSourceQueuesRequest other = (ListDeadLetterSourceQueuesRequest) obj;
+        if (other.getQueueUrl() == null ^ this.getQueueUrl() == null)
+            return false;
+        if (other.getQueueUrl() != null
+                && other.getQueueUrl().equals(this.getQueueUrl()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListDeadLetterSourceQueuesRequest == false) return false;
-        ListDeadLetterSourceQueuesRequest other = (ListDeadLetterSourceQueuesRequest)obj;
-        
-        if (other.getQueueUrl() == null ^ this.getQueueUrl() == null) return false;
-        if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListDeadLetterSourceQueuesRequest clone() {
-        
-            return (ListDeadLetterSourceQueuesRequest) super.clone();
+        return (ListDeadLetterSourceQueuesRequest) super.clone();
     }
-
 }
-    

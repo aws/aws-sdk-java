@@ -304,6 +304,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ConnectDirectory
      */
     @Override
     public ConnectDirectoryResult connectDirectory(
@@ -366,6 +367,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateAlias
      */
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
@@ -425,6 +427,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateComputer
      */
     @Override
     public CreateComputerResult createComputer(
@@ -478,6 +481,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateDirectory
      */
     @Override
     public CreateDirectoryResult createDirectory(
@@ -532,6 +536,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.CreateMicrosoftAD
      */
     @Override
     public CreateMicrosoftADResult createMicrosoftAD(
@@ -594,6 +599,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateSnapshot
      */
     @Override
     public CreateSnapshotResult createSnapshot(
@@ -668,6 +674,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.CreateTrust
      */
     @Override
     public CreateTrustResult createTrust(CreateTrustRequest createTrustRequest) {
@@ -716,6 +723,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteDirectory
      */
     @Override
     public DeleteDirectoryResult deleteDirectory(
@@ -767,6 +775,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteSnapshot
      */
     @Override
     public DeleteSnapshotResult deleteSnapshot(
@@ -820,6 +829,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.DeleteTrust
      */
     @Override
     public DeleteTrustResult deleteTrust(DeleteTrustRequest deleteTrustRequest) {
@@ -889,6 +899,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeDirectories
      */
     @Override
     public DescribeDirectoriesResult describeDirectories(
@@ -961,6 +972,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeSnapshots
      */
     @Override
     public DescribeSnapshotsResult describeSnapshots(
@@ -1030,6 +1042,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.DescribeTrusts
      */
     @Override
     public DescribeTrustsResult describeTrusts(
@@ -1080,6 +1093,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableRadius
      */
     @Override
     public DisableRadiusResult disableRadius(
@@ -1134,6 +1148,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableSso
      */
     @Override
     public DisableSsoResult disableSso(DisableSsoRequest disableSsoRequest) {
@@ -1187,6 +1202,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableRadius
      */
     @Override
     public EnableRadiusResult enableRadius(
@@ -1241,6 +1257,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableSso
      */
     @Override
     public EnableSsoResult enableSso(EnableSsoRequest enableSsoRequest) {
@@ -1290,6 +1307,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.GetDirectoryLimits
      */
     @Override
     public GetDirectoryLimitsResult getDirectoryLimits(
@@ -1346,6 +1364,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.GetSnapshotLimits
      */
     @Override
     public GetSnapshotLimitsResult getSnapshotLimits(
@@ -1411,6 +1430,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RestoreFromSnapshot
      */
     @Override
     public RestoreFromSnapshotResult restoreFromSnapshot(
@@ -1464,6 +1484,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateRadius
      */
     @Override
     public UpdateRadiusResult updateRadius(
@@ -1523,6 +1544,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.VerifyTrust
      */
     @Override
     public VerifyTrustResult verifyTrust(VerifyTrustRequest verifyTrustRequest) {

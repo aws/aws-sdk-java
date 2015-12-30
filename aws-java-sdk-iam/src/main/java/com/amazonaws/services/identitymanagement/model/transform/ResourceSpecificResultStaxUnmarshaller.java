@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,78 +27,110 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Resource Specific Result StAX Unmarshaller
+ * ResourceSpecificResult StAX Unmarshaller
  */
-public class ResourceSpecificResultStaxUnmarshaller implements Unmarshaller<ResourceSpecificResult, StaxUnmarshallerContext> {
-    private static class EvalDecisionDetailsMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
+public class ResourceSpecificResultStaxUnmarshaller implements
+        Unmarshaller<ResourceSpecificResult, StaxUnmarshallerContext> {
+
+    private static class EvalDecisionDetailsMapEntryUnmarshaller implements
+            Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
+
         @Override
-        public Entry<String, String> unmarshall(StaxUnmarshallerContext context) throws Exception {
+        public Entry<String, String> unmarshall(StaxUnmarshallerContext context)
+                throws Exception {
             int originalDepth = context.getCurrentDepth();
             int targetDepth = originalDepth + 1;
 
-            MapEntry<String, String> entry
-                = new MapEntry<String, String>();
+            MapEntry<String, String> entry = new MapEntry<String, String>();
 
             while (true) {
                 XMLEvent xmlEvent = context.nextEvent();
-                if (xmlEvent.isEndDocument()) return entry;
+                if (xmlEvent.isEndDocument())
+                    return entry;
 
                 if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                     if (context.testExpression("key", targetDepth)) {
-                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        entry.setKey(StringStaxUnmarshaller.getInstance()
+                                .unmarshall(context));
                         continue;
                     }
                     if (context.testExpression("value", targetDepth)) {
-                        entry.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        entry.setValue(StringStaxUnmarshaller.getInstance()
+                                .unmarshall(context));
                         continue;
                     }
                 } else if (xmlEvent.isEndElement()) {
-                    if (context.getCurrentDepth() < originalDepth) return entry;
+                    if (context.getCurrentDepth() < originalDepth)
+                        return entry;
                 }
             }
         }
 
         private static EvalDecisionDetailsMapEntryUnmarshaller instance;
+
         public static EvalDecisionDetailsMapEntryUnmarshaller getInstance() {
-            if (instance == null) instance = new EvalDecisionDetailsMapEntryUnmarshaller();
+            if (instance == null)
+                instance = new EvalDecisionDetailsMapEntryUnmarshaller();
             return instance;
         }
 
     }
 
-    public ResourceSpecificResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ResourceSpecificResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         ResourceSpecificResult resourceSpecificResult = new ResourceSpecificResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return resourceSpecificResult;
+            if (xmlEvent.isEndDocument())
+                return resourceSpecificResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("EvalResourceName", targetDepth)) {
-                    resourceSpecificResult.setEvalResourceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    resourceSpecificResult
+                            .setEvalResourceName(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("EvalResourceDecision", targetDepth)) {
-                    resourceSpecificResult.setEvalResourceDecision(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    resourceSpecificResult
+                            .setEvalResourceDecision(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("MatchedStatements/member", targetDepth)) {
-                    resourceSpecificResult.getMatchedStatements().add(StatementStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("MatchedStatements/member",
+                        targetDepth)) {
+                    resourceSpecificResult.getMatchedStatements().add(
+                            StatementStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
-                if (context.testExpression("MissingContextValues/member", targetDepth)) {
-                    resourceSpecificResult.getMissingContextValues().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("MissingContextValues/member",
+                        targetDepth)) {
+                    resourceSpecificResult.getMissingContextValues().add(
+                            StringStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
-                if (context.testExpression("EvalDecisionDetails/entry", targetDepth)) {
-                    Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller.getInstance().unmarshall(context);
-                    resourceSpecificResult.getEvalDecisionDetails().put(entry.getKey(), entry.getValue());
+
+                if (context.testExpression("EvalDecisionDetails/entry",
+                        targetDepth)) {
+                    Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller
+                            .getInstance().unmarshall(context);
+                    resourceSpecificResult.getEvalDecisionDetails().put(
+                            entry.getKey(), entry.getValue());
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return resourceSpecificResult;
@@ -108,9 +140,10 @@ public class ResourceSpecificResultStaxUnmarshaller implements Unmarshaller<Reso
     }
 
     private static ResourceSpecificResultStaxUnmarshaller instance;
+
     public static ResourceSpecificResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ResourceSpecificResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new ResourceSpecificResultStaxUnmarshaller();
         return instance;
     }
 }
-    

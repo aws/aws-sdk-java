@@ -46,6 +46,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        Contains the inputs for the <a>CreateWorkspaces</a> operation.
      * @return A Java Future containing the result of the CreateWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.CreateWorkspaces
      */
     java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(
             CreateWorkspacesRequest createWorkspacesRequest);
@@ -70,6 +71,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CreateWorkspaces
      */
     java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(
             CreateWorkspacesRequest createWorkspacesRequest,
@@ -97,6 +99,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        operation.
      * @return A Java Future containing the result of the
      *         DescribeWorkspaceBundles operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeWorkspaceBundles
      */
     java.util.concurrent.Future<DescribeWorkspaceBundlesResult> describeWorkspaceBundlesAsync(
             DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest);
@@ -128,6 +131,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeWorkspaceBundles operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeWorkspaceBundles
      */
     java.util.concurrent.Future<DescribeWorkspaceBundlesResult> describeWorkspaceBundlesAsync(
             DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest,
@@ -170,6 +174,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        operation.
      * @return A Java Future containing the result of the
      *         DescribeWorkspaceDirectories operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeWorkspaceDirectories
      */
     java.util.concurrent.Future<DescribeWorkspaceDirectoriesResult> describeWorkspaceDirectoriesAsync(
             DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest);
@@ -198,6 +203,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeWorkspaceDirectories operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeWorkspaceDirectories
      */
     java.util.concurrent.Future<DescribeWorkspaceDirectoriesResult> describeWorkspaceDirectoriesAsync(
             DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest,
@@ -242,6 +248,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        Contains the inputs for the <a>DescribeWorkspaces</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeWorkspaces
      */
     java.util.concurrent.Future<DescribeWorkspacesResult> describeWorkspacesAsync(
             DescribeWorkspacesRequest describeWorkspacesRequest);
@@ -272,6 +279,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeWorkspaces
      */
     java.util.concurrent.Future<DescribeWorkspacesResult> describeWorkspacesAsync(
             DescribeWorkspacesRequest describeWorkspacesRequest,
@@ -314,6 +322,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @return A Java Future containing the result of the RebootWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.RebootWorkspaces
      */
     java.util.concurrent.Future<RebootWorkspacesResult> rebootWorkspacesAsync(
             RebootWorkspacesRequest rebootWorkspacesRequest);
@@ -343,6 +352,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RebootWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.RebootWorkspaces
      */
     java.util.concurrent.Future<RebootWorkspacesResult> rebootWorkspacesAsync(
             RebootWorkspacesRequest rebootWorkspacesRequest,
@@ -382,6 +392,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @return A Java Future containing the result of the RebuildWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.RebuildWorkspaces
      */
     java.util.concurrent.Future<RebuildWorkspacesResult> rebuildWorkspacesAsync(
             RebuildWorkspacesRequest rebuildWorkspacesRequest);
@@ -425,6 +436,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RebuildWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.RebuildWorkspaces
      */
     java.util.concurrent.Future<RebuildWorkspacesResult> rebuildWorkspacesAsync(
             RebuildWorkspacesRequest rebuildWorkspacesRequest,
@@ -455,6 +467,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @return A Java Future containing the result of the TerminateWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.TerminateWorkspaces
      */
     java.util.concurrent.Future<TerminateWorkspacesResult> terminateWorkspacesAsync(
             TerminateWorkspacesRequest terminateWorkspacesRequest);
@@ -489,6 +502,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TerminateWorkspaces
      *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.TerminateWorkspaces
      */
     java.util.concurrent.Future<TerminateWorkspacesResult> terminateWorkspacesAsync(
             TerminateWorkspacesRequest terminateWorkspacesRequest,

@@ -528,6 +528,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.BatchGetItem
      */
     @Override
     public BatchGetItemResult batchGetItem(
@@ -715,6 +716,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.BatchWriteItem
      */
     @Override
     public BatchWriteItemResult batchWriteItem(
@@ -805,6 +807,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         250.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.CreateTable
      */
     @Override
     public CreateTableResult createTable(CreateTableRequest createTableRequest) {
@@ -894,6 +897,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DeleteItem
      */
     @Override
     public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) {
@@ -999,6 +1003,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         250.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DeleteTable
      */
     @Override
     public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) {
@@ -1063,6 +1068,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeTable
      */
     @Override
     public DescribeTableResult describeTable(
@@ -1136,6 +1142,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.GetItem
      */
     @Override
     public GetItemResult getItem(GetItemRequest getItemRequest) {
@@ -1196,6 +1203,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * @return Result of the ListTables operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListTables
      */
     @Override
     public ListTablesResult listTables(ListTablesRequest listTablesRequest) {
@@ -1315,6 +1323,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.PutItem
      */
     @Override
     public PutItemResult putItem(PutItemRequest putItemRequest) {
@@ -1418,6 +1427,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.Query
      */
     @Override
     public QueryResult query(QueryRequest queryRequest) {
@@ -1498,6 +1508,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.Scan
      */
     @Override
     public ScanResult scan(ScanRequest scanRequest) {
@@ -1593,6 +1604,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateItem
      */
     @Override
     public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) {
@@ -1710,6 +1722,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *         250.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateTable
      */
     @Override
     public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) {

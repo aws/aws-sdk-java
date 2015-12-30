@@ -324,6 +324,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AssignInstance
      */
     @Override
     public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
@@ -380,6 +381,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AssignVolume
      */
     @Override
     public void assignVolume(AssignVolumeRequest assignVolumeRequest) {
@@ -434,6 +436,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AssociateElasticIp
      */
     @Override
     public void associateElasticIp(
@@ -498,6 +501,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AttachElasticLoadBalancer
      */
     @Override
     public void attachElasticLoadBalancer(
@@ -553,6 +557,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CloneStack
      */
     @Override
     public CloneStackResult cloneStack(CloneStackRequest cloneStackRequest) {
@@ -608,6 +613,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateApp
      */
     @Override
     public CreateAppResult createApp(CreateAppRequest createAppRequest) {
@@ -665,6 +671,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateDeployment
      */
     @Override
     public CreateDeploymentResult createDeployment(
@@ -723,6 +730,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateInstance
      */
     @Override
     public CreateInstanceResult createInstance(
@@ -789,6 +797,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateLayer
      */
     @Override
     public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) {
@@ -841,6 +850,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @return Result of the CreateStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
+     * @sample AWSOpsWorks.CreateStack
      */
     @Override
     public CreateStackResult createStack(CreateStackRequest createStackRequest) {
@@ -892,6 +902,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
+     * @sample AWSOpsWorks.CreateUserProfile
      */
     @Override
     public CreateUserProfileResult createUserProfile(
@@ -946,6 +957,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteApp
      */
     @Override
     public void deleteApp(DeleteAppRequest deleteAppRequest) {
@@ -1002,6 +1014,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteInstance
      */
     @Override
     public void deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
@@ -1056,6 +1069,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteLayer
      */
     @Override
     public void deleteLayer(DeleteLayerRequest deleteLayerRequest) {
@@ -1110,6 +1124,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteStack
      */
     @Override
     public void deleteStack(DeleteStackRequest deleteStackRequest) {
@@ -1159,6 +1174,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteUserProfile
      */
     @Override
     public void deleteUserProfile(
@@ -1214,6 +1230,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterEcsCluster
      */
     @Override
     public void deregisterEcsCluster(
@@ -1269,6 +1286,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterElasticIp
      */
     @Override
     public void deregisterElasticIp(
@@ -1324,6 +1342,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterInstance
      */
     @Override
     public void deregisterInstance(
@@ -1376,6 +1395,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterRdsDbInstance
      */
     @Override
     public void deregisterRdsDbInstance(
@@ -1431,6 +1451,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterVolume
      */
     @Override
     public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) {
@@ -1479,6 +1500,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeAgentVersions
      */
     @Override
     public DescribeAgentVersionsResult describeAgentVersions(
@@ -1539,6 +1561,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeApps
      */
     @Override
     public DescribeAppsResult describeApps(
@@ -1598,6 +1621,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeCommands
      */
     @Override
     public DescribeCommandsResult describeCommands(
@@ -1659,6 +1683,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeDeployments
      */
     @Override
     public DescribeDeploymentsResult describeDeployments(
@@ -1719,6 +1744,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeEcsClusters
      */
     @Override
     public DescribeEcsClustersResult describeEcsClusters(
@@ -1782,6 +1808,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeElasticIps
      */
     @Override
     public DescribeElasticIpsResult describeElasticIps(
@@ -1843,6 +1870,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeElasticLoadBalancers
      */
     @Override
     public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(
@@ -1904,6 +1932,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeInstances
      */
     @Override
     public DescribeInstancesResult describeInstances(
@@ -1964,6 +1993,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeLayers
      */
     @Override
     public DescribeLayersResult describeLayers(
@@ -2024,6 +2054,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeLoadBasedAutoScaling
      */
     @Override
     public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(
@@ -2075,6 +2106,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @param describeMyUserProfileRequest
      * @return Result of the DescribeMyUserProfile operation returned by the
      *         service.
+     * @sample AWSOpsWorks.DescribeMyUserProfile
      */
     @Override
     public DescribeMyUserProfileResult describeMyUserProfile(
@@ -2131,6 +2163,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribePermissions
      */
     @Override
     public DescribePermissionsResult describePermissions(
@@ -2192,6 +2225,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeRaidArrays
      */
     @Override
     public DescribeRaidArraysResult describeRaidArrays(
@@ -2248,6 +2282,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeRdsDbInstances
      */
     @Override
     public DescribeRdsDbInstancesResult describeRdsDbInstances(
@@ -2304,6 +2339,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeServiceErrors
      */
     @Override
     public DescribeServiceErrorsResult describeServiceErrors(
@@ -2360,6 +2396,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeStackProvisioningParameters
      */
     @Override
     public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(
@@ -2418,6 +2455,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeStackSummary
      */
     @Override
     public DescribeStackSummaryResult describeStackSummary(
@@ -2473,6 +2511,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeStacks
      */
     @Override
     public DescribeStacksResult describeStacks(
@@ -2533,6 +2572,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeTimeBasedAutoScaling
      */
     @Override
     public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(
@@ -2588,6 +2628,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeUserProfiles
      */
     @Override
     public DescribeUserProfilesResult describeUserProfiles(
@@ -2648,6 +2689,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeVolumes
      */
     @Override
     public DescribeVolumesResult describeVolumes(
@@ -2699,6 +2741,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @param detachElasticLoadBalancerRequest
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DetachElasticLoadBalancer
      */
     @Override
     public void detachElasticLoadBalancer(
@@ -2754,6 +2797,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DisassociateElasticIp
      */
     @Override
     public void disassociateElasticIp(
@@ -2809,6 +2853,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.GetHostnameSuggestion
      */
     @Override
     public GetHostnameSuggestionResult getHostnameSuggestion(
@@ -2857,6 +2902,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.GrantAccess
      */
     @Override
     public GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest) {
@@ -2911,6 +2957,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RebootInstance
      */
     @Override
     public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
@@ -2967,6 +3014,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterEcsCluster
      */
     @Override
     public RegisterEcsClusterResult registerEcsCluster(
@@ -3028,6 +3076,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterElasticIp
      */
     @Override
     public RegisterElasticIpResult registerElasticIp(
@@ -3093,6 +3142,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterInstance
      */
     @Override
     public RegisterInstanceResult registerInstance(
@@ -3147,6 +3197,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterRdsDbInstance
      */
     @Override
     public void registerRdsDbInstance(
@@ -3205,6 +3256,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterVolume
      */
     @Override
     public RegisterVolumeResult registerVolume(
@@ -3269,6 +3321,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.SetLoadBasedAutoScaling
      */
     @Override
     public void setLoadBasedAutoScaling(
@@ -3323,6 +3376,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.SetPermission
      */
     @Override
     public void setPermission(SetPermissionRequest setPermissionRequest) {
@@ -3376,6 +3430,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.SetTimeBasedAutoScaling
      */
     @Override
     public void setTimeBasedAutoScaling(
@@ -3430,6 +3485,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StartInstance
      */
     @Override
     public void startInstance(StartInstanceRequest startInstanceRequest) {
@@ -3480,6 +3536,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StartStack
      */
     @Override
     public void startStack(StartStackRequest startStackRequest) {
@@ -3535,6 +3592,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StopInstance
      */
     @Override
     public void stopInstance(StopInstanceRequest stopInstanceRequest) {
@@ -3585,6 +3643,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StopStack
      */
     @Override
     public void stopStack(StopStackRequest stopStackRequest) {
@@ -3638,6 +3697,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UnassignInstance
      */
     @Override
     public void unassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
@@ -3692,6 +3752,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UnassignVolume
      */
     @Override
     public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) {
@@ -3742,6 +3803,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateApp
      */
     @Override
     public void updateApp(UpdateAppRequest updateAppRequest) {
@@ -3795,6 +3857,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateElasticIp
      */
     @Override
     public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) {
@@ -3845,6 +3908,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateInstance
      */
     @Override
     public void updateInstance(UpdateInstanceRequest updateInstanceRequest) {
@@ -3895,6 +3959,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateLayer
      */
     @Override
     public void updateLayer(UpdateLayerRequest updateLayerRequest) {
@@ -3942,6 +4007,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @param updateMyUserProfileRequest
      * @throws ValidationException
      *         Indicates that a request was invalid.
+     * @sample AWSOpsWorks.UpdateMyUserProfile
      */
     @Override
     public void updateMyUserProfile(
@@ -3994,6 +4060,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateRdsDbInstance
      */
     @Override
     public void updateRdsDbInstance(
@@ -4046,6 +4113,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateStack
      */
     @Override
     public void updateStack(UpdateStackRequest updateStackRequest) {
@@ -4095,6 +4163,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateUserProfile
      */
     @Override
     public void updateUserProfile(
@@ -4150,6 +4219,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateVolume
      */
     @Override
     public void updateVolume(UpdateVolumeRequest updateVolumeRequest) {

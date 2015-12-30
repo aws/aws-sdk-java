@@ -120,6 +120,7 @@ public interface AmazonMachineLearning {
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateBatchPrediction
      */
     CreateBatchPredictionResult createBatchPrediction(
             CreateBatchPredictionRequest createBatchPredictionRequest);
@@ -162,6 +163,7 @@ public interface AmazonMachineLearning {
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateDataSourceFromRDS
      */
     CreateDataSourceFromRDSResult createDataSourceFromRDS(
             CreateDataSourceFromRDSRequest createDataSourceFromRDSRequest);
@@ -225,6 +227,7 @@ public interface AmazonMachineLearning {
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateDataSourceFromRedshift
      */
     CreateDataSourceFromRedshiftResult createDataSourceFromRedshift(
             CreateDataSourceFromRedshiftRequest createDataSourceFromRedshiftRequest);
@@ -288,6 +291,7 @@ public interface AmazonMachineLearning {
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateDataSourceFromS3
      */
     CreateDataSourceFromS3Result createDataSourceFromS3(
             CreateDataSourceFromS3Request createDataSourceFromS3Request);
@@ -330,6 +334,7 @@ public interface AmazonMachineLearning {
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateEvaluation
      */
     CreateEvaluationResult createEvaluation(
             CreateEvaluationRequest createEvaluationRequest);
@@ -374,6 +379,7 @@ public interface AmazonMachineLearning {
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateMLModel
      */
     CreateMLModelResult createMLModel(CreateMLModelRequest createMLModelRequest);
 
@@ -395,6 +401,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.CreateRealtimeEndpoint
      */
     CreateRealtimeEndpointResult createRealtimeEndpoint(
             CreateRealtimeEndpointRequest createRealtimeEndpointRequest);
@@ -424,6 +431,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteBatchPrediction
      */
     DeleteBatchPredictionResult deleteBatchPrediction(
             DeleteBatchPredictionRequest deleteBatchPredictionRequest);
@@ -452,6 +460,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteDataSource
      */
     DeleteDataSourceResult deleteDataSource(
             DeleteDataSourceRequest deleteDataSourceRequest);
@@ -480,6 +489,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteEvaluation
      */
     DeleteEvaluationResult deleteEvaluation(
             DeleteEvaluationRequest deleteEvaluationRequest);
@@ -508,6 +518,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteMLModel
      */
     DeleteMLModelResult deleteMLModel(DeleteMLModelRequest deleteMLModelRequest);
 
@@ -526,6 +537,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteRealtimeEndpoint
      */
     DeleteRealtimeEndpointResult deleteRealtimeEndpoint(
             DeleteRealtimeEndpointRequest deleteRealtimeEndpointRequest);
@@ -544,6 +556,7 @@ public interface AmazonMachineLearning {
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeBatchPredictions
      */
     DescribeBatchPredictionsResult describeBatchPredictions(
             DescribeBatchPredictionsRequest describeBatchPredictionsRequest);
@@ -570,6 +583,7 @@ public interface AmazonMachineLearning {
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeDataSources
      */
     DescribeDataSourcesResult describeDataSources(
             DescribeDataSourcesRequest describeDataSourcesRequest);
@@ -595,6 +609,7 @@ public interface AmazonMachineLearning {
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeEvaluations
      */
     DescribeEvaluationsResult describeEvaluations(
             DescribeEvaluationsRequest describeEvaluationsRequest);
@@ -619,6 +634,7 @@ public interface AmazonMachineLearning {
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeMLModels
      */
     DescribeMLModelsResult describeMLModels(
             DescribeMLModelsRequest describeMLModelsRequest);
@@ -647,6 +663,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetBatchPrediction
      */
     GetBatchPredictionResult getBatchPrediction(
             GetBatchPredictionRequest getBatchPredictionRequest);
@@ -672,6 +689,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetDataSource
      */
     GetDataSourceResult getDataSource(GetDataSourceRequest getDataSourceRequest);
 
@@ -690,6 +708,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetEvaluation
      */
     GetEvaluationResult getEvaluation(GetEvaluationRequest getEvaluationRequest);
 
@@ -712,6 +731,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetMLModel
      */
     GetMLModelResult getMLModel(GetMLModelRequest getMLModelRequest);
 
@@ -743,6 +763,7 @@ public interface AmazonMachineLearning {
      * @throws PredictorNotMountedException
      *         The exception is thrown when a predict request is made to an
      *         unmounted <code>MLModel</code>.
+     * @sample AmazonMachineLearning.Predict
      */
     PredictResult predict(PredictRequest predictRequest);
 
@@ -766,6 +787,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateBatchPrediction
      */
     UpdateBatchPredictionResult updateBatchPrediction(
             UpdateBatchPredictionRequest updateBatchPredictionRequest);
@@ -788,6 +810,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateDataSource
      */
     UpdateDataSourceResult updateDataSource(
             UpdateDataSourceRequest updateDataSourceRequest);
@@ -810,6 +833,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateEvaluation
      */
     UpdateEvaluationResult updateEvaluation(
             UpdateEvaluationRequest updateEvaluationRequest);
@@ -833,6 +857,7 @@ public interface AmazonMachineLearning {
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateMLModel
      */
     UpdateMLModelResult updateMLModel(UpdateMLModelRequest updateMLModelRequest);
 

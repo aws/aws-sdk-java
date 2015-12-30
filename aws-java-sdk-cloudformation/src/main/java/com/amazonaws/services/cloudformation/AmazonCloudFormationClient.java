@@ -275,6 +275,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
+     * @sample AmazonCloudFormation.CancelUpdateStack
      */
     @Override
     public void cancelUpdateStack(
@@ -325,6 +326,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not
      *         specified in the Capabilities parameter.
+     * @sample AmazonCloudFormation.CreateStack
      */
     @Override
     public CreateStackResult createStack(CreateStackRequest createStackRequest) {
@@ -368,6 +370,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * 
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
+     * @sample AmazonCloudFormation.DeleteStack
      */
     @Override
     public void deleteStack(DeleteStackRequest deleteStackRequest) {
@@ -409,6 +412,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        The input for the <a>DescribeAccountLimits</a> action.
      * @return Result of the DescribeAccountLimits operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeAccountLimits
      */
     @Override
     public DescribeAccountLimitsResult describeAccountLimits(
@@ -458,6 +462,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        The input for <a>DescribeStackEvents</a> action.
      * @return Result of the DescribeStackEvents operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeStackEvents
      */
     @Override
     public DescribeStackEventsResult describeStackEvents(
@@ -506,6 +511,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        The input for <a>DescribeStackResource</a> action.
      * @return Result of the DescribeStackResource operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeStackResource
      */
     @Override
     public DescribeStackResourceResult describeStackResource(
@@ -573,6 +579,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        The input for <a>DescribeStackResources</a> action.
      * @return Result of the DescribeStackResources operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeStackResources
      */
     @Override
     public DescribeStackResourcesResult describeStackResources(
@@ -617,6 +624,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param describeStacksRequest
      *        The input for <a>DescribeStacks</a> action.
      * @return Result of the DescribeStacks operation returned by the service.
+     * @sample AmazonCloudFormation.DescribeStacks
      */
     @Override
     public DescribeStacksResult describeStacks(
@@ -666,6 +674,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param estimateTemplateCostRequest
      * @return Result of the EstimateTemplateCost operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.EstimateTemplateCost
      */
     @Override
     public EstimateTemplateCostResult estimateTemplateCost(
@@ -715,6 +724,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param getStackPolicyRequest
      *        The input for the <a>GetStackPolicy</a> action.
      * @return Result of the GetStackPolicy operation returned by the service.
+     * @sample AmazonCloudFormation.GetStackPolicy
      */
     @Override
     public GetStackPolicyResult getStackPolicy(
@@ -764,6 +774,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
      * @return Result of the GetTemplate operation returned by the service.
+     * @sample AmazonCloudFormation.GetTemplate
      */
     @Override
     public GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest) {
@@ -819,6 +830,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        The input for the <a>GetTemplateSummary</a> action.
      * @return Result of the GetTemplateSummary operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.GetTemplateSummary
      */
     @Override
     public GetTemplateSummaryResult getTemplateSummary(
@@ -872,6 +884,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        The input for the <a>ListStackResource</a> action.
      * @return Result of the ListStackResources operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.ListStackResources
      */
     @Override
     public ListStackResourcesResult listStackResources(
@@ -919,6 +932,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param listStacksRequest
      *        The input for <a>ListStacks</a> action.
      * @return Result of the ListStacks operation returned by the service.
+     * @sample AmazonCloudFormation.ListStacks
      */
     @Override
     public ListStacksResult listStacks(ListStacksRequest listStacksRequest) {
@@ -964,6 +978,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * 
      * @param setStackPolicyRequest
      *        The input for the <a>SetStackPolicy</a> action.
+     * @sample AmazonCloudFormation.SetStackPolicy
      */
     @Override
     public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
@@ -1008,6 +1023,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * 
      * @param signalResourceRequest
      *        The input for the <a>SignalResource</a> action.
+     * @sample AmazonCloudFormation.SignalResource
      */
     @Override
     public void signalResource(SignalResourceRequest signalResourceRequest) {
@@ -1066,6 +1082,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not
      *         specified in the Capabilities parameter.
+     * @sample AmazonCloudFormation.UpdateStack
      */
     @Override
     public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
@@ -1107,6 +1124,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param validateTemplateRequest
      *        The input for <a>ValidateTemplate</a> action.
      * @return Result of the ValidateTemplate operation returned by the service.
+     * @sample AmazonCloudFormation.ValidateTemplate
      */
     @Override
     public ValidateTemplateResult validateTemplate(

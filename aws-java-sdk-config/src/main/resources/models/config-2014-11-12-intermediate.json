@@ -48,9 +48,6 @@
         "documentation" : "<p>The rule is currently being deleted. Wait for a while and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified AWS Config rule and all of its evaluation results.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p>\n@param deleteConfigRuleRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Deletes the specified AWS Config rule and all of its evaluation results.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p>\n@param deleteConfigRuleRequest \n@throws NoSuchConfigRuleException One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.\n@throws ResourceInUseException The rule is currently being deleted. Wait for a while and try again.*/",
-      "asyncDocumentation" : "/**<p>Deletes the specified AWS Config rule and all of its evaluation results.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p>\n@param deleteConfigRuleRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -80,9 +77,6 @@
         "documentation" : "<p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be deleted if it is the only delivery channel and the configuration recorder is still running. To delete the delivery channel, stop the running configuration recorder using the <a>StopConfigurationRecorder</a> action.</p>\n@param deleteDeliveryChannelRequest The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data in JSON format.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be deleted if it is the only delivery channel and the configuration recorder is still running. To delete the delivery channel, stop the running configuration recorder using the <a>StopConfigurationRecorder</a> action.</p>\n@param deleteDeliveryChannelRequest The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data in JSON format.\n@throws NoSuchDeliveryChannelException You have specified a delivery channel that does not exist.\n@throws LastDeliveryChannelDeleteFailedException You cannot delete the delivery channel you specified because the configuration recorder is running.*/",
-      "asyncDocumentation" : "/**<p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be deleted if it is the only delivery channel and the configuration recorder is still running. To delete the delivery channel, stop the running configuration recorder using the <a>StopConfigurationRecorder</a> action.</p>\n@param deleteDeliveryChannelRequest The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data in JSON format.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -118,9 +112,6 @@
         "documentation" : "<p>There is no configuration recorder running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, AWS Config sends following notifications using an Amazon SNS topic that you have specified.</p> <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery completed, if the delivery was successfully completed.</li> <li>Notification of delivery failure, if the delivery failed to complete.</li> </ul>\n@param deliverConfigSnapshotRequest The input for the <a>DeliverConfigSnapshot</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeliverConfigSnapshot operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, AWS Config sends following notifications using an Amazon SNS topic that you have specified.</p> <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery completed, if the delivery was successfully completed.</li> <li>Notification of delivery failure, if the delivery failed to complete.</li> </ul>\n@param deliverConfigSnapshotRequest The input for the <a>DeliverConfigSnapshot</a> action.\n@return Result of the DeliverConfigSnapshot operation returned by the service.\n@throws NoSuchDeliveryChannelException You have specified a delivery channel that does not exist.\n@throws NoAvailableConfigurationRecorderException There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.\n@throws NoRunningConfigurationRecorderException There is no configuration recorder running.*/",
-      "asyncDocumentation" : "/**<p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, AWS Config sends following notifications using an Amazon SNS topic that you have specified.</p> <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery completed, if the delivery was successfully completed.</li> <li>Notification of delivery failure, if the delivery failed to complete.</li> </ul>\n@param deliverConfigSnapshotRequest The input for the <a>DeliverConfigSnapshot</a> action.\n@return A Java Future containing the result of the DeliverConfigSnapshot operation returned by the service.*/",
       "syncReturnType" : "DeliverConfigSnapshotResult",
       "asyncReturnType" : "DeliverConfigSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeliverConfigSnapshotResult>",
@@ -153,9 +144,6 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>\n@param describeComplianceByConfigRuleRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeComplianceByConfigRule operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>\n@param describeComplianceByConfigRuleRequest \n@return Result of the DescribeComplianceByConfigRule operation returned by the service.\n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.\n@throws NoSuchConfigRuleException One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.*/",
-      "asyncDocumentation" : "/**<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>\n@param describeComplianceByConfigRuleRequest \n@return A Java Future containing the result of the DescribeComplianceByConfigRule operation returned by the service.*/",
       "syncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByConfigRuleResult>",
@@ -188,9 +176,6 @@
         "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions about the rules that evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>\n@param describeComplianceByResourceRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeComplianceByResource operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions about the rules that evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>\n@param describeComplianceByResourceRequest \n@return Result of the DescribeComplianceByResource operation returned by the service.\n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.\n@throws InvalidNextTokenException The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.*/",
-      "asyncDocumentation" : "/**<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions about the rules that evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>\n@param describeComplianceByResourceRequest \n@return A Java Future containing the result of the DescribeComplianceByResource operation returned by the service.*/",
       "syncReturnType" : "DescribeComplianceByResourceResult",
       "asyncReturnType" : "DescribeComplianceByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByResourceResult>",
@@ -220,9 +205,6 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns status information for each of your AWS managed Config rules. The status includes information such as the last time AWS Config invoked the rule, the last time AWS Config failed to invoke the rule, and the related error for the last failure.</p>\n@param describeConfigRuleEvaluationStatusRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeConfigRuleEvaluationStatus operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns status information for each of your AWS managed Config rules. The status includes information such as the last time AWS Config invoked the rule, the last time AWS Config failed to invoke the rule, and the related error for the last failure.</p>\n@param describeConfigRuleEvaluationStatusRequest \n@return Result of the DescribeConfigRuleEvaluationStatus operation returned by the service.\n@throws NoSuchConfigRuleException One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.*/",
-      "asyncDocumentation" : "/**<p>Returns status information for each of your AWS managed Config rules. The status includes information such as the last time AWS Config invoked the rule, the last time AWS Config failed to invoke the rule, and the related error for the last failure.</p>\n@param describeConfigRuleEvaluationStatusRequest \n@return A Java Future containing the result of the DescribeConfigRuleEvaluationStatus operation returned by the service.*/",
       "syncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult>",
@@ -252,9 +234,6 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns details about your AWS Config rules.</p>\n@param describeConfigRulesRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeConfigRules operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns details about your AWS Config rules.</p>\n@param describeConfigRulesRequest \n@return Result of the DescribeConfigRules operation returned by the service.\n@throws NoSuchConfigRuleException One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.*/",
-      "asyncDocumentation" : "/**<p>Returns details about your AWS Config rules.</p>\n@param describeConfigRulesRequest \n@return A Java Future containing the result of the DescribeConfigRules operation returned by the service.*/",
       "syncReturnType" : "DescribeConfigRulesResult",
       "asyncReturnType" : "DescribeConfigRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRulesResult>",
@@ -284,9 +263,6 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.</p> <note>Currently, you can specify only one configuration recorder per account.</note>\n@param describeConfigurationRecorderStatusRequest The input for the <a>DescribeConfigurationRecorderStatus</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeConfigurationRecorderStatus operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.</p> <note>Currently, you can specify only one configuration recorder per account.</note>\n@param describeConfigurationRecorderStatusRequest The input for the <a>DescribeConfigurationRecorderStatus</a> action.\n@return Result of the DescribeConfigurationRecorderStatus operation returned by the service.\n@throws NoSuchConfigurationRecorderException You have specified a configuration recorder that does not exist.*/",
-      "asyncDocumentation" : "/**<p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.</p> <note>Currently, you can specify only one configuration recorder per account.</note>\n@param describeConfigurationRecorderStatusRequest The input for the <a>DescribeConfigurationRecorderStatus</a> action.\n@return A Java Future containing the result of the DescribeConfigurationRecorderStatus operation returned by the service.*/",
       "syncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult>",
@@ -316,9 +292,6 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the name of one or more specified configuration recorders. If the recorder name is not specified, this action returns the names of all the configuration recorders associated with the account. </p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> </note>\n@param describeConfigurationRecordersRequest The input for the <a>DescribeConfigurationRecorders</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeConfigurationRecorders operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the name of one or more specified configuration recorders. If the recorder name is not specified, this action returns the names of all the configuration recorders associated with the account. </p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> </note>\n@param describeConfigurationRecordersRequest The input for the <a>DescribeConfigurationRecorders</a> action.\n@return Result of the DescribeConfigurationRecorders operation returned by the service.\n@throws NoSuchConfigurationRecorderException You have specified a configuration recorder that does not exist.*/",
-      "asyncDocumentation" : "/**<p>Returns the name of one or more specified configuration recorders. If the recorder name is not specified, this action returns the names of all the configuration recorders associated with the account. </p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> </note>\n@param describeConfigurationRecordersRequest The input for the <a>DescribeConfigurationRecorders</a> action.\n@return A Java Future containing the result of the DescribeConfigurationRecorders operation returned by the service.*/",
       "syncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecordersResult>",
@@ -348,9 +321,6 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. </p> <note>Currently, you can specify only one delivery channel per account.</note>\n@param describeDeliveryChannelStatusRequest The input for the <a>DeliveryChannelStatus</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDeliveryChannelStatus operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. </p> <note>Currently, you can specify only one delivery channel per account.</note>\n@param describeDeliveryChannelStatusRequest The input for the <a>DeliveryChannelStatus</a> action.\n@return Result of the DescribeDeliveryChannelStatus operation returned by the service.\n@throws NoSuchDeliveryChannelException You have specified a delivery channel that does not exist.*/",
-      "asyncDocumentation" : "/**<p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. </p> <note>Currently, you can specify only one delivery channel per account.</note>\n@param describeDeliveryChannelStatusRequest The input for the <a>DeliveryChannelStatus</a> action.\n@return A Java Future containing the result of the DescribeDeliveryChannelStatus operation returned by the service.*/",
       "syncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelStatusResult>",
@@ -380,9 +350,6 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>\n@param describeDeliveryChannelsRequest The input for the <a>DescribeDeliveryChannels</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDeliveryChannels operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>\n@param describeDeliveryChannelsRequest The input for the <a>DescribeDeliveryChannels</a> action.\n@return Result of the DescribeDeliveryChannels operation returned by the service.\n@throws NoSuchDeliveryChannelException You have specified a delivery channel that does not exist.*/",
-      "asyncDocumentation" : "/**<p>Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>\n@param describeDeliveryChannelsRequest The input for the <a>DescribeDeliveryChannels</a> action.\n@return A Java Future containing the result of the DescribeDeliveryChannels operation returned by the service.*/",
       "syncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelsResult>",
@@ -418,9 +385,6 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the evaluation results for the specified AWS Config rule. The results indicate which AWS resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.</p>\n@param getComplianceDetailsByConfigRuleRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetComplianceDetailsByConfigRule operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the evaluation results for the specified AWS Config rule. The results indicate which AWS resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.</p>\n@param getComplianceDetailsByConfigRuleRequest \n@return Result of the GetComplianceDetailsByConfigRule operation returned by the service.\n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.\n@throws InvalidNextTokenException The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.\n@throws NoSuchConfigRuleException One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.*/",
-      "asyncDocumentation" : "/**<p>Returns the evaluation results for the specified AWS Config rule. The results indicate which AWS resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.</p>\n@param getComplianceDetailsByConfigRuleRequest \n@return A Java Future containing the result of the GetComplianceDetailsByConfigRule operation returned by the service.*/",
       "syncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult>",
@@ -450,9 +414,6 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the evaluation results for the specified AWS resource. The results indicate which AWS Config rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with each rule.</p>\n@param getComplianceDetailsByResourceRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetComplianceDetailsByResource operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the evaluation results for the specified AWS resource. The results indicate which AWS Config rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with each rule.</p>\n@param getComplianceDetailsByResourceRequest \n@return Result of the GetComplianceDetailsByResource operation returned by the service.\n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.*/",
-      "asyncDocumentation" : "/**<p>Returns the evaluation results for the specified AWS resource. The results indicate which AWS Config rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with each rule.</p>\n@param getComplianceDetailsByResourceRequest \n@return A Java Future containing the result of the GetComplianceDetailsByResource operation returned by the service.*/",
       "syncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByResourceResult>",
@@ -479,9 +440,6 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each.</p>\n@param getComplianceSummaryByConfigRuleRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetComplianceSummaryByConfigRule operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each.</p>\n@param getComplianceSummaryByConfigRuleRequest \n@return Result of the GetComplianceSummaryByConfigRule operation returned by the service.*/",
-      "asyncDocumentation" : "/**<p>Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each.</p>\n@param getComplianceSummaryByConfigRuleRequest \n@return A Java Future containing the result of the GetComplianceSummaryByConfigRule operation returned by the service.*/",
       "syncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult>",
@@ -511,9 +469,6 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the number of resources that are compliant and the number that are noncompliant. You can specify one or more resource types to get these numbers for each resource type. The maximum number returned is 100.</p>\n@param getComplianceSummaryByResourceTypeRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetComplianceSummaryByResourceType operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the number of resources that are compliant and the number that are noncompliant. You can specify one or more resource types to get these numbers for each resource type. The maximum number returned is 100.</p>\n@param getComplianceSummaryByResourceTypeRequest \n@return Result of the GetComplianceSummaryByResourceType operation returned by the service.\n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.*/",
-      "asyncDocumentation" : "/**<p>Returns the number of resources that are compliant and the number that are noncompliant. You can specify one or more resource types to get these numbers for each resource type. The maximum number returned is 100.</p>\n@param getComplianceSummaryByResourceTypeRequest \n@return A Java Future containing the result of the GetComplianceSummaryByResourceType operation returned by the service.*/",
       "syncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult>",
@@ -558,9 +513,6 @@
         "documentation" : "<p>You have specified a resource that is either unknown or has not been discovered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval.</p> <p>The response is paginated, and by default, AWS Config returns a limit of 10 configuration items per page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code>.</p> </note>\n@param getResourceConfigHistoryRequest The input for the <a>GetResourceConfigHistory</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetResourceConfigHistory operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval.</p> <p>The response is paginated, and by default, AWS Config returns a limit of 10 configuration items per page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code>.</p> </note>\n@param getResourceConfigHistoryRequest The input for the <a>GetResourceConfigHistory</a> action.\n@return Result of the GetResourceConfigHistory operation returned by the service.\n@throws ValidationException The requested action is not valid.\n@throws InvalidTimeRangeException The specified time range is not valid. The earlier time is not chronologically before the later time.\n@throws InvalidLimitException The specified limit is outside the allowable range.\n@throws InvalidNextTokenException The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.\n@throws NoAvailableConfigurationRecorderException There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.\n@throws ResourceNotDiscoveredException You have specified a resource that is either unknown or has not been discovered.*/",
-      "asyncDocumentation" : "/**<p>Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval.</p> <p>The response is paginated, and by default, AWS Config returns a limit of 10 configuration items per page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code>.</p> </note>\n@param getResourceConfigHistoryRequest The input for the <a>GetResourceConfigHistory</a> action.\n@return A Java Future containing the result of the GetResourceConfigHistory operation returned by the service.*/",
       "syncReturnType" : "GetResourceConfigHistoryResult",
       "asyncReturnType" : "GetResourceConfigHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetResourceConfigHistoryResult>",
@@ -599,9 +551,6 @@
         "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that AWS Config has discovered, including those that AWS Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note>You can specify either resource IDs or a resource name but not both in the same request.</note> <p>The response is paginated, and by default AWS Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p>\n@param listDiscoveredResourcesRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that AWS Config has discovered, including those that AWS Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note>You can specify either resource IDs or a resource name but not both in the same request.</note> <p>The response is paginated, and by default AWS Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p>\n@param listDiscoveredResourcesRequest \n@return Result of the ListDiscoveredResources operation returned by the service.\n@throws ValidationException The requested action is not valid.\n@throws InvalidLimitException The specified limit is outside the allowable range.\n@throws InvalidNextTokenException The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.\n@throws NoAvailableConfigurationRecorderException There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.*/",
-      "asyncDocumentation" : "/**<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that AWS Config has discovered, including those that AWS Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note>You can specify either resource IDs or a resource name but not both in the same request.</note> <p>The response is paginated, and by default AWS Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p>\n@param listDiscoveredResourcesRequest \n@return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.*/",
       "syncReturnType" : "ListDiscoveredResourcesResult",
       "asyncReturnType" : "ListDiscoveredResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDiscoveredResourcesResult>",
@@ -637,9 +586,6 @@
         "documentation" : "<p>Indicates one of the following errors:</p> <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations. </p> <p>You can use this action for customer managed Config rules and AWS managed Config rules. A customer managed Config rule is a custom rule that you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that is provided by AWS Config.</p> <p>If you are adding a new customer managed Config rule, you must first create the AWS Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html\">Using AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by AWS Config for new rules.</p> <p>If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p> <p>The maximum number of rules that AWS Config supports is 25.</p> <p>For more information about developing and using AWS Config rules, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html\">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> <p></p>\n@param putConfigRuleRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations. </p> <p>You can use this action for customer managed Config rules and AWS managed Config rules. A customer managed Config rule is a custom rule that you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that is provided by AWS Config.</p> <p>If you are adding a new customer managed Config rule, you must first create the AWS Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html\">Using AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by AWS Config for new rules.</p> <p>If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p> <p>The maximum number of rules that AWS Config supports is 25.</p> <p>For more information about developing and using AWS Config rules, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html\">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> <p></p>\n@param putConfigRuleRequest \n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.\n@throws MaxNumberOfConfigRulesExceededException Failed to add the AWS Config rule because the account already contains the maximum number of 25 rules. Consider deleting any deactivated rules before adding new rules.\n@throws ResourceInUseException The rule is currently being deleted. Wait for a while and try again.\n@throws InsufficientPermissionsException Indicates one of the following errors:</p> <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</li>*/",
-      "asyncDocumentation" : "/**<p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations. </p> <p>You can use this action for customer managed Config rules and AWS managed Config rules. A customer managed Config rule is a custom rule that you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that is provided by AWS Config.</p> <p>If you are adding a new customer managed Config rule, you must first create the AWS Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html\">Using AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by AWS Config for new rules.</p> <p>If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p> <p>The maximum number of rules that AWS Config supports is 25.</p> <p>For more information about developing and using AWS Config rules, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html\">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> <p></p>\n@param putConfigRuleRequest */",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -675,9 +621,6 @@
         "documentation" : "<p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new configuration recorder to record the selected resource configurations.</p> <p>You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is to record all supported resource types.</p> </note>\n@param putConfigurationRecorderRequest The input for the <a>PutConfigurationRecorder</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Creates a new configuration recorder to record the selected resource configurations.</p> <p>You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is to record all supported resource types.</p> </note>\n@param putConfigurationRecorderRequest The input for the <a>PutConfigurationRecorder</a> action.\n@throws MaxNumberOfConfigurationRecordersExceededException You have reached the limit on the number of recorders you can create.\n@throws InvalidConfigurationRecorderNameException You have provided a configuration recorder name that is not valid.\n@throws InvalidRoleException You have provided a null or empty role ARN.\n@throws InvalidRecordingGroupException AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.*/",
-      "asyncDocumentation" : "/**<p>Creates a new configuration recorder to record the selected resource configurations.</p> <p>You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is to record all supported resource types.</p> </note>\n@param putConfigurationRecorderRequest The input for the <a>PutConfigurationRecorder</a> action.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -722,9 +665,6 @@
         "documentation" : "<p>Your Amazon S3 bucket policy does not permit AWS Config to write to it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new delivery channel object to deliver the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>\n@param putDeliveryChannelRequest The input for the <a>PutDeliveryChannel</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Creates a new delivery channel object to deliver the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>\n@param putDeliveryChannelRequest The input for the <a>PutDeliveryChannel</a> action.\n@throws MaxNumberOfDeliveryChannelsExceededException You have reached the limit on the number of delivery channels you can create.\n@throws NoAvailableConfigurationRecorderException There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.\n@throws InvalidDeliveryChannelNameException The specified delivery channel name is not valid.\n@throws NoSuchBucketException The specified Amazon S3 bucket does not exist.\n@throws InvalidS3KeyPrefixException The specified Amazon S3 key prefix is not valid.\n@throws InvalidSNSTopicARNException The specified Amazon SNS topic does not exist.\n@throws InsufficientDeliveryPolicyException Your Amazon S3 bucket policy does not permit AWS Config to write to it.*/",
-      "asyncDocumentation" : "/**<p>Creates a new delivery channel object to deliver the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>\n@param putDeliveryChannelRequest The input for the <a>PutDeliveryChannel</a> action.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -760,9 +700,6 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action is required in every AWS Lambda function that is invoked by an AWS Config rule.</p>\n@param putEvaluationsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the PutEvaluations operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action is required in every AWS Lambda function that is invoked by an AWS Config rule.</p>\n@param putEvaluationsRequest \n@return Result of the PutEvaluations operation returned by the service.\n@throws InvalidParameterValueException One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.\n@throws InvalidResultTokenException The result token is invalid.\n@throws NoSuchConfigRuleException One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.*/",
-      "asyncDocumentation" : "/**<p>Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action is required in every AWS Lambda function that is invoked by an AWS Config rule.</p>\n@param putEvaluationsRequest \n@return A Java Future containing the result of the PutEvaluations operation returned by the service.*/",
       "syncReturnType" : "PutEvaluationsResult",
       "asyncReturnType" : "PutEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEvaluationsResult>",
@@ -792,9 +729,6 @@
         "documentation" : "<p>There is no delivery channel available to record configurations.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Starts recording configurations of the AWS resources you have selected to record in your AWS account.</p> <p>You must have created at least one delivery channel to successfully start the configuration recorder.</p>\n@param startConfigurationRecorderRequest The input for the <a>StartConfigurationRecorder</a> action.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Starts recording configurations of the AWS resources you have selected to record in your AWS account.</p> <p>You must have created at least one delivery channel to successfully start the configuration recorder.</p>\n@param startConfigurationRecorderRequest The input for the <a>StartConfigurationRecorder</a> action.\n@throws NoSuchConfigurationRecorderException You have specified a configuration recorder that does not exist.\n@throws NoAvailableDeliveryChannelException There is no delivery channel available to record configurations.*/",
-      "asyncDocumentation" : "/**<p>Starts recording configurations of the AWS resources you have selected to record in your AWS account.</p> <p>You must have created at least one delivery channel to successfully start the configuration recorder.</p>\n@param startConfigurationRecorderRequest The input for the <a>StartConfigurationRecorder</a> action.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -821,9 +755,6 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Stops recording configurations of the AWS resources you have selected to record in your AWS account.</p>\n@param stopConfigurationRecorderRequest <p>The input for the <a>StopConfigurationRecorder</a> action.</p>\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Stops recording configurations of the AWS resources you have selected to record in your AWS account.</p>\n@param stopConfigurationRecorderRequest <p>The input for the <a>StopConfigurationRecorder</a> action.</p>\n@throws NoSuchConfigurationRecorderException You have specified a configuration recorder that does not exist.*/",
-      "asyncDocumentation" : "/**<p>Stops recording configurations of the AWS resources you have selected to record in your AWS account.</p>\n@param stopConfigurationRecorderRequest <p>The input for the <a>StopConfigurationRecorder</a> action.</p>*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -1171,8 +1102,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1262,8 +1193,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1421,8 +1352,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DeliveryChannelStatus",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DeliveryChannelStatus>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>"
@@ -1559,8 +1490,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DeliveryChannelStatus",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DeliveryChannelStatus>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>"
@@ -1724,8 +1655,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ComplianceByResource",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ComplianceByResource>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>"
@@ -1965,8 +1896,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ComplianceByResource",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ComplianceByResource>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>"
@@ -2042,8 +1973,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2133,8 +2064,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2292,8 +2223,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "EvaluationResult",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<EvaluationResult>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -2533,8 +2464,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "EvaluationResult",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<EvaluationResult>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -4984,8 +4915,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5099,8 +5030,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Relationship",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Relationship>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>"
@@ -5549,8 +5480,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6095,8 +6026,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Relationship",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Relationship>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>"
@@ -6914,8 +6845,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ConfigRuleEvaluationStatus",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ConfigRuleEvaluationStatus>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>"
@@ -7052,8 +6983,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ConfigRuleEvaluationStatus",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ConfigRuleEvaluationStatus>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>"
@@ -7180,8 +7111,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Evaluation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Evaluation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -7373,8 +7304,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Evaluation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Evaluation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -8062,8 +7993,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8177,8 +8108,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8371,8 +8302,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8487,8 +8418,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8604,8 +8535,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8798,8 +8729,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11156,8 +11087,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11401,8 +11332,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11684,8 +11615,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11980,8 +11911,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12212,8 +12143,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ConfigurationRecorderStatus",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ConfigurationRecorderStatus>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>"
@@ -12350,8 +12281,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ConfigurationRecorderStatus",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ConfigurationRecorderStatus>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>"
@@ -12580,8 +12511,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12876,8 +12807,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14054,8 +13985,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DeliveryChannel",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DeliveryChannel>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>"
@@ -14192,8 +14123,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DeliveryChannel",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DeliveryChannel>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>"
@@ -14442,8 +14373,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ComplianceSummaryByResourceType",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ComplianceSummaryByResourceType>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>"
@@ -14580,8 +14511,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ComplianceSummaryByResourceType",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ComplianceSummaryByResourceType>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>"
@@ -15074,8 +15005,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15470,8 +15401,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16045,8 +15976,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ResourceIdentifier",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ResourceIdentifier>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>"
@@ -16286,8 +16217,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ResourceIdentifier",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ResourceIdentifier>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>"
@@ -16892,8 +16823,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ConfigurationRecorder",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ConfigurationRecorder>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>"
@@ -17030,8 +16961,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ConfigurationRecorder",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ConfigurationRecorder>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>"
@@ -17107,8 +17038,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17198,8 +17129,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17326,8 +17257,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Evaluation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Evaluation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -17464,8 +17395,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Evaluation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Evaluation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -17541,8 +17472,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17632,8 +17563,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17760,8 +17691,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ComplianceByConfigRule",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ComplianceByConfigRule>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>"
@@ -18001,8 +17932,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ComplianceByConfigRule",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ComplianceByConfigRule>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>"
@@ -20409,8 +20340,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ConfigRule",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ConfigRule>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>"
@@ -20650,8 +20581,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ConfigRule",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ConfigRule>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>"
@@ -20911,8 +20842,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "SourceDetail",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<SourceDetail>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>"
@@ -21153,8 +21084,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "SourceDetail",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<SourceDetail>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>"
@@ -21625,8 +21556,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ConfigurationItem",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ConfigurationItem>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>"
@@ -21866,8 +21797,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ConfigurationItem",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ConfigurationItem>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>"
@@ -23167,8 +23098,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "EvaluationResult",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<EvaluationResult>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -23408,8 +23339,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "EvaluationResult",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<EvaluationResult>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -23516,8 +23447,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -23607,8 +23538,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24180,8 +24111,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24370,8 +24301,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -25214,8 +25145,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -25305,8 +25236,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -26471,8 +26402,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -26922,8 +26853,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -27091,6 +27022,7 @@
         "methodForms" : [ [ ] ]
       }
     },
+    "renameShapes" : null,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,

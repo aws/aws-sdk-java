@@ -53,6 +53,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createBatchPredictionRequest
      * @return A Java Future containing the result of the CreateBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateBatchPrediction
      */
     java.util.concurrent.Future<CreateBatchPredictionResult> createBatchPredictionAsync(
             CreateBatchPredictionRequest createBatchPredictionRequest);
@@ -89,6 +90,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateBatchPrediction
      */
     java.util.concurrent.Future<CreateBatchPredictionResult> createBatchPredictionAsync(
             CreateBatchPredictionRequest createBatchPredictionRequest,
@@ -123,6 +125,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createDataSourceFromRDSRequest
      * @return A Java Future containing the result of the
      *         CreateDataSourceFromRDS operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateDataSourceFromRDS
      */
     java.util.concurrent.Future<CreateDataSourceFromRDSResult> createDataSourceFromRDSAsync(
             CreateDataSourceFromRDSRequest createDataSourceFromRDSRequest);
@@ -161,6 +164,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateDataSourceFromRDS operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateDataSourceFromRDS
      */
     java.util.concurrent.Future<CreateDataSourceFromRDSResult> createDataSourceFromRDSAsync(
             CreateDataSourceFromRDSRequest createDataSourceFromRDSRequest,
@@ -216,6 +220,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createDataSourceFromRedshiftRequest
      * @return A Java Future containing the result of the
      *         CreateDataSourceFromRedshift operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateDataSourceFromRedshift
      */
     java.util.concurrent.Future<CreateDataSourceFromRedshiftResult> createDataSourceFromRedshiftAsync(
             CreateDataSourceFromRedshiftRequest createDataSourceFromRedshiftRequest);
@@ -275,6 +280,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateDataSourceFromRedshift operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateDataSourceFromRedshift
      */
     java.util.concurrent.Future<CreateDataSourceFromRedshiftResult> createDataSourceFromRedshiftAsync(
             CreateDataSourceFromRedshiftRequest createDataSourceFromRedshiftRequest,
@@ -330,6 +336,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createDataSourceFromS3Request
      * @return A Java Future containing the result of the CreateDataSourceFromS3
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateDataSourceFromS3
      */
     java.util.concurrent.Future<CreateDataSourceFromS3Result> createDataSourceFromS3Async(
             CreateDataSourceFromS3Request createDataSourceFromS3Request);
@@ -389,6 +396,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDataSourceFromS3
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateDataSourceFromS3
      */
     java.util.concurrent.Future<CreateDataSourceFromS3Result> createDataSourceFromS3Async(
             CreateDataSourceFromS3Request createDataSourceFromS3Request,
@@ -424,6 +432,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createEvaluationRequest
      * @return A Java Future containing the result of the CreateEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateEvaluation
      */
     java.util.concurrent.Future<CreateEvaluationResult> createEvaluationAsync(
             CreateEvaluationRequest createEvaluationRequest);
@@ -463,6 +472,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateEvaluation
      */
     java.util.concurrent.Future<CreateEvaluationResult> createEvaluationAsync(
             CreateEvaluationRequest createEvaluationRequest,
@@ -500,6 +510,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createMLModelRequest
      * @return A Java Future containing the result of the CreateMLModel
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateMLModel
      */
     java.util.concurrent.Future<CreateMLModelResult> createMLModelAsync(
             CreateMLModelRequest createMLModelRequest);
@@ -541,6 +552,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateMLModel
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateMLModel
      */
     java.util.concurrent.Future<CreateMLModelResult> createMLModelAsync(
             CreateMLModelRequest createMLModelRequest,
@@ -557,6 +569,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param createRealtimeEndpointRequest
      * @return A Java Future containing the result of the CreateRealtimeEndpoint
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.CreateRealtimeEndpoint
      */
     java.util.concurrent.Future<CreateRealtimeEndpointResult> createRealtimeEndpointAsync(
             CreateRealtimeEndpointRequest createRealtimeEndpointRequest);
@@ -577,6 +590,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRealtimeEndpoint
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.CreateRealtimeEndpoint
      */
     java.util.concurrent.Future<CreateRealtimeEndpointResult> createRealtimeEndpointAsync(
             CreateRealtimeEndpointRequest createRealtimeEndpointRequest,
@@ -600,6 +614,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param deleteBatchPredictionRequest
      * @return A Java Future containing the result of the DeleteBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DeleteBatchPrediction
      */
     java.util.concurrent.Future<DeleteBatchPredictionResult> deleteBatchPredictionAsync(
             DeleteBatchPredictionRequest deleteBatchPredictionRequest);
@@ -627,6 +642,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DeleteBatchPrediction
      */
     java.util.concurrent.Future<DeleteBatchPredictionResult> deleteBatchPredictionAsync(
             DeleteBatchPredictionRequest deleteBatchPredictionRequest,
@@ -650,6 +666,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param deleteDataSourceRequest
      * @return A Java Future containing the result of the DeleteDataSource
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DeleteDataSource
      */
     java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(
             DeleteDataSourceRequest deleteDataSourceRequest);
@@ -677,6 +694,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDataSource
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DeleteDataSource
      */
     java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(
             DeleteDataSourceRequest deleteDataSourceRequest,
@@ -700,6 +718,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param deleteEvaluationRequest
      * @return A Java Future containing the result of the DeleteEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DeleteEvaluation
      */
     java.util.concurrent.Future<DeleteEvaluationResult> deleteEvaluationAsync(
             DeleteEvaluationRequest deleteEvaluationRequest);
@@ -727,6 +746,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DeleteEvaluation
      */
     java.util.concurrent.Future<DeleteEvaluationResult> deleteEvaluationAsync(
             DeleteEvaluationRequest deleteEvaluationRequest,
@@ -750,6 +770,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param deleteMLModelRequest
      * @return A Java Future containing the result of the DeleteMLModel
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DeleteMLModel
      */
     java.util.concurrent.Future<DeleteMLModelResult> deleteMLModelAsync(
             DeleteMLModelRequest deleteMLModelRequest);
@@ -777,6 +798,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMLModel
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DeleteMLModel
      */
     java.util.concurrent.Future<DeleteMLModelResult> deleteMLModelAsync(
             DeleteMLModelRequest deleteMLModelRequest,
@@ -790,6 +812,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param deleteRealtimeEndpointRequest
      * @return A Java Future containing the result of the DeleteRealtimeEndpoint
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DeleteRealtimeEndpoint
      */
     java.util.concurrent.Future<DeleteRealtimeEndpointResult> deleteRealtimeEndpointAsync(
             DeleteRealtimeEndpointRequest deleteRealtimeEndpointRequest);
@@ -807,6 +830,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRealtimeEndpoint
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DeleteRealtimeEndpoint
      */
     java.util.concurrent.Future<DeleteRealtimeEndpointResult> deleteRealtimeEndpointAsync(
             DeleteRealtimeEndpointRequest deleteRealtimeEndpointRequest,
@@ -821,6 +845,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param describeBatchPredictionsRequest
      * @return A Java Future containing the result of the
      *         DescribeBatchPredictions operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DescribeBatchPredictions
      */
     java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(
             DescribeBatchPredictionsRequest describeBatchPredictionsRequest);
@@ -839,6 +864,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeBatchPredictions operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DescribeBatchPredictions
      */
     java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(
             DescribeBatchPredictionsRequest describeBatchPredictionsRequest,
@@ -871,6 +897,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param describeDataSourcesRequest
      * @return A Java Future containing the result of the DescribeDataSources
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DescribeDataSources
      */
     java.util.concurrent.Future<DescribeDataSourcesResult> describeDataSourcesAsync(
             DescribeDataSourcesRequest describeDataSourcesRequest);
@@ -889,6 +916,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDataSources
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DescribeDataSources
      */
     java.util.concurrent.Future<DescribeDataSourcesResult> describeDataSourcesAsync(
             DescribeDataSourcesRequest describeDataSourcesRequest,
@@ -920,6 +948,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param describeEvaluationsRequest
      * @return A Java Future containing the result of the DescribeEvaluations
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DescribeEvaluations
      */
     java.util.concurrent.Future<DescribeEvaluationsResult> describeEvaluationsAsync(
             DescribeEvaluationsRequest describeEvaluationsRequest);
@@ -938,6 +967,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEvaluations
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DescribeEvaluations
      */
     java.util.concurrent.Future<DescribeEvaluationsResult> describeEvaluationsAsync(
             DescribeEvaluationsRequest describeEvaluationsRequest,
@@ -969,6 +999,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param describeMLModelsRequest
      * @return A Java Future containing the result of the DescribeMLModels
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.DescribeMLModels
      */
     java.util.concurrent.Future<DescribeMLModelsResult> describeMLModelsAsync(
             DescribeMLModelsRequest describeMLModelsRequest);
@@ -987,6 +1018,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeMLModels
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.DescribeMLModels
      */
     java.util.concurrent.Future<DescribeMLModelsResult> describeMLModelsAsync(
             DescribeMLModelsRequest describeMLModelsRequest,
@@ -1019,6 +1051,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param getBatchPredictionRequest
      * @return A Java Future containing the result of the GetBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.GetBatchPrediction
      */
     java.util.concurrent.Future<GetBatchPredictionResult> getBatchPredictionAsync(
             GetBatchPredictionRequest getBatchPredictionRequest);
@@ -1038,6 +1071,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.GetBatchPrediction
      */
     java.util.concurrent.Future<GetBatchPredictionResult> getBatchPredictionAsync(
             GetBatchPredictionRequest getBatchPredictionRequest,
@@ -1058,6 +1092,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param getDataSourceRequest
      * @return A Java Future containing the result of the GetDataSource
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.GetDataSource
      */
     java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(
             GetDataSourceRequest getDataSourceRequest);
@@ -1082,6 +1117,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDataSource
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.GetDataSource
      */
     java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(
             GetDataSourceRequest getDataSourceRequest,
@@ -1096,6 +1132,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param getEvaluationRequest
      * @return A Java Future containing the result of the GetEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.GetEvaluation
      */
     java.util.concurrent.Future<GetEvaluationResult> getEvaluationAsync(
             GetEvaluationRequest getEvaluationRequest);
@@ -1114,6 +1151,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.GetEvaluation
      */
     java.util.concurrent.Future<GetEvaluationResult> getEvaluationAsync(
             GetEvaluationRequest getEvaluationRequest,
@@ -1132,6 +1170,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param getMLModelRequest
      * @return A Java Future containing the result of the GetMLModel operation
      *         returned by the service.
+     * @sample AmazonMachineLearningAsync.GetMLModel
      */
     java.util.concurrent.Future<GetMLModelResult> getMLModelAsync(
             GetMLModelRequest getMLModelRequest);
@@ -1154,6 +1193,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetMLModel operation
      *         returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.GetMLModel
      */
     java.util.concurrent.Future<GetMLModelResult> getMLModelAsync(
             GetMLModelRequest getMLModelRequest,
@@ -1174,6 +1214,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param predictRequest
      * @return A Java Future containing the result of the Predict operation
      *         returned by the service.
+     * @sample AmazonMachineLearningAsync.Predict
      */
     java.util.concurrent.Future<PredictResult> predictAsync(
             PredictRequest predictRequest);
@@ -1198,6 +1239,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Predict operation
      *         returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.Predict
      */
     java.util.concurrent.Future<PredictResult> predictAsync(
             PredictRequest predictRequest,
@@ -1216,6 +1258,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param updateBatchPredictionRequest
      * @return A Java Future containing the result of the UpdateBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.UpdateBatchPrediction
      */
     java.util.concurrent.Future<UpdateBatchPredictionResult> updateBatchPredictionAsync(
             UpdateBatchPredictionRequest updateBatchPredictionRequest);
@@ -1238,6 +1281,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateBatchPrediction
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.UpdateBatchPrediction
      */
     java.util.concurrent.Future<UpdateBatchPredictionResult> updateBatchPredictionAsync(
             UpdateBatchPredictionRequest updateBatchPredictionRequest,
@@ -1255,6 +1299,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param updateDataSourceRequest
      * @return A Java Future containing the result of the UpdateDataSource
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.UpdateDataSource
      */
     java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(
             UpdateDataSourceRequest updateDataSourceRequest);
@@ -1276,6 +1321,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDataSource
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.UpdateDataSource
      */
     java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(
             UpdateDataSourceRequest updateDataSourceRequest,
@@ -1293,6 +1339,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param updateEvaluationRequest
      * @return A Java Future containing the result of the UpdateEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.UpdateEvaluation
      */
     java.util.concurrent.Future<UpdateEvaluationResult> updateEvaluationAsync(
             UpdateEvaluationRequest updateEvaluationRequest);
@@ -1314,6 +1361,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEvaluation
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.UpdateEvaluation
      */
     java.util.concurrent.Future<UpdateEvaluationResult> updateEvaluationAsync(
             UpdateEvaluationRequest updateEvaluationRequest,
@@ -1332,6 +1380,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      * @param updateMLModelRequest
      * @return A Java Future containing the result of the UpdateMLModel
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsync.UpdateMLModel
      */
     java.util.concurrent.Future<UpdateMLModelResult> updateMLModelAsync(
             UpdateMLModelRequest updateMLModelRequest);
@@ -1354,6 +1403,7 @@ public interface AmazonMachineLearningAsync extends AmazonMachineLearning {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateMLModel
      *         operation returned by the service.
+     * @sample AmazonMachineLearningAsyncHandler.UpdateMLModel
      */
     java.util.concurrent.Future<UpdateMLModelResult> updateMLModelAsync(
             UpdateMLModelRequest updateMLModelRequest,

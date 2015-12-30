@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,36 +27,49 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Get Group Result StAX Unmarshaller
+ * GetGroupResult StAX Unmarshaller
  */
-public class GetGroupResultStaxUnmarshaller implements Unmarshaller<GetGroupResult, StaxUnmarshallerContext> {
+public class GetGroupResultStaxUnmarshaller implements
+        Unmarshaller<GetGroupResult, StaxUnmarshallerContext> {
 
-    public GetGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public GetGroupResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         GetGroupResult getGroupResult = new GetGroupResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return getGroupResult;
+            if (xmlEvent.isEndDocument())
+                return getGroupResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Group", targetDepth)) {
-                    getGroupResult.setGroup(GroupStaxUnmarshaller.getInstance().unmarshall(context));
+                    getGroupResult.setGroup(GroupStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Users/member", targetDepth)) {
-                    getGroupResult.getUsers().add(UserStaxUnmarshaller.getInstance().unmarshall(context));
+                    getGroupResult.getUsers().add(
+                            UserStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
+
                 if (context.testExpression("IsTruncated", targetDepth)) {
-                    getGroupResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    getGroupResult.setIsTruncated(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Marker", targetDepth)) {
-                    getGroupResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    getGroupResult.setMarker(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -68,9 +81,10 @@ public class GetGroupResultStaxUnmarshaller implements Unmarshaller<GetGroupResu
     }
 
     private static GetGroupResultStaxUnmarshaller instance;
+
     public static GetGroupResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new GetGroupResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new GetGroupResultStaxUnmarshaller();
         return instance;
     }
 }
-    

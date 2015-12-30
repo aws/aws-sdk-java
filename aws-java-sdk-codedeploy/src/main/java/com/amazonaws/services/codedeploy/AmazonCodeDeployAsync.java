@@ -115,6 +115,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param addTagsToOnPremisesInstancesRequest
      *        Represents the input of an adds tags to on-premises instance
      *        operation.
+     * @sample AmazonCodeDeployAsync.AddTagsToOnPremisesInstances
      */
     java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
@@ -132,6 +133,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.AddTagsToOnPremisesInstances
      */
     java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest,
@@ -146,6 +148,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get applications operation.
      * @return A Java Future containing the result of the BatchGetApplications
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetApplications
      */
     java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             BatchGetApplicationsRequest batchGetApplicationsRequest);
@@ -164,6 +167,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetApplications
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetApplications
      */
     java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             BatchGetApplicationsRequest batchGetApplicationsRequest,
@@ -195,6 +199,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a batch get deployments operation.
      * @return A Java Future containing the result of the BatchGetDeployments
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetDeployments
      */
     java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
             BatchGetDeploymentsRequest batchGetDeploymentsRequest);
@@ -213,6 +218,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetDeployments
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetDeployments
      */
     java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
             BatchGetDeploymentsRequest batchGetDeploymentsRequest,
@@ -245,6 +251,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        operation.
      * @return A Java Future containing the result of the
      *         BatchGetOnPremisesInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetOnPremisesInstances
      */
     java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
             BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest);
@@ -264,6 +271,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         BatchGetOnPremisesInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetOnPremisesInstances
      */
     java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
             BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest,
@@ -296,6 +304,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create application operation.
      * @return A Java Future containing the result of the CreateApplication
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.CreateApplication
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest createApplicationRequest);
@@ -314,6 +323,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplication
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.CreateApplication
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest createApplicationRequest,
@@ -328,6 +338,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create deployment operation.
      * @return A Java Future containing the result of the CreateDeployment
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.CreateDeployment
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
             CreateDeploymentRequest createDeploymentRequest);
@@ -346,6 +357,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeployment
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.CreateDeployment
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
             CreateDeploymentRequest createDeploymentRequest,
@@ -361,6 +373,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        operation.
      * @return A Java Future containing the result of the CreateDeploymentConfig
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.CreateDeploymentConfig
      */
     java.util.concurrent.Future<CreateDeploymentConfigResult> createDeploymentConfigAsync(
             CreateDeploymentConfigRequest createDeploymentConfigRequest);
@@ -380,6 +393,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeploymentConfig
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.CreateDeploymentConfig
      */
     java.util.concurrent.Future<CreateDeploymentConfigResult> createDeploymentConfigAsync(
             CreateDeploymentConfigRequest createDeploymentConfigRequest,
@@ -395,6 +409,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a create deployment group operation.
      * @return A Java Future containing the result of the CreateDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.CreateDeploymentGroup
      */
     java.util.concurrent.Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(
             CreateDeploymentGroupRequest createDeploymentGroupRequest);
@@ -414,6 +429,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.CreateDeploymentGroup
      */
     java.util.concurrent.Future<CreateDeploymentGroupResult> createDeploymentGroupAsync(
             CreateDeploymentGroupRequest createDeploymentGroupRequest,
@@ -426,6 +442,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param deleteApplicationRequest
      *        Represents the input of a delete application operation.
+     * @sample AmazonCodeDeployAsync.DeleteApplication
      */
     java.util.concurrent.Future<Void> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest);
@@ -442,6 +459,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.DeleteApplication
      */
     java.util.concurrent.Future<Void> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest,
@@ -457,6 +475,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
      *        operation.
+     * @sample AmazonCodeDeployAsync.DeleteDeploymentConfig
      */
     java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
             DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
@@ -476,6 +495,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.DeleteDeploymentConfig
      */
     java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
             DeleteDeploymentConfigRequest deleteDeploymentConfigRequest,
@@ -490,6 +510,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a delete deployment group operation.
      * @return A Java Future containing the result of the DeleteDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.DeleteDeploymentGroup
      */
     java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(
             DeleteDeploymentGroupRequest deleteDeploymentGroupRequest);
@@ -508,6 +529,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.DeleteDeploymentGroup
      */
     java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(
             DeleteDeploymentGroupRequest deleteDeploymentGroupRequest,
@@ -521,6 +543,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param deregisterOnPremisesInstanceRequest
      *        Represents the input of a deregister on-premises instance
      *        operation.
+     * @sample AmazonCodeDeployAsync.DeregisterOnPremisesInstance
      */
     java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
@@ -538,6 +561,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.DeregisterOnPremisesInstance
      */
     java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest,
@@ -552,6 +576,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get application operation.
      * @return A Java Future containing the result of the GetApplication
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetApplication
      */
     java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(
             GetApplicationRequest getApplicationRequest);
@@ -570,6 +595,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApplication
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetApplication
      */
     java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(
             GetApplicationRequest getApplicationRequest,
@@ -584,6 +610,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get application revision operation.
      * @return A Java Future containing the result of the GetApplicationRevision
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetApplicationRevision
      */
     java.util.concurrent.Future<GetApplicationRevisionResult> getApplicationRevisionAsync(
             GetApplicationRevisionRequest getApplicationRevisionRequest);
@@ -602,6 +629,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApplicationRevision
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetApplicationRevision
      */
     java.util.concurrent.Future<GetApplicationRevisionResult> getApplicationRevisionAsync(
             GetApplicationRevisionRequest getApplicationRevisionRequest,
@@ -616,6 +644,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment operation.
      * @return A Java Future containing the result of the GetDeployment
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetDeployment
      */
     java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(
             GetDeploymentRequest getDeploymentRequest);
@@ -634,6 +663,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeployment
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetDeployment
      */
     java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(
             GetDeploymentRequest getDeploymentRequest,
@@ -648,6 +678,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment configuration operation.
      * @return A Java Future containing the result of the GetDeploymentConfig
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetDeploymentConfig
      */
     java.util.concurrent.Future<GetDeploymentConfigResult> getDeploymentConfigAsync(
             GetDeploymentConfigRequest getDeploymentConfigRequest);
@@ -666,6 +697,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeploymentConfig
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetDeploymentConfig
      */
     java.util.concurrent.Future<GetDeploymentConfigResult> getDeploymentConfigAsync(
             GetDeploymentConfigRequest getDeploymentConfigRequest,
@@ -680,6 +712,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment group operation.
      * @return A Java Future containing the result of the GetDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetDeploymentGroup
      */
     java.util.concurrent.Future<GetDeploymentGroupResult> getDeploymentGroupAsync(
             GetDeploymentGroupRequest getDeploymentGroupRequest);
@@ -698,6 +731,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetDeploymentGroup
      */
     java.util.concurrent.Future<GetDeploymentGroupResult> getDeploymentGroupAsync(
             GetDeploymentGroupRequest getDeploymentGroupRequest,
@@ -712,6 +746,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get deployment instance operation.
      * @return A Java Future containing the result of the GetDeploymentInstance
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetDeploymentInstance
      */
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(
             GetDeploymentInstanceRequest getDeploymentInstanceRequest);
@@ -730,6 +765,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeploymentInstance
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetDeploymentInstance
      */
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(
             GetDeploymentInstanceRequest getDeploymentInstanceRequest,
@@ -744,6 +780,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a get on-premises instance operation.
      * @return A Java Future containing the result of the GetOnPremisesInstance
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetOnPremisesInstance
      */
     java.util.concurrent.Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(
             GetOnPremisesInstanceRequest getOnPremisesInstanceRequest);
@@ -762,6 +799,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOnPremisesInstance
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetOnPremisesInstance
      */
     java.util.concurrent.Future<GetOnPremisesInstanceResult> getOnPremisesInstanceAsync(
             GetOnPremisesInstanceRequest getOnPremisesInstanceRequest,
@@ -776,6 +814,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list application revisions operation.
      * @return A Java Future containing the result of the
      *         ListApplicationRevisions operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListApplicationRevisions
      */
     java.util.concurrent.Future<ListApplicationRevisionsResult> listApplicationRevisionsAsync(
             ListApplicationRevisionsRequest listApplicationRevisionsRequest);
@@ -794,6 +833,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListApplicationRevisions operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListApplicationRevisions
      */
     java.util.concurrent.Future<ListApplicationRevisionsResult> listApplicationRevisionsAsync(
             ListApplicationRevisionsRequest listApplicationRevisionsRequest,
@@ -809,6 +849,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list applications operation.
      * @return A Java Future containing the result of the ListApplications
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListApplications
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
             ListApplicationsRequest listApplicationsRequest);
@@ -828,6 +869,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListApplications
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListApplications
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
             ListApplicationsRequest listApplicationsRequest,
@@ -861,6 +903,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        operation.
      * @return A Java Future containing the result of the ListDeploymentConfigs
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListDeploymentConfigs
      */
     java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(
             ListDeploymentConfigsRequest listDeploymentConfigsRequest);
@@ -881,6 +924,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeploymentConfigs
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListDeploymentConfigs
      */
     java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(
             ListDeploymentConfigsRequest listDeploymentConfigsRequest,
@@ -913,6 +957,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployment groups operation.
      * @return A Java Future containing the result of the ListDeploymentGroups
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListDeploymentGroups
      */
     java.util.concurrent.Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(
             ListDeploymentGroupsRequest listDeploymentGroupsRequest);
@@ -932,6 +977,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeploymentGroups
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListDeploymentGroups
      */
     java.util.concurrent.Future<ListDeploymentGroupsResult> listDeploymentGroupsAsync(
             ListDeploymentGroupsRequest listDeploymentGroupsRequest,
@@ -947,6 +993,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployment instances operation.
      * @return A Java Future containing the result of the
      *         ListDeploymentInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListDeploymentInstances
      */
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(
             ListDeploymentInstancesRequest listDeploymentInstancesRequest);
@@ -966,6 +1013,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListDeploymentInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListDeploymentInstances
      */
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(
             ListDeploymentInstancesRequest listDeploymentInstancesRequest,
@@ -981,6 +1029,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list deployments operation.
      * @return A Java Future containing the result of the ListDeployments
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListDeployments
      */
     java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(
             ListDeploymentsRequest listDeploymentsRequest);
@@ -1000,6 +1049,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeployments
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListDeployments
      */
     java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(
             ListDeploymentsRequest listDeploymentsRequest,
@@ -1036,6 +1086,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a list on-premises instances operation.
      * @return A Java Future containing the result of the
      *         ListOnPremisesInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListOnPremisesInstances
      */
     java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
             ListOnPremisesInstancesRequest listOnPremisesInstancesRequest);
@@ -1059,6 +1110,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListOnPremisesInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListOnPremisesInstances
      */
     java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
             ListOnPremisesInstancesRequest listOnPremisesInstancesRequest,
@@ -1089,6 +1141,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param registerApplicationRevisionRequest
      *        Represents the input of a register application revision operation.
+     * @sample AmazonCodeDeployAsync.RegisterApplicationRevision
      */
     java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
@@ -1105,6 +1158,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.RegisterApplicationRevision
      */
     java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest,
@@ -1117,6 +1171,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param registerOnPremisesInstanceRequest
      *        Represents the input of register on-premises instance operation.
+     * @sample AmazonCodeDeployAsync.RegisterOnPremisesInstance
      */
     java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
@@ -1133,6 +1188,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.RegisterOnPremisesInstance
      */
     java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest,
@@ -1146,6 +1202,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param removeTagsFromOnPremisesInstancesRequest
      *        Represents the input of a remove tags from on-premises instances
      *        operation.
+     * @sample AmazonCodeDeployAsync.RemoveTagsFromOnPremisesInstances
      */
     java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
@@ -1163,6 +1220,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.RemoveTagsFromOnPremisesInstances
      */
     java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest,
@@ -1177,6 +1235,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of a stop deployment operation.
      * @return A Java Future containing the result of the StopDeployment
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.StopDeployment
      */
     java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(
             StopDeploymentRequest stopDeploymentRequest);
@@ -1195,6 +1254,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopDeployment
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.StopDeployment
      */
     java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(
             StopDeploymentRequest stopDeploymentRequest,
@@ -1207,6 +1267,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param updateApplicationRequest
      *        Represents the input of an update application operation.
+     * @sample AmazonCodeDeployAsync.UpdateApplication
      */
     java.util.concurrent.Future<Void> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest);
@@ -1223,6 +1284,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCodeDeployAsyncHandler.UpdateApplication
      */
     java.util.concurrent.Future<Void> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest,
@@ -1254,6 +1316,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        Represents the input of an update deployment group operation.
      * @return A Java Future containing the result of the UpdateDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsync.UpdateDeploymentGroup
      */
     java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(
             UpdateDeploymentGroupRequest updateDeploymentGroupRequest);
@@ -1272,6 +1335,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDeploymentGroup
      *         operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.UpdateDeploymentGroup
      */
     java.util.concurrent.Future<UpdateDeploymentGroupResult> updateDeploymentGroupAsync(
             UpdateDeploymentGroupRequest updateDeploymentGroupRequest,

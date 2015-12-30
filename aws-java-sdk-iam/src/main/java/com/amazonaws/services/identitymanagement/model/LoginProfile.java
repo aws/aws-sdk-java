@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
@@ -21,47 +22,51 @@ import java.io.Serializable;
  * Contains the user name and password create date for a user.
  * </p>
  * <p>
- * This data type is used as a response element in the
- * CreateLoginProfile and GetLoginProfile actions.
+ * This data type is used as a response element in the <a>CreateLoginProfile</a>
+ * and <a>GetLoginProfile</a> actions.
  * </p>
  */
 public class LoginProfile implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the user, which can be used for signing in to the AWS
      * Management Console.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * </p>
      */
     private String userName;
-
     /**
+     * <p>
      * The date when the password for the user was created.
+     * </p>
      */
     private java.util.Date createDate;
-
     /**
+     * <p>
      * Specifies whether the user is required to set a new password on next
      * sign-in.
+     * </p>
      */
     private Boolean passwordResetRequired;
 
     /**
-     * Default constructor for a new LoginProfile object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for LoginProfile object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public LoginProfile() {}
-    
+    public LoginProfile() {
+    }
+
     /**
-     * Constructs a new LoginProfile object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new LoginProfile object. Callers should use the setter or
+     * fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param userName The name of the user, which can be used for signing in
-     * to the AWS Management Console.
-     * @param createDate The date when the password for the user was created.
+     * @param userName
+     *        The name of the user, which can be used for signing in to the AWS
+     *        Management Console.
+     * @param createDate
+     *        The date when the password for the user was created.
      */
     public LoginProfile(String userName, java.util.Date createDate) {
         setUserName(userName);
@@ -69,137 +74,142 @@ public class LoginProfile implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the user, which can be used for signing in to the AWS
      * Management Console.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name of the user, which can be used for signing in to the AWS
-     *         Management Console.
-     */
-    public String getUserName() {
-        return userName;
-    }
-    
-    /**
-     * The name of the user, which can be used for signing in to the AWS
-     * Management Console.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param userName The name of the user, which can be used for signing in to the AWS
-     *         Management Console.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user, which can be used for signing in to the AWS
+     *        Management Console.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    
+
     /**
+     * <p>
      * The name of the user, which can be used for signing in to the AWS
      * Management Console.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param userName The name of the user, which can be used for signing in to the AWS
+     * </p>
+     * 
+     * @return The name of the user, which can be used for signing in to the AWS
      *         Management Console.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getUserName() {
+        return this.userName;
+    }
+
+    /**
+     * <p>
+     * The name of the user, which can be used for signing in to the AWS
+     * Management Console.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user, which can be used for signing in to the AWS
+     *        Management Console.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LoginProfile withUserName(String userName) {
-        this.userName = userName;
+        setUserName(userName);
         return this;
     }
 
     /**
+     * <p>
      * The date when the password for the user was created.
-     *
-     * @return The date when the password for the user was created.
-     */
-    public java.util.Date getCreateDate() {
-        return createDate;
-    }
-    
-    /**
-     * The date when the password for the user was created.
-     *
-     * @param createDate The date when the password for the user was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date when the password for the user was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
-    
+
     /**
-     * The date when the password for the user was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param createDate The date when the password for the user was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date when the password for the user was created.
+     * </p>
+     * 
+     * @return The date when the password for the user was created.
+     */
+    public java.util.Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * <p>
+     * The date when the password for the user was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date when the password for the user was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LoginProfile withCreateDate(java.util.Date createDate) {
-        this.createDate = createDate;
+        setCreateDate(createDate);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the user is required to set a new password on next
      * sign-in.
-     *
-     * @return Specifies whether the user is required to set a new password on next
-     *         sign-in.
-     */
-    public Boolean isPasswordResetRequired() {
-        return passwordResetRequired;
-    }
-    
-    /**
-     * Specifies whether the user is required to set a new password on next
-     * sign-in.
-     *
-     * @param passwordResetRequired Specifies whether the user is required to set a new password on next
-     *         sign-in.
+     * </p>
+     * 
+     * @param passwordResetRequired
+     *        Specifies whether the user is required to set a new password on
+     *        next sign-in.
      */
     public void setPasswordResetRequired(Boolean passwordResetRequired) {
         this.passwordResetRequired = passwordResetRequired;
     }
-    
+
     /**
+     * <p>
      * Specifies whether the user is required to set a new password on next
      * sign-in.
+     * </p>
+     * 
+     * @return Specifies whether the user is required to set a new password on
+     *         next sign-in.
+     */
+    public Boolean getPasswordResetRequired() {
+        return this.passwordResetRequired;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param passwordResetRequired Specifies whether the user is required to set a new password on next
-     *         sign-in.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     * </p>
+     * 
+     * @param passwordResetRequired
+     *        Specifies whether the user is required to set a new password on
+     *        next sign-in.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LoginProfile withPasswordResetRequired(Boolean passwordResetRequired) {
-        this.passwordResetRequired = passwordResetRequired;
+        setPasswordResetRequired(passwordResetRequired);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the user is required to set a new password on next
      * sign-in.
-     *
-     * @return Specifies whether the user is required to set a new password on next
-     *         sign-in.
+     * </p>
+     * 
+     * @return Specifies whether the user is required to set a new password on
+     *         next sign-in.
      */
-    public Boolean getPasswordResetRequired() {
-        return passwordResetRequired;
+    public Boolean isPasswordResetRequired() {
+        return this.passwordResetRequired;
     }
 
     /**
@@ -214,54 +224,70 @@ public class LoginProfile implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
-        if (isPasswordResetRequired() != null) sb.append("PasswordResetRequired: " + isPasswordResetRequired() );
+        if (getUserName() != null)
+            sb.append("UserName: " + getUserName() + ",");
+        if (getCreateDate() != null)
+            sb.append("CreateDate: " + getCreateDate() + ",");
+        if (getPasswordResetRequired() != null)
+            sb.append("PasswordResetRequired: " + getPasswordResetRequired());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof LoginProfile == false)
+            return false;
+        LoginProfile other = (LoginProfile) obj;
+        if (other.getUserName() == null ^ this.getUserName() == null)
+            return false;
+        if (other.getUserName() != null
+                && other.getUserName().equals(this.getUserName()) == false)
+            return false;
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null)
+            return false;
+        if (other.getCreateDate() != null
+                && other.getCreateDate().equals(this.getCreateDate()) == false)
+            return false;
+        if (other.getPasswordResetRequired() == null
+                ^ this.getPasswordResetRequired() == null)
+            return false;
+        if (other.getPasswordResetRequired() != null
+                && other.getPasswordResetRequired().equals(
+                        this.getPasswordResetRequired()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
-        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
-        hashCode = prime * hashCode + ((isPasswordResetRequired() == null) ? 0 : isPasswordResetRequired().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode
+                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPasswordResetRequired() == null) ? 0
+                        : getPasswordResetRequired().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof LoginProfile == false) return false;
-        LoginProfile other = (LoginProfile)obj;
-        
-        if (other.getUserName() == null ^ this.getUserName() == null) return false;
-        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
-        if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
-        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
-        if (other.isPasswordResetRequired() == null ^ this.isPasswordResetRequired() == null) return false;
-        if (other.isPasswordResetRequired() != null && other.isPasswordResetRequired().equals(this.isPasswordResetRequired()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public LoginProfile clone() {
         try {
             return (LoginProfile) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

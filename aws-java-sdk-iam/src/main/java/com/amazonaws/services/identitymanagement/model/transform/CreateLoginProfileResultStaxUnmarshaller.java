@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,24 +27,31 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Create Login Profile Result StAX Unmarshaller
+ * CreateLoginProfileResult StAX Unmarshaller
  */
-public class CreateLoginProfileResultStaxUnmarshaller implements Unmarshaller<CreateLoginProfileResult, StaxUnmarshallerContext> {
+public class CreateLoginProfileResultStaxUnmarshaller implements
+        Unmarshaller<CreateLoginProfileResult, StaxUnmarshallerContext> {
 
-    public CreateLoginProfileResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CreateLoginProfileResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         CreateLoginProfileResult createLoginProfileResult = new CreateLoginProfileResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return createLoginProfileResult;
+            if (xmlEvent.isEndDocument())
+                return createLoginProfileResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("LoginProfile", targetDepth)) {
-                    createLoginProfileResult.setLoginProfile(LoginProfileStaxUnmarshaller.getInstance().unmarshall(context));
+                    createLoginProfileResult
+                            .setLoginProfile(LoginProfileStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -56,9 +63,10 @@ public class CreateLoginProfileResultStaxUnmarshaller implements Unmarshaller<Cr
     }
 
     private static CreateLoginProfileResultStaxUnmarshaller instance;
+
     public static CreateLoginProfileResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateLoginProfileResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new CreateLoginProfileResultStaxUnmarshaller();
         return instance;
     }
 }
-    

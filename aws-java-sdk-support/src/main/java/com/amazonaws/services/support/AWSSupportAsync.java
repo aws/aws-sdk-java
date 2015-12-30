@@ -105,6 +105,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param addAttachmentsToSetRequest
      * @return A Java Future containing the result of the AddAttachmentsToSet
      *         operation returned by the service.
+     * @sample AWSSupportAsync.AddAttachmentsToSet
      */
     java.util.concurrent.Future<AddAttachmentsToSetResult> addAttachmentsToSetAsync(
             AddAttachmentsToSetRequest addAttachmentsToSetRequest);
@@ -133,6 +134,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddAttachmentsToSet
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.AddAttachmentsToSet
      */
     java.util.concurrent.Future<AddAttachmentsToSetResult> addAttachmentsToSetAsync(
             AddAttachmentsToSetRequest addAttachmentsToSetRequest,
@@ -159,6 +161,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        To be written.
      * @return A Java Future containing the result of the AddCommunicationToCase
      *         operation returned by the service.
+     * @sample AWSSupportAsync.AddCommunicationToCase
      */
     java.util.concurrent.Future<AddCommunicationToCaseResult> addCommunicationToCaseAsync(
             AddCommunicationToCaseRequest addCommunicationToCaseRequest);
@@ -189,6 +192,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddCommunicationToCase
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.AddCommunicationToCase
      */
     java.util.concurrent.Future<AddCommunicationToCaseResult> addCommunicationToCaseAsync(
             AddCommunicationToCaseRequest addCommunicationToCaseRequest,
@@ -251,6 +255,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param createCaseRequest
      * @return A Java Future containing the result of the CreateCase operation
      *         returned by the service.
+     * @sample AWSSupportAsync.CreateCase
      */
     java.util.concurrent.Future<CreateCaseResult> createCaseAsync(
             CreateCaseRequest createCaseRequest);
@@ -317,6 +322,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateCase operation
      *         returned by the service.
+     * @sample AWSSupportAsyncHandler.CreateCase
      */
     java.util.concurrent.Future<CreateCaseResult> createCaseAsync(
             CreateCaseRequest createCaseRequest,
@@ -334,6 +340,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param describeAttachmentRequest
      * @return A Java Future containing the result of the DescribeAttachment
      *         operation returned by the service.
+     * @sample AWSSupportAsync.DescribeAttachment
      */
     java.util.concurrent.Future<DescribeAttachmentResult> describeAttachmentAsync(
             DescribeAttachmentRequest describeAttachmentRequest);
@@ -355,6 +362,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAttachment
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeAttachment
      */
     java.util.concurrent.Future<DescribeAttachmentResult> describeAttachmentAsync(
             DescribeAttachmentRequest describeAttachmentRequest,
@@ -386,6 +394,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param describeCasesRequest
      * @return A Java Future containing the result of the DescribeCases
      *         operation returned by the service.
+     * @sample AWSSupportAsync.DescribeCases
      */
     java.util.concurrent.Future<DescribeCasesResult> describeCasesAsync(
             DescribeCasesRequest describeCasesRequest);
@@ -421,6 +430,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeCases
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeCases
      */
     java.util.concurrent.Future<DescribeCasesResult> describeCasesAsync(
             DescribeCasesRequest describeCasesRequest,
@@ -465,6 +475,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param describeCommunicationsRequest
      * @return A Java Future containing the result of the DescribeCommunications
      *         operation returned by the service.
+     * @sample AWSSupportAsync.DescribeCommunications
      */
     java.util.concurrent.Future<DescribeCommunicationsResult> describeCommunicationsAsync(
             DescribeCommunicationsRequest describeCommunicationsRequest);
@@ -496,6 +507,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeCommunications
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeCommunications
      */
     java.util.concurrent.Future<DescribeCommunicationsResult> describeCommunicationsAsync(
             DescribeCommunicationsRequest describeCommunicationsRequest,
@@ -523,6 +535,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param describeServicesRequest
      * @return A Java Future containing the result of the DescribeServices
      *         operation returned by the service.
+     * @sample AWSSupportAsync.DescribeServices
      */
     java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
             DescribeServicesRequest describeServicesRequest);
@@ -554,6 +567,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeServices
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeServices
      */
     java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
             DescribeServicesRequest describeServicesRequest,
@@ -586,6 +600,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param describeSeverityLevelsRequest
      * @return A Java Future containing the result of the DescribeSeverityLevels
      *         operation returned by the service.
+     * @sample AWSSupportAsync.DescribeSeverityLevels
      */
     java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(
             DescribeSeverityLevelsRequest describeSeverityLevelsRequest);
@@ -605,6 +620,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeSeverityLevels
      *         operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeSeverityLevels
      */
     java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(
             DescribeSeverityLevelsRequest describeSeverityLevelsRequest,
@@ -638,6 +654,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckRefreshStatuses operation returned by
      *         the service.
+     * @sample AWSSupportAsync.DescribeTrustedAdvisorCheckRefreshStatuses
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(
             DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest);
@@ -658,6 +675,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckRefreshStatuses operation returned by
      *         the service.
+     * @sample AWSSupportAsyncHandler.DescribeTrustedAdvisorCheckRefreshStatuses
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(
             DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest,
@@ -692,6 +710,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckResult operation returned by the
      *         service.
+     * @sample AWSSupportAsync.DescribeTrustedAdvisorCheckResult
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorCheckResultResult> describeTrustedAdvisorCheckResultAsync(
             DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest);
@@ -730,6 +749,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckResult operation returned by the
      *         service.
+     * @sample AWSSupportAsyncHandler.DescribeTrustedAdvisorCheckResult
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorCheckResultResult> describeTrustedAdvisorCheckResultAsync(
             DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest,
@@ -750,6 +770,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckSummaries operation returned by the
      *         service.
+     * @sample AWSSupportAsync.DescribeTrustedAdvisorCheckSummaries
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorCheckSummariesResult> describeTrustedAdvisorCheckSummariesAsync(
             DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest);
@@ -774,6 +795,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorCheckSummaries operation returned by the
      *         service.
+     * @sample AWSSupportAsyncHandler.DescribeTrustedAdvisorCheckSummaries
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorCheckSummariesResult> describeTrustedAdvisorCheckSummariesAsync(
             DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest,
@@ -791,6 +813,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param describeTrustedAdvisorChecksRequest
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorChecks operation returned by the service.
+     * @sample AWSSupportAsync.DescribeTrustedAdvisorChecks
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorChecksResult> describeTrustedAdvisorChecksAsync(
             DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest);
@@ -812,6 +835,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeTrustedAdvisorChecks operation returned by the service.
+     * @sample AWSSupportAsyncHandler.DescribeTrustedAdvisorChecks
      */
     java.util.concurrent.Future<DescribeTrustedAdvisorChecksResult> describeTrustedAdvisorChecksAsync(
             DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest,
@@ -838,6 +862,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param refreshTrustedAdvisorCheckRequest
      * @return A Java Future containing the result of the
      *         RefreshTrustedAdvisorCheck operation returned by the service.
+     * @sample AWSSupportAsync.RefreshTrustedAdvisorCheck
      */
     java.util.concurrent.Future<RefreshTrustedAdvisorCheckResult> refreshTrustedAdvisorCheckAsync(
             RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest);
@@ -868,6 +893,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         RefreshTrustedAdvisorCheck operation returned by the service.
+     * @sample AWSSupportAsyncHandler.RefreshTrustedAdvisorCheck
      */
     java.util.concurrent.Future<RefreshTrustedAdvisorCheckResult> refreshTrustedAdvisorCheckAsync(
             RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest,
@@ -883,6 +909,7 @@ public interface AWSSupportAsync extends AWSSupport {
      * @param resolveCaseRequest
      * @return A Java Future containing the result of the ResolveCase operation
      *         returned by the service.
+     * @sample AWSSupportAsync.ResolveCase
      */
     java.util.concurrent.Future<ResolveCaseResult> resolveCaseAsync(
             ResolveCaseRequest resolveCaseRequest);
@@ -902,6 +929,7 @@ public interface AWSSupportAsync extends AWSSupport {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ResolveCase operation
      *         returned by the service.
+     * @sample AWSSupportAsyncHandler.ResolveCase
      */
     java.util.concurrent.Future<ResolveCaseResult> resolveCaseAsync(
             ResolveCaseRequest resolveCaseRequest,

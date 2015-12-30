@@ -173,6 +173,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AssignInstance
      */
     void assignInstance(AssignInstanceRequest assignInstanceRequest);
 
@@ -200,6 +201,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AssignVolume
      */
     void assignVolume(AssignVolumeRequest assignVolumeRequest);
 
@@ -225,6 +227,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AssociateElasticIp
      */
     void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest);
 
@@ -258,6 +261,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.AttachElasticLoadBalancer
      */
     void attachElasticLoadBalancer(
             AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
@@ -283,6 +287,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CloneStack
      */
     CloneStackResult cloneStack(CloneStackRequest cloneStackRequest);
 
@@ -307,6 +312,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateApp
      */
     CreateAppResult createApp(CreateAppRequest createAppRequest);
 
@@ -333,6 +339,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateDeployment
      */
     CreateDeploymentResult createDeployment(
             CreateDeploymentRequest createDeploymentRequest);
@@ -359,6 +366,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateInstance
      */
     CreateInstanceResult createInstance(
             CreateInstanceRequest createInstanceRequest);
@@ -394,6 +402,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.CreateLayer
      */
     CreateLayerResult createLayer(CreateLayerRequest createLayerRequest);
 
@@ -415,6 +424,7 @@ public interface AWSOpsWorks {
      * @return Result of the CreateStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
+     * @sample AWSOpsWorks.CreateStack
      */
     CreateStackResult createStack(CreateStackRequest createStackRequest);
 
@@ -435,6 +445,7 @@ public interface AWSOpsWorks {
      *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
+     * @sample AWSOpsWorks.CreateUserProfile
      */
     CreateUserProfileResult createUserProfile(
             CreateUserProfileRequest createUserProfileRequest);
@@ -457,6 +468,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteApp
      */
     void deleteApp(DeleteAppRequest deleteAppRequest);
 
@@ -484,6 +496,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteInstance
      */
     void deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
 
@@ -509,6 +522,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteLayer
      */
     void deleteLayer(DeleteLayerRequest deleteLayerRequest);
 
@@ -534,6 +548,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteStack
      */
     void deleteStack(DeleteStackRequest deleteStackRequest);
 
@@ -554,6 +569,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeleteUserProfile
      */
     void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest);
 
@@ -578,6 +594,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterEcsCluster
      */
     void deregisterEcsCluster(
             DeregisterEcsClusterRequest deregisterEcsClusterRequest);
@@ -603,6 +620,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterElasticIp
      */
     void deregisterElasticIp(
             DeregisterElasticIpRequest deregisterElasticIpRequest);
@@ -628,6 +646,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterInstance
      */
     void deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest);
 
@@ -649,6 +668,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterRdsDbInstance
      */
     void deregisterRdsDbInstance(
             DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest);
@@ -674,6 +694,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DeregisterVolume
      */
     void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest);
 
@@ -692,6 +713,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeAgentVersions
      */
     DescribeAgentVersionsResult describeAgentVersions(
             DescribeAgentVersionsRequest describeAgentVersionsRequest);
@@ -720,6 +742,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeApps
      */
     DescribeAppsResult describeApps(DescribeAppsRequest describeAppsRequest);
 
@@ -747,6 +770,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeCommands
      */
     DescribeCommandsResult describeCommands(
             DescribeCommandsRequest describeCommandsRequest);
@@ -776,6 +800,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeDeployments
      */
     DescribeDeploymentsResult describeDeployments(
             DescribeDeploymentsRequest describeDeploymentsRequest);
@@ -804,6 +829,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeEcsClusters
      */
     DescribeEcsClustersResult describeEcsClusters(
             DescribeEcsClustersRequest describeEcsClustersRequest);
@@ -835,6 +861,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeElasticIps
      */
     DescribeElasticIpsResult describeElasticIps(
             DescribeElasticIpsRequest describeElasticIpsRequest);
@@ -864,6 +891,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeElasticLoadBalancers
      */
     DescribeElasticLoadBalancersResult describeElasticLoadBalancers(
             DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest);
@@ -893,6 +921,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeInstances
      */
     DescribeInstancesResult describeInstances(
             DescribeInstancesRequest describeInstancesRequest);
@@ -921,6 +950,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeLayers
      */
     DescribeLayersResult describeLayers(
             DescribeLayersRequest describeLayersRequest);
@@ -950,6 +980,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeLoadBasedAutoScaling
      */
     DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(
             DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest);
@@ -969,6 +1000,7 @@ public interface AWSOpsWorks {
      * @param describeMyUserProfileRequest
      * @return Result of the DescribeMyUserProfile operation returned by the
      *         service.
+     * @sample AWSOpsWorks.DescribeMyUserProfile
      */
     DescribeMyUserProfileResult describeMyUserProfile(
             DescribeMyUserProfileRequest describeMyUserProfileRequest);
@@ -993,6 +1025,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribePermissions
      */
     DescribePermissionsResult describePermissions(
             DescribePermissionsRequest describePermissionsRequest);
@@ -1022,6 +1055,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeRaidArrays
      */
     DescribeRaidArraysResult describeRaidArrays(
             DescribeRaidArraysRequest describeRaidArraysRequest);
@@ -1046,6 +1080,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeRdsDbInstances
      */
     DescribeRdsDbInstancesResult describeRdsDbInstances(
             DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest);
@@ -1070,6 +1105,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeServiceErrors
      */
     DescribeServiceErrorsResult describeServiceErrors(
             DescribeServiceErrorsRequest describeServiceErrorsRequest);
@@ -1094,6 +1130,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeStackProvisioningParameters
      */
     DescribeStackProvisioningParametersResult describeStackProvisioningParameters(
             DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest);
@@ -1120,6 +1157,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeStackSummary
      */
     DescribeStackSummaryResult describeStackSummary(
             DescribeStackSummaryRequest describeStackSummaryRequest);
@@ -1143,6 +1181,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeStacks
      */
     DescribeStacksResult describeStacks(
             DescribeStacksRequest describeStacksRequest);
@@ -1172,6 +1211,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeTimeBasedAutoScaling
      */
     DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(
             DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest);
@@ -1195,6 +1235,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeUserProfiles
      */
     DescribeUserProfilesResult describeUserProfiles(
             DescribeUserProfilesRequest describeUserProfilesRequest);
@@ -1223,6 +1264,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DescribeVolumes
      */
     DescribeVolumesResult describeVolumes(
             DescribeVolumesRequest describeVolumesRequest);
@@ -1243,6 +1285,7 @@ public interface AWSOpsWorks {
      * @param detachElasticLoadBalancerRequest
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DetachElasticLoadBalancer
      */
     void detachElasticLoadBalancer(
             DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest);
@@ -1268,6 +1311,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.DisassociateElasticIp
      */
     void disassociateElasticIp(
             DisassociateElasticIpRequest disassociateElasticIpRequest);
@@ -1293,6 +1337,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.GetHostnameSuggestion
      */
     GetHostnameSuggestionResult getHostnameSuggestion(
             GetHostnameSuggestionRequest getHostnameSuggestionRequest);
@@ -1309,6 +1354,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.GrantAccess
      */
     GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest);
 
@@ -1332,6 +1378,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RebootInstance
      */
     void rebootInstance(RebootInstanceRequest rebootInstanceRequest);
 
@@ -1359,6 +1406,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterEcsCluster
      */
     RegisterEcsClusterResult registerEcsCluster(
             RegisterEcsClusterRequest registerEcsClusterRequest);
@@ -1388,6 +1436,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterElasticIp
      */
     RegisterElasticIpResult registerElasticIp(
             RegisterElasticIpRequest registerElasticIpRequest);
@@ -1421,6 +1470,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterInstance
      */
     RegisterInstanceResult registerInstance(
             RegisterInstanceRequest registerInstanceRequest);
@@ -1443,6 +1493,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterRdsDbInstance
      */
     void registerRdsDbInstance(
             RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest);
@@ -1471,6 +1522,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.RegisterVolume
      */
     RegisterVolumeResult registerVolume(
             RegisterVolumeRequest registerVolumeRequest);
@@ -1504,6 +1556,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.SetLoadBasedAutoScaling
      */
     void setLoadBasedAutoScaling(
             SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest);
@@ -1528,6 +1581,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.SetPermission
      */
     void setPermission(SetPermissionRequest setPermissionRequest);
 
@@ -1552,6 +1606,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.SetTimeBasedAutoScaling
      */
     void setTimeBasedAutoScaling(
             SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
@@ -1576,6 +1631,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StartInstance
      */
     void startInstance(StartInstanceRequest startInstanceRequest);
 
@@ -1597,6 +1653,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StartStack
      */
     void startStack(StartStackRequest startStackRequest);
 
@@ -1623,6 +1680,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StopInstance
      */
     void stopInstance(StopInstanceRequest stopInstanceRequest);
 
@@ -1644,6 +1702,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.StopStack
      */
     void stopStack(StopStackRequest stopStackRequest);
 
@@ -1668,6 +1727,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UnassignInstance
      */
     void unassignInstance(UnassignInstanceRequest unassignInstanceRequest);
 
@@ -1692,6 +1752,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UnassignVolume
      */
     void unassignVolume(UnassignVolumeRequest unassignVolumeRequest);
 
@@ -1713,6 +1774,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateApp
      */
     void updateApp(UpdateAppRequest updateAppRequest);
 
@@ -1737,6 +1799,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateElasticIp
      */
     void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest);
 
@@ -1758,6 +1821,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateInstance
      */
     void updateInstance(UpdateInstanceRequest updateInstanceRequest);
 
@@ -1779,6 +1843,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateLayer
      */
     void updateLayer(UpdateLayerRequest updateLayerRequest);
 
@@ -1797,6 +1862,7 @@ public interface AWSOpsWorks {
      * @param updateMyUserProfileRequest
      * @throws ValidationException
      *         Indicates that a request was invalid.
+     * @sample AWSOpsWorks.UpdateMyUserProfile
      */
     void updateMyUserProfile(
             UpdateMyUserProfileRequest updateMyUserProfileRequest);
@@ -1819,6 +1885,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateRdsDbInstance
      */
     void updateRdsDbInstance(
             UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest);
@@ -1841,6 +1908,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateStack
      */
     void updateStack(UpdateStackRequest updateStackRequest);
 
@@ -1861,6 +1929,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateUserProfile
      */
     void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest);
 
@@ -1885,6 +1954,7 @@ public interface AWSOpsWorks {
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UpdateVolume
      */
     void updateVolume(UpdateVolumeRequest updateVolumeRequest);
 

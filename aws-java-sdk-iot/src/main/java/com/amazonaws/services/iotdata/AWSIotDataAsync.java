@@ -51,6 +51,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        The input for the DeleteThingShadow operation.
      * @return A Java Future containing the result of the DeleteThingShadow
      *         operation returned by the service.
+     * @sample AWSIotDataAsync.DeleteThingShadow
      */
     java.util.concurrent.Future<DeleteThingShadowResult> deleteThingShadowAsync(
             DeleteThingShadowRequest deleteThingShadowRequest);
@@ -74,6 +75,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteThingShadow
      *         operation returned by the service.
+     * @sample AWSIotDataAsyncHandler.DeleteThingShadow
      */
     java.util.concurrent.Future<DeleteThingShadowResult> deleteThingShadowAsync(
             DeleteThingShadowRequest deleteThingShadowRequest,
@@ -93,6 +95,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        The input for the GetThingShadow operation.
      * @return A Java Future containing the result of the GetThingShadow
      *         operation returned by the service.
+     * @sample AWSIotDataAsync.GetThingShadow
      */
     java.util.concurrent.Future<GetThingShadowResult> getThingShadowAsync(
             GetThingShadowRequest getThingShadowRequest);
@@ -116,6 +119,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetThingShadow
      *         operation returned by the service.
+     * @sample AWSIotDataAsyncHandler.GetThingShadow
      */
     java.util.concurrent.Future<GetThingShadowResult> getThingShadowAsync(
             GetThingShadowRequest getThingShadowRequest,
@@ -133,6 +137,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      * 
      * @param publishRequest
      *        The input for the Publish operation.
+     * @sample AWSIotDataAsync.Publish
      */
     java.util.concurrent.Future<Void> publishAsync(PublishRequest publishRequest);
 
@@ -153,6 +158,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotDataAsyncHandler.Publish
      */
     java.util.concurrent.Future<Void> publishAsync(
             PublishRequest publishRequest,
@@ -172,6 +178,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        The input for the UpdateThingShadow operation.
      * @return A Java Future containing the result of the UpdateThingShadow
      *         operation returned by the service.
+     * @sample AWSIotDataAsync.UpdateThingShadow
      */
     java.util.concurrent.Future<UpdateThingShadowResult> updateThingShadowAsync(
             UpdateThingShadowRequest updateThingShadowRequest);
@@ -195,6 +202,7 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateThingShadow
      *         operation returned by the service.
+     * @sample AWSIotDataAsyncHandler.UpdateThingShadow
      */
     java.util.concurrent.Future<UpdateThingShadowResult> updateThingShadowAsync(
             UpdateThingShadowRequest updateThingShadowRequest,

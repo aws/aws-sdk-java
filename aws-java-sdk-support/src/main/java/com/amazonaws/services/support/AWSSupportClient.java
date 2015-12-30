@@ -355,6 +355,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * @throws AttachmentLimitExceededException
      *         The limit for the number of attachment sets created in a short
      *         period of time has been exceeded.
+     * @sample AWSSupport.AddAttachmentsToSet
      */
     @Override
     public AddAttachmentsToSetResult addAttachmentsToSet(
@@ -421,6 +422,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * @throws AttachmentSetExpiredException
      *         The expiration time of the attachment set has passed. The set
      *         expires 1 hour after it is created.
+     * @sample AWSSupport.AddCommunicationToCase
      */
     @Override
     public AddCommunicationToCaseResult addCommunicationToCase(
@@ -522,6 +524,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * @throws AttachmentSetExpiredException
      *         The expiration time of the attachment set has passed. The set
      *         expires 1 hour after it is created.
+     * @sample AWSSupport.CreateCase
      */
     @Override
     public CreateCaseResult createCase(CreateCaseRequest createCaseRequest) {
@@ -575,6 +578,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         a short period of time has been exceeded.
      * @throws AttachmentIdNotFoundException
      *         An attachment with the specified ID could not be found.
+     * @sample AWSSupport.DescribeAttachment
      */
     @Override
     public DescribeAttachmentResult describeAttachment(
@@ -640,6 +644,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         An internal server error occurred.
      * @throws CaseIdNotFoundException
      *         The requested <code>CaseId</code> could not be located.
+     * @sample AWSSupport.DescribeCases
      */
     @Override
     public DescribeCasesResult describeCases(
@@ -706,6 +711,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         An internal server error occurred.
      * @throws CaseIdNotFoundException
      *         The requested <code>CaseId</code> could not be located.
+     * @sample AWSSupport.DescribeCommunications
      */
     @Override
     public DescribeCommunicationsResult describeCommunications(
@@ -765,6 +771,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeServices operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeServices
      */
     @Override
     public DescribeServicesResult describeServices(
@@ -818,6 +825,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeSeverityLevels
      */
     @Override
     public DescribeSeverityLevelsResult describeSeverityLevels(
@@ -871,6 +879,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorCheckRefreshStatuses
      */
     @Override
     public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(
@@ -937,6 +946,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorCheckResult
      */
     @Override
     public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(
@@ -989,6 +999,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorCheckSummaries
      */
     @Override
     public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(
@@ -1039,6 +1050,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorChecks
      */
     @Override
     public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(
@@ -1098,6 +1110,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.RefreshTrustedAdvisorCheck
      */
     @Override
     public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(
@@ -1147,6 +1160,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *         An internal server error occurred.
      * @throws CaseIdNotFoundException
      *         The requested <code>CaseId</code> could not be located.
+     * @sample AWSSupport.ResolveCase
      */
     @Override
     public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {

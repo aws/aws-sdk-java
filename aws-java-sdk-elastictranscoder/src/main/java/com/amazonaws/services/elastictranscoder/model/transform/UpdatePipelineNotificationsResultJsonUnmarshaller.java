@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,14 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Update Pipeline Notifications Result JSON Unmarshaller
+ * UpdatePipelineNotificationsResult JSON Unmarshaller
  */
-public class UpdatePipelineNotificationsResultJsonUnmarshaller implements Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> {
+public class UpdatePipelineNotificationsResultJsonUnmarshaller
+        implements
+        Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> {
 
-    public UpdatePipelineNotificationsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public UpdatePipelineNotificationsResult unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         UpdatePipelineNotificationsResult updatePipelineNotificationsResult = new UpdatePipelineNotificationsResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,33 +41,41 @@ public class UpdatePipelineNotificationsResultJsonUnmarshaller implements Unmars
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Pipeline", targetDepth)) {
                     context.nextToken();
-                    updatePipelineNotificationsResult.setPipeline(PipelineJsonUnmarshaller.getInstance().unmarshall(context));
+                    updatePipelineNotificationsResult
+                            .setPipeline(PipelineJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return updatePipelineNotificationsResult;
     }
 
     private static UpdatePipelineNotificationsResultJsonUnmarshaller instance;
+
     public static UpdatePipelineNotificationsResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new UpdatePipelineNotificationsResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new UpdatePipelineNotificationsResultJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -68,6 +68,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the
      *         AllocateConnectionOnInterconnect operation returned by the
      *         service.
+     * @sample AmazonDirectConnectAsync.AllocateConnectionOnInterconnect
      */
     java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest);
@@ -92,6 +93,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the
      *         AllocateConnectionOnInterconnect operation returned by the
      *         service.
+     * @sample AmazonDirectConnectAsyncHandler.AllocateConnectionOnInterconnect
      */
     java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest,
@@ -119,6 +121,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the
      *         AllocatePrivateVirtualInterface operation returned by the
      *         service.
+     * @sample AmazonDirectConnectAsync.AllocatePrivateVirtualInterface
      */
     java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult> allocatePrivateVirtualInterfaceAsync(
             AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest);
@@ -150,6 +153,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the
      *         AllocatePrivateVirtualInterface operation returned by the
      *         service.
+     * @sample AmazonDirectConnectAsyncHandler.AllocatePrivateVirtualInterface
      */
     java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult> allocatePrivateVirtualInterfaceAsync(
             AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest,
@@ -176,6 +180,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the
      *         AllocatePublicVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsync.AllocatePublicVirtualInterface
      */
     java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest);
@@ -206,6 +211,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         AllocatePublicVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.AllocatePublicVirtualInterface
      */
     java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest,
@@ -225,6 +231,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the ConfirmConnection operation.
      * @return A Java Future containing the result of the ConfirmConnection
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.ConfirmConnection
      */
     java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(
             ConfirmConnectionRequest confirmConnectionRequest);
@@ -248,6 +255,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ConfirmConnection
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.ConfirmConnection
      */
     java.util.concurrent.Future<ConfirmConnectionResult> confirmConnectionAsync(
             ConfirmConnectionRequest confirmConnectionRequest,
@@ -269,6 +277,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the
      *         ConfirmPrivateVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsync.ConfirmPrivateVirtualInterface
      */
     java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult> confirmPrivateVirtualInterfaceAsync(
             ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest);
@@ -294,6 +303,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ConfirmPrivateVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.ConfirmPrivateVirtualInterface
      */
     java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult> confirmPrivateVirtualInterfaceAsync(
             ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest,
@@ -315,6 +325,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the
      *         ConfirmPublicVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsync.ConfirmPublicVirtualInterface
      */
     java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(
             ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest);
@@ -340,6 +351,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ConfirmPublicVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.ConfirmPublicVirtualInterface
      */
     java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(
             ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest,
@@ -365,6 +377,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the CreateConnection operation.
      * @return A Java Future containing the result of the CreateConnection
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.CreateConnection
      */
     java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(
             CreateConnectionRequest createConnectionRequest);
@@ -394,6 +407,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateConnection
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.CreateConnection
      */
     java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(
             CreateConnectionRequest createConnectionRequest,
@@ -426,6 +440,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the CreateInterconnect operation.
      * @return A Java Future containing the result of the CreateInterconnect
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.CreateInterconnect
      */
     java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(
             CreateInterconnectRequest createInterconnectRequest);
@@ -462,6 +477,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInterconnect
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.CreateInterconnect
      */
     java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(
             CreateInterconnectRequest createInterconnectRequest,
@@ -479,6 +495,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the
      *         CreatePrivateVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsync.CreatePrivateVirtualInterface
      */
     java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(
             CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest);
@@ -500,6 +517,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreatePrivateVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.CreatePrivateVirtualInterface
      */
     java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult> createPrivateVirtualInterfaceAsync(
             CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest,
@@ -518,6 +536,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the
      *         CreatePublicVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsync.CreatePublicVirtualInterface
      */
     java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
             CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest);
@@ -540,6 +559,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreatePublicVirtualInterface operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.CreatePublicVirtualInterface
      */
     java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
             CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest,
@@ -560,6 +580,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DeleteConnection operation.
      * @return A Java Future containing the result of the DeleteConnection
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DeleteConnection
      */
     java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(
             DeleteConnectionRequest deleteConnectionRequest);
@@ -584,6 +605,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteConnection
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DeleteConnection
      */
     java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(
             DeleteConnectionRequest deleteConnectionRequest,
@@ -598,6 +620,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DeleteInterconnect operation.
      * @return A Java Future containing the result of the DeleteInterconnect
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DeleteInterconnect
      */
     java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(
             DeleteInterconnectRequest deleteInterconnectRequest);
@@ -616,6 +639,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteInterconnect
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DeleteInterconnect
      */
     java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(
             DeleteInterconnectRequest deleteInterconnectRequest,
@@ -631,6 +655,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the DeleteVirtualInterface
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DeleteVirtualInterface
      */
     java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(
             DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest);
@@ -650,6 +675,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteVirtualInterface
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DeleteVirtualInterface
      */
     java.util.concurrent.Future<DeleteVirtualInterfaceResult> deleteVirtualInterfaceAsync(
             DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest,
@@ -668,6 +694,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        Container for the parameters to the DescribeConnections operation.
      * @return A Java Future containing the result of the DescribeConnections
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeConnections
      */
     java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
             DescribeConnectionsRequest describeConnectionsRequest);
@@ -690,6 +717,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeConnections
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeConnections
      */
     java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
             DescribeConnectionsRequest describeConnectionsRequest,
@@ -724,6 +752,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the
      *         DescribeConnectionsOnInterconnect operation returned by the
      *         service.
+     * @sample AmazonDirectConnectAsync.DescribeConnectionsOnInterconnect
      */
     java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest);
@@ -745,6 +774,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @return A Java Future containing the result of the
      *         DescribeConnectionsOnInterconnect operation returned by the
      *         service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeConnectionsOnInterconnect
      */
     java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest,
@@ -764,6 +794,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the DescribeInterconnects
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeInterconnects
      */
     java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
             DescribeInterconnectsRequest describeInterconnectsRequest);
@@ -787,6 +818,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInterconnects
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeInterconnects
      */
     java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
             DescribeInterconnectsRequest describeInterconnectsRequest,
@@ -819,6 +851,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @param describeLocationsRequest
      * @return A Java Future containing the result of the DescribeLocations
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeLocations
      */
     java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
             DescribeLocationsRequest describeLocationsRequest);
@@ -838,6 +871,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLocations
      *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeLocations
      */
     java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
             DescribeLocationsRequest describeLocationsRequest,
@@ -875,6 +909,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * @param describeVirtualGatewaysRequest
      * @return A Java Future containing the result of the
      *         DescribeVirtualGateways operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeVirtualGateways
      */
     java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
             DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest);
@@ -899,6 +934,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeVirtualGateways operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeVirtualGateways
      */
     java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
             DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest,
@@ -946,6 +982,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        operation.
      * @return A Java Future containing the result of the
      *         DescribeVirtualInterfaces operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeVirtualInterfaces
      */
     java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest);
@@ -979,6 +1016,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeVirtualInterfaces operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeVirtualInterfaces
      */
     java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest,

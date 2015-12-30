@@ -360,6 +360,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
+     * @sample AmazonS3.CreateClient
      */
     public AmazonS3Client() {
         this(new AWSCredentialsProviderChain(

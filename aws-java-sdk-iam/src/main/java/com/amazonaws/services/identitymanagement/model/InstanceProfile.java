@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
@@ -23,417 +24,394 @@ import java.io.Serializable;
  * <p>
  * This data type is used as a response element in the following actions:
  * </p>
- * 
  * <ul>
- * <li> <p>
- * CreateInstanceProfile
+ * <li>
+ * <p>
+ * <a>CreateInstanceProfile</a>
  * </p>
  * </li>
- * <li> <p>
- * GetInstanceProfile
+ * <li>
+ * <p>
+ * <a>GetInstanceProfile</a>
  * </p>
  * </li>
- * <li> <p>
- * ListInstanceProfiles
+ * <li>
+ * <p>
+ * <a>ListInstanceProfiles</a>
  * </p>
  * </li>
- * <li> <p>
- * ListInstanceProfilesForRole
+ * <li>
+ * <p>
+ * <a>ListInstanceProfilesForRole</a>
  * </p>
  * </li>
- * 
  * </ul>
  */
 public class InstanceProfile implements Serializable, Cloneable {
 
     /**
-     * The path to the instance profile. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
+     * The path to the instance profile. For more information about paths, see
+     * <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      */
     private String path;
-
     /**
-     * The name identifying the instance profile.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * The name identifying the instance profile.
+     * </p>
      */
     private String instanceProfileName;
-
     /**
-     * The stable and unique string identifying the instance profile. For
-     * more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]+<br/>
+     * The stable and unique string identifying the instance profile. For more
+     * information about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      */
     private String instanceProfileId;
-
     /**
-     * The Amazon Resource Name (ARN) specifying the instance profile. For
-     * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>20 - 2048<br/>
+     * The Amazon Resource Name (ARN) specifying the instance profile. For more
+     * information about ARNs and how to use them in policies, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      */
     private String arn;
-
     /**
+     * <p>
      * The date when the instance profile was created.
+     * </p>
      */
     private java.util.Date createDate;
-
     /**
+     * <p>
      * The role associated with the instance profile.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Role> roles;
+    private com.amazonaws.internal.SdkInternalList<Role> roles;
 
     /**
-     * The path to the instance profile. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @return The path to the instance profile. For more information about paths,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
-     */
-    public String getPath() {
-        return path;
-    }
-    
-    /**
-     * The path to the instance profile. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @param path The path to the instance profile. For more information about paths,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
+     * The path to the instance profile. For more information about paths, see
+     * <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @param path
+     *        The path to the instance profile. For more information about
+     *        paths, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public void setPath(String path) {
         this.path = path;
     }
-    
+
     /**
-     * The path to the instance profile. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The path to the instance profile. For more information about paths, see
+     * <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @return The path to the instance profile. For more information about
+     *         paths, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     */
+    public String getPath() {
+        return this.path;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @param path The path to the instance profile. For more information about paths,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The path to the instance profile. For more information about paths, see
+     * <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @param path
+     *        The path to the instance profile. For more information about
+     *        paths, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withPath(String path) {
-        this.path = path;
+        setPath(path);
         return this;
     }
 
     /**
-     * The name identifying the instance profile.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name identifying the instance profile.
-     */
-    public String getInstanceProfileName() {
-        return instanceProfileName;
-    }
-    
-    /**
      * The name identifying the instance profile.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param instanceProfileName The name identifying the instance profile.
+     * </p>
+     * 
+     * @param instanceProfileName
+     *        The name identifying the instance profile.
      */
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
-    
+
     /**
+     * <p>
      * The name identifying the instance profile.
+     * </p>
+     * 
+     * @return The name identifying the instance profile.
+     */
+    public String getInstanceProfileName() {
+        return this.instanceProfileName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param instanceProfileName The name identifying the instance profile.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name identifying the instance profile.
+     * </p>
+     * 
+     * @param instanceProfileName
+     *        The name identifying the instance profile.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withInstanceProfileName(String instanceProfileName) {
-        this.instanceProfileName = instanceProfileName;
+        setInstanceProfileName(instanceProfileName);
         return this;
     }
 
     /**
-     * The stable and unique string identifying the instance profile. For
-     * more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]+<br/>
-     *
-     * @return The stable and unique string identifying the instance profile. For
-     *         more information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
-     */
-    public String getInstanceProfileId() {
-        return instanceProfileId;
-    }
-    
-    /**
-     * The stable and unique string identifying the instance profile. For
-     * more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]+<br/>
-     *
-     * @param instanceProfileId The stable and unique string identifying the instance profile. For
-     *         more information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
+     * The stable and unique string identifying the instance profile. For more
+     * information about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @param instanceProfileId
+     *        The stable and unique string identifying the instance profile. For
+     *        more information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public void setInstanceProfileId(String instanceProfileId) {
         this.instanceProfileId = instanceProfileId;
     }
-    
+
     /**
-     * The stable and unique string identifying the instance profile. For
-     * more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The stable and unique string identifying the instance profile. For more
+     * information about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @return The stable and unique string identifying the instance profile.
+     *         For more information about IDs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     */
+    public String getInstanceProfileId() {
+        return this.instanceProfileId;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>16 - 32<br/>
-     * <b>Pattern: </b>[\w]+<br/>
-     *
-     * @param instanceProfileId The stable and unique string identifying the instance profile. For
-     *         more information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The stable and unique string identifying the instance profile. For more
+     * information about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @param instanceProfileId
+     *        The stable and unique string identifying the instance profile. For
+     *        more information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withInstanceProfileId(String instanceProfileId) {
-        this.instanceProfileId = instanceProfileId;
+        setInstanceProfileId(instanceProfileId);
         return this;
     }
 
     /**
-     * The Amazon Resource Name (ARN) specifying the instance profile. For
-     * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>20 - 2048<br/>
-     *
-     * @return The Amazon Resource Name (ARN) specifying the instance profile. For
-     *         more information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
-     */
-    public String getArn() {
-        return arn;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) specifying the instance profile. For
-     * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>20 - 2048<br/>
-     *
-     * @param arn The Amazon Resource Name (ARN) specifying the instance profile. For
-     *         more information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) specifying the instance profile. For more
+     * information about ARNs and how to use them in policies, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) specifying the instance profile.
+     *        For more information about ARNs and how to use them in policies,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) specifying the instance profile. For
-     * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The Amazon Resource Name (ARN) specifying the instance profile. For more
+     * information about ARNs and how to use them in policies, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) specifying the instance profile.
+     *         For more information about ARNs and how to use them in policies,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     */
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>20 - 2048<br/>
-     *
-     * @param arn The Amazon Resource Name (ARN) specifying the instance profile. For
-     *         more information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) specifying the instance profile. For more
+     * information about ARNs and how to use them in policies, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) specifying the instance profile.
+     *        For more information about ARNs and how to use them in policies,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withArn(String arn) {
-        this.arn = arn;
+        setArn(arn);
         return this;
     }
 
     /**
+     * <p>
      * The date when the instance profile was created.
-     *
-     * @return The date when the instance profile was created.
-     */
-    public java.util.Date getCreateDate() {
-        return createDate;
-    }
-    
-    /**
-     * The date when the instance profile was created.
-     *
-     * @param createDate The date when the instance profile was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date when the instance profile was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
-    
+
     /**
-     * The date when the instance profile was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param createDate The date when the instance profile was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date when the instance profile was created.
+     * </p>
+     * 
+     * @return The date when the instance profile was created.
+     */
+    public java.util.Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * <p>
+     * The date when the instance profile was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date when the instance profile was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withCreateDate(java.util.Date createDate) {
-        this.createDate = createDate;
+        setCreateDate(createDate);
         return this;
     }
 
     /**
+     * <p>
      * The role associated with the instance profile.
-     *
+     * </p>
+     * 
      * @return The role associated with the instance profile.
      */
     public java.util.List<Role> getRoles() {
         if (roles == null) {
-              roles = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>();
-              roles.setAutoConstruct(true);
+            roles = new com.amazonaws.internal.SdkInternalList<Role>();
         }
         return roles;
     }
-    
+
     /**
+     * <p>
      * The role associated with the instance profile.
-     *
-     * @param roles The role associated with the instance profile.
+     * </p>
+     * 
+     * @param roles
+     *        The role associated with the instance profile.
      */
     public void setRoles(java.util.Collection<Role> roles) {
         if (roles == null) {
             this.roles = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Role> rolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>(roles.size());
-        rolesCopy.addAll(roles);
-        this.roles = rolesCopy;
+
+        this.roles = new com.amazonaws.internal.SdkInternalList<Role>(roles);
     }
-    
+
     /**
+     * <p>
      * The role associated with the instance profile.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRoles(java.util.Collection)} or {@link
-     * #withRoles(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param roles The role associated with the instance profile.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setRoles(java.util.Collection)} or
+     * {@link #withRoles(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param roles
+     *        The role associated with the instance profile.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withRoles(Role... roles) {
-        if (getRoles() == null) setRoles(new java.util.ArrayList<Role>(roles.length));
-        for (Role value : roles) {
-            getRoles().add(value);
+        if (this.roles == null) {
+            setRoles(new com.amazonaws.internal.SdkInternalList<Role>(
+                    roles.length));
+        }
+        for (Role ele : roles) {
+            this.roles.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The role associated with the instance profile.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param roles The role associated with the instance profile.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The role associated with the instance profile.
+     * </p>
+     * 
+     * @param roles
+     *        The role associated with the instance profile.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public InstanceProfile withRoles(java.util.Collection<Role> roles) {
-        if (roles == null) {
-            this.roles = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Role> rolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>(roles.size());
-            rolesCopy.addAll(roles);
-            this.roles = rolesCopy;
-        }
-
+        setRoles(roles);
         return this;
     }
 
@@ -449,66 +427,101 @@ public class InstanceProfile implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
-        if (getInstanceProfileId() != null) sb.append("InstanceProfileId: " + getInstanceProfileId() + ",");
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
-        if (getRoles() != null) sb.append("Roles: " + getRoles() );
+        if (getPath() != null)
+            sb.append("Path: " + getPath() + ",");
+        if (getInstanceProfileName() != null)
+            sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
+        if (getInstanceProfileId() != null)
+            sb.append("InstanceProfileId: " + getInstanceProfileId() + ",");
+        if (getArn() != null)
+            sb.append("Arn: " + getArn() + ",");
+        if (getCreateDate() != null)
+            sb.append("CreateDate: " + getCreateDate() + ",");
+        if (getRoles() != null)
+            sb.append("Roles: " + getRoles());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof InstanceProfile == false)
+            return false;
+        InstanceProfile other = (InstanceProfile) obj;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null
+                && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getInstanceProfileName() == null
+                ^ this.getInstanceProfileName() == null)
+            return false;
+        if (other.getInstanceProfileName() != null
+                && other.getInstanceProfileName().equals(
+                        this.getInstanceProfileName()) == false)
+            return false;
+        if (other.getInstanceProfileId() == null
+                ^ this.getInstanceProfileId() == null)
+            return false;
+        if (other.getInstanceProfileId() != null
+                && other.getInstanceProfileId().equals(
+                        this.getInstanceProfileId()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null
+                && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null)
+            return false;
+        if (other.getCreateDate() != null
+                && other.getCreateDate().equals(this.getCreateDate()) == false)
+            return false;
+        if (other.getRoles() == null ^ this.getRoles() == null)
+            return false;
+        if (other.getRoles() != null
+                && other.getRoles().equals(this.getRoles()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceProfileName() == null) ? 0 : getInstanceProfileName().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceProfileId() == null) ? 0 : getInstanceProfileId().hashCode()); 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
-        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
-        hashCode = prime * hashCode + ((getRoles() == null) ? 0 : getRoles().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceProfileName() == null) ? 0
+                        : getInstanceProfileName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceProfileId() == null) ? 0
+                        : getInstanceProfileId().hashCode());
+        hashCode = prime * hashCode
+                + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode
+                + ((getRoles() == null) ? 0 : getRoles().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof InstanceProfile == false) return false;
-        InstanceProfile other = (InstanceProfile)obj;
-        
-        if (other.getPath() == null ^ this.getPath() == null) return false;
-        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
-        if (other.getInstanceProfileName() == null ^ this.getInstanceProfileName() == null) return false;
-        if (other.getInstanceProfileName() != null && other.getInstanceProfileName().equals(this.getInstanceProfileName()) == false) return false; 
-        if (other.getInstanceProfileId() == null ^ this.getInstanceProfileId() == null) return false;
-        if (other.getInstanceProfileId() != null && other.getInstanceProfileId().equals(this.getInstanceProfileId()) == false) return false; 
-        if (other.getArn() == null ^ this.getArn() == null) return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
-        if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
-        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
-        if (other.getRoles() == null ^ this.getRoles() == null) return false;
-        if (other.getRoles() != null && other.getRoles().equals(this.getRoles()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public InstanceProfile clone() {
         try {
             return (InstanceProfile) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

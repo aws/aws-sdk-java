@@ -429,6 +429,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *
      * @see AmazonS3Client#listObjects(String)
      * @see AmazonS3Client#listObjects(String, String)
+     * @sample AmazonS3.ListObjects
      */
     public ObjectListing listObjects(ListObjectsRequest listObjectsRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -1012,6 +1013,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      *
      * @see AmazonS3#listBuckets(ListBucketsRequest)
+     * @sample AmazonS3.ListBuckets
      */
     public List<Bucket> listBuckets() throws AmazonClientException,
             AmazonServiceException;
@@ -1254,6 +1256,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     * @sample AmazonS3.CreateBucket
      */
     public Bucket createBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException;
@@ -2039,6 +2042,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      * @see AmazonS3#getObject(String, String)
      * @see AmazonS3#getObject(GetObjectRequest, File)
+     * @sample AmazonS3.GetObject
      */
     public S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -2153,6 +2157,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      *
      * @see AmazonS3#deleteBucket(String)
+     * @sample AmazonS3.DeleteBucket
      */
     public void deleteBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException;
@@ -2249,6 +2254,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *
      * @see AmazonS3#putObject(String, String, File)
      * @see AmazonS3#putObject(String, String, InputStream, ObjectMetadata)
+     * @sample AmazonS3.PutObject
      */
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -2640,6 +2646,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      *
      * @see AmazonS3Client#deleteObject(DeleteObjectRequest)
+     * @sample AmazonS3.DeleteObject
      */
     public void deleteObject(String bucketName, String key)
         throws AmazonClientException, AmazonServiceException;

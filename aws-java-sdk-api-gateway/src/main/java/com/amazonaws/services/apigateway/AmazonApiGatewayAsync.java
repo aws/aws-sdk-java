@@ -37,6 +37,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param createApiKeyRequest
      * @return A Java Future containing the result of the CreateApiKey operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateApiKey
      */
     java.util.concurrent.Future<CreateApiKeyResult> createApiKeyAsync(
             CreateApiKeyRequest createApiKeyRequest);
@@ -50,6 +51,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApiKey operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateApiKey
      */
     java.util.concurrent.Future<CreateApiKeyResult> createApiKeyAsync(
             CreateApiKeyRequest createApiKeyRequest,
@@ -65,6 +67,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the CreateBasePathMapping
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateBasePathMapping
      */
     java.util.concurrent.Future<CreateBasePathMappingResult> createBasePathMappingAsync(
             CreateBasePathMappingRequest createBasePathMappingRequest);
@@ -84,6 +87,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateBasePathMapping
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateBasePathMapping
      */
     java.util.concurrent.Future<CreateBasePathMappingResult> createBasePathMappingAsync(
             CreateBasePathMappingRequest createBasePathMappingRequest,
@@ -100,6 +104,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the CreateDeployment
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateDeployment
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
             CreateDeploymentRequest createDeploymentRequest);
@@ -120,6 +125,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeployment
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateDeployment
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
             CreateDeploymentRequest createDeploymentRequest,
@@ -134,6 +140,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        A request to create a new domain name.
      * @return A Java Future containing the result of the CreateDomainName
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateDomainName
      */
     java.util.concurrent.Future<CreateDomainNameResult> createDomainNameAsync(
             CreateDomainNameRequest createDomainNameRequest);
@@ -152,6 +159,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDomainName
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateDomainName
      */
     java.util.concurrent.Future<CreateDomainNameResult> createDomainNameAsync(
             CreateDomainNameRequest createDomainNameRequest,
@@ -167,6 +175,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the CreateModel operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateModel
      */
     java.util.concurrent.Future<CreateModelResult> createModelAsync(
             CreateModelRequest createModelRequest);
@@ -186,6 +195,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateModel operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateModel
      */
     java.util.concurrent.Future<CreateModelResult> createModelAsync(
             CreateModelRequest createModelRequest,
@@ -200,6 +210,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Requests Amazon API Gateway to create a <a>Resource</a> resource.
      * @return A Java Future containing the result of the CreateResource
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateResource
      */
     java.util.concurrent.Future<CreateResourceResult> createResourceAsync(
             CreateResourceRequest createResourceRequest);
@@ -218,6 +229,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateResource
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateResource
      */
     java.util.concurrent.Future<CreateResourceResult> createResourceAsync(
             CreateResourceRequest createResourceRequest,
@@ -232,6 +244,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to add a new <a>RestApi</a> resource to your collection.
      * @return A Java Future containing the result of the CreateRestApi
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateRestApi
      */
     java.util.concurrent.Future<CreateRestApiResult> createRestApiAsync(
             CreateRestApiRequest createRestApiRequest);
@@ -250,6 +263,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRestApi
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateRestApi
      */
     java.util.concurrent.Future<CreateRestApiResult> createRestApiAsync(
             CreateRestApiRequest createRestApiRequest,
@@ -264,6 +278,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Requests Amazon API Gateway to create a <a>Stage</a> resource.
      * @return A Java Future containing the result of the CreateStage operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateStage
      */
     java.util.concurrent.Future<CreateStageResult> createStageAsync(
             CreateStageRequest createStageRequest);
@@ -282,6 +297,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStage operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateStage
      */
     java.util.concurrent.Future<CreateStageResult> createStageAsync(
             CreateStageRequest createStageRequest,
@@ -294,6 +310,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteApiKeyRequest
      *        A request to delete the <a>ApiKey</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteApiKey
      */
     java.util.concurrent.Future<Void> deleteApiKeyAsync(
             DeleteApiKeyRequest deleteApiKeyRequest);
@@ -310,6 +327,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteApiKey
      */
     java.util.concurrent.Future<Void> deleteApiKeyAsync(
             DeleteApiKeyRequest deleteApiKeyRequest,
@@ -322,6 +340,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteBasePathMappingRequest
      *        A request to delete the <a>BasePathMapping</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteBasePathMapping
      */
     java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest);
@@ -338,6 +357,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteBasePathMapping
      */
     java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest,
@@ -345,6 +365,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * @param deleteClientCertificateRequest
+     * @sample AmazonApiGatewayAsync.DeleteClientCertificate
      */
     java.util.concurrent.Future<Void> deleteClientCertificateAsync(
             DeleteClientCertificateRequest deleteClientCertificateRequest);
@@ -356,6 +377,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteClientCertificate
      */
     java.util.concurrent.Future<Void> deleteClientCertificateAsync(
             DeleteClientCertificateRequest deleteClientCertificateRequest,
@@ -370,6 +392,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param deleteDeploymentRequest
      *        Requests Amazon API Gateway to delete a <a>Deployment</a>
      *        resource.
+     * @sample AmazonApiGatewayAsync.DeleteDeployment
      */
     java.util.concurrent.Future<Void> deleteDeploymentAsync(
             DeleteDeploymentRequest deleteDeploymentRequest);
@@ -388,6 +411,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteDeployment
      */
     java.util.concurrent.Future<Void> deleteDeploymentAsync(
             DeleteDeploymentRequest deleteDeploymentRequest,
@@ -400,6 +424,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteDomainNameRequest
      *        A request to delete the <a>DomainName</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteDomainName
      */
     java.util.concurrent.Future<Void> deleteDomainNameAsync(
             DeleteDomainNameRequest deleteDomainNameRequest);
@@ -416,6 +441,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteDomainName
      */
     java.util.concurrent.Future<Void> deleteDomainNameAsync(
             DeleteDomainNameRequest deleteDomainNameRequest,
@@ -428,6 +454,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteIntegrationRequest
      *        Represents a delete integration request.
+     * @sample AmazonApiGatewayAsync.DeleteIntegration
      */
     java.util.concurrent.Future<Void> deleteIntegrationAsync(
             DeleteIntegrationRequest deleteIntegrationRequest);
@@ -444,6 +471,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteIntegration
      */
     java.util.concurrent.Future<Void> deleteIntegrationAsync(
             DeleteIntegrationRequest deleteIntegrationRequest,
@@ -456,6 +484,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteIntegrationResponseRequest
      *        Represents a delete integration response request.
+     * @sample AmazonApiGatewayAsync.DeleteIntegrationResponse
      */
     java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest);
@@ -472,6 +501,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteIntegrationResponse
      */
     java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest,
@@ -484,6 +514,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteMethodRequest
      *        Request to delete an existing <a>Method</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteMethod
      */
     java.util.concurrent.Future<Void> deleteMethodAsync(
             DeleteMethodRequest deleteMethodRequest);
@@ -500,6 +531,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteMethod
      */
     java.util.concurrent.Future<Void> deleteMethodAsync(
             DeleteMethodRequest deleteMethodRequest,
@@ -512,6 +544,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteMethodResponseRequest
      *        A request to delete an existing <a>MethodResponse</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteMethodResponse
      */
     java.util.concurrent.Future<Void> deleteMethodResponseAsync(
             DeleteMethodResponseRequest deleteMethodResponseRequest);
@@ -528,6 +561,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteMethodResponse
      */
     java.util.concurrent.Future<Void> deleteMethodResponseAsync(
             DeleteMethodResponseRequest deleteMethodResponseRequest,
@@ -541,6 +575,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param deleteModelRequest
      *        Request to delete an existing model in an existing <a>RestApi</a>
      *        resource.
+     * @sample AmazonApiGatewayAsync.DeleteModel
      */
     java.util.concurrent.Future<Void> deleteModelAsync(
             DeleteModelRequest deleteModelRequest);
@@ -558,6 +593,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteModel
      */
     java.util.concurrent.Future<Void> deleteModelAsync(
             DeleteModelRequest deleteModelRequest,
@@ -570,6 +606,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteResourceRequest
      *        Request to delete a <a>Resource</a>.
+     * @sample AmazonApiGatewayAsync.DeleteResource
      */
     java.util.concurrent.Future<Void> deleteResourceAsync(
             DeleteResourceRequest deleteResourceRequest);
@@ -586,6 +623,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteResource
      */
     java.util.concurrent.Future<Void> deleteResourceAsync(
             DeleteResourceRequest deleteResourceRequest,
@@ -598,6 +636,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteRestApiRequest
      *        Request to delete the specified API from your collection.
+     * @sample AmazonApiGatewayAsync.DeleteRestApi
      */
     java.util.concurrent.Future<Void> deleteRestApiAsync(
             DeleteRestApiRequest deleteRestApiRequest);
@@ -614,6 +653,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteRestApi
      */
     java.util.concurrent.Future<Void> deleteRestApiAsync(
             DeleteRestApiRequest deleteRestApiRequest,
@@ -626,6 +666,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteStageRequest
      *        Requests Amazon API Gateway to delete a <a>Stage</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteStage
      */
     java.util.concurrent.Future<Void> deleteStageAsync(
             DeleteStageRequest deleteStageRequest);
@@ -642,6 +683,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteStage
      */
     java.util.concurrent.Future<Void> deleteStageAsync(
             DeleteStageRequest deleteStageRequest,
@@ -654,6 +696,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param flushStageCacheRequest
      *        Requests Amazon API Gateway to flush a stage's cache.
+     * @sample AmazonApiGatewayAsync.FlushStageCache
      */
     java.util.concurrent.Future<Void> flushStageCacheAsync(
             FlushStageCacheRequest flushStageCacheRequest);
@@ -670,6 +713,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.FlushStageCache
      */
     java.util.concurrent.Future<Void> flushStageCacheAsync(
             FlushStageCacheRequest flushStageCacheRequest,
@@ -679,6 +723,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param generateClientCertificateRequest
      * @return A Java Future containing the result of the
      *         GenerateClientCertificate operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GenerateClientCertificate
      */
     java.util.concurrent.Future<GenerateClientCertificateResult> generateClientCertificateAsync(
             GenerateClientCertificateRequest generateClientCertificateRequest);
@@ -692,6 +737,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GenerateClientCertificate operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GenerateClientCertificate
      */
     java.util.concurrent.Future<GenerateClientCertificateResult> generateClientCertificateAsync(
             GenerateClientCertificateRequest generateClientCertificateRequest,
@@ -707,6 +753,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Account</a> resource.
      * @return A Java Future containing the result of the GetAccount operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetAccount
      */
     java.util.concurrent.Future<GetAccountResult> getAccountAsync(
             GetAccountRequest getAccountRequest);
@@ -726,6 +773,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAccount operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetAccount
      */
     java.util.concurrent.Future<GetAccountResult> getAccountAsync(
             GetAccountRequest getAccountRequest,
@@ -741,6 +789,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the GetApiKey operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetApiKey
      */
     java.util.concurrent.Future<GetApiKeyResult> getApiKeyAsync(
             GetApiKeyRequest getApiKeyRequest);
@@ -760,6 +809,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApiKey operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetApiKey
      */
     java.util.concurrent.Future<GetApiKeyResult> getApiKeyAsync(
             GetApiKeyRequest getApiKeyRequest,
@@ -775,6 +825,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the GetApiKeys operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetApiKeys
      */
     java.util.concurrent.Future<GetApiKeysResult> getApiKeysAsync(
             GetApiKeysRequest getApiKeysRequest);
@@ -794,6 +845,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApiKeys operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetApiKeys
      */
     java.util.concurrent.Future<GetApiKeysResult> getApiKeysAsync(
             GetApiKeysRequest getApiKeysRequest,
@@ -808,6 +860,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to describe a <a>BasePathMapping</a> resource.
      * @return A Java Future containing the result of the GetBasePathMapping
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetBasePathMapping
      */
     java.util.concurrent.Future<GetBasePathMappingResult> getBasePathMappingAsync(
             GetBasePathMappingRequest getBasePathMappingRequest);
@@ -826,6 +879,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBasePathMapping
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetBasePathMapping
      */
     java.util.concurrent.Future<GetBasePathMappingResult> getBasePathMappingAsync(
             GetBasePathMappingRequest getBasePathMappingRequest,
@@ -841,6 +895,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>BasePathMapping</a> resources.
      * @return A Java Future containing the result of the GetBasePathMappings
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetBasePathMappings
      */
     java.util.concurrent.Future<GetBasePathMappingsResult> getBasePathMappingsAsync(
             GetBasePathMappingsRequest getBasePathMappingsRequest);
@@ -860,6 +915,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBasePathMappings
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetBasePathMappings
      */
     java.util.concurrent.Future<GetBasePathMappingsResult> getBasePathMappingsAsync(
             GetBasePathMappingsRequest getBasePathMappingsRequest,
@@ -869,6 +925,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param getClientCertificateRequest
      * @return A Java Future containing the result of the GetClientCertificate
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetClientCertificate
      */
     java.util.concurrent.Future<GetClientCertificateResult> getClientCertificateAsync(
             GetClientCertificateRequest getClientCertificateRequest);
@@ -882,6 +939,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetClientCertificate
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetClientCertificate
      */
     java.util.concurrent.Future<GetClientCertificateResult> getClientCertificateAsync(
             GetClientCertificateRequest getClientCertificateRequest,
@@ -891,6 +949,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param getClientCertificatesRequest
      * @return A Java Future containing the result of the GetClientCertificates
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetClientCertificates
      */
     java.util.concurrent.Future<GetClientCertificatesResult> getClientCertificatesAsync(
             GetClientCertificatesRequest getClientCertificatesRequest);
@@ -904,6 +963,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetClientCertificates
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetClientCertificates
      */
     java.util.concurrent.Future<GetClientCertificatesResult> getClientCertificatesAsync(
             GetClientCertificatesRequest getClientCertificatesRequest,
@@ -919,6 +979,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Deployment</a> resource.
      * @return A Java Future containing the result of the GetDeployment
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetDeployment
      */
     java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(
             GetDeploymentRequest getDeploymentRequest);
@@ -938,6 +999,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeployment
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetDeployment
      */
     java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(
             GetDeploymentRequest getDeploymentRequest,
@@ -953,6 +1015,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Deployments</a> collection.
      * @return A Java Future containing the result of the GetDeployments
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetDeployments
      */
     java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(
             GetDeploymentsRequest getDeploymentsRequest);
@@ -972,6 +1035,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDeployments
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetDeployments
      */
     java.util.concurrent.Future<GetDeploymentsResult> getDeploymentsAsync(
             GetDeploymentsRequest getDeploymentsRequest,
@@ -987,6 +1051,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to get the name of a <a>DomainName</a> resource.
      * @return A Java Future containing the result of the GetDomainName
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetDomainName
      */
     java.util.concurrent.Future<GetDomainNameResult> getDomainNameAsync(
             GetDomainNameRequest getDomainNameRequest);
@@ -1006,6 +1071,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDomainName
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetDomainName
      */
     java.util.concurrent.Future<GetDomainNameResult> getDomainNameAsync(
             GetDomainNameRequest getDomainNameRequest,
@@ -1020,6 +1086,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to describe a collection of <a>DomainName</a> resources.
      * @return A Java Future containing the result of the GetDomainNames
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetDomainNames
      */
     java.util.concurrent.Future<GetDomainNamesResult> getDomainNamesAsync(
             GetDomainNamesRequest getDomainNamesRequest);
@@ -1038,6 +1105,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDomainNames
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetDomainNames
      */
     java.util.concurrent.Future<GetDomainNamesResult> getDomainNamesAsync(
             GetDomainNamesRequest getDomainNamesRequest,
@@ -1052,6 +1120,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Represents a get integration request.
      * @return A Java Future containing the result of the GetIntegration
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetIntegration
      */
     java.util.concurrent.Future<GetIntegrationResult> getIntegrationAsync(
             GetIntegrationRequest getIntegrationRequest);
@@ -1070,6 +1139,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetIntegration
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetIntegration
      */
     java.util.concurrent.Future<GetIntegrationResult> getIntegrationAsync(
             GetIntegrationRequest getIntegrationRequest,
@@ -1084,6 +1154,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Represents a get integration response request.
      * @return A Java Future containing the result of the GetIntegrationResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetIntegrationResponse
      */
     java.util.concurrent.Future<GetIntegrationResponseResult> getIntegrationResponseAsync(
             GetIntegrationResponseRequest getIntegrationResponseRequest);
@@ -1102,6 +1173,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetIntegrationResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetIntegrationResponse
      */
     java.util.concurrent.Future<GetIntegrationResponseResult> getIntegrationResponseAsync(
             GetIntegrationResponseRequest getIntegrationResponseRequest,
@@ -1116,6 +1188,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to describe an existing <a>Method</a> resource.
      * @return A Java Future containing the result of the GetMethod operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetMethod
      */
     java.util.concurrent.Future<GetMethodResult> getMethodAsync(
             GetMethodRequest getMethodRequest);
@@ -1134,6 +1207,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetMethod operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetMethod
      */
     java.util.concurrent.Future<GetMethodResult> getMethodAsync(
             GetMethodRequest getMethodRequest,
@@ -1148,6 +1222,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to describe a <a>MethodResponse</a> resource.
      * @return A Java Future containing the result of the GetMethodResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetMethodResponse
      */
     java.util.concurrent.Future<GetMethodResponseResult> getMethodResponseAsync(
             GetMethodResponseRequest getMethodResponseRequest);
@@ -1166,6 +1241,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetMethodResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetMethodResponse
      */
     java.util.concurrent.Future<GetMethodResponseResult> getMethodResponseAsync(
             GetMethodResponseRequest getMethodResponseRequest,
@@ -1181,6 +1257,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>RestApi</a> resource.
      * @return A Java Future containing the result of the GetModel operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetModel
      */
     java.util.concurrent.Future<GetModelResult> getModelAsync(
             GetModelRequest getModelRequest);
@@ -1200,6 +1277,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetModel operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetModel
      */
     java.util.concurrent.Future<GetModelResult> getModelAsync(
             GetModelRequest getModelRequest,
@@ -1216,6 +1294,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        the payload.
      * @return A Java Future containing the result of the GetModelTemplate
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetModelTemplate
      */
     java.util.concurrent.Future<GetModelTemplateResult> getModelTemplateAsync(
             GetModelTemplateRequest getModelTemplateRequest);
@@ -1236,6 +1315,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetModelTemplate
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetModelTemplate
      */
     java.util.concurrent.Future<GetModelTemplateResult> getModelTemplateAsync(
             GetModelTemplateRequest getModelTemplateRequest,
@@ -1251,6 +1331,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>RestApi</a> resource.
      * @return A Java Future containing the result of the GetModels operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetModels
      */
     java.util.concurrent.Future<GetModelsResult> getModelsAsync(
             GetModelsRequest getModelsRequest);
@@ -1270,6 +1351,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetModels operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetModels
      */
     java.util.concurrent.Future<GetModelsResult> getModelsAsync(
             GetModelsRequest getModelsRequest,
@@ -1284,6 +1366,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to list information about a resource.
      * @return A Java Future containing the result of the GetResource operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetResource
      */
     java.util.concurrent.Future<GetResourceResult> getResourceAsync(
             GetResourceRequest getResourceRequest);
@@ -1302,6 +1385,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetResource operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetResource
      */
     java.util.concurrent.Future<GetResourceResult> getResourceAsync(
             GetResourceRequest getResourceRequest,
@@ -1316,6 +1400,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to list information about a collection of resources.
      * @return A Java Future containing the result of the GetResources operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetResources
      */
     java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(
             GetResourcesRequest getResourcesRequest);
@@ -1334,6 +1419,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetResources operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetResources
      */
     java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(
             GetResourcesRequest getResourcesRequest,
@@ -1349,6 +1435,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        collection.
      * @return A Java Future containing the result of the GetRestApi operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetRestApi
      */
     java.util.concurrent.Future<GetRestApiResult> getRestApiAsync(
             GetRestApiRequest getRestApiRequest);
@@ -1368,6 +1455,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRestApi operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetRestApi
      */
     java.util.concurrent.Future<GetRestApiResult> getRestApiAsync(
             GetRestApiRequest getRestApiRequest,
@@ -1383,6 +1471,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        collection.
      * @return A Java Future containing the result of the GetRestApis operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetRestApis
      */
     java.util.concurrent.Future<GetRestApisResult> getRestApisAsync(
             GetRestApisRequest getRestApisRequest);
@@ -1402,6 +1491,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRestApis operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetRestApis
      */
     java.util.concurrent.Future<GetRestApisResult> getRestApisAsync(
             GetRestApisRequest getRestApisRequest,
@@ -1411,6 +1501,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param getSdkRequest
      * @return A Java Future containing the result of the GetSdk operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetSdk
      */
     java.util.concurrent.Future<GetSdkResult> getSdkAsync(
             GetSdkRequest getSdkRequest);
@@ -1424,6 +1515,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSdk operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetSdk
      */
     java.util.concurrent.Future<GetSdkResult> getSdkAsync(
             GetSdkRequest getSdkRequest,
@@ -1439,6 +1531,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Stage</a> resource.
      * @return A Java Future containing the result of the GetStage operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetStage
      */
     java.util.concurrent.Future<GetStageResult> getStageAsync(
             GetStageRequest getStageRequest);
@@ -1458,6 +1551,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStage operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetStage
      */
     java.util.concurrent.Future<GetStageResult> getStageAsync(
             GetStageRequest getStageRequest,
@@ -1473,6 +1567,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Stage</a> resources.
      * @return A Java Future containing the result of the GetStages operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetStages
      */
     java.util.concurrent.Future<GetStagesResult> getStagesAsync(
             GetStagesRequest getStagesRequest);
@@ -1492,6 +1587,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStages operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetStages
      */
     java.util.concurrent.Future<GetStagesResult> getStagesAsync(
             GetStagesRequest getStagesRequest,
@@ -1506,6 +1602,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Represents a put integration request.
      * @return A Java Future containing the result of the PutIntegration
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.PutIntegration
      */
     java.util.concurrent.Future<PutIntegrationResult> putIntegrationAsync(
             PutIntegrationRequest putIntegrationRequest);
@@ -1524,6 +1621,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutIntegration
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.PutIntegration
      */
     java.util.concurrent.Future<PutIntegrationResult> putIntegrationAsync(
             PutIntegrationRequest putIntegrationRequest,
@@ -1538,6 +1636,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Represents a put integration response request.
      * @return A Java Future containing the result of the PutIntegrationResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.PutIntegrationResponse
      */
     java.util.concurrent.Future<PutIntegrationResponseResult> putIntegrationResponseAsync(
             PutIntegrationResponseRequest putIntegrationResponseRequest);
@@ -1556,6 +1655,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutIntegrationResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.PutIntegrationResponse
      */
     java.util.concurrent.Future<PutIntegrationResponseResult> putIntegrationResponseAsync(
             PutIntegrationResponseRequest putIntegrationResponseRequest,
@@ -1570,6 +1670,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to add a method to an existing <a>Resource</a> resource.
      * @return A Java Future containing the result of the PutMethod operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.PutMethod
      */
     java.util.concurrent.Future<PutMethodResult> putMethodAsync(
             PutMethodRequest putMethodRequest);
@@ -1588,6 +1689,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutMethod operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.PutMethod
      */
     java.util.concurrent.Future<PutMethodResult> putMethodAsync(
             PutMethodRequest putMethodRequest,
@@ -1603,6 +1705,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Method</a> resource.
      * @return A Java Future containing the result of the PutMethodResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.PutMethodResponse
      */
     java.util.concurrent.Future<PutMethodResponseResult> putMethodResponseAsync(
             PutMethodResponseRequest putMethodResponseRequest);
@@ -1622,6 +1725,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutMethodResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.PutMethodResponse
      */
     java.util.concurrent.Future<PutMethodResponseResult> putMethodResponseAsync(
             PutMethodResponseRequest putMethodResponseRequest,
@@ -1631,6 +1735,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param testInvokeMethodRequest
      * @return A Java Future containing the result of the TestInvokeMethod
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.TestInvokeMethod
      */
     java.util.concurrent.Future<TestInvokeMethodResult> testInvokeMethodAsync(
             TestInvokeMethodRequest testInvokeMethodRequest);
@@ -1644,6 +1749,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TestInvokeMethod
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.TestInvokeMethod
      */
     java.util.concurrent.Future<TestInvokeMethodResult> testInvokeMethodAsync(
             TestInvokeMethodRequest testInvokeMethodRequest,
@@ -1659,6 +1765,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        current <a>Account</a> resource.
      * @return A Java Future containing the result of the UpdateAccount
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateAccount
      */
     java.util.concurrent.Future<UpdateAccountResult> updateAccountAsync(
             UpdateAccountRequest updateAccountRequest);
@@ -1678,6 +1785,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAccount
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateAccount
      */
     java.util.concurrent.Future<UpdateAccountResult> updateAccountAsync(
             UpdateAccountRequest updateAccountRequest,
@@ -1692,6 +1800,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        A request to change information about an <a>ApiKey</a> resource.
      * @return A Java Future containing the result of the UpdateApiKey operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateApiKey
      */
     java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(
             UpdateApiKeyRequest updateApiKeyRequest);
@@ -1710,6 +1819,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApiKey operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateApiKey
      */
     java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(
             UpdateApiKeyRequest updateApiKeyRequest,
@@ -1725,6 +1835,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the UpdateBasePathMapping
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateBasePathMapping
      */
     java.util.concurrent.Future<UpdateBasePathMappingResult> updateBasePathMappingAsync(
             UpdateBasePathMappingRequest updateBasePathMappingRequest);
@@ -1744,6 +1855,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateBasePathMapping
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateBasePathMapping
      */
     java.util.concurrent.Future<UpdateBasePathMappingResult> updateBasePathMappingAsync(
             UpdateBasePathMappingRequest updateBasePathMappingRequest,
@@ -1753,6 +1865,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param updateClientCertificateRequest
      * @return A Java Future containing the result of the
      *         UpdateClientCertificate operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateClientCertificate
      */
     java.util.concurrent.Future<UpdateClientCertificateResult> updateClientCertificateAsync(
             UpdateClientCertificateRequest updateClientCertificateRequest);
@@ -1766,6 +1879,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateClientCertificate operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateClientCertificate
      */
     java.util.concurrent.Future<UpdateClientCertificateResult> updateClientCertificateAsync(
             UpdateClientCertificateRequest updateClientCertificateRequest,
@@ -1781,6 +1895,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Deployment</a> resource.
      * @return A Java Future containing the result of the UpdateDeployment
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateDeployment
      */
     java.util.concurrent.Future<UpdateDeploymentResult> updateDeploymentAsync(
             UpdateDeploymentRequest updateDeploymentRequest);
@@ -1800,6 +1915,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDeployment
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateDeployment
      */
     java.util.concurrent.Future<UpdateDeploymentResult> updateDeploymentAsync(
             UpdateDeploymentRequest updateDeploymentRequest,
@@ -1815,6 +1931,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the UpdateDomainName
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateDomainName
      */
     java.util.concurrent.Future<UpdateDomainNameResult> updateDomainNameAsync(
             UpdateDomainNameRequest updateDomainNameRequest);
@@ -1834,6 +1951,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDomainName
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateDomainName
      */
     java.util.concurrent.Future<UpdateDomainNameResult> updateDomainNameAsync(
             UpdateDomainNameRequest updateDomainNameRequest,
@@ -1848,6 +1966,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Represents an update integration request.
      * @return A Java Future containing the result of the UpdateIntegration
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateIntegration
      */
     java.util.concurrent.Future<UpdateIntegrationResult> updateIntegrationAsync(
             UpdateIntegrationRequest updateIntegrationRequest);
@@ -1866,6 +1985,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateIntegration
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateIntegration
      */
     java.util.concurrent.Future<UpdateIntegrationResult> updateIntegrationAsync(
             UpdateIntegrationRequest updateIntegrationRequest,
@@ -1880,6 +2000,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Represents an update integration response request.
      * @return A Java Future containing the result of the
      *         UpdateIntegrationResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateIntegrationResponse
      */
     java.util.concurrent.Future<UpdateIntegrationResponseResult> updateIntegrationResponseAsync(
             UpdateIntegrationResponseRequest updateIntegrationResponseRequest);
@@ -1898,6 +2019,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateIntegrationResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateIntegrationResponse
      */
     java.util.concurrent.Future<UpdateIntegrationResponseResult> updateIntegrationResponseAsync(
             UpdateIntegrationResponseRequest updateIntegrationResponseRequest,
@@ -1912,6 +2034,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to update an existing <a>Method</a> resource.
      * @return A Java Future containing the result of the UpdateMethod operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateMethod
      */
     java.util.concurrent.Future<UpdateMethodResult> updateMethodAsync(
             UpdateMethodRequest updateMethodRequest);
@@ -1930,6 +2053,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateMethod operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateMethod
      */
     java.util.concurrent.Future<UpdateMethodResult> updateMethodAsync(
             UpdateMethodRequest updateMethodRequest,
@@ -1944,6 +2068,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        A request to update an existing <a>MethodResponse</a> resource.
      * @return A Java Future containing the result of the UpdateMethodResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateMethodResponse
      */
     java.util.concurrent.Future<UpdateMethodResponseResult> updateMethodResponseAsync(
             UpdateMethodResponseRequest updateMethodResponseRequest);
@@ -1962,6 +2087,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateMethodResponse
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateMethodResponse
      */
     java.util.concurrent.Future<UpdateMethodResponseResult> updateMethodResponseAsync(
             UpdateMethodResponseRequest updateMethodResponseRequest,
@@ -1977,6 +2103,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        resource.
      * @return A Java Future containing the result of the UpdateModel operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateModel
      */
     java.util.concurrent.Future<UpdateModelResult> updateModelAsync(
             UpdateModelRequest updateModelRequest);
@@ -1996,6 +2123,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateModel operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateModel
      */
     java.util.concurrent.Future<UpdateModelResult> updateModelAsync(
             UpdateModelRequest updateModelRequest,
@@ -2010,6 +2138,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        Request to change information about a <a>Resource</a> resource.
      * @return A Java Future containing the result of the UpdateResource
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateResource
      */
     java.util.concurrent.Future<UpdateResourceResult> updateResourceAsync(
             UpdateResourceRequest updateResourceRequest);
@@ -2028,6 +2157,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateResource
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateResource
      */
     java.util.concurrent.Future<UpdateResourceResult> updateResourceAsync(
             UpdateResourceRequest updateResourceRequest,
@@ -2043,6 +2173,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        collection.
      * @return A Java Future containing the result of the UpdateRestApi
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateRestApi
      */
     java.util.concurrent.Future<UpdateRestApiResult> updateRestApiAsync(
             UpdateRestApiRequest updateRestApiRequest);
@@ -2062,6 +2193,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateRestApi
      *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateRestApi
      */
     java.util.concurrent.Future<UpdateRestApiResult> updateRestApiAsync(
             UpdateRestApiRequest updateRestApiRequest,
@@ -2077,6 +2209,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        <a>Stage</a> resource.
      * @return A Java Future containing the result of the UpdateStage operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateStage
      */
     java.util.concurrent.Future<UpdateStageResult> updateStageAsync(
             UpdateStageRequest updateStageRequest);
@@ -2096,6 +2229,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateStage operation
      *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateStage
      */
     java.util.concurrent.Future<UpdateStageResult> updateStageAsync(
             UpdateStageRequest updateStageRequest,

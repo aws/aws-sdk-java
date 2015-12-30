@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,47 +27,74 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * List Hosted Zones By Name Result StAX Unmarshaller
+ * ListHostedZonesByNameResult StAX Unmarshaller
  */
-public class ListHostedZonesByNameResultStaxUnmarshaller implements Unmarshaller<ListHostedZonesByNameResult, StaxUnmarshallerContext> {
+public class ListHostedZonesByNameResultStaxUnmarshaller implements
+        Unmarshaller<ListHostedZonesByNameResult, StaxUnmarshallerContext> {
 
-    public ListHostedZonesByNameResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ListHostedZonesByNameResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         ListHostedZonesByNameResult listHostedZonesByNameResult = new ListHostedZonesByNameResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
-        if (context.isStartOfDocument()) targetDepth += 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return listHostedZonesByNameResult;
+            if (xmlEvent.isEndDocument())
+                return listHostedZonesByNameResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("HostedZones/HostedZone", targetDepth)) {
-                    listHostedZonesByNameResult.getHostedZones().add(HostedZoneStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("HostedZones/HostedZone",
+                        targetDepth)) {
+                    listHostedZonesByNameResult.getHostedZones().add(
+                            HostedZoneStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("DNSName", targetDepth)) {
-                    listHostedZonesByNameResult.setDNSName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listHostedZonesByNameResult
+                            .setDNSName(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("HostedZoneId", targetDepth)) {
-                    listHostedZonesByNameResult.setHostedZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listHostedZonesByNameResult
+                            .setHostedZoneId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("IsTruncated", targetDepth)) {
-                    listHostedZonesByNameResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    listHostedZonesByNameResult
+                            .setIsTruncated(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("NextDNSName", targetDepth)) {
-                    listHostedZonesByNameResult.setNextDNSName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listHostedZonesByNameResult
+                            .setNextDNSName(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("NextHostedZoneId", targetDepth)) {
-                    listHostedZonesByNameResult.setNextHostedZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listHostedZonesByNameResult
+                            .setNextHostedZoneId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("MaxItems", targetDepth)) {
-                    listHostedZonesByNameResult.setMaxItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listHostedZonesByNameResult
+                            .setMaxItems(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -79,9 +106,10 @@ public class ListHostedZonesByNameResultStaxUnmarshaller implements Unmarshaller
     }
 
     private static ListHostedZonesByNameResultStaxUnmarshaller instance;
+
     public static ListHostedZonesByNameResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ListHostedZonesByNameResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new ListHostedZonesByNameResultStaxUnmarshaller();
         return instance;
     }
 }
-    

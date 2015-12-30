@@ -1,191 +1,169 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest) CreateVirtualMFADevice operation}.
- * <p>
- * Creates a new virtual MFA device for the AWS account. After creating
- * the virtual MFA, use EnableMFADevice to attach the MFA device to an
- * IAM user. For more information about creating and working with virtual
- * MFA devices, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
- * in the <i>Using IAM</i> guide.
- * </p>
- * <p>
- * For information about limits on the number of MFA devices you can
- * create, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on Entities </a>
- * in the <i>Using IAM</i> guide.
- * </p>
- * <p>
- * <b>IMPORTANT:</b>The seed information contained in the QR code and the
- * Base32 string should be treated like any other secret access
- * information, such as your AWS access keys or your passwords. After you
- * provision your virtual device, you should ensure that the information
- * is destroyed following secure procedures.
- * </p>
- *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)
+ * 
  */
-public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The path for the virtual MFA device. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
+     * The path for the virtual MFA device. For more information about paths,
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
      */
     private String path;
-
     /**
-     * The name of the virtual MFA device. Use with path to uniquely identify
-     * a virtual MFA device.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * The name of the virtual MFA device. Use with path to uniquely identify a
+     * virtual MFA device.
+     * </p>
      */
     private String virtualMFADeviceName;
 
     /**
-     * The path for the virtual MFA device. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @return The path for the virtual MFA device. For more information about paths,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/).
-     */
-    public String getPath() {
-        return path;
-    }
-    
-    /**
      * The path for the virtual MFA device. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @param path The path for the virtual MFA device. For more information about paths,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/).
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
+     * 
+     * @param path
+     *        The path for the virtual MFA device. For more information about
+     *        paths, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, it defaults to
+     *        a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
     }
-    
+
     /**
+     * <p>
      * The path for the virtual MFA device. For more information about paths,
-     * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
+     * 
+     * @return The path for the virtual MFA device. For more information about
+     *         paths, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *         <p>
+     *         This parameter is optional. If it is not included, it defaults to
+     *         a slash (/).
+     */
+    public String getPath() {
+        return this.path;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
-     *
-     * @param path The path for the virtual MFA device. For more information about paths,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The path for the virtual MFA device. For more information about paths,
+     * see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, it defaults to a slash
+     * (/).
+     * </p>
+     * 
+     * @param path
+     *        The path for the virtual MFA device. For more information about
+     *        paths, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, it defaults to
+     *        a slash (/).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CreateVirtualMFADeviceRequest withPath(String path) {
-        this.path = path;
+        setPath(path);
         return this;
     }
 
     /**
-     * The name of the virtual MFA device. Use with path to uniquely identify
-     * a virtual MFA device.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name of the virtual MFA device. Use with path to uniquely identify
-     *         a virtual MFA device.
-     */
-    public String getVirtualMFADeviceName() {
-        return virtualMFADeviceName;
-    }
-    
-    /**
-     * The name of the virtual MFA device. Use with path to uniquely identify
-     * a virtual MFA device.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
-     *         a virtual MFA device.
+     * The name of the virtual MFA device. Use with path to uniquely identify a
+     * virtual MFA device.
+     * </p>
+     * 
+     * @param virtualMFADeviceName
+     *        The name of the virtual MFA device. Use with path to uniquely
+     *        identify a virtual MFA device.
      */
     public void setVirtualMFADeviceName(String virtualMFADeviceName) {
         this.virtualMFADeviceName = virtualMFADeviceName;
     }
-    
+
     /**
-     * The name of the virtual MFA device. Use with path to uniquely identify
-     * a virtual MFA device.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
-     *         a virtual MFA device.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the virtual MFA device. Use with path to uniquely identify a
+     * virtual MFA device.
+     * </p>
+     * 
+     * @return The name of the virtual MFA device. Use with path to uniquely
+     *         identify a virtual MFA device.
      */
-    public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(String virtualMFADeviceName) {
-        this.virtualMFADeviceName = virtualMFADeviceName;
+    public String getVirtualMFADeviceName() {
+        return this.virtualMFADeviceName;
+    }
+
+    /**
+     * <p>
+     * The name of the virtual MFA device. Use with path to uniquely identify a
+     * virtual MFA device.
+     * </p>
+     * 
+     * @param virtualMFADeviceName
+     *        The name of the virtual MFA device. Use with path to uniquely
+     *        identify a virtual MFA device.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(
+            String virtualMFADeviceName) {
+        setVirtualMFADeviceName(virtualMFADeviceName);
         return this;
     }
 
@@ -201,42 +179,55 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");
-        if (getVirtualMFADeviceName() != null) sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName() );
+        if (getPath() != null)
+            sb.append("Path: " + getPath() + ",");
+        if (getVirtualMFADeviceName() != null)
+            sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateVirtualMFADeviceRequest == false)
+            return false;
+        CreateVirtualMFADeviceRequest other = (CreateVirtualMFADeviceRequest) obj;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null
+                && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getVirtualMFADeviceName() == null
+                ^ this.getVirtualMFADeviceName() == null)
+            return false;
+        if (other.getVirtualMFADeviceName() != null
+                && other.getVirtualMFADeviceName().equals(
+                        this.getVirtualMFADeviceName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
-        hashCode = prime * hashCode + ((getVirtualMFADeviceName() == null) ? 0 : getVirtualMFADeviceName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVirtualMFADeviceName() == null) ? 0
+                        : getVirtualMFADeviceName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateVirtualMFADeviceRequest == false) return false;
-        CreateVirtualMFADeviceRequest other = (CreateVirtualMFADeviceRequest)obj;
-        
-        if (other.getPath() == null ^ this.getPath() == null) return false;
-        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
-        if (other.getVirtualMFADeviceName() == null ^ this.getVirtualMFADeviceName() == null) return false;
-        if (other.getVirtualMFADeviceName() != null && other.getVirtualMFADeviceName().equals(this.getVirtualMFADeviceName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateVirtualMFADeviceRequest clone() {
-        
-            return (CreateVirtualMFADeviceRequest) super.clone();
+        return (CreateVirtualMFADeviceRequest) super.clone();
     }
-
 }
-    

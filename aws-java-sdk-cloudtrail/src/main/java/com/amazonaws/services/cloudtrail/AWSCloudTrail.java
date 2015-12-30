@@ -158,6 +158,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.AddTags
      */
     AddTagsResult addTags(AddTagsRequest addTagsRequest);
 
@@ -235,6 +236,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.CreateTrail
      */
     CreateTrailResult createTrail(CreateTrailRequest createTrailRequest);
 
@@ -269,6 +271,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
      *         created.
+     * @sample AWSCloudTrail.DeleteTrail
      */
     DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest);
 
@@ -287,6 +290,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.DescribeTrails
      */
     DescribeTrailsResult describeTrails(
             DescribeTrailsRequest describeTrailsRequest);
@@ -326,6 +330,7 @@ public interface AWSCloudTrail {
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
      *         invalid.</li>
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * @sample AWSCloudTrail.GetTrailStatus
      */
     GetTrailStatusResult getTrailStatus(
             GetTrailStatusRequest getTrailStatusRequest);
@@ -357,6 +362,7 @@ public interface AWSCloudTrail {
      *         permitted.
      * @throws InvalidTokenException
      *         Reserved for future use.
+     * @sample AWSCloudTrail.ListPublicKeys
      */
     ListPublicKeysResult listPublicKeys(
             ListPublicKeysRequest listPublicKeysRequest);
@@ -411,6 +417,7 @@ public interface AWSCloudTrail {
      *         permitted.
      * @throws InvalidTokenException
      *         Reserved for future use.
+     * @sample AWSCloudTrail.ListTags
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
 
@@ -448,6 +455,7 @@ public interface AWSCloudTrail {
      *         Invalid token or token that was previously used in a request with
      *         different parameters. This exception is thrown if the token is
      *         invalid.
+     * @sample AWSCloudTrail.LookupEvents
      */
     LookupEventsResult lookupEvents(LookupEventsRequest lookupEventsRequest);
 
@@ -500,6 +508,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.RemoveTags
      */
     RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
 
@@ -536,6 +545,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
      *         created.
+     * @sample AWSCloudTrail.StartLogging
      */
     StartLoggingResult startLogging(StartLoggingRequest startLoggingRequest);
 
@@ -575,6 +585,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
      *         created.
+     * @sample AWSCloudTrail.StopLogging
      */
     StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest);
 
@@ -658,6 +669,7 @@ public interface AWSCloudTrail {
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.UpdateTrail
      */
     UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest);
 

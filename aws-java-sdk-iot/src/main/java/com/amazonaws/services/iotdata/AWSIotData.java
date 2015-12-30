@@ -125,6 +125,7 @@ public interface AWSIotData {
      *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
      *         The document encoding is not supported.
+     * @sample AWSIotData.DeleteThingShadow
      */
     DeleteThingShadowResult deleteThingShadow(
             DeleteThingShadowRequest deleteThingShadowRequest);
@@ -158,6 +159,7 @@ public interface AWSIotData {
      *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
      *         The document encoding is not supported.
+     * @sample AWSIotData.GetThingShadow
      */
     GetThingShadowResult getThingShadow(
             GetThingShadowRequest getThingShadowRequest);
@@ -182,6 +184,7 @@ public interface AWSIotData {
      *         You are not authorized to perform this operation.
      * @throws MethodNotAllowedException
      *         The specified combination of HTTP verb and URI is not supported.
+     * @sample AWSIotData.Publish
      */
     void publish(PublishRequest publishRequest);
 
@@ -217,6 +220,7 @@ public interface AWSIotData {
      *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
      *         The document encoding is not supported.
+     * @sample AWSIotData.UpdateThingShadow
      */
     UpdateThingShadowResult updateThingShadow(
             UpdateThingShadowRequest updateThingShadowRequest);

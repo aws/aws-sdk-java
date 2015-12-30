@@ -343,6 +343,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the operation is not valid on the specified resource
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.CancelExportTask
      */
     @Override
     public void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) {
@@ -410,6 +411,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ResourceAlreadyExistsException
      *         Returned if the specified resource already exists.
+     * @sample AWSLogs.CreateExportTask
      */
     @Override
     public CreateExportTaskResult createExportTask(
@@ -474,6 +476,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.CreateLogGroup
      */
     @Override
     public void createLogGroup(CreateLogGroupRequest createLogGroupRequest) {
@@ -529,6 +532,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.CreateLogStream
      */
     @Override
     public void createLogStream(CreateLogStreamRequest createLogStreamRequest) {
@@ -578,6 +582,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteDestination
      */
     @Override
     public void deleteDestination(
@@ -628,6 +633,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteLogGroup
      */
     @Override
     public void deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest) {
@@ -676,6 +682,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteLogStream
      */
     @Override
     public void deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest) {
@@ -723,6 +730,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteMetricFilter
      */
     @Override
     public void deleteMetricFilter(
@@ -773,6 +781,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteRetentionPolicy
      */
     @Override
     public void deleteRetentionPolicy(
@@ -822,6 +831,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteSubscriptionFilter
      */
     @Override
     public void deleteSubscriptionFilter(
@@ -877,6 +887,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeDestinations
      */
     @Override
     public DescribeDestinationsResult describeDestinations(
@@ -940,6 +951,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeExportTasks
      */
     @Override
     public DescribeExportTasksResult describeExportTasks(
@@ -997,6 +1009,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeLogGroups
      */
     @Override
     public DescribeLogGroupsResult describeLogGroups(
@@ -1063,6 +1076,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeLogStreams
      */
     @Override
     public DescribeLogStreamsResult describeLogStreams(
@@ -1121,6 +1135,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeMetricFilters
      */
     @Override
     public DescribeMetricFiltersResult describeMetricFilters(
@@ -1179,6 +1194,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeSubscriptionFilters
      */
     @Override
     public DescribeSubscriptionFiltersResult describeSubscriptionFilters(
@@ -1245,6 +1261,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.FilterLogEvents
      */
     @Override
     public FilterLogEventsResult filterLogEvents(
@@ -1306,6 +1323,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.GetLogEvents
      */
     @Override
     public GetLogEventsResult getLogEvents(
@@ -1368,6 +1386,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutDestination
      */
     @Override
     public PutDestinationResult putDestination(
@@ -1420,6 +1439,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutDestinationPolicy
      */
     @Override
     public void putDestinationPolicy(
@@ -1493,6 +1513,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutLogEvents
      */
     @Override
     public PutLogEventsResult putLogEvents(
@@ -1553,6 +1574,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         can be created.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutMetricFilter
      */
     @Override
     public void putMetricFilter(PutMetricFilterRequest putMetricFilterRequest) {
@@ -1602,6 +1624,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutRetentionPolicy
      */
     @Override
     public void putRetentionPolicy(
@@ -1668,6 +1691,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         can be created.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutSubscriptionFilter
      */
     @Override
     public void putSubscriptionFilter(
@@ -1715,6 +1739,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.TestMetricFilter
      */
     @Override
     public TestMetricFilterResult testMetricFilter(

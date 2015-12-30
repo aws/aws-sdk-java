@@ -54,9 +54,6 @@
         "documentation" : "<p>You cannot specify an instance ID in more than one association.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>\n@param cancelCommandRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CancelCommand operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>\n@param cancelCommandRequest \n@return Result of the CancelCommand operation returned by the service.\n@throws InvalidCommandIdException \n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws DuplicateInstanceIdException You cannot specify an instance ID in more than one association.*/",
-      "asyncDocumentation" : "/**<p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>\n@param cancelCommandRequest \n@return A Java Future containing the result of the CancelCommand operation returned by the service.*/",
       "syncReturnType" : "CancelCommandResult",
       "asyncReturnType" : "CancelCommandResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelCommandResult>",
@@ -104,9 +101,6 @@
         "documentation" : "You must specify values for all required parameters in the SSM document. You can only supply values to parameters defined in the SSM document."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Associates the specified SSM document with the specified instance.</p> <p>When you associate an SSM document with an instance, the configuration agent on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>\n@param createAssociationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateAssociation operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Associates the specified SSM document with the specified instance.</p> <p>When you associate an SSM document with an instance, the configuration agent on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>\n@param createAssociationRequest \n@return Result of the CreateAssociation operation returned by the service.\n@throws AssociationAlreadyExistsException The specified association already exists.\n@throws AssociationLimitExceededException You can have at most 2,000 active associations.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws UnsupportedPlatformTypeException The document does not support the platform type of the given instance ID(s).\n@throws InvalidParametersException You must specify values for all required parameters in the SSM document. You can only supply values to parameters defined in the SSM document.*/",
-      "asyncDocumentation" : "/**<p>Associates the specified SSM document with the specified instance.</p> <p>When you associate an SSM document with an instance, the configuration agent on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>\n@param createAssociationRequest \n@return A Java Future containing the result of the CreateAssociation operation returned by the service.*/",
       "syncReturnType" : "CreateAssociationResult",
       "asyncReturnType" : "CreateAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssociationResult>",
@@ -154,9 +148,6 @@
         "documentation" : "The document does not support the platform type of the given instance ID(s)."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Associates the specified SSM document with the specified instances.</p> <p>When you associate an SSM document with an instance, the configuration agent on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>\n@param createAssociationBatchRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateAssociationBatch operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Associates the specified SSM document with the specified instances.</p> <p>When you associate an SSM document with an instance, the configuration agent on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>\n@param createAssociationBatchRequest \n@return Result of the CreateAssociationBatch operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws InvalidParametersException You must specify values for all required parameters in the SSM document. You can only supply values to parameters defined in the SSM document.\n@throws DuplicateInstanceIdException You cannot specify an instance ID in more than one association.\n@throws AssociationLimitExceededException You can have at most 2,000 active associations.\n@throws UnsupportedPlatformTypeException The document does not support the platform type of the given instance ID(s).*/",
-      "asyncDocumentation" : "/**<p>Associates the specified SSM document with the specified instances.</p> <p>When you associate an SSM document with an instance, the configuration agent on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>\n@param createAssociationBatchRequest \n@return A Java Future containing the result of the CreateAssociationBatch operation returned by the service.*/",
       "syncReturnType" : "CreateAssociationBatchResult",
       "asyncReturnType" : "CreateAssociationBatchResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssociationBatchResult>",
@@ -198,9 +189,6 @@
         "documentation" : "<p>You can have at most 100 active SSM documents.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Creates an SSM document.</p> <p>After you create an SSM document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>\n@param createDocumentRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateDocument operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Creates an SSM document.</p> <p>After you create an SSM document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>\n@param createDocumentRequest \n@return Result of the CreateDocument operation returned by the service.\n@throws DocumentAlreadyExistsException The specified SSM document already exists.\n@throws MaxDocumentSizeExceededException The size limit of an SSM document is 64 KB.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentContentException The content for the SSM document is not valid.\n@throws DocumentLimitExceededException You can have at most 100 active SSM documents.*/",
-      "asyncDocumentation" : "/**<p>Creates an SSM document.</p> <p>After you create an SSM document, you can use <a>CreateAssociation</a> to associate it with one or more running instances.</p>\n@param createDocumentRequest \n@return A Java Future containing the result of the CreateDocument operation returned by the service.*/",
       "syncReturnType" : "CreateDocumentResult",
       "asyncReturnType" : "CreateDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDocumentResult>",
@@ -242,9 +230,6 @@
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Disassociates the specified SSM document from the specified instance.</p> <p>When you disassociate an SSM document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a document, you must create a new document with the desired configuration and associate it with the instance.</p>\n@param deleteAssociationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteAssociation operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Disassociates the specified SSM document from the specified instance.</p> <p>When you disassociate an SSM document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a document, you must create a new document with the desired configuration and associate it with the instance.</p>\n@param deleteAssociationRequest \n@return Result of the DeleteAssociation operation returned by the service.\n@throws AssociationDoesNotExistException The specified association does not exist.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws TooManyUpdatesException There are concurrent updates for a resource that supports one update at a time.*/",
-      "asyncDocumentation" : "/**<p>Disassociates the specified SSM document from the specified instance.</p> <p>When you disassociate an SSM document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a document, you must create a new document with the desired configuration and associate it with the instance.</p>\n@param deleteAssociationRequest \n@return A Java Future containing the result of the DeleteAssociation operation returned by the service.*/",
       "syncReturnType" : "DeleteAssociationResult",
       "asyncReturnType" : "DeleteAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAssociationResult>",
@@ -280,9 +265,6 @@
         "documentation" : "<p>You must disassociate an SSM document from all instances before you can delete it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the SSM document and all instance associations to the document.</p> <p>Before you delete the SSM document, we recommend that you use DeleteAssociation to disassociate all instances that are associated with the document.</p>\n@param deleteDocumentRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteDocument operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Deletes the SSM document and all instance associations to the document.</p> <p>Before you delete the SSM document, we recommend that you use DeleteAssociation to disassociate all instances that are associated with the document.</p>\n@param deleteDocumentRequest \n@return Result of the DeleteDocument operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.\n@throws AssociatedInstancesException You must disassociate an SSM document from all instances before you can delete it.*/",
-      "asyncDocumentation" : "/**<p>Deletes the SSM document and all instance associations to the document.</p> <p>Before you delete the SSM document, we recommend that you use DeleteAssociation to disassociate all instances that are associated with the document.</p>\n@param deleteDocumentRequest \n@return A Java Future containing the result of the DeleteDocument operation returned by the service.*/",
       "syncReturnType" : "DeleteDocumentResult",
       "asyncReturnType" : "DeleteDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDocumentResult>",
@@ -321,9 +303,6 @@
         "documentation" : "<p>The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Describes the associations for the specified SSM document or instance.</p>\n@param describeAssociationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeAssociation operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Describes the associations for the specified SSM document or instance.</p>\n@param describeAssociationRequest \n@return Result of the DescribeAssociation operation returned by the service.\n@throws AssociationDoesNotExistException The specified association does not exist.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.*/",
-      "asyncDocumentation" : "/**<p>Describes the associations for the specified SSM document or instance.</p>\n@param describeAssociationRequest \n@return A Java Future containing the result of the DescribeAssociation operation returned by the service.*/",
       "syncReturnType" : "DescribeAssociationResult",
       "asyncReturnType" : "DescribeAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssociationResult>",
@@ -356,9 +335,6 @@
         "documentation" : "<p>The specified document does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Describes the specified SSM document.</p>\n@param describeDocumentRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeDocument operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Describes the specified SSM document.</p>\n@param describeDocumentRequest \n@return Result of the DescribeDocument operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.*/",
-      "asyncDocumentation" : "/**<p>Describes the specified SSM document.</p>\n@param describeDocumentRequest \n@return A Java Future containing the result of the DescribeDocument operation returned by the service.*/",
       "syncReturnType" : "DescribeDocumentResult",
       "asyncReturnType" : "DescribeDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDocumentResult>",
@@ -400,9 +376,6 @@
         "documentation" : "The specified key is not valid."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**Describes one or more of your instances. You can use this to get information about instances like the operating system platform, the SSM agent version, status etc. If you specify one or more instance IDs, it returns information for those instances. If you do not specify instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an error.\n@param describeInstanceInformationRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeInstanceInformation operation returned by the service.*/",
-      "syncDocumentation" : "/**Describes one or more of your instances. You can use this to get information about instances like the operating system platform, the SSM agent version, status etc. If you specify one or more instance IDs, it returns information for those instances. If you do not specify instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an error.\n@param describeInstanceInformationRequest \n@return Result of the DescribeInstanceInformation operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws InvalidNextTokenException The specified token is not valid.\n@throws InvalidInstanceInformationFilterValueException The specified filter value is not valid.\n@throws InvalidFilterKeyException The specified key is not valid.*/",
-      "asyncDocumentation" : "/**Describes one or more of your instances. You can use this to get information about instances like the operating system platform, the SSM agent version, status etc. If you specify one or more instance IDs, it returns information for those instances. If you do not specify instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an error.\n@param describeInstanceInformationRequest \n@return A Java Future containing the result of the DescribeInstanceInformation operation returned by the service.*/",
       "syncReturnType" : "DescribeInstanceInformationResult",
       "asyncReturnType" : "DescribeInstanceInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstanceInformationResult>",
@@ -435,9 +408,6 @@
         "documentation" : "<p>The specified document does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Gets the contents of the specified SSM document.</p>\n@param getDocumentRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDocument operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Gets the contents of the specified SSM document.</p>\n@param getDocumentRequest \n@return Result of the GetDocument operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidDocumentException The specified document does not exist.*/",
-      "asyncDocumentation" : "/**<p>Gets the contents of the specified SSM document.</p>\n@param getDocumentRequest \n@return A Java Future containing the result of the GetDocument operation returned by the service.*/",
       "syncReturnType" : "GetDocumentResult",
       "asyncReturnType" : "GetDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDocumentResult>",
@@ -470,9 +440,6 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Lists the associations for the specified SSM document or instance.</p>\n@param listAssociationsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListAssociations operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Lists the associations for the specified SSM document or instance.</p>\n@param listAssociationsRequest \n@return Result of the ListAssociations operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidNextTokenException The specified token is not valid.*/",
-      "asyncDocumentation" : "/**<p>Lists the associations for the specified SSM document or instance.</p>\n@param listAssociationsRequest \n@return A Java Future containing the result of the ListAssociations operation returned by the service.*/",
       "syncReturnType" : "ListAssociationsResult",
       "asyncReturnType" : "ListAssociationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssociationsResult>",
@@ -511,9 +478,6 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. ListCommandInvocations provide status about command execution.\n@param listCommandInvocationsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListCommandInvocations operation returned by the service.*/",
-      "syncDocumentation" : "/**An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. ListCommandInvocations provide status about command execution.\n@param listCommandInvocationsRequest \n@return Result of the ListCommandInvocations operation returned by the service.\n@throws InvalidCommandIdException \n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws InvalidFilterKeyException The specified key is not valid.\n@throws InvalidNextTokenException The specified token is not valid.*/",
-      "asyncDocumentation" : "/**An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. ListCommandInvocations provide status about command execution.\n@param listCommandInvocationsRequest \n@return A Java Future containing the result of the ListCommandInvocations operation returned by the service.*/",
       "syncReturnType" : "ListCommandInvocationsResult",
       "asyncReturnType" : "ListCommandInvocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCommandInvocationsResult>",
@@ -552,9 +516,6 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Lists the commands requested by users of the AWS account.</p>\n@param listCommandsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListCommands operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Lists the commands requested by users of the AWS account.</p>\n@param listCommandsRequest \n@return Result of the ListCommands operation returned by the service.\n@throws InvalidCommandIdException \n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws InvalidFilterKeyException The specified key is not valid.\n@throws InvalidNextTokenException The specified token is not valid.*/",
-      "asyncDocumentation" : "/**<p>Lists the commands requested by users of the AWS account.</p>\n@param listCommandsRequest \n@return A Java Future containing the result of the ListCommands operation returned by the service.*/",
       "syncReturnType" : "ListCommandsResult",
       "asyncReturnType" : "ListCommandsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCommandsResult>",
@@ -590,9 +551,6 @@
         "documentation" : "The specified key is not valid."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Describes one or more of your SSM documents.</p>\n@param listDocumentsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDocuments operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Describes one or more of your SSM documents.</p>\n@param listDocumentsRequest \n@return Result of the ListDocuments operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidNextTokenException The specified token is not valid.\n@throws InvalidFilterKeyException The specified key is not valid.*/",
-      "asyncDocumentation" : "/**<p>Describes one or more of your SSM documents.</p>\n@param listDocumentsRequest \n@return A Java Future containing the result of the ListDocuments operation returned by the service.*/",
       "syncReturnType" : "ListDocumentsResult",
       "asyncReturnType" : "ListDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDocumentsResult>",
@@ -637,9 +595,6 @@
         "documentation" : "The document does not support the platform type of the given instance ID(s)."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**Executes commands on one or more remote instances.\n@param sendCommandRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the SendCommand operation returned by the service.*/",
-      "syncDocumentation" : "/**Executes commands on one or more remote instances.\n@param sendCommandRequest \n@return Result of the SendCommand operation returned by the service.\n@throws DuplicateInstanceIdException You cannot specify an instance ID in more than one association.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws InvalidDocumentException The specified document does not exist.\n@throws InvalidOutputFolderException The S3 bucket does not exist.\n@throws InvalidParametersException You must specify values for all required parameters in the SSM document. You can only supply values to parameters defined in the SSM document.\n@throws UnsupportedPlatformTypeException The document does not support the platform type of the given instance ID(s).*/",
-      "asyncDocumentation" : "/**Executes commands on one or more remote instances.\n@param sendCommandRequest \n@return A Java Future containing the result of the SendCommand operation returned by the service.*/",
       "syncReturnType" : "SendCommandResult",
       "asyncReturnType" : "SendCommandResult",
       "asyncFutureType" : "java.util.concurrent.Future<SendCommandResult>",
@@ -684,9 +639,6 @@
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Updates the status of the SSM document associated with the specified instance.</p>\n@param updateAssociationStatusRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateAssociationStatus operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Updates the status of the SSM document associated with the specified instance.</p>\n@param updateAssociationStatusRequest \n@return Result of the UpdateAssociationStatus operation returned by the service.\n@throws InternalServerErrorException An error occurred on the server side.\n@throws InvalidInstanceIdException The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.\n@throws InvalidDocumentException The specified document does not exist.\n@throws AssociationDoesNotExistException The specified association does not exist.\n@throws StatusUnchangedException The updated status is the same as the current status.\n@throws TooManyUpdatesException There are concurrent updates for a resource that supports one update at a time.*/",
-      "asyncDocumentation" : "/**<p>Updates the status of the SSM document associated with the specified instance.</p>\n@param updateAssociationStatusRequest \n@return A Java Future containing the result of the UpdateAssociationStatus operation returned by the service.*/",
       "syncReturnType" : "UpdateAssociationStatusResult",
       "asyncReturnType" : "UpdateAssociationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAssociationStatusResult>",
@@ -1108,8 +1060,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AssociationFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AssociationFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -1456,8 +1408,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AssociationFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AssociationFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
@@ -2047,8 +1999,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2237,8 +2189,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2691,8 +2643,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "InstanceInformationFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<InstanceInformationFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>"
@@ -2935,8 +2887,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "InstanceInformationFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<InstanceInformationFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>"
@@ -4327,8 +4279,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simple" : true,
               "simpleType" : "String",
+              "simple" : true,
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4531,8 +4483,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simple" : true,
                 "simpleType" : "String",
+                "simple" : true,
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5641,8 +5593,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "CommandPlugin",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<CommandPlugin>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>"
@@ -5987,8 +5939,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "CommandPlugin",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<CommandPlugin>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>"
@@ -6850,8 +6802,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "CommandFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<CommandFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -7043,8 +6995,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "CommandFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<CommandFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -7672,8 +7624,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AssociationDescription",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AssociationDescription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -7787,8 +7739,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "FailedCreateAssociation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FailedCreateAssociation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -7925,8 +7877,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AssociationDescription",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AssociationDescription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
@@ -8041,8 +7993,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "FailedCreateAssociation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FailedCreateAssociation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
@@ -8729,8 +8681,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "CommandInvocation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<CommandInvocation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>"
@@ -8918,8 +8870,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "CommandInvocation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<CommandInvocation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>"
@@ -9198,8 +9150,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simple" : true,
               "simpleType" : "String",
+              "simple" : true,
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9402,8 +9354,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simple" : true,
                 "simpleType" : "String",
+                "simple" : true,
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9698,8 +9650,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simple" : true,
               "simpleType" : "String",
+              "simple" : true,
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9906,8 +9858,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simple" : true,
                 "simpleType" : "String",
+                "simple" : true,
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10304,8 +10256,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simple" : true,
               "simpleType" : "String",
+              "simple" : true,
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10384,8 +10336,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10776,8 +10728,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simple" : true,
                 "simpleType" : "String",
+                "simple" : true,
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10909,8 +10861,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12221,8 +12173,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12487,8 +12439,8 @@
               "listMemberModel" : null,
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
-              "simple" : true,
               "simpleType" : "String",
+              "simple" : true,
               "map" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12745,8 +12697,8 @@
                 "listMemberModel" : null,
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
-                "simple" : true,
                 "simpleType" : "String",
+                "simple" : true,
                 "map" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12878,8 +12830,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13958,8 +13910,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "CommandFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<CommandFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -14100,8 +14052,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "CommandFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<CommandFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
@@ -14470,8 +14422,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14561,8 +14513,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15124,8 +15076,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DocumentIdentifier",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DocumentIdentifier>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -15313,8 +15265,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DocumentIdentifier",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DocumentIdentifier>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
@@ -15748,8 +15700,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DocumentParameter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DocumentParameter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>"
@@ -15863,8 +15815,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16053,8 +16005,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DocumentParameter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DocumentParameter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>"
@@ -16273,8 +16225,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17088,8 +17040,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Command",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Command>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>"
@@ -17329,8 +17281,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Command",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Command>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>"
@@ -17457,8 +17409,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "InstanceInformation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<InstanceInformation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>"
@@ -17646,8 +17598,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "InstanceInformation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<InstanceInformation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>"
@@ -17826,8 +17778,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DocumentFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DocumentFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -18122,8 +18074,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DocumentFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DocumentFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
@@ -18440,8 +18392,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -18527,8 +18479,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -19637,8 +19589,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "CreateAssociationBatchRequestEntry",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -19779,8 +19731,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "CreateAssociationBatchRequestEntry",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
@@ -20542,8 +20494,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Association",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Association>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
@@ -20783,8 +20735,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Association",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Association>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
@@ -20864,6 +20816,7 @@
         "methodForms" : [ [ ] ]
       }
     },
+    "renameShapes" : null,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,

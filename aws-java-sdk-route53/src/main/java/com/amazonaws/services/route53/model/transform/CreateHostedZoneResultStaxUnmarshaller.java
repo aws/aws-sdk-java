@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,15 +27,19 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Create Hosted Zone Result StAX Unmarshaller
+ * CreateHostedZoneResult StAX Unmarshaller
  */
-public class CreateHostedZoneResultStaxUnmarshaller implements Unmarshaller<CreateHostedZoneResult, StaxUnmarshallerContext> {
+public class CreateHostedZoneResultStaxUnmarshaller implements
+        Unmarshaller<CreateHostedZoneResult, StaxUnmarshallerContext> {
 
-    public CreateHostedZoneResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CreateHostedZoneResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         CreateHostedZoneResult createHostedZoneResult = new CreateHostedZoneResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
-        if (context.isStartOfDocument()) targetDepth += 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         if (context.isStartOfDocument()) {
             createHostedZoneResult.setLocation(context.getHeader("Location"));
@@ -43,23 +47,35 @@ public class CreateHostedZoneResultStaxUnmarshaller implements Unmarshaller<Crea
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return createHostedZoneResult;
+            if (xmlEvent.isEndDocument())
+                return createHostedZoneResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("HostedZone", targetDepth)) {
-                    createHostedZoneResult.setHostedZone(HostedZoneStaxUnmarshaller.getInstance().unmarshall(context));
+                    createHostedZoneResult
+                            .setHostedZone(HostedZoneStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ChangeInfo", targetDepth)) {
-                    createHostedZoneResult.setChangeInfo(ChangeInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    createHostedZoneResult
+                            .setChangeInfo(ChangeInfoStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("DelegationSet", targetDepth)) {
-                    createHostedZoneResult.setDelegationSet(DelegationSetStaxUnmarshaller.getInstance().unmarshall(context));
+                    createHostedZoneResult
+                            .setDelegationSet(DelegationSetStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("VPC", targetDepth)) {
-                    createHostedZoneResult.setVPC(VPCStaxUnmarshaller.getInstance().unmarshall(context));
+                    createHostedZoneResult.setVPC(VPCStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -71,9 +87,10 @@ public class CreateHostedZoneResultStaxUnmarshaller implements Unmarshaller<Crea
     }
 
     private static CreateHostedZoneResultStaxUnmarshaller instance;
+
     public static CreateHostedZoneResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateHostedZoneResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new CreateHostedZoneResultStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -272,6 +272,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateDevicePool
      */
     @Override
     public CreateDevicePoolResult createDevicePool(
@@ -324,6 +325,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateProject
      */
     @Override
     public CreateProjectResult createProject(
@@ -375,6 +377,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateUpload
      */
     @Override
     public CreateUploadResult createUpload(
@@ -427,6 +430,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteDevicePool
      */
     @Override
     public DeleteDevicePoolResult deleteDevicePool(
@@ -482,6 +486,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteProject
      */
     @Override
     public DeleteProjectResult deleteProject(
@@ -536,6 +541,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteRun
      */
     @Override
     public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
@@ -586,6 +592,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteUpload
      */
     @Override
     public DeleteUploadResult deleteUpload(
@@ -638,6 +645,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetAccountSettings
      */
     @Override
     public GetAccountSettingsResult getAccountSettings(
@@ -690,6 +698,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDevice
      */
     @Override
     public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
@@ -740,6 +749,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDevicePool
      */
     @Override
     public GetDevicePoolResult getDevicePool(
@@ -793,6 +803,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDevicePoolCompatibility
      */
     @Override
     public GetDevicePoolCompatibilityResult getDevicePoolCompatibility(
@@ -845,6 +856,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetJob
      */
     @Override
     public GetJobResult getJob(GetJobRequest getJobRequest) {
@@ -895,6 +907,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetProject
      */
     @Override
     public GetProjectResult getProject(GetProjectRequest getProjectRequest) {
@@ -945,6 +958,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetRun
      */
     @Override
     public GetRunResult getRun(GetRunRequest getRunRequest) {
@@ -995,6 +1009,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetSuite
      */
     @Override
     public GetSuiteResult getSuite(GetSuiteRequest getSuiteRequest) {
@@ -1045,6 +1060,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetTest
      */
     @Override
     public GetTestResult getTest(GetTestRequest getTestRequest) {
@@ -1095,6 +1111,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetUpload
      */
     @Override
     public GetUploadResult getUpload(GetUploadRequest getUploadRequest) {
@@ -1145,6 +1162,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListArtifacts
      */
     @Override
     public ListArtifactsResult listArtifacts(
@@ -1196,6 +1214,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListDevicePools
      */
     @Override
     public ListDevicePoolsResult listDevicePools(
@@ -1247,6 +1266,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListDevices
      */
     @Override
     public ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest) {
@@ -1297,6 +1317,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListJobs
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
@@ -1347,6 +1368,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListProjects
      */
     @Override
     public ListProjectsResult listProjects(
@@ -1398,6 +1420,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListRuns
      */
     @Override
     public ListRunsResult listRuns(ListRunsRequest listRunsRequest) {
@@ -1448,6 +1471,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListSamples
      */
     @Override
     public ListSamplesResult listSamples(ListSamplesRequest listSamplesRequest) {
@@ -1498,6 +1522,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListSuites
      */
     @Override
     public ListSuitesResult listSuites(ListSuitesRequest listSuitesRequest) {
@@ -1548,6 +1573,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListTests
      */
     @Override
     public ListTestsResult listTests(ListTestsRequest listTestsRequest) {
@@ -1599,6 +1625,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListUniqueProblems
      */
     @Override
     public ListUniqueProblemsResult listUniqueProblems(
@@ -1651,6 +1678,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListUploads
      */
     @Override
     public ListUploadsResult listUploads(ListUploadsRequest listUploadsRequest) {
@@ -1703,6 +1731,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         An entity with the same name already exists.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ScheduleRun
      */
     @Override
     public ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest) {
@@ -1755,6 +1784,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateDevicePool
      */
     @Override
     public UpdateDevicePoolResult updateDevicePool(
@@ -1808,6 +1838,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateProject
      */
     @Override
     public UpdateProjectResult updateProject(

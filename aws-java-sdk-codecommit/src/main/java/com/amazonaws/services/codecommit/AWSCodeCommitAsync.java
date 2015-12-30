@@ -61,6 +61,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a batch get repositories operation.
      * @return A Java Future containing the result of the BatchGetRepositories
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.BatchGetRepositories
      */
     java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(
             BatchGetRepositoriesRequest batchGetRepositoriesRequest);
@@ -89,6 +90,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetRepositories
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.BatchGetRepositories
      */
     java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(
             BatchGetRepositoriesRequest batchGetRepositoriesRequest,
@@ -104,6 +106,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * 
      * @param createBranchRequest
      *        Represents the input of a create branch operation.
+     * @sample AWSCodeCommitAsync.CreateBranch
      */
     java.util.concurrent.Future<Void> createBranchAsync(
             CreateBranchRequest createBranchRequest);
@@ -123,6 +126,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodeCommitAsyncHandler.CreateBranch
      */
     java.util.concurrent.Future<Void> createBranchAsync(
             CreateBranchRequest createBranchRequest,
@@ -137,6 +141,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a create repository operation.
      * @return A Java Future containing the result of the CreateRepository
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.CreateRepository
      */
     java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(
             CreateRepositoryRequest createRepositoryRequest);
@@ -155,6 +160,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRepository
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.CreateRepository
      */
     java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(
             CreateRepositoryRequest createRepositoryRequest,
@@ -173,6 +179,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a delete repository operation.
      * @return A Java Future containing the result of the DeleteRepository
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.DeleteRepository
      */
     java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(
             DeleteRepositoryRequest deleteRepositoryRequest);
@@ -195,6 +202,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRepository
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DeleteRepository
      */
     java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(
             DeleteRepositoryRequest deleteRepositoryRequest,
@@ -210,6 +218,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a get branch operation.
      * @return A Java Future containing the result of the GetBranch operation
      *         returned by the service.
+     * @sample AWSCodeCommitAsync.GetBranch
      */
     java.util.concurrent.Future<GetBranchResult> getBranchAsync(
             GetBranchRequest getBranchRequest);
@@ -229,6 +238,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetBranch operation
      *         returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetBranch
      */
     java.util.concurrent.Future<GetBranchResult> getBranchAsync(
             GetBranchRequest getBranchRequest,
@@ -253,6 +263,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a get repository operation.
      * @return A Java Future containing the result of the GetRepository
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetRepository
      */
     java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
             GetRepositoryRequest getRepositoryRequest);
@@ -281,6 +292,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRepository
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetRepository
      */
     java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
             GetRepositoryRequest getRepositoryRequest,
@@ -295,6 +307,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a list branches operation.
      * @return A Java Future containing the result of the ListBranches operation
      *         returned by the service.
+     * @sample AWSCodeCommitAsync.ListBranches
      */
     java.util.concurrent.Future<ListBranchesResult> listBranchesAsync(
             ListBranchesRequest listBranchesRequest);
@@ -313,6 +326,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListBranches operation
      *         returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListBranches
      */
     java.util.concurrent.Future<ListBranchesResult> listBranchesAsync(
             ListBranchesRequest listBranchesRequest,
@@ -327,6 +341,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        Represents the input of a list repositories operation.
      * @return A Java Future containing the result of the ListRepositories
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.ListRepositories
      */
     java.util.concurrent.Future<ListRepositoriesResult> listRepositoriesAsync(
             ListRepositoriesRequest listRepositoriesRequest);
@@ -345,6 +360,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRepositories
      *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListRepositories
      */
     java.util.concurrent.Future<ListRepositoriesResult> listRepositoriesAsync(
             ListRepositoriesRequest listRepositoriesRequest,
@@ -360,6 +376,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * 
      * @param updateDefaultBranchRequest
      *        Represents the input of an update default branch operation.
+     * @sample AWSCodeCommitAsync.UpdateDefaultBranch
      */
     java.util.concurrent.Future<Void> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest updateDefaultBranchRequest);
@@ -379,6 +396,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodeCommitAsyncHandler.UpdateDefaultBranch
      */
     java.util.concurrent.Future<Void> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest updateDefaultBranchRequest,
@@ -402,6 +420,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * @param updateRepositoryDescriptionRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @sample AWSCodeCommitAsync.UpdateRepositoryDescription
      */
     java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest);
@@ -429,6 +448,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodeCommitAsyncHandler.UpdateRepositoryDescription
      */
     java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest,
@@ -442,6 +462,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * @param updateRepositoryNameRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @sample AWSCodeCommitAsync.UpdateRepositoryName
      */
     java.util.concurrent.Future<Void> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest);
@@ -459,6 +480,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodeCommitAsyncHandler.UpdateRepositoryName
      */
     java.util.concurrent.Future<Void> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest,

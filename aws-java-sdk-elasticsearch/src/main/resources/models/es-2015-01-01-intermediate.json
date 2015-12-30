@@ -54,9 +54,6 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging\" target=\"_blank\"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>\n@param addTagsRequest Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging\" target=\"_blank\"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>\n@param addTagsRequest Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.\n@throws BaseException An error occurred while processing the request.\n@throws LimitExceededException An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.*/",
-      "asyncDocumentation" : "/**<p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging\" target=\"_blank\"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>\n@param addTagsRequest Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -104,9 +101,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new Elasticsearch domain. For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>\n@param createElasticsearchDomainRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateElasticsearchDomain operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Creates a new Elasticsearch domain. For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>\n@param createElasticsearchDomainRequest \n@return Result of the CreateElasticsearchDomain operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws DisabledOperationException An error occured because the client wanted to access a not supported operation. Gives http status code of 409.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.\n@throws InvalidTypeException An exception for trying to create or access sub-resource that is either invalid or not supported. Gives http status code of 409.\n@throws LimitExceededException An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.\n@throws ResourceAlreadyExistsException An exception for creating a resource that already exists. Gives http status code of 400.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Creates a new Elasticsearch domain. For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>\n@param createElasticsearchDomainRequest \n@return A Java Future containing the result of the CreateElasticsearchDomain operation returned by the service.*/",
       "syncReturnType" : "CreateElasticsearchDomainResult",
       "asyncReturnType" : "CreateElasticsearchDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateElasticsearchDomainResult>",
@@ -145,9 +139,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>\n@param deleteElasticsearchDomainRequest Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteElasticsearchDomain operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>\n@param deleteElasticsearchDomainRequest Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.\n@return Result of the DeleteElasticsearchDomain operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.\n@throws ResourceNotFoundException An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>\n@param deleteElasticsearchDomainRequest Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.\n@return A Java Future containing the result of the DeleteElasticsearchDomain operation returned by the service.*/",
       "syncReturnType" : "DeleteElasticsearchDomainResult",
       "asyncReturnType" : "DeleteElasticsearchDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteElasticsearchDomainResult>",
@@ -186,9 +177,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>\n@param describeElasticsearchDomainRequest Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeElasticsearchDomain operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>\n@param describeElasticsearchDomainRequest Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.\n@return Result of the DescribeElasticsearchDomain operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.\n@throws ResourceNotFoundException An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>\n@param describeElasticsearchDomainRequest Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.\n@return A Java Future containing the result of the DescribeElasticsearchDomain operation returned by the service.*/",
       "syncReturnType" : "DescribeElasticsearchDomainResult",
       "asyncReturnType" : "DescribeElasticsearchDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeElasticsearchDomainResult>",
@@ -227,9 +215,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>\n@param describeElasticsearchDomainConfigRequest Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeElasticsearchDomainConfig operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>\n@param describeElasticsearchDomainConfigRequest Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.\n@return Result of the DescribeElasticsearchDomainConfig operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.\n@throws ResourceNotFoundException An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>\n@param describeElasticsearchDomainConfigRequest Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.\n@return A Java Future containing the result of the DescribeElasticsearchDomainConfig operation returned by the service.*/",
       "syncReturnType" : "DescribeElasticsearchDomainConfigResult",
       "asyncReturnType" : "DescribeElasticsearchDomainConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeElasticsearchDomainConfigResult>",
@@ -265,9 +250,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>\n@param describeElasticsearchDomainsRequest Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DescribeElasticsearchDomains operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>\n@param describeElasticsearchDomainsRequest Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.\n@return Result of the DescribeElasticsearchDomains operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>\n@param describeElasticsearchDomainsRequest Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.\n@return A Java Future containing the result of the DescribeElasticsearchDomains operation returned by the service.*/",
       "syncReturnType" : "DescribeElasticsearchDomainsResult",
       "asyncReturnType" : "DescribeElasticsearchDomainsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeElasticsearchDomainsResult>",
@@ -300,9 +282,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>\n@param listDomainNamesRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDomainNames operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>\n@param listDomainNamesRequest \n@return Result of the ListDomainNames operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>\n@param listDomainNamesRequest \n@return A Java Future containing the result of the ListDomainNames operation returned by the service.*/",
       "syncReturnType" : "ListDomainNamesResult",
       "asyncReturnType" : "ListDomainNamesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDomainNamesResult>",
@@ -341,9 +320,6 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Returns all tags for the given Elasticsearch domain.</p>\n@param listTagsRequest Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListTags operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Returns all tags for the given Elasticsearch domain.</p>\n@param listTagsRequest Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.\n@return Result of the ListTags operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws ResourceNotFoundException An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.*/",
-      "asyncDocumentation" : "/**<p>Returns all tags for the given Elasticsearch domain.</p>\n@param listTagsRequest Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.\n@return A Java Future containing the result of the ListTags operation returned by the service.*/",
       "syncReturnType" : "ListTagsResult",
       "asyncReturnType" : "ListTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsResult>",
@@ -376,9 +352,6 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Removes the specified set of tags from the specified Elasticsearch domain.</p>\n@param removeTagsRequest Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.*/",
-      "syncDocumentation" : "/**<p>Removes the specified set of tags from the specified Elasticsearch domain.</p>\n@param removeTagsRequest Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.\n@throws BaseException An error occurred while processing the request.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.*/",
-      "asyncDocumentation" : "/**<p>Removes the specified set of tags from the specified Elasticsearch domain.</p>\n@param removeTagsRequest Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.*/",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -423,9 +396,6 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "asyncDocumentationWithHandler" : "/**<p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>\n@param updateElasticsearchDomainConfigRequest Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateElasticsearchDomainConfig operation returned by the service.*/",
-      "syncDocumentation" : "/**<p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>\n@param updateElasticsearchDomainConfigRequest Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.\n@return Result of the UpdateElasticsearchDomainConfig operation returned by the service.\n@throws BaseException An error occurred while processing the request.\n@throws InternalException The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.\n@throws InvalidTypeException An exception for trying to create or access sub-resource that is either invalid or not supported. Gives http status code of 409.\n@throws LimitExceededException An exception for trying to create more than allowed resources or sub-resources. Gives http status code of 409.\n@throws ResourceNotFoundException An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.\n@throws ValidationException An exception for missing / invalid input fields. Gives http status code of 400.*/",
-      "asyncDocumentation" : "/**<p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>\n@param updateElasticsearchDomainConfigRequest Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.\n@return A Java Future containing the result of the UpdateElasticsearchDomainConfig operation returned by the service.*/",
       "syncReturnType" : "UpdateElasticsearchDomainConfigResult",
       "asyncReturnType" : "UpdateElasticsearchDomainConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult>",
@@ -2581,8 +2551,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DomainInfo",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DomainInfo>",
           "templateImplType" : "java.util.ArrayList<DomainInfo>"
@@ -2719,8 +2689,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DomainInfo",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DomainInfo>",
             "templateImplType" : "java.util.ArrayList<DomainInfo>"
@@ -6087,8 +6057,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ElasticsearchDomainStatus",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ElasticsearchDomainStatus>",
           "templateImplType" : "java.util.ArrayList<ElasticsearchDomainStatus>"
@@ -6225,8 +6195,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ElasticsearchDomainStatus",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ElasticsearchDomainStatus>",
             "templateImplType" : "java.util.ArrayList<ElasticsearchDomainStatus>"
@@ -6502,8 +6472,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -6593,8 +6563,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -7456,8 +7426,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Tag",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "java.util.ArrayList<Tag>"
@@ -7594,8 +7564,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Tag",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "java.util.ArrayList<Tag>"
@@ -7722,8 +7692,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -7813,8 +7783,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -9210,8 +9180,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Tag",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "java.util.ArrayList<Tag>"
@@ -9352,8 +9322,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Tag",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "java.util.ArrayList<Tag>"
@@ -10385,6 +10355,7 @@
     "requiredParamValidationEnabled" : false,
     "additionalShapeConstructors" : null,
     "simpleMethods" : null,
+    "renameShapes" : null,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,

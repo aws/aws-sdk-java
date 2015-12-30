@@ -140,6 +140,7 @@ public interface AmazonConfig {
      * @throws ResourceInUseException
      *         The rule is currently being deleted. Wait for a while and try
      *         again.
+     * @sample AmazonConfig.DeleteConfigRule
      */
     void deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest);
 
@@ -162,6 +163,7 @@ public interface AmazonConfig {
      * @throws LastDeliveryChannelDeleteFailedException
      *         You cannot delete the delivery channel you specified because the
      *         configuration recorder is running.
+     * @sample AmazonConfig.DeleteDeliveryChannel
      */
     void deleteDeliveryChannel(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest);
@@ -193,6 +195,7 @@ public interface AmazonConfig {
      *         recorder.
      * @throws NoRunningConfigurationRecorderException
      *         There is no configuration recorder running.
+     * @sample AmazonConfig.DeliverConfigSnapshot
      */
     DeliverConfigSnapshotResult deliverConfigSnapshot(
             DeliverConfigSnapshotRequest deliverConfigSnapshotRequest);
@@ -237,6 +240,7 @@ public interface AmazonConfig {
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @sample AmazonConfig.DescribeComplianceByConfigRule
      */
     DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(
             DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest);
@@ -291,6 +295,7 @@ public interface AmazonConfig {
      *         The specified next token is invalid. Specify the
      *         <code>nextToken</code> string that was returned in the previous
      *         response to get the next page of results.
+     * @sample AmazonConfig.DescribeComplianceByResource
      */
     DescribeComplianceByResourceResult describeComplianceByResource(
             DescribeComplianceByResourceRequest describeComplianceByResourceRequest);
@@ -317,6 +322,7 @@ public interface AmazonConfig {
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @sample AmazonConfig.DescribeConfigRuleEvaluationStatus
      */
     DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest);
@@ -340,6 +346,7 @@ public interface AmazonConfig {
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @sample AmazonConfig.DescribeConfigRules
      */
     DescribeConfigRulesResult describeConfigRules(
             DescribeConfigRulesRequest describeConfigRulesRequest);
@@ -367,6 +374,7 @@ public interface AmazonConfig {
      *         returned by the service.
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
+     * @sample AmazonConfig.DescribeConfigurationRecorderStatus
      */
     DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest);
@@ -397,6 +405,7 @@ public interface AmazonConfig {
      *         by the service.
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
+     * @sample AmazonConfig.DescribeConfigurationRecorders
      */
     DescribeConfigurationRecordersResult describeConfigurationRecorders(
             DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest);
@@ -424,6 +433,7 @@ public interface AmazonConfig {
      *         the service.
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
+     * @sample AmazonConfig.DescribeDeliveryChannelStatus
      */
     DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(
             DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest);
@@ -454,6 +464,7 @@ public interface AmazonConfig {
      *         service.
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
+     * @sample AmazonConfig.DescribeDeliveryChannels
      */
     DescribeDeliveryChannelsResult describeDeliveryChannels(
             DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest);
@@ -487,6 +498,7 @@ public interface AmazonConfig {
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @sample AmazonConfig.GetComplianceDetailsByConfigRule
      */
     GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest);
@@ -505,6 +517,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that
      *         your parameters are valid and try again.
+     * @sample AmazonConfig.GetComplianceDetailsByResource
      */
     GetComplianceDetailsByResourceResult getComplianceDetailsByResource(
             GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest);
@@ -518,6 +531,7 @@ public interface AmazonConfig {
      * @param getComplianceSummaryByConfigRuleRequest
      * @return Result of the GetComplianceSummaryByConfigRule operation returned
      *         by the service.
+     * @sample AmazonConfig.GetComplianceSummaryByConfigRule
      */
     GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest);
@@ -543,6 +557,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that
      *         your parameters are valid and try again.
+     * @sample AmazonConfig.GetComplianceSummaryByResourceType
      */
     GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest);
@@ -600,6 +615,7 @@ public interface AmazonConfig {
      * @throws ResourceNotDiscoveredException
      *         You have specified a resource that is either unknown or has not
      *         been discovered.
+     * @sample AmazonConfig.GetResourceConfigHistory
      */
     GetResourceConfigHistoryResult getResourceConfigHistory(
             GetResourceConfigHistoryRequest getResourceConfigHistoryRequest);
@@ -640,6 +656,7 @@ public interface AmazonConfig {
      *         There are no configuration recorders available to provide the
      *         role needed to describe your resources. Create a configuration
      *         recorder.
+     * @sample AmazonConfig.ListDiscoveredResources
      */
     ListDiscoveredResourcesResult listDiscoveredResources(
             ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
@@ -715,6 +732,7 @@ public interface AmazonConfig {
      *         AWS Config lacks permissions to perform the config:Put* action.</li>
      *         <li>The AWS Lambda function cannot be invoked. Check the function
      *         ARN, and check the function's permissions.</li>
+     * @sample AmazonConfig.PutConfigRule
      */
     void putConfigRule(PutConfigRuleRequest putConfigRuleRequest);
 
@@ -754,6 +772,7 @@ public interface AmazonConfig {
      *         AWS Config throws an exception if the recording group does not
      *         contain a valid list of resource types. Invalid values could also
      *         be incorrectly formatted.
+     * @sample AmazonConfig.PutConfigurationRecorder
      */
     void putConfigurationRecorder(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest);
@@ -797,6 +816,7 @@ public interface AmazonConfig {
      * @throws InsufficientDeliveryPolicyException
      *         Your Amazon S3 bucket policy does not permit AWS Config to write
      *         to it.
+     * @sample AmazonConfig.PutDeliveryChannel
      */
     void putDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest);
 
@@ -817,6 +837,7 @@ public interface AmazonConfig {
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
+     * @sample AmazonConfig.PutEvaluations
      */
     PutEvaluationsResult putEvaluations(
             PutEvaluationsRequest putEvaluationsRequest);
@@ -837,6 +858,7 @@ public interface AmazonConfig {
      *         You have specified a configuration recorder that does not exist.
      * @throws NoAvailableDeliveryChannelException
      *         There is no delivery channel available to record configurations.
+     * @sample AmazonConfig.StartConfigurationRecorder
      */
     void startConfigurationRecorder(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest);
@@ -853,6 +875,7 @@ public interface AmazonConfig {
      *        </p>
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
+     * @sample AmazonConfig.StopConfigurationRecorder
      */
     void stopConfigurationRecorder(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest);

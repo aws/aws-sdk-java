@@ -71,6 +71,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param deleteAlarmsRequest
+     * @sample AmazonCloudWatchAsync.DeleteAlarms
      */
     java.util.concurrent.Future<Void> deleteAlarmsAsync(
             DeleteAlarmsRequest deleteAlarmsRequest);
@@ -87,6 +88,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudWatchAsyncHandler.DeleteAlarms
      */
     java.util.concurrent.Future<Void> deleteAlarmsAsync(
             DeleteAlarmsRequest deleteAlarmsRequest,
@@ -104,6 +106,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param describeAlarmHistoryRequest
      * @return A Java Future containing the result of the DescribeAlarmHistory
      *         operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DescribeAlarmHistory
      */
     java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
             DescribeAlarmHistoryRequest describeAlarmHistoryRequest);
@@ -125,6 +128,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAlarmHistory
      *         operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DescribeAlarmHistory
      */
     java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
             DescribeAlarmHistoryRequest describeAlarmHistoryRequest,
@@ -157,6 +161,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param describeAlarmsRequest
      * @return A Java Future containing the result of the DescribeAlarms
      *         operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DescribeAlarms
      */
     java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
             DescribeAlarmsRequest describeAlarmsRequest);
@@ -176,6 +181,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAlarms
      *         operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DescribeAlarms
      */
     java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
             DescribeAlarmsRequest describeAlarmsRequest,
@@ -207,6 +213,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param describeAlarmsForMetricRequest
      * @return A Java Future containing the result of the
      *         DescribeAlarmsForMetric operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DescribeAlarmsForMetric
      */
     java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(
             DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest);
@@ -225,6 +232,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeAlarmsForMetric operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DescribeAlarmsForMetric
      */
     java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(
             DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest,
@@ -238,6 +246,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @sample AmazonCloudWatchAsync.DisableAlarmActions
      */
     java.util.concurrent.Future<Void> disableAlarmActionsAsync(
             DisableAlarmActionsRequest disableAlarmActionsRequest);
@@ -255,6 +264,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudWatchAsyncHandler.DisableAlarmActions
      */
     java.util.concurrent.Future<Void> disableAlarmActionsAsync(
             DisableAlarmActionsRequest disableAlarmActionsRequest,
@@ -266,6 +276,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @sample AmazonCloudWatchAsync.EnableAlarmActions
      */
     java.util.concurrent.Future<Void> enableAlarmActionsAsync(
             EnableAlarmActionsRequest enableAlarmActionsRequest);
@@ -281,6 +292,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudWatchAsyncHandler.EnableAlarmActions
      */
     java.util.concurrent.Future<Void> enableAlarmActionsAsync(
             EnableAlarmActionsRequest enableAlarmActionsRequest,
@@ -320,6 +332,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param getMetricStatisticsRequest
      * @return A Java Future containing the result of the GetMetricStatistics
      *         operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetMetricStatistics
      */
     java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(
             GetMetricStatisticsRequest getMetricStatisticsRequest);
@@ -363,6 +376,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetMetricStatistics
      *         operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.GetMetricStatistics
      */
     java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(
             GetMetricStatisticsRequest getMetricStatisticsRequest,
@@ -384,6 +398,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * @param listMetricsRequest
      * @return A Java Future containing the result of the ListMetrics operation
      *         returned by the service.
+     * @sample AmazonCloudWatchAsync.ListMetrics
      */
     java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
             ListMetricsRequest listMetricsRequest);
@@ -409,6 +424,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListMetrics operation
      *         returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.ListMetrics
      */
     java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
             ListMetricsRequest listMetricsRequest,
@@ -447,6 +463,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * left unchanged. </note>
      * 
      * @param putMetricAlarmRequest
+     * @sample AmazonCloudWatchAsync.PutMetricAlarm
      */
     java.util.concurrent.Future<Void> putMetricAlarmAsync(
             PutMetricAlarmRequest putMetricAlarmRequest);
@@ -472,6 +489,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudWatchAsyncHandler.PutMetricAlarm
      */
     java.util.concurrent.Future<Void> putMetricAlarmAsync(
             PutMetricAlarmRequest putMetricAlarmRequest,
@@ -497,6 +515,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * -130 (1 x 10^-130) are also truncated. </important>
      * 
      * @param putMetricDataRequest
+     * @sample AmazonCloudWatchAsync.PutMetricData
      */
     java.util.concurrent.Future<Void> putMetricDataAsync(
             PutMetricDataRequest putMetricDataRequest);
@@ -526,6 +545,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudWatchAsyncHandler.PutMetricData
      */
     java.util.concurrent.Future<Void> putMetricDataAsync(
             PutMetricDataRequest putMetricDataRequest,
@@ -541,6 +561,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param setAlarmStateRequest
+     * @sample AmazonCloudWatchAsync.SetAlarmState
      */
     java.util.concurrent.Future<Void> setAlarmStateAsync(
             SetAlarmStateRequest setAlarmStateRequest);
@@ -560,6 +581,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudWatchAsyncHandler.SetAlarmState
      */
     java.util.concurrent.Future<Void> setAlarmStateAsync(
             SetAlarmStateRequest setAlarmStateRequest,

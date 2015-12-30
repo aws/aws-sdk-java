@@ -131,6 +131,7 @@ public interface AmazonCloudWatch {
      * @param deleteAlarmsRequest
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
+     * @sample AmazonCloudWatch.DeleteAlarms
      */
     void deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest);
 
@@ -148,6 +149,7 @@ public interface AmazonCloudWatch {
      *         service.
      * @throws InvalidNextTokenException
      *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.DescribeAlarmHistory
      */
     DescribeAlarmHistoryResult describeAlarmHistory(
             DescribeAlarmHistoryRequest describeAlarmHistoryRequest);
@@ -170,6 +172,7 @@ public interface AmazonCloudWatch {
      * @return Result of the DescribeAlarms operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.DescribeAlarms
      */
     DescribeAlarmsResult describeAlarms(
             DescribeAlarmsRequest describeAlarmsRequest);
@@ -190,6 +193,7 @@ public interface AmazonCloudWatch {
      * @param describeAlarmsForMetricRequest
      * @return Result of the DescribeAlarmsForMetric operation returned by the
      *         service.
+     * @sample AmazonCloudWatch.DescribeAlarmsForMetric
      */
     DescribeAlarmsForMetricResult describeAlarmsForMetric(
             DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest);
@@ -202,6 +206,7 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @sample AmazonCloudWatch.DisableAlarmActions
      */
     void disableAlarmActions(
             DisableAlarmActionsRequest disableAlarmActionsRequest);
@@ -212,6 +217,7 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @sample AmazonCloudWatch.EnableAlarmActions
      */
     void enableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest);
 
@@ -259,6 +265,7 @@ public interface AmazonCloudWatch {
      * @throws InternalServiceException
      *         Indicates that the request processing has failed due to some
      *         unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.GetMetricStatistics
      */
     GetMetricStatisticsResult getMetricStatistics(
             GetMetricStatisticsRequest getMetricStatisticsRequest);
@@ -283,6 +290,7 @@ public interface AmazonCloudWatch {
      *         unknown error, exception, or failure.
      * @throws InvalidParameterValueException
      *         Bad or out-of-range value was supplied for the input parameter.
+     * @sample AmazonCloudWatch.ListMetrics
      */
     ListMetricsResult listMetrics(ListMetricsRequest listMetricsRequest);
 
@@ -311,6 +319,7 @@ public interface AmazonCloudWatch {
      * @param putMetricAlarmRequest
      * @throws LimitExceededException
      *         The quota for alarms for this customer has already been reached.
+     * @sample AmazonCloudWatch.PutMetricAlarm
      */
     void putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest);
 
@@ -344,6 +353,7 @@ public interface AmazonCloudWatch {
      * @throws InternalServiceException
      *         Indicates that the request processing has failed due to some
      *         unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.PutMetricData
      */
     void putMetricData(PutMetricDataRequest putMetricDataRequest);
 
@@ -361,6 +371,7 @@ public interface AmazonCloudWatch {
      *         The named resource does not exist.
      * @throws InvalidFormatException
      *         Data was not syntactically valid JSON.
+     * @sample AmazonCloudWatch.SetAlarmState
      */
     void setAlarmState(SetAlarmStateRequest setAlarmStateRequest);
 

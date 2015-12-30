@@ -163,6 +163,7 @@ public interface AmazonCognitoIdentity {
      * @throws LimitExceededException
      *         Thrown when the total number of user pools has exceeded a preset
      *         limit.
+     * @sample AmazonCognitoIdentity.CreateIdentityPool
      */
     CreateIdentityPoolResult createIdentityPool(
             CreateIdentityPoolRequest createIdentityPoolRequest);
@@ -186,6 +187,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DeleteIdentities
      */
     DeleteIdentitiesResult deleteIdentities(
             DeleteIdentitiesRequest deleteIdentitiesRequest);
@@ -214,6 +216,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DeleteIdentityPool
      */
     void deleteIdentityPool(DeleteIdentityPoolRequest deleteIdentityPoolRequest);
 
@@ -242,6 +245,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DescribeIdentity
      */
     DescribeIdentityResult describeIdentity(
             DescribeIdentityRequest describeIdentityRequest);
@@ -272,6 +276,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DescribeIdentityPool
      */
     DescribeIdentityPoolResult describeIdentityPool(
             DescribeIdentityPoolRequest describeIdentityPoolRequest);
@@ -313,6 +318,7 @@ public interface AmazonCognitoIdentity {
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.GetCredentialsForIdentity
      */
     GetCredentialsForIdentityResult getCredentialsForIdentity(
             GetCredentialsForIdentityRequest getCredentialsForIdentityRequest);
@@ -351,6 +357,7 @@ public interface AmazonCognitoIdentity {
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.GetId
      */
     GetIdResult getId(GetIdRequest getIdRequest);
 
@@ -382,6 +389,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.GetIdentityPoolRoles
      */
     GetIdentityPoolRolesResult getIdentityPoolRoles(
             GetIdentityPoolRolesRequest getIdentityPoolRolesRequest);
@@ -421,6 +429,7 @@ public interface AmazonCognitoIdentity {
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.GetOpenIdToken
      */
     GetOpenIdTokenResult getOpenIdToken(
             GetOpenIdTokenRequest getOpenIdTokenRequest);
@@ -473,6 +482,7 @@ public interface AmazonCognitoIdentity {
      * @throws DeveloperUserAlreadyRegisteredException
      *         The provided developer user identifier is already registered with
      *         Cognito under a different identity ID.
+     * @sample AmazonCognitoIdentity.GetOpenIdTokenForDeveloperIdentity
      */
     GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest);
@@ -501,6 +511,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.ListIdentities
      */
     ListIdentitiesResult listIdentities(
             ListIdentitiesRequest listIdentitiesRequest);
@@ -527,6 +538,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.ListIdentityPools
      */
     ListIdentityPoolsResult listIdentityPools(
             ListIdentityPoolsRequest listIdentityPoolsRequest);
@@ -569,6 +581,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.LookupDeveloperIdentity
      */
     LookupDeveloperIdentityResult lookupDeveloperIdentity(
             LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest);
@@ -609,6 +622,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.MergeDeveloperIdentities
      */
     MergeDeveloperIdentitiesResult mergeDeveloperIdentities(
             MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest);
@@ -642,6 +656,7 @@ public interface AmazonCognitoIdentity {
      *         request.
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
+     * @sample AmazonCognitoIdentity.SetIdentityPoolRoles
      */
     void setIdentityPoolRoles(
             SetIdentityPoolRolesRequest setIdentityPoolRolesRequest);
@@ -676,6 +691,7 @@ public interface AmazonCognitoIdentity {
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.UnlinkDeveloperIdentity
      */
     void unlinkDeveloperIdentity(
             UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest);
@@ -711,6 +727,7 @@ public interface AmazonCognitoIdentity {
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.UnlinkIdentity
      */
     void unlinkIdentity(UnlinkIdentityRequest unlinkIdentityRequest);
 
@@ -744,6 +761,7 @@ public interface AmazonCognitoIdentity {
      *         request.
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
+     * @sample AmazonCognitoIdentity.UpdateIdentityPool
      */
     UpdateIdentityPoolResult updateIdentityPool(
             UpdateIdentityPoolRequest updateIdentityPoolRequest);

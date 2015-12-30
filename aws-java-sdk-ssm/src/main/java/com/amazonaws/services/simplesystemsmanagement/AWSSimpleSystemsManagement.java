@@ -202,6 +202,7 @@ public interface AWSSimpleSystemsManagement {
      *         Terminated.
      * @throws DuplicateInstanceIdException
      *         You cannot specify an instance ID in more than one association.
+     * @sample AWSSimpleSystemsManagement.CancelCommand
      */
     CancelCommandResult cancelCommand(CancelCommandRequest cancelCommandRequest);
 
@@ -242,6 +243,7 @@ public interface AWSSimpleSystemsManagement {
      *         You must specify values for all required parameters in the SSM
      *         document. You can only supply values to parameters defined in the
      *         SSM document.
+     * @sample AWSSimpleSystemsManagement.CreateAssociation
      */
     CreateAssociationResult createAssociation(
             CreateAssociationRequest createAssociationRequest);
@@ -283,6 +285,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
      *         instance ID(s).
+     * @sample AWSSimpleSystemsManagement.CreateAssociationBatch
      */
     CreateAssociationBatchResult createAssociationBatch(
             CreateAssociationBatchRequest createAssociationBatchRequest);
@@ -308,6 +311,7 @@ public interface AWSSimpleSystemsManagement {
      *         The content for the SSM document is not valid.
      * @throws DocumentLimitExceededException
      *         You can have at most 100 active SSM documents.
+     * @sample AWSSimpleSystemsManagement.CreateDocument
      */
     CreateDocumentResult createDocument(
             CreateDocumentRequest createDocumentRequest);
@@ -340,6 +344,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one
      *         update at a time.
+     * @sample AWSSimpleSystemsManagement.DeleteAssociation
      */
     DeleteAssociationResult deleteAssociation(
             DeleteAssociationRequest deleteAssociationRequest);
@@ -363,6 +368,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws AssociatedInstancesException
      *         You must disassociate an SSM document from all instances before
      *         you can delete it.
+     * @sample AWSSimpleSystemsManagement.DeleteDocument
      */
     DeleteDocumentResult deleteDocument(
             DeleteDocumentRequest deleteDocumentRequest);
@@ -385,6 +391,7 @@ public interface AWSSimpleSystemsManagement {
      *         The instance is not in valid state. Valid states are: Running,
      *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
      *         Terminated.
+     * @sample AWSSimpleSystemsManagement.DescribeAssociation
      */
     DescribeAssociationResult describeAssociation(
             DescribeAssociationRequest describeAssociationRequest);
@@ -400,6 +407,7 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @sample AWSSimpleSystemsManagement.DescribeDocument
      */
     DescribeDocumentResult describeDocument(
             DescribeDocumentRequest describeDocumentRequest);
@@ -428,6 +436,7 @@ public interface AWSSimpleSystemsManagement {
      *         The specified filter value is not valid.
      * @throws InvalidFilterKeyException
      *         The specified key is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstanceInformation
      */
     DescribeInstanceInformationResult describeInstanceInformation(
             DescribeInstanceInformationRequest describeInstanceInformationRequest);
@@ -443,6 +452,7 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @sample AWSSimpleSystemsManagement.GetDocument
      */
     GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest);
 
@@ -457,6 +467,7 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListAssociations
      */
     ListAssociationsResult listAssociations(
             ListAssociationsRequest listAssociationsRequest);
@@ -481,6 +492,7 @@ public interface AWSSimpleSystemsManagement {
      *         The specified key is not valid.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListCommandInvocations
      */
     ListCommandInvocationsResult listCommandInvocations(
             ListCommandInvocationsRequest listCommandInvocationsRequest);
@@ -501,6 +513,7 @@ public interface AWSSimpleSystemsManagement {
      *         The specified key is not valid.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListCommands
      */
     ListCommandsResult listCommands(ListCommandsRequest listCommandsRequest);
 
@@ -517,6 +530,7 @@ public interface AWSSimpleSystemsManagement {
      *         The specified token is not valid.
      * @throws InvalidFilterKeyException
      *         The specified key is not valid.
+     * @sample AWSSimpleSystemsManagement.ListDocuments
      */
     ListDocumentsResult listDocuments(ListDocumentsRequest listDocumentsRequest);
 
@@ -549,6 +563,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
      *         instance ID(s).
+     * @sample AWSSimpleSystemsManagement.SendCommand
      */
     SendCommandResult sendCommand(SendCommandRequest sendCommandRequest);
 
@@ -576,6 +591,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one
      *         update at a time.
+     * @sample AWSSimpleSystemsManagement.UpdateAssociationStatus
      */
     UpdateAssociationStatusResult updateAssociationStatus(
             UpdateAssociationStatusRequest updateAssociationStatusRequest);

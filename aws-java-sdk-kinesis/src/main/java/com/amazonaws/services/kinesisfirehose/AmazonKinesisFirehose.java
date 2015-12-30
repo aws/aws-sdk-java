@@ -172,6 +172,7 @@ public interface AmazonKinesisFirehose {
      * @throws ResourceInUseException
      *         The resource is already in use and not available for this
      *         operation.
+     * @sample AmazonKinesisFirehose.CreateDeliveryStream
      */
     CreateDeliveryStreamResult createDeliveryStream(
             CreateDeliveryStreamRequest createDeliveryStreamRequest);
@@ -207,6 +208,7 @@ public interface AmazonKinesisFirehose {
      *         operation.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
+     * @sample AmazonKinesisFirehose.DeleteDeliveryStream
      */
     DeleteDeliveryStreamResult deleteDeliveryStream(
             DeleteDeliveryStreamRequest deleteDeliveryStreamRequest);
@@ -225,6 +227,7 @@ public interface AmazonKinesisFirehose {
      *         service.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
+     * @sample AmazonKinesisFirehose.DescribeDeliveryStream
      */
     DescribeDeliveryStreamResult describeDeliveryStream(
             DescribeDeliveryStreamRequest describeDeliveryStreamRequest);
@@ -249,6 +252,7 @@ public interface AmazonKinesisFirehose {
      *        Contains the parameters for <a>ListDeliveryStreams</a>.
      * @return Result of the ListDeliveryStreams operation returned by the
      *         service.
+     * @sample AmazonKinesisFirehose.ListDeliveryStreams
      */
     ListDeliveryStreamsResult listDeliveryStreams(
             ListDeliveryStreamsRequest listDeliveryStreamsRequest);
@@ -321,6 +325,7 @@ public interface AmazonKinesisFirehose {
      *         about limits and how to request an increase, see <a href=
      *         "http://docs.aws.amazon.com/firehose/latest/dev/limits.html"
      *         >Amazon Kinesis Firehose Limits</a>.
+     * @sample AmazonKinesisFirehose.PutRecord
      */
     PutRecordResult putRecord(PutRecordRequest putRecordRequest);
 
@@ -418,6 +423,7 @@ public interface AmazonKinesisFirehose {
      *         about limits and how to request an increase, see <a href=
      *         "http://docs.aws.amazon.com/firehose/latest/dev/limits.html"
      *         >Amazon Kinesis Firehose Limits</a>.
+     * @sample AmazonKinesisFirehose.PutRecordBatch
      */
     PutRecordBatchResult putRecordBatch(
             PutRecordBatchRequest putRecordBatchRequest);
@@ -480,6 +486,7 @@ public interface AmazonKinesisFirehose {
      *         Another modification has already happened. Fetch
      *         <code>VersionId</code> again and use it to update the
      *         destination.
+     * @sample AmazonKinesisFirehose.UpdateDestination
      */
     UpdateDestinationResult updateDestination(
             UpdateDestinationRequest updateDestinationRequest);

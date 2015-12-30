@@ -41,6 +41,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        Input to an AddInstanceGroups call.
      * @return A Java Future containing the result of the AddInstanceGroups
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.AddInstanceGroups
      */
     java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(
             AddInstanceGroupsRequest addInstanceGroupsRequest);
@@ -59,6 +60,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddInstanceGroups
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.AddInstanceGroups
      */
     java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(
             AddInstanceGroupsRequest addInstanceGroupsRequest,
@@ -102,6 +104,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        The input argument to the <a>AddJobFlowSteps</a> operation.
      * @return A Java Future containing the result of the AddJobFlowSteps
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.AddJobFlowSteps
      */
     java.util.concurrent.Future<AddJobFlowStepsResult> addJobFlowStepsAsync(
             AddJobFlowStepsRequest addJobFlowStepsRequest);
@@ -149,6 +152,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddJobFlowSteps
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.AddJobFlowSteps
      */
     java.util.concurrent.Future<AddJobFlowStepsResult> addJobFlowStepsAsync(
             AddJobFlowStepsRequest addJobFlowStepsRequest,
@@ -167,6 +171,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input identifies a cluster and a list of tags to attach.
      * @return A Java Future containing the result of the AddTags operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsync.AddTags
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest);
@@ -189,6 +194,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTags operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.AddTags
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest,
@@ -205,6 +211,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input determines which cluster to describe.
      * @return A Java Future containing the result of the DescribeCluster
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DescribeCluster
      */
     java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(
             DescribeClusterRequest describeClusterRequest);
@@ -225,6 +232,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeCluster
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DescribeCluster
      */
     java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(
             DescribeClusterRequest describeClusterRequest,
@@ -264,6 +272,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        The input for the <a>DescribeJobFlows</a> operation.
      * @return A Java Future containing the result of the DescribeJobFlows
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DescribeJobFlows
      */
     @Deprecated
     java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
@@ -308,6 +317,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeJobFlows
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DescribeJobFlows
      */
     @Deprecated
     java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
@@ -341,6 +351,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input determines which step to describe.
      * @return A Java Future containing the result of the DescribeStep operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DescribeStep
      */
     java.util.concurrent.Future<DescribeStepResult> describeStepAsync(
             DescribeStepRequest describeStepRequest);
@@ -359,6 +370,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStep operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DescribeStep
      */
     java.util.concurrent.Future<DescribeStepResult> describeStepAsync(
             DescribeStepRequest describeStepRequest,
@@ -374,6 +386,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input determines which bootstrap actions to retrieve.
      * @return A Java Future containing the result of the ListBootstrapActions
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListBootstrapActions
      */
     java.util.concurrent.Future<ListBootstrapActionsResult> listBootstrapActionsAsync(
             ListBootstrapActionsRequest listBootstrapActionsRequest);
@@ -393,6 +406,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListBootstrapActions
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListBootstrapActions
      */
     java.util.concurrent.Future<ListBootstrapActionsResult> listBootstrapActionsAsync(
             ListBootstrapActionsRequest listBootstrapActionsRequest,
@@ -412,6 +426,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        of clusters that it returns.
      * @return A Java Future containing the result of the ListClusters operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListClusters
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(
             ListClustersRequest listClustersRequest);
@@ -435,6 +450,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListClusters operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListClusters
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(
             ListClustersRequest listClustersRequest,
@@ -466,6 +482,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input determines which instance groups to retrieve.
      * @return A Java Future containing the result of the ListInstanceGroups
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListInstanceGroups
      */
     java.util.concurrent.Future<ListInstanceGroupsResult> listInstanceGroupsAsync(
             ListInstanceGroupsRequest listInstanceGroupsRequest);
@@ -484,6 +501,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInstanceGroups
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListInstanceGroups
      */
     java.util.concurrent.Future<ListInstanceGroupsResult> listInstanceGroupsAsync(
             ListInstanceGroupsRequest listInstanceGroupsRequest,
@@ -502,6 +520,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input determines which instances to list.
      * @return A Java Future containing the result of the ListInstances
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListInstances
      */
     java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(
             ListInstancesRequest listInstancesRequest);
@@ -524,6 +543,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInstances
      *         operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListInstances
      */
     java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(
             ListInstancesRequest listInstancesRequest,
@@ -538,6 +558,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input determines which steps to list.
      * @return A Java Future containing the result of the ListSteps operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListSteps
      */
     java.util.concurrent.Future<ListStepsResult> listStepsAsync(
             ListStepsRequest listStepsRequest);
@@ -556,6 +577,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListSteps operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListSteps
      */
     java.util.concurrent.Future<ListStepsResult> listStepsAsync(
             ListStepsRequest listStepsRequest,
@@ -571,6 +593,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param modifyInstanceGroupsRequest
      *        Change the size of some instance groups.
+     * @sample AmazonElasticMapReduceAsync.ModifyInstanceGroups
      */
     java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
             ModifyInstanceGroupsRequest modifyInstanceGroupsRequest);
@@ -590,6 +613,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonElasticMapReduceAsyncHandler.ModifyInstanceGroups
      */
     java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
             ModifyInstanceGroupsRequest modifyInstanceGroupsRequest,
@@ -630,6 +654,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        This input identifies a cluster and a list of tags to remove.
      * @return A Java Future containing the result of the RemoveTags operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsync.RemoveTags
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest);
@@ -657,6 +682,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTags operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.RemoveTags
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest,
@@ -702,6 +728,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        Input to the <a>RunJobFlow</a> operation.
      * @return A Java Future containing the result of the RunJobFlow operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsync.RunJobFlow
      */
     java.util.concurrent.Future<RunJobFlowResult> runJobFlowAsync(
             RunJobFlowRequest runJobFlowRequest);
@@ -751,6 +778,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RunJobFlow operation
      *         returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.RunJobFlow
      */
     java.util.concurrent.Future<RunJobFlowResult> runJobFlowAsync(
             RunJobFlowRequest runJobFlowRequest,
@@ -786,6 +814,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param setTerminationProtectionRequest
      *        The input argument to the <a>TerminationProtection</a> operation.
+     * @sample AmazonElasticMapReduceAsync.SetTerminationProtection
      */
     java.util.concurrent.Future<Void> setTerminationProtectionAsync(
             SetTerminationProtectionRequest setTerminationProtectionRequest);
@@ -825,6 +854,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonElasticMapReduceAsyncHandler.SetTerminationProtection
      */
     java.util.concurrent.Future<Void> setTerminationProtectionAsync(
             SetTerminationProtectionRequest setTerminationProtectionRequest,
@@ -843,6 +873,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param setVisibleToAllUsersRequest
      *        The input to the SetVisibleToAllUsers action.
+     * @sample AmazonElasticMapReduceAsync.SetVisibleToAllUsers
      */
     java.util.concurrent.Future<Void> setVisibleToAllUsersAsync(
             SetVisibleToAllUsersRequest setVisibleToAllUsersRequest);
@@ -865,6 +896,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonElasticMapReduceAsyncHandler.SetVisibleToAllUsers
      */
     java.util.concurrent.Future<Void> setVisibleToAllUsersAsync(
             SetVisibleToAllUsersRequest setVisibleToAllUsersRequest,
@@ -887,6 +919,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param terminateJobFlowsRequest
      *        Input to the <a>TerminateJobFlows</a> operation.
+     * @sample AmazonElasticMapReduceAsync.TerminateJobFlows
      */
     java.util.concurrent.Future<Void> terminateJobFlowsAsync(
             TerminateJobFlowsRequest terminateJobFlowsRequest);
@@ -913,6 +946,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonElasticMapReduceAsyncHandler.TerminateJobFlows
      */
     java.util.concurrent.Future<Void> terminateJobFlowsAsync(
             TerminateJobFlowsRequest terminateJobFlowsRequest,

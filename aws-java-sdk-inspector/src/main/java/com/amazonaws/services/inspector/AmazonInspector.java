@@ -104,6 +104,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.AddAttributesToFindings
      */
     AddAttributesToFindingsResult addAttributesToFindings(
             AddAttributesToFindingsRequest addAttributesToFindingsRequest);
@@ -121,6 +122,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.AttachAssessmentAndRulesPackage
      */
     AttachAssessmentAndRulesPackageResult attachAssessmentAndRulesPackage(
             AttachAssessmentAndRulesPackageRequest attachAssessmentAndRulesPackageRequest);
@@ -142,6 +144,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.CreateApplication
      */
     CreateApplicationResult createApplication(
             CreateApplicationRequest createApplicationRequest);
@@ -158,6 +161,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.CreateAssessment
      */
     CreateAssessmentResult createAssessment(
             CreateAssessmentRequest createAssessmentRequest);
@@ -176,6 +180,7 @@ public interface AmazonInspector {
      * @throws InternalException
      * @throws InvalidInputException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.CreateResourceGroup
      */
     CreateResourceGroupResult createResourceGroup(
             CreateResourceGroupRequest createResourceGroupRequest);
@@ -193,6 +198,7 @@ public interface AmazonInspector {
      * @throws OperationInProgressException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DeleteApplication
      */
     DeleteApplicationResult deleteApplication(
             DeleteApplicationRequest deleteApplicationRequest);
@@ -209,6 +215,7 @@ public interface AmazonInspector {
      * @throws OperationInProgressException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DeleteAssessment
      */
     DeleteAssessmentResult deleteAssessment(
             DeleteAssessmentRequest deleteAssessmentRequest);
@@ -224,6 +231,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DeleteRun
      */
     DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest);
 
@@ -239,6 +247,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeApplication
      */
     DescribeApplicationResult describeApplication(
             DescribeApplicationRequest describeApplicationRequest);
@@ -255,6 +264,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeAssessment
      */
     DescribeAssessmentResult describeAssessment(
             DescribeAssessmentRequest describeAssessmentRequest);
@@ -269,6 +279,7 @@ public interface AmazonInspector {
      *         by the service.
      * @throws InternalException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.DescribeCrossAccountAccessRole
      */
     DescribeCrossAccountAccessRoleResult describeCrossAccountAccessRole(
             DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest);
@@ -284,6 +295,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeFinding
      */
     DescribeFindingResult describeFinding(
             DescribeFindingRequest describeFindingRequest);
@@ -300,6 +312,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeResourceGroup
      */
     DescribeResourceGroupResult describeResourceGroup(
             DescribeResourceGroupRequest describeResourceGroupRequest);
@@ -316,6 +329,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeRulesPackage
      */
     DescribeRulesPackageResult describeRulesPackage(
             DescribeRulesPackageRequest describeRulesPackageRequest);
@@ -331,6 +345,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DescribeRun
      */
     DescribeRunResult describeRun(DescribeRunRequest describeRunRequest);
 
@@ -347,6 +362,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.DetachAssessmentAndRulesPackage
      */
     DetachAssessmentAndRulesPackageResult detachAssessmentAndRulesPackage(
             DetachAssessmentAndRulesPackageRequest detachAssessmentAndRulesPackageRequest);
@@ -364,6 +380,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.GetAssessmentTelemetry
      */
     GetAssessmentTelemetryResult getAssessmentTelemetry(
             GetAssessmentTelemetryRequest getAssessmentTelemetryRequest);
@@ -381,6 +398,7 @@ public interface AmazonInspector {
      * @throws InternalException
      * @throws InvalidInputException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.ListApplications
      */
     ListApplicationsResult listApplications(
             ListApplicationsRequest listApplicationsRequest);
@@ -397,6 +415,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAssessmentAgents
      */
     ListAssessmentAgentsResult listAssessmentAgents(
             ListAssessmentAgentsRequest listAssessmentAgentsRequest);
@@ -413,6 +432,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAssessments
      */
     ListAssessmentsResult listAssessments(
             ListAssessmentsRequest listAssessmentsRequest);
@@ -430,6 +450,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAttachedAssessments
      */
     ListAttachedAssessmentsResult listAttachedAssessments(
             ListAttachedAssessmentsRequest listAttachedAssessmentsRequest);
@@ -447,6 +468,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListAttachedRulesPackages
      */
     ListAttachedRulesPackagesResult listAttachedRulesPackages(
             ListAttachedRulesPackagesRequest listAttachedRulesPackagesRequest);
@@ -462,6 +484,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListFindings
      */
     ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest);
 
@@ -476,6 +499,7 @@ public interface AmazonInspector {
      * @throws InternalException
      * @throws InvalidInputException
      * @throws AccessDeniedException
+     * @sample AmazonInspector.ListRulesPackages
      */
     ListRulesPackagesResult listRulesPackages(
             ListRulesPackagesRequest listRulesPackagesRequest);
@@ -492,6 +516,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListRuns
      */
     ListRunsResult listRuns(ListRunsRequest listRunsRequest);
 
@@ -507,6 +532,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.ListTagsForResource
      */
     ListTagsForResourceResult listTagsForResource(
             ListTagsForResourceRequest listTagsForResourceRequest);
@@ -523,6 +549,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.LocalizeText
      */
     LocalizeTextResult localizeText(LocalizeTextRequest localizeTextRequest);
 
@@ -540,6 +567,7 @@ public interface AmazonInspector {
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
      * @throws InvalidCrossAccountRoleException
+     * @sample AmazonInspector.PreviewAgentsForResourceGroup
      */
     PreviewAgentsForResourceGroupResult previewAgentsForResourceGroup(
             PreviewAgentsForResourceGroupRequest previewAgentsForResourceGroupRequest);
@@ -557,6 +585,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws InvalidCrossAccountRoleException
+     * @sample AmazonInspector.RegisterCrossAccountAccessRole
      */
     RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest);
@@ -575,6 +604,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.RemoveAttributesFromFindings
      */
     RemoveAttributesFromFindingsResult removeAttributesFromFindings(
             RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest);
@@ -591,6 +621,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.RunAssessment
      */
     RunAssessmentResult runAssessment(RunAssessmentRequest runAssessmentRequest);
 
@@ -607,6 +638,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.SetTagsForResource
      */
     SetTagsForResourceResult setTagsForResource(
             SetTagsForResourceRequest setTagsForResourceRequest);
@@ -626,6 +658,7 @@ public interface AmazonInspector {
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
      * @throws InvalidCrossAccountRoleException
+     * @sample AmazonInspector.StartDataCollection
      */
     StartDataCollectionResult startDataCollection(
             StartDataCollectionRequest startDataCollectionRequest);
@@ -642,6 +675,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.StopDataCollection
      */
     StopDataCollectionResult stopDataCollection(
             StopDataCollectionRequest stopDataCollectionRequest);
@@ -658,6 +692,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.UpdateApplication
      */
     UpdateApplicationResult updateApplication(
             UpdateApplicationRequest updateApplicationRequest);
@@ -673,6 +708,7 @@ public interface AmazonInspector {
      * @throws InvalidInputException
      * @throws AccessDeniedException
      * @throws NoSuchEntityException
+     * @sample AmazonInspector.UpdateAssessment
      */
     UpdateAssessmentResult updateAssessment(
             UpdateAssessmentRequest updateAssessmentRequest);

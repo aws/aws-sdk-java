@@ -136,6 +136,7 @@ public interface AmazonCloudSearchDomain {
      * @throws SearchException
      *         Information about any problems encountered while processing a
      *         search request.
+     * @sample AmazonCloudSearchDomain.Search
      */
     SearchResult search(SearchRequest searchRequest);
 
@@ -171,6 +172,7 @@ public interface AmazonCloudSearchDomain {
      * @throws SearchException
      *         Information about any problems encountered while processing a
      *         search request.
+     * @sample AmazonCloudSearchDomain.Suggest
      */
     SuggestResult suggest(SuggestRequest suggestRequest);
 
@@ -214,6 +216,7 @@ public interface AmazonCloudSearchDomain {
      * @throws DocumentServiceException
      *         Information about any problems encountered while processing an
      *         upload request.
+     * @sample AmazonCloudSearchDomain.UploadDocuments
      */
     UploadDocumentsResult uploadDocuments(
             UploadDocumentsRequest uploadDocumentsRequest);

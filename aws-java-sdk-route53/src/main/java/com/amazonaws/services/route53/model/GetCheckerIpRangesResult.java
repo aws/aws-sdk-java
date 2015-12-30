@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
@@ -24,89 +25,94 @@ import java.io.Serializable;
 public class GetCheckerIpRangesResult implements Serializable, Cloneable {
 
     /**
-     * A complex type that contains sorted list of IP ranges in CIDR format
-     * for Amazon Route 53 health checkers.
+     * <p>
+     * A complex type that contains sorted list of IP ranges in CIDR format for
+     * Amazon Route 53 health checkers.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> checkerIpRanges;
+    private com.amazonaws.internal.SdkInternalList<String> checkerIpRanges;
 
     /**
-     * A complex type that contains sorted list of IP ranges in CIDR format
-     * for Amazon Route 53 health checkers.
-     *
-     * @return A complex type that contains sorted list of IP ranges in CIDR format
-     *         for Amazon Route 53 health checkers.
+     * <p>
+     * A complex type that contains sorted list of IP ranges in CIDR format for
+     * Amazon Route 53 health checkers.
+     * </p>
+     * 
+     * @return A complex type that contains sorted list of IP ranges in CIDR
+     *         format for Amazon Route 53 health checkers.
      */
     public java.util.List<String> getCheckerIpRanges() {
         if (checkerIpRanges == null) {
-              checkerIpRanges = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              checkerIpRanges.setAutoConstruct(true);
+            checkerIpRanges = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return checkerIpRanges;
     }
-    
+
     /**
-     * A complex type that contains sorted list of IP ranges in CIDR format
-     * for Amazon Route 53 health checkers.
-     *
-     * @param checkerIpRanges A complex type that contains sorted list of IP ranges in CIDR format
-     *         for Amazon Route 53 health checkers.
+     * <p>
+     * A complex type that contains sorted list of IP ranges in CIDR format for
+     * Amazon Route 53 health checkers.
+     * </p>
+     * 
+     * @param checkerIpRanges
+     *        A complex type that contains sorted list of IP ranges in CIDR
+     *        format for Amazon Route 53 health checkers.
      */
     public void setCheckerIpRanges(java.util.Collection<String> checkerIpRanges) {
         if (checkerIpRanges == null) {
             this.checkerIpRanges = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> checkerIpRangesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkerIpRanges.size());
-        checkerIpRangesCopy.addAll(checkerIpRanges);
-        this.checkerIpRanges = checkerIpRangesCopy;
+
+        this.checkerIpRanges = new com.amazonaws.internal.SdkInternalList<String>(
+                checkerIpRanges);
     }
-    
+
     /**
-     * A complex type that contains sorted list of IP ranges in CIDR format
-     * for Amazon Route 53 health checkers.
+     * <p>
+     * A complex type that contains sorted list of IP ranges in CIDR format for
+     * Amazon Route 53 health checkers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCheckerIpRanges(java.util.Collection)} or {@link
-     * #withCheckerIpRanges(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param checkerIpRanges A complex type that contains sorted list of IP ranges in CIDR format
-     *         for Amazon Route 53 health checkers.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setCheckerIpRanges(java.util.Collection)} or
+     * {@link #withCheckerIpRanges(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param checkerIpRanges
+     *        A complex type that contains sorted list of IP ranges in CIDR
+     *        format for Amazon Route 53 health checkers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public GetCheckerIpRangesResult withCheckerIpRanges(String... checkerIpRanges) {
-        if (getCheckerIpRanges() == null) setCheckerIpRanges(new java.util.ArrayList<String>(checkerIpRanges.length));
-        for (String value : checkerIpRanges) {
-            getCheckerIpRanges().add(value);
+    public GetCheckerIpRangesResult withCheckerIpRanges(
+            String... checkerIpRanges) {
+        if (this.checkerIpRanges == null) {
+            setCheckerIpRanges(new com.amazonaws.internal.SdkInternalList<String>(
+                    checkerIpRanges.length));
+        }
+        for (String ele : checkerIpRanges) {
+            this.checkerIpRanges.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A complex type that contains sorted list of IP ranges in CIDR format
-     * for Amazon Route 53 health checkers.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param checkerIpRanges A complex type that contains sorted list of IP ranges in CIDR format
-     *         for Amazon Route 53 health checkers.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetCheckerIpRangesResult withCheckerIpRanges(java.util.Collection<String> checkerIpRanges) {
-        if (checkerIpRanges == null) {
-            this.checkerIpRanges = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> checkerIpRangesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkerIpRanges.size());
-            checkerIpRangesCopy.addAll(checkerIpRanges);
-            this.checkerIpRanges = checkerIpRangesCopy;
-        }
 
+    /**
+     * <p>
+     * A complex type that contains sorted list of IP ranges in CIDR format for
+     * Amazon Route 53 health checkers.
+     * </p>
+     * 
+     * @param checkerIpRanges
+     *        A complex type that contains sorted list of IP ranges in CIDR
+     *        format for Amazon Route 53 health checkers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public GetCheckerIpRangesResult withCheckerIpRanges(
+            java.util.Collection<String> checkerIpRanges) {
+        setCheckerIpRanges(checkerIpRanges);
         return this;
     }
 
@@ -122,46 +128,51 @@ public class GetCheckerIpRangesResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCheckerIpRanges() != null) sb.append("CheckerIpRanges: " + getCheckerIpRanges() );
+        if (getCheckerIpRanges() != null)
+            sb.append("CheckerIpRanges: " + getCheckerIpRanges());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetCheckerIpRangesResult == false)
+            return false;
+        GetCheckerIpRangesResult other = (GetCheckerIpRangesResult) obj;
+        if (other.getCheckerIpRanges() == null
+                ^ this.getCheckerIpRanges() == null)
+            return false;
+        if (other.getCheckerIpRanges() != null
+                && other.getCheckerIpRanges().equals(this.getCheckerIpRanges()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCheckerIpRanges() == null) ? 0 : getCheckerIpRanges().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCheckerIpRanges() == null) ? 0 : getCheckerIpRanges()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetCheckerIpRangesResult == false) return false;
-        GetCheckerIpRangesResult other = (GetCheckerIpRangesResult)obj;
-        
-        if (other.getCheckerIpRanges() == null ^ this.getCheckerIpRanges() == null) return false;
-        if (other.getCheckerIpRanges() != null && other.getCheckerIpRanges().equals(this.getCheckerIpRanges()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetCheckerIpRangesResult clone() {
         try {
             return (GetCheckerIpRangesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

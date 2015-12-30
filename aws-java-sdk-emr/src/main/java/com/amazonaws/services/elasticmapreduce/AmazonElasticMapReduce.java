@@ -102,6 +102,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.AddInstanceGroups
      */
     AddInstanceGroupsResult addInstanceGroups(
             AddInstanceGroupsRequest addInstanceGroupsRequest);
@@ -146,6 +147,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.AddJobFlowSteps
      */
     AddJobFlowStepsResult addJobFlowSteps(
             AddJobFlowStepsRequest addJobFlowStepsRequest);
@@ -168,6 +170,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.AddTags
      */
     AddTagsResult addTags(AddTagsRequest addTagsRequest);
 
@@ -187,6 +190,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.DescribeCluster
      */
     DescribeClusterResult describeCluster(
             DescribeClusterRequest describeClusterRequest);
@@ -227,6 +231,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.DescribeJobFlows
      */
     @Deprecated
     DescribeJobFlowsResult describeJobFlows(
@@ -254,6 +259,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.DescribeStep
      */
     DescribeStepResult describeStep(DescribeStepRequest describeStepRequest);
 
@@ -273,6 +279,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListBootstrapActions
      */
     ListBootstrapActionsResult listBootstrapActions(
             ListBootstrapActionsRequest listBootstrapActionsRequest);
@@ -296,6 +303,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListClusters
      */
     ListClustersResult listClusters(ListClustersRequest listClustersRequest);
 
@@ -321,6 +329,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListInstanceGroups
      */
     ListInstanceGroupsResult listInstanceGroups(
             ListInstanceGroupsRequest listInstanceGroupsRequest);
@@ -343,6 +352,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListInstances
      */
     ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest);
 
@@ -360,6 +370,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListSteps
      */
     ListStepsResult listSteps(ListStepsRequest listStepsRequest);
 
@@ -376,6 +387,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.ModifyInstanceGroups
      */
     void modifyInstanceGroups(
             ModifyInstanceGroupsRequest modifyInstanceGroupsRequest);
@@ -410,6 +422,7 @@ public interface AmazonElasticMapReduce {
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.RemoveTags
      */
     RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
 
@@ -455,6 +468,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.RunJobFlow
      */
     RunJobFlowResult runJobFlow(RunJobFlowRequest runJobFlowRequest);
 
@@ -491,6 +505,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetTerminationProtection
      */
     void setTerminationProtection(
             SetTerminationProtectionRequest setTerminationProtectionRequest);
@@ -511,6 +526,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetVisibleToAllUsers
      */
     void setVisibleToAllUsers(
             SetVisibleToAllUsersRequest setVisibleToAllUsersRequest);
@@ -535,6 +551,7 @@ public interface AmazonElasticMapReduce {
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.TerminateJobFlows
      */
     void terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest);
 

@@ -1,230 +1,225 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listIdentities(ListIdentitiesRequest) ListIdentities operation}.
  * <p>
- * Returns a list containing all of the identities (email addresses and
- * domains) for a specific AWS Account, regardless of verification
- * status.
+ * Represents a request instructing the service to list all identities for the
+ * AWS Account.
  * </p>
- * <p>
- * This action is throttled at one request per second.
- * </p>
- *
- * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listIdentities(ListIdentitiesRequest)
  */
-public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The type of the identities to list. Possible values are "EmailAddress"
-     * and "Domain". If this parameter is omitted, then all identities will
-     * be listed.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EmailAddress, Domain
+     * The type of the identities to list. Possible values are "EmailAddress"
+     * and "Domain". If this parameter is omitted, then all identities will be
+     * listed.
+     * </p>
      */
     private String identityType;
-
     /**
+     * <p>
      * The token to use for pagination.
+     * </p>
      */
     private String nextToken;
-
     /**
+     * <p>
      * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
+     * </p>
      */
     private Integer maxItems;
 
     /**
-     * The type of the identities to list. Possible values are "EmailAddress"
-     * and "Domain". If this parameter is omitted, then all identities will
-     * be listed.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EmailAddress, Domain
-     *
-     * @return The type of the identities to list. Possible values are "EmailAddress"
-     *         and "Domain". If this parameter is omitted, then all identities will
-     *         be listed.
-     *
-     * @see IdentityType
-     */
-    public String getIdentityType() {
-        return identityType;
-    }
-    
-    /**
      * The type of the identities to list. Possible values are "EmailAddress"
-     * and "Domain". If this parameter is omitted, then all identities will
-     * be listed.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EmailAddress, Domain
-     *
-     * @param identityType The type of the identities to list. Possible values are "EmailAddress"
-     *         and "Domain". If this parameter is omitted, then all identities will
-     *         be listed.
-     *
+     * and "Domain". If this parameter is omitted, then all identities will be
+     * listed.
+     * </p>
+     * 
+     * @param identityType
+     *        The type of the identities to list. Possible values are
+     *        "EmailAddress" and "Domain". If this parameter is omitted, then
+     *        all identities will be listed.
      * @see IdentityType
      */
     public void setIdentityType(String identityType) {
         this.identityType = identityType;
     }
-    
+
     /**
+     * <p>
      * The type of the identities to list. Possible values are "EmailAddress"
-     * and "Domain". If this parameter is omitted, then all identities will
-     * be listed.
+     * and "Domain". If this parameter is omitted, then all identities will be
+     * listed.
+     * </p>
+     * 
+     * @return The type of the identities to list. Possible values are
+     *         "EmailAddress" and "Domain". If this parameter is omitted, then
+     *         all identities will be listed.
+     * @see IdentityType
+     */
+    public String getIdentityType() {
+        return this.identityType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EmailAddress, Domain
-     *
-     * @param identityType The type of the identities to list. Possible values are "EmailAddress"
-     *         and "Domain". If this parameter is omitted, then all identities will
-     *         be listed.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of the identities to list. Possible values are "EmailAddress"
+     * and "Domain". If this parameter is omitted, then all identities will be
+     * listed.
+     * </p>
+     * 
+     * @param identityType
+     *        The type of the identities to list. Possible values are
+     *        "EmailAddress" and "Domain". If this parameter is omitted, then
+     *        all identities will be listed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see IdentityType
      */
     public ListIdentitiesRequest withIdentityType(String identityType) {
-        this.identityType = identityType;
+        setIdentityType(identityType);
         return this;
     }
 
     /**
-     * The type of the identities to list. Possible values are "EmailAddress"
-     * and "Domain". If this parameter is omitted, then all identities will
-     * be listed.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EmailAddress, Domain
-     *
-     * @param identityType The type of the identities to list. Possible values are "EmailAddress"
-     *         and "Domain". If this parameter is omitted, then all identities will
-     *         be listed.
-     *
+     * The type of the identities to list. Possible values are "EmailAddress"
+     * and "Domain". If this parameter is omitted, then all identities will be
+     * listed.
+     * </p>
+     * 
+     * @param identityType
+     *        The type of the identities to list. Possible values are
+     *        "EmailAddress" and "Domain". If this parameter is omitted, then
+     *        all identities will be listed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see IdentityType
      */
     public void setIdentityType(IdentityType identityType) {
         this.identityType = identityType.toString();
     }
-    
+
     /**
+     * <p>
      * The type of the identities to list. Possible values are "EmailAddress"
-     * and "Domain". If this parameter is omitted, then all identities will
-     * be listed.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>EmailAddress, Domain
-     *
-     * @param identityType The type of the identities to list. Possible values are "EmailAddress"
-     *         and "Domain". If this parameter is omitted, then all identities will
-     *         be listed.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * and "Domain". If this parameter is omitted, then all identities will be
+     * listed.
+     * </p>
+     * 
+     * @param identityType
+     *        The type of the identities to list. Possible values are
+     *        "EmailAddress" and "Domain". If this parameter is omitted, then
+     *        all identities will be listed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see IdentityType
      */
     public ListIdentitiesRequest withIdentityType(IdentityType identityType) {
-        this.identityType = identityType.toString();
+        setIdentityType(identityType);
         return this;
     }
 
     /**
+     * <p>
      * The token to use for pagination.
-     *
-     * @return The token to use for pagination.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * The token to use for pagination.
-     *
-     * @param nextToken The token to use for pagination.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use for pagination.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
-     * The token to use for pagination.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nextToken The token to use for pagination.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The token to use for pagination.
+     * </p>
+     * 
+     * @return The token to use for pagination.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use for pagination.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use for pagination.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListIdentitiesRequest withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
     /**
+     * <p>
      * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
-     *
-     * @return The maximum number of identities per page. Possible values are 1-1000
-     *         inclusive.
-     */
-    public Integer getMaxItems() {
-        return maxItems;
-    }
-    
-    /**
-     * The maximum number of identities per page. Possible values are 1-1000
-     * inclusive.
-     *
-     * @param maxItems The maximum number of identities per page. Possible values are 1-1000
-     *         inclusive.
+     * </p>
+     * 
+     * @param maxItems
+     *        The maximum number of identities per page. Possible values are
+     *        1-1000 inclusive.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
-    
+
     /**
+     * <p>
      * The maximum number of identities per page. Possible values are 1-1000
      * inclusive.
+     * </p>
+     * 
+     * @return The maximum number of identities per page. Possible values are
+     *         1-1000 inclusive.
+     */
+    public Integer getMaxItems() {
+        return this.maxItems;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxItems The maximum number of identities per page. Possible values are 1-1000
-     *         inclusive.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of identities per page. Possible values are 1-1000
+     * inclusive.
+     * </p>
+     * 
+     * @param maxItems
+     *        The maximum number of identities per page. Possible values are
+     *        1-1000 inclusive.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListIdentitiesRequest withMaxItems(Integer maxItems) {
-        this.maxItems = maxItems;
+        setMaxItems(maxItems);
         return this;
     }
 
@@ -240,46 +235,62 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIdentityType() != null) sb.append("IdentityType: " + getIdentityType() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
+        if (getIdentityType() != null)
+            sb.append("IdentityType: " + getIdentityType() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken() + ",");
+        if (getMaxItems() != null)
+            sb.append("MaxItems: " + getMaxItems());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListIdentitiesRequest == false)
+            return false;
+        ListIdentitiesRequest other = (ListIdentitiesRequest) obj;
+        if (other.getIdentityType() == null ^ this.getIdentityType() == null)
+            return false;
+        if (other.getIdentityType() != null
+                && other.getIdentityType().equals(this.getIdentityType()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null)
+            return false;
+        if (other.getMaxItems() != null
+                && other.getMaxItems().equals(this.getMaxItems()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getIdentityType() == null) ? 0 : getIdentityType().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getIdentityType() == null) ? 0 : getIdentityType()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListIdentitiesRequest == false) return false;
-        ListIdentitiesRequest other = (ListIdentitiesRequest)obj;
-        
-        if (other.getIdentityType() == null ^ this.getIdentityType() == null) return false;
-        if (other.getIdentityType() != null && other.getIdentityType().equals(this.getIdentityType()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
-        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListIdentitiesRequest clone() {
-        
-            return (ListIdentitiesRequest) super.clone();
+        return (ListIdentitiesRequest) super.clone();
     }
-
 }
-    

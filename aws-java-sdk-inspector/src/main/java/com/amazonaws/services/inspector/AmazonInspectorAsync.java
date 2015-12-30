@@ -42,6 +42,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param addAttributesToFindingsRequest
      * @return A Java Future containing the result of the
      *         AddAttributesToFindings operation returned by the service.
+     * @sample AmazonInspectorAsync.AddAttributesToFindings
      */
     java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(
             AddAttributesToFindingsRequest addAttributesToFindingsRequest);
@@ -60,6 +61,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         AddAttributesToFindings operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.AddAttributesToFindings
      */
     java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(
             AddAttributesToFindingsRequest addAttributesToFindingsRequest,
@@ -75,6 +77,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @return A Java Future containing the result of the
      *         AttachAssessmentAndRulesPackage operation returned by the
      *         service.
+     * @sample AmazonInspectorAsync.AttachAssessmentAndRulesPackage
      */
     java.util.concurrent.Future<AttachAssessmentAndRulesPackageResult> attachAssessmentAndRulesPackageAsync(
             AttachAssessmentAndRulesPackageRequest attachAssessmentAndRulesPackageRequest);
@@ -94,6 +97,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @return A Java Future containing the result of the
      *         AttachAssessmentAndRulesPackage operation returned by the
      *         service.
+     * @sample AmazonInspectorAsyncHandler.AttachAssessmentAndRulesPackage
      */
     java.util.concurrent.Future<AttachAssessmentAndRulesPackageResult> attachAssessmentAndRulesPackageAsync(
             AttachAssessmentAndRulesPackageRequest attachAssessmentAndRulesPackageRequest,
@@ -112,6 +116,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param createApplicationRequest
      * @return A Java Future containing the result of the CreateApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.CreateApplication
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest createApplicationRequest);
@@ -134,6 +139,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.CreateApplication
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest createApplicationRequest,
@@ -148,6 +154,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param createAssessmentRequest
      * @return A Java Future containing the result of the CreateAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.CreateAssessment
      */
     java.util.concurrent.Future<CreateAssessmentResult> createAssessmentAsync(
             CreateAssessmentRequest createAssessmentRequest);
@@ -166,6 +173,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.CreateAssessment
      */
     java.util.concurrent.Future<CreateAssessmentResult> createAssessmentAsync(
             CreateAssessmentRequest createAssessmentRequest,
@@ -182,6 +190,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param createResourceGroupRequest
      * @return A Java Future containing the result of the CreateResourceGroup
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.CreateResourceGroup
      */
     java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(
             CreateResourceGroupRequest createResourceGroupRequest);
@@ -202,6 +211,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateResourceGroup
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.CreateResourceGroup
      */
     java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(
             CreateResourceGroupRequest createResourceGroupRequest,
@@ -215,6 +225,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param deleteApplicationRequest
      * @return A Java Future containing the result of the DeleteApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DeleteApplication
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest);
@@ -232,6 +243,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DeleteApplication
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest,
@@ -245,6 +257,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param deleteAssessmentRequest
      * @return A Java Future containing the result of the DeleteAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DeleteAssessment
      */
     java.util.concurrent.Future<DeleteAssessmentResult> deleteAssessmentAsync(
             DeleteAssessmentRequest deleteAssessmentRequest);
@@ -262,6 +275,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DeleteAssessment
      */
     java.util.concurrent.Future<DeleteAssessmentResult> deleteAssessmentAsync(
             DeleteAssessmentRequest deleteAssessmentRequest,
@@ -275,6 +289,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param deleteRunRequest
      * @return A Java Future containing the result of the DeleteRun operation
      *         returned by the service.
+     * @sample AmazonInspectorAsync.DeleteRun
      */
     java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
             DeleteRunRequest deleteRunRequest);
@@ -292,6 +307,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRun operation
      *         returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DeleteRun
      */
     java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
             DeleteRunRequest deleteRunRequest,
@@ -305,6 +321,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeApplicationRequest
      * @return A Java Future containing the result of the DescribeApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeApplication
      */
     java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(
             DescribeApplicationRequest describeApplicationRequest);
@@ -322,6 +339,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeApplication
      */
     java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(
             DescribeApplicationRequest describeApplicationRequest,
@@ -335,6 +353,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeAssessmentRequest
      * @return A Java Future containing the result of the DescribeAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeAssessment
      */
     java.util.concurrent.Future<DescribeAssessmentResult> describeAssessmentAsync(
             DescribeAssessmentRequest describeAssessmentRequest);
@@ -352,6 +371,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeAssessment
      */
     java.util.concurrent.Future<DescribeAssessmentResult> describeAssessmentAsync(
             DescribeAssessmentRequest describeAssessmentRequest,
@@ -365,6 +385,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeCrossAccountAccessRoleRequest
      * @return A Java Future containing the result of the
      *         DescribeCrossAccountAccessRole operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeCrossAccountAccessRole
      */
     java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult> describeCrossAccountAccessRoleAsync(
             DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest);
@@ -382,6 +403,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeCrossAccountAccessRole operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeCrossAccountAccessRole
      */
     java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult> describeCrossAccountAccessRoleAsync(
             DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest,
@@ -395,6 +417,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeFindingRequest
      * @return A Java Future containing the result of the DescribeFinding
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeFinding
      */
     java.util.concurrent.Future<DescribeFindingResult> describeFindingAsync(
             DescribeFindingRequest describeFindingRequest);
@@ -412,6 +435,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeFinding
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeFinding
      */
     java.util.concurrent.Future<DescribeFindingResult> describeFindingAsync(
             DescribeFindingRequest describeFindingRequest,
@@ -425,6 +449,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeResourceGroupRequest
      * @return A Java Future containing the result of the DescribeResourceGroup
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeResourceGroup
      */
     java.util.concurrent.Future<DescribeResourceGroupResult> describeResourceGroupAsync(
             DescribeResourceGroupRequest describeResourceGroupRequest);
@@ -442,6 +467,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeResourceGroup
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeResourceGroup
      */
     java.util.concurrent.Future<DescribeResourceGroupResult> describeResourceGroupAsync(
             DescribeResourceGroupRequest describeResourceGroupRequest,
@@ -455,6 +481,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeRulesPackageRequest
      * @return A Java Future containing the result of the DescribeRulesPackage
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeRulesPackage
      */
     java.util.concurrent.Future<DescribeRulesPackageResult> describeRulesPackageAsync(
             DescribeRulesPackageRequest describeRulesPackageRequest);
@@ -472,6 +499,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRulesPackage
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeRulesPackage
      */
     java.util.concurrent.Future<DescribeRulesPackageResult> describeRulesPackageAsync(
             DescribeRulesPackageRequest describeRulesPackageRequest,
@@ -485,6 +513,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param describeRunRequest
      * @return A Java Future containing the result of the DescribeRun operation
      *         returned by the service.
+     * @sample AmazonInspectorAsync.DescribeRun
      */
     java.util.concurrent.Future<DescribeRunResult> describeRunAsync(
             DescribeRunRequest describeRunRequest);
@@ -502,6 +531,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRun operation
      *         returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeRun
      */
     java.util.concurrent.Future<DescribeRunResult> describeRunAsync(
             DescribeRunRequest describeRunRequest,
@@ -517,6 +547,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @return A Java Future containing the result of the
      *         DetachAssessmentAndRulesPackage operation returned by the
      *         service.
+     * @sample AmazonInspectorAsync.DetachAssessmentAndRulesPackage
      */
     java.util.concurrent.Future<DetachAssessmentAndRulesPackageResult> detachAssessmentAndRulesPackageAsync(
             DetachAssessmentAndRulesPackageRequest detachAssessmentAndRulesPackageRequest);
@@ -536,6 +567,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @return A Java Future containing the result of the
      *         DetachAssessmentAndRulesPackage operation returned by the
      *         service.
+     * @sample AmazonInspectorAsyncHandler.DetachAssessmentAndRulesPackage
      */
     java.util.concurrent.Future<DetachAssessmentAndRulesPackageResult> detachAssessmentAndRulesPackageAsync(
             DetachAssessmentAndRulesPackageRequest detachAssessmentAndRulesPackageRequest,
@@ -550,6 +582,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param getAssessmentTelemetryRequest
      * @return A Java Future containing the result of the GetAssessmentTelemetry
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.GetAssessmentTelemetry
      */
     java.util.concurrent.Future<GetAssessmentTelemetryResult> getAssessmentTelemetryAsync(
             GetAssessmentTelemetryRequest getAssessmentTelemetryRequest);
@@ -568,6 +601,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAssessmentTelemetry
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.GetAssessmentTelemetry
      */
     java.util.concurrent.Future<GetAssessmentTelemetryResult> getAssessmentTelemetryAsync(
             GetAssessmentTelemetryRequest getAssessmentTelemetryRequest,
@@ -584,6 +618,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listApplicationsRequest
      * @return A Java Future containing the result of the ListApplications
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.ListApplications
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
             ListApplicationsRequest listApplicationsRequest);
@@ -604,6 +639,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListApplications
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListApplications
      */
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
             ListApplicationsRequest listApplicationsRequest,
@@ -617,6 +653,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listAssessmentAgentsRequest
      * @return A Java Future containing the result of the ListAssessmentAgents
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.ListAssessmentAgents
      */
     java.util.concurrent.Future<ListAssessmentAgentsResult> listAssessmentAgentsAsync(
             ListAssessmentAgentsRequest listAssessmentAgentsRequest);
@@ -634,6 +671,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAssessmentAgents
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListAssessmentAgents
      */
     java.util.concurrent.Future<ListAssessmentAgentsResult> listAssessmentAgentsAsync(
             ListAssessmentAgentsRequest listAssessmentAgentsRequest,
@@ -648,6 +686,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listAssessmentsRequest
      * @return A Java Future containing the result of the ListAssessments
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.ListAssessments
      */
     java.util.concurrent.Future<ListAssessmentsResult> listAssessmentsAsync(
             ListAssessmentsRequest listAssessmentsRequest);
@@ -666,6 +705,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAssessments
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListAssessments
      */
     java.util.concurrent.Future<ListAssessmentsResult> listAssessmentsAsync(
             ListAssessmentsRequest listAssessmentsRequest,
@@ -680,6 +720,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listAttachedAssessmentsRequest
      * @return A Java Future containing the result of the
      *         ListAttachedAssessments operation returned by the service.
+     * @sample AmazonInspectorAsync.ListAttachedAssessments
      */
     java.util.concurrent.Future<ListAttachedAssessmentsResult> listAttachedAssessmentsAsync(
             ListAttachedAssessmentsRequest listAttachedAssessmentsRequest);
@@ -698,6 +739,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListAttachedAssessments operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListAttachedAssessments
      */
     java.util.concurrent.Future<ListAttachedAssessmentsResult> listAttachedAssessmentsAsync(
             ListAttachedAssessmentsRequest listAttachedAssessmentsRequest,
@@ -712,6 +754,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listAttachedRulesPackagesRequest
      * @return A Java Future containing the result of the
      *         ListAttachedRulesPackages operation returned by the service.
+     * @sample AmazonInspectorAsync.ListAttachedRulesPackages
      */
     java.util.concurrent.Future<ListAttachedRulesPackagesResult> listAttachedRulesPackagesAsync(
             ListAttachedRulesPackagesRequest listAttachedRulesPackagesRequest);
@@ -730,6 +773,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListAttachedRulesPackages operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListAttachedRulesPackages
      */
     java.util.concurrent.Future<ListAttachedRulesPackagesResult> listAttachedRulesPackagesAsync(
             ListAttachedRulesPackagesRequest listAttachedRulesPackagesRequest,
@@ -743,6 +787,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listFindingsRequest
      * @return A Java Future containing the result of the ListFindings operation
      *         returned by the service.
+     * @sample AmazonInspectorAsync.ListFindings
      */
     java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(
             ListFindingsRequest listFindingsRequest);
@@ -760,6 +805,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListFindings operation
      *         returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListFindings
      */
     java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(
             ListFindingsRequest listFindingsRequest,
@@ -773,6 +819,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listRulesPackagesRequest
      * @return A Java Future containing the result of the ListRulesPackages
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.ListRulesPackages
      */
     java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(
             ListRulesPackagesRequest listRulesPackagesRequest);
@@ -790,6 +837,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRulesPackages
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListRulesPackages
      */
     java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(
             ListRulesPackagesRequest listRulesPackagesRequest,
@@ -804,6 +852,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listRunsRequest
      * @return A Java Future containing the result of the ListRuns operation
      *         returned by the service.
+     * @sample AmazonInspectorAsync.ListRuns
      */
     java.util.concurrent.Future<ListRunsResult> listRunsAsync(
             ListRunsRequest listRunsRequest);
@@ -822,6 +871,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRuns operation
      *         returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListRuns
      */
     java.util.concurrent.Future<ListRunsResult> listRunsAsync(
             ListRunsRequest listRunsRequest,
@@ -835,6 +885,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.ListTagsForResource
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest listTagsForResourceRequest);
@@ -852,6 +903,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListTagsForResource
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest listTagsForResourceRequest,
@@ -866,6 +918,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param localizeTextRequest
      * @return A Java Future containing the result of the LocalizeText operation
      *         returned by the service.
+     * @sample AmazonInspectorAsync.LocalizeText
      */
     java.util.concurrent.Future<LocalizeTextResult> localizeTextAsync(
             LocalizeTextRequest localizeTextRequest);
@@ -884,6 +937,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the LocalizeText operation
      *         returned by the service.
+     * @sample AmazonInspectorAsyncHandler.LocalizeText
      */
     java.util.concurrent.Future<LocalizeTextResult> localizeTextAsync(
             LocalizeTextRequest localizeTextRequest,
@@ -898,6 +952,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param previewAgentsForResourceGroupRequest
      * @return A Java Future containing the result of the
      *         PreviewAgentsForResourceGroup operation returned by the service.
+     * @sample AmazonInspectorAsync.PreviewAgentsForResourceGroup
      */
     java.util.concurrent.Future<PreviewAgentsForResourceGroupResult> previewAgentsForResourceGroupAsync(
             PreviewAgentsForResourceGroupRequest previewAgentsForResourceGroupRequest);
@@ -916,6 +971,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         PreviewAgentsForResourceGroup operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.PreviewAgentsForResourceGroup
      */
     java.util.concurrent.Future<PreviewAgentsForResourceGroupResult> previewAgentsForResourceGroupAsync(
             PreviewAgentsForResourceGroupRequest previewAgentsForResourceGroupRequest,
@@ -930,6 +986,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param registerCrossAccountAccessRoleRequest
      * @return A Java Future containing the result of the
      *         RegisterCrossAccountAccessRole operation returned by the service.
+     * @sample AmazonInspectorAsync.RegisterCrossAccountAccessRole
      */
     java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest);
@@ -948,6 +1005,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         RegisterCrossAccountAccessRole operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.RegisterCrossAccountAccessRole
      */
     java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest,
@@ -963,6 +1021,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param removeAttributesFromFindingsRequest
      * @return A Java Future containing the result of the
      *         RemoveAttributesFromFindings operation returned by the service.
+     * @sample AmazonInspectorAsync.RemoveAttributesFromFindings
      */
     java.util.concurrent.Future<RemoveAttributesFromFindingsResult> removeAttributesFromFindingsAsync(
             RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest);
@@ -982,6 +1041,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         RemoveAttributesFromFindings operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.RemoveAttributesFromFindings
      */
     java.util.concurrent.Future<RemoveAttributesFromFindingsResult> removeAttributesFromFindingsAsync(
             RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest,
@@ -996,6 +1056,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param runAssessmentRequest
      * @return A Java Future containing the result of the RunAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.RunAssessment
      */
     java.util.concurrent.Future<RunAssessmentResult> runAssessmentAsync(
             RunAssessmentRequest runAssessmentRequest);
@@ -1014,6 +1075,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RunAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.RunAssessment
      */
     java.util.concurrent.Future<RunAssessmentResult> runAssessmentAsync(
             RunAssessmentRequest runAssessmentRequest,
@@ -1028,6 +1090,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param setTagsForResourceRequest
      * @return A Java Future containing the result of the SetTagsForResource
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.SetTagsForResource
      */
     java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest setTagsForResourceRequest);
@@ -1046,6 +1109,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetTagsForResource
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.SetTagsForResource
      */
     java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest setTagsForResourceRequest,
@@ -1061,6 +1125,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param startDataCollectionRequest
      * @return A Java Future containing the result of the StartDataCollection
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.StartDataCollection
      */
     java.util.concurrent.Future<StartDataCollectionResult> startDataCollectionAsync(
             StartDataCollectionRequest startDataCollectionRequest);
@@ -1080,6 +1145,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartDataCollection
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.StartDataCollection
      */
     java.util.concurrent.Future<StartDataCollectionResult> startDataCollectionAsync(
             StartDataCollectionRequest startDataCollectionRequest,
@@ -1093,6 +1159,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param stopDataCollectionRequest
      * @return A Java Future containing the result of the StopDataCollection
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.StopDataCollection
      */
     java.util.concurrent.Future<StopDataCollectionResult> stopDataCollectionAsync(
             StopDataCollectionRequest stopDataCollectionRequest);
@@ -1110,6 +1177,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopDataCollection
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.StopDataCollection
      */
     java.util.concurrent.Future<StopDataCollectionResult> stopDataCollectionAsync(
             StopDataCollectionRequest stopDataCollectionRequest,
@@ -1123,6 +1191,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param updateApplicationRequest
      * @return A Java Future containing the result of the UpdateApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.UpdateApplication
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest);
@@ -1140,6 +1209,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplication
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.UpdateApplication
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest,
@@ -1153,6 +1223,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * @param updateAssessmentRequest
      * @return A Java Future containing the result of the UpdateAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsync.UpdateAssessment
      */
     java.util.concurrent.Future<UpdateAssessmentResult> updateAssessmentAsync(
             UpdateAssessmentRequest updateAssessmentRequest);
@@ -1170,6 +1241,7 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateAssessment
      *         operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.UpdateAssessment
      */
     java.util.concurrent.Future<UpdateAssessmentResult> updateAssessmentAsync(
             UpdateAssessmentRequest updateAssessmentRequest,

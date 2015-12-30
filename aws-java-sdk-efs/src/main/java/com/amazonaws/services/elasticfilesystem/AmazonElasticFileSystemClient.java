@@ -362,6 +362,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws FileSystemLimitExceededException
      *         Returned if the AWS account has already created maximum number of
      *         file systems allowed per account.
+     * @sample AmazonElasticFileSystem.CreateFileSystem
      */
     @Override
     public CreateFileSystemResult createFileSystem(
@@ -561,6 +562,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      *         Returned if one of the specified security groups does not exist
      *         in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
+     * @sample AmazonElasticFileSystem.CreateMountTarget
      */
     @Override
     public CreateMountTargetResult createMountTarget(
@@ -620,6 +622,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.CreateTags
      */
     @Override
     public void createTags(CreateTagsRequest createTagsRequest) {
@@ -687,6 +690,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      *         exist in the requester's AWS account.
      * @throws FileSystemInUseException
      *         Returned if a file system has mount targets.
+     * @sample AmazonElasticFileSystem.DeleteFileSystem
      */
     @Override
     public void deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest) {
@@ -765,6 +769,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found
      *         in the caller's account.
+     * @sample AmazonElasticFileSystem.DeleteMountTarget
      */
     @Override
     public void deleteMountTarget(
@@ -823,6 +828,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DeleteTags
      */
     @Override
     public void deleteTags(DeleteTagsRequest deleteTagsRequest) {
@@ -906,6 +912,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DescribeFileSystems
      */
     @Override
     public DescribeFileSystemsResult describeFileSystems(
@@ -978,6 +985,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws IncorrectMountTargetStateException
      *         Returned if the mount target is not in the correct state for the
      *         operation.
+     * @sample AmazonElasticFileSystem.DescribeMountTargetSecurityGroups
      */
     @Override
     public DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(
@@ -1043,6 +1051,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found
      *         in the caller's account.
+     * @sample AmazonElasticFileSystem.DescribeMountTargets
      */
     @Override
     public DescribeMountTargetsResult describeMountTargets(
@@ -1101,6 +1110,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DescribeTags
      */
     @Override
     public DescribeTagsResult describeTags(
@@ -1177,6 +1187,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @throws SecurityGroupNotFoundException
      *         Returned if one of the specified security groups does not exist
      *         in the subnet's VPC.
+     * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
      */
     @Override
     public void modifyMountTargetSecurityGroups(

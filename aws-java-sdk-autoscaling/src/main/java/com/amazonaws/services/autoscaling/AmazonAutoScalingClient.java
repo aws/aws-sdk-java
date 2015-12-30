@@ -263,6 +263,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.AttachInstances
      */
     @Override
     public void attachInstances(AttachInstancesRequest attachInstancesRequest) {
@@ -316,6 +317,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.AttachLoadBalancers
      */
     @Override
     public AttachLoadBalancersResult attachLoadBalancers(
@@ -391,6 +393,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CompleteLifecycleAction
      */
     @Override
     public CompleteLifecycleActionResult completeLifecycleAction(
@@ -452,6 +455,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CreateAutoScalingGroup
      */
     @Override
     public void createAutoScalingGroup(
@@ -511,6 +515,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CreateLaunchConfiguration
      */
     @Override
     public void createLaunchConfiguration(
@@ -580,6 +585,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.CreateOrUpdateTags
      */
     @Override
     public void createOrUpdateTags(
@@ -648,6 +654,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteAutoScalingGroup
      */
     @Override
     public void deleteAutoScalingGroup(
@@ -698,6 +705,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteLaunchConfiguration
      */
     @Override
     public void deleteLaunchConfiguration(
@@ -747,6 +755,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteLifecycleHook
      */
     @Override
     public DeleteLifecycleHookResult deleteLifecycleHook(
@@ -791,6 +800,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteNotificationConfiguration
      */
     @Override
     public void deleteNotificationConfiguration(
@@ -837,6 +847,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeletePolicy
      */
     @Override
     public void deletePolicy(DeletePolicyRequest deletePolicyRequest) {
@@ -877,6 +888,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteScheduledAction
      */
     @Override
     public void deleteScheduledAction(
@@ -919,6 +931,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DeleteTags
      */
     @Override
     public void deleteTags(DeleteTagsRequest deleteTagsRequest) {
@@ -968,6 +981,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAccountLimits
      */
     @Override
     public DescribeAccountLimitsResult describeAccountLimits(
@@ -1020,6 +1034,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAdjustmentTypes
      */
     @Override
     public DescribeAdjustmentTypesResult describeAdjustmentTypes(
@@ -1074,6 +1089,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAutoScalingGroups
      */
     @Override
     public DescribeAutoScalingGroupsResult describeAutoScalingGroups(
@@ -1128,6 +1144,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAutoScalingInstances
      */
     @Override
     public DescribeAutoScalingInstancesResult describeAutoScalingInstances(
@@ -1179,6 +1196,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeAutoScalingNotificationTypes
      */
     @Override
     public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
@@ -1233,6 +1251,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLaunchConfigurations
      */
     @Override
     public DescribeLaunchConfigurationsResult describeLaunchConfigurations(
@@ -1284,6 +1303,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLifecycleHookTypes
      */
     @Override
     public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(
@@ -1335,6 +1355,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLifecycleHooks
      */
     @Override
     public DescribeLifecycleHooksResult describeLifecycleHooks(
@@ -1381,6 +1402,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeLoadBalancers
      */
     @Override
     public DescribeLoadBalancersResult describeLoadBalancers(
@@ -1432,6 +1454,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeMetricCollectionTypes
      */
     @Override
     public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(
@@ -1486,6 +1509,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeNotificationConfigurations
      */
     @Override
     public DescribeNotificationConfigurationsResult describeNotificationConfigurations(
@@ -1538,6 +1562,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribePolicies
      */
     @Override
     public DescribePoliciesResult describePolicies(
@@ -1594,6 +1619,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeScalingActivities
      */
     @Override
     public DescribeScalingActivitiesResult describeScalingActivities(
@@ -1646,6 +1672,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeScalingProcessTypes
      */
     @Override
     public DescribeScalingProcessTypesResult describeScalingProcessTypes(
@@ -1701,6 +1728,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeScheduledActions
      */
     @Override
     public DescribeScheduledActionsResult describeScheduledActions(
@@ -1764,6 +1792,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeTags
      */
     @Override
     public DescribeTagsResult describeTags(
@@ -1814,6 +1843,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeTerminationPolicyTypes
      */
     @Override
     public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(
@@ -1878,6 +1908,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DetachInstances
      */
     @Override
     public DetachInstancesResult detachInstances(
@@ -1929,6 +1960,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DetachLoadBalancers
      */
     @Override
     public DetachLoadBalancersResult detachLoadBalancers(
@@ -1979,6 +2011,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DisableMetricsCollection
      */
     @Override
     public void disableMetricsCollection(
@@ -2026,6 +2059,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.EnableMetricsCollection
      */
     @Override
     public void enableMetricsCollection(
@@ -2075,6 +2109,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.EnterStandby
      */
     @Override
     public EnterStandbyResult enterStandby(
@@ -2121,6 +2156,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.ExecutePolicy
      */
     @Override
     public void executePolicy(ExecutePolicyRequest executePolicyRequest) {
@@ -2168,6 +2204,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.ExitStandby
      */
     @Override
     public ExitStandbyResult exitStandby(ExitStandbyRequest exitStandbyRequest) {
@@ -2251,6 +2288,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutLifecycleHook
      */
     @Override
     public PutLifecycleHookResult putLifecycleHook(
@@ -2310,6 +2348,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutNotificationConfiguration
      */
     @Override
     public void putNotificationConfiguration(
@@ -2368,6 +2407,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutScalingPolicy
      */
     @Override
     public PutScalingPolicyResult putScalingPolicy(
@@ -2427,6 +2467,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
      */
     @Override
     public void putScheduledUpdateGroupAction(
@@ -2496,6 +2537,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.RecordLifecycleActionHeartbeat
      */
     @Override
     public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(
@@ -2550,6 +2592,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.ResumeProcesses
      */
     @Override
     public void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) {
@@ -2598,6 +2641,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SetDesiredCapacity
      */
     @Override
     public void setDesiredCapacity(
@@ -2645,6 +2689,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SetInstanceHealth
      */
     @Override
     public void setInstanceHealth(
@@ -2698,6 +2743,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SetInstanceProtection
      */
     @Override
     public SetInstanceProtectionResult setInstanceProtection(
@@ -2762,6 +2808,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.SuspendProcesses
      */
     @Override
     public void suspendProcesses(SuspendProcessesRequest suspendProcessesRequest) {
@@ -2813,6 +2860,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.TerminateInstanceInAutoScalingGroup
      */
     @Override
     public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
@@ -2901,6 +2949,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
+     * @sample AmazonAutoScaling.UpdateAutoScalingGroup
      */
     @Override
     public void updateAutoScalingGroup(

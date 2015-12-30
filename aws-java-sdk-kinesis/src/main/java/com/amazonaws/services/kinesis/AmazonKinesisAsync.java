@@ -43,6 +43,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param addTagsToStreamRequest
      *        Represents the input for <code>AddTagsToStream</code>.
+     * @sample AmazonKinesisAsync.AddTagsToStream
      */
     java.util.concurrent.Future<Void> addTagsToStreamAsync(
             AddTagsToStreamRequest addTagsToStreamRequest);
@@ -65,6 +66,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.AddTagsToStream
      */
     java.util.concurrent.Future<Void> addTagsToStreamAsync(
             AddTagsToStreamRequest addTagsToStreamRequest,
@@ -128,6 +130,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param createStreamRequest
      *        Represents the input for <code>CreateStream</code>.
+     * @sample AmazonKinesisAsync.CreateStream
      */
     java.util.concurrent.Future<Void> createStreamAsync(
             CreateStreamRequest createStreamRequest);
@@ -195,6 +198,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.CreateStream
      */
     java.util.concurrent.Future<Void> createStreamAsync(
             CreateStreamRequest createStreamRequest,
@@ -234,6 +238,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param decreaseStreamRetentionPeriodRequest
      *        Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
+     * @sample AmazonKinesisAsync.DecreaseStreamRetentionPeriod
      */
     java.util.concurrent.Future<Void> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest);
@@ -257,6 +262,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.DecreaseStreamRetentionPeriod
      */
     java.util.concurrent.Future<Void> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest,
@@ -294,6 +300,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param deleteStreamRequest
      *        Represents the input for <a>DeleteStream</a>.
+     * @sample AmazonKinesisAsync.DeleteStream
      */
     java.util.concurrent.Future<Void> deleteStreamAsync(
             DeleteStreamRequest deleteStreamRequest);
@@ -335,6 +342,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.DeleteStream
      */
     java.util.concurrent.Future<Void> deleteStreamAsync(
             DeleteStreamRequest deleteStreamRequest,
@@ -395,6 +403,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>DescribeStream</code>.
      * @return A Java Future containing the result of the DescribeStream
      *         operation returned by the service.
+     * @sample AmazonKinesisAsync.DescribeStream
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(
             DescribeStreamRequest describeStreamRequest);
@@ -441,6 +450,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStream
      *         operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.DescribeStream
      */
     java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(
             DescribeStreamRequest describeStreamRequest,
@@ -578,6 +588,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <a>GetRecords</a>.
      * @return A Java Future containing the result of the GetRecords operation
      *         returned by the service.
+     * @sample AmazonKinesisAsync.GetRecords
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
             GetRecordsRequest getRecordsRequest);
@@ -659,6 +670,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRecords operation
      *         returned by the service.
+     * @sample AmazonKinesisAsyncHandler.GetRecords
      */
     java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
             GetRecordsRequest getRecordsRequest,
@@ -724,6 +736,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>GetShardIterator</code>.
      * @return A Java Future containing the result of the GetShardIterator
      *         operation returned by the service.
+     * @sample AmazonKinesisAsync.GetShardIterator
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(
             GetShardIteratorRequest getShardIteratorRequest);
@@ -793,6 +806,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetShardIterator
      *         operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.GetShardIterator
      */
     java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(
             GetShardIteratorRequest getShardIteratorRequest,
@@ -860,6 +874,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param increaseStreamRetentionPeriodRequest
      *        Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
+     * @sample AmazonKinesisAsync.IncreaseStreamRetentionPeriod
      */
     java.util.concurrent.Future<Void> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest);
@@ -887,6 +902,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.IncreaseStreamRetentionPeriod
      */
     java.util.concurrent.Future<Void> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest,
@@ -921,6 +937,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>ListStreams</code>.
      * @return A Java Future containing the result of the ListStreams operation
      *         returned by the service.
+     * @sample AmazonKinesisAsync.ListStreams
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
             ListStreamsRequest listStreamsRequest);
@@ -959,6 +976,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreams operation
      *         returned by the service.
+     * @sample AmazonKinesisAsyncHandler.ListStreams
      */
     java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
             ListStreamsRequest listStreamsRequest,
@@ -1029,6 +1047,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>ListTagsForStream</code>.
      * @return A Java Future containing the result of the ListTagsForStream
      *         operation returned by the service.
+     * @sample AmazonKinesisAsync.ListTagsForStream
      */
     java.util.concurrent.Future<ListTagsForStreamResult> listTagsForStreamAsync(
             ListTagsForStreamRequest listTagsForStreamRequest);
@@ -1047,6 +1066,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForStream
      *         operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.ListTagsForStream
      */
     java.util.concurrent.Future<ListTagsForStreamResult> listTagsForStreamAsync(
             ListTagsForStreamRequest listTagsForStreamRequest,
@@ -1110,6 +1130,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param mergeShardsRequest
      *        Represents the input for <code>MergeShards</code>.
+     * @sample AmazonKinesisAsync.MergeShards
      */
     java.util.concurrent.Future<Void> mergeShardsAsync(
             MergeShardsRequest mergeShardsRequest);
@@ -1177,6 +1198,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.MergeShards
      */
     java.util.concurrent.Future<Void> mergeShardsAsync(
             MergeShardsRequest mergeShardsRequest,
@@ -1267,6 +1289,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        Represents the input for <code>PutRecord</code>.
      * @return A Java Future containing the result of the PutRecord operation
      *         returned by the service.
+     * @sample AmazonKinesisAsync.PutRecord
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(
             PutRecordRequest putRecordRequest);
@@ -1340,6 +1363,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecord operation
      *         returned by the service.
+     * @sample AmazonKinesisAsyncHandler.PutRecord
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(
             PutRecordRequest putRecordRequest,
@@ -1482,6 +1506,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        A <code>PutRecords</code> request.
      * @return A Java Future containing the result of the PutRecords operation
      *         returned by the service.
+     * @sample AmazonKinesisAsync.PutRecords
      */
     java.util.concurrent.Future<PutRecordsResult> putRecordsAsync(
             PutRecordsRequest putRecordsRequest);
@@ -1584,6 +1609,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecords operation
      *         returned by the service.
+     * @sample AmazonKinesisAsyncHandler.PutRecords
      */
     java.util.concurrent.Future<PutRecordsResult> putRecordsAsync(
             PutRecordsRequest putRecordsRequest,
@@ -1599,6 +1625,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param removeTagsFromStreamRequest
      *        Represents the input for <code>RemoveTagsFromStream</code>.
+     * @sample AmazonKinesisAsync.RemoveTagsFromStream
      */
     java.util.concurrent.Future<Void> removeTagsFromStreamAsync(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest);
@@ -1618,6 +1645,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.RemoveTagsFromStream
      */
     java.util.concurrent.Future<Void> removeTagsFromStreamAsync(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest,
@@ -1695,6 +1723,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param splitShardRequest
      *        Represents the input for <code>SplitShard</code>.
+     * @sample AmazonKinesisAsync.SplitShard
      */
     java.util.concurrent.Future<Void> splitShardAsync(
             SplitShardRequest splitShardRequest);
@@ -1776,6 +1805,7 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonKinesisAsyncHandler.SplitShard
      */
     java.util.concurrent.Future<Void> splitShardAsync(
             SplitShardRequest splitShardRequest,

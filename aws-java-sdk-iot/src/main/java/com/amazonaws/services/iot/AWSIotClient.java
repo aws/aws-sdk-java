@@ -324,6 +324,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.AcceptCertificateTransfer
      */
     @Override
     public void acceptCertificateTransfer(
@@ -380,6 +381,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws LimitExceededException
      *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.AttachPrincipalPolicy
      */
     @Override
     public void attachPrincipalPolicy(
@@ -435,6 +437,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.AttachThingPrincipal
      */
     @Override
     public AttachThingPrincipalResult attachThingPrincipal(
@@ -505,6 +508,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CancelCertificateTransfer
      */
     @Override
     public void cancelCertificateTransfer(
@@ -611,6 +615,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCertificateFromCsr
      */
     @Override
     public CreateCertificateFromCsrResult createCertificateFromCsr(
@@ -671,6 +676,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreateKeysAndCertificate
      */
     @Override
     public CreateKeysAndCertificateResult createKeysAndCertificate(
@@ -734,6 +740,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreatePolicy
      */
     @Override
     public CreatePolicyResult createPolicy(
@@ -802,6 +809,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.CreatePolicyVersion
      */
     @Override
     public CreatePolicyVersionResult createPolicyVersion(
@@ -858,6 +866,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
+     * @sample AWSIot.CreateThing
      */
     @Override
     public CreateThingResult createThing(CreateThingRequest createThingRequest) {
@@ -909,6 +918,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The resource already exists.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.CreateTopicRule
      */
     @Override
     public void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest) {
@@ -962,6 +972,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The specified resource does not exist.
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
+     * @sample AWSIot.DeleteCertificate
      */
     @Override
     public void deleteCertificate(
@@ -1032,6 +1043,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DeletePolicy
      */
     @Override
     public void deletePolicy(DeletePolicyRequest deletePolicyRequest) {
@@ -1089,6 +1101,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DeletePolicyVersion
      */
     @Override
     public void deletePolicyVersion(
@@ -1143,6 +1156,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteThing
      */
     @Override
     public DeleteThingResult deleteThing(DeleteThingRequest deleteThingRequest) {
@@ -1192,6 +1206,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @sample AWSIot.DeleteTopicRule
      */
     @Override
     public void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest) {
@@ -1245,6 +1260,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @sample AWSIot.DescribeCertificate
      */
     @Override
     public DescribeCertificateResult describeCertificate(
@@ -1297,6 +1313,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         You are not authorized to perform this operation.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @sample AWSIot.DescribeEndpoint
      */
     @Override
     public DescribeEndpointResult describeEndpoint(
@@ -1353,6 +1370,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeThing
      */
     @Override
     public DescribeThingResult describeThing(
@@ -1407,6 +1425,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DetachPrincipalPolicy
      */
     @Override
     public void detachPrincipalPolicy(
@@ -1462,6 +1481,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.DetachThingPrincipal
      */
     @Override
     public DetachThingPrincipalResult detachThingPrincipal(
@@ -1513,6 +1533,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.GetLoggingOptions
      */
     @Override
     public GetLoggingOptionsResult getLoggingOptions(
@@ -1570,6 +1591,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.GetPolicy
      */
     @Override
     public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
@@ -1624,6 +1646,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.GetPolicyVersion
      */
     @Override
     public GetPolicyVersionResult getPolicyVersion(
@@ -1676,6 +1699,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @sample AWSIot.GetTopicRule
      */
     @Override
     public GetTopicRuleResult getTopicRule(
@@ -1733,6 +1757,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificates
      */
     @Override
     public ListCertificatesResult listCertificates(
@@ -1787,6 +1812,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPolicies
      */
     @Override
     public ListPoliciesResult listPolicies(
@@ -1844,6 +1870,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPolicyVersions
      */
     @Override
     public ListPolicyVersionsResult listPolicyVersions(
@@ -1904,6 +1931,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPrincipalPolicies
      */
     @Override
     public ListPrincipalPoliciesResult listPrincipalPolicies(
@@ -1959,6 +1987,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListPrincipalThings
      */
     @Override
     public ListPrincipalThingsResult listPrincipalThings(
@@ -2014,6 +2043,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListThingPrincipals
      */
     @Override
     public ListThingPrincipalsResult listThingPrincipals(
@@ -2070,6 +2100,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.ListThings
      */
     @Override
     public ListThingsResult listThings(ListThingsRequest listThingsRequest) {
@@ -2118,6 +2149,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.ListTopicRules
      */
     @Override
     public ListTopicRulesResult listTopicRules(
@@ -2186,6 +2218,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.RejectCertificateTransfer
      */
     @Override
     public void rejectCertificateTransfer(
@@ -2238,6 +2271,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @sample AWSIot.ReplaceTopicRule
      */
     @Override
     public void replaceTopicRule(ReplaceTopicRuleRequest replaceTopicRuleRequest) {
@@ -2293,6 +2327,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.SetDefaultPolicyVersion
      */
     @Override
     public void setDefaultPolicyVersion(
@@ -2340,6 +2375,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @sample AWSIot.SetLoggingOptions
      */
     @Override
     public void setLoggingOptions(
@@ -2415,6 +2451,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.TransferCertificate
      */
     @Override
     public TransferCertificateResult transferCertificate(
@@ -2482,6 +2519,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCertificate
      */
     @Override
     public void updateCertificate(
@@ -2536,6 +2574,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @sample AWSIot.UpdateThing
      */
     @Override
     public UpdateThingResult updateThing(UpdateThingRequest updateThingRequest) {

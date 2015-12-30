@@ -1,160 +1,145 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest) ListPresets operation}.
  * <p>
- * The ListPresets operation gets a list of the default presets included
- * with Elastic Transcoder and the presets that you've added in an AWS
- * region.
+ * The <code>ListPresetsRequest</code> structure.
  * </p>
- *
- * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest)
  */
-public class ListPresetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ListPresetsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * To list presets in chronological order by the date and time that they
      * were created, enter <code>true</code>. To list presets in reverse
      * chronological order, enter <code>false</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^true$)|(^false$)<br/>
+     * </p>
      */
     private String ascending;
-
     /**
+     * <p>
      * When Elastic Transcoder returns more than one page of results, use
      * <code>pageToken</code> in subsequent <code>GET</code> requests to get
      * each successive page of results.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
+     * </p>
      */
     private String pageToken;
 
     /**
+     * <p>
      * To list presets in chronological order by the date and time that they
      * were created, enter <code>true</code>. To list presets in reverse
      * chronological order, enter <code>false</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^true$)|(^false$)<br/>
-     *
-     * @return To list presets in chronological order by the date and time that they
-     *         were created, enter <code>true</code>. To list presets in reverse
-     *         chronological order, enter <code>false</code>.
-     */
-    public String getAscending() {
-        return ascending;
-    }
-    
-    /**
-     * To list presets in chronological order by the date and time that they
-     * were created, enter <code>true</code>. To list presets in reverse
-     * chronological order, enter <code>false</code>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^true$)|(^false$)<br/>
-     *
-     * @param ascending To list presets in chronological order by the date and time that they
-     *         were created, enter <code>true</code>. To list presets in reverse
-     *         chronological order, enter <code>false</code>.
+     * </p>
+     * 
+     * @param ascending
+     *        To list presets in chronological order by the date and time that
+     *        they were created, enter <code>true</code>. To list presets in
+     *        reverse chronological order, enter <code>false</code>.
      */
     public void setAscending(String ascending) {
         this.ascending = ascending;
     }
-    
+
     /**
+     * <p>
      * To list presets in chronological order by the date and time that they
      * were created, enter <code>true</code>. To list presets in reverse
      * chronological order, enter <code>false</code>.
+     * </p>
+     * 
+     * @return To list presets in chronological order by the date and time that
+     *         they were created, enter <code>true</code>. To list presets in
+     *         reverse chronological order, enter <code>false</code>.
+     */
+    public String getAscending() {
+        return this.ascending;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^true$)|(^false$)<br/>
-     *
-     * @param ascending To list presets in chronological order by the date and time that they
-     *         were created, enter <code>true</code>. To list presets in reverse
-     *         chronological order, enter <code>false</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * To list presets in chronological order by the date and time that they
+     * were created, enter <code>true</code>. To list presets in reverse
+     * chronological order, enter <code>false</code>.
+     * </p>
+     * 
+     * @param ascending
+     *        To list presets in chronological order by the date and time that
+     *        they were created, enter <code>true</code>. To list presets in
+     *        reverse chronological order, enter <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListPresetsRequest withAscending(String ascending) {
-        this.ascending = ascending;
+        setAscending(ascending);
         return this;
     }
 
     /**
+     * <p>
      * When Elastic Transcoder returns more than one page of results, use
      * <code>pageToken</code> in subsequent <code>GET</code> requests to get
      * each successive page of results.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
-     *
-     * @return When Elastic Transcoder returns more than one page of results, use
-     *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     *         each successive page of results.
-     */
-    public String getPageToken() {
-        return pageToken;
-    }
-    
-    /**
-     * When Elastic Transcoder returns more than one page of results, use
-     * <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     * each successive page of results.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
-     *
-     * @param pageToken When Elastic Transcoder returns more than one page of results, use
-     *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     *         each successive page of results.
+     * </p>
+     * 
+     * @param pageToken
+     *        When Elastic Transcoder returns more than one page of results, use
+     *        <code>pageToken</code> in subsequent <code>GET</code> requests to
+     *        get each successive page of results.
      */
     public void setPageToken(String pageToken) {
         this.pageToken = pageToken;
     }
-    
+
     /**
+     * <p>
      * When Elastic Transcoder returns more than one page of results, use
      * <code>pageToken</code> in subsequent <code>GET</code> requests to get
      * each successive page of results.
+     * </p>
+     * 
+     * @return When Elastic Transcoder returns more than one page of results,
+     *         use <code>pageToken</code> in subsequent <code>GET</code>
+     *         requests to get each successive page of results.
+     */
+    public String getPageToken() {
+        return this.pageToken;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
-     *
-     * @param pageToken When Elastic Transcoder returns more than one page of results, use
-     *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
-     *         each successive page of results.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * When Elastic Transcoder returns more than one page of results, use
+     * <code>pageToken</code> in subsequent <code>GET</code> requests to get
+     * each successive page of results.
+     * </p>
+     * 
+     * @param pageToken
+     *        When Elastic Transcoder returns more than one page of results, use
+     *        <code>pageToken</code> in subsequent <code>GET</code> requests to
+     *        get each successive page of results.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListPresetsRequest withPageToken(String pageToken) {
-        this.pageToken = pageToken;
+        setPageToken(pageToken);
         return this;
     }
 
@@ -170,42 +155,51 @@ public class ListPresetsRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAscending() != null) sb.append("Ascending: " + getAscending() + ",");
-        if (getPageToken() != null) sb.append("PageToken: " + getPageToken() );
+        if (getAscending() != null)
+            sb.append("Ascending: " + getAscending() + ",");
+        if (getPageToken() != null)
+            sb.append("PageToken: " + getPageToken());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListPresetsRequest == false)
+            return false;
+        ListPresetsRequest other = (ListPresetsRequest) obj;
+        if (other.getAscending() == null ^ this.getAscending() == null)
+            return false;
+        if (other.getAscending() != null
+                && other.getAscending().equals(this.getAscending()) == false)
+            return false;
+        if (other.getPageToken() == null ^ this.getPageToken() == null)
+            return false;
+        if (other.getPageToken() != null
+                && other.getPageToken().equals(this.getPageToken()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAscending() == null) ? 0 : getAscending().hashCode()); 
-        hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAscending() == null) ? 0 : getAscending().hashCode());
+        hashCode = prime * hashCode
+                + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListPresetsRequest == false) return false;
-        ListPresetsRequest other = (ListPresetsRequest)obj;
-        
-        if (other.getAscending() == null ^ this.getAscending() == null) return false;
-        if (other.getAscending() != null && other.getAscending().equals(this.getAscending()) == false) return false; 
-        if (other.getPageToken() == null ^ this.getPageToken() == null) return false;
-        if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListPresetsRequest clone() {
-        
-            return (ListPresetsRequest) super.clone();
+        return (ListPresetsRequest) super.clone();
     }
-
 }
-    

@@ -62,6 +62,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
+     * @sample AmazonCloudFormationAsync.CancelUpdateStack
      */
     java.util.concurrent.Future<Void> cancelUpdateStackAsync(
             CancelUpdateStackRequest cancelUpdateStackRequest);
@@ -82,6 +83,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudFormationAsyncHandler.CancelUpdateStack
      */
     java.util.concurrent.Future<Void> cancelUpdateStackAsync(
             CancelUpdateStackRequest cancelUpdateStackRequest,
@@ -98,6 +100,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>CreateStack</a> action.
      * @return A Java Future containing the result of the CreateStack operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsync.CreateStack
      */
     java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest createStackRequest);
@@ -118,6 +121,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStack operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.CreateStack
      */
     java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest createStackRequest,
@@ -133,6 +137,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
+     * @sample AmazonCloudFormationAsync.DeleteStack
      */
     java.util.concurrent.Future<Void> deleteStackAsync(
             DeleteStackRequest deleteStackRequest);
@@ -152,6 +157,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudFormationAsyncHandler.DeleteStack
      */
     java.util.concurrent.Future<Void> deleteStackAsync(
             DeleteStackRequest deleteStackRequest,
@@ -167,6 +173,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for the <a>DescribeAccountLimits</a> action.
      * @return A Java Future containing the result of the DescribeAccountLimits
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribeAccountLimits
      */
     java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(
             DescribeAccountLimitsRequest describeAccountLimitsRequest);
@@ -186,6 +193,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAccountLimits
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribeAccountLimits
      */
     java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(
             DescribeAccountLimitsRequest describeAccountLimitsRequest,
@@ -205,6 +213,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>DescribeStackEvents</a> action.
      * @return A Java Future containing the result of the DescribeStackEvents
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribeStackEvents
      */
     java.util.concurrent.Future<DescribeStackEventsResult> describeStackEventsAsync(
             DescribeStackEventsRequest describeStackEventsRequest);
@@ -228,6 +237,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStackEvents
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribeStackEvents
      */
     java.util.concurrent.Future<DescribeStackEventsResult> describeStackEventsAsync(
             DescribeStackEventsRequest describeStackEventsRequest,
@@ -246,6 +256,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>DescribeStackResource</a> action.
      * @return A Java Future containing the result of the DescribeStackResource
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribeStackResource
      */
     java.util.concurrent.Future<DescribeStackResourceResult> describeStackResourceAsync(
             DescribeStackResourceRequest describeStackResourceRequest);
@@ -268,6 +279,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStackResource
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribeStackResource
      */
     java.util.concurrent.Future<DescribeStackResourceResult> describeStackResourceAsync(
             DescribeStackResourceRequest describeStackResourceRequest,
@@ -305,6 +317,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>DescribeStackResources</a> action.
      * @return A Java Future containing the result of the DescribeStackResources
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribeStackResources
      */
     java.util.concurrent.Future<DescribeStackResourcesResult> describeStackResourcesAsync(
             DescribeStackResourcesRequest describeStackResourcesRequest);
@@ -346,6 +359,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStackResources
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribeStackResources
      */
     java.util.concurrent.Future<DescribeStackResourcesResult> describeStackResourcesAsync(
             DescribeStackResourcesRequest describeStackResourcesRequest,
@@ -361,6 +375,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>DescribeStacks</a> action.
      * @return A Java Future containing the result of the DescribeStacks
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribeStacks
      */
     java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             DescribeStacksRequest describeStacksRequest);
@@ -380,6 +395,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStacks
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribeStacks
      */
     java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             DescribeStacksRequest describeStacksRequest,
@@ -412,6 +428,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * @param estimateTemplateCostRequest
      * @return A Java Future containing the result of the EstimateTemplateCost
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.EstimateTemplateCost
      */
     java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(
             EstimateTemplateCostRequest estimateTemplateCostRequest);
@@ -431,6 +448,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EstimateTemplateCost
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.EstimateTemplateCost
      */
     java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(
             EstimateTemplateCostRequest estimateTemplateCostRequest,
@@ -463,6 +481,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for the <a>GetStackPolicy</a> action.
      * @return A Java Future containing the result of the GetStackPolicy
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.GetStackPolicy
      */
     java.util.concurrent.Future<GetStackPolicyResult> getStackPolicyAsync(
             GetStackPolicyRequest getStackPolicyRequest);
@@ -482,6 +501,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStackPolicy
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.GetStackPolicy
      */
     java.util.concurrent.Future<GetStackPolicyResult> getStackPolicyAsync(
             GetStackPolicyRequest getStackPolicyRequest,
@@ -503,6 +523,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for a <a>GetTemplate</a> action.
      * @return A Java Future containing the result of the GetTemplate operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsync.GetTemplate
      */
     java.util.concurrent.Future<GetTemplateResult> getTemplateAsync(
             GetTemplateRequest getTemplateRequest);
@@ -528,6 +549,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTemplate operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.GetTemplate
      */
     java.util.concurrent.Future<GetTemplateResult> getTemplateAsync(
             GetTemplateRequest getTemplateRequest,
@@ -555,6 +577,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for the <a>GetTemplateSummary</a> action.
      * @return A Java Future containing the result of the GetTemplateSummary
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.GetTemplateSummary
      */
     java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
             GetTemplateSummaryRequest getTemplateSummaryRequest);
@@ -586,6 +609,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTemplateSummary
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.GetTemplateSummary
      */
     java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
             GetTemplateSummaryRequest getTemplateSummaryRequest,
@@ -621,6 +645,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for the <a>ListStackResource</a> action.
      * @return A Java Future containing the result of the ListStackResources
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.ListStackResources
      */
     java.util.concurrent.Future<ListStackResourcesResult> listStackResourcesAsync(
             ListStackResourcesRequest listStackResourcesRequest);
@@ -643,6 +668,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStackResources
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ListStackResources
      */
     java.util.concurrent.Future<ListStackResourcesResult> listStackResourcesAsync(
             ListStackResourcesRequest listStackResourcesRequest,
@@ -661,6 +687,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>ListStacks</a> action.
      * @return A Java Future containing the result of the ListStacks operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsync.ListStacks
      */
     java.util.concurrent.Future<ListStacksResult> listStacksAsync(
             ListStacksRequest listStacksRequest);
@@ -683,6 +710,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStacks operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ListStacks
      */
     java.util.concurrent.Future<ListStacksResult> listStacksAsync(
             ListStacksRequest listStacksRequest,
@@ -712,6 +740,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param setStackPolicyRequest
      *        The input for the <a>SetStackPolicy</a> action.
+     * @sample AmazonCloudFormationAsync.SetStackPolicy
      */
     java.util.concurrent.Future<Void> setStackPolicyAsync(
             SetStackPolicyRequest setStackPolicyRequest);
@@ -728,6 +757,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudFormationAsyncHandler.SetStackPolicy
      */
     java.util.concurrent.Future<Void> setStackPolicyAsync(
             SetStackPolicyRequest setStackPolicyRequest,
@@ -746,6 +776,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param signalResourceRequest
      *        The input for the <a>SignalResource</a> action.
+     * @sample AmazonCloudFormationAsync.SignalResource
      */
     java.util.concurrent.Future<Void> signalResourceAsync(
             SignalResourceRequest signalResourceRequest);
@@ -768,6 +799,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCloudFormationAsyncHandler.SignalResource
      */
     java.util.concurrent.Future<Void> signalResourceAsync(
             SignalResourceRequest signalResourceRequest,
@@ -798,6 +830,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>UpdateStack</a> action.
      * @return A Java Future containing the result of the UpdateStack operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsync.UpdateStack
      */
     java.util.concurrent.Future<UpdateStackResult> updateStackAsync(
             UpdateStackRequest updateStackRequest);
@@ -832,6 +865,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateStack operation
      *         returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.UpdateStack
      */
     java.util.concurrent.Future<UpdateStackResult> updateStackAsync(
             UpdateStackRequest updateStackRequest,
@@ -846,6 +880,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        The input for <a>ValidateTemplate</a> action.
      * @return A Java Future containing the result of the ValidateTemplate
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.ValidateTemplate
      */
     java.util.concurrent.Future<ValidateTemplateResult> validateTemplateAsync(
             ValidateTemplateRequest validateTemplateRequest);
@@ -864,6 +899,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ValidateTemplate
      *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ValidateTemplate
      */
     java.util.concurrent.Future<ValidateTemplateResult> validateTemplateAsync(
             ValidateTemplateRequest validateTemplateRequest,

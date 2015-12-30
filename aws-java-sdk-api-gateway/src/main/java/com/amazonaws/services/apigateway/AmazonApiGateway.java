@@ -99,6 +99,7 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @throws LimitExceededException
      * @throws BadRequestException
+     * @sample AmazonApiGateway.CreateApiKey
      */
     CreateApiKeyResult createApiKey(CreateApiKeyRequest createApiKeyRequest);
 
@@ -117,6 +118,7 @@ public interface AmazonApiGateway {
      * @throws BadRequestException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateBasePathMapping
      */
     CreateBasePathMappingResult createBasePathMapping(
             CreateBasePathMappingRequest createBasePathMappingRequest);
@@ -138,6 +140,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.CreateDeployment
      */
     CreateDeploymentResult createDeployment(
             CreateDeploymentRequest createDeploymentRequest);
@@ -153,6 +156,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateDomainName
      */
     CreateDomainNameResult createDomainName(
             CreateDomainNameRequest createDomainNameRequest);
@@ -172,6 +176,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws LimitExceededException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateModel
      */
     CreateModelResult createModel(CreateModelRequest createModelRequest);
 
@@ -189,6 +194,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateResource
      */
     CreateResourceResult createResource(
             CreateResourceRequest createResourceRequest);
@@ -205,6 +211,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateRestApi
      */
     CreateRestApiResult createRestApi(CreateRestApiRequest createRestApiRequest);
 
@@ -222,6 +229,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws LimitExceededException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateStage
      */
     CreateStageResult createStage(CreateStageRequest createStageRequest);
 
@@ -235,6 +243,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteApiKey
      */
     void deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest);
 
@@ -248,6 +257,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteBasePathMapping
      */
     void deleteBasePathMapping(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest);
@@ -258,6 +268,7 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws NotFoundException
+     * @sample AmazonApiGateway.DeleteClientCertificate
      */
     void deleteClientCertificate(
             DeleteClientCertificateRequest deleteClientCertificateRequest);
@@ -275,6 +286,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteDeployment
      */
     void deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest);
 
@@ -288,6 +300,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteDomainName
      */
     void deleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest);
 
@@ -301,6 +314,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteIntegration
      */
     void deleteIntegration(DeleteIntegrationRequest deleteIntegrationRequest);
 
@@ -314,6 +328,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     void deleteIntegrationResponse(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest);
@@ -328,6 +343,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteMethod
      */
     void deleteMethod(DeleteMethodRequest deleteMethodRequest);
 
@@ -341,6 +357,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteMethodResponse
      */
     void deleteMethodResponse(
             DeleteMethodResponseRequest deleteMethodResponseRequest);
@@ -358,6 +375,7 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteModel
      */
     void deleteModel(DeleteModelRequest deleteModelRequest);
 
@@ -372,6 +390,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteResource
      */
     void deleteResource(DeleteResourceRequest deleteResourceRequest);
 
@@ -385,6 +404,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteRestApi
      */
     void deleteRestApi(DeleteRestApiRequest deleteRestApiRequest);
 
@@ -398,6 +418,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteStage
      */
     void deleteStage(DeleteStageRequest deleteStageRequest);
 
@@ -412,6 +433,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.FlushStageCache
      */
     void flushStageCache(FlushStageCacheRequest flushStageCacheRequest);
 
@@ -422,6 +444,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws LimitExceededException
+     * @sample AmazonApiGateway.GenerateClientCertificate
      */
     GenerateClientCertificateResult generateClientCertificate(
             GenerateClientCertificateRequest generateClientCertificateRequest);
@@ -438,6 +461,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAccount
      */
     GetAccountResult getAccount(GetAccountRequest getAccountRequest);
 
@@ -453,6 +477,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetApiKey
      */
     GetApiKeyResult getApiKey(GetApiKeyRequest getApiKeyRequest);
 
@@ -467,6 +492,7 @@ public interface AmazonApiGateway {
      * @return Result of the GetApiKeys operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetApiKeys
      */
     GetApiKeysResult getApiKeys(GetApiKeysRequest getApiKeysRequest);
 
@@ -482,6 +508,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetBasePathMapping
      */
     GetBasePathMappingResult getBasePathMapping(
             GetBasePathMappingRequest getBasePathMappingRequest);
@@ -499,6 +526,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetBasePathMappings
      */
     GetBasePathMappingsResult getBasePathMappings(
             GetBasePathMappingsRequest getBasePathMappingsRequest);
@@ -510,6 +538,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetClientCertificate
      */
     GetClientCertificateResult getClientCertificate(
             GetClientCertificateRequest getClientCertificateRequest);
@@ -520,6 +549,7 @@ public interface AmazonApiGateway {
      *         service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetClientCertificates
      */
     GetClientCertificatesResult getClientCertificates(
             GetClientCertificatesRequest getClientCertificatesRequest);
@@ -537,6 +567,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.GetDeployment
      */
     GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest);
 
@@ -552,6 +583,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.GetDeployments
      */
     GetDeploymentsResult getDeployments(
             GetDeploymentsRequest getDeploymentsRequest);
@@ -569,6 +601,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws ServiceUnavailableException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDomainName
      */
     GetDomainNameResult getDomainName(GetDomainNameRequest getDomainNameRequest);
 
@@ -582,6 +615,7 @@ public interface AmazonApiGateway {
      * @return Result of the GetDomainNames operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDomainNames
      */
     GetDomainNamesResult getDomainNames(
             GetDomainNamesRequest getDomainNamesRequest);
@@ -597,6 +631,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetIntegration
      */
     GetIntegrationResult getIntegration(
             GetIntegrationRequest getIntegrationRequest);
@@ -613,6 +648,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetIntegrationResponse
      */
     GetIntegrationResponseResult getIntegrationResponse(
             GetIntegrationResponseRequest getIntegrationResponseRequest);
@@ -628,6 +664,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetMethod
      */
     GetMethodResult getMethod(GetMethodRequest getMethodRequest);
 
@@ -643,6 +680,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetMethodResponse
      */
     GetMethodResponseResult getMethodResponse(
             GetMethodResponseRequest getMethodResponseRequest);
@@ -659,6 +697,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetModel
      */
     GetModelResult getModel(GetModelRequest getModelRequest);
 
@@ -676,6 +715,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetModelTemplate
      */
     GetModelTemplateResult getModelTemplate(
             GetModelTemplateRequest getModelTemplateRequest);
@@ -692,6 +732,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetModels
      */
     GetModelsResult getModels(GetModelsRequest getModelsRequest);
 
@@ -706,6 +747,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetResource
      */
     GetResourceResult getResource(GetResourceRequest getResourceRequest);
 
@@ -720,6 +762,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetResources
      */
     GetResourcesResult getResources(GetResourcesRequest getResourcesRequest);
 
@@ -735,6 +778,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRestApi
      */
     GetRestApiResult getRestApi(GetRestApiRequest getRestApiRequest);
 
@@ -749,6 +793,7 @@ public interface AmazonApiGateway {
      * @return Result of the GetRestApis operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRestApis
      */
     GetRestApisResult getRestApis(GetRestApisRequest getRestApisRequest);
 
@@ -759,6 +804,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetSdk
      */
     GetSdkResult getSdk(GetSdkRequest getSdkRequest);
 
@@ -774,6 +820,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetStage
      */
     GetStageResult getStage(GetStageRequest getStageRequest);
 
@@ -789,6 +836,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetStages
      */
     GetStagesResult getStages(GetStagesRequest getStagesRequest);
 
@@ -804,6 +852,7 @@ public interface AmazonApiGateway {
      * @throws BadRequestException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutIntegration
      */
     PutIntegrationResult putIntegration(
             PutIntegrationRequest putIntegrationRequest);
@@ -822,6 +871,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutIntegrationResponse
      */
     PutIntegrationResponseResult putIntegrationResponse(
             PutIntegrationResponseRequest putIntegrationResponseRequest);
@@ -840,6 +890,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws LimitExceededException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutMethod
      */
     PutMethodResult putMethod(PutMethodRequest putMethodRequest);
 
@@ -859,6 +910,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutMethodResponse
      */
     PutMethodResponseResult putMethodResponse(
             PutMethodResponseRequest putMethodResponseRequest);
@@ -870,6 +922,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.TestInvokeMethod
      */
     TestInvokeMethodResult testInvokeMethod(
             TestInvokeMethodRequest testInvokeMethodRequest);
@@ -887,6 +940,7 @@ public interface AmazonApiGateway {
      * @throws BadRequestException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateAccount
      */
     UpdateAccountResult updateAccount(UpdateAccountRequest updateAccountRequest);
 
@@ -902,6 +956,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateApiKey
      */
     UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest updateApiKeyRequest);
 
@@ -920,6 +975,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateBasePathMapping
      */
     UpdateBasePathMappingResult updateBasePathMapping(
             UpdateBasePathMappingRequest updateBasePathMappingRequest);
@@ -932,6 +988,7 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws NotFoundException
+     * @sample AmazonApiGateway.UpdateClientCertificate
      */
     UpdateClientCertificateResult updateClientCertificate(
             UpdateClientCertificateRequest updateClientCertificateRequest);
@@ -950,6 +1007,7 @@ public interface AmazonApiGateway {
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
+     * @sample AmazonApiGateway.UpdateDeployment
      */
     UpdateDeploymentResult updateDeployment(
             UpdateDeploymentRequest updateDeploymentRequest);
@@ -967,6 +1025,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateDomainName
      */
     UpdateDomainNameResult updateDomainName(
             UpdateDomainNameRequest updateDomainNameRequest);
@@ -984,6 +1043,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateIntegration
      */
     UpdateIntegrationResult updateIntegration(
             UpdateIntegrationRequest updateIntegrationRequest);
@@ -1001,6 +1061,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateIntegrationResponse
      */
     UpdateIntegrationResponseResult updateIntegrationResponse(
             UpdateIntegrationResponseRequest updateIntegrationResponseRequest);
@@ -1017,6 +1078,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateMethod
      */
     UpdateMethodResult updateMethod(UpdateMethodRequest updateMethodRequest);
 
@@ -1035,6 +1097,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateMethodResponse
      */
     UpdateMethodResponseResult updateMethodResponse(
             UpdateMethodResponseRequest updateMethodResponseRequest);
@@ -1052,6 +1115,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateModel
      */
     UpdateModelResult updateModel(UpdateModelRequest updateModelRequest);
 
@@ -1068,6 +1132,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateResource
      */
     UpdateResourceResult updateResource(
             UpdateResourceRequest updateResourceRequest);
@@ -1086,6 +1151,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateRestApi
      */
     UpdateRestApiResult updateRestApi(UpdateRestApiRequest updateRestApiRequest);
 
@@ -1103,6 +1169,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateStage
      */
     UpdateStageResult updateStage(UpdateStageRequest updateStageRequest);
 

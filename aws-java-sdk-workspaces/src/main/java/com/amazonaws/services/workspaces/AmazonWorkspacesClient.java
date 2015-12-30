@@ -267,6 +267,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * @return Result of the CreateWorkspaces operation returned by the service.
      * @throws ResourceLimitExceededException
      *         Your resource limits have been exceeded.
+     * @sample AmazonWorkspaces.CreateWorkspaces
      */
     @Override
     public CreateWorkspacesResult createWorkspaces(
@@ -327,6 +328,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DescribeWorkspaceBundles
      */
     @Override
     public DescribeWorkspaceBundlesResult describeWorkspaceBundles(
@@ -389,6 +391,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DescribeWorkspaceDirectories
      */
     @Override
     public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(
@@ -455,6 +458,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *         One or more parameter values are not valid.
      * @throws ResourceUnavailableException
      *         The specified resource is not available.
+     * @sample AmazonWorkspaces.DescribeWorkspaces
      */
     @Override
     public DescribeWorkspacesResult describeWorkspaces(
@@ -515,6 +519,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * @param rebootWorkspacesRequest
      *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @return Result of the RebootWorkspaces operation returned by the service.
+     * @sample AmazonWorkspaces.RebootWorkspaces
      */
     @Override
     public RebootWorkspacesResult rebootWorkspaces(
@@ -585,6 +590,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @return Result of the RebuildWorkspaces operation returned by the
      *         service.
+     * @sample AmazonWorkspaces.RebuildWorkspaces
      */
     @Override
     public RebuildWorkspacesResult rebuildWorkspaces(
@@ -646,6 +652,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @return Result of the TerminateWorkspaces operation returned by the
      *         service.
+     * @sample AmazonWorkspaces.TerminateWorkspaces
      */
     @Override
     public TerminateWorkspacesResult terminateWorkspaces(

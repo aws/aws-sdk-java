@@ -425,6 +425,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws JobNotFoundException
      *         The specified job was specified in an invalid format or cannot be
      *         found.
+     * @sample AWSCodePipeline.AcknowledgeJob
      */
     @Override
     public AcknowledgeJobResult acknowledgeJob(
@@ -479,6 +480,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         found.
      * @throws InvalidClientTokenException
      *         The client token was specified in an invalid format
+     * @sample AWSCodePipeline.AcknowledgeThirdPartyJob
      */
     @Override
     public AcknowledgeThirdPartyJobResult acknowledgeThirdPartyJob(
@@ -530,6 +532,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has
      *         exceeded the limit allowed for the account.
+     * @sample AWSCodePipeline.CreateCustomActionType
      */
     @Override
     public CreateCustomActionTypeResult createCustomActionType(
@@ -592,6 +595,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has
      *         exceeded the limit allowed for the account.
+     * @sample AWSCodePipeline.CreatePipeline
      */
     @Override
     public CreatePipelineResult createPipeline(
@@ -645,6 +649,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *        custom action will be marked as deleted.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.DeleteCustomActionType
      */
     @Override
     public void deleteCustomActionType(
@@ -688,6 +693,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *        Represents the input of a delete pipeline action.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.DeletePipeline
      */
     @Override
     public void deletePipeline(DeletePipelineRequest deletePipelineRequest) {
@@ -736,6 +742,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws StageNotFoundException
      *         The specified stage was specified in an invalid format or cannot
      *         be found.
+     * @sample AWSCodePipeline.DisableStageTransition
      */
     @Override
     public void disableStageTransition(
@@ -785,6 +792,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws StageNotFoundException
      *         The specified stage was specified in an invalid format or cannot
      *         be found.
+     * @sample AWSCodePipeline.EnableStageTransition
      */
     @Override
     public void enableStageTransition(
@@ -841,6 +849,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws JobNotFoundException
      *         The specified job was specified in an invalid format or cannot be
      *         found.
+     * @sample AWSCodePipeline.GetJobDetails
      */
     @Override
     public GetJobDetailsResult getJobDetails(
@@ -895,6 +904,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws PipelineVersionNotFoundException
      *         The specified pipeline version was specified in an invalid format
      *         or cannot be found.
+     * @sample AWSCodePipeline.GetPipeline
      */
     @Override
     public GetPipelineResult getPipeline(GetPipelineRequest getPipelineRequest) {
@@ -943,6 +953,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or
      *         cannot be found.
+     * @sample AWSCodePipeline.GetPipelineState
      */
     @Override
     public GetPipelineStateResult getPipelineState(
@@ -1008,6 +1019,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws InvalidJobException
      *         The specified job was specified in an invalid format or cannot be
      *         found.
+     * @sample AWSCodePipeline.GetThirdPartyJobDetails
      */
     @Override
     public GetThirdPartyJobDetailsResult getThirdPartyJobDetails(
@@ -1059,6 +1071,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The next token was specified in an invalid format. Make sure that
      *         the next token you provided is the token returned by a previous
      *         call.
+     * @sample AWSCodePipeline.ListActionTypes
      */
     @Override
     public ListActionTypesResult listActionTypes(
@@ -1106,6 +1119,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The next token was specified in an invalid format. Make sure that
      *         the next token you provided is the token returned by a previous
      *         call.
+     * @sample AWSCodePipeline.ListPipelines
      */
     @Override
     public ListPipelinesResult listPipelines(
@@ -1162,6 +1176,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The validation was specified in an invalid format.
      * @throws ActionTypeNotFoundException
      *         The specified action type cannot be found.
+     * @sample AWSCodePipeline.PollForJobs
      */
     @Override
     public PollForJobsResult pollForJobs(PollForJobsRequest pollForJobsRequest) {
@@ -1218,6 +1233,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The specified action type cannot be found.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.PollForThirdPartyJobs
      */
     @Override
     public PollForThirdPartyJobsResult pollForThirdPartyJobs(
@@ -1273,6 +1289,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The specified action cannot be found.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.PutActionRevision
      */
     @Override
     public PutActionRevisionResult putActionRevision(
@@ -1324,6 +1341,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         found.
      * @throws InvalidJobStateException
      *         The specified job state was specified in an invalid format.
+     * @sample AWSCodePipeline.PutJobFailureResult
      */
     @Override
     public void putJobFailureResult(
@@ -1373,6 +1391,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         found.
      * @throws InvalidJobStateException
      *         The specified job state was specified in an invalid format.
+     * @sample AWSCodePipeline.PutJobSuccessResult
      */
     @Override
     public void putJobSuccessResult(
@@ -1424,6 +1443,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The specified job state was specified in an invalid format.
      * @throws InvalidClientTokenException
      *         The client token was specified in an invalid format
+     * @sample AWSCodePipeline.PutThirdPartyJobFailureResult
      */
     @Override
     public void putThirdPartyJobFailureResult(
@@ -1476,6 +1496,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The specified job state was specified in an invalid format.
      * @throws InvalidClientTokenException
      *         The client token was specified in an invalid format
+     * @sample AWSCodePipeline.PutThirdPartyJobSuccessResult
      */
     @Override
     public void putThirdPartyJobSuccessResult(
@@ -1525,6 +1546,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or
      *         cannot be found.
+     * @sample AWSCodePipeline.StartPipelineExecution
      */
     @Override
     public StartPipelineExecutionResult startPipelineExecution(
@@ -1585,6 +1607,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         format.
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
+     * @sample AWSCodePipeline.UpdatePipeline
      */
     @Override
     public UpdatePipelineResult updatePipeline(

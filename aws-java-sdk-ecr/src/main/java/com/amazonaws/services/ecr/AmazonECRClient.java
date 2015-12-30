@@ -318,6 +318,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         parameters for the API request.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.BatchCheckLayerAvailability
      */
     @Override
     public BatchCheckLayerAvailabilityResult batchCheckLayerAvailability(
@@ -375,6 +376,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.BatchDeleteImage
      */
     @Override
     public BatchDeleteImageResult batchDeleteImage(
@@ -429,6 +431,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.BatchGetImage
      */
     @Override
     public BatchGetImageResult batchGetImage(
@@ -503,6 +506,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The image layer already exists in the associated repository.
      * @throws EmptyUploadException
      *         The specified layer upload does not contain any layer parts.
+     * @sample AmazonECR.CompleteLayerUpload
      */
     @Override
     public CompleteLayerUploadResult completeLayerUpload(
@@ -561,6 +565,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         "http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html"
      *         >Amazon ECR Default Service Limits</a> in the Amazon EC2
      *         Container Registry User Guide.
+     * @sample AmazonECR.CreateRepository
      */
     @Override
     public CreateRepositoryResult createRepository(
@@ -618,6 +623,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository contains images. To delete a repository
      *         that contains images, you must force the deletion with the
      *         <code>force</code> parameter.
+     * @sample AmazonECR.DeleteRepository
      */
     @Override
     public DeleteRepositoryResult deleteRepository(
@@ -674,6 +680,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have
      *         an associated repository policy.
+     * @sample AmazonECR.DeleteRepositoryPolicy
      */
     @Override
     public DeleteRepositoryPolicyResult deleteRepositoryPolicy(
@@ -727,6 +734,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.DescribeRepositories
      */
     @Override
     public DescribeRepositoriesResult describeRepositories(
@@ -786,6 +794,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECR.GetAuthorizationToken
      */
     @Override
     public GetAuthorizationTokenResult getAuthorizationToken(
@@ -855,6 +864,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.GetDownloadUrlForLayer
      */
     @Override
     public GetDownloadUrlForLayerResult getDownloadUrlForLayer(
@@ -911,6 +921,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have
      *         an associated repository policy.
+     * @sample AmazonECR.GetRepositoryPolicy
      */
     @Override
     public GetRepositoryPolicyResult getRepositoryPolicy(
@@ -971,6 +982,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.InitiateLayerUpload
      */
     @Override
     public InitiateLayerUploadResult initiateLayerUpload(
@@ -1023,6 +1035,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.ListImages
      */
     @Override
     public ListImagesResult listImages(ListImagesRequest listImagesRequest) {
@@ -1093,6 +1106,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         "http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html"
      *         >Amazon ECR Default Service Limits</a> in the Amazon EC2
      *         Container Registry User Guide.
+     * @sample AmazonECR.PutImage
      */
     @Override
     public PutImageResult putImage(PutImageRequest putImageRequest) {
@@ -1145,6 +1159,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.SetRepositoryPolicy
      */
     @Override
     public SetRepositoryPolicyResult setRepositoryPolicy(
@@ -1217,6 +1232,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      *         "http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html"
      *         >Amazon ECR Default Service Limits</a> in the Amazon EC2
      *         Container Registry User Guide.
+     * @sample AmazonECR.UploadLayerPart
      */
     @Override
     public UploadLayerPartResult uploadLayerPart(

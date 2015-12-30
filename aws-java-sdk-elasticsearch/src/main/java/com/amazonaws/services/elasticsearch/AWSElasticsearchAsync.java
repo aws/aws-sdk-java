@@ -51,6 +51,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        Container for the parameters to the <code><a>AddTags</a></code>
      *        operation. Specify the tags that you want to attach to the
      *        Elasticsearch domain.
+     * @sample AWSElasticsearchAsync.AddTags
      */
     java.util.concurrent.Future<Void> addTagsAsync(AddTagsRequest addTagsRequest);
 
@@ -73,6 +74,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticsearchAsyncHandler.AddTags
      */
     java.util.concurrent.Future<Void> addTagsAsync(
             AddTagsRequest addTagsRequest,
@@ -89,6 +91,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * @param createElasticsearchDomainRequest
      * @return A Java Future containing the result of the
      *         CreateElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsync.CreateElasticsearchDomain
      */
     java.util.concurrent.Future<CreateElasticsearchDomainResult> createElasticsearchDomainAsync(
             CreateElasticsearchDomainRequest createElasticsearchDomainRequest);
@@ -109,6 +112,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.CreateElasticsearchDomain
      */
     java.util.concurrent.Future<CreateElasticsearchDomainResult> createElasticsearchDomainAsync(
             CreateElasticsearchDomainRequest createElasticsearchDomainRequest,
@@ -126,6 +130,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        the name of the Elasticsearch domain that you want to delete.
      * @return A Java Future containing the result of the
      *         DeleteElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsync.DeleteElasticsearchDomain
      */
     java.util.concurrent.Future<DeleteElasticsearchDomainResult> deleteElasticsearchDomainAsync(
             DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest);
@@ -147,6 +152,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DeleteElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DeleteElasticsearchDomain
      */
     java.util.concurrent.Future<DeleteElasticsearchDomainResult> deleteElasticsearchDomainAsync(
             DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest,
@@ -164,6 +170,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        <code><a>DescribeElasticsearchDomain</a></code> operation.
      * @return A Java Future containing the result of the
      *         DescribeElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsync.DescribeElasticsearchDomain
      */
     java.util.concurrent.Future<DescribeElasticsearchDomainResult> describeElasticsearchDomainAsync(
             DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest);
@@ -185,6 +192,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeElasticsearchDomain
      */
     java.util.concurrent.Future<DescribeElasticsearchDomainResult> describeElasticsearchDomainAsync(
             DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest,
@@ -205,6 +213,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * @return A Java Future containing the result of the
      *         DescribeElasticsearchDomainConfig operation returned by the
      *         service.
+     * @sample AWSElasticsearchAsync.DescribeElasticsearchDomainConfig
      */
     java.util.concurrent.Future<DescribeElasticsearchDomainConfigResult> describeElasticsearchDomainConfigAsync(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest);
@@ -229,6 +238,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * @return A Java Future containing the result of the
      *         DescribeElasticsearchDomainConfig operation returned by the
      *         service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeElasticsearchDomainConfig
      */
     java.util.concurrent.Future<DescribeElasticsearchDomainConfigResult> describeElasticsearchDomainConfigAsync(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest,
@@ -247,6 +257,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        default, the API returns the status of all Elasticsearch domains.
      * @return A Java Future containing the result of the
      *         DescribeElasticsearchDomains operation returned by the service.
+     * @sample AWSElasticsearchAsync.DescribeElasticsearchDomains
      */
     java.util.concurrent.Future<DescribeElasticsearchDomainsResult> describeElasticsearchDomainsAsync(
             DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest);
@@ -269,6 +280,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeElasticsearchDomains operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeElasticsearchDomains
      */
     java.util.concurrent.Future<DescribeElasticsearchDomainsResult> describeElasticsearchDomainsAsync(
             DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest,
@@ -283,6 +295,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * @param listDomainNamesRequest
      * @return A Java Future containing the result of the ListDomainNames
      *         operation returned by the service.
+     * @sample AWSElasticsearchAsync.ListDomainNames
      */
     java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(
             ListDomainNamesRequest listDomainNamesRequest);
@@ -301,6 +314,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDomainNames
      *         operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.ListDomainNames
      */
     java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(
             ListDomainNamesRequest listDomainNamesRequest,
@@ -318,6 +332,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        attached.
      * @return A Java Future containing the result of the ListTags operation
      *         returned by the service.
+     * @sample AWSElasticsearchAsync.ListTags
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(
             ListTagsRequest listTagsRequest);
@@ -339,6 +354,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTags operation
      *         returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.ListTags
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(
             ListTagsRequest listTagsRequest,
@@ -355,6 +371,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        operation. Specify the <code>ARN</code> for the Elasticsearch
      *        domain from which you want to remove the specified
      *        <code>TagKey</code>.
+     * @sample AWSElasticsearchAsync.RemoveTags
      */
     java.util.concurrent.Future<Void> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest);
@@ -375,6 +392,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticsearchAsyncHandler.RemoveTags
      */
     java.util.concurrent.Future<Void> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest,
@@ -393,6 +411,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * @return A Java Future containing the result of the
      *         UpdateElasticsearchDomainConfig operation returned by the
      *         service.
+     * @sample AWSElasticsearchAsync.UpdateElasticsearchDomainConfig
      */
     java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest);
@@ -415,6 +434,7 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      * @return A Java Future containing the result of the
      *         UpdateElasticsearchDomainConfig operation returned by the
      *         service.
+     * @sample AWSElasticsearchAsyncHandler.UpdateElasticsearchDomainConfig
      */
     java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest,

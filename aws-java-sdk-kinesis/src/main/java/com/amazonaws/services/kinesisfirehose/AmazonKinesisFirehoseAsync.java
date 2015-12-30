@@ -107,6 +107,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>CreateDeliveryStream</a>.
      * @return A Java Future containing the result of the CreateDeliveryStream
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.CreateDeliveryStream
      */
     java.util.concurrent.Future<CreateDeliveryStreamResult> createDeliveryStreamAsync(
             CreateDeliveryStreamRequest createDeliveryStreamRequest);
@@ -193,6 +194,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeliveryStream
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.CreateDeliveryStream
      */
     java.util.concurrent.Future<CreateDeliveryStreamResult> createDeliveryStreamAsync(
             CreateDeliveryStreamRequest createDeliveryStreamRequest,
@@ -224,6 +226,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>DeleteDeliveryStream</a>.
      * @return A Java Future containing the result of the DeleteDeliveryStream
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.DeleteDeliveryStream
      */
     java.util.concurrent.Future<DeleteDeliveryStreamResult> deleteDeliveryStreamAsync(
             DeleteDeliveryStreamRequest deleteDeliveryStreamRequest);
@@ -259,6 +262,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDeliveryStream
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.DeleteDeliveryStream
      */
     java.util.concurrent.Future<DeleteDeliveryStreamResult> deleteDeliveryStreamAsync(
             DeleteDeliveryStreamRequest deleteDeliveryStreamRequest,
@@ -276,6 +280,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>DescribeDeliveryStream</a>.
      * @return A Java Future containing the result of the DescribeDeliveryStream
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.DescribeDeliveryStream
      */
     java.util.concurrent.Future<DescribeDeliveryStreamResult> describeDeliveryStreamAsync(
             DescribeDeliveryStreamRequest describeDeliveryStreamRequest);
@@ -297,6 +302,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDeliveryStream
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.DescribeDeliveryStream
      */
     java.util.concurrent.Future<DescribeDeliveryStreamResult> describeDeliveryStreamAsync(
             DescribeDeliveryStreamRequest describeDeliveryStreamRequest,
@@ -322,6 +328,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>ListDeliveryStreams</a>.
      * @return A Java Future containing the result of the ListDeliveryStreams
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.ListDeliveryStreams
      */
     java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(
             ListDeliveryStreamsRequest listDeliveryStreamsRequest);
@@ -351,6 +358,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDeliveryStreams
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.ListDeliveryStreams
      */
     java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(
             ListDeliveryStreamsRequest listDeliveryStreamsRequest,
@@ -414,6 +422,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>PutRecord</a>.
      * @return A Java Future containing the result of the PutRecord operation
      *         returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.PutRecord
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(
             PutRecordRequest putRecordRequest);
@@ -481,6 +490,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecord operation
      *         returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.PutRecord
      */
     java.util.concurrent.Future<PutRecordResult> putRecordAsync(
             PutRecordRequest putRecordRequest,
@@ -570,6 +580,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>PutRecordBatch</a>.
      * @return A Java Future containing the result of the PutRecordBatch
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.PutRecordBatch
      */
     java.util.concurrent.Future<PutRecordBatchResult> putRecordBatchAsync(
             PutRecordBatchRequest putRecordBatchRequest);
@@ -663,6 +674,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutRecordBatch
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.PutRecordBatch
      */
     java.util.concurrent.Future<PutRecordBatchResult> putRecordBatchAsync(
             PutRecordBatchRequest putRecordBatchRequest,
@@ -715,6 +727,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        Contains the parameters for <a>UpdateDestination</a>.
      * @return A Java Future containing the result of the UpdateDestination
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsync.UpdateDestination
      */
     java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(
             UpdateDestinationRequest updateDestinationRequest);
@@ -771,6 +784,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDestination
      *         operation returned by the service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.UpdateDestination
      */
     java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(
             UpdateDestinationRequest updateDestinationRequest,

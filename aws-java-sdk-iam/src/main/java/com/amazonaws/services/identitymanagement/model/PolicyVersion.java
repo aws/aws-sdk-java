@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
@@ -22,261 +23,293 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used as a response element in the
- * CreatePolicyVersion, GetPolicyVersion, ListPolicyVersions, and
- * GetAccountAuthorizationDetails actions.
+ * <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>,
+ * <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> actions.
  * </p>
  * <p>
- * For more information about managed policies, refer to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"> Managed Policies and Inline Policies </a>
- * in the <i>Using IAM</i> guide.
+ * For more information about managed policies, refer to <a href=
+ * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
+ * >Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
  * </p>
  */
 public class PolicyVersion implements Serializable, Cloneable {
 
     /**
-     * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> and
-     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     * in the response to the <a>CreatePolicyVersion</a> or
-     * <a>ListPolicyVersions</a> operations.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     * The policy document.
+     * </p>
+     * <p>
+     * The policy document is returned in the response to the
+     * <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     * operations. It is not returned in the response to the
+     * <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations.
+     * </p>
      */
     private String document;
-
     /**
-     * The identifier for the policy version. <p>Policy version identifiers
-     * always begin with <code>v</code> (always lowercase). When a policy is
-     * created, the first policy version is <code>v1</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
+     * The identifier for the policy version.
+     * </p>
+     * <p>
+     * Policy version identifiers always begin with <code>v</code> (always
+     * lowercase). When a policy is created, the first policy version is
+     * <code>v1</code>.
+     * </p>
      */
     private String versionId;
-
     /**
+     * <p>
      * Specifies whether the policy version is set as the policy's default
      * version.
+     * </p>
      */
     private Boolean isDefaultVersion;
-
     /**
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     * 8601 date-time format</a>, when the policy version was created.
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy version was created.
+     * </p>
      */
     private java.util.Date createDate;
 
     /**
-     * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> and
-     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     * in the response to the <a>CreatePolicyVersion</a> or
-     * <a>ListPolicyVersions</a> operations.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @return The policy document. <p>The policy document is returned in the
-     *         response to the <a>GetPolicyVersion</a> and
-     *         <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     *         in the response to the <a>CreatePolicyVersion</a> or
-     *         <a>ListPolicyVersions</a> operations.
-     */
-    public String getDocument() {
-        return document;
-    }
-    
-    /**
-     * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> and
-     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     * in the response to the <a>CreatePolicyVersion</a> or
-     * <a>ListPolicyVersions</a> operations.
+     * The policy document.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @param document The policy document. <p>The policy document is returned in the
-     *         response to the <a>GetPolicyVersion</a> and
-     *         <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     *         in the response to the <a>CreatePolicyVersion</a> or
-     *         <a>ListPolicyVersions</a> operations.
+     * The policy document is returned in the response to the
+     * <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     * operations. It is not returned in the response to the
+     * <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations.
+     * </p>
+     * 
+     * @param document
+     *        The policy document.</p>
+     *        <p>
+     *        The policy document is returned in the response to the
+     *        <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     *        operations. It is not returned in the response to the
+     *        <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a>
+     *        operations.
      */
     public void setDocument(String document) {
         this.document = document;
     }
-    
+
     /**
-     * The policy document. <p>The policy document is returned in the
-     * response to the <a>GetPolicyVersion</a> and
-     * <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     * in the response to the <a>CreatePolicyVersion</a> or
-     * <a>ListPolicyVersions</a> operations.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The policy document.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @param document The policy document. <p>The policy document is returned in the
-     *         response to the <a>GetPolicyVersion</a> and
-     *         <a>GetAccountAuthorizationDetails</a> operations. It is not returned
-     *         in the response to the <a>CreatePolicyVersion</a> or
-     *         <a>ListPolicyVersions</a> operations.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The policy document is returned in the response to the
+     * <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     * operations. It is not returned in the response to the
+     * <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations.
+     * </p>
+     * 
+     * @return The policy document.</p>
+     *         <p>
+     *         The policy document is returned in the response to the
+     *         <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     *         operations. It is not returned in the response to the
+     *         <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a>
+     *         operations.
+     */
+    public String getDocument() {
+        return this.document;
+    }
+
+    /**
+     * <p>
+     * The policy document.
+     * </p>
+     * <p>
+     * The policy document is returned in the response to the
+     * <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     * operations. It is not returned in the response to the
+     * <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations.
+     * </p>
+     * 
+     * @param document
+     *        The policy document.</p>
+     *        <p>
+     *        The policy document is returned in the response to the
+     *        <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     *        operations. It is not returned in the response to the
+     *        <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a>
+     *        operations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PolicyVersion withDocument(String document) {
-        this.document = document;
+        setDocument(document);
         return this;
     }
 
     /**
-     * The identifier for the policy version. <p>Policy version identifiers
-     * always begin with <code>v</code> (always lowercase). When a policy is
-     * created, the first policy version is <code>v1</code>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
-     *
-     * @return The identifier for the policy version. <p>Policy version identifiers
-     *         always begin with <code>v</code> (always lowercase). When a policy is
-     *         created, the first policy version is <code>v1</code>.
-     */
-    public String getVersionId() {
-        return versionId;
-    }
-    
-    /**
-     * The identifier for the policy version. <p>Policy version identifiers
-     * always begin with <code>v</code> (always lowercase). When a policy is
-     * created, the first policy version is <code>v1</code>.
+     * The identifier for the policy version.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
-     *
-     * @param versionId The identifier for the policy version. <p>Policy version identifiers
-     *         always begin with <code>v</code> (always lowercase). When a policy is
-     *         created, the first policy version is <code>v1</code>.
+     * Policy version identifiers always begin with <code>v</code> (always
+     * lowercase). When a policy is created, the first policy version is
+     * <code>v1</code>.
+     * </p>
+     * 
+     * @param versionId
+     *        The identifier for the policy version.</p>
+     *        <p>
+     *        Policy version identifiers always begin with <code>v</code>
+     *        (always lowercase). When a policy is created, the first policy
+     *        version is <code>v1</code>.
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
-    
+
     /**
-     * The identifier for the policy version. <p>Policy version identifiers
-     * always begin with <code>v</code> (always lowercase). When a policy is
-     * created, the first policy version is <code>v1</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The identifier for the policy version.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?<br/>
-     *
-     * @param versionId The identifier for the policy version. <p>Policy version identifiers
-     *         always begin with <code>v</code> (always lowercase). When a policy is
-     *         created, the first policy version is <code>v1</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Policy version identifiers always begin with <code>v</code> (always
+     * lowercase). When a policy is created, the first policy version is
+     * <code>v1</code>.
+     * </p>
+     * 
+     * @return The identifier for the policy version.</p>
+     *         <p>
+     *         Policy version identifiers always begin with <code>v</code>
+     *         (always lowercase). When a policy is created, the first policy
+     *         version is <code>v1</code>.
+     */
+    public String getVersionId() {
+        return this.versionId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the policy version.
+     * </p>
+     * <p>
+     * Policy version identifiers always begin with <code>v</code> (always
+     * lowercase). When a policy is created, the first policy version is
+     * <code>v1</code>.
+     * </p>
+     * 
+     * @param versionId
+     *        The identifier for the policy version.</p>
+     *        <p>
+     *        Policy version identifiers always begin with <code>v</code>
+     *        (always lowercase). When a policy is created, the first policy
+     *        version is <code>v1</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PolicyVersion withVersionId(String versionId) {
-        this.versionId = versionId;
+        setVersionId(versionId);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the policy version is set as the policy's default
      * version.
-     *
-     * @return Specifies whether the policy version is set as the policy's default
-     *         version.
-     */
-    public Boolean isDefaultVersion() {
-        return isDefaultVersion;
-    }
-    
-    /**
-     * Specifies whether the policy version is set as the policy's default
-     * version.
-     *
-     * @param isDefaultVersion Specifies whether the policy version is set as the policy's default
-     *         version.
+     * </p>
+     * 
+     * @param isDefaultVersion
+     *        Specifies whether the policy version is set as the policy's
+     *        default version.
      */
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
         this.isDefaultVersion = isDefaultVersion;
     }
-    
+
     /**
+     * <p>
      * Specifies whether the policy version is set as the policy's default
      * version.
+     * </p>
+     * 
+     * @return Specifies whether the policy version is set as the policy's
+     *         default version.
+     */
+    public Boolean getIsDefaultVersion() {
+        return this.isDefaultVersion;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param isDefaultVersion Specifies whether the policy version is set as the policy's default
-     *         version.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether the policy version is set as the policy's default
+     * version.
+     * </p>
+     * 
+     * @param isDefaultVersion
+     *        Specifies whether the policy version is set as the policy's
+     *        default version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PolicyVersion withIsDefaultVersion(Boolean isDefaultVersion) {
-        this.isDefaultVersion = isDefaultVersion;
+        setIsDefaultVersion(isDefaultVersion);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether the policy version is set as the policy's default
      * version.
-     *
-     * @return Specifies whether the policy version is set as the policy's default
-     *         version.
+     * </p>
+     * 
+     * @return Specifies whether the policy version is set as the policy's
+     *         default version.
      */
-    public Boolean getIsDefaultVersion() {
-        return isDefaultVersion;
+    public Boolean isDefaultVersion() {
+        return this.isDefaultVersion;
     }
 
     /**
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     * 8601 date-time format</a>, when the policy version was created.
-     *
-     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *         8601 date-time format</a>, when the policy version was created.
-     */
-    public java.util.Date getCreateDate() {
-        return createDate;
-    }
-    
-    /**
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     * 8601 date-time format</a>, when the policy version was created.
-     *
-     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *         8601 date-time format</a>, when the policy version was created.
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy version was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *        8601 date-time format</a>, when the policy version was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
-    
+
     /**
-     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     * 8601 date-time format</a>, when the policy version was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
-     *         8601 date-time format</a>, when the policy version was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy version was created.
+     * </p>
+     * 
+     * @return The date and time, in <a
+     *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+     *         format</a>, when the policy version was created.
+     */
+    public java.util.Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy version was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *        8601 date-time format</a>, when the policy version was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PolicyVersion withCreateDate(java.util.Date createDate) {
-        this.createDate = createDate;
+        setCreateDate(createDate);
         return this;
     }
 
@@ -292,58 +325,79 @@ public class PolicyVersion implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDocument() != null) sb.append("Document: " + getDocument() + ",");
-        if (getVersionId() != null) sb.append("VersionId: " + getVersionId() + ",");
-        if (isDefaultVersion() != null) sb.append("IsDefaultVersion: " + isDefaultVersion() + ",");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
+        if (getDocument() != null)
+            sb.append("Document: " + getDocument() + ",");
+        if (getVersionId() != null)
+            sb.append("VersionId: " + getVersionId() + ",");
+        if (getIsDefaultVersion() != null)
+            sb.append("IsDefaultVersion: " + getIsDefaultVersion() + ",");
+        if (getCreateDate() != null)
+            sb.append("CreateDate: " + getCreateDate());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PolicyVersion == false)
+            return false;
+        PolicyVersion other = (PolicyVersion) obj;
+        if (other.getDocument() == null ^ this.getDocument() == null)
+            return false;
+        if (other.getDocument() != null
+                && other.getDocument().equals(this.getDocument()) == false)
+            return false;
+        if (other.getVersionId() == null ^ this.getVersionId() == null)
+            return false;
+        if (other.getVersionId() != null
+                && other.getVersionId().equals(this.getVersionId()) == false)
+            return false;
+        if (other.getIsDefaultVersion() == null
+                ^ this.getIsDefaultVersion() == null)
+            return false;
+        if (other.getIsDefaultVersion() != null
+                && other.getIsDefaultVersion().equals(
+                        this.getIsDefaultVersion()) == false)
+            return false;
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null)
+            return false;
+        if (other.getCreateDate() != null
+                && other.getCreateDate().equals(this.getCreateDate()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDocument() == null) ? 0 : getDocument().hashCode()); 
-        hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode()); 
-        hashCode = prime * hashCode + ((isDefaultVersion() == null) ? 0 : isDefaultVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getDocument() == null) ? 0 : getDocument().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIsDefaultVersion() == null) ? 0 : getIsDefaultVersion()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PolicyVersion == false) return false;
-        PolicyVersion other = (PolicyVersion)obj;
-        
-        if (other.getDocument() == null ^ this.getDocument() == null) return false;
-        if (other.getDocument() != null && other.getDocument().equals(this.getDocument()) == false) return false; 
-        if (other.getVersionId() == null ^ this.getVersionId() == null) return false;
-        if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false) return false; 
-        if (other.isDefaultVersion() == null ^ this.isDefaultVersion() == null) return false;
-        if (other.isDefaultVersion() != null && other.isDefaultVersion().equals(this.isDefaultVersion()) == false) return false; 
-        if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
-        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PolicyVersion clone() {
         try {
             return (PolicyVersion) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

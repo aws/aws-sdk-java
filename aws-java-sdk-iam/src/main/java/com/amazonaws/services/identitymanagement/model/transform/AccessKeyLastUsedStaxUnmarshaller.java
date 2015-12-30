@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,32 +27,42 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Access Key Last Used StAX Unmarshaller
+ * AccessKeyLastUsed StAX Unmarshaller
  */
-public class AccessKeyLastUsedStaxUnmarshaller implements Unmarshaller<AccessKeyLastUsed, StaxUnmarshallerContext> {
+public class AccessKeyLastUsedStaxUnmarshaller implements
+        Unmarshaller<AccessKeyLastUsed, StaxUnmarshallerContext> {
 
-    public AccessKeyLastUsed unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public AccessKeyLastUsed unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         AccessKeyLastUsed accessKeyLastUsed = new AccessKeyLastUsed();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return accessKeyLastUsed;
+            if (xmlEvent.isEndDocument())
+                return accessKeyLastUsed;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("LastUsedDate", targetDepth)) {
-                    accessKeyLastUsed.setLastUsedDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    accessKeyLastUsed.setLastUsedDate(DateStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ServiceName", targetDepth)) {
-                    accessKeyLastUsed.setServiceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    accessKeyLastUsed.setServiceName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Region", targetDepth)) {
-                    accessKeyLastUsed.setRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    accessKeyLastUsed.setRegion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +74,10 @@ public class AccessKeyLastUsedStaxUnmarshaller implements Unmarshaller<AccessKey
     }
 
     private static AccessKeyLastUsedStaxUnmarshaller instance;
+
     public static AccessKeyLastUsedStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new AccessKeyLastUsedStaxUnmarshaller();
+        if (instance == null)
+            instance = new AccessKeyLastUsedStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,32 +27,44 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Assume Role Result StAX Unmarshaller
+ * AssumeRoleResult StAX Unmarshaller
  */
-public class AssumeRoleResultStaxUnmarshaller implements Unmarshaller<AssumeRoleResult, StaxUnmarshallerContext> {
+public class AssumeRoleResultStaxUnmarshaller implements
+        Unmarshaller<AssumeRoleResult, StaxUnmarshallerContext> {
 
-    public AssumeRoleResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public AssumeRoleResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         AssumeRoleResult assumeRoleResult = new AssumeRoleResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return assumeRoleResult;
+            if (xmlEvent.isEndDocument())
+                return assumeRoleResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Credentials", targetDepth)) {
-                    assumeRoleResult.setCredentials(CredentialsStaxUnmarshaller.getInstance().unmarshall(context));
+                    assumeRoleResult.setCredentials(CredentialsStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("AssumedRoleUser", targetDepth)) {
-                    assumeRoleResult.setAssumedRoleUser(AssumedRoleUserStaxUnmarshaller.getInstance().unmarshall(context));
+                    assumeRoleResult
+                            .setAssumedRoleUser(AssumedRoleUserStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("PackedPolicySize", targetDepth)) {
-                    assumeRoleResult.setPackedPolicySize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    assumeRoleResult
+                            .setPackedPolicySize(IntegerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +76,10 @@ public class AssumeRoleResultStaxUnmarshaller implements Unmarshaller<AssumeRole
     }
 
     private static AssumeRoleResultStaxUnmarshaller instance;
+
     public static AssumeRoleResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new AssumeRoleResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new AssumeRoleResultStaxUnmarshaller();
         return instance;
     }
 }
-    

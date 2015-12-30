@@ -121,6 +121,7 @@ public interface AWSElasticsearch {
      *         The request processing has failed because of an unknown error,
      *         exception or failure (the failure is internal to the service) .
      *         Gives http status code of 500.
+     * @sample AWSElasticsearch.AddTags
      */
     void addTags(AddTagsRequest addTagsRequest);
 
@@ -156,6 +157,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.CreateElasticsearchDomain
      */
     CreateElasticsearchDomainResult createElasticsearchDomain(
             CreateElasticsearchDomainRequest createElasticsearchDomainRequest);
@@ -184,6 +186,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DeleteElasticsearchDomain
      */
     DeleteElasticsearchDomainResult deleteElasticsearchDomain(
             DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest);
@@ -212,6 +215,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchDomain
      */
     DescribeElasticsearchDomainResult describeElasticsearchDomain(
             DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest);
@@ -242,6 +246,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchDomainConfig
      */
     DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest);
@@ -268,6 +273,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchDomains
      */
     DescribeElasticsearchDomainsResult describeElasticsearchDomains(
             DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest);
@@ -285,6 +291,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.ListDomainNames
      */
     ListDomainNamesResult listDomainNames(
             ListDomainNamesRequest listDomainNamesRequest);
@@ -312,6 +319,7 @@ public interface AWSElasticsearch {
      *         The request processing has failed because of an unknown error,
      *         exception or failure (the failure is internal to the service) .
      *         Gives http status code of 500.
+     * @sample AWSElasticsearch.ListTags
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
 
@@ -335,6 +343,7 @@ public interface AWSElasticsearch {
      *         The request processing has failed because of an unknown error,
      *         exception or failure (the failure is internal to the service) .
      *         Gives http status code of 500.
+     * @sample AWSElasticsearch.RemoveTags
      */
     void removeTags(RemoveTagsRequest removeTagsRequest);
 
@@ -368,6 +377,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http
      *         status code of 400.
+     * @sample AWSElasticsearch.UpdateElasticsearchDomainConfig
      */
     UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(
             UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest);

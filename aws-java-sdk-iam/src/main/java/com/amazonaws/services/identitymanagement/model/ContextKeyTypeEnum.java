@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Context Key Type Enum
+ * 
  */
 public enum ContextKeyTypeEnum {
-    
+
     String("string"),
     StringList("stringList"),
     Numeric("numeric"),
@@ -47,40 +48,39 @@ public enum ContextKeyTypeEnum {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return ContextKeyTypeEnum corresponding to the value
      */
     public static ContextKeyTypeEnum fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("string".equals(value)) {
-            return ContextKeyTypeEnum.String;
+            return String;
         } else if ("stringList".equals(value)) {
-            return ContextKeyTypeEnum.StringList;
+            return StringList;
         } else if ("numeric".equals(value)) {
-            return ContextKeyTypeEnum.Numeric;
+            return Numeric;
         } else if ("numericList".equals(value)) {
-            return ContextKeyTypeEnum.NumericList;
+            return NumericList;
         } else if ("boolean".equals(value)) {
-            return ContextKeyTypeEnum.Boolean;
+            return Boolean;
         } else if ("booleanList".equals(value)) {
-            return ContextKeyTypeEnum.BooleanList;
+            return BooleanList;
         } else if ("ip".equals(value)) {
-            return ContextKeyTypeEnum.Ip;
+            return Ip;
         } else if ("ipList".equals(value)) {
-            return ContextKeyTypeEnum.IpList;
+            return IpList;
         } else if ("binary".equals(value)) {
-            return ContextKeyTypeEnum.Binary;
+            return Binary;
         } else if ("binaryList".equals(value)) {
-            return ContextKeyTypeEnum.BinaryList;
+            return BinaryList;
         } else if ("date".equals(value)) {
-            return ContextKeyTypeEnum.Date;
+            return Date;
         } else if ("dateList".equals(value)) {
-            return ContextKeyTypeEnum.DateList;
+            return DateList;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

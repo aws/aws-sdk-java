@@ -167,6 +167,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateByteMatchSet
      */
     CreateByteMatchSetResult createByteMatchSet(
             CreateByteMatchSetRequest createByteMatchSetRequest);
@@ -245,6 +246,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateIPSet
      */
     CreateIPSetResult createIPSet(CreateIPSetRequest createIPSetRequest);
 
@@ -335,6 +337,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateRule
      */
     CreateRuleResult createRule(CreateRuleRequest createRuleRequest);
 
@@ -412,6 +415,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateSqlInjectionMatchSet
      */
     CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(
             CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest);
@@ -503,6 +507,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateWebACL
      */
     CreateWebACLResult createWebACL(CreateWebACLRequest createWebACLRequest);
 
@@ -566,6 +571,7 @@ public interface AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteByteMatchSet
      */
     DeleteByteMatchSetResult deleteByteMatchSet(
             DeleteByteMatchSetRequest deleteByteMatchSetRequest);
@@ -629,6 +635,7 @@ public interface AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteIPSet
      */
     DeleteIPSetResult deleteIPSet(DeleteIPSetRequest deleteIPSetRequest);
 
@@ -691,6 +698,7 @@ public interface AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteRule
      */
     DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
@@ -756,6 +764,7 @@ public interface AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteSqlInjectionMatchSet
      */
     DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(
             DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest);
@@ -813,6 +822,7 @@ public interface AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteWebACL
      */
     DeleteWebACLResult deleteWebACL(DeleteWebACLRequest deleteWebACLRequest);
 
@@ -831,6 +841,7 @@ public interface AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetByteMatchSet
      */
     GetByteMatchSetResult getByteMatchSet(
             GetByteMatchSetRequest getByteMatchSetRequest);
@@ -863,6 +874,7 @@ public interface AWSWAF {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
      *         request was valid. Retry your request.
+     * @sample AWSWAF.GetChangeToken
      */
     GetChangeTokenResult getChangeToken(
             GetChangeTokenRequest getChangeTokenRequest);
@@ -890,6 +902,7 @@ public interface AWSWAF {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
      *         request was valid. Retry your request.
+     * @sample AWSWAF.GetChangeTokenStatus
      */
     GetChangeTokenStatusResult getChangeTokenStatus(
             GetChangeTokenStatusRequest getChangeTokenStatusRequest);
@@ -909,6 +922,7 @@ public interface AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetIPSet
      */
     GetIPSetResult getIPSet(GetIPSetRequest getIPSetRequest);
 
@@ -928,6 +942,7 @@ public interface AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetRule
      */
     GetRuleResult getRule(GetRuleRequest getRuleRequest);
 
@@ -953,6 +968,7 @@ public interface AWSWAF {
      *         service.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSampledRequests
      */
     GetSampledRequestsResult getSampledRequests(
             GetSampledRequestsRequest getSampledRequestsRequest);
@@ -975,6 +991,7 @@ public interface AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSqlInjectionMatchSet
      */
     GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(
             GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest);
@@ -994,6 +1011,7 @@ public interface AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetWebACL
      */
     GetWebACLResult getWebACL(GetWebACLRequest getWebACLRequest);
 
@@ -1011,6 +1029,7 @@ public interface AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListByteMatchSets
      */
     ListByteMatchSetsResult listByteMatchSets(
             ListByteMatchSetsRequest listByteMatchSetsRequest);
@@ -1028,6 +1047,7 @@ public interface AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListIPSets
      */
     ListIPSetsResult listIPSets(ListIPSetsRequest listIPSetsRequest);
 
@@ -1044,6 +1064,7 @@ public interface AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListRules
      */
     ListRulesResult listRules(ListRulesRequest listRulesRequest);
 
@@ -1063,6 +1084,7 @@ public interface AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListSqlInjectionMatchSets
      */
     ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest);
@@ -1080,6 +1102,7 @@ public interface AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListWebACLs
      */
     ListWebACLsResult listWebACLs(ListWebACLsRequest listWebACLsRequest);
 
@@ -1210,6 +1233,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateByteMatchSet
      */
     UpdateByteMatchSetResult updateByteMatchSet(
             UpdateByteMatchSetRequest updateByteMatchSetRequest);
@@ -1356,6 +1380,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateIPSet
      */
     UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest);
 
@@ -1496,6 +1521,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateRule
      */
     UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest);
 
@@ -1623,6 +1649,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateSqlInjectionMatchSet
      */
     UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(
             UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest);
@@ -1775,6 +1802,7 @@ public interface AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateWebACL
      */
     UpdateWebACLResult updateWebACL(UpdateWebACLRequest updateWebACLRequest);
 

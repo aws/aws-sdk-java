@@ -45,6 +45,7 @@ public interface AWSMarketplaceCommerceAnalyticsAsync extends
      *        Container for the parameters to the GenerateDataSet operation.
      * @return A Java Future containing the result of the GenerateDataSet
      *         operation returned by the service.
+     * @sample AWSMarketplaceCommerceAnalyticsAsync.GenerateDataSet
      */
     java.util.concurrent.Future<GenerateDataSetResult> generateDataSetAsync(
             GenerateDataSetRequest generateDataSetRequest);
@@ -72,6 +73,7 @@ public interface AWSMarketplaceCommerceAnalyticsAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GenerateDataSet
      *         operation returned by the service.
+     * @sample AWSMarketplaceCommerceAnalyticsAsyncHandler.GenerateDataSet
      */
     java.util.concurrent.Future<GenerateDataSetResult> generateDataSetAsync(
             GenerateDataSetRequest generateDataSetRequest,

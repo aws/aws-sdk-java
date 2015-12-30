@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Entity Type
+ * 
  */
 public enum EntityType {
-    
+
     User("User"),
     Role("Role"),
     Group("Group"),
@@ -40,26 +41,25 @@ public enum EntityType {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return EntityType corresponding to the value
      */
     public static EntityType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("User".equals(value)) {
-            return EntityType.User;
+            return User;
         } else if ("Role".equals(value)) {
-            return EntityType.Role;
+            return Role;
         } else if ("Group".equals(value)) {
-            return EntityType.Group;
+            return Group;
         } else if ("LocalManagedPolicy".equals(value)) {
-            return EntityType.LocalManagedPolicy;
+            return LocalManagedPolicy;
         } else if ("AWSManagedPolicy".equals(value)) {
-            return EntityType.AWSManagedPolicy;
+            return AWSManagedPolicy;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

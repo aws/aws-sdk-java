@@ -290,6 +290,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         authentication must use the same AWS Access Key ID.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.CancelJob
      */
     @Override
     public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
@@ -381,6 +382,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         account.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.CreateJob
      */
     @Override
     public CreateJobResult createJob(CreateJobRequest createJobRequest) {
@@ -437,6 +439,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         The client tool version is invalid.
      * @throws InvalidParameterException
      *         One or more parameters had an invalid value.
+     * @sample AmazonImportExport.GetShippingLabel
      */
     @Override
     public GetShippingLabelResult getShippingLabel(
@@ -494,6 +497,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         authentication must use the same AWS Access Key ID.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.GetStatus
      */
     @Override
     public GetStatusResult getStatus(GetStatusRequest getStatusRequest) {
@@ -545,6 +549,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         authentication must use the same AWS Access Key ID.
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.ListJobs
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
@@ -642,6 +647,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      *         AWS Import/Export cannot update the job
      * @throws InvalidVersionException
      *         The client tool version is invalid.
+     * @sample AmazonImportExport.UpdateJob
      */
     @Override
     public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {

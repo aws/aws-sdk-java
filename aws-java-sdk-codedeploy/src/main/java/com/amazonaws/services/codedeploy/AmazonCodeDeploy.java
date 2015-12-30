@@ -185,6 +185,7 @@ public interface AmazonCodeDeploy {
      *         The maximum number of allowed on-premises instances was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
+     * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
      */
     void addTagsToOnPremisesInstances(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
@@ -206,6 +207,7 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @sample AmazonCodeDeploy.BatchGetApplications
      */
     BatchGetApplicationsResult batchGetApplications(
             BatchGetApplicationsRequest batchGetApplicationsRequest);
@@ -231,6 +233,7 @@ public interface AmazonCodeDeploy {
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
+     * @sample AmazonCodeDeploy.BatchGetDeployments
      */
     BatchGetDeploymentsResult batchGetDeployments(
             BatchGetDeploymentsRequest batchGetDeploymentsRequest);
@@ -257,6 +260,7 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @sample AmazonCodeDeploy.BatchGetOnPremisesInstances
      */
     BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(
             BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest);
@@ -288,6 +292,7 @@ public interface AmazonCodeDeploy {
      *         applicable IAM user or AWS account.
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than were allowed.
+     * @sample AmazonCodeDeploy.CreateApplication
      */
     CreateApplicationResult createApplication(
             CreateApplicationRequest createApplicationRequest);
@@ -329,6 +334,7 @@ public interface AmazonCodeDeploy {
      *         The description that was provided is too long.
      * @throws DeploymentLimitExceededException
      *         The number of allowed deployments was exceeded.
+     * @sample AmazonCodeDeploy.CreateDeployment
      */
     CreateDeploymentResult createDeployment(
             CreateDeploymentRequest createDeploymentRequest);
@@ -356,6 +362,7 @@ public interface AmazonCodeDeploy {
      *         format.
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
+     * @sample AmazonCodeDeploy.CreateDeploymentConfig
      */
     CreateDeploymentConfigResult createDeploymentConfig(
             CreateDeploymentConfigRequest createDeploymentConfigRequest);
@@ -406,6 +413,7 @@ public interface AmazonCodeDeploy {
      *         does not grant the appropriate permissions to Auto Scaling.
      * @throws DeploymentGroupLimitExceededException
      *         The deployment groups limit was exceeded.
+     * @sample AmazonCodeDeploy.CreateDeploymentGroup
      */
     CreateDeploymentGroupResult createDeploymentGroup(
             CreateDeploymentGroupRequest createDeploymentGroupRequest);
@@ -422,6 +430,7 @@ public interface AmazonCodeDeploy {
      *         specified.
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
+     * @sample AmazonCodeDeploy.DeleteApplication
      */
     void deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
@@ -444,6 +453,7 @@ public interface AmazonCodeDeploy {
      *         The deployment configuration is still in use.
      * @throws InvalidOperationException
      *         An invalid operation was detected.
+     * @sample AmazonCodeDeploy.DeleteDeploymentConfig
      */
     void deleteDeploymentConfig(
             DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
@@ -470,6 +480,7 @@ public interface AmazonCodeDeploy {
      *         The service role ARN was specified in an invalid format. Or, if
      *         an Auto Scaling group was specified, the specified service role
      *         does not grant the appropriate permissions to Auto Scaling.
+     * @sample AmazonCodeDeploy.DeleteDeploymentGroup
      */
     DeleteDeploymentGroupResult deleteDeploymentGroup(
             DeleteDeploymentGroupRequest deleteDeploymentGroupRequest);
@@ -487,6 +498,7 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @sample AmazonCodeDeploy.DeregisterOnPremisesInstance
      */
     void deregisterOnPremisesInstance(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
@@ -507,6 +519,7 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @sample AmazonCodeDeploy.GetApplication
      */
     GetApplicationResult getApplication(
             GetApplicationRequest getApplicationRequest);
@@ -535,6 +548,7 @@ public interface AmazonCodeDeploy {
      *         The revision ID was not specified.
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
+     * @sample AmazonCodeDeploy.GetApplicationRevision
      */
     GetApplicationRevisionResult getApplicationRevision(
             GetApplicationRevisionRequest getApplicationRevisionRequest);
@@ -555,6 +569,7 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentDoesNotExistException
      *         The deployment does not exist with the applicable IAM user or AWS
      *         account.
+     * @sample AmazonCodeDeploy.GetDeployment
      */
     GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest);
 
@@ -575,6 +590,7 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentConfigDoesNotExistException
      *         The deployment configuration does not exist with the applicable
      *         IAM user or AWS account.
+     * @sample AmazonCodeDeploy.GetDeploymentConfig
      */
     GetDeploymentConfigResult getDeploymentConfig(
             GetDeploymentConfigRequest getDeploymentConfigRequest);
@@ -603,6 +619,7 @@ public interface AmazonCodeDeploy {
      * @throws DeploymentGroupDoesNotExistException
      *         The named deployment group does not exist with the applicable IAM
      *         user or AWS account.
+     * @sample AmazonCodeDeploy.GetDeploymentGroup
      */
     GetDeploymentGroupResult getDeploymentGroup(
             GetDeploymentGroupRequest getDeploymentGroupRequest);
@@ -628,6 +645,7 @@ public interface AmazonCodeDeploy {
      *         format.
      * @throws InstanceDoesNotExistException
      *         The specified instance does not exist in the deployment group.
+     * @sample AmazonCodeDeploy.GetDeploymentInstance
      */
     GetDeploymentInstanceResult getDeploymentInstance(
             GetDeploymentInstanceRequest getDeploymentInstanceRequest);
@@ -648,6 +666,7 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @sample AmazonCodeDeploy.GetOnPremisesInstance
      */
     GetOnPremisesInstanceResult getOnPremisesInstance(
             GetOnPremisesInstanceRequest getOnPremisesInstanceRequest);
@@ -686,6 +705,7 @@ public interface AmazonCodeDeploy {
      *         The deployed state filter was specified in an invalid format.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListApplicationRevisions
      */
     ListApplicationRevisionsResult listApplicationRevisions(
             ListApplicationRevisionsRequest listApplicationRevisionsRequest);
@@ -701,6 +721,7 @@ public interface AmazonCodeDeploy {
      * @return Result of the ListApplications operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListApplications
      */
     ListApplicationsResult listApplications(
             ListApplicationsRequest listApplicationsRequest);
@@ -725,6 +746,7 @@ public interface AmazonCodeDeploy {
      *         service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListDeploymentConfigs
      */
     ListDeploymentConfigsResult listDeploymentConfigs(
             ListDeploymentConfigsRequest listDeploymentConfigsRequest);
@@ -756,6 +778,7 @@ public interface AmazonCodeDeploy {
      *         AWS account.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListDeploymentGroups
      */
     ListDeploymentGroupsResult listDeploymentGroups(
             ListDeploymentGroupsRequest listDeploymentGroupsRequest);
@@ -784,6 +807,7 @@ public interface AmazonCodeDeploy {
      *         format.
      * @throws InvalidInstanceStatusException
      *         The specified instance status does not exist.
+     * @sample AmazonCodeDeploy.ListDeploymentInstances
      */
     ListDeploymentInstancesResult listDeploymentInstances(
             ListDeploymentInstancesRequest listDeploymentInstancesRequest);
@@ -819,6 +843,7 @@ public interface AmazonCodeDeploy {
      *         determined.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListDeployments
      */
     ListDeploymentsResult listDeployments(
             ListDeploymentsRequest listDeploymentsRequest);
@@ -850,6 +875,7 @@ public interface AmazonCodeDeploy {
      *         The specified tag filter was specified in an invalid format.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListOnPremisesInstances
      */
     ListOnPremisesInstancesResult listOnPremisesInstances(
             ListOnPremisesInstancesRequest listOnPremisesInstancesRequest);
@@ -883,6 +909,7 @@ public interface AmazonCodeDeploy {
      *         The revision ID was not specified.
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
+     * @sample AmazonCodeDeploy.RegisterApplicationRevision
      */
     void registerApplicationRevision(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
@@ -908,6 +935,7 @@ public interface AmazonCodeDeploy {
      *         invalid format.
      * @throws InvalidIamUserArnException
      *         The IAM user ARN was specified in an invalid format.
+     * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
      */
     void registerOnPremisesInstance(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
@@ -932,6 +960,7 @@ public interface AmazonCodeDeploy {
      *         The maximum number of allowed on-premises instances was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
+     * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
      */
     void removeTagsFromOnPremisesInstances(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
@@ -954,6 +983,7 @@ public interface AmazonCodeDeploy {
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
+     * @sample AmazonCodeDeploy.StopDeployment
      */
     StopDeploymentResult stopDeployment(
             StopDeploymentRequest stopDeploymentRequest);
@@ -976,6 +1006,7 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @sample AmazonCodeDeploy.UpdateApplication
      */
     void updateApplication(UpdateApplicationRequest updateApplicationRequest);
 
@@ -1030,6 +1061,7 @@ public interface AmazonCodeDeploy {
      *         The service role ARN was specified in an invalid format. Or, if
      *         an Auto Scaling group was specified, the specified service role
      *         does not grant the appropriate permissions to Auto Scaling.
+     * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      */
     UpdateDeploymentGroupResult updateDeploymentGroup(
             UpdateDeploymentGroupRequest updateDeploymentGroupRequest);

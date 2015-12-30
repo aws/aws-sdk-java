@@ -136,6 +136,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param cancelKeyDeletionRequest
      * @return A Java Future containing the result of the CancelKeyDeletion
      *         operation returned by the service.
+     * @sample AWSKMSAsync.CancelKeyDeletion
      */
     java.util.concurrent.Future<CancelKeyDeletionResult> cancelKeyDeletionAsync(
             CancelKeyDeletionRequest cancelKeyDeletionRequest);
@@ -162,6 +163,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelKeyDeletion
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.CancelKeyDeletion
      */
     java.util.concurrent.Future<CancelKeyDeletionResult> cancelKeyDeletionAsync(
             CancelKeyDeletionRequest cancelKeyDeletionRequest,
@@ -186,6 +188,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param createAliasRequest
+     * @sample AWSKMSAsync.CreateAlias
      */
     java.util.concurrent.Future<Void> createAliasAsync(
             CreateAliasRequest createAliasRequest);
@@ -214,6 +217,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.CreateAlias
      */
     java.util.concurrent.Future<Void> createAliasAsync(
             CreateAliasRequest createAliasRequest,
@@ -233,6 +237,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param createGrantRequest
      * @return A Java Future containing the result of the CreateGrant operation
      *         returned by the service.
+     * @sample AWSKMSAsync.CreateGrant
      */
     java.util.concurrent.Future<CreateGrantResult> createGrantAsync(
             CreateGrantRequest createGrantRequest);
@@ -256,6 +261,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateGrant operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.CreateGrant
      */
     java.util.concurrent.Future<CreateGrantResult> createGrantAsync(
             CreateGrantRequest createGrantRequest,
@@ -273,6 +279,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param createKeyRequest
      * @return A Java Future containing the result of the CreateKey operation
      *         returned by the service.
+     * @sample AWSKMSAsync.CreateKey
      */
     java.util.concurrent.Future<CreateKeyResult> createKeyAsync(
             CreateKeyRequest createKeyRequest);
@@ -294,6 +301,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateKey operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.CreateKey
      */
     java.util.concurrent.Future<CreateKeyResult> createKeyAsync(
             CreateKeyRequest createKeyRequest,
@@ -341,6 +349,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param decryptRequest
      * @return A Java Future containing the result of the Decrypt operation
      *         returned by the service.
+     * @sample AWSKMSAsync.Decrypt
      */
     java.util.concurrent.Future<DecryptResult> decryptAsync(
             DecryptRequest decryptRequest);
@@ -375,6 +384,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Decrypt operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.Decrypt
      */
     java.util.concurrent.Future<DecryptResult> decryptAsync(
             DecryptRequest decryptRequest,
@@ -387,6 +397,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @sample AWSKMSAsync.DeleteAlias
      */
     java.util.concurrent.Future<Void> deleteAliasAsync(
             DeleteAliasRequest deleteAliasRequest);
@@ -403,6 +414,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.DeleteAlias
      */
     java.util.concurrent.Future<Void> deleteAliasAsync(
             DeleteAliasRequest deleteAliasRequest,
@@ -416,6 +428,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param describeKeyRequest
      * @return A Java Future containing the result of the DescribeKey operation
      *         returned by the service.
+     * @sample AWSKMSAsync.DescribeKey
      */
     java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(
             DescribeKeyRequest describeKeyRequest);
@@ -433,6 +446,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeKey operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.DescribeKey
      */
     java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(
             DescribeKeyRequest describeKeyRequest,
@@ -449,6 +463,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param disableKeyRequest
+     * @sample AWSKMSAsync.DisableKey
      */
     java.util.concurrent.Future<Void> disableKeyAsync(
             DisableKeyRequest disableKeyRequest);
@@ -469,6 +484,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.DisableKey
      */
     java.util.concurrent.Future<Void> disableKeyAsync(
             DisableKeyRequest disableKeyRequest,
@@ -480,6 +496,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param disableKeyRotationRequest
+     * @sample AWSKMSAsync.DisableKeyRotation
      */
     java.util.concurrent.Future<Void> disableKeyRotationAsync(
             DisableKeyRotationRequest disableKeyRotationRequest);
@@ -495,6 +512,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.DisableKeyRotation
      */
     java.util.concurrent.Future<Void> disableKeyRotationAsync(
             DisableKeyRotationRequest disableKeyRotationRequest,
@@ -506,6 +524,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param enableKeyRequest
+     * @sample AWSKMSAsync.EnableKey
      */
     java.util.concurrent.Future<Void> enableKeyAsync(
             EnableKeyRequest enableKeyRequest);
@@ -521,6 +540,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.EnableKey
      */
     java.util.concurrent.Future<Void> enableKeyAsync(
             EnableKeyRequest enableKeyRequest,
@@ -532,6 +552,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param enableKeyRotationRequest
+     * @sample AWSKMSAsync.EnableKeyRotation
      */
     java.util.concurrent.Future<Void> enableKeyRotationAsync(
             EnableKeyRotationRequest enableKeyRotationRequest);
@@ -547,6 +568,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.EnableKeyRotation
      */
     java.util.concurrent.Future<Void> enableKeyRotationAsync(
             EnableKeyRotationRequest enableKeyRotationRequest,
@@ -584,6 +606,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param encryptRequest
      * @return A Java Future containing the result of the Encrypt operation
      *         returned by the service.
+     * @sample AWSKMSAsync.Encrypt
      */
     java.util.concurrent.Future<EncryptResult> encryptAsync(
             EncryptRequest encryptRequest);
@@ -625,6 +648,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Encrypt operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.Encrypt
      */
     java.util.concurrent.Future<EncryptResult> encryptAsync(
             EncryptRequest encryptRequest,
@@ -675,6 +699,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param generateDataKeyRequest
      * @return A Java Future containing the result of the GenerateDataKey
      *         operation returned by the service.
+     * @sample AWSKMSAsync.GenerateDataKey
      */
     java.util.concurrent.Future<GenerateDataKeyResult> generateDataKeyAsync(
             GenerateDataKeyRequest generateDataKeyRequest);
@@ -729,6 +754,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GenerateDataKey
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.GenerateDataKey
      */
     java.util.concurrent.Future<GenerateDataKeyResult> generateDataKeyAsync(
             GenerateDataKeyRequest generateDataKeyRequest,
@@ -747,6 +773,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @return A Java Future containing the result of the
      *         GenerateDataKeyWithoutPlaintext operation returned by the
      *         service.
+     * @sample AWSKMSAsync.GenerateDataKeyWithoutPlaintext
      */
     java.util.concurrent.Future<GenerateDataKeyWithoutPlaintextResult> generateDataKeyWithoutPlaintextAsync(
             GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest);
@@ -769,6 +796,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @return A Java Future containing the result of the
      *         GenerateDataKeyWithoutPlaintext operation returned by the
      *         service.
+     * @sample AWSKMSAsyncHandler.GenerateDataKeyWithoutPlaintext
      */
     java.util.concurrent.Future<GenerateDataKeyWithoutPlaintextResult> generateDataKeyWithoutPlaintextAsync(
             GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest,
@@ -782,6 +810,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param generateRandomRequest
      * @return A Java Future containing the result of the GenerateRandom
      *         operation returned by the service.
+     * @sample AWSKMSAsync.GenerateRandom
      */
     java.util.concurrent.Future<GenerateRandomResult> generateRandomAsync(
             GenerateRandomRequest generateRandomRequest);
@@ -799,6 +828,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GenerateRandom
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.GenerateRandom
      */
     java.util.concurrent.Future<GenerateRandomResult> generateRandomAsync(
             GenerateRandomRequest generateRandomRequest,
@@ -829,6 +859,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param getKeyPolicyRequest
      * @return A Java Future containing the result of the GetKeyPolicy operation
      *         returned by the service.
+     * @sample AWSKMSAsync.GetKeyPolicy
      */
     java.util.concurrent.Future<GetKeyPolicyResult> getKeyPolicyAsync(
             GetKeyPolicyRequest getKeyPolicyRequest);
@@ -846,6 +877,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetKeyPolicy operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.GetKeyPolicy
      */
     java.util.concurrent.Future<GetKeyPolicyResult> getKeyPolicyAsync(
             GetKeyPolicyRequest getKeyPolicyRequest,
@@ -860,6 +892,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param getKeyRotationStatusRequest
      * @return A Java Future containing the result of the GetKeyRotationStatus
      *         operation returned by the service.
+     * @sample AWSKMSAsync.GetKeyRotationStatus
      */
     java.util.concurrent.Future<GetKeyRotationStatusResult> getKeyRotationStatusAsync(
             GetKeyRotationStatusRequest getKeyRotationStatusRequest);
@@ -878,6 +911,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetKeyRotationStatus
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.GetKeyRotationStatus
      */
     java.util.concurrent.Future<GetKeyRotationStatusResult> getKeyRotationStatusAsync(
             GetKeyRotationStatusRequest getKeyRotationStatusRequest,
@@ -891,6 +925,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param listAliasesRequest
      * @return A Java Future containing the result of the ListAliases operation
      *         returned by the service.
+     * @sample AWSKMSAsync.ListAliases
      */
     java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
             ListAliasesRequest listAliasesRequest);
@@ -908,6 +943,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAliases operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.ListAliases
      */
     java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
             ListAliasesRequest listAliasesRequest,
@@ -938,6 +974,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param listGrantsRequest
      * @return A Java Future containing the result of the ListGrants operation
      *         returned by the service.
+     * @sample AWSKMSAsync.ListGrants
      */
     java.util.concurrent.Future<ListGrantsResult> listGrantsAsync(
             ListGrantsRequest listGrantsRequest);
@@ -955,6 +992,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListGrants operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.ListGrants
      */
     java.util.concurrent.Future<ListGrantsResult> listGrantsAsync(
             ListGrantsRequest listGrantsRequest,
@@ -968,6 +1006,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param listKeyPoliciesRequest
      * @return A Java Future containing the result of the ListKeyPolicies
      *         operation returned by the service.
+     * @sample AWSKMSAsync.ListKeyPolicies
      */
     java.util.concurrent.Future<ListKeyPoliciesResult> listKeyPoliciesAsync(
             ListKeyPoliciesRequest listKeyPoliciesRequest);
@@ -985,6 +1024,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListKeyPolicies
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.ListKeyPolicies
      */
     java.util.concurrent.Future<ListKeyPoliciesResult> listKeyPoliciesAsync(
             ListKeyPoliciesRequest listKeyPoliciesRequest,
@@ -998,6 +1038,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param listKeysRequest
      * @return A Java Future containing the result of the ListKeys operation
      *         returned by the service.
+     * @sample AWSKMSAsync.ListKeys
      */
     java.util.concurrent.Future<ListKeysResult> listKeysAsync(
             ListKeysRequest listKeysRequest);
@@ -1015,6 +1056,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListKeys operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.ListKeys
      */
     java.util.concurrent.Future<ListKeysResult> listKeysAsync(
             ListKeysRequest listKeysRequest,
@@ -1049,6 +1091,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param listRetirableGrantsRequest
      * @return A Java Future containing the result of the ListRetirableGrants
      *         operation returned by the service.
+     * @sample AWSKMSAsync.ListRetirableGrants
      */
     java.util.concurrent.Future<ListRetirableGrantsResult> listRetirableGrantsAsync(
             ListRetirableGrantsRequest listRetirableGrantsRequest);
@@ -1071,6 +1114,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRetirableGrants
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.ListRetirableGrants
      */
     java.util.concurrent.Future<ListRetirableGrantsResult> listRetirableGrantsAsync(
             ListRetirableGrantsRequest listRetirableGrantsRequest,
@@ -1082,6 +1126,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param putKeyPolicyRequest
+     * @sample AWSKMSAsync.PutKeyPolicy
      */
     java.util.concurrent.Future<Void> putKeyPolicyAsync(
             PutKeyPolicyRequest putKeyPolicyRequest);
@@ -1097,6 +1142,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.PutKeyPolicy
      */
     java.util.concurrent.Future<Void> putKeyPolicyAsync(
             PutKeyPolicyRequest putKeyPolicyRequest,
@@ -1123,6 +1169,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param reEncryptRequest
      * @return A Java Future containing the result of the ReEncrypt operation
      *         returned by the service.
+     * @sample AWSKMSAsync.ReEncrypt
      */
     java.util.concurrent.Future<ReEncryptResult> reEncryptAsync(
             ReEncryptRequest reEncryptRequest);
@@ -1153,6 +1200,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ReEncrypt operation
      *         returned by the service.
+     * @sample AWSKMSAsyncHandler.ReEncrypt
      */
     java.util.concurrent.Future<ReEncryptResult> reEncryptAsync(
             ReEncryptRequest reEncryptRequest,
@@ -1178,6 +1226,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param retireGrantRequest
+     * @sample AWSKMSAsync.RetireGrant
      */
     java.util.concurrent.Future<Void> retireGrantAsync(
             RetireGrantRequest retireGrantRequest);
@@ -1207,6 +1256,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.RetireGrant
      */
     java.util.concurrent.Future<Void> retireGrantAsync(
             RetireGrantRequest retireGrantRequest,
@@ -1236,6 +1286,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param revokeGrantRequest
+     * @sample AWSKMSAsync.RevokeGrant
      */
     java.util.concurrent.Future<Void> revokeGrantAsync(
             RevokeGrantRequest revokeGrantRequest);
@@ -1252,6 +1303,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.RevokeGrant
      */
     java.util.concurrent.Future<Void> revokeGrantAsync(
             RevokeGrantRequest revokeGrantRequest,
@@ -1286,6 +1338,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * @param scheduleKeyDeletionRequest
      * @return A Java Future containing the result of the ScheduleKeyDeletion
      *         operation returned by the service.
+     * @sample AWSKMSAsync.ScheduleKeyDeletion
      */
     java.util.concurrent.Future<ScheduleKeyDeletionResult> scheduleKeyDeletionAsync(
             ScheduleKeyDeletionRequest scheduleKeyDeletionRequest);
@@ -1324,6 +1377,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ScheduleKeyDeletion
      *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.ScheduleKeyDeletion
      */
     java.util.concurrent.Future<ScheduleKeyDeletionResult> scheduleKeyDeletionAsync(
             ScheduleKeyDeletionRequest scheduleKeyDeletionRequest,
@@ -1351,6 +1405,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param updateAliasRequest
+     * @sample AWSKMSAsync.UpdateAlias
      */
     java.util.concurrent.Future<Void> updateAliasAsync(
             UpdateAliasRequest updateAliasRequest);
@@ -1382,6 +1437,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.UpdateAlias
      */
     java.util.concurrent.Future<Void> updateAliasAsync(
             UpdateAliasRequest updateAliasRequest,
@@ -1393,6 +1449,7 @@ public interface AWSKMSAsync extends AWSKMS {
      * </p>
      * 
      * @param updateKeyDescriptionRequest
+     * @sample AWSKMSAsync.UpdateKeyDescription
      */
     java.util.concurrent.Future<Void> updateKeyDescriptionAsync(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest);
@@ -1408,6 +1465,7 @@ public interface AWSKMSAsync extends AWSKMS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSKMSAsyncHandler.UpdateKeyDescription
      */
     java.util.concurrent.Future<Void> updateKeyDescriptionAsync(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest,

@@ -1,102 +1,91 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroup(DeleteGroupRequest) DeleteGroup operation}.
- * <p>
- * Deletes the specified group. The group must not contain any users or
- * have any attached policies.
- * </p>
- *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroup(DeleteGroupRequest)
+ * 
  */
-public class DeleteGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DeleteGroupRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the group to delete.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * The name of the group to delete.
+     * </p>
      */
     private String groupName;
 
     /**
-     * Default constructor for a new DeleteGroupRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for DeleteGroupRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public DeleteGroupRequest() {}
-    
+    public DeleteGroupRequest() {
+    }
+
     /**
-     * Constructs a new DeleteGroupRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new DeleteGroupRequest object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param groupName The name of the group to delete.
+     * @param groupName
+     *        The name of the group to delete.
      */
     public DeleteGroupRequest(String groupName) {
         setGroupName(groupName);
     }
 
     /**
-     * The name of the group to delete.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name of the group to delete.
-     */
-    public String getGroupName() {
-        return groupName;
-    }
-    
-    /**
      * The name of the group to delete.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param groupName The name of the group to delete.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group to delete.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-    
+
     /**
+     * <p>
      * The name of the group to delete.
+     * </p>
+     * 
+     * @return The name of the group to delete.
+     */
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param groupName The name of the group to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the group to delete.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group to delete.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DeleteGroupRequest withGroupName(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
         return this;
     }
 
@@ -112,38 +101,42 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
+        if (getGroupName() != null)
+            sb.append("GroupName: " + getGroupName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeleteGroupRequest == false)
+            return false;
+        DeleteGroupRequest other = (DeleteGroupRequest) obj;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null
+                && other.getGroupName().equals(this.getGroupName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeleteGroupRequest == false) return false;
-        DeleteGroupRequest other = (DeleteGroupRequest)obj;
-        
-        if (other.getGroupName() == null ^ this.getGroupName() == null) return false;
-        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeleteGroupRequest clone() {
-        
-            return (DeleteGroupRequest) super.clone();
+        return (DeleteGroupRequest) super.clone();
     }
-
 }
-    

@@ -70,6 +70,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ActivatePipeline.
      * @return A Java Future containing the result of the ActivatePipeline
      *         operation returned by the service.
+     * @sample DataPipelineAsync.ActivatePipeline
      */
     java.util.concurrent.Future<ActivatePipelineResult> activatePipelineAsync(
             ActivatePipelineRequest activatePipelineRequest);
@@ -98,6 +99,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ActivatePipeline
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.ActivatePipeline
      */
     java.util.concurrent.Future<ActivatePipelineResult> activatePipelineAsync(
             ActivatePipelineRequest activatePipelineRequest,
@@ -112,6 +114,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for AddTags.
      * @return A Java Future containing the result of the AddTags operation
      *         returned by the service.
+     * @sample DataPipelineAsync.AddTags
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest);
@@ -130,6 +133,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTags operation
      *         returned by the service.
+     * @sample DataPipelineAsyncHandler.AddTags
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest,
@@ -145,6 +149,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for CreatePipeline.
      * @return A Java Future containing the result of the CreatePipeline
      *         operation returned by the service.
+     * @sample DataPipelineAsync.CreatePipeline
      */
     java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(
             CreatePipelineRequest createPipelineRequest);
@@ -164,6 +169,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePipeline
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.CreatePipeline
      */
     java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(
             CreatePipelineRequest createPipelineRequest,
@@ -184,6 +190,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DeactivatePipeline.
      * @return A Java Future containing the result of the DeactivatePipeline
      *         operation returned by the service.
+     * @sample DataPipelineAsync.DeactivatePipeline
      */
     java.util.concurrent.Future<DeactivatePipelineResult> deactivatePipelineAsync(
             DeactivatePipelineRequest deactivatePipelineRequest);
@@ -208,6 +215,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeactivatePipeline
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.DeactivatePipeline
      */
     java.util.concurrent.Future<DeactivatePipelineResult> deactivatePipelineAsync(
             DeactivatePipelineRequest deactivatePipelineRequest,
@@ -229,6 +237,7 @@ public interface DataPipelineAsync extends DataPipeline {
      * 
      * @param deletePipelineRequest
      *        Contains the parameters for DeletePipeline.
+     * @sample DataPipelineAsync.DeletePipeline
      */
     java.util.concurrent.Future<Void> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest);
@@ -254,6 +263,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample DataPipelineAsyncHandler.DeletePipeline
      */
     java.util.concurrent.Future<Void> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest,
@@ -270,6 +280,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DescribeObjects.
      * @return A Java Future containing the result of the DescribeObjects
      *         operation returned by the service.
+     * @sample DataPipelineAsync.DescribeObjects
      */
     java.util.concurrent.Future<DescribeObjectsResult> describeObjectsAsync(
             DescribeObjectsRequest describeObjectsRequest);
@@ -290,6 +301,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeObjects
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.DescribeObjects
      */
     java.util.concurrent.Future<DescribeObjectsResult> describeObjectsAsync(
             DescribeObjectsRequest describeObjectsRequest,
@@ -314,6 +326,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for DescribePipelines.
      * @return A Java Future containing the result of the DescribePipelines
      *         operation returned by the service.
+     * @sample DataPipelineAsync.DescribePipelines
      */
     java.util.concurrent.Future<DescribePipelinesResult> describePipelinesAsync(
             DescribePipelinesRequest describePipelinesRequest);
@@ -342,6 +355,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePipelines
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.DescribePipelines
      */
     java.util.concurrent.Future<DescribePipelinesResult> describePipelinesAsync(
             DescribePipelinesRequest describePipelinesRequest,
@@ -358,6 +372,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for EvaluateExpression.
      * @return A Java Future containing the result of the EvaluateExpression
      *         operation returned by the service.
+     * @sample DataPipelineAsync.EvaluateExpression
      */
     java.util.concurrent.Future<EvaluateExpressionResult> evaluateExpressionAsync(
             EvaluateExpressionRequest evaluateExpressionRequest);
@@ -378,6 +393,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EvaluateExpression
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.EvaluateExpression
      */
     java.util.concurrent.Future<EvaluateExpressionResult> evaluateExpressionAsync(
             EvaluateExpressionRequest evaluateExpressionRequest,
@@ -394,6 +410,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for GetPipelineDefinition.
      * @return A Java Future containing the result of the GetPipelineDefinition
      *         operation returned by the service.
+     * @sample DataPipelineAsync.GetPipelineDefinition
      */
     java.util.concurrent.Future<GetPipelineDefinitionResult> getPipelineDefinitionAsync(
             GetPipelineDefinitionRequest getPipelineDefinitionRequest);
@@ -414,6 +431,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPipelineDefinition
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.GetPipelineDefinition
      */
     java.util.concurrent.Future<GetPipelineDefinitionResult> getPipelineDefinitionAsync(
             GetPipelineDefinitionRequest getPipelineDefinitionRequest,
@@ -429,6 +447,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ListPipelines.
      * @return A Java Future containing the result of the ListPipelines
      *         operation returned by the service.
+     * @sample DataPipelineAsync.ListPipelines
      */
     java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             ListPipelinesRequest listPipelinesRequest);
@@ -448,6 +467,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPipelines
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.ListPipelines
      */
     java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             ListPipelinesRequest listPipelinesRequest,
@@ -495,6 +515,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for PollForTask.
      * @return A Java Future containing the result of the PollForTask operation
      *         returned by the service.
+     * @sample DataPipelineAsync.PollForTask
      */
     java.util.concurrent.Future<PollForTaskResult> pollForTaskAsync(
             PollForTaskRequest pollForTaskRequest);
@@ -529,6 +550,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PollForTask operation
      *         returned by the service.
+     * @sample DataPipelineAsyncHandler.PollForTask
      */
     java.util.concurrent.Future<PollForTaskResult> pollForTaskAsync(
             PollForTaskRequest pollForTaskRequest,
@@ -561,6 +583,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for PutPipelineDefinition.
      * @return A Java Future containing the result of the PutPipelineDefinition
      *         operation returned by the service.
+     * @sample DataPipelineAsync.PutPipelineDefinition
      */
     java.util.concurrent.Future<PutPipelineDefinitionResult> putPipelineDefinitionAsync(
             PutPipelineDefinitionRequest putPipelineDefinitionRequest);
@@ -597,6 +620,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutPipelineDefinition
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.PutPipelineDefinition
      */
     java.util.concurrent.Future<PutPipelineDefinitionResult> putPipelineDefinitionAsync(
             PutPipelineDefinitionRequest putPipelineDefinitionRequest,
@@ -612,6 +636,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for QueryObjects.
      * @return A Java Future containing the result of the QueryObjects operation
      *         returned by the service.
+     * @sample DataPipelineAsync.QueryObjects
      */
     java.util.concurrent.Future<QueryObjectsResult> queryObjectsAsync(
             QueryObjectsRequest queryObjectsRequest);
@@ -631,6 +656,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the QueryObjects operation
      *         returned by the service.
+     * @sample DataPipelineAsyncHandler.QueryObjects
      */
     java.util.concurrent.Future<QueryObjectsResult> queryObjectsAsync(
             QueryObjectsRequest queryObjectsRequest,
@@ -645,6 +671,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for RemoveTags.
      * @return A Java Future containing the result of the RemoveTags operation
      *         returned by the service.
+     * @sample DataPipelineAsync.RemoveTags
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest);
@@ -663,6 +690,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTags operation
      *         returned by the service.
+     * @sample DataPipelineAsyncHandler.RemoveTags
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest,
@@ -690,6 +718,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ReportTaskProgress.
      * @return A Java Future containing the result of the ReportTaskProgress
      *         operation returned by the service.
+     * @sample DataPipelineAsync.ReportTaskProgress
      */
     java.util.concurrent.Future<ReportTaskProgressResult> reportTaskProgressAsync(
             ReportTaskProgressRequest reportTaskProgressRequest);
@@ -721,6 +750,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ReportTaskProgress
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.ReportTaskProgress
      */
     java.util.concurrent.Future<ReportTaskProgressResult> reportTaskProgressAsync(
             ReportTaskProgressRequest reportTaskProgressRequest,
@@ -739,6 +769,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ReportTaskRunnerHeartbeat.
      * @return A Java Future containing the result of the
      *         ReportTaskRunnerHeartbeat operation returned by the service.
+     * @sample DataPipelineAsync.ReportTaskRunnerHeartbeat
      */
     java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult> reportTaskRunnerHeartbeatAsync(
             ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest);
@@ -761,6 +792,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ReportTaskRunnerHeartbeat operation returned by the service.
+     * @sample DataPipelineAsyncHandler.ReportTaskRunnerHeartbeat
      */
     java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult> reportTaskRunnerHeartbeatAsync(
             ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest,
@@ -778,6 +810,7 @@ public interface DataPipelineAsync extends DataPipeline {
      * 
      * @param setStatusRequest
      *        Contains the parameters for SetStatus.
+     * @sample DataPipelineAsync.SetStatus
      */
     java.util.concurrent.Future<Void> setStatusAsync(
             SetStatusRequest setStatusRequest);
@@ -799,6 +832,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample DataPipelineAsyncHandler.SetStatus
      */
     java.util.concurrent.Future<Void> setStatusAsync(
             SetStatusRequest setStatusRequest,
@@ -818,6 +852,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for SetTaskStatus.
      * @return A Java Future containing the result of the SetTaskStatus
      *         operation returned by the service.
+     * @sample DataPipelineAsync.SetTaskStatus
      */
     java.util.concurrent.Future<SetTaskStatusResult> setTaskStatusAsync(
             SetTaskStatusRequest setTaskStatusRequest);
@@ -841,6 +876,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetTaskStatus
      *         operation returned by the service.
+     * @sample DataPipelineAsyncHandler.SetTaskStatus
      */
     java.util.concurrent.Future<SetTaskStatusResult> setTaskStatusAsync(
             SetTaskStatusRequest setTaskStatusRequest,
@@ -856,6 +892,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        Contains the parameters for ValidatePipelineDefinition.
      * @return A Java Future containing the result of the
      *         ValidatePipelineDefinition operation returned by the service.
+     * @sample DataPipelineAsync.ValidatePipelineDefinition
      */
     java.util.concurrent.Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(
             ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest);
@@ -875,6 +912,7 @@ public interface DataPipelineAsync extends DataPipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ValidatePipelineDefinition operation returned by the service.
+     * @sample DataPipelineAsyncHandler.ValidatePipelineDefinition
      */
     java.util.concurrent.Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(
             ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest,

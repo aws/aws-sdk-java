@@ -342,6 +342,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      *         The operation tried to access a nonexistent stream.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDBStreams.DescribeStream
      */
     @Override
     public DescribeStreamResult describeStream(
@@ -433,6 +434,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      *         in a <i>GetRecords</i> request, a stream record in the shard
      *         exceeds the 24 hour period and is trimmed. This causes the
      *         iterator to access a record that no longer exists.</li>
+     * @sample AmazonDynamoDBStreams.GetRecords
      */
     @Override
     public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
@@ -504,6 +506,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      *         in a <i>GetRecords</i> request, a stream record in the shard
      *         exceeds the 24 hour period and is trimmed. This causes the
      *         iterator to access a record that no longer exists.</li>
+     * @sample AmazonDynamoDBStreams.GetShardIterator
      */
     @Override
     public GetShardIteratorResult getShardIterator(
@@ -559,6 +562,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      *         The operation tried to access a nonexistent stream.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDBStreams.ListStreams
      */
     @Override
     public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {

@@ -300,6 +300,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      * @throws SearchException
      *         Information about any problems encountered while processing a
      *         search request.
+     * @sample AmazonCloudSearchDomain.Search
      */
     @Override
     public SearchResult search(SearchRequest searchRequest) {
@@ -366,6 +367,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      * @throws SearchException
      *         Information about any problems encountered while processing a
      *         search request.
+     * @sample AmazonCloudSearchDomain.Suggest
      */
     @Override
     public SuggestResult suggest(SuggestRequest suggestRequest) {
@@ -440,6 +442,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      * @throws DocumentServiceException
      *         Information about any problems encountered while processing an
      *         upload request.
+     * @sample AmazonCloudSearchDomain.UploadDocuments
      */
     @Override
     public UploadDocumentsResult uploadDocuments(

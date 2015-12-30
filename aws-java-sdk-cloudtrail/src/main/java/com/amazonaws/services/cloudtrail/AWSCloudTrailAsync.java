@@ -64,6 +64,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies the tags to add to a trail.
      * @return A Java Future containing the result of the AddTags operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.AddTags
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest);
@@ -87,6 +88,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddTags operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.AddTags
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest,
@@ -103,6 +105,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies the settings for each trail.
      * @return A Java Future containing the result of the CreateTrail operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.CreateTrail
      */
     java.util.concurrent.Future<CreateTrailResult> createTrailAsync(
             CreateTrailRequest createTrailRequest);
@@ -123,6 +126,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTrail operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.CreateTrail
      */
     java.util.concurrent.Future<CreateTrailResult> createTrailAsync(
             CreateTrailRequest createTrailRequest,
@@ -140,6 +144,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        The request that specifies the name of a trail to delete.
      * @return A Java Future containing the result of the DeleteTrail operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.DeleteTrail
      */
     java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(
             DeleteTrailRequest deleteTrailRequest);
@@ -161,6 +166,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTrail operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.DeleteTrail
      */
     java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(
             DeleteTrailRequest deleteTrailRequest,
@@ -176,6 +182,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Returns information about the trail.
      * @return A Java Future containing the result of the DescribeTrails
      *         operation returned by the service.
+     * @sample AWSCloudTrailAsync.DescribeTrails
      */
     java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(
             DescribeTrailsRequest describeTrailsRequest);
@@ -195,6 +202,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeTrails
      *         operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.DescribeTrails
      */
     java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(
             DescribeTrailsRequest describeTrailsRequest,
@@ -230,6 +238,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        The name of a trail about which you want the current status.
      * @return A Java Future containing the result of the GetTrailStatus
      *         operation returned by the service.
+     * @sample AWSCloudTrailAsync.GetTrailStatus
      */
     java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(
             GetTrailStatusRequest getTrailStatusRequest);
@@ -252,6 +261,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTrailStatus
      *         operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.GetTrailStatus
      */
     java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(
             GetTrailStatusRequest getTrailStatusRequest,
@@ -273,6 +283,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Requests the public keys for a specified time range.
      * @return A Java Future containing the result of the ListPublicKeys
      *         operation returned by the service.
+     * @sample AWSCloudTrailAsync.ListPublicKeys
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(
             ListPublicKeysRequest listPublicKeysRequest);
@@ -298,6 +309,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPublicKeys
      *         operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListPublicKeys
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(
             ListPublicKeysRequest listPublicKeysRequest,
@@ -332,6 +344,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies a list of trail tags to return.
      * @return A Java Future containing the result of the ListTags operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.ListTags
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(
             ListTagsRequest listTagsRequest);
@@ -353,6 +366,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTags operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListTags
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(
             ListTagsRequest listTagsRequest,
@@ -381,6 +395,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Contains a request for LookupEvents.
      * @return A Java Future containing the result of the LookupEvents operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.LookupEvents
      */
     java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(
             LookupEventsRequest lookupEventsRequest);
@@ -413,6 +428,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the LookupEvents operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.LookupEvents
      */
     java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(
             LookupEventsRequest lookupEventsRequest,
@@ -444,6 +460,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies the tags to remove from a trail.
      * @return A Java Future containing the result of the RemoveTags operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.RemoveTags
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest);
@@ -462,6 +479,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveTags operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.RemoveTags
      */
     java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest,
@@ -481,6 +499,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        account.
      * @return A Java Future containing the result of the StartLogging operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.StartLogging
      */
     java.util.concurrent.Future<StartLoggingResult> startLoggingAsync(
             StartLoggingRequest startLoggingRequest);
@@ -504,6 +523,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartLogging operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.StartLogging
      */
     java.util.concurrent.Future<StartLoggingResult> startLoggingAsync(
             StartLoggingRequest startLoggingRequest,
@@ -526,6 +546,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        the specified account.
      * @return A Java Future containing the result of the StopLogging operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.StopLogging
      */
     java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(
             StopLoggingRequest stopLoggingRequest);
@@ -552,6 +573,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StopLogging operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.StopLogging
      */
     java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(
             StopLoggingRequest stopLoggingRequest,
@@ -572,6 +594,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        Specifies settings to update for the trail.
      * @return A Java Future containing the result of the UpdateTrail operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsync.UpdateTrail
      */
     java.util.concurrent.Future<UpdateTrailResult> updateTrailAsync(
             UpdateTrailRequest updateTrailRequest);
@@ -596,6 +619,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTrail operation
      *         returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.UpdateTrail
      */
     java.util.concurrent.Future<UpdateTrailResult> updateTrailAsync(
             UpdateTrailRequest updateTrailRequest,

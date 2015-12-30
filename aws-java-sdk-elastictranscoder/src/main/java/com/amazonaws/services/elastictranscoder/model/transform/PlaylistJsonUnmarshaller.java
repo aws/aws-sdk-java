@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Playlist JSON Unmarshaller
  */
-public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnmarshallerContext> {
+public class PlaylistJsonUnmarshaller implements
+        Unmarshaller<Playlist, JsonUnmarshallerContext> {
 
-    public Playlist unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Playlist unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Playlist playlist = new Playlist();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,57 +40,71 @@ public class PlaylistJsonUnmarshaller implements Unmarshaller<Playlist, JsonUnma
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    playlist.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    playlist.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    playlist.setFormat(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    playlist.setFormat(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("OutputKeys", targetDepth)) {
                     context.nextToken();
-                    playlist.setOutputKeys(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    playlist.setOutputKeys(new ListUnmarshaller<String>(
+                            StringJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("HlsContentProtection", targetDepth)) {
                     context.nextToken();
-                    playlist.setHlsContentProtection(HlsContentProtectionJsonUnmarshaller.getInstance().unmarshall(context));
+                    playlist.setHlsContentProtection(HlsContentProtectionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PlayReadyDrm", targetDepth)) {
                     context.nextToken();
-                    playlist.setPlayReadyDrm(PlayReadyDrmJsonUnmarshaller.getInstance().unmarshall(context));
+                    playlist.setPlayReadyDrm(PlayReadyDrmJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    playlist.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    playlist.setStatus(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("StatusDetail", targetDepth)) {
                     context.nextToken();
-                    playlist.setStatusDetail(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    playlist.setStatusDetail(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return playlist;
     }
 
     private static PlaylistJsonUnmarshaller instance;
+
     public static PlaylistJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new PlaylistJsonUnmarshaller();
+        if (instance == null)
+            instance = new PlaylistJsonUnmarshaller();
         return instance;
     }
 }
-    

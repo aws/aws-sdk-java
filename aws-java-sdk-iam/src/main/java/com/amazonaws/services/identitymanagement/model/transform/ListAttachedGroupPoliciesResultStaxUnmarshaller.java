@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,32 +27,46 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * List Attached Group Policies Result StAX Unmarshaller
+ * ListAttachedGroupPoliciesResult StAX Unmarshaller
  */
-public class ListAttachedGroupPoliciesResultStaxUnmarshaller implements Unmarshaller<ListAttachedGroupPoliciesResult, StaxUnmarshallerContext> {
+public class ListAttachedGroupPoliciesResultStaxUnmarshaller implements
+        Unmarshaller<ListAttachedGroupPoliciesResult, StaxUnmarshallerContext> {
 
-    public ListAttachedGroupPoliciesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ListAttachedGroupPoliciesResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         ListAttachedGroupPoliciesResult listAttachedGroupPoliciesResult = new ListAttachedGroupPoliciesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return listAttachedGroupPoliciesResult;
+            if (xmlEvent.isEndDocument())
+                return listAttachedGroupPoliciesResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("AttachedPolicies/member", targetDepth)) {
-                    listAttachedGroupPoliciesResult.getAttachedPolicies().add(AttachedPolicyStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("AttachedPolicies/member",
+                        targetDepth)) {
+                    listAttachedGroupPoliciesResult.getAttachedPolicies().add(
+                            AttachedPolicyStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("IsTruncated", targetDepth)) {
-                    listAttachedGroupPoliciesResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    listAttachedGroupPoliciesResult
+                            .setIsTruncated(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Marker", targetDepth)) {
-                    listAttachedGroupPoliciesResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listAttachedGroupPoliciesResult
+                            .setMarker(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +78,10 @@ public class ListAttachedGroupPoliciesResultStaxUnmarshaller implements Unmarsha
     }
 
     private static ListAttachedGroupPoliciesResultStaxUnmarshaller instance;
+
     public static ListAttachedGroupPoliciesResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ListAttachedGroupPoliciesResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new ListAttachedGroupPoliciesResultStaxUnmarshaller();
         return instance;
     }
 }
-    

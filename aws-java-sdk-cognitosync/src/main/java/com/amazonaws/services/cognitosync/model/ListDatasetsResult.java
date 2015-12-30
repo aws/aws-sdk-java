@@ -1,179 +1,162 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
 
 /**
- * <p>
  * Returned for a successful ListDatasets request.
- * </p>
  */
 public class ListDatasetsResult implements Serializable, Cloneable {
 
-    /**
-     * A set of datasets.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Dataset> datasets;
-
-    /**
-     * Number of datasets returned.
-     */
+    /** A set of datasets. */
+    private com.amazonaws.internal.SdkInternalList<Dataset> datasets;
+    /** Number of datasets returned. */
     private Integer count;
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
+    /** A pagination token for obtaining the next page of results. */
     private String nextToken;
 
     /**
      * A set of datasets.
-     *
+     * 
      * @return A set of datasets.
      */
     public java.util.List<Dataset> getDatasets() {
         if (datasets == null) {
-              datasets = new com.amazonaws.internal.ListWithAutoConstructFlag<Dataset>();
-              datasets.setAutoConstruct(true);
+            datasets = new com.amazonaws.internal.SdkInternalList<Dataset>();
         }
         return datasets;
     }
-    
+
     /**
      * A set of datasets.
-     *
-     * @param datasets A set of datasets.
+     * 
+     * @param datasets
+     *        A set of datasets.
      */
     public void setDatasets(java.util.Collection<Dataset> datasets) {
         if (datasets == null) {
             this.datasets = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Dataset> datasetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dataset>(datasets.size());
-        datasetsCopy.addAll(datasets);
-        this.datasets = datasetsCopy;
+
+        this.datasets = new com.amazonaws.internal.SdkInternalList<Dataset>(
+                datasets);
     }
-    
+
     /**
      * A set of datasets.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDatasets(java.util.Collection)} or {@link
-     * #withDatasets(java.util.Collection)} if you want to override the
+     * any). Use {@link #setDatasets(java.util.Collection)} or
+     * {@link #withDatasets(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param datasets A set of datasets.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param datasets
+     *        A set of datasets.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListDatasetsResult withDatasets(Dataset... datasets) {
-        if (getDatasets() == null) setDatasets(new java.util.ArrayList<Dataset>(datasets.length));
-        for (Dataset value : datasets) {
-            getDatasets().add(value);
+        if (this.datasets == null) {
+            setDatasets(new com.amazonaws.internal.SdkInternalList<Dataset>(
+                    datasets.length));
+        }
+        for (Dataset ele : datasets) {
+            this.datasets.add(ele);
         }
         return this;
     }
-    
+
     /**
      * A set of datasets.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param datasets A set of datasets.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * 
+     * @param datasets
+     *        A set of datasets.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ListDatasetsResult withDatasets(java.util.Collection<Dataset> datasets) {
-        if (datasets == null) {
-            this.datasets = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Dataset> datasetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dataset>(datasets.size());
-            datasetsCopy.addAll(datasets);
-            this.datasets = datasetsCopy;
-        }
-
+    public ListDatasetsResult withDatasets(
+            java.util.Collection<Dataset> datasets) {
+        setDatasets(datasets);
         return this;
     }
 
     /**
      * Number of datasets returned.
-     *
-     * @return Number of datasets returned.
-     */
-    public Integer getCount() {
-        return count;
-    }
-    
-    /**
-     * Number of datasets returned.
-     *
-     * @param count Number of datasets returned.
+     * 
+     * @param count
+     *        Number of datasets returned.
      */
     public void setCount(Integer count) {
         this.count = count;
     }
-    
+
     /**
      * Number of datasets returned.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param count Number of datasets returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * 
+     * @return Number of datasets returned.
+     */
+    public Integer getCount() {
+        return this.count;
+    }
+
+    /**
+     * Number of datasets returned.
+     * 
+     * @param count
+     *        Number of datasets returned.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListDatasetsResult withCount(Integer count) {
-        this.count = count;
+        setCount(count);
         return this;
     }
 
     /**
      * A pagination token for obtaining the next page of results.
-     *
-     * @return A pagination token for obtaining the next page of results.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * A pagination token for obtaining the next page of results.
-     *
-     * @param nextToken A pagination token for obtaining the next page of results.
+     * 
+     * @param nextToken
+     *        A pagination token for obtaining the next page of results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
-    
+
     /**
      * A pagination token for obtaining the next page of results.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nextToken A pagination token for obtaining the next page of results.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * 
+     * @return A pagination token for obtaining the next page of results.
+     */
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * A pagination token for obtaining the next page of results.
+     * 
+     * @param nextToken
+     *        A pagination token for obtaining the next page of results.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ListDatasetsResult withNextToken(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
         return this;
     }
 
@@ -189,54 +172,66 @@ public class ListDatasetsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDatasets() != null) sb.append("Datasets: " + getDatasets() + ",");
-        if (getCount() != null) sb.append("Count: " + getCount() + ",");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
+        if (getDatasets() != null)
+            sb.append("Datasets: " + getDatasets() + ",");
+        if (getCount() != null)
+            sb.append("Count: " + getCount() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListDatasetsResult == false)
+            return false;
+        ListDatasetsResult other = (ListDatasetsResult) obj;
+        if (other.getDatasets() == null ^ this.getDatasets() == null)
+            return false;
+        if (other.getDatasets() != null
+                && other.getDatasets().equals(this.getDatasets()) == false)
+            return false;
+        if (other.getCount() == null ^ this.getCount() == null)
+            return false;
+        if (other.getCount() != null
+                && other.getCount().equals(this.getCount()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null
+                && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDatasets() == null) ? 0 : getDatasets().hashCode()); 
-        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getDatasets() == null) ? 0 : getDatasets().hashCode());
+        hashCode = prime * hashCode
+                + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode
+                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListDatasetsResult == false) return false;
-        ListDatasetsResult other = (ListDatasetsResult)obj;
-        
-        if (other.getDatasets() == null ^ this.getDatasets() == null) return false;
-        if (other.getDatasets() != null && other.getDatasets().equals(this.getDatasets()) == false) return false; 
-        if (other.getCount() == null ^ this.getCount() == null) return false;
-        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListDatasetsResult clone() {
         try {
             return (ListDatasetsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

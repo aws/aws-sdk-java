@@ -57,9 +57,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@return Result of the CreateDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@return A Java Future containing the result of the CreateDevicePool operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Creates a device pool.</p>\n@param createDevicePoolRequest Represents a request to the create device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateDevicePool operation returned by the service.*/",
       "syncReturnType" : "CreateDevicePoolResult",
       "asyncReturnType" : "CreateDevicePoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDevicePoolResult>",
@@ -98,9 +95,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@return Result of the CreateProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@return A Java Future containing the result of the CreateProject operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Creates a new project.</p>\n@param createProjectRequest Represents a request to the create project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateProject operation returned by the service.*/",
       "syncReturnType" : "CreateProjectResult",
       "asyncReturnType" : "CreateProjectResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateProjectResult>",
@@ -139,9 +133,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@return Result of the CreateUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@return A Java Future containing the result of the CreateUpload operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Uploads an app or test scripts.</p>\n@param createUploadRequest Represents a request to the create upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the CreateUpload operation returned by the service.*/",
       "syncReturnType" : "CreateUploadResult",
       "asyncReturnType" : "CreateUploadResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUploadResult>",
@@ -180,9 +171,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>\n@param deleteDevicePoolRequest Represents a request to the delete device pool operation.\n@return Result of the DeleteDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>\n@param deleteDevicePoolRequest Represents a request to the delete device pool operation.\n@return A Java Future containing the result of the DeleteDevicePool operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>\n@param deleteDevicePoolRequest Represents a request to the delete device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteDevicePool operation returned by the service.*/",
       "syncReturnType" : "DeleteDevicePoolResult",
       "asyncReturnType" : "DeleteDevicePoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDevicePoolResult>",
@@ -221,9 +209,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes an AWS Device Farm project, given the project ARN.</p> <p><b>Note</b> Deleting this resource does not stop an in-progress run.</p>\n@param deleteProjectRequest Represents a request to the delete project operation.\n@return Result of the DeleteProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Deletes an AWS Device Farm project, given the project ARN.</p> <p><b>Note</b> Deleting this resource does not stop an in-progress run.</p>\n@param deleteProjectRequest Represents a request to the delete project operation.\n@return A Java Future containing the result of the DeleteProject operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes an AWS Device Farm project, given the project ARN.</p> <p><b>Note</b> Deleting this resource does not stop an in-progress run.</p>\n@param deleteProjectRequest Represents a request to the delete project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteProject operation returned by the service.*/",
       "syncReturnType" : "DeleteProjectResult",
       "asyncReturnType" : "DeleteProjectResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteProjectResult>",
@@ -262,9 +247,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes the run, given the run ARN.</p> <p><b>Note</b> Deleting this resource does not stop an in-progress run.</p>\n@param deleteRunRequest Represents a request to the delete run operation.\n@return Result of the DeleteRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Deletes the run, given the run ARN.</p> <p><b>Note</b> Deleting this resource does not stop an in-progress run.</p>\n@param deleteRunRequest Represents a request to the delete run operation.\n@return A Java Future containing the result of the DeleteRun operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes the run, given the run ARN.</p> <p><b>Note</b> Deleting this resource does not stop an in-progress run.</p>\n@param deleteRunRequest Represents a request to the delete run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteRun operation returned by the service.*/",
       "syncReturnType" : "DeleteRunResult",
       "asyncReturnType" : "DeleteRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRunResult>",
@@ -303,9 +285,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Deletes an upload given the upload ARN.</p>\n@param deleteUploadRequest Represents a request to the delete upload operation.\n@return Result of the DeleteUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Deletes an upload given the upload ARN.</p>\n@param deleteUploadRequest Represents a request to the delete upload operation.\n@return A Java Future containing the result of the DeleteUpload operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Deletes an upload given the upload ARN.</p>\n@param deleteUploadRequest Represents a request to the delete upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the DeleteUpload operation returned by the service.*/",
       "syncReturnType" : "DeleteUploadResult",
       "asyncReturnType" : "DeleteUploadResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUploadResult>",
@@ -344,9 +323,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest \n@return Result of the GetAccountSettings operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest \n@return A Java Future containing the result of the GetAccountSettings operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>\n@param getAccountSettingsRequest \n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetAccountSettings operation returned by the service.*/",
       "syncReturnType" : "GetAccountSettingsResult",
       "asyncReturnType" : "GetAccountSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetAccountSettingsResult>",
@@ -385,9 +361,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@return Result of the GetDevice operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@return A Java Future containing the result of the GetDevice operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a unique device type.</p>\n@param getDeviceRequest Represents a request to the get device request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevice operation returned by the service.*/",
       "syncReturnType" : "GetDeviceResult",
       "asyncReturnType" : "GetDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeviceResult>",
@@ -426,9 +399,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@return Result of the GetDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@return A Java Future containing the result of the GetDevicePool operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a device pool.</p>\n@param getDevicePoolRequest Represents a request to the get device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevicePool operation returned by the service.*/",
       "syncReturnType" : "GetDevicePoolResult",
       "asyncReturnType" : "GetDevicePoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDevicePoolResult>",
@@ -467,9 +437,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@return Result of the GetDevicePoolCompatibility operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@return A Java Future containing the result of the GetDevicePoolCompatibility operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about compatibility with a device pool.</p>\n@param getDevicePoolCompatibilityRequest Represents a request to the get device pool compatibility operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetDevicePoolCompatibility operation returned by the service.*/",
       "syncReturnType" : "GetDevicePoolCompatibilityResult",
       "asyncReturnType" : "GetDevicePoolCompatibilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDevicePoolCompatibilityResult>",
@@ -508,9 +475,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@return Result of the GetJob operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@return A Java Future containing the result of the GetJob operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a job.</p>\n@param getJobRequest Represents a request to the get job operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetJob operation returned by the service.*/",
       "syncReturnType" : "GetJobResult",
       "asyncReturnType" : "GetJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetJobResult>",
@@ -549,9 +513,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@return Result of the GetProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@return A Java Future containing the result of the GetProject operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a project.</p>\n@param getProjectRequest Represents a request to the get project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetProject operation returned by the service.*/",
       "syncReturnType" : "GetProjectResult",
       "asyncReturnType" : "GetProjectResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetProjectResult>",
@@ -590,9 +551,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@return Result of the GetRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@return A Java Future containing the result of the GetRun operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a run.</p>\n@param getRunRequest Represents a request to the get run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetRun operation returned by the service.*/",
       "syncReturnType" : "GetRunResult",
       "asyncReturnType" : "GetRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRunResult>",
@@ -631,9 +589,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@return Result of the GetSuite operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@return A Java Future containing the result of the GetSuite operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a suite.</p>\n@param getSuiteRequest Represents a request to the get suite operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetSuite operation returned by the service.*/",
       "syncReturnType" : "GetSuiteResult",
       "asyncReturnType" : "GetSuiteResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSuiteResult>",
@@ -672,9 +627,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@return Result of the GetTest operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@return A Java Future containing the result of the GetTest operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about a test.</p>\n@param getTestRequest Represents a request to the get test operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetTest operation returned by the service.*/",
       "syncReturnType" : "GetTestResult",
       "asyncReturnType" : "GetTestResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTestResult>",
@@ -713,9 +665,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@return Result of the GetUpload operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@return A Java Future containing the result of the GetUpload operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about an upload.</p>\n@param getUploadRequest Represents a request to the get upload operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the GetUpload operation returned by the service.*/",
       "syncReturnType" : "GetUploadResult",
       "asyncReturnType" : "GetUploadResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUploadResult>",
@@ -754,9 +703,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@return Result of the ListArtifacts operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@return A Java Future containing the result of the ListArtifacts operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about artifacts.</p>\n@param listArtifactsRequest Represents a request to the list artifacts operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListArtifacts operation returned by the service.*/",
       "syncReturnType" : "ListArtifactsResult",
       "asyncReturnType" : "ListArtifactsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListArtifactsResult>",
@@ -795,9 +741,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@return Result of the ListDevicePools operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@return A Java Future containing the result of the ListDevicePools operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about device pools.</p>\n@param listDevicePoolsRequest Represents the result of a list device pools request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDevicePools operation returned by the service.*/",
       "syncReturnType" : "ListDevicePoolsResult",
       "asyncReturnType" : "ListDevicePoolsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDevicePoolsResult>",
@@ -836,9 +779,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@return Result of the ListDevices operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@return A Java Future containing the result of the ListDevices operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about unique device types.</p>\n@param listDevicesRequest Represents the result of a list devices request.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListDevices operation returned by the service.*/",
       "syncReturnType" : "ListDevicesResult",
       "asyncReturnType" : "ListDevicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDevicesResult>",
@@ -877,9 +817,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@return Result of the ListJobs operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about jobs.</p>\n@param listJobsRequest Represents a request to the list jobs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListJobs operation returned by the service.*/",
       "syncReturnType" : "ListJobsResult",
       "asyncReturnType" : "ListJobsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsResult>",
@@ -918,9 +855,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@return Result of the ListProjects operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@return A Java Future containing the result of the ListProjects operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about projects.</p>\n@param listProjectsRequest Represents a request to the list projects operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListProjects operation returned by the service.*/",
       "syncReturnType" : "ListProjectsResult",
       "asyncReturnType" : "ListProjectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListProjectsResult>",
@@ -959,9 +893,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@return Result of the ListRuns operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@return A Java Future containing the result of the ListRuns operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about runs.</p>\n@param listRunsRequest Represents a request to the list runs operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListRuns operation returned by the service.*/",
       "syncReturnType" : "ListRunsResult",
       "asyncReturnType" : "ListRunsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRunsResult>",
@@ -1000,9 +931,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@return Result of the ListSamples operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@return A Java Future containing the result of the ListSamples operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about samples.</p>\n@param listSamplesRequest Represents a request to the list samples operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListSamples operation returned by the service.*/",
       "syncReturnType" : "ListSamplesResult",
       "asyncReturnType" : "ListSamplesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSamplesResult>",
@@ -1041,9 +969,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@return Result of the ListSuites operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@return A Java Future containing the result of the ListSuites operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about suites.</p>\n@param listSuitesRequest Represents a request to the list suites operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListSuites operation returned by the service.*/",
       "syncReturnType" : "ListSuitesResult",
       "asyncReturnType" : "ListSuitesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSuitesResult>",
@@ -1082,9 +1007,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@return Result of the ListTests operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@return A Java Future containing the result of the ListTests operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about tests.</p>\n@param listTestsRequest Represents a request to the list tests operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListTests operation returned by the service.*/",
       "syncReturnType" : "ListTestsResult",
       "asyncReturnType" : "ListTestsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTestsResult>",
@@ -1123,9 +1045,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@return Result of the ListUniqueProblems operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@return A Java Future containing the result of the ListUniqueProblems operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about unique problems.</p>\n@param listUniqueProblemsRequest Represents a request to the list unique problems operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListUniqueProblems operation returned by the service.*/",
       "syncReturnType" : "ListUniqueProblemsResult",
       "asyncReturnType" : "ListUniqueProblemsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUniqueProblemsResult>",
@@ -1164,9 +1083,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@return Result of the ListUploads operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@return A Java Future containing the result of the ListUploads operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Gets information about uploads.</p>\n@param listUploadsRequest Represents a request to the list uploads operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ListUploads operation returned by the service.*/",
       "syncReturnType" : "ListUploadsResult",
       "asyncReturnType" : "ListUploadsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUploadsResult>",
@@ -1208,9 +1124,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@return Result of the ScheduleRun operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws IdempotencyException An entity with the same name already exists.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@return A Java Future containing the result of the ScheduleRun operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Schedules a run.</p>\n@param scheduleRunRequest Represents a request to the schedule run operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the ScheduleRun operation returned by the service.*/",
       "syncReturnType" : "ScheduleRunResult",
       "asyncReturnType" : "ScheduleRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<ScheduleRunResult>",
@@ -1249,9 +1162,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>\n@param updateDevicePoolRequest Represents a request to the update device pool operation.\n@return Result of the UpdateDevicePool operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>\n@param updateDevicePoolRequest Represents a request to the update device pool operation.\n@return A Java Future containing the result of the UpdateDevicePool operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>\n@param updateDevicePoolRequest Represents a request to the update device pool operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateDevicePool operation returned by the service.*/",
       "syncReturnType" : "UpdateDevicePoolResult",
       "asyncReturnType" : "UpdateDevicePoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDevicePoolResult>",
@@ -1290,9 +1200,6 @@
         "documentation" : "<p>There was a problem with the service account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncDocumentation" : "/**<p>Modifies the specified project name, given the project ARN and a new name.</p>\n@param updateProjectRequest Represents a request to the update project operation.\n@return Result of the UpdateProject operation returned by the service.\n@throws ArgumentException An invalid argument was specified.\n@throws NotFoundException The specified entity was not found.\n@throws LimitExceededException A limit was exceeded.\n@throws ServiceAccountException There was a problem with the service account.*/",
-      "asyncDocumentation" : "/**<p>Modifies the specified project name, given the project ARN and a new name.</p>\n@param updateProjectRequest Represents a request to the update project operation.\n@return A Java Future containing the result of the UpdateProject operation returned by the service.*/",
-      "asyncDocumentationWithHandler" : "/**<p>Modifies the specified project name, given the project ARN and a new name.</p>\n@param updateProjectRequest Represents a request to the update project operation.\n@param asyncHandler Asynchronous callback handler for events in the lifecycle of the request. Users can provide an implementation of the callback methods in this interface to receive notification of successful or unsuccessful completion of the operation.\n@return A Java Future containing the result of the UpdateProject operation returned by the service.*/",
       "syncReturnType" : "UpdateProjectResult",
       "asyncReturnType" : "UpdateProjectResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateProjectResult>",
@@ -3522,9 +3429,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Device",
           "simple" : false,
-          "templateType" : "java.util.List<Device>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Device>"
+          "templateImplType" : "java.util.ArrayList<Device>",
+          "templateType" : "java.util.List<Device>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3763,9 +3670,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Device",
             "simple" : false,
-            "templateType" : "java.util.List<Device>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Device>"
+            "templateImplType" : "java.util.ArrayList<Device>",
+            "templateType" : "java.util.List<Device>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4109,9 +4016,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Sample",
           "simple" : false,
-          "templateType" : "java.util.List<Sample>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Sample>"
+          "templateImplType" : "java.util.ArrayList<Sample>",
+          "templateType" : "java.util.List<Sample>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4350,9 +4257,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Sample",
             "simple" : false,
-            "templateType" : "java.util.List<Sample>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Sample>"
+            "templateImplType" : "java.util.ArrayList<Sample>",
+            "templateType" : "java.util.List<Sample>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5172,9 +5079,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "String",
           "simple" : true,
-          "templateType" : "java.util.List<String>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5414,9 +5321,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "String",
             "simple" : true,
-            "templateType" : "java.util.List<String>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8700,9 +8607,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Job",
           "simple" : false,
-          "templateType" : "java.util.List<Job>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Job>"
+          "templateImplType" : "java.util.ArrayList<Job>",
+          "templateType" : "java.util.List<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8941,9 +8848,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Job",
             "simple" : false,
-            "templateType" : "java.util.List<Job>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Job>"
+            "templateImplType" : "java.util.ArrayList<Job>",
+            "templateType" : "java.util.List<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9310,9 +9217,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Run",
           "simple" : false,
-          "templateType" : "java.util.List<Run>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Run>"
+          "templateImplType" : "java.util.ArrayList<Run>",
+          "templateType" : "java.util.List<Run>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9551,9 +9458,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Run",
             "simple" : false,
-            "templateType" : "java.util.List<Run>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Run>"
+            "templateImplType" : "java.util.ArrayList<Run>",
+            "templateType" : "java.util.List<Run>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10107,9 +10014,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Test",
           "simple" : false,
-          "templateType" : "java.util.List<Test>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Test>"
+          "templateImplType" : "java.util.ArrayList<Test>",
+          "templateType" : "java.util.List<Test>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10348,9 +10255,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Test",
             "simple" : false,
-            "templateType" : "java.util.List<Test>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Test>"
+            "templateImplType" : "java.util.ArrayList<Test>",
+            "templateType" : "java.util.List<Test>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10576,9 +10483,9 @@
               "memberAdditionalUnmarshallingPath" : null,
               "simpleType" : "UniqueProblem",
               "simple" : false,
-              "templateType" : "java.util.List<UniqueProblem>",
               "map" : false,
-              "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+              "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+              "templateType" : "java.util.List<UniqueProblem>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -10591,11 +10498,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
           "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
-          "keySimple" : true,
-          "valueSimple" : false,
           "valueList" : true,
-          "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>"
+          "keySimple" : true,
+          "valueSimple" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10881,9 +10788,9 @@
                 "memberAdditionalUnmarshallingPath" : null,
                 "simpleType" : "UniqueProblem",
                 "simple" : false,
-                "templateType" : "java.util.List<UniqueProblem>",
                 "map" : false,
-                "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+                "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+                "templateType" : "java.util.List<UniqueProblem>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -10896,11 +10803,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
             "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
-            "keySimple" : true,
-            "valueSimple" : false,
             "valueList" : true,
-            "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>"
+            "keySimple" : true,
+            "valueSimple" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13244,9 +13151,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Rule",
           "simple" : false,
-          "templateType" : "java.util.List<Rule>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13490,9 +13397,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Rule",
             "simple" : false,
-            "templateType" : "java.util.List<Rule>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14220,9 +14127,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Project",
           "simple" : false,
-          "templateType" : "java.util.List<Project>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Project>"
+          "templateImplType" : "java.util.ArrayList<Project>",
+          "templateType" : "java.util.List<Project>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14461,9 +14368,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Project",
             "simple" : false,
-            "templateType" : "java.util.List<Project>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Project>"
+            "templateImplType" : "java.util.ArrayList<Project>",
+            "templateType" : "java.util.List<Project>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15114,11 +15021,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,String>",
           "templateType" : "java.util.Map<String,String>",
-          "keySimple" : true,
-          "valueSimple" : true,
           "valueList" : false,
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "keySimple" : true,
+          "valueSimple" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15254,11 +15161,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,String>",
             "templateType" : "java.util.Map<String,String>",
-            "keySimple" : true,
-            "valueSimple" : true,
             "valueList" : false,
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "keySimple" : true,
+            "valueSimple" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -17626,9 +17533,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "DevicePool",
           "simple" : false,
-          "templateType" : "java.util.List<DevicePool>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<DevicePool>"
+          "templateImplType" : "java.util.ArrayList<DevicePool>",
+          "templateType" : "java.util.List<DevicePool>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17867,9 +17774,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "DevicePool",
             "simple" : false,
-            "templateType" : "java.util.List<DevicePool>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<DevicePool>"
+            "templateImplType" : "java.util.ArrayList<DevicePool>",
+            "templateType" : "java.util.List<DevicePool>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20627,9 +20534,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Problem",
           "simple" : false,
-          "templateType" : "java.util.List<Problem>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Problem>"
+          "templateImplType" : "java.util.ArrayList<Problem>",
+          "templateType" : "java.util.List<Problem>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20765,9 +20672,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Problem",
             "simple" : false,
-            "templateType" : "java.util.List<Problem>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Problem>"
+            "templateImplType" : "java.util.ArrayList<Problem>",
+            "templateType" : "java.util.List<Problem>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26958,9 +26865,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "IncompatibilityMessage",
           "simple" : false,
-          "templateType" : "java.util.List<IncompatibilityMessage>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+          "templateType" : "java.util.List<IncompatibilityMessage>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27096,9 +27003,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "IncompatibilityMessage",
             "simple" : false,
-            "templateType" : "java.util.List<IncompatibilityMessage>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+            "templateType" : "java.util.List<IncompatibilityMessage>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27470,9 +27377,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Upload",
           "simple" : false,
-          "templateType" : "java.util.List<Upload>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Upload>"
+          "templateImplType" : "java.util.ArrayList<Upload>",
+          "templateType" : "java.util.List<Upload>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27659,9 +27566,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Upload",
             "simple" : false,
-            "templateType" : "java.util.List<Upload>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Upload>"
+            "templateImplType" : "java.util.ArrayList<Upload>",
+            "templateType" : "java.util.List<Upload>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27839,9 +27746,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Suite",
           "simple" : false,
-          "templateType" : "java.util.List<Suite>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Suite>"
+          "templateImplType" : "java.util.ArrayList<Suite>",
+          "templateType" : "java.util.List<Suite>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28080,9 +27987,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Suite",
             "simple" : false,
-            "templateType" : "java.util.List<Suite>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Suite>"
+            "templateImplType" : "java.util.ArrayList<Suite>",
+            "templateType" : "java.util.List<Suite>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28698,9 +28605,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
-          "templateType" : "java.util.List<Artifact>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Artifact>"
+          "templateImplType" : "java.util.ArrayList<Artifact>",
+          "templateType" : "java.util.List<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28887,9 +28794,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
-            "templateType" : "java.util.List<Artifact>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Artifact>"
+            "templateImplType" : "java.util.ArrayList<Artifact>",
+            "templateType" : "java.util.List<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29358,9 +29265,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Rule",
           "simple" : false,
-          "templateType" : "java.util.List<Rule>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29604,9 +29511,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Rule",
             "simple" : false,
-            "templateType" : "java.util.List<Rule>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30641,9 +30548,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "DevicePoolCompatibilityResult",
           "simple" : false,
-          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30756,9 +30663,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "DevicePoolCompatibilityResult",
           "simple" : false,
-          "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30894,9 +30801,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "DevicePoolCompatibilityResult",
             "simple" : false,
-            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31010,9 +30917,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "DevicePoolCompatibilityResult",
             "simple" : false,
-            "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "templateType" : "java.util.List<DevicePoolCompatibilityResult>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31342,9 +31249,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Rule",
           "simple" : false,
-          "templateType" : "java.util.List<Rule>",
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "templateType" : "java.util.List<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31636,9 +31543,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Rule",
             "simple" : false,
-            "templateType" : "java.util.List<Rule>",
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "templateType" : "java.util.List<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31867,11 +31774,11 @@
           "valueType" : "Integer",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "java.util.HashMap<String,Integer>",
           "templateType" : "java.util.Map<String,Integer>",
-          "keySimple" : true,
-          "valueSimple" : true,
           "valueList" : false,
-          "templateImplType" : "java.util.HashMap<String,Integer>"
+          "keySimple" : true,
+          "valueSimple" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -32006,11 +31913,11 @@
             "valueType" : "Integer",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "java.util.HashMap<String,Integer>",
             "templateType" : "java.util.Map<String,Integer>",
-            "keySimple" : true,
-            "valueSimple" : true,
             "valueList" : false,
-            "templateImplType" : "java.util.HashMap<String,Integer>"
+            "keySimple" : true,
+            "valueSimple" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -32843,6 +32750,7 @@
     "requiredParamValidationEnabled" : false,
     "additionalShapeConstructors" : null,
     "simpleMethods" : null,
+    "renameShapes" : null,
     "authPolicyActions" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,

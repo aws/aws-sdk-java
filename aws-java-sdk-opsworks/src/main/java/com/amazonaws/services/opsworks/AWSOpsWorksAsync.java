@@ -111,6 +111,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param assignInstanceRequest
+     * @sample AWSOpsWorksAsync.AssignInstance
      */
     java.util.concurrent.Future<Void> assignInstanceAsync(
             AssignInstanceRequest assignInstanceRequest);
@@ -141,6 +142,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.AssignInstance
      */
     java.util.concurrent.Future<Void> assignInstanceAsync(
             AssignInstanceRequest assignInstanceRequest,
@@ -166,6 +168,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param assignVolumeRequest
+     * @sample AWSOpsWorksAsync.AssignVolume
      */
     java.util.concurrent.Future<Void> assignVolumeAsync(
             AssignVolumeRequest assignVolumeRequest);
@@ -195,6 +198,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.AssignVolume
      */
     java.util.concurrent.Future<Void> assignVolumeAsync(
             AssignVolumeRequest assignVolumeRequest,
@@ -218,6 +222,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param associateElasticIpRequest
+     * @sample AWSOpsWorksAsync.AssociateElasticIp
      */
     java.util.concurrent.Future<Void> associateElasticIpAsync(
             AssociateElasticIpRequest associateElasticIpRequest);
@@ -245,6 +250,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.AssociateElasticIp
      */
     java.util.concurrent.Future<Void> associateElasticIpAsync(
             AssociateElasticIpRequest associateElasticIpRequest,
@@ -276,6 +282,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param attachElasticLoadBalancerRequest
+     * @sample AWSOpsWorksAsync.AttachElasticLoadBalancer
      */
     java.util.concurrent.Future<Void> attachElasticLoadBalancerAsync(
             AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
@@ -311,6 +318,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.AttachElasticLoadBalancer
      */
     java.util.concurrent.Future<Void> attachElasticLoadBalancerAsync(
             AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest,
@@ -334,6 +342,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param cloneStackRequest
      * @return A Java Future containing the result of the CloneStack operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsync.CloneStack
      */
     java.util.concurrent.Future<CloneStackResult> cloneStackAsync(
             CloneStackRequest cloneStackRequest);
@@ -361,6 +370,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CloneStack operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CloneStack
      */
     java.util.concurrent.Future<CloneStackResult> cloneStackAsync(
             CloneStackRequest cloneStackRequest,
@@ -384,6 +394,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param createAppRequest
      * @return A Java Future containing the result of the CreateApp operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsync.CreateApp
      */
     java.util.concurrent.Future<CreateAppResult> createAppAsync(
             CreateAppRequest createAppRequest);
@@ -411,6 +422,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApp operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CreateApp
      */
     java.util.concurrent.Future<CreateAppResult> createAppAsync(
             CreateAppRequest createAppRequest,
@@ -436,6 +448,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param createDeploymentRequest
      * @return A Java Future containing the result of the CreateDeployment
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.CreateDeployment
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
             CreateDeploymentRequest createDeploymentRequest);
@@ -465,6 +478,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDeployment
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CreateDeployment
      */
     java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(
             CreateDeploymentRequest createDeploymentRequest,
@@ -489,6 +503,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param createInstanceRequest
      * @return A Java Future containing the result of the CreateInstance
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.CreateInstance
      */
     java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(
             CreateInstanceRequest createInstanceRequest);
@@ -517,6 +532,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInstance
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CreateInstance
      */
     java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(
             CreateInstanceRequest createInstanceRequest,
@@ -550,6 +566,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param createLayerRequest
      * @return A Java Future containing the result of the CreateLayer operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsync.CreateLayer
      */
     java.util.concurrent.Future<CreateLayerResult> createLayerAsync(
             CreateLayerRequest createLayerRequest);
@@ -587,6 +604,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateLayer operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CreateLayer
      */
     java.util.concurrent.Future<CreateLayerResult> createLayerAsync(
             CreateLayerRequest createLayerRequest,
@@ -609,6 +627,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param createStackRequest
      * @return A Java Future containing the result of the CreateStack operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsync.CreateStack
      */
     java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest createStackRequest);
@@ -635,6 +654,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStack operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CreateStack
      */
     java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest createStackRequest,
@@ -655,6 +675,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param createUserProfileRequest
      * @return A Java Future containing the result of the CreateUserProfile
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.CreateUserProfile
      */
     java.util.concurrent.Future<CreateUserProfileResult> createUserProfileAsync(
             CreateUserProfileRequest createUserProfileRequest);
@@ -679,6 +700,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateUserProfile
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.CreateUserProfile
      */
     java.util.concurrent.Future<CreateUserProfileResult> createUserProfileAsync(
             CreateUserProfileRequest createUserProfileRequest,
@@ -698,6 +720,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deleteAppRequest
+     * @sample AWSOpsWorksAsync.DeleteApp
      */
     java.util.concurrent.Future<Void> deleteAppAsync(
             DeleteAppRequest deleteAppRequest);
@@ -721,6 +744,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeleteApp
      */
     java.util.concurrent.Future<Void> deleteAppAsync(
             DeleteAppRequest deleteAppRequest,
@@ -746,6 +770,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deleteInstanceRequest
+     * @sample AWSOpsWorksAsync.DeleteInstance
      */
     java.util.concurrent.Future<Void> deleteInstanceAsync(
             DeleteInstanceRequest deleteInstanceRequest);
@@ -775,6 +800,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeleteInstance
      */
     java.util.concurrent.Future<Void> deleteInstanceAsync(
             DeleteInstanceRequest deleteInstanceRequest,
@@ -798,6 +824,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deleteLayerRequest
+     * @sample AWSOpsWorksAsync.DeleteLayer
      */
     java.util.concurrent.Future<Void> deleteLayerAsync(
             DeleteLayerRequest deleteLayerRequest);
@@ -825,6 +852,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeleteLayer
      */
     java.util.concurrent.Future<Void> deleteLayerAsync(
             DeleteLayerRequest deleteLayerRequest,
@@ -848,6 +876,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deleteStackRequest
+     * @sample AWSOpsWorksAsync.DeleteStack
      */
     java.util.concurrent.Future<Void> deleteStackAsync(
             DeleteStackRequest deleteStackRequest);
@@ -875,6 +904,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeleteStack
      */
     java.util.concurrent.Future<Void> deleteStackAsync(
             DeleteStackRequest deleteStackRequest,
@@ -893,6 +923,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deleteUserProfileRequest
+     * @sample AWSOpsWorksAsync.DeleteUserProfile
      */
     java.util.concurrent.Future<Void> deleteUserProfileAsync(
             DeleteUserProfileRequest deleteUserProfileRequest);
@@ -915,6 +946,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeleteUserProfile
      */
     java.util.concurrent.Future<Void> deleteUserProfileAsync(
             DeleteUserProfileRequest deleteUserProfileRequest,
@@ -937,6 +969,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deregisterEcsClusterRequest
+     * @sample AWSOpsWorksAsync.DeregisterEcsCluster
      */
     java.util.concurrent.Future<Void> deregisterEcsClusterAsync(
             DeregisterEcsClusterRequest deregisterEcsClusterRequest);
@@ -963,6 +996,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeregisterEcsCluster
      */
     java.util.concurrent.Future<Void> deregisterEcsClusterAsync(
             DeregisterEcsClusterRequest deregisterEcsClusterRequest,
@@ -985,6 +1019,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deregisterElasticIpRequest
+     * @sample AWSOpsWorksAsync.DeregisterElasticIp
      */
     java.util.concurrent.Future<Void> deregisterElasticIpAsync(
             DeregisterElasticIpRequest deregisterElasticIpRequest);
@@ -1011,6 +1046,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeregisterElasticIp
      */
     java.util.concurrent.Future<Void> deregisterElasticIpAsync(
             DeregisterElasticIpRequest deregisterElasticIpRequest,
@@ -1033,6 +1069,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deregisterInstanceRequest
+     * @sample AWSOpsWorksAsync.DeregisterInstance
      */
     java.util.concurrent.Future<Void> deregisterInstanceAsync(
             DeregisterInstanceRequest deregisterInstanceRequest);
@@ -1059,6 +1096,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeregisterInstance
      */
     java.util.concurrent.Future<Void> deregisterInstanceAsync(
             DeregisterInstanceRequest deregisterInstanceRequest,
@@ -1078,6 +1116,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deregisterRdsDbInstanceRequest
+     * @sample AWSOpsWorksAsync.DeregisterRdsDbInstance
      */
     java.util.concurrent.Future<Void> deregisterRdsDbInstanceAsync(
             DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest);
@@ -1101,6 +1140,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeregisterRdsDbInstance
      */
     java.util.concurrent.Future<Void> deregisterRdsDbInstanceAsync(
             DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest,
@@ -1123,6 +1163,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param deregisterVolumeRequest
+     * @sample AWSOpsWorksAsync.DeregisterVolume
      */
     java.util.concurrent.Future<Void> deregisterVolumeAsync(
             DeregisterVolumeRequest deregisterVolumeRequest);
@@ -1149,6 +1190,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DeregisterVolume
      */
     java.util.concurrent.Future<Void> deregisterVolumeAsync(
             DeregisterVolumeRequest deregisterVolumeRequest,
@@ -1165,6 +1207,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeAgentVersionsRequest
      * @return A Java Future containing the result of the DescribeAgentVersions
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeAgentVersions
      */
     java.util.concurrent.Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(
             DescribeAgentVersionsRequest describeAgentVersionsRequest);
@@ -1185,6 +1228,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAgentVersions
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeAgentVersions
      */
     java.util.concurrent.Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(
             DescribeAgentVersionsRequest describeAgentVersionsRequest,
@@ -1211,6 +1255,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeAppsRequest
      * @return A Java Future containing the result of the DescribeApps operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeApps
      */
     java.util.concurrent.Future<DescribeAppsResult> describeAppsAsync(
             DescribeAppsRequest describeAppsRequest);
@@ -1241,6 +1286,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeApps operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeApps
      */
     java.util.concurrent.Future<DescribeAppsResult> describeAppsAsync(
             DescribeAppsRequest describeAppsRequest,
@@ -1267,6 +1313,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeCommandsRequest
      * @return A Java Future containing the result of the DescribeCommands
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeCommands
      */
     java.util.concurrent.Future<DescribeCommandsResult> describeCommandsAsync(
             DescribeCommandsRequest describeCommandsRequest);
@@ -1297,6 +1344,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeCommands
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeCommands
      */
     java.util.concurrent.Future<DescribeCommandsResult> describeCommandsAsync(
             DescribeCommandsRequest describeCommandsRequest,
@@ -1323,6 +1371,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeDeploymentsRequest
      * @return A Java Future containing the result of the DescribeDeployments
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeDeployments
      */
     java.util.concurrent.Future<DescribeDeploymentsResult> describeDeploymentsAsync(
             DescribeDeploymentsRequest describeDeploymentsRequest);
@@ -1353,6 +1402,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDeployments
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeDeployments
      */
     java.util.concurrent.Future<DescribeDeploymentsResult> describeDeploymentsAsync(
             DescribeDeploymentsRequest describeDeploymentsRequest,
@@ -1378,6 +1428,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeEcsClustersRequest
      * @return A Java Future containing the result of the DescribeEcsClusters
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeEcsClusters
      */
     java.util.concurrent.Future<DescribeEcsClustersResult> describeEcsClustersAsync(
             DescribeEcsClustersRequest describeEcsClustersRequest);
@@ -1407,6 +1458,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEcsClusters
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeEcsClusters
      */
     java.util.concurrent.Future<DescribeEcsClustersResult> describeEcsClustersAsync(
             DescribeEcsClustersRequest describeEcsClustersRequest,
@@ -1435,6 +1487,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeElasticIpsRequest
      * @return A Java Future containing the result of the DescribeElasticIps
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeElasticIps
      */
     java.util.concurrent.Future<DescribeElasticIpsResult> describeElasticIpsAsync(
             DescribeElasticIpsRequest describeElasticIpsRequest);
@@ -1467,6 +1520,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeElasticIps
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeElasticIps
      */
     java.util.concurrent.Future<DescribeElasticIpsResult> describeElasticIpsAsync(
             DescribeElasticIpsRequest describeElasticIpsRequest,
@@ -1493,6 +1547,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeElasticLoadBalancersRequest
      * @return A Java Future containing the result of the
      *         DescribeElasticLoadBalancers operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeElasticLoadBalancers
      */
     java.util.concurrent.Future<DescribeElasticLoadBalancersResult> describeElasticLoadBalancersAsync(
             DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest);
@@ -1523,6 +1578,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeElasticLoadBalancers operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeElasticLoadBalancers
      */
     java.util.concurrent.Future<DescribeElasticLoadBalancersResult> describeElasticLoadBalancersAsync(
             DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest,
@@ -1549,6 +1605,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeInstancesRequest
      * @return A Java Future containing the result of the DescribeInstances
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeInstances
      */
     java.util.concurrent.Future<DescribeInstancesResult> describeInstancesAsync(
             DescribeInstancesRequest describeInstancesRequest);
@@ -1579,6 +1636,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeInstances
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeInstances
      */
     java.util.concurrent.Future<DescribeInstancesResult> describeInstancesAsync(
             DescribeInstancesRequest describeInstancesRequest,
@@ -1605,6 +1663,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeLayersRequest
      * @return A Java Future containing the result of the DescribeLayers
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeLayers
      */
     java.util.concurrent.Future<DescribeLayersResult> describeLayersAsync(
             DescribeLayersRequest describeLayersRequest);
@@ -1635,6 +1694,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeLayers
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeLayers
      */
     java.util.concurrent.Future<DescribeLayersResult> describeLayersAsync(
             DescribeLayersRequest describeLayersRequest,
@@ -1661,6 +1721,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeLoadBasedAutoScalingRequest
      * @return A Java Future containing the result of the
      *         DescribeLoadBasedAutoScaling operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeLoadBasedAutoScaling
      */
     java.util.concurrent.Future<DescribeLoadBasedAutoScalingResult> describeLoadBasedAutoScalingAsync(
             DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest);
@@ -1691,6 +1752,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeLoadBasedAutoScaling operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeLoadBasedAutoScaling
      */
     java.util.concurrent.Future<DescribeLoadBasedAutoScalingResult> describeLoadBasedAutoScalingAsync(
             DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest,
@@ -1711,6 +1773,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeMyUserProfileRequest
      * @return A Java Future containing the result of the DescribeMyUserProfile
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeMyUserProfile
      */
     java.util.concurrent.Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(
             DescribeMyUserProfileRequest describeMyUserProfileRequest);
@@ -1735,6 +1798,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeMyUserProfile
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeMyUserProfile
      */
     java.util.concurrent.Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(
             DescribeMyUserProfileRequest describeMyUserProfileRequest,
@@ -1756,6 +1820,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describePermissionsRequest
      * @return A Java Future containing the result of the DescribePermissions
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribePermissions
      */
     java.util.concurrent.Future<DescribePermissionsResult> describePermissionsAsync(
             DescribePermissionsRequest describePermissionsRequest);
@@ -1781,6 +1846,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribePermissions
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribePermissions
      */
     java.util.concurrent.Future<DescribePermissionsResult> describePermissionsAsync(
             DescribePermissionsRequest describePermissionsRequest,
@@ -1807,6 +1873,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeRaidArraysRequest
      * @return A Java Future containing the result of the DescribeRaidArrays
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeRaidArrays
      */
     java.util.concurrent.Future<DescribeRaidArraysResult> describeRaidArraysAsync(
             DescribeRaidArraysRequest describeRaidArraysRequest);
@@ -1837,6 +1904,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRaidArrays
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeRaidArrays
      */
     java.util.concurrent.Future<DescribeRaidArraysResult> describeRaidArraysAsync(
             DescribeRaidArraysRequest describeRaidArraysRequest,
@@ -1858,6 +1926,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeRdsDbInstancesRequest
      * @return A Java Future containing the result of the DescribeRdsDbInstances
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeRdsDbInstances
      */
     java.util.concurrent.Future<DescribeRdsDbInstancesResult> describeRdsDbInstancesAsync(
             DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest);
@@ -1883,6 +1952,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRdsDbInstances
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeRdsDbInstances
      */
     java.util.concurrent.Future<DescribeRdsDbInstancesResult> describeRdsDbInstancesAsync(
             DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest,
@@ -1904,6 +1974,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeServiceErrorsRequest
      * @return A Java Future containing the result of the DescribeServiceErrors
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeServiceErrors
      */
     java.util.concurrent.Future<DescribeServiceErrorsResult> describeServiceErrorsAsync(
             DescribeServiceErrorsRequest describeServiceErrorsRequest);
@@ -1929,6 +2000,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeServiceErrors
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeServiceErrors
      */
     java.util.concurrent.Future<DescribeServiceErrorsResult> describeServiceErrorsAsync(
             DescribeServiceErrorsRequest describeServiceErrorsRequest,
@@ -1951,6 +2023,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future containing the result of the
      *         DescribeStackProvisioningParameters operation returned by the
      *         service.
+     * @sample AWSOpsWorksAsync.DescribeStackProvisioningParameters
      */
     java.util.concurrent.Future<DescribeStackProvisioningParametersResult> describeStackProvisioningParametersAsync(
             DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest);
@@ -1977,6 +2050,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @return A Java Future containing the result of the
      *         DescribeStackProvisioningParameters operation returned by the
      *         service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeStackProvisioningParameters
      */
     java.util.concurrent.Future<DescribeStackProvisioningParametersResult> describeStackProvisioningParametersAsync(
             DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest,
@@ -2000,6 +2074,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeStackSummaryRequest
      * @return A Java Future containing the result of the DescribeStackSummary
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeStackSummary
      */
     java.util.concurrent.Future<DescribeStackSummaryResult> describeStackSummaryAsync(
             DescribeStackSummaryRequest describeStackSummaryRequest);
@@ -2027,6 +2102,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStackSummary
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeStackSummary
      */
     java.util.concurrent.Future<DescribeStackSummaryResult> describeStackSummaryAsync(
             DescribeStackSummaryRequest describeStackSummaryRequest,
@@ -2048,6 +2124,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeStacksRequest
      * @return A Java Future containing the result of the DescribeStacks
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeStacks
      */
     java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             DescribeStacksRequest describeStacksRequest);
@@ -2073,6 +2150,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeStacks
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeStacks
      */
     java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             DescribeStacksRequest describeStacksRequest,
@@ -2099,6 +2177,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeTimeBasedAutoScalingRequest
      * @return A Java Future containing the result of the
      *         DescribeTimeBasedAutoScaling operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeTimeBasedAutoScaling
      */
     java.util.concurrent.Future<DescribeTimeBasedAutoScalingResult> describeTimeBasedAutoScalingAsync(
             DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest);
@@ -2129,6 +2208,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeTimeBasedAutoScaling operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeTimeBasedAutoScaling
      */
     java.util.concurrent.Future<DescribeTimeBasedAutoScalingResult> describeTimeBasedAutoScalingAsync(
             DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest,
@@ -2149,6 +2229,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeUserProfilesRequest
      * @return A Java Future containing the result of the DescribeUserProfiles
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeUserProfiles
      */
     java.util.concurrent.Future<DescribeUserProfilesResult> describeUserProfilesAsync(
             DescribeUserProfilesRequest describeUserProfilesRequest);
@@ -2173,6 +2254,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeUserProfiles
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeUserProfiles
      */
     java.util.concurrent.Future<DescribeUserProfilesResult> describeUserProfilesAsync(
             DescribeUserProfilesRequest describeUserProfilesRequest,
@@ -2199,6 +2281,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param describeVolumesRequest
      * @return A Java Future containing the result of the DescribeVolumes
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeVolumes
      */
     java.util.concurrent.Future<DescribeVolumesResult> describeVolumesAsync(
             DescribeVolumesRequest describeVolumesRequest);
@@ -2229,6 +2312,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVolumes
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeVolumes
      */
     java.util.concurrent.Future<DescribeVolumesResult> describeVolumesAsync(
             DescribeVolumesRequest describeVolumesRequest,
@@ -2248,6 +2332,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param detachElasticLoadBalancerRequest
+     * @sample AWSOpsWorksAsync.DetachElasticLoadBalancer
      */
     java.util.concurrent.Future<Void> detachElasticLoadBalancerAsync(
             DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest);
@@ -2271,6 +2356,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DetachElasticLoadBalancer
      */
     java.util.concurrent.Future<Void> detachElasticLoadBalancerAsync(
             DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest,
@@ -2293,6 +2379,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param disassociateElasticIpRequest
+     * @sample AWSOpsWorksAsync.DisassociateElasticIp
      */
     java.util.concurrent.Future<Void> disassociateElasticIpAsync(
             DisassociateElasticIpRequest disassociateElasticIpRequest);
@@ -2319,6 +2406,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.DisassociateElasticIp
      */
     java.util.concurrent.Future<Void> disassociateElasticIpAsync(
             DisassociateElasticIpRequest disassociateElasticIpRequest,
@@ -2341,6 +2429,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param getHostnameSuggestionRequest
      * @return A Java Future containing the result of the GetHostnameSuggestion
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.GetHostnameSuggestion
      */
     java.util.concurrent.Future<GetHostnameSuggestionResult> getHostnameSuggestionAsync(
             GetHostnameSuggestionRequest getHostnameSuggestionRequest);
@@ -2367,6 +2456,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetHostnameSuggestion
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.GetHostnameSuggestion
      */
     java.util.concurrent.Future<GetHostnameSuggestionResult> getHostnameSuggestionAsync(
             GetHostnameSuggestionRequest getHostnameSuggestionRequest,
@@ -2381,6 +2471,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param grantAccessRequest
      * @return A Java Future containing the result of the GrantAccess operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsync.GrantAccess
      */
     java.util.concurrent.Future<GrantAccessResult> grantAccessAsync(
             GrantAccessRequest grantAccessRequest);
@@ -2399,6 +2490,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GrantAccess operation
      *         returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.GrantAccess
      */
     java.util.concurrent.Future<GrantAccessResult> grantAccessAsync(
             GrantAccessRequest grantAccessRequest,
@@ -2420,6 +2512,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param rebootInstanceRequest
+     * @sample AWSOpsWorksAsync.RebootInstance
      */
     java.util.concurrent.Future<Void> rebootInstanceAsync(
             RebootInstanceRequest rebootInstanceRequest);
@@ -2445,6 +2538,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.RebootInstance
      */
     java.util.concurrent.Future<Void> rebootInstanceAsync(
             RebootInstanceRequest rebootInstanceRequest,
@@ -2470,6 +2564,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param registerEcsClusterRequest
      * @return A Java Future containing the result of the RegisterEcsCluster
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.RegisterEcsCluster
      */
     java.util.concurrent.Future<RegisterEcsClusterResult> registerEcsClusterAsync(
             RegisterEcsClusterRequest registerEcsClusterRequest);
@@ -2499,6 +2594,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterEcsCluster
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.RegisterEcsCluster
      */
     java.util.concurrent.Future<RegisterEcsClusterResult> registerEcsClusterAsync(
             RegisterEcsClusterRequest registerEcsClusterRequest,
@@ -2525,6 +2621,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param registerElasticIpRequest
      * @return A Java Future containing the result of the RegisterElasticIp
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.RegisterElasticIp
      */
     java.util.concurrent.Future<RegisterElasticIpResult> registerElasticIpAsync(
             RegisterElasticIpRequest registerElasticIpRequest);
@@ -2555,6 +2652,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterElasticIp
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.RegisterElasticIp
      */
     java.util.concurrent.Future<RegisterElasticIpResult> registerElasticIpAsync(
             RegisterElasticIpRequest registerElasticIpRequest,
@@ -2586,6 +2684,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param registerInstanceRequest
      * @return A Java Future containing the result of the RegisterInstance
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.RegisterInstance
      */
     java.util.concurrent.Future<RegisterInstanceResult> registerInstanceAsync(
             RegisterInstanceRequest registerInstanceRequest);
@@ -2621,6 +2720,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterInstance
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.RegisterInstance
      */
     java.util.concurrent.Future<RegisterInstanceResult> registerInstanceAsync(
             RegisterInstanceRequest registerInstanceRequest,
@@ -2640,6 +2740,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param registerRdsDbInstanceRequest
+     * @sample AWSOpsWorksAsync.RegisterRdsDbInstance
      */
     java.util.concurrent.Future<Void> registerRdsDbInstanceAsync(
             RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest);
@@ -2663,6 +2764,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.RegisterRdsDbInstance
      */
     java.util.concurrent.Future<Void> registerRdsDbInstanceAsync(
             RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest,
@@ -2689,6 +2791,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * @param registerVolumeRequest
      * @return A Java Future containing the result of the RegisterVolume
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsync.RegisterVolume
      */
     java.util.concurrent.Future<RegisterVolumeResult> registerVolumeAsync(
             RegisterVolumeRequest registerVolumeRequest);
@@ -2719,6 +2822,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RegisterVolume
      *         operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.RegisterVolume
      */
     java.util.concurrent.Future<RegisterVolumeResult> registerVolumeAsync(
             RegisterVolumeRequest registerVolumeRequest,
@@ -2749,6 +2853,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param setLoadBasedAutoScalingRequest
+     * @sample AWSOpsWorksAsync.SetLoadBasedAutoScaling
      */
     java.util.concurrent.Future<Void> setLoadBasedAutoScalingAsync(
             SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest);
@@ -2783,6 +2888,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.SetLoadBasedAutoScaling
      */
     java.util.concurrent.Future<Void> setLoadBasedAutoScalingAsync(
             SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest,
@@ -2804,6 +2910,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param setPermissionRequest
+     * @sample AWSOpsWorksAsync.SetPermission
      */
     java.util.concurrent.Future<Void> setPermissionAsync(
             SetPermissionRequest setPermissionRequest);
@@ -2829,6 +2936,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.SetPermission
      */
     java.util.concurrent.Future<Void> setPermissionAsync(
             SetPermissionRequest setPermissionRequest,
@@ -2851,6 +2959,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param setTimeBasedAutoScalingRequest
+     * @sample AWSOpsWorksAsync.SetTimeBasedAutoScaling
      */
     java.util.concurrent.Future<Void> setTimeBasedAutoScalingAsync(
             SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
@@ -2877,6 +2986,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.SetTimeBasedAutoScaling
      */
     java.util.concurrent.Future<Void> setTimeBasedAutoScalingAsync(
             SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest,
@@ -2898,6 +3008,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param startInstanceRequest
+     * @sample AWSOpsWorksAsync.StartInstance
      */
     java.util.concurrent.Future<Void> startInstanceAsync(
             StartInstanceRequest startInstanceRequest);
@@ -2923,6 +3034,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.StartInstance
      */
     java.util.concurrent.Future<Void> startInstanceAsync(
             StartInstanceRequest startInstanceRequest,
@@ -2942,6 +3054,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param startStackRequest
+     * @sample AWSOpsWorksAsync.StartStack
      */
     java.util.concurrent.Future<Void> startStackAsync(
             StartStackRequest startStackRequest);
@@ -2965,6 +3078,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.StartStack
      */
     java.util.concurrent.Future<Void> startStackAsync(
             StartStackRequest startStackRequest,
@@ -2989,6 +3103,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param stopInstanceRequest
+     * @sample AWSOpsWorksAsync.StopInstance
      */
     java.util.concurrent.Future<Void> stopInstanceAsync(
             StopInstanceRequest stopInstanceRequest);
@@ -3017,6 +3132,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.StopInstance
      */
     java.util.concurrent.Future<Void> stopInstanceAsync(
             StopInstanceRequest stopInstanceRequest,
@@ -3036,6 +3152,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param stopStackRequest
+     * @sample AWSOpsWorksAsync.StopStack
      */
     java.util.concurrent.Future<Void> stopStackAsync(
             StopStackRequest stopStackRequest);
@@ -3059,6 +3176,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.StopStack
      */
     java.util.concurrent.Future<Void> stopStackAsync(
             StopStackRequest stopStackRequest,
@@ -3081,6 +3199,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param unassignInstanceRequest
+     * @sample AWSOpsWorksAsync.UnassignInstance
      */
     java.util.concurrent.Future<Void> unassignInstanceAsync(
             UnassignInstanceRequest unassignInstanceRequest);
@@ -3107,6 +3226,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UnassignInstance
      */
     java.util.concurrent.Future<Void> unassignInstanceAsync(
             UnassignInstanceRequest unassignInstanceRequest,
@@ -3129,6 +3249,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param unassignVolumeRequest
+     * @sample AWSOpsWorksAsync.UnassignVolume
      */
     java.util.concurrent.Future<Void> unassignVolumeAsync(
             UnassignVolumeRequest unassignVolumeRequest);
@@ -3155,6 +3276,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UnassignVolume
      */
     java.util.concurrent.Future<Void> unassignVolumeAsync(
             UnassignVolumeRequest unassignVolumeRequest,
@@ -3174,6 +3296,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateAppRequest
+     * @sample AWSOpsWorksAsync.UpdateApp
      */
     java.util.concurrent.Future<Void> updateAppAsync(
             UpdateAppRequest updateAppRequest);
@@ -3197,6 +3320,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateApp
      */
     java.util.concurrent.Future<Void> updateAppAsync(
             UpdateAppRequest updateAppRequest,
@@ -3219,6 +3343,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateElasticIpRequest
+     * @sample AWSOpsWorksAsync.UpdateElasticIp
      */
     java.util.concurrent.Future<Void> updateElasticIpAsync(
             UpdateElasticIpRequest updateElasticIpRequest);
@@ -3245,6 +3370,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateElasticIp
      */
     java.util.concurrent.Future<Void> updateElasticIpAsync(
             UpdateElasticIpRequest updateElasticIpRequest,
@@ -3264,6 +3390,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateInstanceRequest
+     * @sample AWSOpsWorksAsync.UpdateInstance
      */
     java.util.concurrent.Future<Void> updateInstanceAsync(
             UpdateInstanceRequest updateInstanceRequest);
@@ -3287,6 +3414,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateInstance
      */
     java.util.concurrent.Future<Void> updateInstanceAsync(
             UpdateInstanceRequest updateInstanceRequest,
@@ -3306,6 +3434,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateLayerRequest
+     * @sample AWSOpsWorksAsync.UpdateLayer
      */
     java.util.concurrent.Future<Void> updateLayerAsync(
             UpdateLayerRequest updateLayerRequest);
@@ -3329,6 +3458,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateLayer
      */
     java.util.concurrent.Future<Void> updateLayerAsync(
             UpdateLayerRequest updateLayerRequest,
@@ -3347,6 +3477,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateMyUserProfileRequest
+     * @sample AWSOpsWorksAsync.UpdateMyUserProfile
      */
     java.util.concurrent.Future<Void> updateMyUserProfileAsync(
             UpdateMyUserProfileRequest updateMyUserProfileRequest);
@@ -3369,6 +3500,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateMyUserProfile
      */
     java.util.concurrent.Future<Void> updateMyUserProfileAsync(
             UpdateMyUserProfileRequest updateMyUserProfileRequest,
@@ -3388,6 +3520,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateRdsDbInstanceRequest
+     * @sample AWSOpsWorksAsync.UpdateRdsDbInstance
      */
     java.util.concurrent.Future<Void> updateRdsDbInstanceAsync(
             UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest);
@@ -3411,6 +3544,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateRdsDbInstance
      */
     java.util.concurrent.Future<Void> updateRdsDbInstanceAsync(
             UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest,
@@ -3430,6 +3564,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateStackRequest
+     * @sample AWSOpsWorksAsync.UpdateStack
      */
     java.util.concurrent.Future<Void> updateStackAsync(
             UpdateStackRequest updateStackRequest);
@@ -3453,6 +3588,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateStack
      */
     java.util.concurrent.Future<Void> updateStackAsync(
             UpdateStackRequest updateStackRequest,
@@ -3471,6 +3607,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateUserProfileRequest
+     * @sample AWSOpsWorksAsync.UpdateUserProfile
      */
     java.util.concurrent.Future<Void> updateUserProfileAsync(
             UpdateUserProfileRequest updateUserProfileRequest);
@@ -3493,6 +3630,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateUserProfile
      */
     java.util.concurrent.Future<Void> updateUserProfileAsync(
             UpdateUserProfileRequest updateUserProfileRequest,
@@ -3515,6 +3653,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * </p>
      * 
      * @param updateVolumeRequest
+     * @sample AWSOpsWorksAsync.UpdateVolume
      */
     java.util.concurrent.Future<Void> updateVolumeAsync(
             UpdateVolumeRequest updateVolumeRequest);
@@ -3541,6 +3680,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSOpsWorksAsyncHandler.UpdateVolume
      */
     java.util.concurrent.Future<Void> updateVolumeAsync(
             UpdateVolumeRequest updateVolumeRequest,

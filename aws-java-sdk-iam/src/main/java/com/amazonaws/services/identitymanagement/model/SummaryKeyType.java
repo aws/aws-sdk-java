@@ -1,24 +1,25 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Summary Key Type
+ * 
  */
 public enum SummaryKeyType {
-    
+
     Users("Users"),
     UsersQuota("UsersQuota"),
     Groups("Groups"),
@@ -60,66 +61,65 @@ public enum SummaryKeyType {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return SummaryKeyType corresponding to the value
      */
     public static SummaryKeyType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("Users".equals(value)) {
-            return SummaryKeyType.Users;
+            return Users;
         } else if ("UsersQuota".equals(value)) {
-            return SummaryKeyType.UsersQuota;
+            return UsersQuota;
         } else if ("Groups".equals(value)) {
-            return SummaryKeyType.Groups;
+            return Groups;
         } else if ("GroupsQuota".equals(value)) {
-            return SummaryKeyType.GroupsQuota;
+            return GroupsQuota;
         } else if ("ServerCertificates".equals(value)) {
-            return SummaryKeyType.ServerCertificates;
+            return ServerCertificates;
         } else if ("ServerCertificatesQuota".equals(value)) {
-            return SummaryKeyType.ServerCertificatesQuota;
+            return ServerCertificatesQuota;
         } else if ("UserPolicySizeQuota".equals(value)) {
-            return SummaryKeyType.UserPolicySizeQuota;
+            return UserPolicySizeQuota;
         } else if ("GroupPolicySizeQuota".equals(value)) {
-            return SummaryKeyType.GroupPolicySizeQuota;
+            return GroupPolicySizeQuota;
         } else if ("GroupsPerUserQuota".equals(value)) {
-            return SummaryKeyType.GroupsPerUserQuota;
+            return GroupsPerUserQuota;
         } else if ("SigningCertificatesPerUserQuota".equals(value)) {
-            return SummaryKeyType.SigningCertificatesPerUserQuota;
+            return SigningCertificatesPerUserQuota;
         } else if ("AccessKeysPerUserQuota".equals(value)) {
-            return SummaryKeyType.AccessKeysPerUserQuota;
+            return AccessKeysPerUserQuota;
         } else if ("MFADevices".equals(value)) {
-            return SummaryKeyType.MFADevices;
+            return MFADevices;
         } else if ("MFADevicesInUse".equals(value)) {
-            return SummaryKeyType.MFADevicesInUse;
+            return MFADevicesInUse;
         } else if ("AccountMFAEnabled".equals(value)) {
-            return SummaryKeyType.AccountMFAEnabled;
+            return AccountMFAEnabled;
         } else if ("AccountAccessKeysPresent".equals(value)) {
-            return SummaryKeyType.AccountAccessKeysPresent;
+            return AccountAccessKeysPresent;
         } else if ("AccountSigningCertificatesPresent".equals(value)) {
-            return SummaryKeyType.AccountSigningCertificatesPresent;
+            return AccountSigningCertificatesPresent;
         } else if ("AttachedPoliciesPerGroupQuota".equals(value)) {
-            return SummaryKeyType.AttachedPoliciesPerGroupQuota;
+            return AttachedPoliciesPerGroupQuota;
         } else if ("AttachedPoliciesPerRoleQuota".equals(value)) {
-            return SummaryKeyType.AttachedPoliciesPerRoleQuota;
+            return AttachedPoliciesPerRoleQuota;
         } else if ("AttachedPoliciesPerUserQuota".equals(value)) {
-            return SummaryKeyType.AttachedPoliciesPerUserQuota;
+            return AttachedPoliciesPerUserQuota;
         } else if ("Policies".equals(value)) {
-            return SummaryKeyType.Policies;
+            return Policies;
         } else if ("PoliciesQuota".equals(value)) {
-            return SummaryKeyType.PoliciesQuota;
+            return PoliciesQuota;
         } else if ("PolicySizeQuota".equals(value)) {
-            return SummaryKeyType.PolicySizeQuota;
+            return PolicySizeQuota;
         } else if ("PolicyVersionsInUse".equals(value)) {
-            return SummaryKeyType.PolicyVersionsInUse;
+            return PolicyVersionsInUse;
         } else if ("PolicyVersionsInUseQuota".equals(value)) {
-            return SummaryKeyType.PolicyVersionsInUseQuota;
+            return PolicyVersionsInUseQuota;
         } else if ("VersionsPerPolicyQuota".equals(value)) {
-            return SummaryKeyType.VersionsPerPolicyQuota;
+            return VersionsPerPolicyQuota;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

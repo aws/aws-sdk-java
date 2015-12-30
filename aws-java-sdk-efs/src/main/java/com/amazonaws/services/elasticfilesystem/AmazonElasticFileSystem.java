@@ -146,6 +146,7 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemLimitExceededException
      *         Returned if the AWS account has already created maximum number of
      *         file systems allowed per account.
+     * @sample AmazonElasticFileSystem.CreateFileSystem
      */
     CreateFileSystemResult createFileSystem(
             CreateFileSystemRequest createFileSystemRequest);
@@ -313,6 +314,7 @@ public interface AmazonElasticFileSystem {
      *         Returned if one of the specified security groups does not exist
      *         in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
+     * @sample AmazonElasticFileSystem.CreateMountTarget
      */
     CreateMountTargetResult createMountTarget(
             CreateMountTargetRequest createMountTargetRequest);
@@ -340,6 +342,7 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.CreateTags
      */
     void createTags(CreateTagsRequest createTagsRequest);
 
@@ -378,6 +381,7 @@ public interface AmazonElasticFileSystem {
      *         exist in the requester's AWS account.
      * @throws FileSystemInUseException
      *         Returned if a file system has mount targets.
+     * @sample AmazonElasticFileSystem.DeleteFileSystem
      */
     void deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest);
 
@@ -426,6 +430,7 @@ public interface AmazonElasticFileSystem {
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found
      *         in the caller's account.
+     * @sample AmazonElasticFileSystem.DeleteMountTarget
      */
     void deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest);
 
@@ -453,6 +458,7 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DeleteTags
      */
     void deleteTags(DeleteTagsRequest deleteTagsRequest);
 
@@ -507,6 +513,7 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DescribeFileSystems
      */
     DescribeFileSystemsResult describeFileSystems(
             DescribeFileSystemsRequest describeFileSystemsRequest);
@@ -549,6 +556,7 @@ public interface AmazonElasticFileSystem {
      * @throws IncorrectMountTargetStateException
      *         Returned if the mount target is not in the correct state for the
      *         operation.
+     * @sample AmazonElasticFileSystem.DescribeMountTargetSecurityGroups
      */
     DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest);
@@ -582,6 +590,7 @@ public interface AmazonElasticFileSystem {
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found
      *         in the caller's account.
+     * @sample AmazonElasticFileSystem.DescribeMountTargets
      */
     DescribeMountTargetsResult describeMountTargets(
             DescribeMountTargetsRequest describeMountTargetsRequest);
@@ -608,6 +617,7 @@ public interface AmazonElasticFileSystem {
      * @throws FileSystemNotFoundException
      *         Returned if the specified <code>FileSystemId</code> does not
      *         exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DescribeTags
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
@@ -652,6 +662,7 @@ public interface AmazonElasticFileSystem {
      * @throws SecurityGroupNotFoundException
      *         Returned if one of the specified security groups does not exist
      *         in the subnet's VPC.
+     * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
      */
     void modifyMountTargetSecurityGroups(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);

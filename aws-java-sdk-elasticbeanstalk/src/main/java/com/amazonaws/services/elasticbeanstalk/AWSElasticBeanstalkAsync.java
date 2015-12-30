@@ -64,6 +64,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param abortEnvironmentUpdateRequest
+     * @sample AWSElasticBeanstalkAsync.AbortEnvironmentUpdate
      */
     java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
             AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
@@ -80,6 +81,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.AbortEnvironmentUpdate
      */
     java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
             AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest,
@@ -111,6 +113,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Results message indicating whether a CNAME is available.
      * @return A Java Future containing the result of the CheckDNSAvailability
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CheckDNSAvailability
      */
     java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(
             CheckDNSAvailabilityRequest checkDNSAvailabilityRequest);
@@ -129,6 +132,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CheckDNSAvailability
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CheckDNSAvailability
      */
     java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(
             CheckDNSAvailabilityRequest checkDNSAvailabilityRequest,
@@ -149,6 +153,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param composeEnvironmentsRequest
      * @return A Java Future containing the result of the ComposeEnvironments
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ComposeEnvironments
      */
     java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(
             ComposeEnvironmentsRequest composeEnvironmentsRequest);
@@ -173,6 +178,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ComposeEnvironments
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ComposeEnvironments
      */
     java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(
             ComposeEnvironmentsRequest composeEnvironmentsRequest,
@@ -187,6 +193,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createApplicationRequest
      * @return A Java Future containing the result of the CreateApplication
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreateApplication
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest createApplicationRequest);
@@ -205,6 +212,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApplication
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreateApplication
      */
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
             CreateApplicationRequest createApplicationRequest,
@@ -222,6 +230,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createApplicationVersionRequest
      * @return A Java Future containing the result of the
      *         CreateApplicationVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreateApplicationVersion
      */
     java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(
             CreateApplicationVersionRequest createApplicationVersionRequest);
@@ -243,6 +252,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateApplicationVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreateApplicationVersion
      */
     java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(
             CreateApplicationVersionRequest createApplicationVersionRequest,
@@ -266,6 +276,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createConfigurationTemplateRequest
      * @return A Java Future containing the result of the
      *         CreateConfigurationTemplate operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreateConfigurationTemplate
      */
     java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(
             CreateConfigurationTemplateRequest createConfigurationTemplateRequest);
@@ -293,6 +304,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateConfigurationTemplate operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreateConfigurationTemplate
      */
     java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(
             CreateConfigurationTemplateRequest createConfigurationTemplateRequest,
@@ -307,6 +319,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createEnvironmentRequest
      * @return A Java Future containing the result of the CreateEnvironment
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreateEnvironment
      */
     java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(
             CreateEnvironmentRequest createEnvironmentRequest);
@@ -325,6 +338,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateEnvironment
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreateEnvironment
      */
     java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(
             CreateEnvironmentRequest createEnvironmentRequest,
@@ -341,6 +355,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param createStorageLocationRequest
      * @return A Java Future containing the result of the CreateStorageLocation
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreateStorageLocation
      */
     java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(
             CreateStorageLocationRequest createStorageLocationRequest);
@@ -361,6 +376,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStorageLocation
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreateStorageLocation
      */
     java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(
             CreateStorageLocationRequest createStorageLocationRequest,
@@ -393,6 +409,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </note>
      * 
      * @param deleteApplicationRequest
+     * @sample AWSElasticBeanstalkAsync.DeleteApplication
      */
     java.util.concurrent.Future<Void> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest);
@@ -412,6 +429,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.DeleteApplication
      */
     java.util.concurrent.Future<Void> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest,
@@ -425,6 +443,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * running environment.</note>
      * 
      * @param deleteApplicationVersionRequest
+     * @sample AWSElasticBeanstalkAsync.DeleteApplicationVersion
      */
     java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
             DeleteApplicationVersionRequest deleteApplicationVersionRequest);
@@ -442,6 +461,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.DeleteApplicationVersion
      */
     java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
             DeleteApplicationVersionRequest deleteApplicationVersionRequest,
@@ -457,6 +477,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * environment.</note>
      * 
      * @param deleteConfigurationTemplateRequest
+     * @sample AWSElasticBeanstalkAsync.DeleteConfigurationTemplate
      */
     java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
@@ -476,6 +497,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.DeleteConfigurationTemplate
      */
     java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest,
@@ -496,6 +518,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param deleteEnvironmentConfigurationRequest
+     * @sample AWSElasticBeanstalkAsync.DeleteEnvironmentConfiguration
      */
     java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
@@ -520,6 +543,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.DeleteEnvironmentConfiguration
      */
     java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest,
@@ -535,6 +559,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        Result message containing a list of configuration descriptions.
      * @return A Java Future containing the result of the
      *         DescribeApplicationVersions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeApplicationVersions
      */
     java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
             DescribeApplicationVersionsRequest describeApplicationVersionsRequest);
@@ -554,6 +579,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeApplicationVersions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeApplicationVersions
      */
     java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
             DescribeApplicationVersionsRequest describeApplicationVersionsRequest,
@@ -585,6 +611,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param describeApplicationsRequest
      * @return A Java Future containing the result of the DescribeApplications
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeApplications
      */
     java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(
             DescribeApplicationsRequest describeApplicationsRequest);
@@ -602,6 +629,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeApplications
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeApplications
      */
     java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(
             DescribeApplicationsRequest describeApplicationsRequest,
@@ -638,6 +666,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        descriptions.
      * @return A Java Future containing the result of the
      *         DescribeConfigurationOptions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeConfigurationOptions
      */
     java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(
             DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest);
@@ -661,6 +690,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeConfigurationOptions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeConfigurationOptions
      */
     java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(
             DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest,
@@ -691,6 +721,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        specified solution stack or configuration template.
      * @return A Java Future containing the result of the
      *         DescribeConfigurationSettings operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeConfigurationSettings
      */
     java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(
             DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest);
@@ -725,6 +756,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeConfigurationSettings operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeConfigurationSettings
      */
     java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(
             DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest,
@@ -741,6 +773,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        See the example below to learn how to create a request body.
      * @return A Java Future containing the result of the
      *         DescribeEnvironmentHealth operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentHealth
      */
     java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
@@ -761,6 +794,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeEnvironmentHealth operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentHealth
      */
     java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest,
@@ -774,6 +808,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param describeEnvironmentResourcesRequest
      * @return A Java Future containing the result of the
      *         DescribeEnvironmentResources operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentResources
      */
     java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(
             DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest);
@@ -791,6 +826,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeEnvironmentResources operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentResources
      */
     java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(
             DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest,
@@ -804,6 +840,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param describeEnvironmentsRequest
      * @return A Java Future containing the result of the DescribeEnvironments
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeEnvironments
      */
     java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(
             DescribeEnvironmentsRequest describeEnvironmentsRequest);
@@ -821,6 +858,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEnvironments
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironments
      */
     java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(
             DescribeEnvironmentsRequest describeEnvironmentsRequest,
@@ -854,6 +892,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param describeEventsRequest
      * @return A Java Future containing the result of the DescribeEvents
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeEvents
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
             DescribeEventsRequest describeEventsRequest);
@@ -874,6 +913,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEvents
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeEvents
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
             DescribeEventsRequest describeEventsRequest,
@@ -908,6 +948,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        See the example below to learn how to create a request body.
      * @return A Java Future containing the result of the
      *         DescribeInstancesHealth operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeInstancesHealth
      */
     java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(
             DescribeInstancesHealthRequest describeInstancesHealthRequest);
@@ -929,6 +970,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeInstancesHealth operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeInstancesHealth
      */
     java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(
             DescribeInstancesHealthRequest describeInstancesHealthRequest,
@@ -942,6 +984,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param listAvailableSolutionStacksRequest
      * @return A Java Future containing the result of the
      *         ListAvailableSolutionStacks operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ListAvailableSolutionStacks
      */
     java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest);
@@ -959,6 +1002,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListAvailableSolutionStacks operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ListAvailableSolutionStacks
      */
     java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest,
@@ -990,6 +1034,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param rebuildEnvironmentRequest
+     * @sample AWSElasticBeanstalkAsync.RebuildEnvironment
      */
     java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
             RebuildEnvironmentRequest rebuildEnvironmentRequest);
@@ -1007,6 +1052,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.RebuildEnvironment
      */
     java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
             RebuildEnvironmentRequest rebuildEnvironmentRequest,
@@ -1039,6 +1085,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
+     * @sample AWSElasticBeanstalkAsync.RequestEnvironmentInfo
      */
     java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
             RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
@@ -1075,6 +1122,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.RequestEnvironmentInfo
      */
     java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
             RequestEnvironmentInfoRequest requestEnvironmentInfoRequest,
@@ -1087,6 +1135,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param restartAppServerRequest
+     * @sample AWSElasticBeanstalkAsync.RestartAppServer
      */
     java.util.concurrent.Future<Void> restartAppServerAsync(
             RestartAppServerRequest restartAppServerRequest);
@@ -1103,6 +1152,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.RestartAppServer
      */
     java.util.concurrent.Future<Void> restartAppServerAsync(
             RestartAppServerRequest restartAppServerRequest,
@@ -1123,6 +1173,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param retrieveEnvironmentInfoRequest
      * @return A Java Future containing the result of the
      *         RetrieveEnvironmentInfo operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.RetrieveEnvironmentInfo
      */
     java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(
             RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest);
@@ -1147,6 +1198,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         RetrieveEnvironmentInfo operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.RetrieveEnvironmentInfo
      */
     java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(
             RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest,
@@ -1159,6 +1211,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * 
      * @param swapEnvironmentCNAMEsRequest
      *        Swaps the CNAMEs of two environments.
+     * @sample AWSElasticBeanstalkAsync.SwapEnvironmentCNAMEs
      */
     java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
             SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
@@ -1175,6 +1228,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSElasticBeanstalkAsyncHandler.SwapEnvironmentCNAMEs
      */
     java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
             SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest,
@@ -1205,6 +1259,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param terminateEnvironmentRequest
      * @return A Java Future containing the result of the TerminateEnvironment
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.TerminateEnvironment
      */
     java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(
             TerminateEnvironmentRequest terminateEnvironmentRequest);
@@ -1222,6 +1277,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TerminateEnvironment
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.TerminateEnvironment
      */
     java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(
             TerminateEnvironmentRequest terminateEnvironmentRequest,
@@ -1238,6 +1294,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param updateApplicationRequest
      * @return A Java Future containing the result of the UpdateApplication
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.UpdateApplication
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest);
@@ -1258,6 +1315,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplication
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateApplication
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest,
@@ -1275,6 +1333,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param updateApplicationVersionRequest
      * @return A Java Future containing the result of the
      *         UpdateApplicationVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.UpdateApplicationVersion
      */
     java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(
             UpdateApplicationVersionRequest updateApplicationVersionRequest);
@@ -1296,6 +1355,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateApplicationVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateApplicationVersion
      */
     java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(
             UpdateApplicationVersionRequest updateApplicationVersionRequest,
@@ -1321,6 +1381,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        solution stack.
      * @return A Java Future containing the result of the
      *         UpdateConfigurationTemplate operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.UpdateConfigurationTemplate
      */
     java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(
             UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest);
@@ -1350,6 +1411,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateConfigurationTemplate operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateConfigurationTemplate
      */
     java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(
             UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest,
@@ -1377,6 +1439,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * @param updateEnvironmentRequest
      * @return A Java Future containing the result of the UpdateEnvironment
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.UpdateEnvironment
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(
             UpdateEnvironmentRequest updateEnvironmentRequest);
@@ -1408,6 +1471,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEnvironment
      *         operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateEnvironment
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(
             UpdateEnvironmentRequest updateEnvironmentRequest,
@@ -1428,6 +1492,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        template.
      * @return A Java Future containing the result of the
      *         ValidateConfigurationSettings operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ValidateConfigurationSettings
      */
     java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(
             ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest);
@@ -1452,6 +1517,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ValidateConfigurationSettings operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ValidateConfigurationSettings
      */
     java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(
             ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest,

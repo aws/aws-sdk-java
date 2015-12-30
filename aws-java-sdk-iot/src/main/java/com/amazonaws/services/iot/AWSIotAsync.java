@@ -52,6 +52,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param acceptCertificateTransferRequest
      *        The input for the AcceptCertificateTransfer operation.
+     * @sample AWSIotAsync.AcceptCertificateTransfer
      */
     java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest);
@@ -73,6 +74,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.AcceptCertificateTransfer
      */
     java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest,
@@ -86,6 +88,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param attachPrincipalPolicyRequest
      *        The input for the AttachPrincipalPolicy operation.
+     * @sample AWSIotAsync.AttachPrincipalPolicy
      */
     java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
@@ -103,6 +106,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.AttachPrincipalPolicy
      */
     java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest,
@@ -117,6 +121,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the AttachThingPrincipal operation.
      * @return A Java Future containing the result of the AttachThingPrincipal
      *         operation returned by the service.
+     * @sample AWSIotAsync.AttachThingPrincipal
      */
     java.util.concurrent.Future<AttachThingPrincipalResult> attachThingPrincipalAsync(
             AttachThingPrincipalRequest attachThingPrincipalRequest);
@@ -135,6 +140,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachThingPrincipal
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.AttachThingPrincipal
      */
     java.util.concurrent.Future<AttachThingPrincipalResult> attachThingPrincipalAsync(
             AttachThingPrincipalRequest attachThingPrincipalRequest,
@@ -159,6 +165,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param cancelCertificateTransferRequest
      *        The input for the CancelCertificateTransfer operation.
+     * @sample AWSIotAsync.CancelCertificateTransfer
      */
     java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest);
@@ -187,6 +194,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.CancelCertificateTransfer
      */
     java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest,
@@ -254,6 +262,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the CreateCertificateFromCsr operation.
      * @return A Java Future containing the result of the
      *         CreateCertificateFromCsr operation returned by the service.
+     * @sample AWSIotAsync.CreateCertificateFromCsr
      */
     java.util.concurrent.Future<CreateCertificateFromCsrResult> createCertificateFromCsrAsync(
             CreateCertificateFromCsrRequest createCertificateFromCsrRequest);
@@ -325,6 +334,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateCertificateFromCsr operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateCertificateFromCsr
      */
     java.util.concurrent.Future<CreateCertificateFromCsrResult> createCertificateFromCsrAsync(
             CreateCertificateFromCsrRequest createCertificateFromCsrRequest,
@@ -344,6 +354,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the CreateKeysAndCertificate operation.
      * @return A Java Future containing the result of the
      *         CreateKeysAndCertificate operation returned by the service.
+     * @sample AWSIotAsync.CreateKeysAndCertificate
      */
     java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(
             CreateKeysAndCertificateRequest createKeysAndCertificateRequest);
@@ -367,6 +378,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateKeysAndCertificate operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateKeysAndCertificate
      */
     java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(
             CreateKeysAndCertificateRequest createKeysAndCertificateRequest,
@@ -386,6 +398,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the CreatePolicy operation.
      * @return A Java Future containing the result of the CreatePolicy operation
      *         returned by the service.
+     * @sample AWSIotAsync.CreatePolicy
      */
     java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(
             CreatePolicyRequest createPolicyRequest);
@@ -409,6 +422,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePolicy operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.CreatePolicy
      */
     java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(
             CreatePolicyRequest createPolicyRequest,
@@ -431,6 +445,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the CreatePolicyVersion operation.
      * @return A Java Future containing the result of the CreatePolicyVersion
      *         operation returned by the service.
+     * @sample AWSIotAsync.CreatePolicyVersion
      */
     java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(
             CreatePolicyVersionRequest createPolicyVersionRequest);
@@ -457,6 +472,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePolicyVersion
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreatePolicyVersion
      */
     java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(
             CreatePolicyVersionRequest createPolicyVersionRequest,
@@ -471,6 +487,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the CreateThing operation.
      * @return A Java Future containing the result of the CreateThing operation
      *         returned by the service.
+     * @sample AWSIotAsync.CreateThing
      */
     java.util.concurrent.Future<CreateThingResult> createThingAsync(
             CreateThingRequest createThingRequest);
@@ -489,6 +506,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateThing operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.CreateThing
      */
     java.util.concurrent.Future<CreateThingResult> createThingAsync(
             CreateThingRequest createThingRequest,
@@ -501,6 +519,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param createTopicRuleRequest
      *        The input for the CreateTopicRule operation.
+     * @sample AWSIotAsync.CreateTopicRule
      */
     java.util.concurrent.Future<Void> createTopicRuleAsync(
             CreateTopicRuleRequest createTopicRuleRequest);
@@ -517,6 +536,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.CreateTopicRule
      */
     java.util.concurrent.Future<Void> createTopicRuleAsync(
             CreateTopicRuleRequest createTopicRuleRequest,
@@ -536,6 +556,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @sample AWSIotAsync.DeleteCertificate
      */
     java.util.concurrent.Future<Void> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest);
@@ -559,6 +580,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.DeleteCertificate
      */
     java.util.concurrent.Future<Void> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest,
@@ -585,6 +607,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deletePolicyRequest
      *        The input for the DeletePolicy operation.
+     * @sample AWSIotAsync.DeletePolicy
      */
     java.util.concurrent.Future<Void> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest);
@@ -615,6 +638,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.DeletePolicy
      */
     java.util.concurrent.Future<Void> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest,
@@ -630,6 +654,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deletePolicyVersionRequest
      *        The input for the DeletePolicyVersion operation.
+     * @sample AWSIotAsync.DeletePolicyVersion
      */
     java.util.concurrent.Future<Void> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
@@ -649,6 +674,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.DeletePolicyVersion
      */
     java.util.concurrent.Future<Void> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest,
@@ -663,6 +689,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the DeleteThing operation.
      * @return A Java Future containing the result of the DeleteThing operation
      *         returned by the service.
+     * @sample AWSIotAsync.DeleteThing
      */
     java.util.concurrent.Future<DeleteThingResult> deleteThingAsync(
             DeleteThingRequest deleteThingRequest);
@@ -681,6 +708,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteThing operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteThing
      */
     java.util.concurrent.Future<DeleteThingResult> deleteThingAsync(
             DeleteThingRequest deleteThingRequest,
@@ -693,6 +721,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deleteTopicRuleRequest
      *        The input for the DeleteTopicRule operation.
+     * @sample AWSIotAsync.DeleteTopicRule
      */
     java.util.concurrent.Future<Void> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest);
@@ -709,6 +738,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.DeleteTopicRule
      */
     java.util.concurrent.Future<Void> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest,
@@ -723,6 +753,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the DescribeCertificate operation.
      * @return A Java Future containing the result of the DescribeCertificate
      *         operation returned by the service.
+     * @sample AWSIotAsync.DescribeCertificate
      */
     java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(
             DescribeCertificateRequest describeCertificateRequest);
@@ -741,6 +772,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeCertificate
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeCertificate
      */
     java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(
             DescribeCertificateRequest describeCertificateRequest,
@@ -757,6 +789,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the DescribeEndpoint operation.
      * @return A Java Future containing the result of the DescribeEndpoint
      *         operation returned by the service.
+     * @sample AWSIotAsync.DescribeEndpoint
      */
     java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(
             DescribeEndpointRequest describeEndpointRequest);
@@ -777,6 +810,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeEndpoint
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeEndpoint
      */
     java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(
             DescribeEndpointRequest describeEndpointRequest,
@@ -791,6 +825,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the DescribeThing operation.
      * @return A Java Future containing the result of the DescribeThing
      *         operation returned by the service.
+     * @sample AWSIotAsync.DescribeThing
      */
     java.util.concurrent.Future<DescribeThingResult> describeThingAsync(
             DescribeThingRequest describeThingRequest);
@@ -809,6 +844,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeThing
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeThing
      */
     java.util.concurrent.Future<DescribeThingResult> describeThingAsync(
             DescribeThingRequest describeThingRequest,
@@ -821,6 +857,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param detachPrincipalPolicyRequest
      *        The input for the DetachPrincipalPolicy operation.
+     * @sample AWSIotAsync.DetachPrincipalPolicy
      */
     java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
@@ -837,6 +874,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.DetachPrincipalPolicy
      */
     java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest,
@@ -851,6 +889,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the DetachThingPrincipal operation.
      * @return A Java Future containing the result of the DetachThingPrincipal
      *         operation returned by the service.
+     * @sample AWSIotAsync.DetachThingPrincipal
      */
     java.util.concurrent.Future<DetachThingPrincipalResult> detachThingPrincipalAsync(
             DetachThingPrincipalRequest detachThingPrincipalRequest);
@@ -869,6 +908,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachThingPrincipal
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DetachThingPrincipal
      */
     java.util.concurrent.Future<DetachThingPrincipalResult> detachThingPrincipalAsync(
             DetachThingPrincipalRequest detachThingPrincipalRequest,
@@ -883,6 +923,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the GetLoggingOptions operation.
      * @return A Java Future containing the result of the GetLoggingOptions
      *         operation returned by the service.
+     * @sample AWSIotAsync.GetLoggingOptions
      */
     java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(
             GetLoggingOptionsRequest getLoggingOptionsRequest);
@@ -901,6 +942,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetLoggingOptions
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetLoggingOptions
      */
     java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(
             GetLoggingOptionsRequest getLoggingOptionsRequest,
@@ -916,6 +958,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the GetPolicy operation.
      * @return A Java Future containing the result of the GetPolicy operation
      *         returned by the service.
+     * @sample AWSIotAsync.GetPolicy
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(
             GetPolicyRequest getPolicyRequest);
@@ -935,6 +978,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPolicy operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.GetPolicy
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(
             GetPolicyRequest getPolicyRequest,
@@ -949,6 +993,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the GetPolicyVersion operation.
      * @return A Java Future containing the result of the GetPolicyVersion
      *         operation returned by the service.
+     * @sample AWSIotAsync.GetPolicyVersion
      */
     java.util.concurrent.Future<GetPolicyVersionResult> getPolicyVersionAsync(
             GetPolicyVersionRequest getPolicyVersionRequest);
@@ -967,6 +1012,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPolicyVersion
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPolicyVersion
      */
     java.util.concurrent.Future<GetPolicyVersionResult> getPolicyVersionAsync(
             GetPolicyVersionRequest getPolicyVersionRequest,
@@ -981,6 +1027,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the GetTopicRule operation.
      * @return A Java Future containing the result of the GetTopicRule operation
      *         returned by the service.
+     * @sample AWSIotAsync.GetTopicRule
      */
     java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(
             GetTopicRuleRequest getTopicRuleRequest);
@@ -999,6 +1046,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetTopicRule operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.GetTopicRule
      */
     java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(
             GetTopicRuleRequest getTopicRuleRequest,
@@ -1017,6 +1065,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListCertificates operation.
      * @return A Java Future containing the result of the ListCertificates
      *         operation returned by the service.
+     * @sample AWSIotAsync.ListCertificates
      */
     java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest listCertificatesRequest);
@@ -1039,6 +1088,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListCertificates
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListCertificates
      */
     java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest listCertificatesRequest,
@@ -1053,6 +1103,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListPolicies operation.
      * @return A Java Future containing the result of the ListPolicies operation
      *         returned by the service.
+     * @sample AWSIotAsync.ListPolicies
      */
     java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(
             ListPoliciesRequest listPoliciesRequest);
@@ -1071,6 +1122,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPolicies operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.ListPolicies
      */
     java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(
             ListPoliciesRequest listPoliciesRequest,
@@ -1086,6 +1138,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListPolicyVersions operation.
      * @return A Java Future containing the result of the ListPolicyVersions
      *         operation returned by the service.
+     * @sample AWSIotAsync.ListPolicyVersions
      */
     java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(
             ListPolicyVersionsRequest listPolicyVersionsRequest);
@@ -1105,6 +1158,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPolicyVersions
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPolicyVersions
      */
     java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(
             ListPolicyVersionsRequest listPolicyVersionsRequest,
@@ -1122,6 +1176,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListPrincipalPolicies operation.
      * @return A Java Future containing the result of the ListPrincipalPolicies
      *         operation returned by the service.
+     * @sample AWSIotAsync.ListPrincipalPolicies
      */
     java.util.concurrent.Future<ListPrincipalPoliciesResult> listPrincipalPoliciesAsync(
             ListPrincipalPoliciesRequest listPrincipalPoliciesRequest);
@@ -1143,6 +1198,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPrincipalPolicies
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPrincipalPolicies
      */
     java.util.concurrent.Future<ListPrincipalPoliciesResult> listPrincipalPoliciesAsync(
             ListPrincipalPoliciesRequest listPrincipalPoliciesRequest,
@@ -1157,6 +1213,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListPrincipalThings operation.
      * @return A Java Future containing the result of the ListPrincipalThings
      *         operation returned by the service.
+     * @sample AWSIotAsync.ListPrincipalThings
      */
     java.util.concurrent.Future<ListPrincipalThingsResult> listPrincipalThingsAsync(
             ListPrincipalThingsRequest listPrincipalThingsRequest);
@@ -1175,6 +1232,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPrincipalThings
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPrincipalThings
      */
     java.util.concurrent.Future<ListPrincipalThingsResult> listPrincipalThingsAsync(
             ListPrincipalThingsRequest listPrincipalThingsRequest,
@@ -1189,6 +1247,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListThingPrincipal operation.
      * @return A Java Future containing the result of the ListThingPrincipals
      *         operation returned by the service.
+     * @sample AWSIotAsync.ListThingPrincipals
      */
     java.util.concurrent.Future<ListThingPrincipalsResult> listThingPrincipalsAsync(
             ListThingPrincipalsRequest listThingPrincipalsRequest);
@@ -1207,6 +1266,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListThingPrincipals
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListThingPrincipals
      */
     java.util.concurrent.Future<ListThingPrincipalsResult> listThingPrincipalsAsync(
             ListThingPrincipalsRequest listThingPrincipalsRequest,
@@ -1223,6 +1283,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListThings operation.
      * @return A Java Future containing the result of the ListThings operation
      *         returned by the service.
+     * @sample AWSIotAsync.ListThings
      */
     java.util.concurrent.Future<ListThingsResult> listThingsAsync(
             ListThingsRequest listThingsRequest);
@@ -1243,6 +1304,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListThings operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.ListThings
      */
     java.util.concurrent.Future<ListThingsResult> listThingsAsync(
             ListThingsRequest listThingsRequest,
@@ -1257,6 +1319,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the ListTopicRules operation.
      * @return A Java Future containing the result of the ListTopicRules
      *         operation returned by the service.
+     * @sample AWSIotAsync.ListTopicRules
      */
     java.util.concurrent.Future<ListTopicRulesResult> listTopicRulesAsync(
             ListTopicRulesRequest listTopicRulesRequest);
@@ -1275,6 +1338,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTopicRules
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListTopicRules
      */
     java.util.concurrent.Future<ListTopicRulesResult> listTopicRulesAsync(
             ListTopicRulesRequest listTopicRulesRequest,
@@ -1298,6 +1362,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param rejectCertificateTransferRequest
      *        The input for the RejectCertificateTransfer operation.
+     * @sample AWSIotAsync.RejectCertificateTransfer
      */
     java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest rejectCertificateTransferRequest);
@@ -1325,6 +1390,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.RejectCertificateTransfer
      */
     java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest rejectCertificateTransferRequest,
@@ -1338,6 +1404,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param replaceTopicRuleRequest
      *        The input for the ReplaceTopicRule operation.
+     * @sample AWSIotAsync.ReplaceTopicRule
      */
     java.util.concurrent.Future<Void> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest replaceTopicRuleRequest);
@@ -1355,6 +1422,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.ReplaceTopicRule
      */
     java.util.concurrent.Future<Void> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest replaceTopicRuleRequest,
@@ -1370,6 +1438,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param setDefaultPolicyVersionRequest
      *        The input for the SetDefaultPolicyVersion operation.
+     * @sample AWSIotAsync.SetDefaultPolicyVersion
      */
     java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
@@ -1389,6 +1458,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.SetDefaultPolicyVersion
      */
     java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest,
@@ -1401,6 +1471,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param setLoggingOptionsRequest
      *        The input for the SetLoggingOptions operation.
+     * @sample AWSIotAsync.SetLoggingOptions
      */
     java.util.concurrent.Future<Void> setLoggingOptionsAsync(
             SetLoggingOptionsRequest setLoggingOptionsRequest);
@@ -1417,6 +1488,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.SetLoggingOptions
      */
     java.util.concurrent.Future<Void> setLoggingOptionsAsync(
             SetLoggingOptionsRequest setLoggingOptionsRequest,
@@ -1446,6 +1518,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the TransferCertificate operation.
      * @return A Java Future containing the result of the TransferCertificate
      *         operation returned by the service.
+     * @sample AWSIotAsync.TransferCertificate
      */
     java.util.concurrent.Future<TransferCertificateResult> transferCertificateAsync(
             TransferCertificateRequest transferCertificateRequest);
@@ -1479,6 +1552,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TransferCertificate
      *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.TransferCertificate
      */
     java.util.concurrent.Future<TransferCertificateResult> transferCertificateAsync(
             TransferCertificateRequest transferCertificateRequest,
@@ -1501,6 +1575,7 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param updateCertificateRequest
      *        The input for the UpdateCertificate operation.
+     * @sample AWSIotAsync.UpdateCertificate
      */
     java.util.concurrent.Future<Void> updateCertificateAsync(
             UpdateCertificateRequest updateCertificateRequest);
@@ -1527,6 +1602,7 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.UpdateCertificate
      */
     java.util.concurrent.Future<Void> updateCertificateAsync(
             UpdateCertificateRequest updateCertificateRequest,
@@ -1541,6 +1617,7 @@ public interface AWSIotAsync extends AWSIot {
      *        The input for the UpdateThing operation.
      * @return A Java Future containing the result of the UpdateThing operation
      *         returned by the service.
+     * @sample AWSIotAsync.UpdateThing
      */
     java.util.concurrent.Future<UpdateThingResult> updateThingAsync(
             UpdateThingRequest updateThingRequest);
@@ -1559,6 +1636,7 @@ public interface AWSIotAsync extends AWSIot {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateThing operation
      *         returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateThing
      */
     java.util.concurrent.Future<UpdateThingResult> updateThingAsync(
             UpdateThingRequest updateThingRequest,

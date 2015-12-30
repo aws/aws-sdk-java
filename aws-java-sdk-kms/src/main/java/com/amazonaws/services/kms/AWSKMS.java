@@ -214,6 +214,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.CancelKeyDeletion
      */
     CancelKeyDeletionResult cancelKeyDeletion(
             CancelKeyDeletionRequest cancelKeyDeletionRequest);
@@ -267,6 +268,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.CreateAlias
      */
     void createAlias(CreateAliasRequest createAliasRequest);
 
@@ -315,6 +317,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.CreateGrant
      */
     CreateGrantResult createGrant(CreateGrantRequest createGrantRequest);
 
@@ -349,6 +352,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
+     * @sample AWSKMS.CreateKey
      */
     CreateKeyResult createKey(CreateKeyRequest createKeyRequest);
 
@@ -413,6 +417,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.Decrypt
      */
     DecryptResult decrypt(DecryptRequest decryptRequest);
 
@@ -441,6 +446,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DeleteAlias
      */
     void deleteAlias(DeleteAliasRequest deleteAliasRequest);
 
@@ -462,6 +468,7 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.DescribeKey
      */
     DescribeKeyResult describeKey(DescribeKeyRequest describeKeyRequest);
 
@@ -496,6 +503,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DisableKey
      */
     void disableKey(DisableKeyRequest disableKeyRequest);
 
@@ -528,6 +536,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DisableKeyRotation
      */
     void disableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest);
 
@@ -563,6 +572,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.EnableKey
      */
     void enableKey(EnableKeyRequest enableKeyRequest);
 
@@ -595,6 +605,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.EnableKeyRotation
      */
     void enableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest);
 
@@ -659,6 +670,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.Encrypt
      */
     EncryptResult encrypt(EncryptRequest encryptRequest);
 
@@ -736,6 +748,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GenerateDataKey
      */
     GenerateDataKeyResult generateDataKey(
             GenerateDataKeyRequest generateDataKeyRequest);
@@ -782,6 +795,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GenerateDataKeyWithoutPlaintext
      */
     GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(
             GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest);
@@ -799,6 +813,7 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.GenerateRandom
      */
     GenerateRandomResult generateRandom(
             GenerateRandomRequest generateRandomRequest);
@@ -837,6 +852,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GetKeyPolicy
      */
     GetKeyPolicyResult getKeyPolicy(GetKeyPolicyRequest getKeyPolicyRequest);
 
@@ -869,6 +885,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GetKeyRotationStatus
      */
     GetKeyRotationStatusResult getKeyRotationStatus(
             GetKeyRotationStatusRequest getKeyRotationStatusRequest);
@@ -889,6 +906,7 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.ListAliases
      */
     ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest);
 
@@ -929,6 +947,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ListGrants
      */
     ListGrantsResult listGrants(ListGrantsRequest listGrantsRequest);
 
@@ -959,6 +978,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ListKeyPolicies
      */
     ListKeyPoliciesResult listKeyPolicies(
             ListKeyPoliciesRequest listKeyPoliciesRequest);
@@ -976,6 +996,7 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.ListKeys
      */
     ListKeysResult listKeys(ListKeysRequest listKeysRequest);
 
@@ -1013,6 +1034,7 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.ListRetirableGrants
      */
     ListRetirableGrantsResult listRetirableGrants(
             ListRetirableGrantsRequest listRetirableGrantsRequest);
@@ -1057,6 +1079,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.PutKeyPolicy
      */
     void putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest);
 
@@ -1113,6 +1136,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ReEncrypt
      */
     ReEncryptResult reEncrypt(ReEncryptRequest reEncryptRequest);
 
@@ -1160,6 +1184,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.RetireGrant
      */
     void retireGrant(RetireGrantRequest retireGrantRequest);
 
@@ -1200,6 +1225,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.RevokeGrant
      */
     void revokeGrant(RevokeGrantRequest revokeGrantRequest);
 
@@ -1252,6 +1278,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ScheduleKeyDeletion
      */
     ScheduleKeyDeletionResult scheduleKeyDeletion(
             ScheduleKeyDeletionRequest scheduleKeyDeletionRequest);
@@ -1296,6 +1323,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.UpdateAlias
      */
     void updateAlias(UpdateAliasRequest updateAliasRequest);
 
@@ -1325,6 +1353,7 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.UpdateKeyDescription
      */
     void updateKeyDescription(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest);

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,36 +27,52 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Identity Notification Attributes StAX Unmarshaller
+ * IdentityNotificationAttributes StAX Unmarshaller
  */
-public class IdentityNotificationAttributesStaxUnmarshaller implements Unmarshaller<IdentityNotificationAttributes, StaxUnmarshallerContext> {
+public class IdentityNotificationAttributesStaxUnmarshaller implements
+        Unmarshaller<IdentityNotificationAttributes, StaxUnmarshallerContext> {
 
-    public IdentityNotificationAttributes unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public IdentityNotificationAttributes unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         IdentityNotificationAttributes identityNotificationAttributes = new IdentityNotificationAttributes();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return identityNotificationAttributes;
+            if (xmlEvent.isEndDocument())
+                return identityNotificationAttributes;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("BounceTopic", targetDepth)) {
-                    identityNotificationAttributes.setBounceTopic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    identityNotificationAttributes
+                            .setBounceTopic(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ComplaintTopic", targetDepth)) {
-                    identityNotificationAttributes.setComplaintTopic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    identityNotificationAttributes
+                            .setComplaintTopic(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("DeliveryTopic", targetDepth)) {
-                    identityNotificationAttributes.setDeliveryTopic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    identityNotificationAttributes
+                            .setDeliveryTopic(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ForwardingEnabled", targetDepth)) {
-                    identityNotificationAttributes.setForwardingEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    identityNotificationAttributes
+                            .setForwardingEnabled(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -68,9 +84,10 @@ public class IdentityNotificationAttributesStaxUnmarshaller implements Unmarshal
     }
 
     private static IdentityNotificationAttributesStaxUnmarshaller instance;
+
     public static IdentityNotificationAttributesStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new IdentityNotificationAttributesStaxUnmarshaller();
+        if (instance == null)
+            instance = new IdentityNotificationAttributesStaxUnmarshaller();
         return instance;
     }
 }
-    

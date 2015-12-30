@@ -261,6 +261,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.AddInstanceGroups
      */
     @Override
     public AddInstanceGroupsResult addInstanceGroups(
@@ -337,6 +338,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.AddJobFlowSteps
      */
     @Override
     public AddJobFlowStepsResult addJobFlowSteps(
@@ -390,6 +392,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.AddTags
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
@@ -440,6 +443,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.DescribeCluster
      */
     @Override
     public DescribeClusterResult describeCluster(
@@ -511,6 +515,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.DescribeJobFlows
      */
     @Override
     @Deprecated
@@ -568,6 +573,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.DescribeStep
      */
     @Override
     public DescribeStepResult describeStep(
@@ -619,6 +625,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListBootstrapActions
      */
     @Override
     public ListBootstrapActionsResult listBootstrapActions(
@@ -674,6 +681,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListClusters
      */
     @Override
     public ListClustersResult listClusters(
@@ -729,6 +737,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListInstanceGroups
      */
     @Override
     public ListInstanceGroupsResult listInstanceGroups(
@@ -783,6 +792,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListInstances
      */
     @Override
     public ListInstancesResult listInstances(
@@ -832,6 +842,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.ListSteps
      */
     @Override
     public ListStepsResult listSteps(ListStepsRequest listStepsRequest) {
@@ -879,6 +890,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.ModifyInstanceGroups
      */
     @Override
     public void modifyInstanceGroups(
@@ -941,6 +953,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user
      *         input.
+     * @sample AmazonElasticMapReduce.RemoveTags
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
@@ -1017,6 +1030,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.RunJobFlow
      */
     @Override
     public RunJobFlowResult runJobFlow(RunJobFlowRequest runJobFlowRequest) {
@@ -1084,6 +1098,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetTerminationProtection
      */
     @Override
     public void setTerminationProtection(
@@ -1134,6 +1149,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetVisibleToAllUsers
      */
     @Override
     public void setVisibleToAllUsers(
@@ -1188,6 +1204,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
+     * @sample AmazonElasticMapReduce.TerminateJobFlows
      */
     @Override
     public void terminateJobFlows(

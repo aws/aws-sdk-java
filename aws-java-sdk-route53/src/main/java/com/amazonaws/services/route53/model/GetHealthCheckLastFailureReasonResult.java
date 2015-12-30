@@ -1,113 +1,121 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the most recent failure
- * for the specified health check.
+ * A complex type that contains information about the most recent failure for
+ * the specified health check.
  * </p>
  */
-public class GetHealthCheckLastFailureReasonResult implements Serializable, Cloneable {
+public class GetHealthCheckLastFailureReasonResult implements Serializable,
+        Cloneable {
 
     /**
-     * A list that contains one <code>HealthCheckObservation</code> element
-     * for each Amazon Route 53 health checker.
+     * <p>
+     * A list that contains one <code>HealthCheckObservation</code> element for
+     * each Amazon Route 53 health checker.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheckObservation> healthCheckObservations;
+    private com.amazonaws.internal.SdkInternalList<HealthCheckObservation> healthCheckObservations;
 
     /**
-     * A list that contains one <code>HealthCheckObservation</code> element
-     * for each Amazon Route 53 health checker.
-     *
-     * @return A list that contains one <code>HealthCheckObservation</code> element
-     *         for each Amazon Route 53 health checker.
+     * <p>
+     * A list that contains one <code>HealthCheckObservation</code> element for
+     * each Amazon Route 53 health checker.
+     * </p>
+     * 
+     * @return A list that contains one <code>HealthCheckObservation</code>
+     *         element for each Amazon Route 53 health checker.
      */
     public java.util.List<HealthCheckObservation> getHealthCheckObservations() {
         if (healthCheckObservations == null) {
-              healthCheckObservations = new com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheckObservation>();
-              healthCheckObservations.setAutoConstruct(true);
+            healthCheckObservations = new com.amazonaws.internal.SdkInternalList<HealthCheckObservation>();
         }
         return healthCheckObservations;
     }
-    
+
     /**
-     * A list that contains one <code>HealthCheckObservation</code> element
-     * for each Amazon Route 53 health checker.
-     *
-     * @param healthCheckObservations A list that contains one <code>HealthCheckObservation</code> element
-     *         for each Amazon Route 53 health checker.
+     * <p>
+     * A list that contains one <code>HealthCheckObservation</code> element for
+     * each Amazon Route 53 health checker.
+     * </p>
+     * 
+     * @param healthCheckObservations
+     *        A list that contains one <code>HealthCheckObservation</code>
+     *        element for each Amazon Route 53 health checker.
      */
-    public void setHealthCheckObservations(java.util.Collection<HealthCheckObservation> healthCheckObservations) {
+    public void setHealthCheckObservations(
+            java.util.Collection<HealthCheckObservation> healthCheckObservations) {
         if (healthCheckObservations == null) {
             this.healthCheckObservations = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheckObservation> healthCheckObservationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheckObservation>(healthCheckObservations.size());
-        healthCheckObservationsCopy.addAll(healthCheckObservations);
-        this.healthCheckObservations = healthCheckObservationsCopy;
+
+        this.healthCheckObservations = new com.amazonaws.internal.SdkInternalList<HealthCheckObservation>(
+                healthCheckObservations);
     }
-    
+
     /**
-     * A list that contains one <code>HealthCheckObservation</code> element
-     * for each Amazon Route 53 health checker.
+     * <p>
+     * A list that contains one <code>HealthCheckObservation</code> element for
+     * each Amazon Route 53 health checker.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setHealthCheckObservations(java.util.Collection)} or
-     * {@link #withHealthCheckObservations(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param healthCheckObservations A list that contains one <code>HealthCheckObservation</code> element
-     *         for each Amazon Route 53 health checker.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withHealthCheckObservations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param healthCheckObservations
+     *        A list that contains one <code>HealthCheckObservation</code>
+     *        element for each Amazon Route 53 health checker.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public GetHealthCheckLastFailureReasonResult withHealthCheckObservations(HealthCheckObservation... healthCheckObservations) {
-        if (getHealthCheckObservations() == null) setHealthCheckObservations(new java.util.ArrayList<HealthCheckObservation>(healthCheckObservations.length));
-        for (HealthCheckObservation value : healthCheckObservations) {
-            getHealthCheckObservations().add(value);
+    public GetHealthCheckLastFailureReasonResult withHealthCheckObservations(
+            HealthCheckObservation... healthCheckObservations) {
+        if (this.healthCheckObservations == null) {
+            setHealthCheckObservations(new com.amazonaws.internal.SdkInternalList<HealthCheckObservation>(
+                    healthCheckObservations.length));
+        }
+        for (HealthCheckObservation ele : healthCheckObservations) {
+            this.healthCheckObservations.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list that contains one <code>HealthCheckObservation</code> element
-     * for each Amazon Route 53 health checker.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param healthCheckObservations A list that contains one <code>HealthCheckObservation</code> element
-     *         for each Amazon Route 53 health checker.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetHealthCheckLastFailureReasonResult withHealthCheckObservations(java.util.Collection<HealthCheckObservation> healthCheckObservations) {
-        if (healthCheckObservations == null) {
-            this.healthCheckObservations = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheckObservation> healthCheckObservationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheckObservation>(healthCheckObservations.size());
-            healthCheckObservationsCopy.addAll(healthCheckObservations);
-            this.healthCheckObservations = healthCheckObservationsCopy;
-        }
 
+    /**
+     * <p>
+     * A list that contains one <code>HealthCheckObservation</code> element for
+     * each Amazon Route 53 health checker.
+     * </p>
+     * 
+     * @param healthCheckObservations
+     *        A list that contains one <code>HealthCheckObservation</code>
+     *        element for each Amazon Route 53 health checker.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public GetHealthCheckLastFailureReasonResult withHealthCheckObservations(
+            java.util.Collection<HealthCheckObservation> healthCheckObservations) {
+        setHealthCheckObservations(healthCheckObservations);
         return this;
     }
 
@@ -123,46 +131,53 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable, Clon
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHealthCheckObservations() != null) sb.append("HealthCheckObservations: " + getHealthCheckObservations() );
+        if (getHealthCheckObservations() != null)
+            sb.append("HealthCheckObservations: "
+                    + getHealthCheckObservations());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetHealthCheckLastFailureReasonResult == false)
+            return false;
+        GetHealthCheckLastFailureReasonResult other = (GetHealthCheckLastFailureReasonResult) obj;
+        if (other.getHealthCheckObservations() == null
+                ^ this.getHealthCheckObservations() == null)
+            return false;
+        if (other.getHealthCheckObservations() != null
+                && other.getHealthCheckObservations().equals(
+                        this.getHealthCheckObservations()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getHealthCheckObservations() == null) ? 0 : getHealthCheckObservations().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getHealthCheckObservations() == null) ? 0
+                        : getHealthCheckObservations().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetHealthCheckLastFailureReasonResult == false) return false;
-        GetHealthCheckLastFailureReasonResult other = (GetHealthCheckLastFailureReasonResult)obj;
-        
-        if (other.getHealthCheckObservations() == null ^ this.getHealthCheckObservations() == null) return false;
-        if (other.getHealthCheckObservations() != null && other.getHealthCheckObservations().equals(this.getHealthCheckObservations()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetHealthCheckLastFailureReasonResult clone() {
         try {
             return (GetHealthCheckLastFailureReasonResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

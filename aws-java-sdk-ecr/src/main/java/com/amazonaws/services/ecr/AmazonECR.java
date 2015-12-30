@@ -116,6 +116,7 @@ public interface AmazonECR {
      *         parameters for the API request.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.BatchCheckLayerAvailability
      */
     BatchCheckLayerAvailabilityResult batchCheckLayerAvailability(
             BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest);
@@ -141,6 +142,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.BatchDeleteImage
      */
     BatchDeleteImageResult batchDeleteImage(
             BatchDeleteImageRequest batchDeleteImageRequest);
@@ -163,6 +165,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.BatchGetImage
      */
     BatchGetImageResult batchGetImage(BatchGetImageRequest batchGetImageRequest);
 
@@ -205,6 +208,7 @@ public interface AmazonECR {
      *         The image layer already exists in the associated repository.
      * @throws EmptyUploadException
      *         The specified layer upload does not contain any layer parts.
+     * @sample AmazonECR.CompleteLayerUpload
      */
     CompleteLayerUploadResult completeLayerUpload(
             CompleteLayerUploadRequest completeLayerUploadRequest);
@@ -231,6 +235,7 @@ public interface AmazonECR {
      *         "http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html"
      *         >Amazon ECR Default Service Limits</a> in the Amazon EC2
      *         Container Registry User Guide.
+     * @sample AmazonECR.CreateRepository
      */
     CreateRepositoryResult createRepository(
             CreateRepositoryRequest createRepositoryRequest);
@@ -256,6 +261,7 @@ public interface AmazonECR {
      *         The specified repository contains images. To delete a repository
      *         that contains images, you must force the deletion with the
      *         <code>force</code> parameter.
+     * @sample AmazonECR.DeleteRepository
      */
     DeleteRepositoryResult deleteRepository(
             DeleteRepositoryRequest deleteRepositoryRequest);
@@ -280,6 +286,7 @@ public interface AmazonECR {
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have
      *         an associated repository policy.
+     * @sample AmazonECR.DeleteRepositoryPolicy
      */
     DeleteRepositoryPolicyResult deleteRepositoryPolicy(
             DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest);
@@ -301,6 +308,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.DescribeRepositories
      */
     DescribeRepositoriesResult describeRepositories(
             DescribeRepositoriesRequest describeRepositoriesRequest);
@@ -328,6 +336,7 @@ public interface AmazonECR {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available
      *         parameters for the API request.
+     * @sample AmazonECR.GetAuthorizationToken
      */
     GetAuthorizationTokenResult getAuthorizationToken(
             GetAuthorizationTokenRequest getAuthorizationTokenRequest);
@@ -365,6 +374,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.GetDownloadUrlForLayer
      */
     GetDownloadUrlForLayerResult getDownloadUrlForLayer(
             GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest);
@@ -389,6 +399,7 @@ public interface AmazonECR {
      * @throws RepositoryPolicyNotFoundException
      *         The specified repository and registry combination does not have
      *         an associated repository policy.
+     * @sample AmazonECR.GetRepositoryPolicy
      */
     GetRepositoryPolicyResult getRepositoryPolicy(
             GetRepositoryPolicyRequest getRepositoryPolicyRequest);
@@ -417,6 +428,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.InitiateLayerUpload
      */
     InitiateLayerUploadResult initiateLayerUpload(
             InitiateLayerUploadRequest initiateLayerUploadRequest);
@@ -437,6 +449,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.ListImages
      */
     ListImagesResult listImages(ListImagesRequest listImagesRequest);
 
@@ -476,6 +489,7 @@ public interface AmazonECR {
      *         "http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html"
      *         >Amazon ECR Default Service Limits</a> in the Amazon EC2
      *         Container Registry User Guide.
+     * @sample AmazonECR.PutImage
      */
     PutImageResult putImage(PutImageRequest putImageRequest);
 
@@ -497,6 +511,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling
      *         of the specified repository and ensure that you are performing
      *         operations on the correct registry.
+     * @sample AmazonECR.SetRepositoryPolicy
      */
     SetRepositoryPolicyResult setRepositoryPolicy(
             SetRepositoryPolicyRequest setRepositoryPolicyRequest);
@@ -537,6 +552,7 @@ public interface AmazonECR {
      *         "http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html"
      *         >Amazon ECR Default Service Limits</a> in the Amazon EC2
      *         Container Registry User Guide.
+     * @sample AmazonECR.UploadLayerPart
      */
     UploadLayerPartResult uploadLayerPart(
             UploadLayerPartRequest uploadLayerPartRequest);

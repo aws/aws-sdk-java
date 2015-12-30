@@ -139,6 +139,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param cancelCommandRequest
      * @return A Java Future containing the result of the CancelCommand
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CancelCommand
      */
     java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(
             CancelCommandRequest cancelCommandRequest);
@@ -158,6 +159,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CancelCommand
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CancelCommand
      */
     java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(
             CancelCommandRequest cancelCommandRequest,
@@ -181,6 +183,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param createAssociationRequest
      * @return A Java Future containing the result of the CreateAssociation
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateAssociation
      */
     java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(
             CreateAssociationRequest createAssociationRequest);
@@ -208,6 +211,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAssociation
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateAssociation
      */
     java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(
             CreateAssociationRequest createAssociationRequest,
@@ -231,6 +235,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param createAssociationBatchRequest
      * @return A Java Future containing the result of the CreateAssociationBatch
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateAssociationBatch
      */
     java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(
             CreateAssociationBatchRequest createAssociationBatchRequest);
@@ -258,6 +263,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateAssociationBatch
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateAssociationBatch
      */
     java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(
             CreateAssociationBatchRequest createAssociationBatchRequest,
@@ -275,6 +281,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param createDocumentRequest
      * @return A Java Future containing the result of the CreateDocument
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateDocument
      */
     java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(
             CreateDocumentRequest createDocumentRequest);
@@ -296,6 +303,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDocument
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateDocument
      */
     java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(
             CreateDocumentRequest createDocumentRequest,
@@ -316,6 +324,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param deleteAssociationRequest
      * @return A Java Future containing the result of the DeleteAssociation
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteAssociation
      */
     java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(
             DeleteAssociationRequest deleteAssociationRequest);
@@ -340,6 +349,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteAssociation
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteAssociation
      */
     java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(
             DeleteAssociationRequest deleteAssociationRequest,
@@ -358,6 +368,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param deleteDocumentRequest
      * @return A Java Future containing the result of the DeleteDocument
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteDocument
      */
     java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(
             DeleteDocumentRequest deleteDocumentRequest);
@@ -380,6 +391,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDocument
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteDocument
      */
     java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(
             DeleteDocumentRequest deleteDocumentRequest,
@@ -393,6 +405,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param describeAssociationRequest
      * @return A Java Future containing the result of the DescribeAssociation
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeAssociation
      */
     java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(
             DescribeAssociationRequest describeAssociationRequest);
@@ -410,6 +423,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeAssociation
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAssociation
      */
     java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(
             DescribeAssociationRequest describeAssociationRequest,
@@ -423,6 +437,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param describeDocumentRequest
      * @return A Java Future containing the result of the DescribeDocument
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeDocument
      */
     java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(
             DescribeDocumentRequest describeDocumentRequest);
@@ -440,6 +455,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDocument
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeDocument
      */
     java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(
             DescribeDocumentRequest describeDocumentRequest,
@@ -457,6 +473,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param describeInstanceInformationRequest
      * @return A Java Future containing the result of the
      *         DescribeInstanceInformation operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeInstanceInformation
      */
     java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest describeInstanceInformationRequest);
@@ -478,6 +495,8 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DescribeInstanceInformation operation returned by the service.
+     * @sample 
+     *         AWSSimpleSystemsManagementAsyncHandler.DescribeInstanceInformation
      */
     java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest describeInstanceInformationRequest,
@@ -491,6 +510,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param getDocumentRequest
      * @return A Java Future containing the result of the GetDocument operation
      *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetDocument
      */
     java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(
             GetDocumentRequest getDocumentRequest);
@@ -508,6 +528,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDocument operation
      *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetDocument
      */
     java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(
             GetDocumentRequest getDocumentRequest,
@@ -521,6 +542,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param listAssociationsRequest
      * @return A Java Future containing the result of the ListAssociations
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListAssociations
      */
     java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(
             ListAssociationsRequest listAssociationsRequest);
@@ -538,6 +560,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAssociations
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListAssociations
      */
     java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(
             ListAssociationsRequest listAssociationsRequest,
@@ -554,6 +577,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param listCommandInvocationsRequest
      * @return A Java Future containing the result of the ListCommandInvocations
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListCommandInvocations
      */
     java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(
             ListCommandInvocationsRequest listCommandInvocationsRequest);
@@ -574,6 +598,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListCommandInvocations
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListCommandInvocations
      */
     java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(
             ListCommandInvocationsRequest listCommandInvocationsRequest,
@@ -587,6 +612,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param listCommandsRequest
      * @return A Java Future containing the result of the ListCommands operation
      *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListCommands
      */
     java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(
             ListCommandsRequest listCommandsRequest);
@@ -604,6 +630,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListCommands operation
      *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListCommands
      */
     java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(
             ListCommandsRequest listCommandsRequest,
@@ -617,6 +644,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param listDocumentsRequest
      * @return A Java Future containing the result of the ListDocuments
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListDocuments
      */
     java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
             ListDocumentsRequest listDocumentsRequest);
@@ -634,6 +662,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDocuments
      *         operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListDocuments
      */
     java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
             ListDocumentsRequest listDocumentsRequest,
@@ -662,6 +691,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param sendCommandRequest
      * @return A Java Future containing the result of the SendCommand operation
      *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.SendCommand
      */
     java.util.concurrent.Future<SendCommandResult> sendCommandAsync(
             SendCommandRequest sendCommandRequest);
@@ -677,6 +707,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SendCommand operation
      *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.SendCommand
      */
     java.util.concurrent.Future<SendCommandResult> sendCommandAsync(
             SendCommandRequest sendCommandRequest,
@@ -691,6 +722,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * @param updateAssociationStatusRequest
      * @return A Java Future containing the result of the
      *         UpdateAssociationStatus operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateAssociationStatus
      */
     java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(
             UpdateAssociationStatusRequest updateAssociationStatusRequest);
@@ -709,6 +741,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateAssociationStatus operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateAssociationStatus
      */
     java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(
             UpdateAssociationStatusRequest updateAssociationStatusRequest,

@@ -1,334 +1,427 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * A source file for the input sidecar captions used during the
- * transcoding process.
+ * A source file for the input sidecar captions used during the transcoding
+ * process.
  * </p>
  */
 public class CaptionSource implements Serializable, Cloneable {
 
     /**
-     * The name of the sidecar caption file that you want Elastic Transcoder
-     * to include in the output file.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * The name of the sidecar caption file that you want Elastic Transcoder to
+     * include in the output file.
+     * </p>
      */
     private String key;
-
     /**
-     * A string that specifies the language of the caption. Specify this as
-     * one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     * ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     * codes and language names, see the List of ISO 639-1 codes.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * A string that specifies the language of the caption. Specify this as one
+     * of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 2-character ISO 639-1 code
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3-character ISO 639-2 code
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information on ISO language codes and language names, see the
+     * List of ISO 639-1 codes.
+     * </p>
      */
     private String language;
-
     /**
-     * For clip generation or captions that do not start at the same time as
-     * the associated video file, the <code>TimeOffset</code> tells Elastic
-     * Transcoder how much of the video to encode before including captions.
-     * <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^[+-]?\d{1,5}(\.\d{0,3})?$)|(^[+-]?([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
+     * For clip generation or captions that do not start at the same time as the
+     * associated video file, the <code>TimeOffset</code> tells Elastic
+     * Transcoder how much of the video to encode before including captions.
+     * </p>
+     * <p>
+     * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * </p>
      */
     private String timeOffset;
-
     /**
-     * The label of the caption shown in the player when choosing a language.
-     * We recommend that you put the caption language name here, in the
-     * language of the captions.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 40<br/>
+     * The label of the caption shown in the player when choosing a language. We
+     * recommend that you put the caption language name here, in the language of
+     * the captions.
+     * </p>
      */
     private String label;
-
     /**
+     * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to
      * apply to your caption sources.
+     * </p>
      */
     private Encryption encryption;
 
     /**
-     * The name of the sidecar caption file that you want Elastic Transcoder
-     * to include in the output file.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @return The name of the sidecar caption file that you want Elastic Transcoder
-     *         to include in the output file.
-     */
-    public String getKey() {
-        return key;
-    }
-    
-    /**
-     * The name of the sidecar caption file that you want Elastic Transcoder
-     * to include in the output file.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param key The name of the sidecar caption file that you want Elastic Transcoder
-     *         to include in the output file.
+     * The name of the sidecar caption file that you want Elastic Transcoder to
+     * include in the output file.
+     * </p>
+     * 
+     * @param key
+     *        The name of the sidecar caption file that you want Elastic
+     *        Transcoder to include in the output file.
      */
     public void setKey(String key) {
         this.key = key;
     }
-    
+
     /**
-     * The name of the sidecar caption file that you want Elastic Transcoder
-     * to include in the output file.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The name of the sidecar caption file that you want Elastic Transcoder to
+     * include in the output file.
+     * </p>
+     * 
+     * @return The name of the sidecar caption file that you want Elastic
+     *         Transcoder to include in the output file.
+     */
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param key The name of the sidecar caption file that you want Elastic Transcoder
-     *         to include in the output file.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the sidecar caption file that you want Elastic Transcoder to
+     * include in the output file.
+     * </p>
+     * 
+     * @param key
+     *        The name of the sidecar caption file that you want Elastic
+     *        Transcoder to include in the output file.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CaptionSource withKey(String key) {
-        this.key = key;
+        setKey(key);
         return this;
     }
 
     /**
-     * A string that specifies the language of the caption. Specify this as
-     * one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     * ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     * codes and language names, see the List of ISO 639-1 codes.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @return A string that specifies the language of the caption. Specify this as
-     *         one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     *         ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     *         codes and language names, see the List of ISO 639-1 codes.
-     */
-    public String getLanguage() {
-        return language;
-    }
-    
-    /**
-     * A string that specifies the language of the caption. Specify this as
-     * one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     * ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     * codes and language names, see the List of ISO 639-1 codes.
+     * A string that specifies the language of the caption. Specify this as one
+     * of:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param language A string that specifies the language of the caption. Specify this as
-     *         one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     *         ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     *         codes and language names, see the List of ISO 639-1 codes.
+     * 2-character ISO 639-1 code
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3-character ISO 639-2 code
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information on ISO language codes and language names, see the
+     * List of ISO 639-1 codes.
+     * </p>
+     * 
+     * @param language
+     *        A string that specifies the language of the caption. Specify this
+     *        as one of:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        2-character ISO 639-1 code
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3-character ISO 639-2 code
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information on ISO language codes and language names, see
+     *        the List of ISO 639-1 codes.
      */
     public void setLanguage(String language) {
         this.language = language;
     }
-    
+
     /**
-     * A string that specifies the language of the caption. Specify this as
-     * one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     * ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     * codes and language names, see the List of ISO 639-1 codes.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * A string that specifies the language of the caption. Specify this as one
+     * of:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     *
-     * @param language A string that specifies the language of the caption. Specify this as
-     *         one of: <ul> <li><p>2-character ISO 639-1 code</li> <li><p>3-character
-     *         ISO 639-2 code</li> </ul> <p>For more information on ISO language
-     *         codes and language names, see the List of ISO 639-1 codes.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * 2-character ISO 639-1 code
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3-character ISO 639-2 code
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information on ISO language codes and language names, see the
+     * List of ISO 639-1 codes.
+     * </p>
+     * 
+     * @return A string that specifies the language of the caption. Specify this
+     *         as one of:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         2-character ISO 639-1 code
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3-character ISO 639-2 code
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information on ISO language codes and language names,
+     *         see the List of ISO 639-1 codes.
+     */
+    public String getLanguage() {
+        return this.language;
+    }
+
+    /**
+     * <p>
+     * A string that specifies the language of the caption. Specify this as one
+     * of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 2-character ISO 639-1 code
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3-character ISO 639-2 code
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information on ISO language codes and language names, see the
+     * List of ISO 639-1 codes.
+     * </p>
+     * 
+     * @param language
+     *        A string that specifies the language of the caption. Specify this
+     *        as one of:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        2-character ISO 639-1 code
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3-character ISO 639-2 code
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information on ISO language codes and language names, see
+     *        the List of ISO 639-1 codes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CaptionSource withLanguage(String language) {
-        this.language = language;
+        setLanguage(language);
         return this;
     }
 
     /**
-     * For clip generation or captions that do not start at the same time as
-     * the associated video file, the <code>TimeOffset</code> tells Elastic
-     * Transcoder how much of the video to encode before including captions.
-     * <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^[+-]?\d{1,5}(\.\d{0,3})?$)|(^[+-]?([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
-     *
-     * @return For clip generation or captions that do not start at the same time as
-     *         the associated video file, the <code>TimeOffset</code> tells Elastic
-     *         Transcoder how much of the video to encode before including captions.
-     *         <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
-     */
-    public String getTimeOffset() {
-        return timeOffset;
-    }
-    
-    /**
-     * For clip generation or captions that do not start at the same time as
-     * the associated video file, the <code>TimeOffset</code> tells Elastic
+     * For clip generation or captions that do not start at the same time as the
+     * associated video file, the <code>TimeOffset</code> tells Elastic
      * Transcoder how much of the video to encode before including captions.
-     * <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^[+-]?\d{1,5}(\.\d{0,3})?$)|(^[+-]?([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
-     *
-     * @param timeOffset For clip generation or captions that do not start at the same time as
-     *         the associated video file, the <code>TimeOffset</code> tells Elastic
-     *         Transcoder how much of the video to encode before including captions.
-     *         <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * </p>
+     * 
+     * @param timeOffset
+     *        For clip generation or captions that do not start at the same time
+     *        as the associated video file, the <code>TimeOffset</code> tells
+     *        Elastic Transcoder how much of the video to encode before
+     *        including captions.</p>
+     *        <p>
+     *        Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      */
     public void setTimeOffset(String timeOffset) {
         this.timeOffset = timeOffset;
     }
-    
+
     /**
-     * For clip generation or captions that do not start at the same time as
-     * the associated video file, the <code>TimeOffset</code> tells Elastic
+     * <p>
+     * For clip generation or captions that do not start at the same time as the
+     * associated video file, the <code>TimeOffset</code> tells Elastic
      * Transcoder how much of the video to encode before including captions.
-     * <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * </p>
+     * 
+     * @return For clip generation or captions that do not start at the same
+     *         time as the associated video file, the <code>TimeOffset</code>
+     *         tells Elastic Transcoder how much of the video to encode before
+     *         including captions.</p>
+     *         <p>
+     *         Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     */
+    public String getTimeOffset() {
+        return this.timeOffset;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^[+-]?\d{1,5}(\.\d{0,3})?$)|(^[+-]?([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)<br/>
-     *
-     * @param timeOffset For clip generation or captions that do not start at the same time as
-     *         the associated video file, the <code>TimeOffset</code> tells Elastic
-     *         Transcoder how much of the video to encode before including captions.
-     *         <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * For clip generation or captions that do not start at the same time as the
+     * associated video file, the <code>TimeOffset</code> tells Elastic
+     * Transcoder how much of the video to encode before including captions.
+     * </p>
+     * <p>
+     * Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * </p>
+     * 
+     * @param timeOffset
+     *        For clip generation or captions that do not start at the same time
+     *        as the associated video file, the <code>TimeOffset</code> tells
+     *        Elastic Transcoder how much of the video to encode before
+     *        including captions.</p>
+     *        <p>
+     *        Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CaptionSource withTimeOffset(String timeOffset) {
-        this.timeOffset = timeOffset;
+        setTimeOffset(timeOffset);
         return this;
     }
 
     /**
-     * The label of the caption shown in the player when choosing a language.
-     * We recommend that you put the caption language name here, in the
-     * language of the captions.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 40<br/>
-     *
-     * @return The label of the caption shown in the player when choosing a language.
-     *         We recommend that you put the caption language name here, in the
-     *         language of the captions.
-     */
-    public String getLabel() {
-        return label;
-    }
-    
-    /**
-     * The label of the caption shown in the player when choosing a language.
-     * We recommend that you put the caption language name here, in the
-     * language of the captions.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 40<br/>
-     *
-     * @param label The label of the caption shown in the player when choosing a language.
-     *         We recommend that you put the caption language name here, in the
-     *         language of the captions.
+     * The label of the caption shown in the player when choosing a language. We
+     * recommend that you put the caption language name here, in the language of
+     * the captions.
+     * </p>
+     * 
+     * @param label
+     *        The label of the caption shown in the player when choosing a
+     *        language. We recommend that you put the caption language name
+     *        here, in the language of the captions.
      */
     public void setLabel(String label) {
         this.label = label;
     }
-    
+
     /**
-     * The label of the caption shown in the player when choosing a language.
-     * We recommend that you put the caption language name here, in the
-     * language of the captions.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The label of the caption shown in the player when choosing a language. We
+     * recommend that you put the caption language name here, in the language of
+     * the captions.
+     * </p>
+     * 
+     * @return The label of the caption shown in the player when choosing a
+     *         language. We recommend that you put the caption language name
+     *         here, in the language of the captions.
+     */
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 40<br/>
-     *
-     * @param label The label of the caption shown in the player when choosing a language.
-     *         We recommend that you put the caption language name here, in the
-     *         language of the captions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The label of the caption shown in the player when choosing a language. We
+     * recommend that you put the caption language name here, in the language of
+     * the captions.
+     * </p>
+     * 
+     * @param label
+     *        The label of the caption shown in the player when choosing a
+     *        language. We recommend that you put the caption language name
+     *        here, in the language of the captions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CaptionSource withLabel(String label) {
-        this.label = label;
+        setLabel(label);
         return this;
     }
 
     /**
+     * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to
      * apply to your caption sources.
-     *
-     * @return The encryption settings, if any, that you want Elastic Transcoder to
-     *         apply to your caption sources.
-     */
-    public Encryption getEncryption() {
-        return encryption;
-    }
-    
-    /**
-     * The encryption settings, if any, that you want Elastic Transcoder to
-     * apply to your caption sources.
-     *
-     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
-     *         apply to your caption sources.
+     * </p>
+     * 
+     * @param encryption
+     *        The encryption settings, if any, that you want Elastic Transcoder
+     *        to apply to your caption sources.
      */
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
-    
+
     /**
+     * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to
      * apply to your caption sources.
+     * </p>
+     * 
+     * @return The encryption settings, if any, that you want Elastic Transcoder
+     *         to apply to your caption sources.
+     */
+    public Encryption getEncryption() {
+        return this.encryption;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param encryption The encryption settings, if any, that you want Elastic Transcoder to
-     *         apply to your caption sources.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The encryption settings, if any, that you want Elastic Transcoder to
+     * apply to your caption sources.
+     * </p>
+     * 
+     * @param encryption
+     *        The encryption settings, if any, that you want Elastic Transcoder
+     *        to apply to your caption sources.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public CaptionSource withEncryption(Encryption encryption) {
-        this.encryption = encryption;
+        setEncryption(encryption);
         return this;
     }
 
@@ -344,62 +437,84 @@ public class CaptionSource implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");
-        if (getLanguage() != null) sb.append("Language: " + getLanguage() + ",");
-        if (getTimeOffset() != null) sb.append("TimeOffset: " + getTimeOffset() + ",");
-        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");
-        if (getEncryption() != null) sb.append("Encryption: " + getEncryption() );
+        if (getKey() != null)
+            sb.append("Key: " + getKey() + ",");
+        if (getLanguage() != null)
+            sb.append("Language: " + getLanguage() + ",");
+        if (getTimeOffset() != null)
+            sb.append("TimeOffset: " + getTimeOffset() + ",");
+        if (getLabel() != null)
+            sb.append("Label: " + getLabel() + ",");
+        if (getEncryption() != null)
+            sb.append("Encryption: " + getEncryption());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CaptionSource == false)
+            return false;
+        CaptionSource other = (CaptionSource) obj;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null
+                && other.getKey().equals(this.getKey()) == false)
+            return false;
+        if (other.getLanguage() == null ^ this.getLanguage() == null)
+            return false;
+        if (other.getLanguage() != null
+                && other.getLanguage().equals(this.getLanguage()) == false)
+            return false;
+        if (other.getTimeOffset() == null ^ this.getTimeOffset() == null)
+            return false;
+        if (other.getTimeOffset() != null
+                && other.getTimeOffset().equals(this.getTimeOffset()) == false)
+            return false;
+        if (other.getLabel() == null ^ this.getLabel() == null)
+            return false;
+        if (other.getLabel() != null
+                && other.getLabel().equals(this.getLabel()) == false)
+            return false;
+        if (other.getEncryption() == null ^ this.getEncryption() == null)
+            return false;
+        if (other.getEncryption() != null
+                && other.getEncryption().equals(this.getEncryption()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode()); 
-        hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode()); 
-        hashCode = prime * hashCode + ((getTimeOffset() == null) ? 0 : getTimeOffset().hashCode()); 
-        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode()); 
-        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode
+                + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
+        hashCode = prime * hashCode
+                + ((getTimeOffset() == null) ? 0 : getTimeOffset().hashCode());
+        hashCode = prime * hashCode
+                + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode
+                + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CaptionSource == false) return false;
-        CaptionSource other = (CaptionSource)obj;
-        
-        if (other.getKey() == null ^ this.getKey() == null) return false;
-        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false) return false; 
-        if (other.getLanguage() == null ^ this.getLanguage() == null) return false;
-        if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false) return false; 
-        if (other.getTimeOffset() == null ^ this.getTimeOffset() == null) return false;
-        if (other.getTimeOffset() != null && other.getTimeOffset().equals(this.getTimeOffset()) == false) return false; 
-        if (other.getLabel() == null ^ this.getLabel() == null) return false;
-        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false) return false; 
-        if (other.getEncryption() == null ^ this.getEncryption() == null) return false;
-        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CaptionSource clone() {
         try {
             return (CaptionSource) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

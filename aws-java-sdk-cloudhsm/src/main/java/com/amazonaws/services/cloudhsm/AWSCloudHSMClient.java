@@ -256,6 +256,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.CreateHapg
      */
     @Override
     public CreateHapgResult createHapg(CreateHapgRequest createHapgRequest) {
@@ -306,6 +307,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.CreateHsm
      */
     @Override
     public CreateHsmResult createHsm(CreateHsmRequest createHsmRequest) {
@@ -355,6 +357,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.CreateLunaClient
      */
     @Override
     public CreateLunaClientResult createLunaClient(
@@ -406,6 +409,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DeleteHapg
      */
     @Override
     public DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest) {
@@ -456,6 +460,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DeleteHsm
      */
     @Override
     public DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest) {
@@ -504,6 +509,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DeleteLunaClient
      */
     @Override
     public DeleteLunaClientResult deleteLunaClient(
@@ -555,6 +561,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DescribeHapg
      */
     @Override
     public DescribeHapgResult describeHapg(
@@ -606,6 +613,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DescribeHsm
      */
     @Override
     public DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest) {
@@ -660,6 +668,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.DescribeLunaClient
      */
     @Override
     public DescribeLunaClientResult describeLunaClient(
@@ -716,6 +725,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.GetConfig
      */
     @Override
     public GetConfigResult getConfig(GetConfigRequest getConfigRequest) {
@@ -766,6 +776,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListAvailableZones
      */
     @Override
     public ListAvailableZonesResult listAvailableZones(
@@ -827,6 +838,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListHapgs
      */
     @Override
     public ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest) {
@@ -887,6 +899,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListHsms
      */
     @Override
     public ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest) {
@@ -946,6 +959,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ListLunaClients
      */
     @Override
     public ListLunaClientsResult listLunaClients(
@@ -1000,6 +1014,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ModifyHapg
      */
     @Override
     public ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest) {
@@ -1049,6 +1064,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @throws InvalidRequestException
      *         Indicates that one or more of the request parameters are not
      *         valid.
+     * @sample AWSCloudHSM.ModifyHsm
      */
     @Override
     public ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest) {
@@ -1096,6 +1112,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @return Result of the ModifyLunaClient operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @sample AWSCloudHSM.ModifyLunaClient
      */
     @Override
     public ModifyLunaClientResult modifyLunaClient(

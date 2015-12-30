@@ -1,17 +1,18 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
@@ -22,73 +23,69 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used as a response element in the
- * UploadSigningCertificate and ListSigningCertificates actions.
+ * <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> actions.
  * </p>
  */
 public class SigningCertificate implements Serializable, Cloneable {
 
     /**
-     * The name of the user the signing certificate is associated with.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * The name of the user the signing certificate is associated with.
+     * </p>
      */
     private String userName;
-
     /**
-     * The ID for the signing certificate.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>24 - 128<br/>
-     * <b>Pattern: </b>[\w]+<br/>
+     * The ID for the signing certificate.
+     * </p>
      */
     private String certificateId;
-
     /**
-     * The contents of the signing certificate.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     * The contents of the signing certificate.
+     * </p>
      */
     private String certificateBody;
-
     /**
-     * The status of the signing certificate. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is
-     * not.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Active, Inactive
+     * The status of the signing certificate. <code>Active</code> means the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.
+     * </p>
      */
     private String status;
-
     /**
+     * <p>
      * The date when the signing certificate was uploaded.
+     * </p>
      */
     private java.util.Date uploadDate;
 
     /**
-     * Default constructor for a new SigningCertificate object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for SigningCertificate object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public SigningCertificate() {}
-    
+    public SigningCertificate() {
+    }
+
     /**
-     * Constructs a new SigningCertificate object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new SigningCertificate object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param userName The name of the user the signing certificate is
-     * associated with.
-     * @param certificateId The ID for the signing certificate.
-     * @param certificateBody The contents of the signing certificate.
-     * @param status The status of the signing certificate.
-     * <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * @param userName
+     *        The name of the user the signing certificate is associated with.
+     * @param certificateId
+     *        The ID for the signing certificate.
+     * @param certificateBody
+     *        The contents of the signing certificate.
+     * @param status
+     *        The status of the signing certificate. <code>Active</code> means
+     *        the key is valid for API calls, while <code>Inactive</code> means
+     *        it is not.
      */
-    public SigningCertificate(String userName, String certificateId, String certificateBody, String status) {
+    public SigningCertificate(String userName, String certificateId,
+            String certificateBody, String status) {
         setUserName(userName);
         setCertificateId(certificateId);
         setCertificateBody(certificateBody);
@@ -96,292 +93,265 @@ public class SigningCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * Constructs a new SigningCertificate object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new SigningCertificate object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param userName The name of the user the signing certificate is
-     * associated with.
-     * @param certificateId The ID for the signing certificate.
-     * @param certificateBody The contents of the signing certificate.
-     * @param status The status of the signing certificate.
-     * <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * @param userName
+     *        The name of the user the signing certificate is associated with.
+     * @param certificateId
+     *        The ID for the signing certificate.
+     * @param certificateBody
+     *        The contents of the signing certificate.
+     * @param status
+     *        The status of the signing certificate. <code>Active</code> means
+     *        the key is valid for API calls, while <code>Inactive</code> means
+     *        it is not.
      */
-    public SigningCertificate(String userName, String certificateId, String certificateBody, StatusType status) {
-        this.userName = userName;
-        this.certificateId = certificateId;
-        this.certificateBody = certificateBody;
-        this.status = status.toString();
+    public SigningCertificate(String userName, String certificateId,
+            String certificateBody, StatusType status) {
+        setUserName(userName);
+        setCertificateId(certificateId);
+        setCertificateBody(certificateBody);
+        setStatus(status.toString());
     }
 
     /**
-     * The name of the user the signing certificate is associated with.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name of the user the signing certificate is associated with.
-     */
-    public String getUserName() {
-        return userName;
-    }
-    
-    /**
      * The name of the user the signing certificate is associated with.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param userName The name of the user the signing certificate is associated with.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user the signing certificate is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    
+
     /**
+     * <p>
      * The name of the user the signing certificate is associated with.
+     * </p>
+     * 
+     * @return The name of the user the signing certificate is associated with.
+     */
+    public String getUserName() {
+        return this.userName;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param userName The name of the user the signing certificate is associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the user the signing certificate is associated with.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user the signing certificate is associated with.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public SigningCertificate withUserName(String userName) {
-        this.userName = userName;
+        setUserName(userName);
         return this;
     }
 
     /**
-     * The ID for the signing certificate.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>24 - 128<br/>
-     * <b>Pattern: </b>[\w]+<br/>
-     *
-     * @return The ID for the signing certificate.
-     */
-    public String getCertificateId() {
-        return certificateId;
-    }
-    
-    /**
      * The ID for the signing certificate.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>24 - 128<br/>
-     * <b>Pattern: </b>[\w]+<br/>
-     *
-     * @param certificateId The ID for the signing certificate.
+     * </p>
+     * 
+     * @param certificateId
+     *        The ID for the signing certificate.
      */
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
-    
+
     /**
+     * <p>
      * The ID for the signing certificate.
+     * </p>
+     * 
+     * @return The ID for the signing certificate.
+     */
+    public String getCertificateId() {
+        return this.certificateId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>24 - 128<br/>
-     * <b>Pattern: </b>[\w]+<br/>
-     *
-     * @param certificateId The ID for the signing certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID for the signing certificate.
+     * </p>
+     * 
+     * @param certificateId
+     *        The ID for the signing certificate.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public SigningCertificate withCertificateId(String certificateId) {
-        this.certificateId = certificateId;
+        setCertificateId(certificateId);
         return this;
     }
 
     /**
-     * The contents of the signing certificate.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @return The contents of the signing certificate.
-     */
-    public String getCertificateBody() {
-        return certificateBody;
-    }
-    
-    /**
      * The contents of the signing certificate.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @param certificateBody The contents of the signing certificate.
+     * </p>
+     * 
+     * @param certificateBody
+     *        The contents of the signing certificate.
      */
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
-    
+
     /**
+     * <p>
      * The contents of the signing certificate.
+     * </p>
+     * 
+     * @return The contents of the signing certificate.
+     */
+    public String getCertificateBody() {
+        return this.certificateBody;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
-     *
-     * @param certificateBody The contents of the signing certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The contents of the signing certificate.
+     * </p>
+     * 
+     * @param certificateBody
+     *        The contents of the signing certificate.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public SigningCertificate withCertificateBody(String certificateBody) {
-        this.certificateBody = certificateBody;
+        setCertificateBody(certificateBody);
         return this;
     }
 
     /**
-     * The status of the signing certificate. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is
-     * not.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Active, Inactive
-     *
-     * @return The status of the signing certificate. <code>Active</code> means the
-     *         key is valid for API calls, while <code>Inactive</code> means it is
-     *         not.
-     *
-     * @see StatusType
-     */
-    public String getStatus() {
-        return status;
-    }
-    
-    /**
-     * The status of the signing certificate. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is
-     * not.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Active, Inactive
-     *
-     * @param status The status of the signing certificate. <code>Active</code> means the
-     *         key is valid for API calls, while <code>Inactive</code> means it is
-     *         not.
-     *
+     * The status of the signing certificate. <code>Active</code> means the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.
+     * </p>
+     * 
+     * @param status
+     *        The status of the signing certificate. <code>Active</code> means
+     *        the key is valid for API calls, while <code>Inactive</code> means
+     *        it is not.
      * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     /**
-     * The status of the signing certificate. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is
-     * not.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The status of the signing certificate. <code>Active</code> means the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.
+     * </p>
+     * 
+     * @return The status of the signing certificate. <code>Active</code> means
+     *         the key is valid for API calls, while <code>Inactive</code> means
+     *         it is not.
+     * @see StatusType
+     */
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Active, Inactive
-     *
-     * @param status The status of the signing certificate. <code>Active</code> means the
-     *         key is valid for API calls, while <code>Inactive</code> means it is
-     *         not.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The status of the signing certificate. <code>Active</code> means the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.
+     * </p>
+     * 
+     * @param status
+     *        The status of the signing certificate. <code>Active</code> means
+     *        the key is valid for API calls, while <code>Inactive</code> means
+     *        it is not.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StatusType
      */
     public SigningCertificate withStatus(String status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
-     * The status of the signing certificate. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is
-     * not.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Active, Inactive
-     *
-     * @param status The status of the signing certificate. <code>Active</code> means the
-     *         key is valid for API calls, while <code>Inactive</code> means it is
-     *         not.
-     *
+     * The status of the signing certificate. <code>Active</code> means the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.
+     * </p>
+     * 
+     * @param status
+     *        The status of the signing certificate. <code>Active</code> means
+     *        the key is valid for API calls, while <code>Inactive</code> means
+     *        it is not.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StatusType
      */
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
-    
+
     /**
-     * The status of the signing certificate. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is
-     * not.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Active, Inactive
-     *
-     * @param status The status of the signing certificate. <code>Active</code> means the
-     *         key is valid for API calls, while <code>Inactive</code> means it is
-     *         not.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The status of the signing certificate. <code>Active</code> means the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.
+     * </p>
+     * 
+     * @param status
+     *        The status of the signing certificate. <code>Active</code> means
+     *        the key is valid for API calls, while <code>Inactive</code> means
+     *        it is not.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see StatusType
      */
     public SigningCertificate withStatus(StatusType status) {
-        this.status = status.toString();
+        setStatus(status);
         return this;
     }
 
     /**
+     * <p>
      * The date when the signing certificate was uploaded.
-     *
-     * @return The date when the signing certificate was uploaded.
-     */
-    public java.util.Date getUploadDate() {
-        return uploadDate;
-    }
-    
-    /**
-     * The date when the signing certificate was uploaded.
-     *
-     * @param uploadDate The date when the signing certificate was uploaded.
+     * </p>
+     * 
+     * @param uploadDate
+     *        The date when the signing certificate was uploaded.
      */
     public void setUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;
     }
-    
+
     /**
-     * The date when the signing certificate was uploaded.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param uploadDate The date when the signing certificate was uploaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date when the signing certificate was uploaded.
+     * </p>
+     * 
+     * @return The date when the signing certificate was uploaded.
+     */
+    public java.util.Date getUploadDate() {
+        return this.uploadDate;
+    }
+
+    /**
+     * <p>
+     * The date when the signing certificate was uploaded.
+     * </p>
+     * 
+     * @param uploadDate
+     *        The date when the signing certificate was uploaded.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public SigningCertificate withUploadDate(java.util.Date uploadDate) {
-        this.uploadDate = uploadDate;
+        setUploadDate(uploadDate);
         return this;
     }
 
@@ -397,62 +367,89 @@ public class SigningCertificate implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
-        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() );
+        if (getUserName() != null)
+            sb.append("UserName: " + getUserName() + ",");
+        if (getCertificateId() != null)
+            sb.append("CertificateId: " + getCertificateId() + ",");
+        if (getCertificateBody() != null)
+            sb.append("CertificateBody: " + getCertificateBody() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getUploadDate() != null)
+            sb.append("UploadDate: " + getUploadDate());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SigningCertificate == false)
+            return false;
+        SigningCertificate other = (SigningCertificate) obj;
+        if (other.getUserName() == null ^ this.getUserName() == null)
+            return false;
+        if (other.getUserName() != null
+                && other.getUserName().equals(this.getUserName()) == false)
+            return false;
+        if (other.getCertificateId() == null ^ this.getCertificateId() == null)
+            return false;
+        if (other.getCertificateId() != null
+                && other.getCertificateId().equals(this.getCertificateId()) == false)
+            return false;
+        if (other.getCertificateBody() == null
+                ^ this.getCertificateBody() == null)
+            return false;
+        if (other.getCertificateBody() != null
+                && other.getCertificateBody().equals(this.getCertificateBody()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getUploadDate() == null ^ this.getUploadDate() == null)
+            return false;
+        if (other.getUploadDate() != null
+                && other.getUploadDate().equals(this.getUploadDate()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
-        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode()); 
-        hashCode = prime * hashCode + ((getCertificateBody() == null) ? 0 : getCertificateBody().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getUploadDate() == null) ? 0 : getUploadDate().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCertificateId() == null) ? 0 : getCertificateId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCertificateBody() == null) ? 0 : getCertificateBody()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode
+                + ((getUploadDate() == null) ? 0 : getUploadDate().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof SigningCertificate == false) return false;
-        SigningCertificate other = (SigningCertificate)obj;
-        
-        if (other.getUserName() == null ^ this.getUserName() == null) return false;
-        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
-        if (other.getCertificateId() == null ^ this.getCertificateId() == null) return false;
-        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false) return false; 
-        if (other.getCertificateBody() == null ^ this.getCertificateBody() == null) return false;
-        if (other.getCertificateBody() != null && other.getCertificateBody().equals(this.getCertificateBody()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getUploadDate() == null ^ this.getUploadDate() == null) return false;
-        if (other.getUploadDate() != null && other.getUploadDate().equals(this.getUploadDate()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public SigningCertificate clone() {
         try {
             return (SigningCertificate) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

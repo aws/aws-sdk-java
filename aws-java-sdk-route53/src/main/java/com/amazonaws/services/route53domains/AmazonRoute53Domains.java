@@ -102,6 +102,7 @@ public interface AmazonRoute53Domains {
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.CheckDomainAvailability
      */
     CheckDomainAvailabilityResult checkDomainAvailability(
             CheckDomainAvailabilityRequest checkDomainAvailabilityRequest);
@@ -129,6 +130,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.DeleteTagsForDomain
      */
     DeleteTagsForDomainResult deleteTagsForDomain(
             DeleteTagsForDomainRequest deleteTagsForDomainRequest);
@@ -153,6 +155,7 @@ public interface AmazonRoute53Domains {
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.DisableDomainAutoRenew
      */
     DisableDomainAutoRenewResult disableDomainAutoRenew(
             DisableDomainAutoRenewRequest disableDomainAutoRenewRequest);
@@ -187,6 +190,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.DisableDomainTransferLock
      */
     DisableDomainTransferLockResult disableDomainTransferLock(
             DisableDomainTransferLockRequest disableDomainTransferLockRequest);
@@ -217,6 +221,7 @@ public interface AmazonRoute53Domains {
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.EnableDomainAutoRenew
      */
     EnableDomainAutoRenewResult enableDomainAutoRenew(
             EnableDomainAutoRenewRequest enableDomainAutoRenewRequest);
@@ -249,6 +254,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.EnableDomainTransferLock
      */
     EnableDomainTransferLockResult enableDomainTransferLock(
             EnableDomainTransferLockRequest enableDomainTransferLockRequest);
@@ -269,6 +275,7 @@ public interface AmazonRoute53Domains {
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.GetDomainDetail
      */
     GetDomainDetailResult getDomainDetail(
             GetDomainDetailRequest getDomainDetailRequest);
@@ -288,6 +295,7 @@ public interface AmazonRoute53Domains {
      *         OperationId it may refer to the ID of an operation that is
      *         already completed. For a domain name, it may not be a valid
      *         domain name or belong to the requester account.
+     * @sample AmazonRoute53Domains.GetOperationDetail
      */
     GetOperationDetailResult getOperationDetail(
             GetOperationDetailRequest getOperationDetailRequest);
@@ -306,6 +314,7 @@ public interface AmazonRoute53Domains {
      *         OperationId it may refer to the ID of an operation that is
      *         already completed. For a domain name, it may not be a valid
      *         domain name or belong to the requester account.
+     * @sample AmazonRoute53Domains.ListDomains
      */
     ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest);
 
@@ -330,6 +339,7 @@ public interface AmazonRoute53Domains {
      *         OperationId it may refer to the ID of an operation that is
      *         already completed. For a domain name, it may not be a valid
      *         domain name or belong to the requester account.
+     * @sample AmazonRoute53Domains.ListOperations
      */
     ListOperationsResult listOperations(
             ListOperationsRequest listOperationsRequest);
@@ -365,6 +375,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.ListTagsForDomain
      */
     ListTagsForDomainResult listTagsForDomain(
             ListTagsForDomainRequest listTagsForDomainRequest);
@@ -418,6 +429,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed
      *         threshold for the account.
+     * @sample AmazonRoute53Domains.RegisterDomain
      */
     RegisterDomainResult registerDomain(
             RegisterDomainRequest registerDomainRequest);
@@ -439,6 +451,7 @@ public interface AmazonRoute53Domains {
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.RetrieveDomainAuthCode
      */
     RetrieveDomainAuthCodeResult retrieveDomainAuthCode(
             RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest);
@@ -496,6 +509,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed
      *         threshold for the account.
+     * @sample AmazonRoute53Domains.TransferDomain
      */
     TransferDomainResult transferDomain(
             TransferDomainRequest transferDomainRequest);
@@ -531,6 +545,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.UpdateDomainContact
      */
     UpdateDomainContactResult updateDomainContact(
             UpdateDomainContactRequest updateDomainContactRequest);
@@ -572,6 +587,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.UpdateDomainContactPrivacy
      */
     UpdateDomainContactPrivacyResult updateDomainContactPrivacy(
             UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest);
@@ -608,6 +624,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.UpdateDomainNameservers
      */
     UpdateDomainNameserversResult updateDomainNameservers(
             UpdateDomainNameserversRequest updateDomainNameserversRequest);
@@ -635,6 +652,7 @@ public interface AmazonRoute53Domains {
      *         threshold for the account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.UpdateTagsForDomain
      */
     UpdateTagsForDomainResult updateTagsForDomain(
             UpdateTagsForDomainRequest updateTagsForDomainRequest);

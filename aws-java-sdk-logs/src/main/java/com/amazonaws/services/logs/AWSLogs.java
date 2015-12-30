@@ -159,6 +159,7 @@ public interface AWSLogs {
      *         Returned if the operation is not valid on the specified resource
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.CancelExportTask
      */
     void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest);
 
@@ -196,6 +197,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ResourceAlreadyExistsException
      *         Returned if the specified resource already exists.
+     * @sample AWSLogs.CreateExportTask
      */
     CreateExportTaskResult createExportTask(
             CreateExportTaskRequest createExportTaskRequest);
@@ -228,6 +230,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.CreateLogGroup
      */
     void createLogGroup(CreateLogGroupRequest createLogGroupRequest);
 
@@ -254,6 +257,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.CreateLogStream
      */
     void createLogStream(CreateLogStreamRequest createLogStreamRequest);
 
@@ -274,6 +278,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteDestination
      */
     void deleteDestination(DeleteDestinationRequest deleteDestinationRequest);
 
@@ -293,6 +298,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteLogGroup
      */
     void deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest);
 
@@ -312,6 +318,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteLogStream
      */
     void deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest);
 
@@ -330,6 +337,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteMetricFilter
      */
     void deleteMetricFilter(DeleteMetricFilterRequest deleteMetricFilterRequest);
 
@@ -349,6 +357,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteRetentionPolicy
      */
     void deleteRetentionPolicy(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
@@ -368,6 +377,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DeleteSubscriptionFilter
      */
     void deleteSubscriptionFilter(
             DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest);
@@ -393,6 +403,7 @@ public interface AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeDestinations
      */
     DescribeDestinationsResult describeDestinations(
             DescribeDestinationsRequest describeDestinationsRequest);
@@ -426,6 +437,7 @@ public interface AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeExportTasks
      */
     DescribeExportTasksResult describeExportTasks(
             DescribeExportTasksRequest describeExportTasksRequest);
@@ -451,6 +463,7 @@ public interface AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeLogGroups
      */
     DescribeLogGroupsResult describeLogGroups(
             DescribeLogGroupsRequest describeLogGroupsRequest);
@@ -487,6 +500,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeLogStreams
      */
     DescribeLogStreamsResult describeLogStreams(
             DescribeLogStreamsRequest describeLogStreamsRequest);
@@ -513,6 +527,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeMetricFilters
      */
     DescribeMetricFiltersResult describeMetricFilters(
             DescribeMetricFiltersRequest describeMetricFiltersRequest);
@@ -539,6 +554,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.DescribeSubscriptionFilters
      */
     DescribeSubscriptionFiltersResult describeSubscriptionFilters(
             DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest);
@@ -573,6 +589,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.FilterLogEvents
      */
     FilterLogEventsResult filterLogEvents(
             FilterLogEventsRequest filterLogEventsRequest);
@@ -603,6 +620,7 @@ public interface AWSLogs {
      *         Returned if the specified resource does not exist.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.GetLogEvents
      */
     GetLogEventsResult getLogEvents(GetLogEventsRequest getLogEventsRequest);
 
@@ -633,6 +651,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutDestination
      */
     PutDestinationResult putDestination(
             PutDestinationRequest putDestinationRequest);
@@ -654,6 +673,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutDestinationPolicy
      */
     void putDestinationPolicy(
             PutDestinationPolicyRequest putDestinationPolicyRequest);
@@ -697,6 +717,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutLogEvents
      */
     PutLogEventsResult putLogEvents(PutLogEventsRequest putLogEventsRequest);
 
@@ -725,6 +746,7 @@ public interface AWSLogs {
      *         can be created.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutMetricFilter
      */
     void putMetricFilter(PutMetricFilterRequest putMetricFilterRequest);
 
@@ -745,6 +767,7 @@ public interface AWSLogs {
      *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutRetentionPolicy
      */
     void putRetentionPolicy(PutRetentionPolicyRequest putRetentionPolicyRequest);
 
@@ -780,6 +803,7 @@ public interface AWSLogs {
      *         can be created.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.PutSubscriptionFilter
      */
     void putSubscriptionFilter(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest);
@@ -797,6 +821,7 @@ public interface AWSLogs {
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
+     * @sample AWSLogs.TestMetricFilter
      */
     TestMetricFilterResult testMetricFilter(
             TestMetricFilterRequest testMetricFilterRequest);

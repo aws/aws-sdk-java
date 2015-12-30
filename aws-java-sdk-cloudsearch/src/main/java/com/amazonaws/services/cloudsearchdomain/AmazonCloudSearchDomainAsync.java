@@ -80,6 +80,7 @@ public interface AmazonCloudSearchDomainAsync extends AmazonCloudSearchDomain {
      *        Container for the parameters to the <code>Search</code> request.
      * @return A Java Future containing the result of the Search operation
      *         returned by the service.
+     * @sample AmazonCloudSearchDomainAsync.Search
      */
     java.util.concurrent.Future<SearchResult> searchAsync(
             SearchRequest searchRequest);
@@ -127,6 +128,7 @@ public interface AmazonCloudSearchDomainAsync extends AmazonCloudSearchDomain {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Search operation
      *         returned by the service.
+     * @sample AmazonCloudSearchDomainAsyncHandler.Search
      */
     java.util.concurrent.Future<SearchResult> searchAsync(
             SearchRequest searchRequest,
@@ -162,6 +164,7 @@ public interface AmazonCloudSearchDomainAsync extends AmazonCloudSearchDomain {
      *        Container for the parameters to the <code>Suggest</code> request.
      * @return A Java Future containing the result of the Suggest operation
      *         returned by the service.
+     * @sample AmazonCloudSearchDomainAsync.Suggest
      */
     java.util.concurrent.Future<SuggestResult> suggestAsync(
             SuggestRequest suggestRequest);
@@ -201,6 +204,7 @@ public interface AmazonCloudSearchDomainAsync extends AmazonCloudSearchDomain {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the Suggest operation
      *         returned by the service.
+     * @sample AmazonCloudSearchDomainAsyncHandler.Suggest
      */
     java.util.concurrent.Future<SuggestResult> suggestAsync(
             SuggestRequest suggestRequest,
@@ -244,6 +248,7 @@ public interface AmazonCloudSearchDomainAsync extends AmazonCloudSearchDomain {
      *        request.
      * @return A Java Future containing the result of the UploadDocuments
      *         operation returned by the service.
+     * @sample AmazonCloudSearchDomainAsync.UploadDocuments
      */
     java.util.concurrent.Future<UploadDocumentsResult> uploadDocumentsAsync(
             UploadDocumentsRequest uploadDocumentsRequest);
@@ -291,6 +296,7 @@ public interface AmazonCloudSearchDomainAsync extends AmazonCloudSearchDomain {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UploadDocuments
      *         operation returned by the service.
+     * @sample AmazonCloudSearchDomainAsyncHandler.UploadDocuments
      */
     java.util.concurrent.Future<UploadDocumentsResult> uploadDocumentsAsync(
             UploadDocumentsRequest uploadDocumentsRequest,

@@ -429,6 +429,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.AddTags
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
@@ -537,6 +538,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.CreateTrail
      */
     @Override
     public CreateTrailResult createTrail(CreateTrailRequest createTrailRequest) {
@@ -602,6 +604,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
      *         created.
+     * @sample AWSCloudTrail.DeleteTrail
      */
     @Override
     public DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest) {
@@ -651,6 +654,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.DescribeTrails
      */
     @Override
     public DescribeTrailsResult describeTrails(
@@ -719,6 +723,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
      *         invalid.</li>
      *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * @sample AWSCloudTrail.GetTrailStatus
      */
     @Override
     public GetTrailStatusResult getTrailStatus(
@@ -781,6 +786,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         permitted.
      * @throws InvalidTokenException
      *         Reserved for future use.
+     * @sample AWSCloudTrail.ListPublicKeys
      */
     @Override
     public ListPublicKeysResult listPublicKeys(
@@ -864,6 +870,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         permitted.
      * @throws InvalidTokenException
      *         Reserved for future use.
+     * @sample AWSCloudTrail.ListTags
      */
     @Override
     public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
@@ -932,6 +939,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         Invalid token or token that was previously used in a request with
      *         different parameters. This exception is thrown if the token is
      *         invalid.
+     * @sample AWSCloudTrail.LookupEvents
      */
     @Override
     public LookupEventsResult lookupEvents(
@@ -1014,6 +1022,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.RemoveTags
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
@@ -1081,6 +1090,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
      *         created.
+     * @sample AWSCloudTrail.StartLogging
      */
     @Override
     public StartLoggingResult startLogging(
@@ -1152,6 +1162,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
      *         created.
+     * @sample AWSCloudTrail.StopLogging
      */
     @Override
     public StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest) {
@@ -1266,6 +1277,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not
      *         permitted.
+     * @sample AWSCloudTrail.UpdateTrail
      */
     @Override
     public UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest) {

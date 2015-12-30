@@ -307,6 +307,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.ActivatePipeline
      */
     @Override
     public ActivatePipelineResult activatePipeline(
@@ -363,6 +364,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.AddTags
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
@@ -413,6 +415,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.CreatePipeline
      */
     @Override
     public CreatePipelineResult createPipeline(
@@ -475,6 +478,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.DeactivatePipeline
      */
     @Override
     public DeactivatePipelineResult deactivatePipeline(
@@ -537,6 +541,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.DeletePipeline
      */
     @Override
     public void deletePipeline(DeletePipelineRequest deletePipelineRequest) {
@@ -591,6 +596,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.DescribeObjects
      */
     @Override
     public DescribeObjectsResult describeObjects(
@@ -657,6 +663,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.DescribePipelines
      */
     @Override
     public DescribePipelinesResult describePipelines(
@@ -718,6 +725,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.EvaluateExpression
      */
     @Override
     public EvaluateExpressionResult evaluateExpression(
@@ -777,6 +785,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.GetPipelineDefinition
      */
     @Override
     public GetPipelineDefinitionResult getPipelineDefinition(
@@ -829,6 +838,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.ListPipelines
      */
     @Override
     public ListPipelinesResult listPipelines(
@@ -902,6 +912,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         limits for your account.
      * @throws TaskNotFoundException
      *         The specified task was not found.
+     * @sample DataPipeline.PollForTask
      */
     @Override
     public PollForTaskResult pollForTask(PollForTaskRequest pollForTaskRequest) {
@@ -975,6 +986,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.PutPipelineDefinition
      */
     @Override
     public PutPipelineDefinitionResult putPipelineDefinition(
@@ -1032,6 +1044,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.QueryObjects
      */
     @Override
     public QueryObjectsResult queryObjects(
@@ -1087,6 +1100,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.RemoveTags
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
@@ -1157,6 +1171,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.ReportTaskProgress
      */
     @Override
     public ReportTaskProgressResult reportTaskProgress(
@@ -1213,6 +1228,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.ReportTaskRunnerHeartbeat
      */
     @Override
     public ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeat(
@@ -1273,6 +1289,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.SetStatus
      */
     @Override
     public void setStatus(SetStatusRequest setStatusRequest) {
@@ -1332,6 +1349,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.SetTaskStatus
      */
     @Override
     public SetTaskStatusResult setTaskStatus(
@@ -1389,6 +1407,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.ValidatePipelineDefinition
      */
     @Override
     public ValidatePipelineDefinitionResult validatePipelineDefinition(

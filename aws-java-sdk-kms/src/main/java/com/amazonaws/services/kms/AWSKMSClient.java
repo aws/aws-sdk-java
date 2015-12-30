@@ -413,6 +413,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.CancelKeyDeletion
      */
     @Override
     public CancelKeyDeletionResult cancelKeyDeletion(
@@ -498,6 +499,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.CreateAlias
      */
     @Override
     public void createAlias(CreateAliasRequest createAliasRequest) {
@@ -575,6 +577,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.CreateGrant
      */
     @Override
     public CreateGrantResult createGrant(CreateGrantRequest createGrantRequest) {
@@ -640,6 +643,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
+     * @sample AWSKMS.CreateKey
      */
     @Override
     public CreateKeyResult createKey(CreateKeyRequest createKeyRequest) {
@@ -733,6 +737,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.Decrypt
      */
     @Override
     public DecryptResult decrypt(DecryptRequest decryptRequest) {
@@ -792,6 +797,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DeleteAlias
      */
     @Override
     public void deleteAlias(DeleteAliasRequest deleteAliasRequest) {
@@ -842,6 +848,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.DescribeKey
      */
     @Override
     public DescribeKeyResult describeKey(DescribeKeyRequest describeKeyRequest) {
@@ -907,6 +914,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DisableKey
      */
     @Override
     public void disableKey(DisableKeyRequest disableKeyRequest) {
@@ -968,6 +976,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DisableKeyRotation
      */
     @Override
     public void disableKeyRotation(
@@ -1034,6 +1043,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.EnableKey
      */
     @Override
     public void enableKey(EnableKeyRequest enableKeyRequest) {
@@ -1095,6 +1105,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.EnableKeyRotation
      */
     @Override
     public void enableKeyRotation(
@@ -1190,6 +1201,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.Encrypt
      */
     @Override
     public EncryptResult encrypt(EncryptRequest encryptRequest) {
@@ -1298,6 +1310,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GenerateDataKey
      */
     @Override
     public GenerateDataKeyResult generateDataKey(
@@ -1375,6 +1388,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GenerateDataKeyWithoutPlaintext
      */
     @Override
     public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(
@@ -1424,6 +1438,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.GenerateRandom
      */
     @Override
     public GenerateRandomResult generateRandom(
@@ -1491,6 +1506,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GetKeyPolicy
      */
     @Override
     public GetKeyPolicyResult getKeyPolicy(
@@ -1555,6 +1571,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GetKeyRotationStatus
      */
     @Override
     public GetKeyRotationStatusResult getKeyRotationStatus(
@@ -1607,6 +1624,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.ListAliases
      */
     @Override
     public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
@@ -1676,6 +1694,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ListGrants
      */
     @Override
     public ListGrantsResult listGrants(ListGrantsRequest listGrantsRequest) {
@@ -1737,6 +1756,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ListKeyPolicies
      */
     @Override
     public ListKeyPoliciesResult listKeyPolicies(
@@ -1785,6 +1805,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.ListKeys
      */
     @Override
     public ListKeysResult listKeys(ListKeysRequest listKeysRequest) {
@@ -1851,6 +1872,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
+     * @sample AWSKMS.ListRetirableGrants
      */
     @Override
     public ListRetirableGrantsResult listRetirableGrants(
@@ -1927,6 +1949,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.PutKeyPolicy
      */
     @Override
     public void putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
@@ -2012,6 +2035,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ReEncrypt
      */
     @Override
     public ReEncryptResult reEncrypt(ReEncryptRequest reEncryptRequest) {
@@ -2090,6 +2114,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.RetireGrant
      */
     @Override
     public void retireGrant(RetireGrantRequest retireGrantRequest) {
@@ -2157,6 +2182,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.RevokeGrant
      */
     @Override
     public void revokeGrant(RevokeGrantRequest revokeGrantRequest) {
@@ -2238,6 +2264,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.ScheduleKeyDeletion
      */
     @Override
     public ScheduleKeyDeletionResult scheduleKeyDeletion(
@@ -2314,6 +2341,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.UpdateAlias
      */
     @Override
     public void updateAlias(UpdateAliasRequest updateAliasRequest) {
@@ -2372,6 +2400,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.UpdateKeyDescription
      */
     @Override
     public void updateKeyDescription(

@@ -70,6 +70,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createByteMatchSetRequest
      * @return A Java Future containing the result of the CreateByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsync.CreateByteMatchSet
      */
     java.util.concurrent.Future<CreateByteMatchSetResult> createByteMatchSetAsync(
             CreateByteMatchSetRequest createByteMatchSetRequest);
@@ -116,6 +117,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateByteMatchSet
      */
     java.util.concurrent.Future<CreateByteMatchSetResult> createByteMatchSetAsync(
             CreateByteMatchSetRequest createByteMatchSetRequest,
@@ -156,6 +158,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createIPSetRequest
      * @return A Java Future containing the result of the CreateIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsync.CreateIPSet
      */
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(
             CreateIPSetRequest createIPSetRequest);
@@ -200,6 +203,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateIPSet
      */
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(
             CreateIPSetRequest createIPSetRequest,
@@ -256,6 +260,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createRuleRequest
      * @return A Java Future containing the result of the CreateRule operation
      *         returned by the service.
+     * @sample AWSWAFAsync.CreateRule
      */
     java.util.concurrent.Future<CreateRuleResult> createRuleAsync(
             CreateRuleRequest createRuleRequest);
@@ -316,6 +321,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRule operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateRule
      */
     java.util.concurrent.Future<CreateRuleResult> createRuleAsync(
             CreateRuleRequest createRuleRequest,
@@ -355,6 +361,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to create a <a>SqlInjectionMatchSet</a>.
      * @return A Java Future containing the result of the
      *         CreateSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsync.CreateSqlInjectionMatchSet
      */
     java.util.concurrent.Future<CreateSqlInjectionMatchSetResult> createSqlInjectionMatchSetAsync(
             CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest);
@@ -398,6 +405,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         CreateSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateSqlInjectionMatchSet
      */
     java.util.concurrent.Future<CreateSqlInjectionMatchSetResult> createSqlInjectionMatchSetAsync(
             CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest,
@@ -451,6 +459,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param createWebACLRequest
      * @return A Java Future containing the result of the CreateWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsync.CreateWebACL
      */
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(
             CreateWebACLRequest createWebACLRequest);
@@ -508,6 +517,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateWebACL
      */
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(
             CreateWebACLRequest createWebACLRequest,
@@ -539,6 +549,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteByteMatchSetRequest
      * @return A Java Future containing the result of the DeleteByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsync.DeleteByteMatchSet
      */
     java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(
             DeleteByteMatchSetRequest deleteByteMatchSetRequest);
@@ -574,6 +585,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteByteMatchSet
      */
     java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(
             DeleteByteMatchSetRequest deleteByteMatchSetRequest,
@@ -605,6 +617,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteIPSetRequest
      * @return A Java Future containing the result of the DeleteIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsync.DeleteIPSet
      */
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(
             DeleteIPSetRequest deleteIPSetRequest);
@@ -640,6 +653,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteIPSet
      */
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(
             DeleteIPSetRequest deleteIPSetRequest,
@@ -671,6 +685,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteRuleRequest
      * @return A Java Future containing the result of the DeleteRule operation
      *         returned by the service.
+     * @sample AWSWAFAsync.DeleteRule
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest deleteRuleRequest);
@@ -706,6 +721,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRule operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteRule
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest deleteRuleRequest,
@@ -739,6 +755,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
      * @return A Java Future containing the result of the
      *         DeleteSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsync.DeleteSqlInjectionMatchSet
      */
     java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult> deleteSqlInjectionMatchSetAsync(
             DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest);
@@ -776,6 +793,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         DeleteSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteSqlInjectionMatchSet
      */
     java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult> deleteSqlInjectionMatchSetAsync(
             DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest,
@@ -801,6 +819,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param deleteWebACLRequest
      * @return A Java Future containing the result of the DeleteWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsync.DeleteWebACL
      */
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(
             DeleteWebACLRequest deleteWebACLRequest);
@@ -830,6 +849,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteWebACL
      */
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(
             DeleteWebACLRequest deleteWebACLRequest,
@@ -843,6 +863,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getByteMatchSetRequest
      * @return A Java Future containing the result of the GetByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsync.GetByteMatchSet
      */
     java.util.concurrent.Future<GetByteMatchSetResult> getByteMatchSetAsync(
             GetByteMatchSetRequest getByteMatchSetRequest);
@@ -860,6 +881,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetByteMatchSet
      */
     java.util.concurrent.Future<GetByteMatchSetResult> getByteMatchSetAsync(
             GetByteMatchSetRequest getByteMatchSetRequest,
@@ -891,6 +913,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getChangeTokenRequest
      * @return A Java Future containing the result of the GetChangeToken
      *         operation returned by the service.
+     * @sample AWSWAFAsync.GetChangeToken
      */
     java.util.concurrent.Future<GetChangeTokenResult> getChangeTokenAsync(
             GetChangeTokenRequest getChangeTokenRequest);
@@ -926,6 +949,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetChangeToken
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetChangeToken
      */
     java.util.concurrent.Future<GetChangeTokenResult> getChangeTokenAsync(
             GetChangeTokenRequest getChangeTokenRequest,
@@ -949,6 +973,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getChangeTokenStatusRequest
      * @return A Java Future containing the result of the GetChangeTokenStatus
      *         operation returned by the service.
+     * @sample AWSWAFAsync.GetChangeTokenStatus
      */
     java.util.concurrent.Future<GetChangeTokenStatusResult> getChangeTokenStatusAsync(
             GetChangeTokenStatusRequest getChangeTokenStatusRequest);
@@ -976,6 +1001,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetChangeTokenStatus
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetChangeTokenStatus
      */
     java.util.concurrent.Future<GetChangeTokenStatusResult> getChangeTokenStatusAsync(
             GetChangeTokenStatusRequest getChangeTokenStatusRequest,
@@ -989,6 +1015,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getIPSetRequest
      * @return A Java Future containing the result of the GetIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsync.GetIPSet
      */
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(
             GetIPSetRequest getIPSetRequest);
@@ -1006,6 +1033,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.GetIPSet
      */
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(
             GetIPSetRequest getIPSetRequest,
@@ -1020,6 +1048,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getRuleRequest
      * @return A Java Future containing the result of the GetRule operation
      *         returned by the service.
+     * @sample AWSWAFAsync.GetRule
      */
     java.util.concurrent.Future<GetRuleResult> getRuleAsync(
             GetRuleRequest getRuleRequest);
@@ -1038,6 +1067,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRule operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.GetRule
      */
     java.util.concurrent.Future<GetRuleResult> getRuleAsync(
             GetRuleRequest getRuleRequest,
@@ -1063,6 +1093,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getSampledRequestsRequest
      * @return A Java Future containing the result of the GetSampledRequests
      *         operation returned by the service.
+     * @sample AWSWAFAsync.GetSampledRequests
      */
     java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(
             GetSampledRequestsRequest getSampledRequestsRequest);
@@ -1092,6 +1123,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSampledRequests
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetSampledRequests
      */
     java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(
             GetSampledRequestsRequest getSampledRequestsRequest,
@@ -1107,6 +1139,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to get a <a>SqlInjectionMatchSet</a>.
      * @return A Java Future containing the result of the
      *         GetSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsync.GetSqlInjectionMatchSet
      */
     java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(
             GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest);
@@ -1126,6 +1159,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GetSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetSqlInjectionMatchSet
      */
     java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(
             GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest,
@@ -1139,6 +1173,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param getWebACLRequest
      * @return A Java Future containing the result of the GetWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsync.GetWebACL
      */
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(
             GetWebACLRequest getWebACLRequest);
@@ -1156,6 +1191,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.GetWebACL
      */
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(
             GetWebACLRequest getWebACLRequest,
@@ -1169,6 +1205,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listByteMatchSetsRequest
      * @return A Java Future containing the result of the ListByteMatchSets
      *         operation returned by the service.
+     * @sample AWSWAFAsync.ListByteMatchSets
      */
     java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(
             ListByteMatchSetsRequest listByteMatchSetsRequest);
@@ -1186,6 +1223,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListByteMatchSets
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListByteMatchSets
      */
     java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(
             ListByteMatchSetsRequest listByteMatchSetsRequest,
@@ -1199,6 +1237,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listIPSetsRequest
      * @return A Java Future containing the result of the ListIPSets operation
      *         returned by the service.
+     * @sample AWSWAFAsync.ListIPSets
      */
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(
             ListIPSetsRequest listIPSetsRequest);
@@ -1216,6 +1255,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIPSets operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.ListIPSets
      */
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(
             ListIPSetsRequest listIPSetsRequest,
@@ -1229,6 +1269,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listRulesRequest
      * @return A Java Future containing the result of the ListRules operation
      *         returned by the service.
+     * @sample AWSWAFAsync.ListRules
      */
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(
             ListRulesRequest listRulesRequest);
@@ -1246,6 +1287,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRules operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.ListRules
      */
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(
             ListRulesRequest listRulesRequest,
@@ -1261,6 +1303,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        by the current AWS account.
      * @return A Java Future containing the result of the
      *         ListSqlInjectionMatchSets operation returned by the service.
+     * @sample AWSWAFAsync.ListSqlInjectionMatchSets
      */
     java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest);
@@ -1280,6 +1323,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         ListSqlInjectionMatchSets operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListSqlInjectionMatchSets
      */
     java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest,
@@ -1293,6 +1337,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param listWebACLsRequest
      * @return A Java Future containing the result of the ListWebACLs operation
      *         returned by the service.
+     * @sample AWSWAFAsync.ListWebACLs
      */
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(
             ListWebACLsRequest listWebACLsRequest);
@@ -1310,6 +1355,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListWebACLs operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.ListWebACLs
      */
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(
             ListWebACLsRequest listWebACLsRequest,
@@ -1366,6 +1412,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateByteMatchSetRequest
      * @return A Java Future containing the result of the UpdateByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsync.UpdateByteMatchSet
      */
     java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(
             UpdateByteMatchSetRequest updateByteMatchSetRequest);
@@ -1426,6 +1473,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateByteMatchSet
      *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateByteMatchSet
      */
     java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(
             UpdateByteMatchSetRequest updateByteMatchSetRequest,
@@ -1489,6 +1537,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateIPSetRequest
      * @return A Java Future containing the result of the UpdateIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsync.UpdateIPSet
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(
             UpdateIPSetRequest updateIPSetRequest);
@@ -1556,6 +1605,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateIPSet operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateIPSet
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(
             UpdateIPSetRequest updateIPSetRequest,
@@ -1614,6 +1664,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateRuleRequest
      * @return A Java Future containing the result of the UpdateRule operation
      *         returned by the service.
+     * @sample AWSWAFAsync.UpdateRule
      */
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(
             UpdateRuleRequest updateRuleRequest);
@@ -1676,6 +1727,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateRule operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateRule
      */
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(
             UpdateRuleRequest updateRuleRequest,
@@ -1729,6 +1781,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        A request to update a <a>SqlInjectionMatchSet</a>.
      * @return A Java Future containing the result of the
      *         UpdateSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsync.UpdateSqlInjectionMatchSet
      */
     java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult> updateSqlInjectionMatchSetAsync(
             UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest);
@@ -1786,6 +1839,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         UpdateSqlInjectionMatchSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateSqlInjectionMatchSet
      */
     java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult> updateSqlInjectionMatchSetAsync(
             UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest,
@@ -1855,6 +1909,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * @param updateWebACLRequest
      * @return A Java Future containing the result of the UpdateWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsync.UpdateWebACL
      */
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(
             UpdateWebACLRequest updateWebACLRequest);
@@ -1928,6 +1983,7 @@ public interface AWSWAFAsync extends AWSWAF {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateWebACL operation
      *         returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateWebACL
      */
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(
             UpdateWebACLRequest updateWebACLRequest,

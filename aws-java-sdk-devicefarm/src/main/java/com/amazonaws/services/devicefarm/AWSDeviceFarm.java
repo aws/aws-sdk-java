@@ -104,6 +104,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateDevicePool
      */
     CreateDevicePoolResult createDevicePool(
             CreateDevicePoolRequest createDevicePoolRequest);
@@ -124,6 +125,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateProject
      */
     CreateProjectResult createProject(CreateProjectRequest createProjectRequest);
 
@@ -143,6 +145,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateUpload
      */
     CreateUploadResult createUpload(CreateUploadRequest createUploadRequest);
 
@@ -163,6 +166,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteDevicePool
      */
     DeleteDevicePoolResult deleteDevicePool(
             DeleteDevicePoolRequest deleteDevicePoolRequest);
@@ -186,6 +190,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteProject
      */
     DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
 
@@ -208,6 +213,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteRun
      */
     DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest);
 
@@ -227,6 +233,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteUpload
      */
     DeleteUploadResult deleteUpload(DeleteUploadRequest deleteUploadRequest);
 
@@ -247,6 +254,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetAccountSettings
      */
     GetAccountSettingsResult getAccountSettings(
             GetAccountSettingsRequest getAccountSettingsRequest);
@@ -267,6 +275,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDevice
      */
     GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest);
 
@@ -286,6 +295,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDevicePool
      */
     GetDevicePoolResult getDevicePool(GetDevicePoolRequest getDevicePoolRequest);
 
@@ -307,6 +317,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDevicePoolCompatibility
      */
     GetDevicePoolCompatibilityResult getDevicePoolCompatibility(
             GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest);
@@ -327,6 +338,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetJob
      */
     GetJobResult getJob(GetJobRequest getJobRequest);
 
@@ -346,6 +358,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetProject
      */
     GetProjectResult getProject(GetProjectRequest getProjectRequest);
 
@@ -365,6 +378,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetRun
      */
     GetRunResult getRun(GetRunRequest getRunRequest);
 
@@ -384,6 +398,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetSuite
      */
     GetSuiteResult getSuite(GetSuiteRequest getSuiteRequest);
 
@@ -403,6 +418,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetTest
      */
     GetTestResult getTest(GetTestRequest getTestRequest);
 
@@ -422,6 +438,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetUpload
      */
     GetUploadResult getUpload(GetUploadRequest getUploadRequest);
 
@@ -441,6 +458,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListArtifacts
      */
     ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest);
 
@@ -460,6 +478,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListDevicePools
      */
     ListDevicePoolsResult listDevicePools(
             ListDevicePoolsRequest listDevicePoolsRequest);
@@ -480,6 +499,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListDevices
      */
     ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest);
 
@@ -499,6 +519,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListJobs
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
 
@@ -518,6 +539,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListProjects
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
 
@@ -537,6 +559,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListRuns
      */
     ListRunsResult listRuns(ListRunsRequest listRunsRequest);
 
@@ -556,6 +579,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListSamples
      */
     ListSamplesResult listSamples(ListSamplesRequest listSamplesRequest);
 
@@ -575,6 +599,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListSuites
      */
     ListSuitesResult listSuites(ListSuitesRequest listSuitesRequest);
 
@@ -594,6 +619,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListTests
      */
     ListTestsResult listTests(ListTestsRequest listTestsRequest);
 
@@ -614,6 +640,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListUniqueProblems
      */
     ListUniqueProblemsResult listUniqueProblems(
             ListUniqueProblemsRequest listUniqueProblemsRequest);
@@ -634,6 +661,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListUploads
      */
     ListUploadsResult listUploads(ListUploadsRequest listUploadsRequest);
 
@@ -655,6 +683,7 @@ public interface AWSDeviceFarm {
      *         An entity with the same name already exists.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ScheduleRun
      */
     ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest);
 
@@ -676,6 +705,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateDevicePool
      */
     UpdateDevicePoolResult updateDevicePool(
             UpdateDevicePoolRequest updateDevicePoolRequest);
@@ -697,6 +727,7 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateProject
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
 

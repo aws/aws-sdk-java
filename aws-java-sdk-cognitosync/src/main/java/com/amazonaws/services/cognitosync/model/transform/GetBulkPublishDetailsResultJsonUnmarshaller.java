@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -26,11 +26,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Get Bulk Publish Details Result JSON Unmarshaller
+ * GetBulkPublishDetailsResult JSON Unmarshaller
  */
-public class GetBulkPublishDetailsResultJsonUnmarshaller implements Unmarshaller<GetBulkPublishDetailsResult, JsonUnmarshallerContext> {
+public class GetBulkPublishDetailsResultJsonUnmarshaller implements
+        Unmarshaller<GetBulkPublishDetailsResult, JsonUnmarshallerContext> {
 
-    public GetBulkPublishDetailsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public GetBulkPublishDetailsResult unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         GetBulkPublishDetailsResult getBulkPublishDetailsResult = new GetBulkPublishDetailsResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,49 +40,66 @@ public class GetBulkPublishDetailsResultJsonUnmarshaller implements Unmarshaller
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setIdentityPoolId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    getBulkPublishDetailsResult
+                            .setIdentityPoolId(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BulkPublishStartTime", targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setBulkPublishStartTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    getBulkPublishDetailsResult
+                            .setBulkPublishStartTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("BulkPublishCompleteTime", targetDepth)) {
+                if (context.testExpression("BulkPublishCompleteTime",
+                        targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setBulkPublishCompleteTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
+                    getBulkPublishDetailsResult
+                            .setBulkPublishCompleteTime(DateJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("BulkPublishStatus", targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setBulkPublishStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    getBulkPublishDetailsResult
+                            .setBulkPublishStatus(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("FailureMessage", targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setFailureMessage(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    getBulkPublishDetailsResult
+                            .setFailureMessage(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return getBulkPublishDetailsResult;
     }
 
     private static GetBulkPublishDetailsResultJsonUnmarshaller instance;
+
     public static GetBulkPublishDetailsResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new GetBulkPublishDetailsResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new GetBulkPublishDetailsResultJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -558,6 +558,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The maximum number of allowed on-premises instances was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
+     * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
      */
     @Override
     public void addTagsToOnPremisesInstances(
@@ -609,6 +610,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @sample AmazonCodeDeploy.BatchGetApplications
      */
     @Override
     public BatchGetApplicationsResult batchGetApplications(
@@ -664,6 +666,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
+     * @sample AmazonCodeDeploy.BatchGetDeployments
      */
     @Override
     public BatchGetDeploymentsResult batchGetDeployments(
@@ -720,6 +723,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @sample AmazonCodeDeploy.BatchGetOnPremisesInstances
      */
     @Override
     public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(
@@ -780,6 +784,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         applicable IAM user or AWS account.
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than were allowed.
+     * @sample AmazonCodeDeploy.CreateApplication
      */
     @Override
     public CreateApplicationResult createApplication(
@@ -853,6 +858,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The description that was provided is too long.
      * @throws DeploymentLimitExceededException
      *         The number of allowed deployments was exceeded.
+     * @sample AmazonCodeDeploy.CreateDeployment
      */
     @Override
     public CreateDeploymentResult createDeployment(
@@ -912,6 +918,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         format.
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
+     * @sample AmazonCodeDeploy.CreateDeploymentConfig
      */
     @Override
     public CreateDeploymentConfigResult createDeploymentConfig(
@@ -994,6 +1001,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         does not grant the appropriate permissions to Auto Scaling.
      * @throws DeploymentGroupLimitExceededException
      *         The deployment groups limit was exceeded.
+     * @sample AmazonCodeDeploy.CreateDeploymentGroup
      */
     @Override
     public CreateDeploymentGroupResult createDeploymentGroup(
@@ -1042,6 +1050,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         specified.
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
+     * @sample AmazonCodeDeploy.DeleteApplication
      */
     @Override
     public void deleteApplication(
@@ -1095,6 +1104,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The deployment configuration is still in use.
      * @throws InvalidOperationException
      *         An invalid operation was detected.
+     * @sample AmazonCodeDeploy.DeleteDeploymentConfig
      */
     @Override
     public void deleteDeploymentConfig(
@@ -1151,6 +1161,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The service role ARN was specified in an invalid format. Or, if
      *         an Auto Scaling group was specified, the specified service role
      *         does not grant the appropriate permissions to Auto Scaling.
+     * @sample AmazonCodeDeploy.DeleteDeploymentGroup
      */
     @Override
     public DeleteDeploymentGroupResult deleteDeploymentGroup(
@@ -1200,6 +1211,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @sample AmazonCodeDeploy.DeregisterOnPremisesInstance
      */
     @Override
     public void deregisterOnPremisesInstance(
@@ -1250,6 +1262,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @sample AmazonCodeDeploy.GetApplication
      */
     @Override
     public GetApplicationResult getApplication(
@@ -1309,6 +1322,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The revision ID was not specified.
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
+     * @sample AmazonCodeDeploy.GetApplicationRevision
      */
     @Override
     public GetApplicationRevisionResult getApplicationRevision(
@@ -1361,6 +1375,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws DeploymentDoesNotExistException
      *         The deployment does not exist with the applicable IAM user or AWS
      *         account.
+     * @sample AmazonCodeDeploy.GetDeployment
      */
     @Override
     public GetDeploymentResult getDeployment(
@@ -1413,6 +1428,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws DeploymentConfigDoesNotExistException
      *         The deployment configuration does not exist with the applicable
      *         IAM user or AWS account.
+     * @sample AmazonCodeDeploy.GetDeploymentConfig
      */
     @Override
     public GetDeploymentConfigResult getDeploymentConfig(
@@ -1473,6 +1489,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws DeploymentGroupDoesNotExistException
      *         The named deployment group does not exist with the applicable IAM
      *         user or AWS account.
+     * @sample AmazonCodeDeploy.GetDeploymentGroup
      */
     @Override
     public GetDeploymentGroupResult getDeploymentGroup(
@@ -1530,6 +1547,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         format.
      * @throws InstanceDoesNotExistException
      *         The specified instance does not exist in the deployment group.
+     * @sample AmazonCodeDeploy.GetDeploymentInstance
      */
     @Override
     public GetDeploymentInstanceResult getDeploymentInstance(
@@ -1582,6 +1600,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @sample AmazonCodeDeploy.GetOnPremisesInstance
      */
     @Override
     public GetOnPremisesInstanceResult getOnPremisesInstance(
@@ -1652,6 +1671,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The deployed state filter was specified in an invalid format.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListApplicationRevisions
      */
     @Override
     public ListApplicationRevisionsResult listApplicationRevisions(
@@ -1699,6 +1719,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @return Result of the ListApplications operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListApplications
      */
     @Override
     public ListApplicationsResult listApplications(
@@ -1753,6 +1774,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListDeploymentConfigs
      */
     @Override
     public ListDeploymentConfigsResult listDeploymentConfigs(
@@ -1814,6 +1836,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         AWS account.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListDeploymentGroups
      */
     @Override
     public ListDeploymentGroupsResult listDeploymentGroups(
@@ -1874,6 +1897,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         format.
      * @throws InvalidInstanceStatusException
      *         The specified instance status does not exist.
+     * @sample AmazonCodeDeploy.ListDeploymentInstances
      */
     @Override
     public ListDeploymentInstancesResult listDeploymentInstances(
@@ -1941,6 +1965,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         determined.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListDeployments
      */
     @Override
     public ListDeploymentsResult listDeployments(
@@ -2001,6 +2026,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The specified tag filter was specified in an invalid format.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
+     * @sample AmazonCodeDeploy.ListOnPremisesInstances
      */
     @Override
     public ListOnPremisesInstancesResult listOnPremisesInstances(
@@ -2063,6 +2089,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The revision ID was not specified.
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
+     * @sample AmazonCodeDeploy.RegisterApplicationRevision
      */
     @Override
     public void registerApplicationRevision(
@@ -2118,6 +2145,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         invalid format.
      * @throws InvalidIamUserArnException
      *         The IAM user ARN was specified in an invalid format.
+     * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
      */
     @Override
     public void registerOnPremisesInstance(
@@ -2172,6 +2200,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The maximum number of allowed on-premises instances was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
+     * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
      */
     @Override
     public void removeTagsFromOnPremisesInstances(
@@ -2224,6 +2253,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
+     * @sample AmazonCodeDeploy.StopDeployment
      */
     @Override
     public StopDeploymentResult stopDeployment(
@@ -2277,6 +2307,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @sample AmazonCodeDeploy.UpdateApplication
      */
     @Override
     public void updateApplication(
@@ -2360,6 +2391,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The service role ARN was specified in an invalid format. Or, if
      *         an Auto Scaling group was specified, the specified service role
      *         does not grant the appropriate permissions to Auto Scaling.
+     * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      */
     @Override
     public UpdateDeploymentGroupResult updateDeploymentGroup(

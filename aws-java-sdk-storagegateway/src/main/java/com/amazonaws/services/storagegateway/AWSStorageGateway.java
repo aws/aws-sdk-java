@@ -151,6 +151,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ActivateGateway
      */
     ActivateGatewayResult activateGateway(
             ActivateGatewayRequest activateGatewayRequest);
@@ -178,6 +179,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddCache
      */
     AddCacheResult addCache(AddCacheRequest addCacheRequest);
 
@@ -226,6 +228,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddTagsToResource
      */
     AddTagsToResourceResult addTagsToResource(
             AddTagsToResourceRequest addTagsToResourceRequest);
@@ -251,6 +254,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddUploadBuffer
      */
     AddUploadBufferResult addUploadBuffer(
             AddUploadBufferRequest addUploadBufferRequest);
@@ -288,6 +292,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.AddWorkingStorage
      */
     AddWorkingStorageResult addWorkingStorage(
             AddWorkingStorageRequest addWorkingStorageRequest);
@@ -308,6 +313,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CancelArchival
      */
     CancelArchivalResult cancelArchival(
             CancelArchivalRequest cancelArchivalRequest);
@@ -329,6 +335,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CancelRetrieval
      */
     CancelRetrievalResult cancelRetrieval(
             CancelRetrievalRequest cancelRetrievalRequest);
@@ -361,6 +368,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateCachediSCSIVolume
      */
     CreateCachediSCSIVolumeResult createCachediSCSIVolume(
             CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest);
@@ -406,6 +414,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateSnapshot
      */
     CreateSnapshotResult createSnapshot(
             CreateSnapshotRequest createSnapshotRequest);
@@ -449,6 +458,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateSnapshotFromVolumeRecoveryPoint
      */
     CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
             CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest);
@@ -489,6 +499,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateStorediSCSIVolume
      */
     CreateStorediSCSIVolumeResult createStorediSCSIVolume(
             CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest);
@@ -512,6 +523,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.CreateTapes
      */
     CreateTapesResult createTapes(CreateTapesRequest createTapesRequest);
 
@@ -534,6 +546,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteBandwidthRateLimit
      */
     DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(
             DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest);
@@ -558,6 +571,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteChapCredentials
      */
     DeleteChapCredentialsResult deleteChapCredentials(
             DeleteChapCredentialsRequest deleteChapCredentialsRequest);
@@ -598,6 +612,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteGateway
      */
     DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest);
 
@@ -631,6 +646,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteSnapshotSchedule
      */
     DeleteSnapshotScheduleResult deleteSnapshotSchedule(
             DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest);
@@ -650,6 +666,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteTape
      */
     DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest);
 
@@ -669,6 +686,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteTapeArchive
      */
     DeleteTapeArchiveResult deleteTapeArchive(
             DeleteTapeArchiveRequest deleteTapeArchiveRequest);
@@ -707,6 +725,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DeleteVolume
      */
     DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest);
 
@@ -735,6 +754,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeBandwidthRateLimit
      */
     DescribeBandwidthRateLimitResult describeBandwidthRateLimit(
             DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest);
@@ -758,6 +778,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeCache
      */
     DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest);
 
@@ -783,6 +804,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeCachediSCSIVolumes
      */
     DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(
             DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest);
@@ -806,6 +828,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeChapCredentials
      */
     DescribeChapCredentialsResult describeChapCredentials(
             DescribeChapCredentialsRequest describeChapCredentialsRequest);
@@ -829,6 +852,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeGatewayInformation
      */
     DescribeGatewayInformationResult describeGatewayInformation(
             DescribeGatewayInformationRequest describeGatewayInformationRequest);
@@ -851,6 +875,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeMaintenanceStartTime
      */
     DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(
             DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest);
@@ -874,6 +899,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeSnapshotSchedule
      */
     DescribeSnapshotScheduleResult describeSnapshotSchedule(
             DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest);
@@ -898,6 +924,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeStorediSCSIVolumes
      */
     DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(
             DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest);
@@ -924,6 +951,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeTapeArchives
      */
     DescribeTapeArchivesResult describeTapeArchives(
             DescribeTapeArchivesRequest describeTapeArchivesRequest);
@@ -958,6 +986,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeTapeRecoveryPoints
      */
     DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(
             DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest);
@@ -979,6 +1008,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeTapes
      */
     DescribeTapesResult describeTapes(DescribeTapesRequest describeTapesRequest);
 
@@ -1004,6 +1034,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeUploadBuffer
      */
     DescribeUploadBufferResult describeUploadBuffer(
             DescribeUploadBufferRequest describeUploadBufferRequest);
@@ -1029,6 +1060,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeVTLDevices
      */
     DescribeVTLDevicesResult describeVTLDevices(
             DescribeVTLDevicesRequest describeVTLDevicesRequest);
@@ -1063,6 +1095,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DescribeWorkingStorage
      */
     DescribeWorkingStorageResult describeWorkingStorage(
             DescribeWorkingStorageRequest describeWorkingStorageRequest);
@@ -1089,6 +1122,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.DisableGateway
      */
     DisableGatewayResult disableGateway(
             DisableGatewayRequest disableGatewayRequest);
@@ -1124,6 +1158,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListGateways
      */
     ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest);
 
@@ -1160,6 +1195,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListLocalDisks
      */
     ListLocalDisksResult listLocalDisks(
             ListLocalDisksRequest listLocalDisksRequest);
@@ -1181,6 +1217,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListTagsForResource
      */
     ListTagsForResourceResult listTagsForResource(
             ListTagsForResourceRequest listTagsForResourceRequest);
@@ -1210,6 +1247,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListVolumeInitiators
      */
     ListVolumeInitiatorsResult listVolumeInitiators(
             ListVolumeInitiatorsRequest listVolumeInitiatorsRequest);
@@ -1237,6 +1275,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListVolumeRecoveryPoints
      */
     ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(
             ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest);
@@ -1271,6 +1310,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ListVolumes
      */
     ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest);
 
@@ -1290,6 +1330,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.RemoveTagsFromResource
      */
     RemoveTagsFromResourceResult removeTagsFromResource(
             RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
@@ -1330,6 +1371,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ResetCache
      */
     ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest);
 
@@ -1357,6 +1399,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.RetrieveTapeArchive
      */
     RetrieveTapeArchiveResult retrieveTapeArchive(
             RetrieveTapeArchiveRequest retrieveTapeArchiveRequest);
@@ -1385,6 +1428,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.RetrieveTapeRecoveryPoint
      */
     RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(
             RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest);
@@ -1430,6 +1474,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.ShutdownGateway
      */
     ShutdownGatewayResult shutdownGateway(
             ShutdownGatewayRequest shutdownGatewayRequest);
@@ -1461,6 +1506,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.StartGateway
      */
     StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest);
 
@@ -1499,6 +1545,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateBandwidthRateLimit
      */
     UpdateBandwidthRateLimitResult updateBandwidthRateLimit(
             UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest);
@@ -1534,6 +1581,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateChapCredentials
      */
     UpdateChapCredentialsResult updateChapCredentials(
             UpdateChapCredentialsRequest updateChapCredentialsRequest);
@@ -1555,6 +1603,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateGatewayInformation
      */
     UpdateGatewayInformationResult updateGatewayInformation(
             UpdateGatewayInformationRequest updateGatewayInformationRequest);
@@ -1588,6 +1637,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateGatewaySoftwareNow
      */
     UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(
             UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest);
@@ -1614,6 +1664,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateMaintenanceStartTime
      */
     UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(
             UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest);
@@ -1651,6 +1702,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateSnapshotSchedule
      */
     UpdateSnapshotScheduleResult updateSnapshotSchedule(
             UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest);
@@ -1674,6 +1726,7 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. See the
      *         error and message fields for more information.
+     * @sample AWSStorageGateway.UpdateVTLDeviceType
      */
     UpdateVTLDeviceTypeResult updateVTLDeviceType(
             UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest);

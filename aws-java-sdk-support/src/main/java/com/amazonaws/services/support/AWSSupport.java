@@ -176,6 +176,7 @@ public interface AWSSupport {
      * @throws AttachmentLimitExceededException
      *         The limit for the number of attachment sets created in a short
      *         period of time has been exceeded.
+     * @sample AWSSupport.AddAttachmentsToSet
      */
     AddAttachmentsToSetResult addAttachmentsToSet(
             AddAttachmentsToSetRequest addAttachmentsToSetRequest);
@@ -210,6 +211,7 @@ public interface AWSSupport {
      * @throws AttachmentSetExpiredException
      *         The expiration time of the attachment set has passed. The set
      *         expires 1 hour after it is created.
+     * @sample AWSSupport.AddCommunicationToCase
      */
     AddCommunicationToCaseResult addCommunicationToCase(
             AddCommunicationToCaseRequest addCommunicationToCaseRequest);
@@ -279,6 +281,7 @@ public interface AWSSupport {
      * @throws AttachmentSetExpiredException
      *         The expiration time of the attachment set has passed. The set
      *         expires 1 hour after it is created.
+     * @sample AWSSupport.CreateCase
      */
     CreateCaseResult createCase(CreateCaseRequest createCaseRequest);
 
@@ -301,6 +304,7 @@ public interface AWSSupport {
      *         a short period of time has been exceeded.
      * @throws AttachmentIdNotFoundException
      *         An attachment with the specified ID could not be found.
+     * @sample AWSSupport.DescribeAttachment
      */
     DescribeAttachmentResult describeAttachment(
             DescribeAttachmentRequest describeAttachmentRequest);
@@ -334,6 +338,7 @@ public interface AWSSupport {
      *         An internal server error occurred.
      * @throws CaseIdNotFoundException
      *         The requested <code>CaseId</code> could not be located.
+     * @sample AWSSupport.DescribeCases
      */
     DescribeCasesResult describeCases(DescribeCasesRequest describeCasesRequest);
 
@@ -370,6 +375,7 @@ public interface AWSSupport {
      *         An internal server error occurred.
      * @throws CaseIdNotFoundException
      *         The requested <code>CaseId</code> could not be located.
+     * @sample AWSSupport.DescribeCommunications
      */
     DescribeCommunicationsResult describeCommunications(
             DescribeCommunicationsRequest describeCommunicationsRequest);
@@ -397,6 +403,7 @@ public interface AWSSupport {
      * @return Result of the DescribeServices operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeServices
      */
     DescribeServicesResult describeServices(
             DescribeServicesRequest describeServicesRequest);
@@ -420,6 +427,7 @@ public interface AWSSupport {
      *         service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeSeverityLevels
      */
     DescribeSeverityLevelsResult describeSeverityLevels(
             DescribeSeverityLevelsRequest describeSeverityLevelsRequest);
@@ -443,6 +451,7 @@ public interface AWSSupport {
      *         operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorCheckRefreshStatuses
      */
     DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(
             DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest);
@@ -477,6 +486,7 @@ public interface AWSSupport {
      *         returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorCheckResult
      */
     DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(
             DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest);
@@ -497,6 +507,7 @@ public interface AWSSupport {
      *         returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorCheckSummaries
      */
     DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(
             DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest);
@@ -515,6 +526,7 @@ public interface AWSSupport {
      *         the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.DescribeTrustedAdvisorChecks
      */
     DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(
             DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest);
@@ -542,6 +554,7 @@ public interface AWSSupport {
      *         the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @sample AWSSupport.RefreshTrustedAdvisorCheck
      */
     RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(
             RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest);
@@ -559,6 +572,7 @@ public interface AWSSupport {
      *         An internal server error occurred.
      * @throws CaseIdNotFoundException
      *         The requested <code>CaseId</code> could not be located.
+     * @sample AWSSupport.ResolveCase
      */
     ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest);
 

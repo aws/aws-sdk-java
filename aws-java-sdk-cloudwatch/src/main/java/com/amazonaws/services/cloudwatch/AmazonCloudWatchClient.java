@@ -286,6 +286,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @param deleteAlarmsRequest
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
+     * @sample AmazonCloudWatch.DeleteAlarms
      */
     @Override
     public void deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) {
@@ -331,6 +332,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidNextTokenException
      *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.DescribeAlarmHistory
      */
     @Override
     public DescribeAlarmHistoryResult describeAlarmHistory(
@@ -382,6 +384,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeAlarms operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.DescribeAlarms
      */
     @Override
     public DescribeAlarmsResult describeAlarms(
@@ -430,6 +433,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @param describeAlarmsForMetricRequest
      * @return Result of the DescribeAlarmsForMetric operation returned by the
      *         service.
+     * @sample AmazonCloudWatch.DescribeAlarmsForMetric
      */
     @Override
     public DescribeAlarmsForMetricResult describeAlarmsForMetric(
@@ -473,6 +477,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @sample AmazonCloudWatch.DisableAlarmActions
      */
     @Override
     public void disableAlarmActions(
@@ -512,6 +517,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @sample AmazonCloudWatch.EnableAlarmActions
      */
     @Override
     public void enableAlarmActions(
@@ -589,6 +595,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @throws InternalServiceException
      *         Indicates that the request processing has failed due to some
      *         unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.GetMetricStatistics
      */
     @Override
     public GetMetricStatisticsResult getMetricStatistics(
@@ -644,6 +651,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      *         unknown error, exception, or failure.
      * @throws InvalidParameterValueException
      *         Bad or out-of-range value was supplied for the input parameter.
+     * @sample AmazonCloudWatch.ListMetrics
      */
     @Override
     public ListMetricsResult listMetrics(ListMetricsRequest listMetricsRequest) {
@@ -700,6 +708,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @param putMetricAlarmRequest
      * @throws LimitExceededException
      *         The quota for alarms for this customer has already been reached.
+     * @sample AmazonCloudWatch.PutMetricAlarm
      */
     @Override
     public void putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) {
@@ -761,6 +770,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @throws InternalServiceException
      *         Indicates that the request processing has failed due to some
      *         unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.PutMetricData
      */
     @Override
     public void putMetricData(PutMetricDataRequest putMetricDataRequest) {
@@ -806,6 +816,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      *         The named resource does not exist.
      * @throws InvalidFormatException
      *         Data was not syntactically valid JSON.
+     * @sample AmazonCloudWatch.SetAlarmState
      */
     @Override
     public void setAlarmState(SetAlarmStateRequest setAlarmStateRequest) {

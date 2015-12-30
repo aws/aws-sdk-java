@@ -283,6 +283,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.AddTagsToStream
      */
     @Override
     public void addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest) {
@@ -384,6 +385,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported,
      *         or can't be used. For more information, see the returned message.
+     * @sample AmazonKinesis.CreateStream
      */
     @Override
     public void createStream(CreateStreamRequest createStreamRequest) {
@@ -451,6 +453,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported,
      *         or can't be used. For more information, see the returned message.
+     * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
      */
     @Override
     public void decreaseStreamRetentionPeriod(
@@ -525,6 +528,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.DeleteStream
      */
     @Override
     public void deleteStream(DeleteStreamRequest deleteStreamRequest) {
@@ -606,6 +610,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.DescribeStream
      */
     @Override
     public DescribeStreamResult describeStream(
@@ -749,6 +754,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         in the <i>AWS General Reference</i>.
      * @throws ExpiredIteratorException
      *         The provided iterator exceeds the maximum age allowed.
+     * @sample AmazonKinesis.GetRecords
      */
     @Override
     public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
@@ -856,6 +862,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         "http://docs.aws.amazon.com/general/latest/gr/api-retries.html"
      *         target="_blank">Error Retries and Exponential Backoff in AWS</a>
      *         in the <i>AWS General Reference</i>.
+     * @sample AmazonKinesis.GetShardIterator
      */
     @Override
     public GetShardIteratorResult getShardIterator(
@@ -943,6 +950,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported,
      *         or can't be used. For more information, see the returned message.
+     * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
      */
     @Override
     public void increaseStreamRetentionPeriod(
@@ -1009,6 +1017,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.ListStreams
      */
     @Override
     public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
@@ -1081,6 +1090,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.ListTagsForStream
      */
     @Override
     public ListTagsForStreamResult listTagsForStream(
@@ -1190,6 +1200,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.MergeShards
      */
     @Override
     public void mergeShards(MergeShardsRequest mergeShardsRequest) {
@@ -1307,6 +1318,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         "http://docs.aws.amazon.com/general/latest/gr/api-retries.html"
      *         target="_blank">Error Retries and Exponential Backoff in AWS</a>
      *         in the <i>AWS General Reference</i>.
+     * @sample AmazonKinesis.PutRecord
      */
     @Override
     public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
@@ -1463,6 +1475,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         "http://docs.aws.amazon.com/general/latest/gr/api-retries.html"
      *         target="_blank">Error Retries and Exponential Backoff in AWS</a>
      *         in the <i>AWS General Reference</i>.
+     * @sample AmazonKinesis.PutRecords
      */
     @Override
     public PutRecordsResult putRecords(PutRecordsRequest putRecordsRequest) {
@@ -1522,6 +1535,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.RemoveTagsFromStream
      */
     @Override
     public void removeTagsFromStream(
@@ -1643,6 +1657,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.SplitShard
      */
     @Override
     public void splitShard(SplitShardRequest splitShardRequest) {

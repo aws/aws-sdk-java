@@ -351,6 +351,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateByteMatchSet
      */
     @Override
     public CreateByteMatchSetResult createByteMatchSet(
@@ -461,6 +462,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateIPSet
      */
     @Override
     public CreateIPSetResult createIPSet(CreateIPSetRequest createIPSetRequest) {
@@ -582,6 +584,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateRule
      */
     @Override
     public CreateRuleResult createRule(CreateRuleRequest createRuleRequest) {
@@ -690,6 +693,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateSqlInjectionMatchSet
      */
     @Override
     public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(
@@ -813,6 +817,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateWebACL
      */
     @Override
     public CreateWebACLResult createWebACL(
@@ -908,6 +913,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteByteMatchSet
      */
     @Override
     public DeleteByteMatchSetResult deleteByteMatchSet(
@@ -1003,6 +1009,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteIPSet
      */
     @Override
     public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest deleteIPSetRequest) {
@@ -1096,6 +1103,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteRule
      */
     @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
@@ -1192,6 +1200,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteSqlInjectionMatchSet
      */
     @Override
     public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(
@@ -1281,6 +1290,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         one or more <code>ByteMatchTuple</code> objects.</li>
      *         <li>You tried to delete an <code>IPSet</code> that references one
      *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteWebACL
      */
     @Override
     public DeleteWebACLResult deleteWebACL(
@@ -1331,6 +1341,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetByteMatchSet
      */
     @Override
     public GetByteMatchSetResult getByteMatchSet(
@@ -1394,6 +1405,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
      *         request was valid. Retry your request.
+     * @sample AWSWAF.GetChangeToken
      */
     @Override
     public GetChangeTokenResult getChangeToken(
@@ -1452,6 +1464,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInternalErrorException
      *         The operation failed because of a system problem, even though the
      *         request was valid. Retry your request.
+     * @sample AWSWAF.GetChangeTokenStatus
      */
     @Override
     public GetChangeTokenStatusResult getChangeTokenStatus(
@@ -1503,6 +1516,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetIPSet
      */
     @Override
     public GetIPSetResult getIPSet(GetIPSetRequest getIPSetRequest) {
@@ -1553,6 +1567,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetRule
      */
     @Override
     public GetRuleResult getRule(GetRuleRequest getRuleRequest) {
@@ -1609,6 +1624,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         service.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSampledRequests
      */
     @Override
     public GetSampledRequestsResult getSampledRequests(
@@ -1663,6 +1679,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSqlInjectionMatchSet
      */
     @Override
     public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(
@@ -1714,6 +1731,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         delete an object by using an invalid account identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetWebACL
      */
     @Override
     public GetWebACLResult getWebACL(GetWebACLRequest getWebACLRequest) {
@@ -1762,6 +1780,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListByteMatchSets
      */
     @Override
     public ListByteMatchSetsResult listByteMatchSets(
@@ -1811,6 +1830,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListIPSets
      */
     @Override
     public ListIPSetsResult listIPSets(ListIPSetsRequest listIPSetsRequest) {
@@ -1858,6 +1878,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListRules
      */
     @Override
     public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
@@ -1908,6 +1929,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListSqlInjectionMatchSets
      */
     @Override
     public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(
@@ -1957,6 +1979,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFInvalidAccountException
      *         The operation failed because you tried to create, update, or
      *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListWebACLs
      */
     @Override
     public ListWebACLsResult listWebACLs(ListWebACLsRequest listWebACLsRequest) {
@@ -2118,6 +2141,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateByteMatchSet
      */
     @Override
     public UpdateByteMatchSetResult updateByteMatchSet(
@@ -2296,6 +2320,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateIPSet
      */
     @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest) {
@@ -2467,6 +2492,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateRule
      */
     @Override
     public UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest) {
@@ -2625,6 +2651,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateSqlInjectionMatchSet
      */
     @Override
     public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(
@@ -2809,6 +2836,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         AWS account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateWebACL
      */
     @Override
     public UpdateWebACLResult updateWebACL(

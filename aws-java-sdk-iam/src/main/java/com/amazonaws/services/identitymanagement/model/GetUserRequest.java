@@ -1,109 +1,96 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest) GetUser operation}.
- * <p>
- * Retrieves information about the specified user, including the user's
- * creation date, path, unique ID, and ARN.
- * </p>
- * <p>
- * If you do not specify a user name, IAM determines the user name
- * implicitly based on the AWS access key ID used to sign the request.
- * </p>
- *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)
+ * 
  */
-public class GetUserRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetUserRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
-     * request.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
+     * The name of the user to get information about.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, it defaults to the
+     * user making the request.
+     * </p>
      */
     private String userName;
 
     /**
-     * Default constructor for a new GetUserRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public GetUserRequest() {}
-    
-    /**
-     * The name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
-     * request.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @return The name of the user to get information about. <p>This parameter is
-     *         optional. If it is not included, it defaults to the user making the
-     *         request.
-     */
-    public String getUserName() {
-        return userName;
-    }
-    
-    /**
-     * The name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
-     * request.
+     * The name of the user to get information about.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param userName The name of the user to get information about. <p>This parameter is
-     *         optional. If it is not included, it defaults to the user making the
-     *         request.
+     * This parameter is optional. If it is not included, it defaults to the
+     * user making the request.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user to get information about.</p>
+     *        <p>
+     *        This parameter is optional. If it is not included, it defaults to
+     *        the user making the request.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    
+
     /**
-     * The name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
-     * request.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The name of the user to get information about.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>[\w+=,.@-]+<br/>
-     *
-     * @param userName The name of the user to get information about. <p>This parameter is
-     *         optional. If it is not included, it defaults to the user making the
-     *         request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This parameter is optional. If it is not included, it defaults to the
+     * user making the request.
+     * </p>
+     * 
+     * @return The name of the user to get information about.</p>
+     *         <p>
+     *         This parameter is optional. If it is not included, it defaults to
+     *         the user making the request.
+     */
+    public String getUserName() {
+        return this.userName;
+    }
+
+    /**
+     * <p>
+     * The name of the user to get information about.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, it defaults to the
+     * user making the request.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user to get information about.</p>
+     *        <p>
+     *        This parameter is optional. If it is not included, it defaults to
+     *        the user making the request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetUserRequest withUserName(String userName) {
-        this.userName = userName;
+        setUserName(userName);
         return this;
     }
 
@@ -119,38 +106,42 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() );
+        if (getUserName() != null)
+            sb.append("UserName: " + getUserName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetUserRequest == false)
+            return false;
+        GetUserRequest other = (GetUserRequest) obj;
+        if (other.getUserName() == null ^ this.getUserName() == null)
+            return false;
+        if (other.getUserName() != null
+                && other.getUserName().equals(this.getUserName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getUserName() == null) ? 0 : getUserName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetUserRequest == false) return false;
-        GetUserRequest other = (GetUserRequest)obj;
-        
-        if (other.getUserName() == null ^ this.getUserName() == null) return false;
-        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetUserRequest clone() {
-        
-            return (GetUserRequest) super.clone();
+        return (GetUserRequest) super.clone();
     }
-
 }
-    

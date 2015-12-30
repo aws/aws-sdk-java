@@ -375,6 +375,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchGetRepositories
      */
     @Override
     public BatchGetRepositoriesResult batchGetRepositories(
@@ -454,6 +455,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.CreateBranch
      */
     @Override
     public void createBranch(CreateBranchRequest createBranchRequest) {
@@ -518,6 +520,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.CreateRepository
      */
     @Override
     public CreateRepositoryResult createRepository(
@@ -584,6 +587,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.DeleteRepository
      */
     @Override
     public DeleteRepositoryResult deleteRepository(
@@ -655,6 +659,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetBranch
      */
     @Override
     public GetBranchResult getBranch(GetBranchRequest getBranchRequest) {
@@ -727,6 +732,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetRepository
      */
     @Override
     public GetRepositoryResult getRepository(
@@ -792,6 +798,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         The encryption key is not available.
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
+     * @sample AWSCodeCommit.ListBranches
      */
     @Override
     public ListBranchesResult listBranches(
@@ -841,6 +848,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         The specified sort order is not valid.
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
+     * @sample AWSCodeCommit.ListRepositories
      */
     @Override
     public ListRepositoriesResult listRepositories(
@@ -913,6 +921,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdateDefaultBranch
      */
     @Override
     public void updateDefaultBranch(
@@ -987,6 +996,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdateRepositoryDescription
      */
     @Override
     public void updateRepositoryDescription(
@@ -1041,6 +1051,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      *         is not valid. Other exceptions occur when a required repository
      *         parameter is missing, or when a specified repository does not
      *         exist.
+     * @sample AWSCodeCommit.UpdateRepositoryName
      */
     @Override
     public void updateRepositoryName(

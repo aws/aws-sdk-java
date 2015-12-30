@@ -298,6 +298,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateBatchPrediction
      */
     @Override
     public CreateBatchPredictionResult createBatchPrediction(
@@ -372,6 +373,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateDataSourceFromRDS
      */
     @Override
     public CreateDataSourceFromRDSResult createDataSourceFromRDS(
@@ -467,6 +469,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateDataSourceFromRedshift
      */
     @Override
     public CreateDataSourceFromRedshiftResult createDataSourceFromRedshift(
@@ -562,6 +565,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateDataSourceFromS3
      */
     @Override
     public CreateDataSourceFromS3Result createDataSourceFromS3(
@@ -636,6 +640,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateEvaluation
      */
     @Override
     public CreateEvaluationResult createEvaluation(
@@ -712,6 +717,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A second request to use or change an object was not allowed. This
      *         can result from retrying a request using a parameter that was not
      *         present in the original request.
+     * @sample AmazonMachineLearning.CreateMLModel
      */
     @Override
     public CreateMLModelResult createMLModel(
@@ -765,6 +771,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.CreateRealtimeEndpoint
      */
     @Override
     public CreateRealtimeEndpointResult createRealtimeEndpoint(
@@ -826,6 +833,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteBatchPrediction
      */
     @Override
     public DeleteBatchPredictionResult deleteBatchPrediction(
@@ -886,6 +894,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteDataSource
      */
     @Override
     public DeleteDataSourceResult deleteDataSource(
@@ -946,6 +955,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteEvaluation
      */
     @Override
     public DeleteEvaluationResult deleteEvaluation(
@@ -1006,6 +1016,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteMLModel
      */
     @Override
     public DeleteMLModelResult deleteMLModel(
@@ -1056,6 +1067,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DeleteRealtimeEndpoint
      */
     @Override
     public DeleteRealtimeEndpointResult deleteRealtimeEndpoint(
@@ -1106,6 +1118,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeBatchPredictions
      */
     @Override
     public DescribeBatchPredictionsResult describeBatchPredictions(
@@ -1161,6 +1174,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeDataSources
      */
     @Override
     public DescribeDataSourcesResult describeDataSources(
@@ -1216,6 +1230,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeEvaluations
      */
     @Override
     public DescribeEvaluationsResult describeEvaluations(
@@ -1270,6 +1285,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         invalid input value.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.DescribeMLModels
      */
     @Override
     public DescribeMLModelsResult describeMLModels(
@@ -1328,6 +1344,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetBatchPrediction
      */
     @Override
     public GetBatchPredictionResult getBatchPrediction(
@@ -1385,6 +1402,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetDataSource
      */
     @Override
     public GetDataSourceResult getDataSource(
@@ -1435,6 +1453,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetEvaluation
      */
     @Override
     public GetEvaluationResult getEvaluation(
@@ -1489,6 +1508,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.GetMLModel
      */
     @Override
     public GetMLModelResult getMLModel(GetMLModelRequest getMLModelRequest) {
@@ -1551,6 +1571,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * @throws PredictorNotMountedException
      *         The exception is thrown when a predict request is made to an
      *         unmounted <code>MLModel</code>.
+     * @sample AmazonMachineLearning.Predict
      */
     @Override
     public PredictResult predict(PredictRequest predictRequest) {
@@ -1605,6 +1626,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateBatchPrediction
      */
     @Override
     public UpdateBatchPredictionResult updateBatchPrediction(
@@ -1659,6 +1681,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateDataSource
      */
     @Override
     public UpdateDataSourceResult updateDataSource(
@@ -1713,6 +1736,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateEvaluation
      */
     @Override
     public UpdateEvaluationResult updateEvaluation(
@@ -1768,6 +1792,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      *         A specified resource cannot be located.
      * @throws InternalServerException
      *         An error on the server occurred when trying to process a request.
+     * @sample AmazonMachineLearning.UpdateMLModel
      */
     @Override
     public UpdateMLModelResult updateMLModel(

@@ -139,6 +139,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.ActivatePipeline
      */
     ActivatePipelineResult activatePipeline(
             ActivatePipelineRequest activatePipelineRequest);
@@ -163,6 +164,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.AddTags
      */
     AddTagsResult addTags(AddTagsRequest addTagsRequest);
 
@@ -182,6 +184,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.CreatePipeline
      */
     CreatePipelineResult createPipeline(
             CreatePipelineRequest createPipelineRequest);
@@ -213,6 +216,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.DeactivatePipeline
      */
     DeactivatePipelineResult deactivatePipeline(
             DeactivatePipelineRequest deactivatePipelineRequest);
@@ -243,6 +247,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.DeletePipeline
      */
     void deletePipeline(DeletePipelineRequest deletePipelineRequest);
 
@@ -268,6 +273,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.DescribeObjects
      */
     DescribeObjectsResult describeObjects(
             DescribeObjectsRequest describeObjectsRequest);
@@ -303,6 +309,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.DescribePipelines
      */
     DescribePipelinesResult describePipelines(
             DescribePipelinesRequest describePipelinesRequest);
@@ -332,6 +339,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.EvaluateExpression
      */
     EvaluateExpressionResult evaluateExpression(
             EvaluateExpressionRequest evaluateExpressionRequest);
@@ -359,6 +367,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.GetPipelineDefinition
      */
     GetPipelineDefinitionResult getPipelineDefinition(
             GetPipelineDefinitionRequest getPipelineDefinitionRequest);
@@ -379,6 +388,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.ListPipelines
      */
     ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest);
 
@@ -422,6 +432,7 @@ public interface DataPipeline {
      *         limits for your account.
      * @throws TaskNotFoundException
      *         The specified task was not found.
+     * @sample DataPipeline.PollForTask
      */
     PollForTaskResult pollForTask(PollForTaskRequest pollForTaskRequest);
 
@@ -464,6 +475,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.PutPipelineDefinition
      */
     PutPipelineDefinitionResult putPipelineDefinition(
             PutPipelineDefinitionRequest putPipelineDefinitionRequest);
@@ -489,6 +501,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.QueryObjects
      */
     QueryObjectsResult queryObjects(QueryObjectsRequest queryObjectsRequest);
 
@@ -512,6 +525,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.RemoveTags
      */
     RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
 
@@ -551,6 +565,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.ReportTaskProgress
      */
     ReportTaskProgressResult reportTaskProgress(
             ReportTaskProgressRequest reportTaskProgressRequest);
@@ -575,6 +590,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.ReportTaskRunnerHeartbeat
      */
     ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeat(
             ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest);
@@ -603,6 +619,7 @@ public interface DataPipeline {
      *         formatted, that the signature was generated with the correct
      *         credentials, and that you haven't exceeded any of the service
      *         limits for your account.
+     * @sample DataPipeline.SetStatus
      */
     void setStatus(SetStatusRequest setStatusRequest);
 
@@ -633,6 +650,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.SetTaskStatus
      */
     SetTaskStatusResult setTaskStatus(SetTaskStatusRequest setTaskStatusRequest);
 
@@ -658,6 +676,7 @@ public interface DataPipeline {
      *         correct user and account identifiers.
      * @throws PipelineDeletedException
      *         The specified pipeline has been deleted.
+     * @sample DataPipeline.ValidatePipelineDefinition
      */
     ValidatePipelineDefinitionResult validatePipelineDefinition(
             ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest);

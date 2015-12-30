@@ -89,6 +89,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the CreateIdentityPool action.
      * @return A Java Future containing the result of the CreateIdentityPool
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.CreateIdentityPool
      */
     java.util.concurrent.Future<CreateIdentityPoolResult> createIdentityPoolAsync(
             CreateIdentityPoolRequest createIdentityPoolRequest);
@@ -118,6 +119,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateIdentityPool
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.CreateIdentityPool
      */
     java.util.concurrent.Future<CreateIdentityPoolResult> createIdentityPoolAsync(
             CreateIdentityPoolRequest createIdentityPoolRequest,
@@ -136,6 +138,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>DeleteIdentities</code> action.
      * @return A Java Future containing the result of the DeleteIdentities
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.DeleteIdentities
      */
     java.util.concurrent.Future<DeleteIdentitiesResult> deleteIdentitiesAsync(
             DeleteIdentitiesRequest deleteIdentitiesRequest);
@@ -158,6 +161,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteIdentities
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.DeleteIdentities
      */
     java.util.concurrent.Future<DeleteIdentitiesResult> deleteIdentitiesAsync(
             DeleteIdentitiesRequest deleteIdentitiesRequest,
@@ -174,6 +178,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param deleteIdentityPoolRequest
      *        Input to the DeleteIdentityPool action.
+     * @sample AmazonCognitoIdentityAsync.DeleteIdentityPool
      */
     java.util.concurrent.Future<Void> deleteIdentityPoolAsync(
             DeleteIdentityPoolRequest deleteIdentityPoolRequest);
@@ -194,6 +199,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCognitoIdentityAsyncHandler.DeleteIdentityPool
      */
     java.util.concurrent.Future<Void> deleteIdentityPoolAsync(
             DeleteIdentityPoolRequest deleteIdentityPoolRequest,
@@ -212,6 +218,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>DescribeIdentity</code> action.
      * @return A Java Future containing the result of the DescribeIdentity
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.DescribeIdentity
      */
     java.util.concurrent.Future<DescribeIdentityResult> describeIdentityAsync(
             DescribeIdentityRequest describeIdentityRequest);
@@ -234,6 +241,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeIdentity
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.DescribeIdentity
      */
     java.util.concurrent.Future<DescribeIdentityResult> describeIdentityAsync(
             DescribeIdentityRequest describeIdentityRequest,
@@ -252,6 +260,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the DescribeIdentityPool action.
      * @return A Java Future containing the result of the DescribeIdentityPool
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.DescribeIdentityPool
      */
     java.util.concurrent.Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(
             DescribeIdentityPoolRequest describeIdentityPoolRequest);
@@ -274,6 +283,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeIdentityPool
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.DescribeIdentityPool
      */
     java.util.concurrent.Future<DescribeIdentityPoolResult> describeIdentityPoolAsync(
             DescribeIdentityPoolRequest describeIdentityPoolRequest,
@@ -294,6 +304,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>GetCredentialsForIdentity</code> action.
      * @return A Java Future containing the result of the
      *         GetCredentialsForIdentity operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.GetCredentialsForIdentity
      */
     java.util.concurrent.Future<GetCredentialsForIdentityResult> getCredentialsForIdentityAsync(
             GetCredentialsForIdentityRequest getCredentialsForIdentityRequest);
@@ -318,6 +329,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GetCredentialsForIdentity operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.GetCredentialsForIdentity
      */
     java.util.concurrent.Future<GetCredentialsForIdentityResult> getCredentialsForIdentityAsync(
             GetCredentialsForIdentityRequest getCredentialsForIdentityRequest,
@@ -336,6 +348,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the GetId action.
      * @return A Java Future containing the result of the GetId operation
      *         returned by the service.
+     * @sample AmazonCognitoIdentityAsync.GetId
      */
     java.util.concurrent.Future<GetIdResult> getIdAsync(
             GetIdRequest getIdRequest);
@@ -358,6 +371,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetId operation
      *         returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.GetId
      */
     java.util.concurrent.Future<GetIdResult> getIdAsync(
             GetIdRequest getIdRequest,
@@ -375,6 +389,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>GetIdentityPoolRoles</code> action.
      * @return A Java Future containing the result of the GetIdentityPoolRoles
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.GetIdentityPoolRoles
      */
     java.util.concurrent.Future<GetIdentityPoolRolesResult> getIdentityPoolRolesAsync(
             GetIdentityPoolRolesRequest getIdentityPoolRolesRequest);
@@ -396,6 +411,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetIdentityPoolRoles
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.GetIdentityPoolRoles
      */
     java.util.concurrent.Future<GetIdentityPoolRolesResult> getIdentityPoolRolesAsync(
             GetIdentityPoolRolesRequest getIdentityPoolRolesRequest,
@@ -418,6 +434,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the GetOpenIdToken action.
      * @return A Java Future containing the result of the GetOpenIdToken
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.GetOpenIdToken
      */
     java.util.concurrent.Future<GetOpenIdTokenResult> getOpenIdTokenAsync(
             GetOpenIdTokenRequest getOpenIdTokenRequest);
@@ -444,6 +461,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetOpenIdToken
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.GetOpenIdToken
      */
     java.util.concurrent.Future<GetOpenIdTokenResult> getOpenIdTokenAsync(
             GetOpenIdTokenRequest getOpenIdTokenRequest,
@@ -479,6 +497,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * @return A Java Future containing the result of the
      *         GetOpenIdTokenForDeveloperIdentity operation returned by the
      *         service.
+     * @sample AmazonCognitoIdentityAsync.GetOpenIdTokenForDeveloperIdentity
      */
     java.util.concurrent.Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest);
@@ -518,6 +537,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * @return A Java Future containing the result of the
      *         GetOpenIdTokenForDeveloperIdentity operation returned by the
      *         service.
+     * @sample 
+     *         AmazonCognitoIdentityAsyncHandler.GetOpenIdTokenForDeveloperIdentity
      */
     java.util.concurrent.Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest,
@@ -535,6 +556,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the ListIdentities action.
      * @return A Java Future containing the result of the ListIdentities
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.ListIdentities
      */
     java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(
             ListIdentitiesRequest listIdentitiesRequest);
@@ -556,6 +578,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIdentities
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.ListIdentities
      */
     java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(
             ListIdentitiesRequest listIdentitiesRequest,
@@ -573,6 +596,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the ListIdentityPools action.
      * @return A Java Future containing the result of the ListIdentityPools
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.ListIdentityPools
      */
     java.util.concurrent.Future<ListIdentityPoolsResult> listIdentityPoolsAsync(
             ListIdentityPoolsRequest listIdentityPoolsRequest);
@@ -594,6 +618,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIdentityPools
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.ListIdentityPools
      */
     java.util.concurrent.Future<ListIdentityPoolsResult> listIdentityPoolsAsync(
             ListIdentityPoolsRequest listIdentityPoolsRequest,
@@ -621,6 +646,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>LookupDeveloperIdentityInput</code> action.
      * @return A Java Future containing the result of the
      *         LookupDeveloperIdentity operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.LookupDeveloperIdentity
      */
     java.util.concurrent.Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(
             LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest);
@@ -652,6 +678,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         LookupDeveloperIdentity operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.LookupDeveloperIdentity
      */
     java.util.concurrent.Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(
             LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest,
@@ -677,6 +704,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        Input to the <code>MergeDeveloperIdentities</code> action.
      * @return A Java Future containing the result of the
      *         MergeDeveloperIdentities operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.MergeDeveloperIdentities
      */
     java.util.concurrent.Future<MergeDeveloperIdentitiesResult> mergeDeveloperIdentitiesAsync(
             MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest);
@@ -706,6 +734,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         MergeDeveloperIdentities operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.MergeDeveloperIdentities
      */
     java.util.concurrent.Future<MergeDeveloperIdentitiesResult> mergeDeveloperIdentitiesAsync(
             MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest,
@@ -722,6 +751,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param setIdentityPoolRolesRequest
      *        Input to the <code>SetIdentityPoolRoles</code> action.
+     * @sample AmazonCognitoIdentityAsync.SetIdentityPoolRoles
      */
     java.util.concurrent.Future<Void> setIdentityPoolRolesAsync(
             SetIdentityPoolRolesRequest setIdentityPoolRolesRequest);
@@ -742,6 +772,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCognitoIdentityAsyncHandler.SetIdentityPoolRoles
      */
     java.util.concurrent.Future<Void> setIdentityPoolRolesAsync(
             SetIdentityPoolRolesRequest setIdentityPoolRolesRequest,
@@ -761,6 +792,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param unlinkDeveloperIdentityRequest
      *        Input to the <code>UnlinkDeveloperIdentity</code> action.
+     * @sample AmazonCognitoIdentityAsync.UnlinkDeveloperIdentity
      */
     java.util.concurrent.Future<Void> unlinkDeveloperIdentityAsync(
             UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest);
@@ -784,6 +816,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCognitoIdentityAsyncHandler.UnlinkDeveloperIdentity
      */
     java.util.concurrent.Future<Void> unlinkDeveloperIdentityAsync(
             UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest,
@@ -801,6 +834,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param unlinkIdentityRequest
      *        Input to the UnlinkIdentity action.
+     * @sample AmazonCognitoIdentityAsync.UnlinkIdentity
      */
     java.util.concurrent.Future<Void> unlinkIdentityAsync(
             UnlinkIdentityRequest unlinkIdentityRequest);
@@ -822,6 +856,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AmazonCognitoIdentityAsyncHandler.UnlinkIdentity
      */
     java.util.concurrent.Future<Void> unlinkIdentityAsync(
             UnlinkIdentityRequest unlinkIdentityRequest,
@@ -839,6 +874,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        An object representing a Cognito identity pool.
      * @return A Java Future containing the result of the UpdateIdentityPool
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.UpdateIdentityPool
      */
     java.util.concurrent.Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(
             UpdateIdentityPoolRequest updateIdentityPoolRequest);
@@ -860,6 +896,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateIdentityPool
      *         operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.UpdateIdentityPool
      */
     java.util.concurrent.Future<UpdateIdentityPoolResult> updateIdentityPoolAsync(
             UpdateIdentityPoolRequest updateIdentityPoolRequest,

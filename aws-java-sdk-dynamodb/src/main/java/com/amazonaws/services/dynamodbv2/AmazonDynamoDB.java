@@ -350,6 +350,7 @@ public interface AmazonDynamoDB {
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.BatchGetItem
      */
     BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest);
 
@@ -506,6 +507,7 @@ public interface AmazonDynamoDB {
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.BatchWriteItem
      */
     BatchWriteItemResult batchWriteItem(
             BatchWriteItemRequest batchWriteItemRequest);
@@ -566,6 +568,7 @@ public interface AmazonDynamoDB {
      *         250.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.CreateTable
      */
     CreateTableResult createTable(CreateTableRequest createTableRequest);
 
@@ -623,6 +626,7 @@ public interface AmazonDynamoDB {
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DeleteItem
      */
     DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest);
 
@@ -699,6 +703,7 @@ public interface AmazonDynamoDB {
      *         250.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DeleteTable
      */
     DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest);
 
@@ -734,6 +739,7 @@ public interface AmazonDynamoDB {
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeTable
      */
     DescribeTableResult describeTable(DescribeTableRequest describeTableRequest);
 
@@ -776,6 +782,7 @@ public interface AmazonDynamoDB {
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.GetItem
      */
     GetItemResult getItem(GetItemRequest getItemRequest);
 
@@ -807,6 +814,7 @@ public interface AmazonDynamoDB {
      * @return Result of the ListTables operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListTables
      */
     ListTablesResult listTables(ListTablesRequest listTablesRequest);
 
@@ -900,6 +908,7 @@ public interface AmazonDynamoDB {
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.PutItem
      */
     PutItemResult putItem(PutItemRequest putItemRequest);
 
@@ -974,6 +983,7 @@ public interface AmazonDynamoDB {
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.Query
      */
     QueryResult query(QueryRequest queryRequest);
 
@@ -1023,6 +1033,7 @@ public interface AmazonDynamoDB {
      *         not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.Scan
      */
     ScanResult scan(ScanRequest scanRequest);
 
@@ -1087,6 +1098,7 @@ public interface AmazonDynamoDB {
      *         for tables that have one or more local secondary indexes.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateItem
      */
     UpdateItemResult updateItem(UpdateItemRequest updateItemRequest);
 
@@ -1174,6 +1186,7 @@ public interface AmazonDynamoDB {
      *         250.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateTable
      */
     UpdateTableResult updateTable(UpdateTableRequest updateTableRequest);
 

@@ -50,6 +50,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param batchCheckLayerAvailabilityRequest
      * @return A Java Future containing the result of the
      *         BatchCheckLayerAvailability operation returned by the service.
+     * @sample AmazonECRAsync.BatchCheckLayerAvailability
      */
     java.util.concurrent.Future<BatchCheckLayerAvailabilityResult> batchCheckLayerAvailabilityAsync(
             BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest);
@@ -75,6 +76,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         BatchCheckLayerAvailability operation returned by the service.
+     * @sample AmazonECRAsyncHandler.BatchCheckLayerAvailability
      */
     java.util.concurrent.Future<BatchCheckLayerAvailabilityResult> batchCheckLayerAvailabilityAsync(
             BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest,
@@ -93,6 +95,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        <code>imageDigest</code>.
      * @return A Java Future containing the result of the BatchDeleteImage
      *         operation returned by the service.
+     * @sample AmazonECRAsync.BatchDeleteImage
      */
     java.util.concurrent.Future<BatchDeleteImageResult> batchDeleteImageAsync(
             BatchDeleteImageRequest batchDeleteImageRequest);
@@ -115,6 +118,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchDeleteImage
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.BatchDeleteImage
      */
     java.util.concurrent.Future<BatchDeleteImageResult> batchDeleteImageAsync(
             BatchDeleteImageRequest batchDeleteImageRequest,
@@ -130,6 +134,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param batchGetImageRequest
      * @return A Java Future containing the result of the BatchGetImage
      *         operation returned by the service.
+     * @sample AmazonECRAsync.BatchGetImage
      */
     java.util.concurrent.Future<BatchGetImageResult> batchGetImageAsync(
             BatchGetImageRequest batchGetImageRequest);
@@ -149,6 +154,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchGetImage
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.BatchGetImage
      */
     java.util.concurrent.Future<BatchGetImageResult> batchGetImageAsync(
             BatchGetImageRequest batchGetImageRequest,
@@ -172,6 +178,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param completeLayerUploadRequest
      * @return A Java Future containing the result of the CompleteLayerUpload
      *         operation returned by the service.
+     * @sample AmazonECRAsync.CompleteLayerUpload
      */
     java.util.concurrent.Future<CompleteLayerUploadResult> completeLayerUploadAsync(
             CompleteLayerUploadRequest completeLayerUploadRequest);
@@ -199,6 +206,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CompleteLayerUpload
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.CompleteLayerUpload
      */
     java.util.concurrent.Future<CompleteLayerUploadResult> completeLayerUploadAsync(
             CompleteLayerUploadRequest completeLayerUploadRequest,
@@ -212,6 +220,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param createRepositoryRequest
      * @return A Java Future containing the result of the CreateRepository
      *         operation returned by the service.
+     * @sample AmazonECRAsync.CreateRepository
      */
     java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(
             CreateRepositoryRequest createRepositoryRequest);
@@ -229,6 +238,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRepository
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.CreateRepository
      */
     java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(
             CreateRepositoryRequest createRepositoryRequest,
@@ -243,6 +253,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param deleteRepositoryRequest
      * @return A Java Future containing the result of the DeleteRepository
      *         operation returned by the service.
+     * @sample AmazonECRAsync.DeleteRepository
      */
     java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(
             DeleteRepositoryRequest deleteRepositoryRequest);
@@ -261,6 +272,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRepository
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.DeleteRepository
      */
     java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(
             DeleteRepositoryRequest deleteRepositoryRequest,
@@ -274,6 +286,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param deleteRepositoryPolicyRequest
      * @return A Java Future containing the result of the DeleteRepositoryPolicy
      *         operation returned by the service.
+     * @sample AmazonECRAsync.DeleteRepositoryPolicy
      */
     java.util.concurrent.Future<DeleteRepositoryPolicyResult> deleteRepositoryPolicyAsync(
             DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest);
@@ -291,6 +304,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRepositoryPolicy
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.DeleteRepositoryPolicy
      */
     java.util.concurrent.Future<DeleteRepositoryPolicyResult> deleteRepositoryPolicyAsync(
             DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest,
@@ -304,6 +318,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param describeRepositoriesRequest
      * @return A Java Future containing the result of the DescribeRepositories
      *         operation returned by the service.
+     * @sample AmazonECRAsync.DescribeRepositories
      */
     java.util.concurrent.Future<DescribeRepositoriesResult> describeRepositoriesAsync(
             DescribeRepositoriesRequest describeRepositoriesRequest);
@@ -321,6 +336,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRepositories
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.DescribeRepositories
      */
     java.util.concurrent.Future<DescribeRepositoriesResult> describeRepositoriesAsync(
             DescribeRepositoriesRequest describeRepositoriesRequest,
@@ -344,6 +360,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param getAuthorizationTokenRequest
      * @return A Java Future containing the result of the GetAuthorizationToken
      *         operation returned by the service.
+     * @sample AmazonECRAsync.GetAuthorizationToken
      */
     java.util.concurrent.Future<GetAuthorizationTokenResult> getAuthorizationTokenAsync(
             GetAuthorizationTokenRequest getAuthorizationTokenRequest);
@@ -371,6 +388,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAuthorizationToken
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.GetAuthorizationToken
      */
     java.util.concurrent.Future<GetAuthorizationTokenResult> getAuthorizationTokenAsync(
             GetAuthorizationTokenRequest getAuthorizationTokenRequest,
@@ -393,6 +411,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param getDownloadUrlForLayerRequest
      * @return A Java Future containing the result of the GetDownloadUrlForLayer
      *         operation returned by the service.
+     * @sample AmazonECRAsync.GetDownloadUrlForLayer
      */
     java.util.concurrent.Future<GetDownloadUrlForLayerResult> getDownloadUrlForLayerAsync(
             GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest);
@@ -419,6 +438,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDownloadUrlForLayer
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.GetDownloadUrlForLayer
      */
     java.util.concurrent.Future<GetDownloadUrlForLayerResult> getDownloadUrlForLayerAsync(
             GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest,
@@ -432,6 +452,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param getRepositoryPolicyRequest
      * @return A Java Future containing the result of the GetRepositoryPolicy
      *         operation returned by the service.
+     * @sample AmazonECRAsync.GetRepositoryPolicy
      */
     java.util.concurrent.Future<GetRepositoryPolicyResult> getRepositoryPolicyAsync(
             GetRepositoryPolicyRequest getRepositoryPolicyRequest);
@@ -449,6 +470,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetRepositoryPolicy
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.GetRepositoryPolicy
      */
     java.util.concurrent.Future<GetRepositoryPolicyResult> getRepositoryPolicyAsync(
             GetRepositoryPolicyRequest getRepositoryPolicyRequest,
@@ -469,6 +491,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param initiateLayerUploadRequest
      * @return A Java Future containing the result of the InitiateLayerUpload
      *         operation returned by the service.
+     * @sample AmazonECRAsync.InitiateLayerUpload
      */
     java.util.concurrent.Future<InitiateLayerUploadResult> initiateLayerUploadAsync(
             InitiateLayerUploadRequest initiateLayerUploadRequest);
@@ -493,6 +516,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the InitiateLayerUpload
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.InitiateLayerUpload
      */
     java.util.concurrent.Future<InitiateLayerUploadResult> initiateLayerUploadAsync(
             InitiateLayerUploadRequest initiateLayerUploadRequest,
@@ -506,6 +530,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param listImagesRequest
      * @return A Java Future containing the result of the ListImages operation
      *         returned by the service.
+     * @sample AmazonECRAsync.ListImages
      */
     java.util.concurrent.Future<ListImagesResult> listImagesAsync(
             ListImagesRequest listImagesRequest);
@@ -523,6 +548,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListImages operation
      *         returned by the service.
+     * @sample AmazonECRAsyncHandler.ListImages
      */
     java.util.concurrent.Future<ListImagesResult> listImagesAsync(
             ListImagesRequest listImagesRequest,
@@ -543,6 +569,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param putImageRequest
      * @return A Java Future containing the result of the PutImage operation
      *         returned by the service.
+     * @sample AmazonECRAsync.PutImage
      */
     java.util.concurrent.Future<PutImageResult> putImageAsync(
             PutImageRequest putImageRequest);
@@ -567,6 +594,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutImage operation
      *         returned by the service.
+     * @sample AmazonECRAsyncHandler.PutImage
      */
     java.util.concurrent.Future<PutImageResult> putImageAsync(
             PutImageRequest putImageRequest,
@@ -581,6 +609,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param setRepositoryPolicyRequest
      * @return A Java Future containing the result of the SetRepositoryPolicy
      *         operation returned by the service.
+     * @sample AmazonECRAsync.SetRepositoryPolicy
      */
     java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(
             SetRepositoryPolicyRequest setRepositoryPolicyRequest);
@@ -599,6 +628,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SetRepositoryPolicy
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.SetRepositoryPolicy
      */
     java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(
             SetRepositoryPolicyRequest setRepositoryPolicyRequest,
@@ -619,6 +649,7 @@ public interface AmazonECRAsync extends AmazonECR {
      * @param uploadLayerPartRequest
      * @return A Java Future containing the result of the UploadLayerPart
      *         operation returned by the service.
+     * @sample AmazonECRAsync.UploadLayerPart
      */
     java.util.concurrent.Future<UploadLayerPartResult> uploadLayerPartAsync(
             UploadLayerPartRequest uploadLayerPartRequest);
@@ -643,6 +674,7 @@ public interface AmazonECRAsync extends AmazonECR {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UploadLayerPart
      *         operation returned by the service.
+     * @sample AmazonECRAsyncHandler.UploadLayerPart
      */
     java.util.concurrent.Future<UploadLayerPartResult> uploadLayerPartAsync(
             UploadLayerPartRequest uploadLayerPartRequest,

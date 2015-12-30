@@ -146,6 +146,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of an acknowledge job action.
      * @return A Java Future containing the result of the AcknowledgeJob
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.AcknowledgeJob
      */
     java.util.concurrent.Future<AcknowledgeJobResult> acknowledgeJobAsync(
             AcknowledgeJobRequest acknowledgeJobRequest);
@@ -165,6 +166,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AcknowledgeJob
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.AcknowledgeJob
      */
     java.util.concurrent.Future<AcknowledgeJobResult> acknowledgeJobAsync(
             AcknowledgeJobRequest acknowledgeJobRequest,
@@ -180,6 +182,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of an acknowledge third party job action.
      * @return A Java Future containing the result of the
      *         AcknowledgeThirdPartyJob operation returned by the service.
+     * @sample AWSCodePipelineAsync.AcknowledgeThirdPartyJob
      */
     java.util.concurrent.Future<AcknowledgeThirdPartyJobResult> acknowledgeThirdPartyJobAsync(
             AcknowledgeThirdPartyJobRequest acknowledgeThirdPartyJobRequest);
@@ -199,6 +202,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         AcknowledgeThirdPartyJob operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.AcknowledgeThirdPartyJob
      */
     java.util.concurrent.Future<AcknowledgeThirdPartyJobResult> acknowledgeThirdPartyJobAsync(
             AcknowledgeThirdPartyJobRequest acknowledgeThirdPartyJobRequest,
@@ -214,6 +218,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a create custom action operation.
      * @return A Java Future containing the result of the CreateCustomActionType
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.CreateCustomActionType
      */
     java.util.concurrent.Future<CreateCustomActionTypeResult> createCustomActionTypeAsync(
             CreateCustomActionTypeRequest createCustomActionTypeRequest);
@@ -233,6 +238,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateCustomActionType
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.CreateCustomActionType
      */
     java.util.concurrent.Future<CreateCustomActionTypeResult> createCustomActionTypeAsync(
             CreateCustomActionTypeRequest createCustomActionTypeRequest,
@@ -247,6 +253,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a create pipeline action.
      * @return A Java Future containing the result of the CreatePipeline
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.CreatePipeline
      */
     java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(
             CreatePipelineRequest createPipelineRequest);
@@ -265,6 +272,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePipeline
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.CreatePipeline
      */
     java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(
             CreatePipelineRequest createPipelineRequest,
@@ -286,6 +294,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
      *        custom action will be marked as deleted.
+     * @sample AWSCodePipelineAsync.DeleteCustomActionType
      */
     java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest);
@@ -311,6 +320,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.DeleteCustomActionType
      */
     java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest,
@@ -323,6 +333,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
+     * @sample AWSCodePipelineAsync.DeletePipeline
      */
     java.util.concurrent.Future<Void> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest);
@@ -339,6 +350,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.DeletePipeline
      */
     java.util.concurrent.Future<Void> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest,
@@ -352,6 +364,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
+     * @sample AWSCodePipelineAsync.DisableStageTransition
      */
     java.util.concurrent.Future<Void> disableStageTransitionAsync(
             DisableStageTransitionRequest disableStageTransitionRequest);
@@ -369,6 +382,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.DisableStageTransition
      */
     java.util.concurrent.Future<Void> disableStageTransitionAsync(
             DisableStageTransitionRequest disableStageTransitionRequest,
@@ -381,6 +395,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
+     * @sample AWSCodePipelineAsync.EnableStageTransition
      */
     java.util.concurrent.Future<Void> enableStageTransitionAsync(
             EnableStageTransitionRequest enableStageTransitionRequest);
@@ -397,6 +412,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.EnableStageTransition
      */
     java.util.concurrent.Future<Void> enableStageTransitionAsync(
             EnableStageTransitionRequest enableStageTransitionRequest,
@@ -420,6 +436,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a get job details action.
      * @return A Java Future containing the result of the GetJobDetails
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.GetJobDetails
      */
     java.util.concurrent.Future<GetJobDetailsResult> getJobDetailsAsync(
             GetJobDetailsRequest getJobDetailsRequest);
@@ -447,6 +464,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetJobDetails
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.GetJobDetails
      */
     java.util.concurrent.Future<GetJobDetailsResult> getJobDetailsAsync(
             GetJobDetailsRequest getJobDetailsRequest,
@@ -464,6 +482,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a get pipeline action.
      * @return A Java Future containing the result of the GetPipeline operation
      *         returned by the service.
+     * @sample AWSCodePipelineAsync.GetPipeline
      */
     java.util.concurrent.Future<GetPipelineResult> getPipelineAsync(
             GetPipelineRequest getPipelineRequest);
@@ -485,6 +504,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPipeline operation
      *         returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.GetPipeline
      */
     java.util.concurrent.Future<GetPipelineResult> getPipelineAsync(
             GetPipelineRequest getPipelineRequest,
@@ -500,6 +520,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a get pipeline state action.
      * @return A Java Future containing the result of the GetPipelineState
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.GetPipelineState
      */
     java.util.concurrent.Future<GetPipelineStateResult> getPipelineStateAsync(
             GetPipelineStateRequest getPipelineStateRequest);
@@ -519,6 +540,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPipelineState
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.GetPipelineState
      */
     java.util.concurrent.Future<GetPipelineStateResult> getPipelineStateAsync(
             GetPipelineStateRequest getPipelineStateRequest,
@@ -543,6 +565,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a get third party job details action.
      * @return A Java Future containing the result of the
      *         GetThirdPartyJobDetails operation returned by the service.
+     * @sample AWSCodePipelineAsync.GetThirdPartyJobDetails
      */
     java.util.concurrent.Future<GetThirdPartyJobDetailsResult> getThirdPartyJobDetailsAsync(
             GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest);
@@ -571,6 +594,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the
      *         GetThirdPartyJobDetails operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.GetThirdPartyJobDetails
      */
     java.util.concurrent.Future<GetThirdPartyJobDetailsResult> getThirdPartyJobDetailsAsync(
             GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest,
@@ -586,6 +610,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a list action types action.
      * @return A Java Future containing the result of the ListActionTypes
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.ListActionTypes
      */
     java.util.concurrent.Future<ListActionTypesResult> listActionTypesAsync(
             ListActionTypesRequest listActionTypesRequest);
@@ -605,6 +630,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListActionTypes
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.ListActionTypes
      */
     java.util.concurrent.Future<ListActionTypesResult> listActionTypesAsync(
             ListActionTypesRequest listActionTypesRequest,
@@ -619,6 +645,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a list pipelines action.
      * @return A Java Future containing the result of the ListPipelines
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.ListPipelines
      */
     java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             ListPipelinesRequest listPipelinesRequest);
@@ -637,6 +664,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPipelines
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.ListPipelines
      */
     java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             ListPipelinesRequest listPipelinesRequest,
@@ -660,6 +688,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a poll for jobs action.
      * @return A Java Future containing the result of the PollForJobs operation
      *         returned by the service.
+     * @sample AWSCodePipelineAsync.PollForJobs
      */
     java.util.concurrent.Future<PollForJobsResult> pollForJobsAsync(
             PollForJobsRequest pollForJobsRequest);
@@ -687,6 +716,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PollForJobs operation
      *         returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.PollForJobs
      */
     java.util.concurrent.Future<PollForJobsResult> pollForJobsAsync(
             PollForJobsRequest pollForJobsRequest,
@@ -710,6 +740,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a poll for third party jobs action.
      * @return A Java Future containing the result of the PollForThirdPartyJobs
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.PollForThirdPartyJobs
      */
     java.util.concurrent.Future<PollForThirdPartyJobsResult> pollForThirdPartyJobsAsync(
             PollForThirdPartyJobsRequest pollForThirdPartyJobsRequest);
@@ -737,6 +768,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PollForThirdPartyJobs
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.PollForThirdPartyJobs
      */
     java.util.concurrent.Future<PollForThirdPartyJobsResult> pollForThirdPartyJobsAsync(
             PollForThirdPartyJobsRequest pollForThirdPartyJobsRequest,
@@ -751,6 +783,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a put action revision action.
      * @return A Java Future containing the result of the PutActionRevision
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.PutActionRevision
      */
     java.util.concurrent.Future<PutActionRevisionResult> putActionRevisionAsync(
             PutActionRevisionRequest putActionRevisionRequest);
@@ -769,6 +802,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutActionRevision
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.PutActionRevision
      */
     java.util.concurrent.Future<PutActionRevisionResult> putActionRevisionAsync(
             PutActionRevisionRequest putActionRevisionRequest,
@@ -782,6 +816,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putJobFailureResultRequest
      *        Represents the input of a put job failure result action.
+     * @sample AWSCodePipelineAsync.PutJobFailureResult
      */
     java.util.concurrent.Future<Void> putJobFailureResultAsync(
             PutJobFailureResultRequest putJobFailureResultRequest);
@@ -799,6 +834,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.PutJobFailureResult
      */
     java.util.concurrent.Future<Void> putJobFailureResultAsync(
             PutJobFailureResultRequest putJobFailureResultRequest,
@@ -812,6 +848,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putJobSuccessResultRequest
      *        Represents the input of a put job success result action.
+     * @sample AWSCodePipelineAsync.PutJobSuccessResult
      */
     java.util.concurrent.Future<Void> putJobSuccessResultAsync(
             PutJobSuccessResultRequest putJobSuccessResultRequest);
@@ -829,6 +866,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.PutJobSuccessResult
      */
     java.util.concurrent.Future<Void> putJobSuccessResultAsync(
             PutJobSuccessResultRequest putJobSuccessResultRequest,
@@ -842,6 +880,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putThirdPartyJobFailureResultRequest
      *        Represents the input of a third party job failure result action.
+     * @sample AWSCodePipelineAsync.PutThirdPartyJobFailureResult
      */
     java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest);
@@ -859,6 +898,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.PutThirdPartyJobFailureResult
      */
     java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest,
@@ -873,6 +913,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * @param putThirdPartyJobSuccessResultRequest
      *        Represents the input of a put third party job success result
      *        action.
+     * @sample AWSCodePipelineAsync.PutThirdPartyJobSuccessResult
      */
     java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest);
@@ -891,6 +932,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @sample AWSCodePipelineAsyncHandler.PutThirdPartyJobSuccessResult
      */
     java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest,
@@ -906,6 +948,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of a start pipeline execution action.
      * @return A Java Future containing the result of the StartPipelineExecution
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.StartPipelineExecution
      */
     java.util.concurrent.Future<StartPipelineExecutionResult> startPipelineExecutionAsync(
             StartPipelineExecutionRequest startPipelineExecutionRequest);
@@ -925,6 +968,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartPipelineExecution
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.StartPipelineExecution
      */
     java.util.concurrent.Future<StartPipelineExecutionResult> startPipelineExecutionAsync(
             StartPipelineExecutionRequest startPipelineExecutionRequest,
@@ -942,6 +986,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        Represents the input of an update pipeline action.
      * @return A Java Future containing the result of the UpdatePipeline
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.UpdatePipeline
      */
     java.util.concurrent.Future<UpdatePipelineResult> updatePipelineAsync(
             UpdatePipelineRequest updatePipelineRequest);
@@ -963,6 +1008,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdatePipeline
      *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.UpdatePipeline
      */
     java.util.concurrent.Future<UpdatePipelineResult> updatePipelineAsync(
             UpdatePipelineRequest updatePipelineRequest,

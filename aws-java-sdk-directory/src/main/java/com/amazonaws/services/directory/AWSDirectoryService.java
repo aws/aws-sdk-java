@@ -107,6 +107,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ConnectDirectory
      */
     ConnectDirectoryResult connectDirectory(
             ConnectDirectoryRequest connectDirectoryRequest);
@@ -137,6 +138,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateAlias
      */
     CreateAliasResult createAlias(CreateAliasRequest createAliasRequest);
 
@@ -165,6 +167,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateComputer
      */
     CreateComputerResult createComputer(
             CreateComputerRequest createComputerRequest);
@@ -187,6 +190,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateDirectory
      */
     CreateDirectoryResult createDirectory(
             CreateDirectoryRequest createDirectoryRequest);
@@ -210,6 +214,7 @@ public interface AWSDirectoryService {
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.CreateMicrosoftAD
      */
     CreateMicrosoftADResult createMicrosoftAD(
             CreateMicrosoftADRequest createMicrosoftADRequest);
@@ -240,6 +245,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateSnapshot
      */
     CreateSnapshotResult createSnapshot(
             CreateSnapshotRequest createSnapshotRequest);
@@ -283,6 +289,7 @@ public interface AWSDirectoryService {
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.CreateTrust
      */
     CreateTrustResult createTrust(CreateTrustRequest createTrustRequest);
 
@@ -300,6 +307,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteDirectory
      */
     DeleteDirectoryResult deleteDirectory(
             DeleteDirectoryRequest deleteDirectoryRequest);
@@ -320,6 +328,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteSnapshot
      */
     DeleteSnapshotResult deleteSnapshot(
             DeleteSnapshotRequest deleteSnapshotRequest);
@@ -342,6 +351,7 @@ public interface AWSDirectoryService {
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.DeleteTrust
      */
     DeleteTrustResult deleteTrust(DeleteTrustRequest deleteTrustRequest);
 
@@ -380,6 +390,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeDirectories
      */
     DescribeDirectoriesResult describeDirectories(
             DescribeDirectoriesRequest describeDirectoriesRequest);
@@ -422,6 +433,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeSnapshots
      */
     DescribeSnapshotsResult describeSnapshots(
             DescribeSnapshotsRequest describeSnapshotsRequest);
@@ -461,6 +473,7 @@ public interface AWSDirectoryService {
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.DescribeTrusts
      */
     DescribeTrustsResult describeTrusts(
             DescribeTrustsRequest describeTrustsRequest);
@@ -480,6 +493,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableRadius
      */
     DisableRadiusResult disableRadius(DisableRadiusRequest disableRadiusRequest);
 
@@ -502,6 +516,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableSso
      */
     DisableSsoResult disableSso(DisableSsoRequest disableSsoRequest);
 
@@ -524,6 +539,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableRadius
      */
     EnableRadiusResult enableRadius(EnableRadiusRequest enableRadiusRequest);
 
@@ -546,6 +562,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableSso
      */
     EnableSsoResult enableSso(EnableSsoRequest enableSsoRequest);
 
@@ -564,6 +581,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.GetDirectoryLimits
      */
     GetDirectoryLimitsResult getDirectoryLimits(
             GetDirectoryLimitsRequest getDirectoryLimitsRequest);
@@ -590,6 +608,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.GetSnapshotLimits
      */
     GetSnapshotLimitsResult getSnapshotLimits(
             GetSnapshotLimitsRequest getSnapshotLimitsRequest);
@@ -623,6 +642,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RestoreFromSnapshot
      */
     RestoreFromSnapshotResult restoreFromSnapshot(
             RestoreFromSnapshotRequest restoreFromSnapshotRequest);
@@ -644,6 +664,7 @@ public interface AWSDirectoryService {
      *         A client exception has occurred.
      * @throws ServiceException
      *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateRadius
      */
     UpdateRadiusResult updateRadius(UpdateRadiusRequest updateRadiusRequest);
 
@@ -671,6 +692,7 @@ public interface AWSDirectoryService {
      *         An exception has occurred in AWS Directory Service.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
+     * @sample AWSDirectoryService.VerifyTrust
      */
     VerifyTrustResult verifyTrust(VerifyTrustRequest verifyTrustRequest);
 

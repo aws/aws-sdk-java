@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -28,9 +28,11 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Thumbnails JSON Unmarshaller
  */
-public class ThumbnailsJsonUnmarshaller implements Unmarshaller<Thumbnails, JsonUnmarshallerContext> {
+public class ThumbnailsJsonUnmarshaller implements
+        Unmarshaller<Thumbnails, JsonUnmarshallerContext> {
 
-    public Thumbnails unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public Thumbnails unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         Thumbnails thumbnails = new Thumbnails();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,61 +40,75 @@ public class ThumbnailsJsonUnmarshaller implements Unmarshaller<Thumbnails, Json
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setFormat(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setFormat(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Interval", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setInterval(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setInterval(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setResolution(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setResolution(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AspectRatio", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setAspectRatio(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setAspectRatio(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setMaxWidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setMaxWidth(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setMaxHeight(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setMaxHeight(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setSizingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setSizingPolicy(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setPaddingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    thumbnails.setPaddingPolicy(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return thumbnails;
     }
 
     private static ThumbnailsJsonUnmarshaller instance;
+
     public static ThumbnailsJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ThumbnailsJsonUnmarshaller();
+        if (instance == null)
+            instance = new ThumbnailsJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -361,6 +361,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         Thrown when the total number of user pools has exceeded a preset
      *         limit.
+     * @sample AmazonCognitoIdentity.CreateIdentityPool
      */
     @Override
     public CreateIdentityPoolResult createIdentityPool(
@@ -416,6 +417,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DeleteIdentities
      */
     @Override
     public DeleteIdentitiesResult deleteIdentities(
@@ -476,6 +478,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DeleteIdentityPool
      */
     @Override
     public void deleteIdentityPool(
@@ -535,6 +538,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DescribeIdentity
      */
     @Override
     public DescribeIdentityResult describeIdentity(
@@ -597,6 +601,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.DescribeIdentityPool
      */
     @Override
     public DescribeIdentityPoolResult describeIdentityPool(
@@ -670,6 +675,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.GetCredentialsForIdentity
      */
     @Override
     public GetCredentialsForIdentityResult getCredentialsForIdentity(
@@ -740,6 +746,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.GetId
      */
     @Override
     public GetIdResult getId(GetIdRequest getIdRequest) {
@@ -802,6 +809,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.GetIdentityPoolRoles
      */
     @Override
     public GetIdentityPoolRolesResult getIdentityPoolRoles(
@@ -873,6 +881,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.GetOpenIdToken
      */
     @Override
     public GetOpenIdTokenResult getOpenIdToken(
@@ -956,6 +965,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws DeveloperUserAlreadyRegisteredException
      *         The provided developer user identifier is already registered with
      *         Cognito under a different identity ID.
+     * @sample AmazonCognitoIdentity.GetOpenIdTokenForDeveloperIdentity
      */
     @Override
     public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(
@@ -1016,6 +1026,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.ListIdentities
      */
     @Override
     public ListIdentitiesResult listIdentities(
@@ -1073,6 +1084,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.ListIdentityPools
      */
     @Override
     public ListIdentityPoolsResult listIdentityPools(
@@ -1147,6 +1159,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.LookupDeveloperIdentity
      */
     @Override
     public LookupDeveloperIdentityResult lookupDeveloperIdentity(
@@ -1219,6 +1232,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.MergeDeveloperIdentities
      */
     @Override
     public MergeDeveloperIdentitiesResult mergeDeveloperIdentities(
@@ -1284,6 +1298,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      *         request.
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
+     * @sample AmazonCognitoIdentity.SetIdentityPoolRoles
      */
     @Override
     public void setIdentityPoolRoles(
@@ -1348,6 +1363,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the
      *         request.
+     * @sample AmazonCognitoIdentity.UnlinkDeveloperIdentity
      */
     @Override
     public void unlinkDeveloperIdentity(
@@ -1413,6 +1429,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @throws ExternalServiceException
      *         An exception thrown when a dependent service such as Facebook or
      *         Twitter is not responding
+     * @sample AmazonCognitoIdentity.UnlinkIdentity
      */
     @Override
     public void unlinkIdentity(UnlinkIdentityRequest unlinkIdentityRequest) {
@@ -1475,6 +1492,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      *         request.
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
+     * @sample AmazonCognitoIdentity.UpdateIdentityPool
      */
     @Override
     public UpdateIdentityPoolResult updateIdentityPool(

@@ -307,6 +307,22 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return realSQS.addPermissionAsync(addPermissionRequest);
     }
 
+    @Override
+    public Future<Void> addPermissionAsync(String queueUrl, String label,
+            List<String> aWSAccountIds, List<String> actions) {
+        return addPermissionAsync(new AddPermissionRequest(queueUrl, label,
+                aWSAccountIds, actions));
+    }
+
+    @Override
+    public Future<Void> addPermissionAsync(String queueUrl, String label,
+            List<String> aWSAccountIds, List<String> actions,
+            AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+        return addPermissionAsync(new AddPermissionRequest(queueUrl, label,
+                aWSAccountIds, actions), asyncHandler);
+    }
+
+
     public void addPermission(AddPermissionRequest addPermissionRequest) throws AmazonServiceException,
             AmazonClientException {
         ResultConverter.appendUserAgent(addPermissionRequest, USER_AGENT);
@@ -333,7 +349,7 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
      * Returns (creating it if necessary) a queue buffer for a particular queue Since we are only
      * storing a limited number of queue buffers, it is possible that as a result of calling this
      * method the least recently used queue buffer will be removed from our queue buffer cache
-     * 
+     *
      * @return a queue buffer associated with the provided queue URL. Never null
      */
     private synchronized QueueBuffer getQBuffer(String qUrl) {
@@ -368,13 +384,41 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return buffer.changeMessageVisibility(changeMessageVisibilityRequest, asyncHandler);
     }
 
+    @Override
+    public Future<Void> changeMessageVisibilityAsync(String queueUrl,
+            String receiptHandle, Integer visibilityTimeout) {
+        return changeMessageVisibilityAsync(new ChangeMessageVisibilityRequest(
+                queueUrl, receiptHandle, visibilityTimeout));
+    }
+
+    @Override
+    public Future<Void> changeMessageVisibilityAsync(String queueUrl,
+            String receiptHandle, Integer visibilityTimeout,
+            AsyncHandler<ChangeMessageVisibilityRequest, Void> asyncHandler) {
+        return changeMessageVisibilityAsync(new ChangeMessageVisibilityRequest(
+                queueUrl, receiptHandle, visibilityTimeout), asyncHandler);
+    }
+
     public Future<SendMessageResult> sendMessageAsync(SendMessageRequest sendMessageRequest,
                                                       AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         ResultConverter.appendUserAgent(sendMessageRequest, USER_AGENT);
         QueueBuffer buffer = getQBuffer(sendMessageRequest.getQueueUrl());
         return buffer.sendMessage(sendMessageRequest, asyncHandler);
+    }
 
+    @Override
+    public Future<SendMessageResult> sendMessageAsync(String queueUrl,
+            String messageBody) {
+        return sendMessageAsync(new SendMessageRequest(queueUrl, messageBody));
+    }
+
+    @Override
+    public Future<SendMessageResult> sendMessageAsync(String queueUrl,
+            String messageBody,
+            AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler) {
+        return sendMessageAsync(new SendMessageRequest(queueUrl, messageBody),
+                asyncHandler);
     }
 
     public Future<ReceiveMessageResult> receiveMessageAsync(ReceiveMessageRequest receiveMessageRequest,
@@ -385,6 +429,18 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return buffer.receiveMessage(receiveMessageRequest, asyncHandler);
     }
 
+    @Override
+    public Future<ReceiveMessageResult> receiveMessageAsync(String queueUrl) {
+        return receiveMessageAsync(new ReceiveMessageRequest(queueUrl));
+    }
+
+    @Override
+    public Future<ReceiveMessageResult> receiveMessageAsync(
+            String queueUrl,
+            AsyncHandler<ReceiveMessageRequest, ReceiveMessageResult> asyncHandler) {
+        return receiveMessageAsync(new ReceiveMessageRequest(queueUrl), asyncHandler);
+    }
+
     public Future<Void> deleteMessageAsync(DeleteMessageRequest deleteMessageRequest,
                                            AsyncHandler<DeleteMessageRequest, Void> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
@@ -393,10 +449,37 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return buffer.deleteMessage(deleteMessageRequest, asyncHandler);
     }
 
+    @Override
+    public Future<Void> deleteMessageAsync(String queueUrl, String receiptHandle) {
+        return deleteMessageAsync(new DeleteMessageRequest(queueUrl,
+                receiptHandle));
+    }
+
+    @Override
+    public Future<Void> deleteMessageAsync(String queueUrl,
+            String receiptHandle,
+            AsyncHandler<DeleteMessageRequest, Void> asyncHandler) {
+        return deleteMessageAsync(new DeleteMessageRequest(queueUrl,
+                receiptHandle), asyncHandler);
+    }
+
     public Future<Void> setQueueAttributesAsync(SetQueueAttributesRequest setQueueAttributesRequest,
                                                 AsyncHandler<SetQueueAttributesRequest, Void> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.setQueueAttributesAsync(setQueueAttributesRequest, asyncHandler);
+    }
+
+    public Future<Void> setQueueAttributesAsync(String queueUrl,
+            java.util.Map<String, String> attributes)
+            throws AmazonServiceException, AmazonClientException {
+        return realSQS.setQueueAttributesAsync(queueUrl, attributes);
+    }
+
+    public Future<Void> setQueueAttributesAsync(String queueUrl,
+            java.util.Map<String, String> attributes,
+            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, Void> asyncHandler)
+            throws AmazonServiceException, AmazonClientException {
+        return realSQS.setQueueAttributesAsync(queueUrl, attributes, asyncHandler);
     }
 
     public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest,
@@ -405,10 +488,38 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return realSQS.changeMessageVisibilityBatchAsync(changeMessageVisibilityBatchRequest, asyncHandler);
     }
 
+    @Override
+    public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(
+            String queueUrl,
+            List<ChangeMessageVisibilityBatchRequestEntry> entries) {
+        return changeMessageVisibilityBatchAsync(new ChangeMessageVisibilityBatchRequest(
+                queueUrl, entries));
+    }
+
+    @Override
+    public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(
+            String queueUrl,
+            List<ChangeMessageVisibilityBatchRequestEntry> entries,
+            AsyncHandler<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResult> asyncHandler) {
+        return changeMessageVisibilityBatchAsync(new ChangeMessageVisibilityBatchRequest(
+                queueUrl, entries), asyncHandler);
+    }
+
     public Future<GetQueueUrlResult> getQueueUrlAsync(GetQueueUrlRequest getQueueUrlRequest,
                                                       AsyncHandler<GetQueueUrlRequest, GetQueueUrlResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.getQueueUrlAsync(getQueueUrlRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<GetQueueUrlResult> getQueueUrlAsync(String queueName) {
+        return getQueueUrlAsync(new GetQueueUrlRequest(queueName));
+    }
+
+    @Override
+    public Future<GetQueueUrlResult> getQueueUrlAsync(String queueName,
+            AsyncHandler<GetQueueUrlRequest, GetQueueUrlResult> asyncHandler) {
+        return getQueueUrlAsync(new GetQueueUrlRequest(queueName), asyncHandler);
     }
 
     public Future<Void> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
@@ -417,16 +528,61 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return realSQS.removePermissionAsync(removePermissionRequest, asyncHandler);
     }
 
+    @Override
+    public Future<Void> removePermissionAsync(String queueUrl, String label) {
+        return removePermissionAsync(new RemovePermissionRequest(queueUrl,
+                label));
+    }
+
+    @Override
+    public Future<Void> removePermissionAsync(String queueUrl, String label,
+            AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+        return removePermissionAsync(new RemovePermissionRequest(queueUrl,
+                label), asyncHandler);
+    }
+
     public Future<GetQueueAttributesResult> getQueueAttributesAsync(GetQueueAttributesRequest getQueueAttributesRequest,
                                                                     AsyncHandler<GetQueueAttributesRequest, GetQueueAttributesResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.getQueueAttributesAsync(getQueueAttributesRequest, asyncHandler);
     }
 
+    @Override
+    public Future<GetQueueAttributesResult> getQueueAttributesAsync(
+            String queueUrl, List<String> attributeNames) {
+        return getQueueAttributesAsync(new GetQueueAttributesRequest(queueUrl,
+                attributeNames));
+    }
+
+    @Override
+    public Future<GetQueueAttributesResult> getQueueAttributesAsync(
+            String queueUrl,
+            List<String> attributeNames,
+            AsyncHandler<GetQueueAttributesRequest, GetQueueAttributesResult> asyncHandler) {
+        return getQueueAttributesAsync(new GetQueueAttributesRequest(queueUrl,
+                attributeNames), asyncHandler);
+    }
+
     public Future<SendMessageBatchResult> sendMessageBatchAsync(SendMessageBatchRequest sendMessageBatchRequest,
                                                                 AsyncHandler<SendMessageBatchRequest, SendMessageBatchResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.sendMessageBatchAsync(sendMessageBatchRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<SendMessageBatchResult> sendMessageBatchAsync(
+            String queueUrl, List<SendMessageBatchRequestEntry> entries) {
+        return sendMessageBatchAsync(new SendMessageBatchRequest(queueUrl,
+                entries));
+    }
+
+    @Override
+    public Future<SendMessageBatchResult> sendMessageBatchAsync(
+            String queueUrl,
+            List<SendMessageBatchRequestEntry> entries,
+            AsyncHandler<SendMessageBatchRequest, SendMessageBatchResult> asyncHandler) {
+        return sendMessageBatchAsync(new SendMessageBatchRequest(queueUrl,
+                entries), asyncHandler);
     }
 
     public Future<Void> purgeQueueAsync(PurgeQueueRequest purgeQueueRequest,
@@ -441,10 +597,44 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return realSQS.deleteQueueAsync(deleteQueueRequest, asyncHandler);
     }
 
+    @Override
+    public Future<Void> deleteQueueAsync(String queueUrl) {
+        return deleteQueueAsync(new DeleteQueueRequest(queueUrl));
+    }
+
+    @Override
+    public Future<Void> deleteQueueAsync(String queueUrl,
+            AsyncHandler<DeleteQueueRequest, Void> asyncHandler) {
+        return deleteQueueAsync(new DeleteQueueRequest(queueUrl), asyncHandler);
+    }
+
     public Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest listQueuesRequest,
                                                     AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.listQueuesAsync(listQueuesRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<ListQueuesResult> listQueuesAsync() {
+        return listQueuesAsync(new ListQueuesRequest());
+    }
+
+    @Override
+    public Future<ListQueuesResult> listQueuesAsync(
+            AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler) {
+        return listQueuesAsync(new ListQueuesRequest(), asyncHandler);
+    }
+
+    @Override
+    public Future<ListQueuesResult> listQueuesAsync(String queueNamePrefix) {
+        return listQueuesAsync(new ListQueuesRequest(queueNamePrefix));
+    }
+
+    @Override
+    public Future<ListQueuesResult> listQueuesAsync(String queueNamePrefix,
+            AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler) {
+        return listQueuesAsync(new ListQueuesRequest(queueNamePrefix),
+                asyncHandler);
     }
 
     public Future<DeleteMessageBatchResult> deleteMessageBatchAsync(DeleteMessageBatchRequest deleteMessageBatchRequest,
@@ -453,10 +643,37 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
         return realSQS.deleteMessageBatchAsync(deleteMessageBatchRequest, asyncHandler);
     }
 
+    @Override
+    public Future<DeleteMessageBatchResult> deleteMessageBatchAsync(
+            String queueUrl, List<DeleteMessageBatchRequestEntry> entries) {
+        return deleteMessageBatchAsync(new DeleteMessageBatchRequest(queueUrl,
+                entries));
+    }
+
+    @Override
+    public Future<DeleteMessageBatchResult> deleteMessageBatchAsync(
+            String queueUrl,
+            List<DeleteMessageBatchRequestEntry> entries,
+            AsyncHandler<DeleteMessageBatchRequest, DeleteMessageBatchResult> asyncHandler) {
+        return deleteMessageBatchAsync(new DeleteMessageBatchRequest(queueUrl,
+                entries), asyncHandler);
+    }
+
     public Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest,
                                                       AsyncHandler<CreateQueueRequest, CreateQueueResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.createQueueAsync(createQueueRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<CreateQueueResult> createQueueAsync(String queueName) {
+        return createQueueAsync(new CreateQueueRequest(queueName));
+    }
+
+    @Override
+    public Future<CreateQueueResult> createQueueAsync(String queueName,
+            AsyncHandler<CreateQueueRequest, CreateQueueResult> asyncHandler) {
+        return createQueueAsync(new CreateQueueRequest(queueName), asyncHandler);
     }
 
     public Future<Void> addPermissionAsync(AddPermissionRequest addPermissionRequest,

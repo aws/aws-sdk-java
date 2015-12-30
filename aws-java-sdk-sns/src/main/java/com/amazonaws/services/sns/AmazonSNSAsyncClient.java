@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,2366 +14,1782 @@
  */
 package com.amazonaws.services.sns;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.handlers.AsyncHandler;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-
 import com.amazonaws.services.sns.model.*;
 
 /**
- * Asynchronous client for accessing AmazonSNS.
- * All asynchronous calls made using this client are non-blocking. Callers could either
- * process the result and handle the exceptions in the worker thread by providing a callback handler
- * when making the call, or use the returned Future object to check the result of the call in the calling thread.
- * Amazon Simple Notification Service <p>
- * Amazon Simple Notification Service (Amazon SNS) is a web service that
- * enables you to build distributed web-enabled applications.
- * Applications can use Amazon SNS to easily push real-time notification
- * messages to interested subscribers over multiple delivery protocols.
- * For more information about this product see
- * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> . For detailed information about Amazon SNS features and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/"> Amazon SNS Developer Guide </a>
- * .
+ * Interface for accessing Amazon SNS asynchronously. Each asynchronous method
+ * will return a Java Future object representing the asynchronous operation;
+ * overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>Amazon Simple Notification Service</fullname>
+ * <p>
+ * Amazon Simple Notification Service (Amazon SNS) is a web service that enables
+ * you to build distributed web-enabled applications. Applications can use
+ * Amazon SNS to easily push real-time notification messages to interested
+ * subscribers over multiple delivery protocols. For more information about this
+ * product see <a
+ * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. For detailed
+ * information about Amazon SNS features and their associated API calls, see the
+ * <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+ * Guide</a>.
  * </p>
  * <p>
- * We also provide SDKs that enable you to access Amazon SNS from your
- * preferred programming language. The SDKs contain functionality that
- * automatically takes care of tasks such as: cryptographically signing
- * your service requests, retrying requests, and handling error
- * responses. For a list of available SDKs, go to
- * <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a>
- * .
+ * We also provide SDKs that enable you to access Amazon SNS from your preferred
+ * programming language. The SDKs contain functionality that automatically takes
+ * care of tasks such as: cryptographically signing your service requests,
+ * retrying requests, and handling error responses. For a list of available
+ * SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+ * Services</a>.
  * </p>
  */
-public class AmazonSNSAsyncClient extends AmazonSNSClient
-        implements AmazonSNSAsync {
-
-    /**
-     * Executor service for executing asynchronous requests.
-     */
-    private final ExecutorService executorService;
+public class AmazonSNSAsyncClient extends AmazonSNSClient implements
+        AmazonSNSAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
 
+    private final java.util.concurrent.ExecutorService executorService;
+
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS. A credentials provider chain will be used that searches for
+     * credentials in this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials)
+     * shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
-     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
      *
-     * @see DefaultAWSCredentialsProviderChain
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonSNSAsyncClient() {
-        this(new DefaultAWSCredentialsProviderChain());
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS. A credentials provider chain will be used that searches for
+     * credentials in this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Credential profiles file at the default location (~/.aws/credentials)
+     * shared by all AWS SDKs and the AWS CLI</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
-     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * a number of threads equal to the maximum number of concurrent connections
+     * configured via {@code ClientConfiguration.getMaxConnections()}.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonSNS
-     *                       (ex: proxy settings, retry counts, etc.).
-     *
-     * @see DefaultAWSCredentialsProviderChain
-     */
-    public AmazonSNSAsyncClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials.
-     * Default client settings will be used, and a fixed size thread pool will be
-     * created for executing the asynchronous tasks.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     */
-    public AmazonSNSAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials
-     * and executor service.  Default client settings will be used.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials
-     *            The AWS credentials (access key ID and secret key) to use
-     *            when authenticating with AWS services.
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
-     */
-    public AmazonSNSAsyncClient(AWSCredentials awsCredentials, ExecutorService executorService) {
-        super(awsCredentials);
-        this.executorService = executorService;
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials,
-     * executor service, and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentials
-     *            The AWS credentials (access key ID and secret key) to use
-     *            when authenticating with AWS services.
      * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
+     *        The client configuration options controlling how this client
+     *        connects to Amazon SNS (ex: proxy settings, retry counts, etc).
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonSNSAsyncClient(AWSCredentials awsCredentials,
-                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+    public AmazonSNSAsyncClient(
+            com.amazonaws.ClientConfiguration clientConfiguration) {
+        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(),
+                clientConfiguration, java.util.concurrent.Executors
+                        .newFixedThreadPool(clientConfiguration
+                                .getMaxConnections()));
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the specified AWS account credentials.
+     * <p>
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     */
+    public AmazonSNSAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials) {
+        this(awsCredentials, java.util.concurrent.Executors
+                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the specified AWS account credentials and executor service.
+     * Default client settings will be used.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AmazonSNSAsyncClient(
+            com.amazonaws.auth.AWSCredentials awsCredentials,
+            java.util.concurrent.ExecutorService executorService) {
+
+        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
+                executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the specified AWS account credentials, executor service, and
+     * client configuration options.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AmazonSNSAsyncClient(
+            com.amazonaws.auth.AWSCredentials awsCredentials,
+            com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService) {
+
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials provider.
-     * Default client settings will be used, and a fixed size thread pool will be
-     * created for executing the asynchronous tasks.
-     *
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the specified AWS account credentials provider. Default client
+     * settings will be used.
      * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * 50 threads (to match the default maximum number of concurrent connections
+     * to the service).
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonSNSAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
+    public AmazonSNSAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, java.util.concurrent.Executors
+                .newFixedThreadPool(DEFAULT_THREAD_POOL_SIZE));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials provider
-     * and executor service.  Default client settings will be used.
-     *
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the provided AWS account credentials provider and client
+     * configuration options.
      * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Asynchronous methods are delegated to a fixed-size thread pool containing
+     * a number of threads equal to the maximum number of concurrent connections
+     * configured via {@code ClientConfiguration.getMaxConnections()}.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
-     */
-    public AmazonSNSAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
-        this(awsCredentialsProvider, new ClientConfiguration(), executorService);
-    }
-
-    /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials
-     * provider and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
-     *
-     * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
-    public AmazonSNSAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
-                ClientConfiguration clientConfiguration) {
-        this(awsCredentialsProvider, clientConfiguration, Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()));
+    public AmazonSNSAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration) {
+
+        this(awsCredentialsProvider, clientConfiguration,
+                java.util.concurrent.Executors
+                        .newFixedThreadPool(clientConfiguration
+                                .getMaxConnections()));
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on
-     * AmazonSNS using the specified AWS account credentials
-     * provider, executor service, and client configuration options.
-     *
-     * <p>
-     * All calls made using this new client object are non-blocking, and will immediately
-     * return a Java Future object that the caller can later check to see if the service
-     * call has actually completed.
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the specified AWS account credentials provider and executor
+     * service. Default client settings will be used.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration
-     *            Client configuration options (ex: max retry limit, proxy
-     *            settings, etc).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      * @param executorService
-     *            The executor service by which all asynchronous requests will
-     *            be executed.
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
      */
-    public AmazonSNSAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
-                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+    public AmazonSNSAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            java.util.concurrent.ExecutorService executorService) {
+
+        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+                executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SNS using the specified AWS account credentials provider, executor
+     * service, and client configuration options.
+     *
+     * @param awsCredentialsProvider
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings,
+     *        etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be
+     *        executed.
+     */
+    public AmazonSNSAsyncClient(
+            com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
+            com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService) {
+
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
 
     /**
-     * Returns the executor service used by this async client to execute
+     * Returns the executor service used by this client to execute async
      * requests.
      *
-     * @return The executor service used by this async client to execute
+     * @return The executor service used by this client to execute async
      *         requests.
      */
-    public ExecutorService getExecutorService() {
+    public java.util.concurrent.ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> addPermissionAsync(
+            AddPermissionRequest request) {
+
+        return addPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> addPermissionAsync(
+            final AddPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            addPermission(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the AddPermission operation.
+     *
+     * @see #addPermissionAsync(AddPermissionRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<Void> addPermissionAsync(
+            String topicArn, String label,
+            java.util.List<String> aWSAccountIds,
+            java.util.List<String> actionNames) {
+
+        return addPermissionAsync(new AddPermissionRequest()
+                .withTopicArn(topicArn).withLabel(label)
+                .withAWSAccountIds(aWSAccountIds).withActionNames(actionNames));
+    }
+
+    /**
+     * Simplified method form for invoking the AddPermission operation with an
+     * AsyncHandler.
+     *
+     * @see #addPermissionAsync(AddPermissionRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<Void> addPermissionAsync(
+            String topicArn,
+            String label,
+            java.util.List<String> aWSAccountIds,
+            java.util.List<String> actionNames,
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+
+        return addPermissionAsync(
+                new AddPermissionRequest().withTopicArn(topicArn)
+                        .withLabel(label).withAWSAccountIds(aWSAccountIds)
+                        .withActionNames(actionNames), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
+            ConfirmSubscriptionRequest request) {
+
+        return confirmSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
+            final ConfirmSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ConfirmSubscriptionResult>() {
+                    @Override
+                    public ConfirmSubscriptionResult call() throws Exception {
+                        ConfirmSubscriptionResult result;
+
+                        try {
+                            result = confirmSubscription(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ConfirmSubscription operation.
+     *
+     * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
+            String topicArn, String token, String authenticateOnUnsubscribe) {
+
+        return confirmSubscriptionAsync(new ConfirmSubscriptionRequest()
+                .withTopicArn(topicArn).withToken(token)
+                .withAuthenticateOnUnsubscribe(authenticateOnUnsubscribe));
+    }
+
+    /**
+     * Simplified method form for invoking the ConfirmSubscription operation
+     * with an AsyncHandler.
+     *
+     * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
+            String topicArn,
+            String token,
+            String authenticateOnUnsubscribe,
+            com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
+
+        return confirmSubscriptionAsync(new ConfirmSubscriptionRequest()
+                .withTopicArn(topicArn).withToken(token)
+                .withAuthenticateOnUnsubscribe(authenticateOnUnsubscribe),
+                asyncHandler);
+    }
+
+    /**
+     * Simplified method form for invoking the ConfirmSubscription operation.
+     *
+     * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
+            String topicArn, String token) {
+
+        return confirmSubscriptionAsync(new ConfirmSubscriptionRequest()
+                .withTopicArn(topicArn).withToken(token));
+    }
+
+    /**
+     * Simplified method form for invoking the ConfirmSubscription operation
+     * with an AsyncHandler.
+     *
+     * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
+            String topicArn,
+            String token,
+            com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
+
+        return confirmSubscriptionAsync(new ConfirmSubscriptionRequest()
+                .withTopicArn(topicArn).withToken(token), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(
+            CreatePlatformApplicationRequest request) {
+
+        return createPlatformApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(
+            final CreatePlatformApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePlatformApplicationRequest, CreatePlatformApplicationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreatePlatformApplicationResult>() {
+                    @Override
+                    public CreatePlatformApplicationResult call()
+                            throws Exception {
+                        CreatePlatformApplicationResult result;
+
+                        try {
+                            result = createPlatformApplication(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(
+            CreatePlatformEndpointRequest request) {
+
+        return createPlatformEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(
+            final CreatePlatformEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePlatformEndpointRequest, CreatePlatformEndpointResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreatePlatformEndpointResult>() {
+                    @Override
+                    public CreatePlatformEndpointResult call() throws Exception {
+                        CreatePlatformEndpointResult result;
+
+                        try {
+                            result = createPlatformEndpoint(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(
+            CreateTopicRequest request) {
+
+        return createTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(
+            final CreateTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateTopicResult>() {
+                    @Override
+                    public CreateTopicResult call() throws Exception {
+                        CreateTopicResult result;
+
+                        try {
+                            result = createTopic(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the CreateTopic operation.
+     *
+     * @see #createTopicAsync(CreateTopicRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(
+            String name) {
+
+        return createTopicAsync(new CreateTopicRequest().withName(name));
+    }
+
+    /**
+     * Simplified method form for invoking the CreateTopic operation with an
+     * AsyncHandler.
+     *
+     * @see #createTopicAsync(CreateTopicRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(
+            String name,
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
+
+        return createTopicAsync(new CreateTopicRequest().withName(name),
+                asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteEndpointAsync(
+            DeleteEndpointRequest request) {
+
+        return deleteEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteEndpointAsync(
+            final DeleteEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteEndpoint(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deletePlatformApplicationAsync(
+            DeletePlatformApplicationRequest request) {
+
+        return deletePlatformApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deletePlatformApplicationAsync(
+            final DeletePlatformApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deletePlatformApplication(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteTopicAsync(
+            DeleteTopicRequest request) {
+
+        return deleteTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteTopicAsync(
+            final DeleteTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteTopic(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the DeleteTopic operation.
+     *
+     * @see #deleteTopicAsync(DeleteTopicRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<Void> deleteTopicAsync(String topicArn) {
+
+        return deleteTopicAsync(new DeleteTopicRequest().withTopicArn(topicArn));
+    }
+
+    /**
+     * Simplified method form for invoking the DeleteTopic operation with an
+     * AsyncHandler.
+     *
+     * @see #deleteTopicAsync(DeleteTopicRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<Void> deleteTopicAsync(
+            String topicArn,
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, Void> asyncHandler) {
+
+        return deleteTopicAsync(
+                new DeleteTopicRequest().withTopicArn(topicArn), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEndpointAttributesResult> getEndpointAttributesAsync(
+            GetEndpointAttributesRequest request) {
+
+        return getEndpointAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEndpointAttributesResult> getEndpointAttributesAsync(
+            final GetEndpointAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEndpointAttributesRequest, GetEndpointAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetEndpointAttributesResult>() {
+                    @Override
+                    public GetEndpointAttributesResult call() throws Exception {
+                        GetEndpointAttributesResult result;
+
+                        try {
+                            result = getEndpointAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(
+            GetPlatformApplicationAttributesRequest request) {
+
+        return getPlatformApplicationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(
+            final GetPlatformApplicationAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetPlatformApplicationAttributesResult>() {
+                    @Override
+                    public GetPlatformApplicationAttributesResult call()
+                            throws Exception {
+                        GetPlatformApplicationAttributesResult result;
+
+                        try {
+                            result = getPlatformApplicationAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
+            GetSubscriptionAttributesRequest request) {
+
+        return getSubscriptionAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
+            final GetSubscriptionAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetSubscriptionAttributesResult>() {
+                    @Override
+                    public GetSubscriptionAttributesResult call()
+                            throws Exception {
+                        GetSubscriptionAttributesResult result;
+
+                        try {
+                            result = getSubscriptionAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the GetSubscriptionAttributes
+     * operation.
+     *
+     * @see #getSubscriptionAttributesAsync(GetSubscriptionAttributesRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
+            String subscriptionArn) {
+
+        return getSubscriptionAttributesAsync(new GetSubscriptionAttributesRequest()
+                .withSubscriptionArn(subscriptionArn));
+    }
+
+    /**
+     * Simplified method form for invoking the GetSubscriptionAttributes
+     * operation with an AsyncHandler.
+     *
+     * @see #getSubscriptionAttributesAsync(GetSubscriptionAttributesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
+            String subscriptionArn,
+            com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler) {
+
+        return getSubscriptionAttributesAsync(
+                new GetSubscriptionAttributesRequest()
+                        .withSubscriptionArn(subscriptionArn),
+                asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(
+            GetTopicAttributesRequest request) {
+
+        return getTopicAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(
+            final GetTopicAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetTopicAttributesResult>() {
+                    @Override
+                    public GetTopicAttributesResult call() throws Exception {
+                        GetTopicAttributesResult result;
+
+                        try {
+                            result = getTopicAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the GetTopicAttributes operation.
+     *
+     * @see #getTopicAttributesAsync(GetTopicAttributesRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(
+            String topicArn) {
+
+        return getTopicAttributesAsync(new GetTopicAttributesRequest()
+                .withTopicArn(topicArn));
+    }
+
+    /**
+     * Simplified method form for invoking the GetTopicAttributes operation with
+     * an AsyncHandler.
+     *
+     * @see #getTopicAttributesAsync(GetTopicAttributesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(
+            String topicArn,
+            com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler) {
+
+        return getTopicAttributesAsync(
+                new GetTopicAttributesRequest().withTopicArn(topicArn),
+                asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
+            ListEndpointsByPlatformApplicationRequest request) {
+
+        return listEndpointsByPlatformApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
+            final ListEndpointsByPlatformApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListEndpointsByPlatformApplicationResult>() {
+                    @Override
+                    public ListEndpointsByPlatformApplicationResult call()
+                            throws Exception {
+                        ListEndpointsByPlatformApplicationResult result;
+
+                        try {
+                            result = listEndpointsByPlatformApplication(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
+            ListPlatformApplicationsRequest request) {
+
+        return listPlatformApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
+            final ListPlatformApplicationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListPlatformApplicationsResult>() {
+                    @Override
+                    public ListPlatformApplicationsResult call()
+                            throws Exception {
+                        ListPlatformApplicationsResult result;
+
+                        try {
+                            result = listPlatformApplications(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ListPlatformApplications
+     * operation.
+     *
+     * @see #listPlatformApplicationsAsync(ListPlatformApplicationsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync() {
+
+        return listPlatformApplicationsAsync(new ListPlatformApplicationsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the ListPlatformApplications
+     * operation with an AsyncHandler.
+     *
+     * @see #listPlatformApplicationsAsync(ListPlatformApplicationsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler) {
+
+        return listPlatformApplicationsAsync(
+                new ListPlatformApplicationsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
+            ListSubscriptionsRequest request) {
+
+        return listSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
+            final ListSubscriptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListSubscriptionsResult>() {
+                    @Override
+                    public ListSubscriptionsResult call() throws Exception {
+                        ListSubscriptionsResult result;
+
+                        try {
+                            result = listSubscriptions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptions operation.
+     *
+     * @see #listSubscriptionsAsync(ListSubscriptionsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync() {
+
+        return listSubscriptionsAsync(new ListSubscriptionsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptions operation with
+     * an AsyncHandler.
+     *
+     * @see #listSubscriptionsAsync(ListSubscriptionsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
+
+        return listSubscriptionsAsync(new ListSubscriptionsRequest(),
+                asyncHandler);
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptions operation.
+     *
+     * @see #listSubscriptionsAsync(ListSubscriptionsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
+            String nextToken) {
+
+        return listSubscriptionsAsync(new ListSubscriptionsRequest()
+                .withNextToken(nextToken));
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptions operation with
+     * an AsyncHandler.
+     *
+     * @see #listSubscriptionsAsync(ListSubscriptionsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
+            String nextToken,
+            com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
+
+        return listSubscriptionsAsync(
+                new ListSubscriptionsRequest().withNextToken(nextToken),
+                asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
+            ListSubscriptionsByTopicRequest request) {
+
+        return listSubscriptionsByTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
+            final ListSubscriptionsByTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListSubscriptionsByTopicResult>() {
+                    @Override
+                    public ListSubscriptionsByTopicResult call()
+                            throws Exception {
+                        ListSubscriptionsByTopicResult result;
+
+                        try {
+                            result = listSubscriptionsByTopic(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptionsByTopic
+     * operation.
+     *
+     * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
+            String topicArn) {
+
+        return listSubscriptionsByTopicAsync(new ListSubscriptionsByTopicRequest()
+                .withTopicArn(topicArn));
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptionsByTopic
+     * operation with an AsyncHandler.
+     *
+     * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
+            String topicArn,
+            com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
+
+        return listSubscriptionsByTopicAsync(
+                new ListSubscriptionsByTopicRequest().withTopicArn(topicArn),
+                asyncHandler);
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptionsByTopic
+     * operation.
+     *
+     * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
+            String topicArn, String nextToken) {
+
+        return listSubscriptionsByTopicAsync(new ListSubscriptionsByTopicRequest()
+                .withTopicArn(topicArn).withNextToken(nextToken));
+    }
+
+    /**
+     * Simplified method form for invoking the ListSubscriptionsByTopic
+     * operation with an AsyncHandler.
+     *
+     * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
+            String topicArn,
+            String nextToken,
+            com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
+
+        return listSubscriptionsByTopicAsync(
+                new ListSubscriptionsByTopicRequest().withTopicArn(topicArn)
+                        .withNextToken(nextToken), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(
+            ListTopicsRequest request) {
+
+        return listTopicsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(
+            final ListTopicsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTopicsResult>() {
+                    @Override
+                    public ListTopicsResult call() throws Exception {
+                        ListTopicsResult result;
+
+                        try {
+                            result = listTopics(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the ListTopics operation.
+     *
+     * @see #listTopicsAsync(ListTopicsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync() {
+
+        return listTopicsAsync(new ListTopicsRequest());
+    }
+
+    /**
+     * Simplified method form for invoking the ListTopics operation with an
+     * AsyncHandler.
+     *
+     * @see #listTopicsAsync(ListTopicsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(
+            com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
+
+        return listTopicsAsync(new ListTopicsRequest(), asyncHandler);
+    }
+
+    /**
+     * Simplified method form for invoking the ListTopics operation.
+     *
+     * @see #listTopicsAsync(ListTopicsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(
+            String nextToken) {
+
+        return listTopicsAsync(new ListTopicsRequest().withNextToken(nextToken));
+    }
+
+    /**
+     * Simplified method form for invoking the ListTopics operation with an
+     * AsyncHandler.
+     *
+     * @see #listTopicsAsync(ListTopicsRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(
+            String nextToken,
+            com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
+
+        return listTopicsAsync(
+                new ListTopicsRequest().withNextToken(nextToken), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            PublishRequest request) {
+
+        return publishAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            final PublishRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PublishResult>() {
+                    @Override
+                    public PublishResult call() throws Exception {
+                        PublishResult result;
+
+                        try {
+                            result = publish(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the Publish operation.
+     *
+     * @see #publishAsync(PublishRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            String topicArn, String message) {
+
+        return publishAsync(new PublishRequest().withTopicArn(topicArn)
+                .withMessage(message));
+    }
+
+    /**
+     * Simplified method form for invoking the Publish operation with an
+     * AsyncHandler.
+     *
+     * @see #publishAsync(PublishRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            String topicArn,
+            String message,
+            com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
+
+        return publishAsync(new PublishRequest().withTopicArn(topicArn)
+                .withMessage(message), asyncHandler);
+    }
+
+    /**
+     * Simplified method form for invoking the Publish operation.
+     *
+     * @see #publishAsync(PublishRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            String topicArn, String message, String subject) {
+
+        return publishAsync(new PublishRequest().withTopicArn(topicArn)
+                .withMessage(message).withSubject(subject));
+    }
+
+    /**
+     * Simplified method form for invoking the Publish operation with an
+     * AsyncHandler.
+     *
+     * @see #publishAsync(PublishRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            String topicArn,
+            String message,
+            String subject,
+            com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
+
+        return publishAsync(new PublishRequest().withTopicArn(topicArn)
+                .withMessage(message).withSubject(subject), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> removePermissionAsync(
+            RemovePermissionRequest request) {
+
+        return removePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> removePermissionAsync(
+            final RemovePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            removePermission(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the RemovePermission operation.
+     *
+     * @see #removePermissionAsync(RemovePermissionRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<Void> removePermissionAsync(
+            String topicArn, String label) {
+
+        return removePermissionAsync(new RemovePermissionRequest()
+                .withTopicArn(topicArn).withLabel(label));
+    }
+
+    /**
+     * Simplified method form for invoking the RemovePermission operation with
+     * an AsyncHandler.
+     *
+     * @see #removePermissionAsync(RemovePermissionRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<Void> removePermissionAsync(
+            String topicArn,
+            String label,
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+
+        return removePermissionAsync(new RemovePermissionRequest()
+                .withTopicArn(topicArn).withLabel(label), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setEndpointAttributesAsync(
+            SetEndpointAttributesRequest request) {
+
+        return setEndpointAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setEndpointAttributesAsync(
+            final SetEndpointAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            setEndpointAttributes(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setPlatformApplicationAttributesAsync(
+            SetPlatformApplicationAttributesRequest request) {
+
+        return setPlatformApplicationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setPlatformApplicationAttributesAsync(
+            final SetPlatformApplicationAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            setPlatformApplicationAttributes(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+            SetSubscriptionAttributesRequest request) {
+
+        return setSubscriptionAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+            final SetSubscriptionAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            setSubscriptionAttributes(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the SetSubscriptionAttributes
+     * operation.
+     *
+     * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+            String subscriptionArn, String attributeName, String attributeValue) {
+
+        return setSubscriptionAttributesAsync(new SetSubscriptionAttributesRequest()
+                .withSubscriptionArn(subscriptionArn)
+                .withAttributeName(attributeName)
+                .withAttributeValue(attributeValue));
+    }
+
+    /**
+     * Simplified method form for invoking the SetSubscriptionAttributes
+     * operation with an AsyncHandler.
+     *
+     * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+            String subscriptionArn,
+            String attributeName,
+            String attributeValue,
+            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler) {
+
+        return setSubscriptionAttributesAsync(
+                new SetSubscriptionAttributesRequest()
+                        .withSubscriptionArn(subscriptionArn)
+                        .withAttributeName(attributeName)
+                        .withAttributeValue(attributeValue), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+            SetTopicAttributesRequest request) {
+
+        return setTopicAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+            final SetTopicAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            setTopicAttributes(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the SetTopicAttributes operation.
+     *
+     * @see #setTopicAttributesAsync(SetTopicAttributesRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+            String topicArn, String attributeName, String attributeValue) {
+
+        return setTopicAttributesAsync(new SetTopicAttributesRequest()
+                .withTopicArn(topicArn).withAttributeName(attributeName)
+                .withAttributeValue(attributeValue));
+    }
+
+    /**
+     * Simplified method form for invoking the SetTopicAttributes operation with
+     * an AsyncHandler.
+     *
+     * @see #setTopicAttributesAsync(SetTopicAttributesRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+            String topicArn,
+            String attributeName,
+            String attributeValue,
+            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler) {
+
+        return setTopicAttributesAsync(new SetTopicAttributesRequest()
+                .withTopicArn(topicArn).withAttributeName(attributeName)
+                .withAttributeValue(attributeValue), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubscribeResult> subscribeAsync(
+            SubscribeRequest request) {
+
+        return subscribeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubscribeResult> subscribeAsync(
+            final SubscribeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SubscribeResult>() {
+                    @Override
+                    public SubscribeResult call() throws Exception {
+                        SubscribeResult result;
+
+                        try {
+                            result = subscribe(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the Subscribe operation.
+     *
+     * @see #subscribeAsync(SubscribeRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<SubscribeResult> subscribeAsync(
+            String topicArn, String protocol, String endpoint) {
+
+        return subscribeAsync(new SubscribeRequest().withTopicArn(topicArn)
+                .withProtocol(protocol).withEndpoint(endpoint));
+    }
+
+    /**
+     * Simplified method form for invoking the Subscribe operation with an
+     * AsyncHandler.
+     *
+     * @see #subscribeAsync(SubscribeRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<SubscribeResult> subscribeAsync(
+            String topicArn,
+            String protocol,
+            String endpoint,
+            com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
+
+        return subscribeAsync(new SubscribeRequest().withTopicArn(topicArn)
+                .withProtocol(protocol).withEndpoint(endpoint), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> unsubscribeAsync(
+            UnsubscribeRequest request) {
+
+        return unsubscribeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> unsubscribeAsync(
+            final UnsubscribeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            unsubscribe(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    /**
+     * Simplified method form for invoking the Unsubscribe operation.
+     *
+     * @see #unsubscribeAsync(UnsubscribeRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<Void> unsubscribeAsync(
+            String subscriptionArn) {
+
+        return unsubscribeAsync(new UnsubscribeRequest()
+                .withSubscriptionArn(subscriptionArn));
+    }
+
+    /**
+     * Simplified method form for invoking the Unsubscribe operation with an
+     * AsyncHandler.
+     *
+     * @see #unsubscribeAsync(UnsubscribeRequest,
+     *      com.amazonaws.handlers.AsyncHandler)
+     */
+    public java.util.concurrent.Future<Void> unsubscribeAsync(
+            String subscriptionArn,
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, Void> asyncHandler) {
+
+        return unsubscribeAsync(
+                new UnsubscribeRequest().withSubscriptionArn(subscriptionArn),
+                asyncHandler);
     }
 
     /**
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who
      * wish to give pending asynchronous service calls time to complete should
-     * call getExecutorService().shutdown() followed by
-     * getExecutorService().awaitTermination() prior to calling this method.
+     * call {@code getExecutorService().shutdown()} followed by
+     * {@code getExecutorService().awaitTermination()} prior to calling this
+     * method.
      */
     @Override
     public void shutdown() {
         super.shutdown();
         executorService.shutdownNow();
     }
-            
-    /**
-     * <p>
-     * Verifies an endpoint owner's intent to receive messages by validating
-     * the token sent to the endpoint by an earlier <code>Subscribe</code>
-     * action. If the token is valid, the action creates a new subscription
-     * and returns its Amazon Resource Name (ARN). This call requires an AWS
-     * signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
-     * set to "true".
-     * </p>
-     *
-     * @param confirmSubscriptionRequest Container for the necessary
-     *           parameters to execute the ConfirmSubscription operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ConfirmSubscription service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(final ConfirmSubscriptionRequest confirmSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ConfirmSubscriptionResult>() {
-            public ConfirmSubscriptionResult call() throws Exception {
-                return confirmSubscription(confirmSubscriptionRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Verifies an endpoint owner's intent to receive messages by validating
-     * the token sent to the endpoint by an earlier <code>Subscribe</code>
-     * action. If the token is valid, the action creates a new subscription
-     * and returns its Amazon Resource Name (ARN). This call requires an AWS
-     * signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
-     * set to "true".
-     * </p>
-     *
-     * @param confirmSubscriptionRequest Container for the necessary
-     *           parameters to execute the ConfirmSubscription operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ConfirmSubscription service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
-            final ConfirmSubscriptionRequest confirmSubscriptionRequest,
-            final AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ConfirmSubscriptionResult>() {
-            public ConfirmSubscriptionResult call() throws Exception {
-              ConfirmSubscriptionResult result;
-                try {
-                result = confirmSubscription(confirmSubscriptionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(confirmSubscriptionRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a platform application object for one of the supported push
-     * notification services, such as APNS and GCM, to which devices and
-     * mobile apps may register. You must specify PlatformPrincipal and
-     * PlatformCredential attributes when using the
-     * <code>CreatePlatformApplication</code> action. The PlatformPrincipal
-     * is received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is
-     * not applicable. For ADM, PlatformPrincipal is "client id". The
-     * PlatformCredential is also received from the notification service. For
-     * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
-     * PlatformCredential is "API key". For ADM, PlatformCredential is
-     * "client secret". The PlatformApplicationArn that is returned when
-     * using <code>CreatePlatformApplication</code> is then used as an
-     * attribute for the <code>CreatePlatformEndpoint</code> action. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param createPlatformApplicationRequest Container for the necessary
-     *           parameters to execute the CreatePlatformApplication operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreatePlatformApplication service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(final CreatePlatformApplicationRequest createPlatformApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreatePlatformApplicationResult>() {
-            public CreatePlatformApplicationResult call() throws Exception {
-                return createPlatformApplication(createPlatformApplicationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a platform application object for one of the supported push
-     * notification services, such as APNS and GCM, to which devices and
-     * mobile apps may register. You must specify PlatformPrincipal and
-     * PlatformCredential attributes when using the
-     * <code>CreatePlatformApplication</code> action. The PlatformPrincipal
-     * is received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is
-     * not applicable. For ADM, PlatformPrincipal is "client id". The
-     * PlatformCredential is also received from the notification service. For
-     * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
-     * PlatformCredential is "API key". For ADM, PlatformCredential is
-     * "client secret". The PlatformApplicationArn that is returned when
-     * using <code>CreatePlatformApplication</code> is then used as an
-     * attribute for the <code>CreatePlatformEndpoint</code> action. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param createPlatformApplicationRequest Container for the necessary
-     *           parameters to execute the CreatePlatformApplication operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreatePlatformApplication service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(
-            final CreatePlatformApplicationRequest createPlatformApplicationRequest,
-            final AsyncHandler<CreatePlatformApplicationRequest, CreatePlatformApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreatePlatformApplicationResult>() {
-            public CreatePlatformApplicationResult call() throws Exception {
-              CreatePlatformApplicationResult result;
-                try {
-                result = createPlatformApplication(createPlatformApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createPlatformApplicationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all of the properties of a topic. Topic properties returned
-     * might differ based on the authorization of the user.
-     * </p>
-     *
-     * @param getTopicAttributesRequest Container for the necessary
-     *           parameters to execute the GetTopicAttributes operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetTopicAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetTopicAttributesResult> getTopicAttributesAsync(final GetTopicAttributesRequest getTopicAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetTopicAttributesResult>() {
-            public GetTopicAttributesResult call() throws Exception {
-                return getTopicAttributes(getTopicAttributesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all of the properties of a topic. Topic properties returned
-     * might differ based on the authorization of the user.
-     * </p>
-     *
-     * @param getTopicAttributesRequest Container for the necessary
-     *           parameters to execute the GetTopicAttributes operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetTopicAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetTopicAttributesResult> getTopicAttributesAsync(
-            final GetTopicAttributesRequest getTopicAttributesRequest,
-            final AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetTopicAttributesResult>() {
-            public GetTopicAttributesResult call() throws Exception {
-              GetTopicAttributesResult result;
-                try {
-                result = getTopicAttributes(getTopicAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getTopicAttributesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Prepares to subscribe an endpoint by sending the endpoint a
-     * confirmation message. To actually create a subscription, the endpoint
-     * owner must call the <code>ConfirmSubscription</code> action with the
-     * token from the confirmation message. Confirmation tokens are valid for
-     * three days.
-     * </p>
-     *
-     * @param subscribeRequest Container for the necessary parameters to
-     *           execute the Subscribe operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         Subscribe service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SubscribeResult> subscribeAsync(final SubscribeRequest subscribeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<SubscribeResult>() {
-            public SubscribeResult call() throws Exception {
-                return subscribe(subscribeRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Prepares to subscribe an endpoint by sending the endpoint a
-     * confirmation message. To actually create a subscription, the endpoint
-     * owner must call the <code>ConfirmSubscription</code> action with the
-     * token from the confirmation message. Confirmation tokens are valid for
-     * three days.
-     * </p>
-     *
-     * @param subscribeRequest Container for the necessary parameters to
-     *           execute the Subscribe operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         Subscribe service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SubscribeResult> subscribeAsync(
-            final SubscribeRequest subscribeRequest,
-            final AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<SubscribeResult>() {
-            public SubscribeResult call() throws Exception {
-              SubscribeResult result;
-                try {
-                result = subscribe(subscribeRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(subscribeRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes the endpoint from Amazon SNS. This action is idempotent. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param deleteEndpointRequest Container for the necessary parameters to
-     *           execute the DeleteEndpoint operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteEndpoint service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteEndpointAsync(final DeleteEndpointRequest deleteEndpointRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteEndpoint(deleteEndpointRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes the endpoint from Amazon SNS. This action is idempotent. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param deleteEndpointRequest Container for the necessary parameters to
-     *           execute the DeleteEndpoint operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteEndpoint service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteEndpointAsync(
-            final DeleteEndpointRequest deleteEndpointRequest,
-            final AsyncHandler<DeleteEndpointRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteEndpoint(deleteEndpointRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteEndpointRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Allows a topic owner to set an attribute of the topic to a new value.
-     * </p>
-     *
-     * @param setTopicAttributesRequest Container for the necessary
-     *           parameters to execute the SetTopicAttributes operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetTopicAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setTopicAttributesAsync(final SetTopicAttributesRequest setTopicAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                setTopicAttributes(setTopicAttributesRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Allows a topic owner to set an attribute of the topic to a new value.
-     * </p>
-     *
-     * @param setTopicAttributesRequest Container for the necessary
-     *           parameters to execute the SetTopicAttributes operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetTopicAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setTopicAttributesAsync(
-            final SetTopicAttributesRequest setTopicAttributesRequest,
-            final AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                setTopicAttributes(setTopicAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(setTopicAttributesRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes a topic and all its subscriptions. Deleting a topic might
-     * prevent some messages previously sent to the topic from being
-     * delivered to subscribers. This action is idempotent, so deleting a
-     * topic that does not exist does not result in an error.
-     * </p>
-     *
-     * @param deleteTopicRequest Container for the necessary parameters to
-     *           execute the DeleteTopic operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteTopic service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteTopicAsync(final DeleteTopicRequest deleteTopicRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteTopic(deleteTopicRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a topic and all its subscriptions. Deleting a topic might
-     * prevent some messages previously sent to the topic from being
-     * delivered to subscribers. This action is idempotent, so deleting a
-     * topic that does not exist does not result in an error.
-     * </p>
-     *
-     * @param deleteTopicRequest Container for the necessary parameters to
-     *           execute the DeleteTopic operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteTopic service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteTopicAsync(
-            final DeleteTopicRequest deleteTopicRequest,
-            final AsyncHandler<DeleteTopicRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deleteTopic(deleteTopicRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deleteTopicRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Removes a statement from a topic's access control policy.
-     * </p>
-     *
-     * @param removePermissionRequest Container for the necessary parameters
-     *           to execute the RemovePermission operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RemovePermission service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> removePermissionAsync(final RemovePermissionRequest removePermissionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                removePermission(removePermissionRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Removes a statement from a topic's access control policy.
-     * </p>
-     *
-     * @param removePermissionRequest Container for the necessary parameters
-     *           to execute the RemovePermission operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RemovePermission service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> removePermissionAsync(
-            final RemovePermissionRequest removePermissionRequest,
-            final AsyncHandler<RemovePermissionRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                removePermission(removePermissionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(removePermissionRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Retrieves the endpoint attributes for a device on one of the
-     * supported push notification services, such as GCM and APNS. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param getEndpointAttributesRequest Container for the necessary
-     *           parameters to execute the GetEndpointAttributes operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetEndpointAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetEndpointAttributesResult> getEndpointAttributesAsync(final GetEndpointAttributesRequest getEndpointAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetEndpointAttributesResult>() {
-            public GetEndpointAttributesResult call() throws Exception {
-                return getEndpointAttributes(getEndpointAttributesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Retrieves the endpoint attributes for a device on one of the
-     * supported push notification services, such as GCM and APNS. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param getEndpointAttributesRequest Container for the necessary
-     *           parameters to execute the GetEndpointAttributes operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetEndpointAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetEndpointAttributesResult> getEndpointAttributesAsync(
-            final GetEndpointAttributesRequest getEndpointAttributesRequest,
-            final AsyncHandler<GetEndpointAttributesRequest, GetEndpointAttributesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetEndpointAttributesResult>() {
-            public GetEndpointAttributesResult call() throws Exception {
-              GetEndpointAttributesResult result;
-                try {
-                result = getEndpointAttributes(getEndpointAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getEndpointAttributesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Retrieves the attributes of the platform application object for the
-     * supported push notification services, such as APNS and GCM. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param getPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the GetPlatformApplicationAttributes
-     *           operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetPlatformApplicationAttributes service method, as returned by
-     *         AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(final GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetPlatformApplicationAttributesResult>() {
-            public GetPlatformApplicationAttributesResult call() throws Exception {
-                return getPlatformApplicationAttributes(getPlatformApplicationAttributesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Retrieves the attributes of the platform application object for the
-     * supported push notification services, such as APNS and GCM. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param getPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the GetPlatformApplicationAttributes
-     *           operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetPlatformApplicationAttributes service method, as returned by
-     *         AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(
-            final GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest,
-            final AsyncHandler<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetPlatformApplicationAttributesResult>() {
-            public GetPlatformApplicationAttributesResult call() throws Exception {
-              GetPlatformApplicationAttributesResult result;
-                try {
-                result = getPlatformApplicationAttributes(getPlatformApplicationAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getPlatformApplicationAttributesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns a list of the requester's subscriptions. Each call returns a
-     * limited list of subscriptions, up to 100. If there are more
-     * subscriptions, a <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new
-     * <code>ListSubscriptions</code> call to get further results.
-     * </p>
-     *
-     * @param listSubscriptionsRequest Container for the necessary parameters
-     *           to execute the ListSubscriptions operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListSubscriptions service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListSubscriptionsResult> listSubscriptionsAsync(final ListSubscriptionsRequest listSubscriptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListSubscriptionsResult>() {
-            public ListSubscriptionsResult call() throws Exception {
-                return listSubscriptions(listSubscriptionsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns a list of the requester's subscriptions. Each call returns a
-     * limited list of subscriptions, up to 100. If there are more
-     * subscriptions, a <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new
-     * <code>ListSubscriptions</code> call to get further results.
-     * </p>
-     *
-     * @param listSubscriptionsRequest Container for the necessary parameters
-     *           to execute the ListSubscriptions operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListSubscriptions service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListSubscriptionsResult> listSubscriptionsAsync(
-            final ListSubscriptionsRequest listSubscriptionsRequest,
-            final AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListSubscriptionsResult>() {
-            public ListSubscriptionsResult call() throws Exception {
-              ListSubscriptionsResult result;
-                try {
-                result = listSubscriptions(listSubscriptionsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listSubscriptionsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Allows a subscription owner to set an attribute of the topic to a new
-     * value.
-     * </p>
-     *
-     * @param setSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the SetSubscriptionAttributes operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetSubscriptionAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setSubscriptionAttributesAsync(final SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                setSubscriptionAttributes(setSubscriptionAttributesRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Allows a subscription owner to set an attribute of the topic to a new
-     * value.
-     * </p>
-     *
-     * @param setSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the SetSubscriptionAttributes operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetSubscriptionAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setSubscriptionAttributesAsync(
-            final SetSubscriptionAttributesRequest setSubscriptionAttributesRequest,
-            final AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                setSubscriptionAttributes(setSubscriptionAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(setSubscriptionAttributesRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Sets the attributes of the platform application object for the
-     * supported push notification services, such as APNS and GCM. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param setPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the SetPlatformApplicationAttributes
-     *           operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetPlatformApplicationAttributes service method, as returned by
-     *         AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setPlatformApplicationAttributesAsync(final SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                setPlatformApplicationAttributes(setPlatformApplicationAttributesRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Sets the attributes of the platform application object for the
-     * supported push notification services, such as APNS and GCM. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param setPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the SetPlatformApplicationAttributes
-     *           operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetPlatformApplicationAttributes service method, as returned by
-     *         AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setPlatformApplicationAttributesAsync(
-            final SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest,
-            final AsyncHandler<SetPlatformApplicationAttributesRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                setPlatformApplicationAttributes(setPlatformApplicationAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(setPlatformApplicationAttributesRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates an endpoint for a device and mobile app on one of the
-     * supported push notification services, such as GCM and APNS.
-     * <code>CreatePlatformEndpoint</code> requires the
-     * PlatformApplicationArn that is returned from
-     * <code>CreatePlatformApplication</code> . The EndpointArn that is
-     * returned when using <code>CreatePlatformEndpoint</code> can then be
-     * used by the <code>Publish</code> action to send a message to a mobile
-     * app or by the <code>Subscribe</code> action for subscription to a
-     * topic. The <code>CreatePlatformEndpoint</code> action is idempotent,
-     * so if the requester already owns an endpoint with the same device
-     * token and attributes, that endpoint's ARN is returned without creating
-     * a new endpoint. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     * <p>
-     * When using <code>CreatePlatformEndpoint</code> with Baidu, two
-     * attributes must be provided: ChannelId and UserId. The token field
-     * must also contain the ChannelId. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html"> Creating an Amazon SNS Endpoint for Baidu </a>
-     * .
-     * </p>
-     *
-     * @param createPlatformEndpointRequest Container for the necessary
-     *           parameters to execute the CreatePlatformEndpoint operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreatePlatformEndpoint service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(final CreatePlatformEndpointRequest createPlatformEndpointRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreatePlatformEndpointResult>() {
-            public CreatePlatformEndpointResult call() throws Exception {
-                return createPlatformEndpoint(createPlatformEndpointRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates an endpoint for a device and mobile app on one of the
-     * supported push notification services, such as GCM and APNS.
-     * <code>CreatePlatformEndpoint</code> requires the
-     * PlatformApplicationArn that is returned from
-     * <code>CreatePlatformApplication</code> . The EndpointArn that is
-     * returned when using <code>CreatePlatformEndpoint</code> can then be
-     * used by the <code>Publish</code> action to send a message to a mobile
-     * app or by the <code>Subscribe</code> action for subscription to a
-     * topic. The <code>CreatePlatformEndpoint</code> action is idempotent,
-     * so if the requester already owns an endpoint with the same device
-     * token and attributes, that endpoint's ARN is returned without creating
-     * a new endpoint. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     * <p>
-     * When using <code>CreatePlatformEndpoint</code> with Baidu, two
-     * attributes must be provided: ChannelId and UserId. The token field
-     * must also contain the ChannelId. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html"> Creating an Amazon SNS Endpoint for Baidu </a>
-     * .
-     * </p>
-     *
-     * @param createPlatformEndpointRequest Container for the necessary
-     *           parameters to execute the CreatePlatformEndpoint operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreatePlatformEndpoint service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(
-            final CreatePlatformEndpointRequest createPlatformEndpointRequest,
-            final AsyncHandler<CreatePlatformEndpointRequest, CreatePlatformEndpointResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreatePlatformEndpointResult>() {
-            public CreatePlatformEndpointResult call() throws Exception {
-              CreatePlatformEndpointResult result;
-                try {
-                result = createPlatformEndpoint(createPlatformEndpointRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createPlatformEndpointRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Adds a statement to a topic's access control policy, granting access
-     * for the specified AWS accounts to the specified actions.
-     * </p>
-     *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AddPermission service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> addPermissionAsync(final AddPermissionRequest addPermissionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                addPermission(addPermissionRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Adds a statement to a topic's access control policy, granting access
-     * for the specified AWS accounts to the specified actions.
-     * </p>
-     *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AddPermission service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> addPermissionAsync(
-            final AddPermissionRequest addPermissionRequest,
-            final AsyncHandler<AddPermissionRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                addPermission(addPermissionRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(addPermissionRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns all of the properties of a subscription.
-     * </p>
-     *
-     * @param getSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the GetSubscriptionAttributes operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
-            public GetSubscriptionAttributesResult call() throws Exception {
-                return getSubscriptionAttributes(getSubscriptionAttributesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns all of the properties of a subscription.
-     * </p>
-     *
-     * @param getSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the GetSubscriptionAttributes operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
-            final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest,
-            final AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
-            public GetSubscriptionAttributesResult call() throws Exception {
-              GetSubscriptionAttributesResult result;
-                try {
-                result = getSubscriptionAttributes(getSubscriptionAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(getSubscriptionAttributesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a topic to which notifications can be published. Users can
-     * create at most 3000 topics. For more information, see
-     * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
-     * . This action is idempotent, so if the requester already owns a topic
-     * with the specified name, that topic's ARN is returned without creating
-     * a new topic.
-     * </p>
-     *
-     * @param createTopicRequest Container for the necessary parameters to
-     *           execute the CreateTopic operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateTopic service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateTopicResult> createTopicAsync(final CreateTopicRequest createTopicRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateTopicResult>() {
-            public CreateTopicResult call() throws Exception {
-                return createTopic(createTopicRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a topic to which notifications can be published. Users can
-     * create at most 3000 topics. For more information, see
-     * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
-     * . This action is idempotent, so if the requester already owns a topic
-     * with the specified name, that topic's ARN is returned without creating
-     * a new topic.
-     * </p>
-     *
-     * @param createTopicRequest Container for the necessary parameters to
-     *           execute the CreateTopic operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateTopic service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateTopicResult> createTopicAsync(
-            final CreateTopicRequest createTopicRequest,
-            final AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateTopicResult>() {
-            public CreateTopicResult call() throws Exception {
-              CreateTopicResult result;
-                try {
-                result = createTopic(createTopicRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createTopicRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns a list of the requester's topics. Each call returns a limited
-     * list of topics, up to 100. If there are more topics, a
-     * <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new <code>ListTopics</code> call
-     * to get further results.
-     * </p>
-     *
-     * @param listTopicsRequest Container for the necessary parameters to
-     *           execute the ListTopics operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTopics service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTopicsResult> listTopicsAsync(final ListTopicsRequest listTopicsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTopicsResult>() {
-            public ListTopicsResult call() throws Exception {
-                return listTopics(listTopicsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns a list of the requester's topics. Each call returns a limited
-     * list of topics, up to 100. If there are more topics, a
-     * <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new <code>ListTopics</code> call
-     * to get further results.
-     * </p>
-     *
-     * @param listTopicsRequest Container for the necessary parameters to
-     *           execute the ListTopics operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTopics service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTopicsResult> listTopicsAsync(
-            final ListTopicsRequest listTopicsRequest,
-            final AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTopicsResult>() {
-            public ListTopicsResult call() throws Exception {
-              ListTopicsResult result;
-                try {
-                result = listTopics(listTopicsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listTopicsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Lists the endpoints and endpoint attributes for devices in a
-     * supported push notification service, such as GCM and APNS. The results
-     * for <code>ListEndpointsByPlatformApplication</code> are paginated and
-     * return a limited list of endpoints, up to 100. If additional records
-     * are available after the first page results, then a NextToken string
-     * will be returned. To receive the next page, you call
-     * <code>ListEndpointsByPlatformApplication</code> again using the
-     * NextToken string received from the previous call. When there are no
-     * more records to return, NextToken will be null. For more information,
-     * see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param listEndpointsByPlatformApplicationRequest Container for the
-     *           necessary parameters to execute the ListEndpointsByPlatformApplication
-     *           operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListEndpointsByPlatformApplication service method, as returned by
-     *         AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(final ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListEndpointsByPlatformApplicationResult>() {
-            public ListEndpointsByPlatformApplicationResult call() throws Exception {
-                return listEndpointsByPlatformApplication(listEndpointsByPlatformApplicationRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Lists the endpoints and endpoint attributes for devices in a
-     * supported push notification service, such as GCM and APNS. The results
-     * for <code>ListEndpointsByPlatformApplication</code> are paginated and
-     * return a limited list of endpoints, up to 100. If additional records
-     * are available after the first page results, then a NextToken string
-     * will be returned. To receive the next page, you call
-     * <code>ListEndpointsByPlatformApplication</code> again using the
-     * NextToken string received from the previous call. When there are no
-     * more records to return, NextToken will be null. For more information,
-     * see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param listEndpointsByPlatformApplicationRequest Container for the
-     *           necessary parameters to execute the ListEndpointsByPlatformApplication
-     *           operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListEndpointsByPlatformApplication service method, as returned by
-     *         AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
-            final ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest,
-            final AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListEndpointsByPlatformApplicationResult>() {
-            public ListEndpointsByPlatformApplicationResult call() throws Exception {
-              ListEndpointsByPlatformApplicationResult result;
-                try {
-                result = listEndpointsByPlatformApplication(listEndpointsByPlatformApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listEndpointsByPlatformApplicationRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes a platform application object for one of the supported push
-     * notification services, such as APNS and GCM. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param deletePlatformApplicationRequest Container for the necessary
-     *           parameters to execute the DeletePlatformApplication operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeletePlatformApplication service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deletePlatformApplicationAsync(final DeletePlatformApplicationRequest deletePlatformApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deletePlatformApplication(deletePlatformApplicationRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a platform application object for one of the supported push
-     * notification services, such as APNS and GCM. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param deletePlatformApplicationRequest Container for the necessary
-     *           parameters to execute the DeletePlatformApplication operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeletePlatformApplication service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deletePlatformApplicationAsync(
-            final DeletePlatformApplicationRequest deletePlatformApplicationRequest,
-            final AsyncHandler<DeletePlatformApplicationRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                deletePlatformApplication(deletePlatformApplicationRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(deletePlatformApplicationRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Lists the platform application objects for the supported push
-     * notification services, such as APNS and GCM. The results for
-     * <code>ListPlatformApplications</code> are paginated and return a
-     * limited list of applications, up to 100. If additional records are
-     * available after the first page results, then a NextToken string will
-     * be returned. To receive the next page, you call
-     * <code>ListPlatformApplications</code> using the NextToken string
-     * received from the previous call. When there are no more records to
-     * return, NextToken will be null. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param listPlatformApplicationsRequest Container for the necessary
-     *           parameters to execute the ListPlatformApplications operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListPlatformApplications service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(final ListPlatformApplicationsRequest listPlatformApplicationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListPlatformApplicationsResult>() {
-            public ListPlatformApplicationsResult call() throws Exception {
-                return listPlatformApplications(listPlatformApplicationsRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Lists the platform application objects for the supported push
-     * notification services, such as APNS and GCM. The results for
-     * <code>ListPlatformApplications</code> are paginated and return a
-     * limited list of applications, up to 100. If additional records are
-     * available after the first page results, then a NextToken string will
-     * be returned. To receive the next page, you call
-     * <code>ListPlatformApplications</code> using the NextToken string
-     * received from the previous call. When there are no more records to
-     * return, NextToken will be null. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param listPlatformApplicationsRequest Container for the necessary
-     *           parameters to execute the ListPlatformApplications operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListPlatformApplications service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
-            final ListPlatformApplicationsRequest listPlatformApplicationsRequest,
-            final AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListPlatformApplicationsResult>() {
-            public ListPlatformApplicationsResult call() throws Exception {
-              ListPlatformApplicationsResult result;
-                try {
-                result = listPlatformApplications(listPlatformApplicationsRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listPlatformApplicationsRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Sets the attributes for an endpoint for a device on one of the
-     * supported push notification services, such as GCM and APNS. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param setEndpointAttributesRequest Container for the necessary
-     *           parameters to execute the SetEndpointAttributes operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetEndpointAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setEndpointAttributesAsync(final SetEndpointAttributesRequest setEndpointAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                setEndpointAttributes(setEndpointAttributesRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Sets the attributes for an endpoint for a device on one of the
-     * supported push notification services, such as GCM and APNS. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
-     * .
-     * </p>
-     *
-     * @param setEndpointAttributesRequest Container for the necessary
-     *           parameters to execute the SetEndpointAttributes operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetEndpointAttributes service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setEndpointAttributesAsync(
-            final SetEndpointAttributesRequest setEndpointAttributesRequest,
-            final AsyncHandler<SetEndpointAttributesRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                setEndpointAttributes(setEndpointAttributesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(setEndpointAttributesRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Deletes a subscription. If the subscription requires authentication
-     * for deletion, only the owner of the subscription or the topic's owner
-     * can unsubscribe, and an AWS signature is required. If the
-     * <code>Unsubscribe</code> call does not require authentication and the
-     * requester is not the subscription owner, a final cancellation message
-     * is delivered to the endpoint, so that the endpoint owner can easily
-     * resubscribe to the topic if the <code>Unsubscribe</code> request was
-     * unintended.
-     * </p>
-     *
-     * @param unsubscribeRequest Container for the necessary parameters to
-     *           execute the Unsubscribe operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         Unsubscribe service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> unsubscribeAsync(final UnsubscribeRequest unsubscribeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                unsubscribe(unsubscribeRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Deletes a subscription. If the subscription requires authentication
-     * for deletion, only the owner of the subscription or the topic's owner
-     * can unsubscribe, and an AWS signature is required. If the
-     * <code>Unsubscribe</code> call does not require authentication and the
-     * requester is not the subscription owner, a final cancellation message
-     * is delivered to the endpoint, so that the endpoint owner can easily
-     * resubscribe to the topic if the <code>Unsubscribe</code> request was
-     * unintended.
-     * </p>
-     *
-     * @param unsubscribeRequest Container for the necessary parameters to
-     *           execute the Unsubscribe operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         Unsubscribe service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> unsubscribeAsync(
-            final UnsubscribeRequest unsubscribeRequest,
-            final AsyncHandler<UnsubscribeRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                unsubscribe(unsubscribeRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(unsubscribeRequest, null);
-                 return null;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns a list of the subscriptions to a specific topic. Each call
-     * returns a limited list of subscriptions, up to 100. If there are more
-     * subscriptions, a <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new
-     * <code>ListSubscriptionsByTopic</code> call to get further results.
-     * </p>
-     *
-     * @param listSubscriptionsByTopicRequest Container for the necessary
-     *           parameters to execute the ListSubscriptionsByTopic operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListSubscriptionsByTopic service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(final ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListSubscriptionsByTopicResult>() {
-            public ListSubscriptionsByTopicResult call() throws Exception {
-                return listSubscriptionsByTopic(listSubscriptionsByTopicRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns a list of the subscriptions to a specific topic. Each call
-     * returns a limited list of subscriptions, up to 100. If there are more
-     * subscriptions, a <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new
-     * <code>ListSubscriptionsByTopic</code> call to get further results.
-     * </p>
-     *
-     * @param listSubscriptionsByTopicRequest Container for the necessary
-     *           parameters to execute the ListSubscriptionsByTopic operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListSubscriptionsByTopic service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(
-            final ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest,
-            final AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListSubscriptionsByTopicResult>() {
-            public ListSubscriptionsByTopicResult call() throws Exception {
-              ListSubscriptionsByTopicResult result;
-                try {
-                result = listSubscriptionsByTopic(listSubscriptionsByTopicRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listSubscriptionsByTopicRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Sends a message to all of a topic's subscribed endpoints. When a
-     * <code>messageId</code> is returned, the message has been saved and
-     * Amazon SNS will attempt to deliver it to the topic's subscribers
-     * shortly. The format of the outgoing message to each subscribed
-     * endpoint depends on the notification protocol selected.
-     * </p>
-     * <p>
-     * To use the <code>Publish</code> action for sending a message to a
-     * mobile endpoint, such as an app on a Kindle device or mobile phone,
-     * you must specify the EndpointArn. The EndpointArn is returned when
-     * making a call with the <code>CreatePlatformEndpoint</code> action. The
-     * second example below shows a request and response for publishing to a
-     * mobile endpoint.
-     * </p>
-     *
-     * @param publishRequest Container for the necessary parameters to
-     *           execute the Publish operation on AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the Publish
-     *         service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<PublishResult> publishAsync(final PublishRequest publishRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<PublishResult>() {
-            public PublishResult call() throws Exception {
-                return publish(publishRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Sends a message to all of a topic's subscribed endpoints. When a
-     * <code>messageId</code> is returned, the message has been saved and
-     * Amazon SNS will attempt to deliver it to the topic's subscribers
-     * shortly. The format of the outgoing message to each subscribed
-     * endpoint depends on the notification protocol selected.
-     * </p>
-     * <p>
-     * To use the <code>Publish</code> action for sending a message to a
-     * mobile endpoint, such as an app on a Kindle device or mobile phone,
-     * you must specify the EndpointArn. The EndpointArn is returned when
-     * making a call with the <code>CreatePlatformEndpoint</code> action. The
-     * second example below shows a request and response for publishing to a
-     * mobile endpoint.
-     * </p>
-     *
-     * @param publishRequest Container for the necessary parameters to
-     *           execute the Publish operation on AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the Publish
-     *         service method, as returned by AmazonSNS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<PublishResult> publishAsync(
-            final PublishRequest publishRequest,
-            final AsyncHandler<PublishRequest, PublishResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<PublishResult>() {
-            public PublishResult call() throws Exception {
-              PublishResult result;
-                try {
-                result = publish(publishRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(publishRequest, result);
-                 return result;
-        }
-    });
-    }
-    
 }
-        

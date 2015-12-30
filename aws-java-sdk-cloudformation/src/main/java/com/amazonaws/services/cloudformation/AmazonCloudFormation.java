@@ -120,6 +120,7 @@ public interface AmazonCloudFormation {
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
+     * @sample AmazonCloudFormation.CancelUpdateStack
      */
     void cancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest);
 
@@ -140,6 +141,7 @@ public interface AmazonCloudFormation {
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not
      *         specified in the Capabilities parameter.
+     * @sample AmazonCloudFormation.CreateStack
      */
     CreateStackResult createStack(CreateStackRequest createStackRequest);
 
@@ -153,6 +155,7 @@ public interface AmazonCloudFormation {
      * 
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
+     * @sample AmazonCloudFormation.DeleteStack
      */
     void deleteStack(DeleteStackRequest deleteStackRequest);
 
@@ -166,6 +169,7 @@ public interface AmazonCloudFormation {
      *        The input for the <a>DescribeAccountLimits</a> action.
      * @return Result of the DescribeAccountLimits operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeAccountLimits
      */
     DescribeAccountLimitsResult describeAccountLimits(
             DescribeAccountLimitsRequest describeAccountLimitsRequest);
@@ -184,6 +188,7 @@ public interface AmazonCloudFormation {
      *        The input for <a>DescribeStackEvents</a> action.
      * @return Result of the DescribeStackEvents operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeStackEvents
      */
     DescribeStackEventsResult describeStackEvents(
             DescribeStackEventsRequest describeStackEventsRequest);
@@ -201,6 +206,7 @@ public interface AmazonCloudFormation {
      *        The input for <a>DescribeStackResource</a> action.
      * @return Result of the DescribeStackResource operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeStackResource
      */
     DescribeStackResourceResult describeStackResource(
             DescribeStackResourceRequest describeStackResourceRequest);
@@ -237,6 +243,7 @@ public interface AmazonCloudFormation {
      *        The input for <a>DescribeStackResources</a> action.
      * @return Result of the DescribeStackResources operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.DescribeStackResources
      */
     DescribeStackResourcesResult describeStackResources(
             DescribeStackResourcesRequest describeStackResourcesRequest);
@@ -250,6 +257,7 @@ public interface AmazonCloudFormation {
      * @param describeStacksRequest
      *        The input for <a>DescribeStacks</a> action.
      * @return Result of the DescribeStacks operation returned by the service.
+     * @sample AmazonCloudFormation.DescribeStacks
      */
     DescribeStacksResult describeStacks(
             DescribeStacksRequest describeStacksRequest);
@@ -271,6 +279,7 @@ public interface AmazonCloudFormation {
      * @param estimateTemplateCostRequest
      * @return Result of the EstimateTemplateCost operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.EstimateTemplateCost
      */
     EstimateTemplateCostResult estimateTemplateCost(
             EstimateTemplateCostRequest estimateTemplateCostRequest);
@@ -291,6 +300,7 @@ public interface AmazonCloudFormation {
      * @param getStackPolicyRequest
      *        The input for the <a>GetStackPolicy</a> action.
      * @return Result of the GetStackPolicy operation returned by the service.
+     * @sample AmazonCloudFormation.GetStackPolicy
      */
     GetStackPolicyResult getStackPolicy(
             GetStackPolicyRequest getStackPolicyRequest);
@@ -310,6 +320,7 @@ public interface AmazonCloudFormation {
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
      * @return Result of the GetTemplate operation returned by the service.
+     * @sample AmazonCloudFormation.GetTemplate
      */
     GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest);
 
@@ -335,6 +346,7 @@ public interface AmazonCloudFormation {
      *        The input for the <a>GetTemplateSummary</a> action.
      * @return Result of the GetTemplateSummary operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.GetTemplateSummary
      */
     GetTemplateSummaryResult getTemplateSummary(
             GetTemplateSummaryRequest getTemplateSummaryRequest);
@@ -359,6 +371,7 @@ public interface AmazonCloudFormation {
      *        The input for the <a>ListStackResource</a> action.
      * @return Result of the ListStackResources operation returned by the
      *         service.
+     * @sample AmazonCloudFormation.ListStackResources
      */
     ListStackResourcesResult listStackResources(
             ListStackResourcesRequest listStackResourcesRequest);
@@ -375,6 +388,7 @@ public interface AmazonCloudFormation {
      * @param listStacksRequest
      *        The input for <a>ListStacks</a> action.
      * @return Result of the ListStacks operation returned by the service.
+     * @sample AmazonCloudFormation.ListStacks
      */
     ListStacksResult listStacks(ListStacksRequest listStacksRequest);
 
@@ -392,6 +406,7 @@ public interface AmazonCloudFormation {
      * 
      * @param setStackPolicyRequest
      *        The input for the <a>SetStackPolicy</a> action.
+     * @sample AmazonCloudFormation.SetStackPolicy
      */
     void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest);
 
@@ -408,6 +423,7 @@ public interface AmazonCloudFormation {
      * 
      * @param signalResourceRequest
      *        The input for the <a>SignalResource</a> action.
+     * @sample AmazonCloudFormation.SignalResource
      */
     void signalResource(SignalResourceRequest signalResourceRequest);
 
@@ -438,6 +454,7 @@ public interface AmazonCloudFormation {
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not
      *         specified in the Capabilities parameter.
+     * @sample AmazonCloudFormation.UpdateStack
      */
     UpdateStackResult updateStack(UpdateStackRequest updateStackRequest);
 
@@ -449,6 +466,7 @@ public interface AmazonCloudFormation {
      * @param validateTemplateRequest
      *        The input for <a>ValidateTemplate</a> action.
      * @return Result of the ValidateTemplate operation returned by the service.
+     * @sample AmazonCloudFormation.ValidateTemplate
      */
     ValidateTemplateResult validateTemplate(
             ValidateTemplateRequest validateTemplateRequest);

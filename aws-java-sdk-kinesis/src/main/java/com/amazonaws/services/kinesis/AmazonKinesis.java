@@ -116,6 +116,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.AddTagsToStream
      */
     void addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest);
 
@@ -188,6 +189,7 @@ public interface AmazonKinesis {
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported,
      *         or can't be used. For more information, see the returned message.
+     * @sample AmazonKinesis.CreateStream
      */
     void createStream(CreateStreamRequest createStreamRequest);
 
@@ -227,6 +229,7 @@ public interface AmazonKinesis {
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported,
      *         or can't be used. For more information, see the returned message.
+     * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
      */
     void decreaseStreamRetentionPeriod(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest);
@@ -271,6 +274,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.DeleteStream
      */
     void deleteStream(DeleteStreamRequest deleteStreamRequest);
 
@@ -325,6 +329,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.DescribeStream
      */
     DescribeStreamResult describeStream(
             DescribeStreamRequest describeStreamRequest);
@@ -439,6 +444,7 @@ public interface AmazonKinesis {
      *         in the <i>AWS General Reference</i>.
      * @throws ExpiredIteratorException
      *         The provided iterator exceeds the maximum age allowed.
+     * @sample AmazonKinesis.GetRecords
      */
     GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest);
 
@@ -515,6 +521,7 @@ public interface AmazonKinesis {
      *         "http://docs.aws.amazon.com/general/latest/gr/api-retries.html"
      *         target="_blank">Error Retries and Exponential Backoff in AWS</a>
      *         in the <i>AWS General Reference</i>.
+     * @sample AmazonKinesis.GetShardIterator
      */
     GetShardIteratorResult getShardIterator(
             GetShardIteratorRequest getShardIteratorRequest);
@@ -568,6 +575,7 @@ public interface AmazonKinesis {
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported,
      *         or can't be used. For more information, see the returned message.
+     * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
      */
     void increaseStreamRetentionPeriod(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest);
@@ -604,6 +612,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.ListStreams
      */
     ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest);
 
@@ -648,6 +657,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.ListTagsForStream
      */
     ListTagsForStreamResult listTagsForStream(
             ListTagsForStreamRequest listTagsForStreamRequest);
@@ -725,6 +735,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.MergeShards
      */
     void mergeShards(MergeShardsRequest mergeShardsRequest);
 
@@ -813,6 +824,7 @@ public interface AmazonKinesis {
      *         "http://docs.aws.amazon.com/general/latest/gr/api-retries.html"
      *         target="_blank">Error Retries and Exponential Backoff in AWS</a>
      *         in the <i>AWS General Reference</i>.
+     * @sample AmazonKinesis.PutRecord
      */
     PutRecordResult putRecord(PutRecordRequest putRecordRequest);
 
@@ -938,6 +950,7 @@ public interface AmazonKinesis {
      *         "http://docs.aws.amazon.com/general/latest/gr/api-retries.html"
      *         target="_blank">Error Retries and Exponential Backoff in AWS</a>
      *         in the <i>AWS General Reference</i>.
+     * @sample AmazonKinesis.PutRecords
      */
     PutRecordsResult putRecords(PutRecordsRequest putRecordsRequest);
 
@@ -966,6 +979,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.RemoveTagsFromStream
      */
     void removeTagsFromStream(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest);
@@ -1057,6 +1071,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the
      *         number of concurrent stream requests exceeds the maximum number
      *         allowed (5).
+     * @sample AmazonKinesis.SplitShard
      */
     void splitShard(SplitShardRequest splitShardRequest);
 

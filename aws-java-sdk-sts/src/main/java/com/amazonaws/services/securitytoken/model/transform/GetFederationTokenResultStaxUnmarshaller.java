@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,32 +27,45 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Get Federation Token Result StAX Unmarshaller
+ * GetFederationTokenResult StAX Unmarshaller
  */
-public class GetFederationTokenResultStaxUnmarshaller implements Unmarshaller<GetFederationTokenResult, StaxUnmarshallerContext> {
+public class GetFederationTokenResultStaxUnmarshaller implements
+        Unmarshaller<GetFederationTokenResult, StaxUnmarshallerContext> {
 
-    public GetFederationTokenResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public GetFederationTokenResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         GetFederationTokenResult getFederationTokenResult = new GetFederationTokenResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return getFederationTokenResult;
+            if (xmlEvent.isEndDocument())
+                return getFederationTokenResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Credentials", targetDepth)) {
-                    getFederationTokenResult.setCredentials(CredentialsStaxUnmarshaller.getInstance().unmarshall(context));
+                    getFederationTokenResult
+                            .setCredentials(CredentialsStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("FederatedUser", targetDepth)) {
-                    getFederationTokenResult.setFederatedUser(FederatedUserStaxUnmarshaller.getInstance().unmarshall(context));
+                    getFederationTokenResult
+                            .setFederatedUser(FederatedUserStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("PackedPolicySize", targetDepth)) {
-                    getFederationTokenResult.setPackedPolicySize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    getFederationTokenResult
+                            .setPackedPolicySize(IntegerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +77,10 @@ public class GetFederationTokenResultStaxUnmarshaller implements Unmarshaller<Ge
     }
 
     private static GetFederationTokenResultStaxUnmarshaller instance;
+
     public static GetFederationTokenResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new GetFederationTokenResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new GetFederationTokenResultStaxUnmarshaller();
         return instance;
     }
 }
-    

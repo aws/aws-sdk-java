@@ -131,6 +131,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.AllocateConnectionOnInterconnect
      */
     AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest);
@@ -162,6 +163,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.AllocatePrivateVirtualInterface
      */
     AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(
             AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest);
@@ -193,6 +195,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.AllocatePublicVirtualInterface
      */
     AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest);
@@ -217,6 +220,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.ConfirmConnection
      */
     ConfirmConnectionResult confirmConnection(
             ConfirmConnectionRequest confirmConnectionRequest);
@@ -243,6 +247,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.ConfirmPrivateVirtualInterface
      */
     ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(
             ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest);
@@ -269,6 +274,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.ConfirmPublicVirtualInterface
      */
     ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(
             ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest);
@@ -298,6 +304,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreateConnection
      */
     CreateConnectionResult createConnection(
             CreateConnectionRequest createConnectionRequest);
@@ -335,6 +342,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreateInterconnect
      */
     CreateInterconnectResult createInterconnect(
             CreateInterconnectRequest createInterconnectRequest);
@@ -357,6 +365,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreatePrivateVirtualInterface
      */
     CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(
             CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest);
@@ -380,6 +389,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.CreatePublicVirtualInterface
      */
     CreatePublicVirtualInterfaceResult createPublicVirtualInterface(
             CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest);
@@ -404,6 +414,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DeleteConnection
      */
     DeleteConnectionResult deleteConnection(
             DeleteConnectionRequest deleteConnectionRequest);
@@ -423,6 +434,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DeleteInterconnect
      */
     DeleteInterconnectResult deleteInterconnect(
             DeleteInterconnectRequest deleteInterconnectRequest);
@@ -443,6 +455,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DeleteVirtualInterface
      */
     DeleteVirtualInterfaceResult deleteVirtualInterface(
             DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest);
@@ -466,6 +479,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeConnections
      */
     DescribeConnectionsResult describeConnections(
             DescribeConnectionsRequest describeConnectionsRequest);
@@ -494,6 +508,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeConnectionsOnInterconnect
      */
     DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest);
@@ -518,6 +533,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeInterconnects
      */
     DescribeInterconnectsResult describeInterconnects(
             DescribeInterconnectsRequest describeInterconnectsRequest);
@@ -545,6 +561,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeLocations
      */
     DescribeLocationsResult describeLocations(
             DescribeLocationsRequest describeLocationsRequest);
@@ -577,6 +594,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeVirtualGateways
      */
     DescribeVirtualGatewaysResult describeVirtualGateways(
             DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest);
@@ -619,6 +637,7 @@ public interface AmazonDirectConnect {
      * @throws DirectConnectClientException
      *         The API was called with invalid parameters. The error message
      *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeVirtualInterfaces
      */
     DescribeVirtualInterfacesResult describeVirtualInterfaces(
             DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest);

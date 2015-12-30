@@ -262,6 +262,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      * @return Result of the GenerateDataSet operation returned by the service.
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
+     * @sample AWSMarketplaceCommerceAnalytics.GenerateDataSet
      */
     @Override
     public GenerateDataSetResult generateDataSet(

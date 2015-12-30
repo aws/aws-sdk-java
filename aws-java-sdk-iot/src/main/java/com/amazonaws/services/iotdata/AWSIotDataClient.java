@@ -311,6 +311,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
      *         The document encoding is not supported.
+     * @sample AWSIotData.DeleteThingShadow
      */
     @Override
     public DeleteThingShadowResult deleteThingShadow(
@@ -376,6 +377,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
      *         The document encoding is not supported.
+     * @sample AWSIotData.GetThingShadow
      */
     @Override
     public GetThingShadowResult getThingShadow(
@@ -431,6 +433,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      *         You are not authorized to perform this operation.
      * @throws MethodNotAllowedException
      *         The specified combination of HTTP verb and URI is not supported.
+     * @sample AWSIotData.Publish
      */
     @Override
     public void publish(PublishRequest publishRequest) {
@@ -495,6 +498,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      *         The specified combination of HTTP verb and URI is not supported.
      * @throws UnsupportedDocumentEncodingException
      *         The document encoding is not supported.
+     * @sample AWSIotData.UpdateThingShadow
      */
     @Override
     public UpdateThingShadowResult updateThingShadow(
