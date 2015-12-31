@@ -46,10 +46,13 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
             + "buckets located in regions that require V4 signing.";
 
     private final S3RequestEndpointResolver endpointResolver;
+    private final boolean isChunkedEncodingDisabled;
     private final SdkPredicate<AmazonServiceException> sigV4RetryPredicate;
 
-    public S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver) {
+  public S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver,
+                                    boolean isChunkedEncodingDisabled) {
         this.endpointResolver = endpointResolver;
+        this.isChunkedEncodingDisabled = isChunkedEncodingDisabled;
         this.sigV4RetryPredicate = new IsSigV4RetryablePredicate();
     }
 
@@ -57,9 +60,11 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
      * Currently only used for testing
      */
     S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver,
-            SdkPredicate<AmazonServiceException> isSigV4Retryable) {
+                               SdkPredicate<AmazonServiceException> isSigV4Retryable,
+                               boolean isChunkedEncodingDisabled) {
         this.endpointResolver = endpointResolver;
         this.sigV4RetryPredicate = isSigV4Retryable;
+        this.isChunkedEncodingDisabled = isChunkedEncodingDisabled;
     }
 
     @Override
@@ -92,7 +97,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
     /**
      * If the response doesn't have the x-amz-region header we have to resort to sending a request
      * to s3-external-1
-     * 
+     *
      * @return
      */
     private AuthRetryParameters redirectToS3External() {
@@ -107,7 +112,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
     }
 
     private AWSS3V4Signer buildSigV4Signer(final String region) {
-        AWSS3V4Signer v4Signer = new AWSS3V4Signer();
+        AWSS3V4Signer v4Signer = new AWSS3V4Signer(isChunkedEncodingDisabled);
         v4Signer.setRegionName(region);
         v4Signer.setServiceName(AmazonS3Client.S3_SERVICE_NAME);
         return v4Signer;

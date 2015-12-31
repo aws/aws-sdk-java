@@ -2994,7 +2994,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             final AmazonWebServiceRequest req = request.getOriginalRequest();
 
             if (!(signer instanceof AWSS3V4Signer) && ((upgradeToSigV4(req)))) {
-                final AWSS3V4Signer v4Signer = new AWSS3V4Signer();
+                boolean isChunkedEncodingDisabled = this.clientOptions.isChunkedEncodingDisabled();
+                final AWSS3V4Signer v4Signer = new AWSS3V4Signer(isChunkedEncodingDisabled);
                 // Always set the service name; if the user has overridden it via
                 // setEndpoint(String, String, String), this will return the right
                 // value. Otherwise it will return "s3", which is an appropriate
@@ -3610,8 +3611,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         checkHttps(originalRequest);
         ExecutionContext executionContext = createExecutionContext(originalRequest);
         // Retry V4 auth errors
-        executionContext.setAuthErrorRetryStrategy(new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(
-                getProtocol(request), bucket, key)));
+        S3RequestEndpointResolver endpointResolver = buildDefaultEndpointResolver(getProtocol(request),
+                                                                                  bucket, key);
+        boolean isChunkedEncodingDisabled = this.clientOptions.isChunkedEncodingDisabled();
+        S3V4AuthErrorRetryStrategy authErrRetryStrategy = new S3V4AuthErrorRetryStrategy(endpointResolver,
+                                                                                         isChunkedEncodingDisabled);
+        executionContext.setAuthErrorRetryStrategy(authErrRetryStrategy);
+        // -- ends retry strategy.
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);
