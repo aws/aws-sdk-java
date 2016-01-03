@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -39,7 +40,8 @@ public class RequestXmlFactory {
         XmlWriter xml = new XmlWriter();
         xml.start("CompleteMultipartUpload");
         if (partETags != null) {
-            Collections.sort(partETags, new Comparator<PartETag>() {
+            List<PartETag> sortedPartETags = new ArrayList<PartETag>(partETags);
+            Collections.sort(sortedPartETags, new Comparator<PartETag>() {
                 public int compare(PartETag tag1, PartETag tag2) {
                     if (tag1.getPartNumber() < tag2.getPartNumber()) return -1;
                     if (tag1.getPartNumber() > tag2.getPartNumber()) return 1;
@@ -47,7 +49,7 @@ public class RequestXmlFactory {
                 }
             });
 
-            for (PartETag partEtag : partETags) {
+            for (PartETag partEtag : sortedPartETags) {
                 xml.start("Part");
                 xml.start("PartNumber").value(Integer.toString(partEtag.getPartNumber())).end();
                 xml.start("ETag").value(partEtag.getETag()).end();
