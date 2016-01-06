@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Amazon Technologies, Inc.
+ * Copyright 2011-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * 
  * @see AmazonS3#deleteObjects(DeleteObjectsRequest)
  */
-public class DeleteObjectsResult {
+public class DeleteObjectsResult implements Serializable{
 
     private final List<DeletedObject> deletedObjects = new ArrayList<DeleteObjectsResult.DeletedObject>();
     
@@ -47,7 +47,7 @@ public class DeleteObjectsResult {
     /**
      * A successfully deleted object.
      */
-    static public class DeletedObject {
+    static public class DeletedObject implements Serializable {
 
         private String key;
         private String versionId;

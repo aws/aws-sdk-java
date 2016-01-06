@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,12 +32,12 @@ public class GetWebACLResult implements Serializable, Cloneable {
      * <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      * <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code>
      * objects, and <code>WebACLId</code></li>
-     * <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
+     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
      * <code>Type</code></li>
-     * <li> <code>Rules</code>: Contains an array of <code>ActivatedRule</code>
+     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code>
      * objects, which contain <code>Action</code>, <code>Priority</code>, and
      * <code>RuleId</code></li>
-     * <li> <code>Action</code>: Contains <code>Type</code></li>
+     * <li><code>Action</code>: Contains <code>Type</code></li>
      * </ul>
      */
     private WebACL webACL;
@@ -52,12 +52,12 @@ public class GetWebACLResult implements Serializable, Cloneable {
      * <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      * <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code>
      * objects, and <code>WebACLId</code></li>
-     * <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
+     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
      * <code>Type</code></li>
-     * <li> <code>Rules</code>: Contains an array of <code>ActivatedRule</code>
+     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code>
      * objects, which contain <code>Action</code>, <code>Priority</code>, and
      * <code>RuleId</code></li>
-     * <li> <code>Action</code>: Contains <code>Type</code></li>
+     * <li><code>Action</code>: Contains <code>Type</code></li>
      * </ul>
      * 
      * @param webACL
@@ -68,13 +68,13 @@ public class GetWebACLResult implements Serializable, Cloneable {
      *        <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      *        <code>MetricName</code>, <code>Name</code>, an array of
      *        <code>Rule</code> objects, and <code>WebACLId</code></li>
-     *        <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>):
+     *        <li><code>DefaultAction</code> (Data type is <a>WafAction</a>):
      *        Contains <code>Type</code></li>
-     *        <li> <code>Rules</code>: Contains an array of
+     *        <li><code>Rules</code>: Contains an array of
      *        <code>ActivatedRule</code> objects, which contain
      *        <code>Action</code>, <code>Priority</code>, and
      *        <code>RuleId</code></li>
-     *        <li> <code>Action</code>: Contains <code>Type</code></li>
+     *        <li><code>Action</code>: Contains <code>Type</code></li>
      */
     public void setWebACL(WebACL webACL) {
         this.webACL = webACL;
@@ -90,12 +90,12 @@ public class GetWebACLResult implements Serializable, Cloneable {
      * <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      * <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code>
      * objects, and <code>WebACLId</code></li>
-     * <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
+     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
      * <code>Type</code></li>
-     * <li> <code>Rules</code>: Contains an array of <code>ActivatedRule</code>
+     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code>
      * objects, which contain <code>Action</code>, <code>Priority</code>, and
      * <code>RuleId</code></li>
-     * <li> <code>Action</code>: Contains <code>Type</code></li>
+     * <li><code>Action</code>: Contains <code>Type</code></li>
      * </ul>
      * 
      * @return Information about the <a>WebACL</a> that you specified in the
@@ -105,13 +105,13 @@ public class GetWebACLResult implements Serializable, Cloneable {
      *         <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      *         <code>MetricName</code>, <code>Name</code>, an array of
      *         <code>Rule</code> objects, and <code>WebACLId</code></li>
-     *         <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>):
+     *         <li><code>DefaultAction</code> (Data type is <a>WafAction</a>):
      *         Contains <code>Type</code></li>
-     *         <li> <code>Rules</code>: Contains an array of
+     *         <li><code>Rules</code>: Contains an array of
      *         <code>ActivatedRule</code> objects, which contain
      *         <code>Action</code>, <code>Priority</code>, and
      *         <code>RuleId</code></li>
-     *         <li> <code>Action</code>: Contains <code>Type</code></li>
+     *         <li><code>Action</code>: Contains <code>Type</code></li>
      */
     public WebACL getWebACL() {
         return this.webACL;
@@ -127,12 +127,12 @@ public class GetWebACLResult implements Serializable, Cloneable {
      * <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      * <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code>
      * objects, and <code>WebACLId</code></li>
-     * <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
+     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains
      * <code>Type</code></li>
-     * <li> <code>Rules</code>: Contains an array of <code>ActivatedRule</code>
+     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code>
      * objects, which contain <code>Action</code>, <code>Priority</code>, and
      * <code>RuleId</code></li>
-     * <li> <code>Action</code>: Contains <code>Type</code></li>
+     * <li><code>Action</code>: Contains <code>Type</code></li>
      * </ul>
      * 
      * @param webACL
@@ -143,13 +143,13 @@ public class GetWebACLResult implements Serializable, Cloneable {
      *        <li><a>WebACL</a>: Contains <code>DefaultAction</code>,
      *        <code>MetricName</code>, <code>Name</code>, an array of
      *        <code>Rule</code> objects, and <code>WebACLId</code></li>
-     *        <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>):
+     *        <li><code>DefaultAction</code> (Data type is <a>WafAction</a>):
      *        Contains <code>Type</code></li>
-     *        <li> <code>Rules</code>: Contains an array of
+     *        <li><code>Rules</code>: Contains an array of
      *        <code>ActivatedRule</code> objects, which contain
      *        <code>Action</code>, <code>Priority</code>, and
      *        <code>RuleId</code></li>
-     *        <li> <code>Action</code>: Contains <code>Type</code></li>
+     *        <li><code>Action</code>: Contains <code>Type</code></li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

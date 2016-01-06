@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -271,8 +271,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>
      * .
      * </p>
-     * <p>
-     * </p></li>
+     * <p/></li>
      * <li>
      * <p>
      * <code>LE</code> : Less than or equal.
@@ -627,26 +626,30 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;</i> <code>:rangeval</code> -
-     * true if the range key is less than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;=</i> <code>:rangeval</code> -
-     * true if the range key is less than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:rangeval</code> - true if the range key is less than or equal to
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;</i> <code>:rangeval</code> -
-     * true if the range key is greater than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:rangeval</code> - true if the range key is greater than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;= </i><code>:rangeval</code> -
-     * true if the range key is greater than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:rangeval</code> - true if the range key is greater than or equal
+     * to <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
@@ -2346,8 +2349,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>
      * .
      * </p>
-     * <p>
-     * </p></li>
+     * <p/></li>
      * <li>
      * <p>
      * <code>LE</code> : Less than or equal.
@@ -2532,8 +2534,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
      *         does not equal <code>{"NS":["6", "2", "1"]}</code>.
      *         </p>
-     *         <p>
-     *         </p></li>
+     *         <p/></li>
      *         <li>
      *         <p>
      *         <code>LE</code> : Less than or equal.
@@ -2722,8 +2723,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>
      * .
      * </p>
-     * <p>
-     * </p></li>
+     * <p/></li>
      * <li>
      * <p>
      * <code>LE</code> : Less than or equal.
@@ -2908,8 +2908,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      *        equal <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
-     *        <p>
-     *        </p></li>
+     *        <p/></li>
      *        <li>
      *        <p>
      *        <code>LE</code> : Less than or equal.
@@ -3095,8 +3094,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2", "1"]}</code>
      * .
      * </p>
-     * <p>
-     * </p></li>
+     * <p/></li>
      * <li>
      * <p>
      * <code>LE</code> : Less than or equal.
@@ -3281,8 +3279,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      *        equal <code>{"NS":["6", "2", "1"]}</code>.
      *        </p>
-     *        <p>
-     *        </p></li>
+     *        <p/></li>
      *        <li>
      *        <p>
      *        <code>LE</code> : Less than or equal.
@@ -5082,26 +5079,30 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;</i> <code>:rangeval</code> -
-     * true if the range key is less than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;=</i> <code>:rangeval</code> -
-     * true if the range key is less than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:rangeval</code> - true if the range key is less than or equal to
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;</i> <code>:rangeval</code> -
-     * true if the range key is greater than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:rangeval</code> - true if the range key is greater than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;= </i><code>:rangeval</code> -
-     * true if the range key is greater than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:rangeval</code> - true if the range key is greater than or equal
+     * to <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
@@ -5206,28 +5207,28 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3C;</i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
      *        <code>:rangeval</code> - true if the range key is less than
      *        <code>:rangeval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3C;=</i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
      *        <code>:rangeval</code> - true if the range key is less than or
      *        equal to <code>:rangeval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3E;</i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
      *        <code>:rangeval</code> - true if the range key is greater than
      *        <code>:rangeval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3E;= </i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
      *        <code>:rangeval</code> - true if the range key is greater than or
      *        equal to <code>:rangeval</code>.
      *        </p>
@@ -5338,26 +5339,30 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;</i> <code>:rangeval</code> -
-     * true if the range key is less than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;=</i> <code>:rangeval</code> -
-     * true if the range key is less than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:rangeval</code> - true if the range key is less than or equal to
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;</i> <code>:rangeval</code> -
-     * true if the range key is greater than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:rangeval</code> - true if the range key is greater than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;= </i><code>:rangeval</code> -
-     * true if the range key is greater than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:rangeval</code> - true if the range key is greater than or equal
+     * to <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
@@ -5461,28 +5466,28 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i>&#x3C;</i>
+     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
      *         <code>:rangeval</code> - true if the range key is less than
      *         <code>:rangeval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i>&#x3C;=</i>
+     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
      *         <code>:rangeval</code> - true if the range key is less than or
      *         equal to <code>:rangeval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i>&#x3E;</i>
+     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
      *         <code>:rangeval</code> - true if the range key is greater than
      *         <code>:rangeval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i>&#x3E;= </i>
+     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
      *         <code>:rangeval</code> - true if the range key is greater than or
      *         equal to <code>:rangeval</code>.
      *         </p>
@@ -5594,26 +5599,30 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;</i> <code>:rangeval</code> -
-     * true if the range key is less than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:rangeval</code> - true if the range key is less than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3C;=</i> <code>:rangeval</code> -
-     * true if the range key is less than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:rangeval</code> - true if the range key is less than or equal to
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;</i> <code>:rangeval</code> -
-     * true if the range key is greater than <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:rangeval</code> - true if the range key is greater than
+     * <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>&#x3E;= </i><code>:rangeval</code> -
-     * true if the range key is greater than or equal to <code>:rangeval</code>.
+     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:rangeval</code> - true if the range key is greater than or equal
+     * to <code>:rangeval</code>.
      * </p>
      * </li>
      * <li>
@@ -5718,28 +5727,28 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3C;</i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
      *        <code>:rangeval</code> - true if the range key is less than
      *        <code>:rangeval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3C;=</i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
      *        <code>:rangeval</code> - true if the range key is less than or
      *        equal to <code>:rangeval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3E;</i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
      *        <code>:rangeval</code> - true if the range key is greater than
      *        <code>:rangeval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>&#x3E;= </i>
+     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
      *        <code>:rangeval</code> - true if the range key is greater than or
      *        equal to <code>:rangeval</code>.
      *        </p>

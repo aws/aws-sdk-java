@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -21,6 +21,7 @@ import java.io.InputStream;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Custom S3 response handler for responses that simply contain text data that
@@ -39,7 +40,7 @@ public class S3StringResponseHandler extends AbstractS3ResponseHandler<String> {
         StringBuilder builder = new StringBuilder();
         InputStream content = response.getContent();
         while ((bytesRead = content.read(buffer)) > 0) {
-            builder.append(new String(buffer, 0, bytesRead));
+            builder.append(new String(buffer, 0, bytesRead, StringUtils.UTF8));
         }
         awsResponse.setResult(builder.toString());
 

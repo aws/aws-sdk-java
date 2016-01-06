@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,15 +42,9 @@ public class ValidationMessage implements Serializable, Cloneable {
      * </ul>
      */
     private String severity;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String namespace;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String optionName;
 
     /**
@@ -219,8 +213,7 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param namespace
      */
@@ -229,8 +222,7 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -239,8 +231,7 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param namespace
      * @return Returns a reference to this object so that method calls can be
@@ -252,8 +243,7 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param optionName
      */
@@ -262,8 +252,7 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -272,8 +261,7 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param optionName
      * @return Returns a reference to this object so that method calls can be

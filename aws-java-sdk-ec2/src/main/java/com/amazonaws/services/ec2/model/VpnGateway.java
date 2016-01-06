@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,8 @@ public class VpnGateway implements Serializable, Cloneable {
     private String type;
 
     /**
-     * The Availability Zone where the virtual private gateway was created.
+     * The Availability Zone where the virtual private gateway was created,
+     * if applicable. This field may be empty or not returned.
      */
     private String availabilityZone;
 
@@ -257,29 +258,35 @@ public class VpnGateway implements Serializable, Cloneable {
     }
 
     /**
-     * The Availability Zone where the virtual private gateway was created.
+     * The Availability Zone where the virtual private gateway was created,
+     * if applicable. This field may be empty or not returned.
      *
-     * @return The Availability Zone where the virtual private gateway was created.
+     * @return The Availability Zone where the virtual private gateway was created,
+     *         if applicable. This field may be empty or not returned.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone where the virtual private gateway was created.
+     * The Availability Zone where the virtual private gateway was created,
+     * if applicable. This field may be empty or not returned.
      *
-     * @param availabilityZone The Availability Zone where the virtual private gateway was created.
+     * @param availabilityZone The Availability Zone where the virtual private gateway was created,
+     *         if applicable. This field may be empty or not returned.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone where the virtual private gateway was created.
+     * The Availability Zone where the virtual private gateway was created,
+     * if applicable. This field may be empty or not returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone where the virtual private gateway was created.
+     * @param availabilityZone The Availability Zone where the virtual private gateway was created,
+     *         if applicable. This field may be empty or not returned.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

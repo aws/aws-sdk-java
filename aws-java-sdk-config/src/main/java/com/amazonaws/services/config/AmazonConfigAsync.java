@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1147,8 +1147,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * >Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS
      * Config Developer Guide</i>.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param putConfigRuleRequest
      * @sample AmazonConfigAsync.PutConfigRule
@@ -1206,8 +1205,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * >Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS
      * Config Developer Guide</i>.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param putConfigRuleRequest
      * @param asyncHandler

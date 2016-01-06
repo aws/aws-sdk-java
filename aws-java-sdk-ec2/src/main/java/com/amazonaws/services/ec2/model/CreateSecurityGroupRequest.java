@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSecurityGroupRequestMars
  * </p>
  * <p>
  * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups.
- * EC2-VPC: You can create up to 100 security groups per VPC.
+ * EC2-VPC: You can create up to 500 security groups per VPC.
  * </p>
  * <p>
  * When you create a security group, you specify a friendly name of your

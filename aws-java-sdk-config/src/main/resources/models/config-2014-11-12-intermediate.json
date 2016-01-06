@@ -120,7 +120,7 @@
       "methodName" : "deliverConfigSnapshot"
     },
     "DescribeComplianceByConfigRule" : {
-      "documentation" : "<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>",
+      "documentation" : "<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li></ul></p>",
       "operationName" : "DescribeComplianceByConfigRule",
       "deprecated" : false,
       "input" : {
@@ -152,7 +152,7 @@
       "methodName" : "describeComplianceByConfigRule"
     },
     "DescribeComplianceByResource" : {
-      "documentation" : "<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions about the rules that evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul></p>",
+      "documentation" : "<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>. This result might indicate one of the following conditions about the rules that evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li></ul></p>",
       "operationName" : "DescribeComplianceByResource",
       "deprecated" : false,
       "input" : {
@@ -559,7 +559,7 @@
       "methodName" : "listDiscoveredResources"
     },
     "PutConfigRule" : {
-      "documentation" : "<p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations. </p> <p>You can use this action for customer managed Config rules and AWS managed Config rules. A customer managed Config rule is a custom rule that you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that is provided by AWS Config.</p> <p>If you are adding a new customer managed Config rule, you must first create the AWS Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html\">Using AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by AWS Config for new rules.</p> <p>If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p> <p>The maximum number of rules that AWS Config supports is 25.</p> <p>For more information about developing and using AWS Config rules, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html\">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> <p></p>",
+      "documentation" : "<p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations. </p> <p>You can use this action for customer managed Config rules and AWS managed Config rules. A customer managed Config rule is a custom rule that you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that is provided by AWS Config.</p> <p>If you are adding a new customer managed Config rule, you must first create the AWS Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html\">Using AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by AWS Config for new rules.</p> <p>If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p> <p>The maximum number of rules that AWS Config supports is 25.</p> <p>For more information about developing and using AWS Config rules, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html\">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> <p/>",
       "operationName" : "PutConfigRule",
       "deprecated" : false,
       "input" : {
@@ -1102,8 +1102,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1193,8 +1193,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -1352,8 +1352,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DeliveryChannelStatus",
           "simple" : false,
+          "simpleType" : "DeliveryChannelStatus",
           "map" : false,
           "templateType" : "java.util.List<DeliveryChannelStatus>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>"
@@ -1490,8 +1490,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DeliveryChannelStatus",
             "simple" : false,
+            "simpleType" : "DeliveryChannelStatus",
             "map" : false,
             "templateType" : "java.util.List<DeliveryChannelStatus>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>"
@@ -1655,8 +1655,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ComplianceByResource",
           "simple" : false,
+          "simpleType" : "ComplianceByResource",
           "map" : false,
           "templateType" : "java.util.List<ComplianceByResource>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>"
@@ -1896,8 +1896,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ComplianceByResource",
             "simple" : false,
+            "simpleType" : "ComplianceByResource",
             "map" : false,
             "templateType" : "java.util.List<ComplianceByResource>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>"
@@ -1973,8 +1973,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2064,8 +2064,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2223,8 +2223,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "EvaluationResult",
           "simple" : false,
+          "simpleType" : "EvaluationResult",
           "map" : false,
           "templateType" : "java.util.List<EvaluationResult>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -2464,8 +2464,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "EvaluationResult",
             "simple" : false,
+            "simpleType" : "EvaluationResult",
             "map" : false,
             "templateType" : "java.util.List<EvaluationResult>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -3004,7 +3004,7 @@
         "fluentSetterDocumentation" : "/**<p>The error message that AWS Config returned when the rule last failed.</p>\n@param lastErrorMessage The error message that AWS Config returned when the rule last failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The error message that AWS Config returned when the rule last failed.</p>\n@param lastErrorMessage The error message that AWS Config returned when the rule last failed.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
+        "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
         "name" : "FirstEvaluationStarted",
         "c2jName" : "FirstEvaluationStarted",
         "c2jShape" : "Boolean",
@@ -3012,7 +3012,7 @@
           "variableName" : "firstEvaluationStarted",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
-          "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
+          "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -3050,10 +3050,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
-        "getterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@return Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
-        "fluentSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
+        "getterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@return Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
+        "fluentSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3182,7 +3182,7 @@
           "varargSetterDocumentation" : "/**<p>The time that you first activated the AWS Config rule.</p>\n@param firstActivatedTime The time that you first activated the AWS Config rule.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "FirstEvaluationStarted" : {
-          "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
+          "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
           "name" : "FirstEvaluationStarted",
           "c2jName" : "FirstEvaluationStarted",
           "c2jShape" : "Boolean",
@@ -3190,7 +3190,7 @@
             "variableName" : "firstEvaluationStarted",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
-            "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
+            "documentation" : "<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -3228,10 +3228,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
-          "getterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@return Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
-          "fluentSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li> <code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li> <code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
+          "getterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@return Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>*/",
+          "fluentSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li> </ul>\n@param firstEvaluationStarted Indicates whether AWS Config has evaluated your resources against the rule at least once.</p> <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished evaluating your AWS resources against the rule.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConfigRuleId" : {
           "documentation" : "<p>The ID of the AWS Config rule.</p>",
@@ -4395,7 +4395,7 @@
         "fluentSetterDocumentation" : "/**<p>An identifier that indicates the ordering of the configuration items of a resource.</p>\n@param configurationStateId An identifier that indicates the ordering of the configuration items of a resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>An identifier that indicates the ordering of the configuration items of a resource.</p>\n@param configurationStateId An identifier that indicates the ordering of the configuration items of a resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
+        "documentation" : "<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
         "name" : "ConfigurationItemMD5Hash",
         "c2jName" : "configurationItemMD5Hash",
         "c2jShape" : "ConfigurationItemMD5Hash",
@@ -4403,7 +4403,7 @@
           "variableName" : "configurationItemMD5Hash",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
+          "documentation" : "<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4441,10 +4441,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
-        "getterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@return Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
-        "fluentSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
+        "getterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@return Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
+        "fluentSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
         "name" : "Arn",
@@ -4915,8 +4915,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5030,8 +5030,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Relationship",
           "simple" : false,
+          "simpleType" : "Relationship",
           "map" : false,
           "templateType" : "java.util.List<Relationship>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>"
@@ -5480,8 +5480,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5602,7 +5602,7 @@
           "varargSetterDocumentation" : "/**<p>The time stamp when the resource was created. </p>\n@param resourceCreationTime The time stamp when the resource was created.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConfigurationItemMD5Hash" : {
-          "documentation" : "<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
+          "documentation" : "<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
           "name" : "ConfigurationItemMD5Hash",
           "c2jName" : "configurationItemMD5Hash",
           "c2jShape" : "ConfigurationItemMD5Hash",
@@ -5610,7 +5610,7 @@
             "variableName" : "configurationItemMD5Hash",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
+            "documentation" : "<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5648,10 +5648,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
-          "getterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@return Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
-          "fluentSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item's state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
+          "getterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@return Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.*/",
+          "fluentSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>\n@param configurationItemMD5Hash Unique MD5 hash that represents the configuration item&apos;s state.</p> <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Tags" : {
           "documentation" : "<p>A mapping of key value tags associated with the resource.</p>",
@@ -6026,8 +6026,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Relationship",
             "simple" : false,
+            "simpleType" : "Relationship",
             "map" : false,
             "templateType" : "java.util.List<Relationship>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>"
@@ -6845,8 +6845,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ConfigRuleEvaluationStatus",
           "simple" : false,
+          "simpleType" : "ConfigRuleEvaluationStatus",
           "map" : false,
           "templateType" : "java.util.List<ConfigRuleEvaluationStatus>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>"
@@ -6983,8 +6983,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ConfigRuleEvaluationStatus",
             "simple" : false,
+            "simpleType" : "ConfigRuleEvaluationStatus",
             "map" : false,
             "templateType" : "java.util.List<ConfigRuleEvaluationStatus>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>"
@@ -7111,8 +7111,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Evaluation",
           "simple" : false,
+          "simpleType" : "Evaluation",
           "map" : false,
           "templateType" : "java.util.List<Evaluation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -7304,8 +7304,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Evaluation",
             "simple" : false,
+            "simpleType" : "Evaluation",
             "map" : false,
             "templateType" : "java.util.List<Evaluation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -7993,8 +7993,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8108,8 +8108,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8302,8 +8302,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8418,8 +8418,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8535,8 +8535,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8729,8 +8729,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8759,7 +8759,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>",
+        "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>",
         "name" : "Name",
         "c2jName" : "name",
         "c2jShape" : "RecorderName",
@@ -8767,7 +8767,7 @@
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>",
+          "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8805,10 +8805,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.*/",
-        "getterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@return The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.*/",
+        "getterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@return The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Amazon Resource Name (ARN) of the IAM role used to describe the AWS resources associated with the account.</p>",
         "name" : "RoleARN",
@@ -8935,7 +8935,7 @@
       },
       "membersAsMap" : {
         "Name" : {
-          "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>",
+          "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>",
           "name" : "Name",
           "c2jName" : "name",
           "c2jShape" : "RecorderName",
@@ -8943,7 +8943,7 @@
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>",
+            "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8981,10 +8981,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.*/",
-          "getterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@return The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name \"default\" when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.*/",
+          "getterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@return The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>\n@param name The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RecordingGroup" : {
           "documentation" : "<p>Specifies the types of AWS resource for which AWS Config records configuration changes.</p>",
@@ -11087,8 +11087,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11332,8 +11332,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11615,8 +11615,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11911,8 +11911,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12143,8 +12143,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ConfigurationRecorderStatus",
           "simple" : false,
+          "simpleType" : "ConfigurationRecorderStatus",
           "map" : false,
           "templateType" : "java.util.List<ConfigurationRecorderStatus>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>"
@@ -12281,8 +12281,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ConfigurationRecorderStatus",
             "simple" : false,
+            "simpleType" : "ConfigurationRecorderStatus",
             "map" : false,
             "templateType" : "java.util.List<ConfigurationRecorderStatus>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>"
@@ -12511,8 +12511,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12807,8 +12807,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13985,8 +13985,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "DeliveryChannel",
           "simple" : false,
+          "simpleType" : "DeliveryChannel",
           "map" : false,
           "templateType" : "java.util.List<DeliveryChannel>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>"
@@ -14123,8 +14123,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "DeliveryChannel",
             "simple" : false,
+            "simpleType" : "DeliveryChannel",
             "map" : false,
             "templateType" : "java.util.List<DeliveryChannel>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>"
@@ -14373,8 +14373,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ComplianceSummaryByResourceType",
           "simple" : false,
+          "simpleType" : "ComplianceSummaryByResourceType",
           "map" : false,
           "templateType" : "java.util.List<ComplianceSummaryByResourceType>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>"
@@ -14511,8 +14511,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ComplianceSummaryByResourceType",
             "simple" : false,
+            "simpleType" : "ComplianceSummaryByResourceType",
             "map" : false,
             "templateType" : "java.util.List<ComplianceSummaryByResourceType>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>"
@@ -15005,8 +15005,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15401,8 +15401,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15976,8 +15976,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ResourceIdentifier",
           "simple" : false,
+          "simpleType" : "ResourceIdentifier",
           "map" : false,
           "templateType" : "java.util.List<ResourceIdentifier>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>"
@@ -16217,8 +16217,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ResourceIdentifier",
             "simple" : false,
+            "simpleType" : "ResourceIdentifier",
             "map" : false,
             "templateType" : "java.util.List<ResourceIdentifier>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>"
@@ -16823,8 +16823,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ConfigurationRecorder",
           "simple" : false,
+          "simpleType" : "ConfigurationRecorder",
           "map" : false,
           "templateType" : "java.util.List<ConfigurationRecorder>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>"
@@ -16961,8 +16961,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ConfigurationRecorder",
             "simple" : false,
+            "simpleType" : "ConfigurationRecorder",
             "map" : false,
             "templateType" : "java.util.List<ConfigurationRecorder>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>"
@@ -17038,8 +17038,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17129,8 +17129,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17257,8 +17257,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Evaluation",
           "simple" : false,
+          "simpleType" : "Evaluation",
           "map" : false,
           "templateType" : "java.util.List<Evaluation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -17395,8 +17395,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Evaluation",
             "simple" : false,
+            "simpleType" : "Evaluation",
             "map" : false,
             "templateType" : "java.util.List<Evaluation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -17472,8 +17472,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17563,8 +17563,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17691,8 +17691,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ComplianceByConfigRule",
           "simple" : false,
+          "simpleType" : "ComplianceByConfigRule",
           "map" : false,
           "templateType" : "java.util.List<ComplianceByConfigRule>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>"
@@ -17932,8 +17932,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ComplianceByConfigRule",
             "simple" : false,
+            "simpleType" : "ComplianceByConfigRule",
             "map" : false,
             "templateType" : "java.util.List<ComplianceByConfigRule>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>"
@@ -19144,7 +19144,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>",
+        "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
         "name" : "Name",
         "c2jName" : "name",
         "c2jShape" : "ChannelName",
@@ -19152,7 +19152,7 @@
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>",
+          "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -19190,10 +19190,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.*/",
-        "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@return The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
+        "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@return The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>",
         "name" : "S3BucketName",
@@ -19422,7 +19422,7 @@
       },
       "membersAsMap" : {
         "Name" : {
-          "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>",
+          "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
           "name" : "Name",
           "c2jName" : "name",
           "c2jShape" : "ChannelName",
@@ -19430,7 +19430,7 @@
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>",
+            "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19468,10 +19468,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.*/",
-          "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@return The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name \"default\" when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
+          "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@return The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "S3KeyPrefix" : {
           "documentation" : "<p>The prefix for the specified Amazon S3 bucket.</p>",
@@ -20340,8 +20340,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ConfigRule",
           "simple" : false,
+          "simpleType" : "ConfigRule",
           "map" : false,
           "templateType" : "java.util.List<ConfigRule>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>"
@@ -20581,8 +20581,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ConfigRule",
             "simple" : false,
+            "simpleType" : "ConfigRule",
             "map" : false,
             "templateType" : "java.util.List<ConfigRule>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>"
@@ -20842,8 +20842,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "SourceDetail",
           "simple" : false,
+          "simpleType" : "SourceDetail",
           "map" : false,
           "templateType" : "java.util.List<SourceDetail>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>"
@@ -21084,8 +21084,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "SourceDetail",
             "simple" : false,
+            "simpleType" : "SourceDetail",
             "map" : false,
             "templateType" : "java.util.List<SourceDetail>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>"
@@ -21556,8 +21556,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "ConfigurationItem",
           "simple" : false,
+          "simpleType" : "ConfigurationItem",
           "map" : false,
           "templateType" : "java.util.List<ConfigurationItem>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>"
@@ -21797,8 +21797,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "ConfigurationItem",
             "simple" : false,
+            "simpleType" : "ConfigurationItem",
             "map" : false,
             "templateType" : "java.util.List<ConfigurationItem>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>"
@@ -23098,8 +23098,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "EvaluationResult",
           "simple" : false,
+          "simpleType" : "EvaluationResult",
           "map" : false,
           "templateType" : "java.util.List<EvaluationResult>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -23339,8 +23339,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "EvaluationResult",
             "simple" : false,
+            "simpleType" : "EvaluationResult",
             "map" : false,
             "templateType" : "java.util.List<EvaluationResult>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
@@ -23447,8 +23447,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -23538,8 +23538,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24111,8 +24111,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24301,8 +24301,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -25145,8 +25145,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -25236,8 +25236,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -26402,8 +26402,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -26853,8 +26853,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

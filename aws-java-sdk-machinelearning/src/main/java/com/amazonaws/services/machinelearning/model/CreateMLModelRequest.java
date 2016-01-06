@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -122,7 +122,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The data recipe for creating <code>MLModel</code>. You must specify
-     * either the recipe or its URI. If you don’t specify a recipe or its URI,
+     * either the recipe or its URI. If you don???t specify a recipe or its URI,
      * Amazon ML creates a default.
      * </p>
      */
@@ -131,7 +131,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the
-     * recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
+     * recipe or its URI. If you don???t specify a recipe or its URI, Amazon ML
      * creates a default.
      * </p>
      */
@@ -842,13 +842,13 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The data recipe for creating <code>MLModel</code>. You must specify
-     * either the recipe or its URI. If you don’t specify a recipe or its URI,
+     * either the recipe or its URI. If you don???t specify a recipe or its URI,
      * Amazon ML creates a default.
      * </p>
      * 
      * @param recipe
      *        The data recipe for creating <code>MLModel</code>. You must
-     *        specify either the recipe or its URI. If you don’t specify a
+     *        specify either the recipe or its URI. If you don???t specify a
      *        recipe or its URI, Amazon ML creates a default.
      */
     public void setRecipe(String recipe) {
@@ -858,12 +858,12 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The data recipe for creating <code>MLModel</code>. You must specify
-     * either the recipe or its URI. If you don’t specify a recipe or its URI,
+     * either the recipe or its URI. If you don???t specify a recipe or its URI,
      * Amazon ML creates a default.
      * </p>
      * 
      * @return The data recipe for creating <code>MLModel</code>. You must
-     *         specify either the recipe or its URI. If you don’t specify a
+     *         specify either the recipe or its URI. If you don???t specify a
      *         recipe or its URI, Amazon ML creates a default.
      */
     public String getRecipe() {
@@ -873,13 +873,13 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The data recipe for creating <code>MLModel</code>. You must specify
-     * either the recipe or its URI. If you don’t specify a recipe or its URI,
+     * either the recipe or its URI. If you don???t specify a recipe or its URI,
      * Amazon ML creates a default.
      * </p>
      * 
      * @param recipe
      *        The data recipe for creating <code>MLModel</code>. You must
-     *        specify either the recipe or its URI. If you don’t specify a
+     *        specify either the recipe or its URI. If you don???t specify a
      *        recipe or its URI, Amazon ML creates a default.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -893,14 +893,14 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the
-     * recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
+     * recipe or its URI. If you don???t specify a recipe or its URI, Amazon ML
      * creates a default.
      * </p>
      * 
      * @param recipeUri
      *        The Amazon Simple Storage Service (Amazon S3) location and file
      *        name that contains the <code>MLModel</code> recipe. You must
-     *        specify either the recipe or its URI. If you don’t specify a
+     *        specify either the recipe or its URI. If you don???t specify a
      *        recipe or its URI, Amazon ML creates a default.
      */
     public void setRecipeUri(String recipeUri) {
@@ -911,13 +911,13 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the
-     * recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
+     * recipe or its URI. If you don???t specify a recipe or its URI, Amazon ML
      * creates a default.
      * </p>
      * 
      * @return The Amazon Simple Storage Service (Amazon S3) location and file
      *         name that contains the <code>MLModel</code> recipe. You must
-     *         specify either the recipe or its URI. If you don’t specify a
+     *         specify either the recipe or its URI. If you don???t specify a
      *         recipe or its URI, Amazon ML creates a default.
      */
     public String getRecipeUri() {
@@ -928,14 +928,14 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the
-     * recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
+     * recipe or its URI. If you don???t specify a recipe or its URI, Amazon ML
      * creates a default.
      * </p>
      * 
      * @param recipeUri
      *        The Amazon Simple Storage Service (Amazon S3) location and file
      *        name that contains the <code>MLModel</code> recipe. You must
-     *        specify either the recipe or its URI. If you don’t specify a
+     *        specify either the recipe or its URI. If you don???t specify a
      *        recipe or its URI, Amazon ML creates a default.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

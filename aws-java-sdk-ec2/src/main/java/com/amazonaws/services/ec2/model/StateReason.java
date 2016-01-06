@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,9 +42,11 @@ public class StateReason implements Serializable, Cloneable {
      * shut down using the <code>shutdown -h</code> command from the
      * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      * instance was shut down using the Amazon EC2 API.</li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     * The specified snapshot was not found.</li> </ul>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     * number of EBS volumes or total storage was exceeded. Decrease usage or
+     * request an increase in your limits.</li>
+     * <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     * snapshot was not found.</li> </ul>
      */
     private String message;
 
@@ -95,9 +97,11 @@ public class StateReason implements Serializable, Cloneable {
      * shut down using the <code>shutdown -h</code> command from the
      * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      * instance was shut down using the Amazon EC2 API.</li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     * The specified snapshot was not found.</li> </ul>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     * number of EBS volumes or total storage was exceeded. Decrease usage or
+     * request an increase in your limits.</li>
+     * <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     * snapshot was not found.</li> </ul>
      *
      * @return The message for the state change. <ul>
      *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
@@ -112,9 +116,11 @@ public class StateReason implements Serializable, Cloneable {
      *         shut down using the <code>shutdown -h</code> command from the
      *         instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      *         instance was shut down using the Amazon EC2 API.</li>
-     *         <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     *         The specified snapshot was not found.</li> </ul>
+     *         <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     *         number of EBS volumes or total storage was exceeded. Decrease usage or
+     *         request an increase in your limits.</li>
+     *         <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     *         snapshot was not found.</li> </ul>
      */
     public String getMessage() {
         return message;
@@ -134,9 +140,11 @@ public class StateReason implements Serializable, Cloneable {
      * shut down using the <code>shutdown -h</code> command from the
      * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      * instance was shut down using the Amazon EC2 API.</li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     * The specified snapshot was not found.</li> </ul>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     * number of EBS volumes or total storage was exceeded. Decrease usage or
+     * request an increase in your limits.</li>
+     * <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     * snapshot was not found.</li> </ul>
      *
      * @param message The message for the state change. <ul>
      *         <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance
@@ -151,9 +159,11 @@ public class StateReason implements Serializable, Cloneable {
      *         shut down using the <code>shutdown -h</code> command from the
      *         instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      *         instance was shut down using the Amazon EC2 API.</li>
-     *         <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     *         The specified snapshot was not found.</li> </ul>
+     *         <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     *         number of EBS volumes or total storage was exceeded. Decrease usage or
+     *         request an increase in your limits.</li>
+     *         <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     *         snapshot was not found.</li> </ul>
      */
     public void setMessage(String message) {
         this.message = message;
@@ -173,9 +183,11 @@ public class StateReason implements Serializable, Cloneable {
      * shut down using the <code>shutdown -h</code> command from the
      * instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      * instance was shut down using the Amazon EC2 API.</li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     * The specified snapshot was not found.</li> </ul>
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     * number of EBS volumes or total storage was exceeded. Decrease usage or
+     * request an increase in your limits.</li>
+     * <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     * snapshot was not found.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -192,9 +204,11 @@ public class StateReason implements Serializable, Cloneable {
      *         shut down using the <code>shutdown -h</code> command from the
      *         instance.</li> <li><p><code>Client.UserInitiatedShutdown</code>: The
      *         instance was shut down using the Amazon EC2 API.</li>
-     *         <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
-     *         The specified snapshot was not found.</li> </ul>
+     *         <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the
+     *         number of EBS volumes or total storage was exceeded. Decrease usage or
+     *         request an increase in your limits.</li>
+     *         <li><p><code>Client.InvalidSnapshot.NotFound</code>: The specified
+     *         snapshot was not found.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

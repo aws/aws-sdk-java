@@ -10500,9 +10500,9 @@
           },
           "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
           "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
-          "valueList" : true,
           "keySimple" : true,
-          "valueSimple" : false
+          "valueSimple" : false,
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10805,9 +10805,9 @@
             },
             "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
             "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
-            "valueList" : true,
             "keySimple" : true,
-            "valueSimple" : false
+            "valueSimple" : false,
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -15023,9 +15023,9 @@
           "valueModel" : null,
           "templateImplType" : "java.util.HashMap<String,String>",
           "templateType" : "java.util.Map<String,String>",
-          "valueList" : false,
           "keySimple" : true,
-          "valueSimple" : true
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15163,9 +15163,9 @@
             "valueModel" : null,
             "templateImplType" : "java.util.HashMap<String,String>",
             "templateType" : "java.util.Map<String,String>",
-            "valueList" : false,
             "keySimple" : true,
-            "valueSimple" : true
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -31776,9 +31776,9 @@
           "valueModel" : null,
           "templateImplType" : "java.util.HashMap<String,Integer>",
           "templateType" : "java.util.Map<String,Integer>",
-          "valueList" : false,
           "keySimple" : true,
-          "valueSimple" : true
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -31915,9 +31915,9 @@
             "valueModel" : null,
             "templateImplType" : "java.util.HashMap<String,Integer>",
             "templateType" : "java.util.Map<String,Integer>",
-            "valueList" : false,
             "keySimple" : true,
-            "valueSimple" : true
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Amazon Technologies, Inc.
+ * Copyright 2011-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ public class BucketLifecycleConfiguration implements Serializable {
         super();
     }
 
-    public static class Rule {
+    public static class Rule implements Serializable {
 
         private String id;
         private String prefix;
@@ -459,7 +459,7 @@ public class BucketLifecycleConfiguration implements Serializable {
      * The transition attribute of the rule describing how this object will move
      * between different storage classes in Amazon S3.
      */
-    public static class Transition {
+    public static class Transition implements Serializable {
 
         /**
          * The time, in days, between when the object is uploaded to the bucket
@@ -591,7 +591,7 @@ public class BucketLifecycleConfiguration implements Serializable {
      * how non-current versions of objects will move between different storage
      * classes in Amazon S3.
      */
-    public static class NoncurrentVersionTransition {
+    public static class NoncurrentVersionTransition implements Serializable {
 
         /**
          * The time, in days, between when a new version of the object is

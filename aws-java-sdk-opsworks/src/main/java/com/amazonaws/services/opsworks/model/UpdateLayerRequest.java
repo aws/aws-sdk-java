@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -156,10 +156,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Boolean useEbsOptimizedInstances;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private LifecycleEventConfiguration lifecycleEventConfiguration;
 
     /**
@@ -1229,8 +1226,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param lifecycleEventConfiguration
      */
@@ -1240,8 +1236,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -1250,8 +1245,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param lifecycleEventConfiguration
      * @return Returns a reference to this object so that method calls can be

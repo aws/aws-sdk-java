@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,9 +54,9 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li> <code>standard</code> - Magnetic</li>
-     * <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li> <code>gp2</code> - General Purpose (SSD)</li>
+     * <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li>
      * </ul>
      */
     private String volumeType;
@@ -233,17 +233,17 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li> <code>standard</code> - Magnetic</li>
-     * <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li> <code>gp2</code> - General Purpose (SSD)</li>
+     * <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li>
      * </ul>
      * 
      * @param volumeType
      *        The volume type:</p>
      *        <ul>
-     *        <li> <code>standard</code> - Magnetic</li>
-     *        <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     *        <li> <code>gp2</code> - General Purpose (SSD)</li>
+     *        <li><code>standard</code> - Magnetic</li>
+     *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     *        <li><code>gp2</code> - General Purpose (SSD)</li>
      */
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
@@ -254,16 +254,16 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li> <code>standard</code> - Magnetic</li>
-     * <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li> <code>gp2</code> - General Purpose (SSD)</li>
+     * <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li>
      * </ul>
      * 
      * @return The volume type:</p>
      *         <ul>
-     *         <li> <code>standard</code> - Magnetic</li>
-     *         <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     *         <li> <code>gp2</code> - General Purpose (SSD)</li>
+     *         <li><code>standard</code> - Magnetic</li>
+     *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     *         <li><code>gp2</code> - General Purpose (SSD)</li>
      */
     public String getVolumeType() {
         return this.volumeType;
@@ -274,17 +274,17 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li> <code>standard</code> - Magnetic</li>
-     * <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li> <code>gp2</code> - General Purpose (SSD)</li>
+     * <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     * <li><code>gp2</code> - General Purpose (SSD)</li>
      * </ul>
      * 
      * @param volumeType
      *        The volume type:</p>
      *        <ul>
-     *        <li> <code>standard</code> - Magnetic</li>
-     *        <li> <code>io1</code> - Provisioned IOPS (SSD)</li>
-     *        <li> <code>gp2</code> - General Purpose (SSD)</li>
+     *        <li><code>standard</code> - Magnetic</li>
+     *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
+     *        <li><code>gp2</code> - General Purpose (SSD)</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

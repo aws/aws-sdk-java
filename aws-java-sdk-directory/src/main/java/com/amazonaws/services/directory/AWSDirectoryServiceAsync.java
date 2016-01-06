@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,7 +69,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Creates an alias for a directory and assigns the alias to the directory.
      * The alias is used to construct the access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     * .
      * </p>
      * <important>
      * <p>
@@ -91,7 +92,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Creates an alias for a directory and assigns the alias to the directory.
      * The alias is used to construct the access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     * .
      * </p>
      * <important>
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a count of all your health checks, send a <code>GET</code>
- * request to the <code>2013-04-01/healthcheckcount</code> resource.
+ * request to the <code>2015-01-01/healthcheckcount</code> resource.
  * </p>
  */
 public class GetHealthCheckCountRequest extends AmazonWebServiceRequest

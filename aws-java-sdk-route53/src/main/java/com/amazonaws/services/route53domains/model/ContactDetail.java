@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,8 +72,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * <p>
      * Indicates whether the contact is a person, company, association, or
      * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you can't
-     * enable privacy protection for the contact.
+     * <code>PERSON</code>, you must enter an organization name, and you
+     * can&apos;t enable privacy protection for the contact.
      * </p>
      * <p>
      * Type: String
@@ -123,7 +123,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String organizationName;
     /**
      * <p>
-     * First line of the contact's address.
+     * First line of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -145,7 +145,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String addressLine1;
     /**
      * <p>
-     * Second line of contact's address, if any.
+     * Second line of contact&apos;s address, if any.
      * </p>
      * <p>
      * Type: String
@@ -167,7 +167,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String addressLine2;
     /**
      * <p>
-     * The city of the contact's address.
+     * The city of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -189,7 +189,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String city;
     /**
      * <p>
-     * The state or province of the contact's city.
+     * The state or province of the contact&apos;s city.
      * </p>
      * <p>
      * Type: String
@@ -211,7 +211,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * Code for the country of the contact's address.
+     * Code for the country of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -233,7 +233,7 @@ public class ContactDetail implements Serializable, Cloneable {
     private String countryCode;
     /**
      * <p>
-     * The zip or postal code of the contact's address.
+     * The zip or postal code of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -265,8 +265,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code&gt;]". For
-     * example, a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example,
+     * a US phone number might appear as <code>"+1.1234567890"</code>.
      * </p>
      * <p>
      * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
@@ -609,8 +609,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * <p>
      * Indicates whether the contact is a person, company, association, or
      * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you can't
-     * enable privacy protection for the contact.
+     * <code>PERSON</code>, you must enter an organization name, and you
+     * can&apos;t enable privacy protection for the contact.
      * </p>
      * <p>
      * Type: String
@@ -637,7 +637,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Indicates whether the contact is a person, company, association,
      *        or public organization. If you choose an option other than
      *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can't enable privacy protection for the contact.</p>
+     *        can&apos;t enable privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -666,8 +666,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * <p>
      * Indicates whether the contact is a person, company, association, or
      * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you can't
-     * enable privacy protection for the contact.
+     * <code>PERSON</code>, you must enter an organization name, and you
+     * can&apos;t enable privacy protection for the contact.
      * </p>
      * <p>
      * Type: String
@@ -693,7 +693,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Indicates whether the contact is a person, company, association,
      *         or public organization. If you choose an option other than
      *         <code>PERSON</code>, you must enter an organization name, and you
-     *         can't enable privacy protection for the contact.</p>
+     *         can&apos;t enable privacy protection for the contact.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -723,8 +723,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * <p>
      * Indicates whether the contact is a person, company, association, or
      * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you can't
-     * enable privacy protection for the contact.
+     * <code>PERSON</code>, you must enter an organization name, and you
+     * can&apos;t enable privacy protection for the contact.
      * </p>
      * <p>
      * Type: String
@@ -751,7 +751,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Indicates whether the contact is a person, company, association,
      *        or public organization. If you choose an option other than
      *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can't enable privacy protection for the contact.</p>
+     *        can&apos;t enable privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -783,8 +783,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * <p>
      * Indicates whether the contact is a person, company, association, or
      * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you can't
-     * enable privacy protection for the contact.
+     * <code>PERSON</code>, you must enter an organization name, and you
+     * can&apos;t enable privacy protection for the contact.
      * </p>
      * <p>
      * Type: String
@@ -811,7 +811,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Indicates whether the contact is a person, company, association,
      *        or public organization. If you choose an option other than
      *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can't enable privacy protection for the contact.</p>
+     *        can&apos;t enable privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -842,8 +842,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * <p>
      * Indicates whether the contact is a person, company, association, or
      * public organization. If you choose an option other than
-     * <code>PERSON</code>, you must enter an organization name, and you can't
-     * enable privacy protection for the contact.
+     * <code>PERSON</code>, you must enter an organization name, and you
+     * can&apos;t enable privacy protection for the contact.
      * </p>
      * <p>
      * Type: String
@@ -870,7 +870,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Indicates whether the contact is a person, company, association,
      *        or public organization. If you choose an option other than
      *        <code>PERSON</code>, you must enter an organization name, and you
-     *        can't enable privacy protection for the contact.</p>
+     *        can&apos;t enable privacy protection for the contact.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1041,7 +1041,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * First line of the contact's address.
+     * First line of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1061,7 +1061,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param addressLine1
-     *        First line of the contact's address.</p>
+     *        First line of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1083,7 +1083,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * First line of the contact's address.
+     * First line of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1102,7 +1102,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: Yes
      * </p>
      * 
-     * @return First line of the contact's address.</p>
+     * @return First line of the contact&apos;s address.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1125,7 +1125,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * First line of the contact's address.
+     * First line of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1145,7 +1145,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param addressLine1
-     *        First line of the contact's address.</p>
+     *        First line of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1170,7 +1170,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Second line of contact's address, if any.
+     * Second line of contact&apos;s address, if any.
      * </p>
      * <p>
      * Type: String
@@ -1190,7 +1190,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param addressLine2
-     *        Second line of contact's address, if any.</p>
+     *        Second line of contact&apos;s address, if any.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1212,7 +1212,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Second line of contact's address, if any.
+     * Second line of contact&apos;s address, if any.
      * </p>
      * <p>
      * Type: String
@@ -1231,7 +1231,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: No
      * </p>
      * 
-     * @return Second line of contact's address, if any.</p>
+     * @return Second line of contact&apos;s address, if any.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1254,7 +1254,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Second line of contact's address, if any.
+     * Second line of contact&apos;s address, if any.
      * </p>
      * <p>
      * Type: String
@@ -1274,7 +1274,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param addressLine2
-     *        Second line of contact's address, if any.</p>
+     *        Second line of contact&apos;s address, if any.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1299,7 +1299,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The city of the contact's address.
+     * The city of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1319,7 +1319,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param city
-     *        The city of the contact's address.</p>
+     *        The city of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1341,7 +1341,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The city of the contact's address.
+     * The city of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1360,7 +1360,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: Yes
      * </p>
      * 
-     * @return The city of the contact's address.</p>
+     * @return The city of the contact&apos;s address.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1383,7 +1383,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The city of the contact's address.
+     * The city of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1403,7 +1403,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param city
-     *        The city of the contact's address.</p>
+     *        The city of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1428,7 +1428,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state or province of the contact's city.
+     * The state or province of the contact&apos;s city.
      * </p>
      * <p>
      * Type: String
@@ -1448,7 +1448,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param state
-     *        The state or province of the contact's city.</p>
+     *        The state or province of the contact&apos;s city.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1470,7 +1470,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state or province of the contact's city.
+     * The state or province of the contact&apos;s city.
      * </p>
      * <p>
      * Type: String
@@ -1489,7 +1489,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: No
      * </p>
      * 
-     * @return The state or province of the contact's city.</p>
+     * @return The state or province of the contact&apos;s city.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1512,7 +1512,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state or province of the contact's city.
+     * The state or province of the contact&apos;s city.
      * </p>
      * <p>
      * Type: String
@@ -1532,7 +1532,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param state
-     *        The state or province of the contact's city.</p>
+     *        The state or province of the contact&apos;s city.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1557,7 +1557,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Code for the country of the contact's address.
+     * Code for the country of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1577,7 +1577,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact's address.</p>
+     *        Code for the country of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1600,7 +1600,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Code for the country of the contact's address.
+     * Code for the country of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1619,7 +1619,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: Yes
      * </p>
      * 
-     * @return Code for the country of the contact's address.</p>
+     * @return Code for the country of the contact&apos;s address.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1643,7 +1643,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Code for the country of the contact's address.
+     * Code for the country of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1663,7 +1663,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact's address.</p>
+     *        Code for the country of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1689,7 +1689,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Code for the country of the contact's address.
+     * Code for the country of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1709,7 +1709,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact's address.</p>
+     *        Code for the country of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1734,7 +1734,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Code for the country of the contact's address.
+     * Code for the country of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1754,7 +1754,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact's address.</p>
+     *        Code for the country of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1780,7 +1780,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The zip or postal code of the contact's address.
+     * The zip or postal code of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1800,7 +1800,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param zipCode
-     *        The zip or postal code of the contact's address.</p>
+     *        The zip or postal code of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1822,7 +1822,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The zip or postal code of the contact's address.
+     * The zip or postal code of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1841,7 +1841,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * Required: No
      * </p>
      * 
-     * @return The zip or postal code of the contact's address.</p>
+     * @return The zip or postal code of the contact&apos;s address.</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -1864,7 +1864,7 @@ public class ContactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The zip or postal code of the contact's address.
+     * The zip or postal code of the contact&apos;s address.
      * </p>
      * <p>
      * Type: String
@@ -1884,7 +1884,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param zipCode
-     *        The zip or postal code of the contact's address.</p>
+     *        The zip or postal code of the contact&apos;s address.</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1919,8 +1919,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code&gt;]". For
-     * example, a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example,
+     * a US phone number might appear as <code>"+1.1234567890"</code>.
      * </p>
      * <p>
      * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
@@ -1940,8 +1940,8 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code&gt;]".
-     *        For example, a US phone number might appear as
+     *        "+[country dialing code].[number including any area code>]". For
+     *        example, a US phone number might appear as
      *        <code>"+1.1234567890"</code>.
      *        </p>
      *        <p>
@@ -1966,8 +1966,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code&gt;]". For
-     * example, a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example,
+     * a US phone number might appear as <code>"+1.1234567890"</code>.
      * </p>
      * <p>
      * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
@@ -1986,8 +1986,8 @@ public class ContactDetail implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         Constraints: Phone number must be specified in the format
-     *         "+[country dialing code].[number including any area code&gt;]".
-     *         For example, a US phone number might appear as
+     *         "+[country dialing code].[number including any area code>]". For
+     *         example, a US phone number might appear as
      *         <code>"+1.1234567890"</code>.
      *         </p>
      *         <p>
@@ -2013,8 +2013,8 @@ public class ContactDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code&gt;]". For
-     * example, a US phone number might appear as <code>"+1.1234567890"</code>.
+     * "+[country dialing code].[number including any area code>]". For example,
+     * a US phone number might appear as <code>"+1.1234567890"</code>.
      * </p>
      * <p>
      * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>,
@@ -2034,8 +2034,8 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code&gt;]".
-     *        For example, a US phone number might appear as
+     *        "+[country dialing code].[number including any area code>]". For
+     *        example, a US phone number might appear as
      *        <code>"+1.1234567890"</code>.
      *        </p>
      *        <p>

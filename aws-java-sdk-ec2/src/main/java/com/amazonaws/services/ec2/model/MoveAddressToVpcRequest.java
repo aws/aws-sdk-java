@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,12 +25,14 @@ import com.amazonaws.services.ec2.model.transform.MoveAddressToVpcRequestMarshal
  * <p>
  * Moves an Elastic IP address from the EC2-Classic platform to the
  * EC2-VPC platform. The Elastic IP address must be allocated to your
- * account, and it must not be associated with an instance. After the
- * Elastic IP address is moved, it is no longer available for use in the
- * EC2-Classic platform, unless you move it back using the
- * RestoreAddressToClassic request. You cannot move an Elastic IP address
- * that's allocated for use in the EC2-VPC platform to the EC2-Classic
- * platform.
+ * account for more than 24 hours, and it must not be associated with an
+ * instance. After the Elastic IP address is moved, it is no longer
+ * available for use in the EC2-Classic platform, unless you move it back
+ * using the RestoreAddressToClassic request. You cannot move an Elastic
+ * IP address that's allocated for use in the EC2-VPC platform to the
+ * EC2-Classic platform. You cannot migrate an Elastic IP address that's
+ * associated with a reverse DNS record. Contact AWS account and billing
+ * support to remove the reverse DNS record.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#moveAddressToVpc(MoveAddressToVpcRequest)

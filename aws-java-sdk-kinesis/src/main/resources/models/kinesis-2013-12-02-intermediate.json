@@ -1695,8 +1695,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1786,8 +1786,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3110,7 +3110,7 @@
         "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream being described.</p>\n@param streamARN The Amazon Resource Name (ARN) for the stream being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream being described.</p>\n@param streamARN The Amazon Resource Name (ARN) for the stream being described.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
+        "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
         "name" : "StreamStatus",
         "c2jName" : "StreamStatus",
         "c2jShape" : "StreamStatus",
@@ -3118,7 +3118,7 @@
           "variableName" : "streamStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
+          "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3156,10 +3156,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
-        "getterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@return The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
-        "fluentSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
-        "varargSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/"
+        "setterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
+        "getterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@return The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
+        "varargSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/"
       }, {
         "documentation" : "<p>The shards that comprise the stream.</p>",
         "name" : "Shards",
@@ -3262,8 +3262,8 @@
           "simple" : false,
           "simpleType" : "Shard",
           "map" : false,
-          "templateType" : "java.util.List<Shard>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>",
+          "templateType" : "java.util.List<Shard>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3710,8 +3710,8 @@
             "simple" : false,
             "simpleType" : "Shard",
             "map" : false,
-            "templateType" : "java.util.List<Shard>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>",
+            "templateType" : "java.util.List<Shard>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3725,7 +3725,7 @@
           "varargSetterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShards(java.util.Collection)} or {@link #withShards(java.util.Collection)} if you want to override the existing values.</p>\n@param shards The shards that comprise the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "StreamStatus" : {
-          "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
+          "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
           "name" : "StreamStatus",
           "c2jName" : "StreamStatus",
           "c2jShape" : "StreamStatus",
@@ -3733,7 +3733,7 @@
             "variableName" : "streamStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
+            "documentation" : "<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3771,10 +3771,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
-          "getterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@return The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
-          "fluentSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
-          "varargSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/"
+          "setterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
+          "getterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@return The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@see StreamStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
+          "varargSetterDocumentation" : "/**<p>The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li> </ul>\n@param streamStatus The current status of the stream being described.</p> <p>The stream status is one of the following states:</p> <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/"
         }
       }
     },
@@ -4166,8 +4166,8 @@
           "simple" : false,
           "simpleType" : "PutRecordsRequestEntry",
           "map" : false,
-          "templateType" : "java.util.List<PutRecordsRequestEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>",
+          "templateType" : "java.util.List<PutRecordsRequestEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4359,8 +4359,8 @@
             "simple" : false,
             "simpleType" : "PutRecordsRequestEntry",
             "map" : false,
-            "templateType" : "java.util.List<PutRecordsRequestEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>",
+            "templateType" : "java.util.List<PutRecordsRequestEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4538,11 +4538,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4630,11 +4630,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5745,8 +5745,8 @@
           "simple" : false,
           "simpleType" : "Record",
           "map" : false,
-          "templateType" : "java.util.List<Record>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+          "templateType" : "java.util.List<Record>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6037,8 +6037,8 @@
             "simple" : false,
             "simpleType" : "Record",
             "map" : false,
-            "templateType" : "java.util.List<Record>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+            "templateType" : "java.util.List<Record>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7743,8 +7743,8 @@
           "simple" : false,
           "simpleType" : "Tag",
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7932,8 +7932,8 @@
             "simple" : false,
             "simpleType" : "Tag",
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8061,8 +8061,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8199,8 +8199,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9161,8 +9161,8 @@
           "simple" : false,
           "simpleType" : "PutRecordsResultEntry",
           "map" : false,
-          "templateType" : "java.util.List<PutRecordsResultEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>",
+          "templateType" : "java.util.List<PutRecordsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9351,8 +9351,8 @@
             "simple" : false,
             "simpleType" : "PutRecordsResultEntry",
             "map" : false,
-            "templateType" : "java.util.List<PutRecordsResultEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>",
+            "templateType" : "java.util.List<PutRecordsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,

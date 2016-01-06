@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -91,6 +91,7 @@ import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -287,10 +288,11 @@ public class XmlResponsesSaxParser {
      *         stream.
      * @throws AmazonClientException
      */
-    public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream)
+    public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
-        ListBucketHandler handler = new ListBucketHandler();
+        ListBucketHandler handler = new ListBucketHandler(shouldSDKDecodeResponse);
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
+
         return handler;
     }
 
@@ -303,9 +305,9 @@ public class XmlResponsesSaxParser {
      *         stream.
      * @throws AmazonClientException
      */
-    public ListVersionsHandler parseListVersionsResponse(InputStream inputStream)
+    public ListVersionsHandler parseListVersionsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
-        ListVersionsHandler handler = new ListVersionsHandler();
+        ListVersionsHandler handler = new ListVersionsHandler(shouldSDKDecodeResponse);
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
         return handler;
     }
@@ -479,10 +481,15 @@ public class XmlResponsesSaxParser {
      */
     public static class ListBucketHandler extends AbstractHandler {
         private final ObjectListing objectListing = new ObjectListing();
+        private final boolean shouldSDKDecodeResponse;
 
         private S3ObjectSummary currentObject = null;
         private Owner currentOwner = null;
         private String lastKey = null;
+
+        public ListBucketHandler(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
 
         public ObjectListing getObjectListing() {
             return objectListing;
@@ -591,7 +598,8 @@ public class XmlResponsesSaxParser {
             else if (in("ListBucketResult", "Contents")) {
                 if (name.equals("Key")) {
                     lastKey = getText();
-                    currentObject.setKey(lastKey);
+                    currentObject.setKey(
+                            shouldSDKDecodeResponse ? SdkHttpUtils.urlDecode(lastKey) : lastKey);
 
                 } else if (name.equals("LastModified")) {
                     currentObject.setLastModified(
@@ -1041,9 +1049,14 @@ public class XmlResponsesSaxParser {
     public static class ListVersionsHandler extends AbstractHandler {
 
         private final VersionListing versionListing = new VersionListing();
+        private final boolean shouldSDKDecodeResponse;
 
         private S3VersionSummary currentVersionSummary;
         private Owner currentOwner;
+
+        public ListVersionsHandler(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
 
         public VersionListing getListing() {
             return versionListing;
@@ -1138,7 +1151,7 @@ public class XmlResponsesSaxParser {
                     || in("ListVersionsResult", "DeleteMarker")) {
 
                 if (name.equals("Key")) {
-                    currentVersionSummary.setKey(getText());
+                    currentVersionSummary.setKey(shouldSDKDecodeResponse ? SdkHttpUtils.urlDecode(getText()) : getText());
 
                 } else if (name.equals("VersionId")) {
                     currentVersionSummary.setVersionId(getText());

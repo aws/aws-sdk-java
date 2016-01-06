@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,16 +44,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * The stream status is one of the following states:
      * </p>
      * <ul>
-     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
      * immediately returns and sets <code>StreamStatus</code> to
      * <code>CREATING</code>.</li>
-     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * <li><code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
      * completes the deletion.</li>
-     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * <li><code>ACTIVE</code> - The stream exists and is ready for read and
      * write operations or deletion. You should perform read and write
      * operations only on an <code>ACTIVE</code> stream.</li>
-     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * <li><code>UPDATING</code> - Shards in the stream are being merged or
      * split. Read and write operations continue to work while the stream is in
      * the <code>UPDATING</code> state.</li>
      * </ul>
@@ -163,16 +163,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * The stream status is one of the following states:
      * </p>
      * <ul>
-     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
      * immediately returns and sets <code>StreamStatus</code> to
      * <code>CREATING</code>.</li>
-     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * <li><code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
      * completes the deletion.</li>
-     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * <li><code>ACTIVE</code> - The stream exists and is ready for read and
      * write operations or deletion. You should perform read and write
      * operations only on an <code>ACTIVE</code> stream.</li>
-     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * <li><code>UPDATING</code> - Shards in the stream are being merged or
      * split. Read and write operations continue to work while the stream is in
      * the <code>UPDATING</code> state.</li>
      * </ul>
@@ -183,16 +183,16 @@ public class StreamDescription implements Serializable, Cloneable {
      *        The stream status is one of the following states:
      *        </p>
      *        <ul>
-     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
      *        <code>CREATING</code>.</li>
-     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        <li><code>DELETING</code> - The stream is being deleted. The
      *        specified stream is in the <code>DELETING</code> state until
      *        Amazon Kinesis completes the deletion.</li>
-     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        <li><code>ACTIVE</code> - The stream exists and is ready for read
      *        and write operations or deletion. You should perform read and
      *        write operations only on an <code>ACTIVE</code> stream.</li>
-     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        <li><code>UPDATING</code> - Shards in the stream are being merged
      *        or split. Read and write operations continue to work while the
      *        stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
@@ -209,16 +209,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * The stream status is one of the following states:
      * </p>
      * <ul>
-     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
      * immediately returns and sets <code>StreamStatus</code> to
      * <code>CREATING</code>.</li>
-     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * <li><code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
      * completes the deletion.</li>
-     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * <li><code>ACTIVE</code> - The stream exists and is ready for read and
      * write operations or deletion. You should perform read and write
      * operations only on an <code>ACTIVE</code> stream.</li>
-     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * <li><code>UPDATING</code> - Shards in the stream are being merged or
      * split. Read and write operations continue to work while the stream is in
      * the <code>UPDATING</code> state.</li>
      * </ul>
@@ -228,16 +228,16 @@ public class StreamDescription implements Serializable, Cloneable {
      *         The stream status is one of the following states:
      *         </p>
      *         <ul>
-     *         <li> <code>CREATING</code> - The stream is being created. Amazon
+     *         <li><code>CREATING</code> - The stream is being created. Amazon
      *         Kinesis immediately returns and sets <code>StreamStatus</code> to
      *         <code>CREATING</code>.</li>
-     *         <li> <code>DELETING</code> - The stream is being deleted. The
+     *         <li><code>DELETING</code> - The stream is being deleted. The
      *         specified stream is in the <code>DELETING</code> state until
      *         Amazon Kinesis completes the deletion.</li>
-     *         <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *         <li><code>ACTIVE</code> - The stream exists and is ready for read
      *         and write operations or deletion. You should perform read and
      *         write operations only on an <code>ACTIVE</code> stream.</li>
-     *         <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *         <li><code>UPDATING</code> - Shards in the stream are being merged
      *         or split. Read and write operations continue to work while the
      *         stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
@@ -254,16 +254,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * The stream status is one of the following states:
      * </p>
      * <ul>
-     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
      * immediately returns and sets <code>StreamStatus</code> to
      * <code>CREATING</code>.</li>
-     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * <li><code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
      * completes the deletion.</li>
-     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * <li><code>ACTIVE</code> - The stream exists and is ready for read and
      * write operations or deletion. You should perform read and write
      * operations only on an <code>ACTIVE</code> stream.</li>
-     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * <li><code>UPDATING</code> - Shards in the stream are being merged or
      * split. Read and write operations continue to work while the stream is in
      * the <code>UPDATING</code> state.</li>
      * </ul>
@@ -274,16 +274,16 @@ public class StreamDescription implements Serializable, Cloneable {
      *        The stream status is one of the following states:
      *        </p>
      *        <ul>
-     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
      *        <code>CREATING</code>.</li>
-     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        <li><code>DELETING</code> - The stream is being deleted. The
      *        specified stream is in the <code>DELETING</code> state until
      *        Amazon Kinesis completes the deletion.</li>
-     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        <li><code>ACTIVE</code> - The stream exists and is ready for read
      *        and write operations or deletion. You should perform read and
      *        write operations only on an <code>ACTIVE</code> stream.</li>
-     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        <li><code>UPDATING</code> - Shards in the stream are being merged
      *        or split. Read and write operations continue to work while the
      *        stream is in the <code>UPDATING</code> state.</li>
      * @return Returns a reference to this object so that method calls can be
@@ -303,16 +303,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * The stream status is one of the following states:
      * </p>
      * <ul>
-     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
      * immediately returns and sets <code>StreamStatus</code> to
      * <code>CREATING</code>.</li>
-     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * <li><code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
      * completes the deletion.</li>
-     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * <li><code>ACTIVE</code> - The stream exists and is ready for read and
      * write operations or deletion. You should perform read and write
      * operations only on an <code>ACTIVE</code> stream.</li>
-     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * <li><code>UPDATING</code> - Shards in the stream are being merged or
      * split. Read and write operations continue to work while the stream is in
      * the <code>UPDATING</code> state.</li>
      * </ul>
@@ -323,16 +323,16 @@ public class StreamDescription implements Serializable, Cloneable {
      *        The stream status is one of the following states:
      *        </p>
      *        <ul>
-     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
      *        <code>CREATING</code>.</li>
-     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        <li><code>DELETING</code> - The stream is being deleted. The
      *        specified stream is in the <code>DELETING</code> state until
      *        Amazon Kinesis completes the deletion.</li>
-     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        <li><code>ACTIVE</code> - The stream exists and is ready for read
      *        and write operations or deletion. You should perform read and
      *        write operations only on an <code>ACTIVE</code> stream.</li>
-     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        <li><code>UPDATING</code> - Shards in the stream are being merged
      *        or split. Read and write operations continue to work while the
      *        stream is in the <code>UPDATING</code> state.</li>
      * @return Returns a reference to this object so that method calls can be
@@ -351,16 +351,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * The stream status is one of the following states:
      * </p>
      * <ul>
-     * <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis
+     * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
      * immediately returns and sets <code>StreamStatus</code> to
      * <code>CREATING</code>.</li>
-     * <li> <code>DELETING</code> - The stream is being deleted. The specified
+     * <li><code>DELETING</code> - The stream is being deleted. The specified
      * stream is in the <code>DELETING</code> state until Amazon Kinesis
      * completes the deletion.</li>
-     * <li> <code>ACTIVE</code> - The stream exists and is ready for read and
+     * <li><code>ACTIVE</code> - The stream exists and is ready for read and
      * write operations or deletion. You should perform read and write
      * operations only on an <code>ACTIVE</code> stream.</li>
-     * <li> <code>UPDATING</code> - Shards in the stream are being merged or
+     * <li><code>UPDATING</code> - Shards in the stream are being merged or
      * split. Read and write operations continue to work while the stream is in
      * the <code>UPDATING</code> state.</li>
      * </ul>
@@ -371,16 +371,16 @@ public class StreamDescription implements Serializable, Cloneable {
      *        The stream status is one of the following states:
      *        </p>
      *        <ul>
-     *        <li> <code>CREATING</code> - The stream is being created. Amazon
+     *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
      *        <code>CREATING</code>.</li>
-     *        <li> <code>DELETING</code> - The stream is being deleted. The
+     *        <li><code>DELETING</code> - The stream is being deleted. The
      *        specified stream is in the <code>DELETING</code> state until
      *        Amazon Kinesis completes the deletion.</li>
-     *        <li> <code>ACTIVE</code> - The stream exists and is ready for read
+     *        <li><code>ACTIVE</code> - The stream exists and is ready for read
      *        and write operations or deletion. You should perform read and
      *        write operations only on an <code>ACTIVE</code> stream.</li>
-     *        <li> <code>UPDATING</code> - Shards in the stream are being merged
+     *        <li><code>UPDATING</code> - Shards in the stream are being merged
      *        or split. Read and write operations continue to work while the
      *        stream is in the <code>UPDATING</code> state.</li>
      * @return Returns a reference to this object so that method calls can be

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information on how to use
      * custom AMIs with OpsWorks, see <a href=
@@ -512,7 +512,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information on how to use
      * custom AMIs with OpsWorks, see <a href=
@@ -534,7 +534,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
      *        you want to use when you create instances. For more information on
      *        how to use custom AMIs with OpsWorks, see <a href=
@@ -560,7 +560,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information on how to use
      * custom AMIs with OpsWorks, see <a href=
@@ -581,7 +581,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         such as <code>Amazon Linux 2015.03</code>,
      *         <code>Red Hat Enterprise Linux 7</code>,
      *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *         <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
      *         you want to use when you create instances. For more information
      *         on how to use custom AMIs with OpsWorks, see <a href=
@@ -607,7 +607,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information on how to use
      * custom AMIs with OpsWorks, see <a href=
@@ -629,7 +629,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
      *        you want to use when you create instances. For more information on
      *        how to use custom AMIs with OpsWorks, see <a href=

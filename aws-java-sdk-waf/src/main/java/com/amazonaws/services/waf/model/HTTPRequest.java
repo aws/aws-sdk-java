@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      * the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
+     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
      * balancer to send the request</li>
-     * <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
+     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
      * a load balancer to send the request</li>
      * </ul>
      */
@@ -88,9 +88,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      * the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
+     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
      * balancer to send the request</li>
-     * <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
+     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
      * a load balancer to send the request</li>
      * </ul>
      * 
@@ -100,9 +100,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        this is the value of one of the following fields in CloudFront
      *        access logs:</p>
      *        <ul>
-     *        <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or
+     *        <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or
      *        a load balancer to send the request</li>
-     *        <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP
+     *        <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *        proxy or a load balancer to send the request</li>
      */
     public void setClientIP(String clientIP) {
@@ -116,9 +116,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      * the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
+     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
      * balancer to send the request</li>
-     * <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
+     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
      * a load balancer to send the request</li>
      * </ul>
      * 
@@ -127,9 +127,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      *         this is the value of one of the following fields in CloudFront
      *         access logs:</p>
      *         <ul>
-     *         <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or
+     *         <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or
      *         a load balancer to send the request</li>
-     *         <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP
+     *         <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *         proxy or a load balancer to send the request</li>
      */
     public String getClientIP() {
@@ -143,9 +143,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      * the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
+     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load
      * balancer to send the request</li>
-     * <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
+     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or
      * a load balancer to send the request</li>
      * </ul>
      * 
@@ -155,9 +155,9 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        this is the value of one of the following fields in CloudFront
      *        access logs:</p>
      *        <ul>
-     *        <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or
+     *        <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or
      *        a load balancer to send the request</li>
-     *        <li> <code>x-forwarded-for</code>, if the viewer did use an HTTP
+     *        <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *        proxy or a load balancer to send the request</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

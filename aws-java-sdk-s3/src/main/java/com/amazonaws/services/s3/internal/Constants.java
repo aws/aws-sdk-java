@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,9 @@ public class Constants {
 
     /** Default encoding used for text data */
     public static final String DEFAULT_ENCODING = "UTF-8";
+
+    /** URL encoding for s3 object keys */
+    public static final String URL_ENCODING = "url";
 
     /** HMAC/SHA1 Algorithm per RFC 2104, used when signing S3 requests */
     public static final String HMAC_SHA1_ALGORITHM = "HmacSHA1";

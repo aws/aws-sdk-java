@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ public class WafAction implements Serializable, Cloneable {
      * settings in a <code>Rule</code>. Valid settings include the following:
      * </p>
      * <ul>
-     * <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li> <code>COUNT</code>: AWS WAF increments a counter of the requests that
+     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that
      * match all of the conditions in the rule. AWS WAF then continues to
      * inspect the web request based on the remaining rules in the web ACL. You
      * can't specify <code>COUNT</code> for the default action for a
@@ -52,9 +52,9 @@ public class WafAction implements Serializable, Cloneable {
      * settings in a <code>Rule</code>. Valid settings include the following:
      * </p>
      * <ul>
-     * <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li> <code>COUNT</code>: AWS WAF increments a counter of the requests that
+     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that
      * match all of the conditions in the rule. AWS WAF then continues to
      * inspect the web request based on the remaining rules in the web ACL. You
      * can't specify <code>COUNT</code> for the default action for a
@@ -66,9 +66,9 @@ public class WafAction implements Serializable, Cloneable {
      *        the settings in a <code>Rule</code>. Valid settings include the
      *        following:</p>
      *        <ul>
-     *        <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li> <code>COUNT</code>: AWS WAF increments a counter of the
+     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     *        <li><code>COUNT</code>: AWS WAF increments a counter of the
      *        requests that match all of the conditions in the rule. AWS WAF
      *        then continues to inspect the web request based on the remaining
      *        rules in the web ACL. You can't specify <code>COUNT</code> for the
@@ -85,9 +85,9 @@ public class WafAction implements Serializable, Cloneable {
      * settings in a <code>Rule</code>. Valid settings include the following:
      * </p>
      * <ul>
-     * <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li> <code>COUNT</code>: AWS WAF increments a counter of the requests that
+     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that
      * match all of the conditions in the rule. AWS WAF then continues to
      * inspect the web request based on the remaining rules in the web ACL. You
      * can't specify <code>COUNT</code> for the default action for a
@@ -98,9 +98,9 @@ public class WafAction implements Serializable, Cloneable {
      *         the settings in a <code>Rule</code>. Valid settings include the
      *         following:</p>
      *         <ul>
-     *         <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     *         <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     *         <li> <code>COUNT</code>: AWS WAF increments a counter of the
+     *         <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     *         <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     *         <li><code>COUNT</code>: AWS WAF increments a counter of the
      *         requests that match all of the conditions in the rule. AWS WAF
      *         then continues to inspect the web request based on the remaining
      *         rules in the web ACL. You can't specify <code>COUNT</code> for
@@ -117,9 +117,9 @@ public class WafAction implements Serializable, Cloneable {
      * settings in a <code>Rule</code>. Valid settings include the following:
      * </p>
      * <ul>
-     * <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li> <code>COUNT</code>: AWS WAF increments a counter of the requests that
+     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that
      * match all of the conditions in the rule. AWS WAF then continues to
      * inspect the web request based on the remaining rules in the web ACL. You
      * can't specify <code>COUNT</code> for the default action for a
@@ -131,9 +131,9 @@ public class WafAction implements Serializable, Cloneable {
      *        the settings in a <code>Rule</code>. Valid settings include the
      *        following:</p>
      *        <ul>
-     *        <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li> <code>COUNT</code>: AWS WAF increments a counter of the
+     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     *        <li><code>COUNT</code>: AWS WAF increments a counter of the
      *        requests that match all of the conditions in the rule. AWS WAF
      *        then continues to inspect the web request based on the remaining
      *        rules in the web ACL. You can't specify <code>COUNT</code> for the
@@ -153,9 +153,9 @@ public class WafAction implements Serializable, Cloneable {
      * settings in a <code>Rule</code>. Valid settings include the following:
      * </p>
      * <ul>
-     * <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li> <code>COUNT</code>: AWS WAF increments a counter of the requests that
+     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that
      * match all of the conditions in the rule. AWS WAF then continues to
      * inspect the web request based on the remaining rules in the web ACL. You
      * can't specify <code>COUNT</code> for the default action for a
@@ -167,9 +167,9 @@ public class WafAction implements Serializable, Cloneable {
      *        the settings in a <code>Rule</code>. Valid settings include the
      *        following:</p>
      *        <ul>
-     *        <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li> <code>COUNT</code>: AWS WAF increments a counter of the
+     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     *        <li><code>COUNT</code>: AWS WAF increments a counter of the
      *        requests that match all of the conditions in the rule. AWS WAF
      *        then continues to inspect the web request based on the remaining
      *        rules in the web ACL. You can't specify <code>COUNT</code> for the
@@ -188,9 +188,9 @@ public class WafAction implements Serializable, Cloneable {
      * settings in a <code>Rule</code>. Valid settings include the following:
      * </p>
      * <ul>
-     * <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li> <code>COUNT</code>: AWS WAF increments a counter of the requests that
+     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that
      * match all of the conditions in the rule. AWS WAF then continues to
      * inspect the web request based on the remaining rules in the web ACL. You
      * can't specify <code>COUNT</code> for the default action for a
@@ -202,9 +202,9 @@ public class WafAction implements Serializable, Cloneable {
      *        the settings in a <code>Rule</code>. Valid settings include the
      *        following:</p>
      *        <ul>
-     *        <li> <code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li> <code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li> <code>COUNT</code>: AWS WAF increments a counter of the
+     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
+     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
+     *        <li><code>COUNT</code>: AWS WAF increments a counter of the
      *        requests that match all of the conditions in the rule. AWS WAF
      *        then continues to inspect the web request based on the remaining
      *        rules in the web ACL. You can't specify <code>COUNT</code> for the

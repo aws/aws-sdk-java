@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ public class Source implements Serializable, Cloneable {
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * ></a>.
+     * />.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -290,7 +290,7 @@ public class Source implements Serializable, Cloneable {
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * ></a>.
+     * />.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -310,7 +310,7 @@ public class Source implements Serializable, Cloneable {
      *        For more information on how to safely handle IAM credentials, see
      *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        ></a>.
+     *        />.
      *        </p>
      *        <p>
      *        In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -334,7 +334,7 @@ public class Source implements Serializable, Cloneable {
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * ></a>.
+     * />.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -353,7 +353,7 @@ public class Source implements Serializable, Cloneable {
      *         For more information on how to safely handle IAM credentials, see
      *         <a href=
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *         ></a>.
+     *         />.
      *         </p>
      *         <p>
      *         In responses, AWS OpsWorks returns
@@ -377,7 +377,7 @@ public class Source implements Serializable, Cloneable {
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * ></a>.
+     * />.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -397,7 +397,7 @@ public class Source implements Serializable, Cloneable {
      *        For more information on how to safely handle IAM credentials, see
      *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        ></a>.
+     *        />.
      *        </p>
      *        <p>
      *        In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>

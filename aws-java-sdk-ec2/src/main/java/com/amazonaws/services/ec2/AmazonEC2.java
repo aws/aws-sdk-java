@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -188,7 +188,9 @@ public interface AmazonEC2 {
      * EC2-VPC platform back to the EC2-Classic platform. You cannot move an
      * Elastic IP address that was originally allocated for use in EC2-VPC.
      * The Elastic IP address must not be associated with an instance or
-     * network interface.
+     * network interface. You cannot restore an Elastic IP address that's
+     * associated with a reverse DNS record. Contact AWS account and billing
+     * support to remove the reverse DNS record.
      * </p>
      *
      * @param restoreAddressToClassicRequest Container for the necessary
@@ -803,7 +805,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security
-     * groups. EC2-VPC: You can create up to 100 security groups per VPC.
+     * groups. EC2-VPC: You can create up to 500 security groups per VPC.
      * </p>
      * <p>
      * When you create a security group, you specify a friendly name of your
@@ -1604,12 +1606,14 @@ public interface AmazonEC2 {
      * <p>
      * Moves an Elastic IP address from the EC2-Classic platform to the
      * EC2-VPC platform. The Elastic IP address must be allocated to your
-     * account, and it must not be associated with an instance. After the
-     * Elastic IP address is moved, it is no longer available for use in the
-     * EC2-Classic platform, unless you move it back using the
-     * RestoreAddressToClassic request. You cannot move an Elastic IP address
-     * that's allocated for use in the EC2-VPC platform to the EC2-Classic
-     * platform.
+     * account for more than 24 hours, and it must not be associated with an
+     * instance. After the Elastic IP address is moved, it is no longer
+     * available for use in the EC2-Classic platform, unless you move it back
+     * using the RestoreAddressToClassic request. You cannot move an Elastic
+     * IP address that's allocated for use in the EC2-VPC platform to the
+     * EC2-Classic platform. You cannot migrate an Elastic IP address that's
+     * associated with a reverse DNS record. Contact AWS account and billing
+     * support to remove the reverse DNS record.
      * </p>
      *
      * @param moveAddressToVpcRequest Container for the necessary parameters
@@ -4451,17 +4455,19 @@ public interface AmazonEC2 {
      * currently not available for you to use.</b>
      * </p>
      * <p>
-     * Modifies the ID format for the specified resource. You can specify
-     * that resources should receive longer IDs (17-character IDs) when they
-     * are created. The following resource types support longer IDs:
-     * <code>instance</code> | <code>reservation</code> .
+     * Modifies the ID format for the specified resource on a per-region
+     * basis. You can specify that resources should receive longer IDs
+     * (17-character IDs) when they are created. The following resource types
+     * support longer IDs: <code>instance</code> | <code>reservation</code> .
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does
      * not apply to the entire AWS account. By default, an IAM user defaults
      * to the same settings as the root user, unless they explicitly override
-     * the settings by running this request. These settings are applied on a
-     * per-region basis.
+     * the settings by running this request. Resources created with longer
+     * IDs are visible to all IAM users, regardless of these settings and
+     * provided that they have permission to use the relevant
+     * <code>Describe</code> command for the resource type.
      * </p>
      *
      * @param modifyIdFormatRequest Container for the necessary parameters to
@@ -5961,10 +5967,11 @@ public interface AmazonEC2 {
      * currently not available for you to use.</b>
      * </p>
      * <p>
-     * Describes the ID format settings for your resources, for example, to
-     * view which resource types are enabled for longer IDs. This request
-     * only returns information about resource types whose ID formats can be
-     * modified; it does not return information about other resource types.
+     * Describes the ID format settings for your resources on a per-region
+     * basis, for example, to view which resource types are enabled for
+     * longer IDs. This request only returns information about resource types
+     * whose ID formats can be modified; it does not return information about
+     * other resource types.
      * </p>
      * <p>
      * The following resource types support longer IDs:
@@ -5974,8 +5981,10 @@ public interface AmazonEC2 {
      * These settings apply to the IAM user who makes the request; they do
      * not apply to the entire AWS account. By default, an IAM user defaults
      * to the same settings as the root user, unless they explicitly override
-     * the settings by running the ModifyIdFormat command. These settings are
-     * applied on a per-region basis.
+     * the settings by running the ModifyIdFormat command. Resources created
+     * with longer IDs are visible to all IAM users, regardless of these
+     * settings and provided that they have permission to use the relevant
+     * <code>Describe</code> command for the resource type.
      * </p>
      *
      * @param describeIdFormatRequest Container for the necessary parameters
@@ -7780,10 +7789,11 @@ public interface AmazonEC2 {
      * currently not available for you to use.</b>
      * </p>
      * <p>
-     * Describes the ID format settings for your resources, for example, to
-     * view which resource types are enabled for longer IDs. This request
-     * only returns information about resource types whose ID formats can be
-     * modified; it does not return information about other resource types.
+     * Describes the ID format settings for your resources on a per-region
+     * basis, for example, to view which resource types are enabled for
+     * longer IDs. This request only returns information about resource types
+     * whose ID formats can be modified; it does not return information about
+     * other resource types.
      * </p>
      * <p>
      * The following resource types support longer IDs:
@@ -7793,8 +7803,10 @@ public interface AmazonEC2 {
      * These settings apply to the IAM user who makes the request; they do
      * not apply to the entire AWS account. By default, an IAM user defaults
      * to the same settings as the root user, unless they explicitly override
-     * the settings by running the ModifyIdFormat command. These settings are
-     * applied on a per-region basis.
+     * the settings by running the ModifyIdFormat command. Resources created
+     * with longer IDs are visible to all IAM users, regardless of these
+     * settings and provided that they have permission to use the relevant
+     * <code>Describe</code> command for the resource type.
      * </p>
      * 
      * @return The response from the DescribeIdFormat service method, as

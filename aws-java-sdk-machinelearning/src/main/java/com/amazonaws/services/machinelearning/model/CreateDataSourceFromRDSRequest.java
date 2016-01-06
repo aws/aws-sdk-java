@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -127,7 +127,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The role that Amazon ML assumes on behalf of the user to create and
-     * activate a data pipeline in the user’s account and copy data (using the
+     * activate a data pipeline in the user???s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.
      * </p>
      * <p>
@@ -770,7 +770,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The role that Amazon ML assumes on behalf of the user to create and
-     * activate a data pipeline in the user’s account and copy data (using the
+     * activate a data pipeline in the user???s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.
      * </p>
      * <p>
@@ -778,7 +778,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * 
      * @param roleARN
      *        The role that Amazon ML assumes on behalf of the user to create
-     *        and activate a data pipeline in the user’s account and copy data
+     *        and activate a data pipeline in the user???s account and copy data
      *        (using the <code>SelectSqlQuery</code>) query from Amazon RDS to
      *        Amazon S3.</p>
      *        <p>
@@ -790,14 +790,14 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The role that Amazon ML assumes on behalf of the user to create and
-     * activate a data pipeline in the user’s account and copy data (using the
+     * activate a data pipeline in the user???s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.
      * </p>
      * <p>
      * </p>
      * 
      * @return The role that Amazon ML assumes on behalf of the user to create
-     *         and activate a data pipeline in the user’s account and copy data
+     *         and activate a data pipeline in the user???s account and copy data
      *         (using the <code>SelectSqlQuery</code>) query from Amazon RDS to
      *         Amazon S3.</p>
      *         <p>
@@ -809,7 +809,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The role that Amazon ML assumes on behalf of the user to create and
-     * activate a data pipeline in the user’s account and copy data (using the
+     * activate a data pipeline in the user???s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.
      * </p>
      * <p>
@@ -817,7 +817,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * 
      * @param roleARN
      *        The role that Amazon ML assumes on behalf of the user to create
-     *        and activate a data pipeline in the user’s account and copy data
+     *        and activate a data pipeline in the user???s account and copy data
      *        (using the <code>SelectSqlQuery</code>) query from Amazon RDS to
      *        Amazon S3.</p>
      *        <p>

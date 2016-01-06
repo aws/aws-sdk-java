@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1222,7 +1222,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * explicitly grants permissions. For more information on user permissions,
      * see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * ></a>.
+     * />.
      * </p>
      * 
      * @param deregisterEcsClusterRequest

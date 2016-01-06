@@ -1435,9 +1435,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "LoadBalancer",
+          "map" : false,
           "templateType" : "java.util.List<LoadBalancer>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1856,9 +1856,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Deployment",
+          "map" : false,
           "templateType" : "java.util.List<Deployment>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Deployment>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Deployment>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2022,9 +2022,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "ServiceEvent",
+          "map" : false,
           "templateType" : "java.util.List<ServiceEvent>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ServiceEvent>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ServiceEvent>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2316,9 +2316,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "ServiceEvent",
+            "map" : false,
             "templateType" : "java.util.List<ServiceEvent>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ServiceEvent>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ServiceEvent>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2744,9 +2744,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "LoadBalancer",
+            "map" : false,
             "templateType" : "java.util.List<LoadBalancer>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2912,9 +2912,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Deployment",
+            "map" : false,
             "templateType" : "java.util.List<Deployment>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Deployment>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Deployment>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3071,9 +3071,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Service",
+          "map" : false,
           "templateType" : "java.util.List<Service>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Service>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Service>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3186,9 +3186,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Failure",
+          "map" : false,
           "templateType" : "java.util.List<Failure>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3324,9 +3324,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Service",
+            "map" : false,
             "templateType" : "java.util.List<Service>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Service>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Service>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3440,9 +3440,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Failure",
+            "map" : false,
             "templateType" : "java.util.List<Failure>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3659,9 +3659,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3849,9 +3849,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5483,9 +5483,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "LoadBalancer",
+          "map" : false,
           "templateType" : "java.util.List<LoadBalancer>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5985,9 +5985,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "LoadBalancer",
+            "map" : false,
             "templateType" : "java.util.List<LoadBalancer>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7077,9 +7077,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7168,9 +7168,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7501,9 +7501,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Resource",
+          "map" : false,
           "templateType" : "java.util.List<Resource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7718,9 +7718,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Attribute",
+          "map" : false,
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7860,9 +7860,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Attribute",
+            "map" : false,
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8028,9 +8028,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Resource",
+            "map" : false,
             "templateType" : "java.util.List<Resource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8640,9 +8640,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8731,9 +8731,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9393,9 +9393,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Task",
+          "map" : false,
           "templateType" : "java.util.List<Task>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9508,9 +9508,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Failure",
+          "map" : false,
           "templateType" : "java.util.List<Failure>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9646,9 +9646,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Failure",
+            "map" : false,
             "templateType" : "java.util.List<Failure>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9762,9 +9762,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Task",
+            "map" : false,
             "templateType" : "java.util.List<Task>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11099,9 +11099,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11241,9 +11241,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12236,9 +12236,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "ContainerDefinition",
+          "map" : false,
           "templateType" : "java.util.List<ContainerDefinition>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12351,9 +12351,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Volume",
+          "map" : false,
           "templateType" : "java.util.List<Volume>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12493,9 +12493,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "ContainerDefinition",
+            "map" : false,
             "templateType" : "java.util.List<ContainerDefinition>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12661,9 +12661,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Volume",
+            "map" : false,
             "templateType" : "java.util.List<Volume>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13146,9 +13146,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Container",
+          "map" : false,
           "templateType" : "java.util.List<Container>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Container>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Container>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13591,9 +13591,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Container",
+            "map" : false,
             "templateType" : "java.util.List<Container>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Container>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Container>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17024,7 +17024,7 @@
         "fluentSetterDocumentation" : "/**<p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <ul> <li>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>\n@param image The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <ul> <li>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <ul> <li>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>\n@param image The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <ul> <li>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>",
+        "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>",
         "name" : "Cpu",
         "c2jName" : "cpu",
         "c2jShape" : "Integer",
@@ -17032,7 +17032,7 @@
           "variableName" : "cpu",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
-          "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>",
+          "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -17070,10 +17070,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
-        "getterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@return The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
-        "fluentSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
+        "getterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@return The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
+        "fluentSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The number of MiB of memory to reserve for the container. You must specify a non-zero integer for this parameter; the Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB of memory for your containers. If your container attempts to exceed the memory allocated here, the container is killed. This parameter maps to <code>Memory</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p>",
         "name" : "Memory",
@@ -17175,9 +17175,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17290,9 +17290,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "PortMapping",
+          "map" : false,
           "templateType" : "java.util.List<PortMapping>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PortMapping>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PortMapping>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17405,9 +17405,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17469,9 +17469,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17584,9 +17584,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "KeyValuePair",
+          "map" : false,
           "templateType" : "java.util.List<KeyValuePair>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17699,9 +17699,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "MountPoint",
+          "map" : false,
           "templateType" : "java.util.List<MountPoint>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountPoint>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountPoint>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17814,9 +17814,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "VolumeFrom",
+          "map" : false,
           "templateType" : "java.util.List<VolumeFrom>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeFrom>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeFrom>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18184,9 +18184,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18248,9 +18248,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18363,9 +18363,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "HostEntry",
+          "map" : false,
           "templateType" : "java.util.List<HostEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<HostEntry>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<HostEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18427,9 +18427,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18491,11 +18491,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -18607,9 +18607,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Ulimit",
+          "map" : false,
           "templateType" : "java.util.List<Ulimit>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Ulimit>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Ulimit>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18796,9 +18796,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "KeyValuePair",
+            "map" : false,
             "templateType" : "java.util.List<KeyValuePair>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18861,9 +18861,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18926,9 +18926,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19250,9 +19250,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "VolumeFrom",
+            "map" : false,
             "templateType" : "java.util.List<VolumeFrom>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeFrom>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeFrom>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19370,7 +19370,7 @@
           "varargSetterDocumentation" : "/**<p>The number of MiB of memory to reserve for the container. You must specify a non-zero integer for this parameter; the Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB of memory for your containers. If your container attempts to exceed the memory allocated here, the container is killed. This parameter maps to <code>Memory</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p>\n@param memory The number of MiB of memory to reserve for the container. You must specify a non-zero integer for this parameter; the Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB of memory for your containers. If your container attempts to exceed the memory allocated here, the container is killed. This parameter maps to <code>Memory</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Cpu" : {
-          "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>",
+          "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>",
           "name" : "Cpu",
           "c2jName" : "cpu",
           "c2jShape" : "Integer",
@@ -19378,7 +19378,7 @@
             "variableName" : "cpu",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
-            "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>",
+            "documentation" : "<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -19416,10 +19416,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
-          "getterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@return The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
-          "fluentSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li> </ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
+          "getterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@return The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>*/",
+          "fluentSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li></ul>\n@param cpu The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and containers share unallocated CPU units with other containers on the instance with the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/reference/commandline/run/\">docker run</a>.</p> <note> <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instances</a> detail page by 1,024.</p> </note> <p>For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time. However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.</p> <p>The Docker daemon on the container instance uses the CPU value to calculate the relative CPU share ratios for running containers. For more information, see <a href=\"https://docs.docker.com/reference/run/#cpu-share-constraint\">CPU share constraint</a> in the Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as 2.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ReadonlyRootFilesystem" : {
           "documentation" : "<p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/reference/api/docker_remote_api_v1.19/\">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>",
@@ -19575,9 +19575,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19691,9 +19691,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "HostEntry",
+            "map" : false,
             "templateType" : "java.util.List<HostEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<HostEntry>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<HostEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19808,9 +19808,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19924,9 +19924,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Ulimit",
+            "map" : false,
             "templateType" : "java.util.List<Ulimit>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Ulimit>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Ulimit>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20041,9 +20041,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20209,9 +20209,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "MountPoint",
+            "map" : false,
             "templateType" : "java.util.List<MountPoint>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountPoint>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountPoint>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20325,9 +20325,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "PortMapping",
+            "map" : false,
             "templateType" : "java.util.List<PortMapping>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PortMapping>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PortMapping>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20390,9 +20390,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20455,11 +20455,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -20671,9 +20671,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20861,9 +20861,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20989,9 +20989,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "ContainerOverride",
+          "map" : false,
           "templateType" : "java.util.List<ContainerOverride>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerOverride>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerOverride>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21127,9 +21127,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "ContainerOverride",
+            "map" : false,
             "templateType" : "java.util.List<ContainerOverride>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerOverride>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerOverride>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21949,9 +21949,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "NetworkBinding",
+          "map" : false,
           "templateType" : "java.util.List<NetworkBinding>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22247,9 +22247,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "NetworkBinding",
+            "map" : false,
             "templateType" : "java.util.List<NetworkBinding>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24411,9 +24411,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Cluster",
+          "map" : false,
           "templateType" : "java.util.List<Cluster>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Cluster>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Cluster>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24526,9 +24526,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Failure",
+          "map" : false,
           "templateType" : "java.util.List<Failure>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24664,9 +24664,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Cluster",
+            "map" : false,
             "templateType" : "java.util.List<Cluster>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Cluster>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Cluster>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24780,9 +24780,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Failure",
+            "map" : false,
             "templateType" : "java.util.List<Failure>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26552,9 +26552,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26742,9 +26742,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26819,9 +26819,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27009,9 +27009,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27086,9 +27086,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27276,9 +27276,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27404,9 +27404,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Task",
+          "map" : false,
           "templateType" : "java.util.List<Task>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27519,9 +27519,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Failure",
+          "map" : false,
           "templateType" : "java.util.List<Failure>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27657,9 +27657,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Failure",
+            "map" : false,
             "templateType" : "java.util.List<Failure>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27773,9 +27773,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Task",
+            "map" : false,
             "templateType" : "java.util.List<Task>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27901,9 +27901,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Task",
+          "map" : false,
           "templateType" : "java.util.List<Task>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28016,9 +28016,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Failure",
+          "map" : false,
           "templateType" : "java.util.List<Failure>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28154,9 +28154,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Failure",
+            "map" : false,
             "templateType" : "java.util.List<Failure>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28270,9 +28270,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Task",
+            "map" : false,
             "templateType" : "java.util.List<Task>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Task>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28449,9 +28449,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "ContainerDefinition",
+          "map" : false,
           "templateType" : "java.util.List<ContainerDefinition>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28666,9 +28666,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Volume",
+          "map" : false,
           "templateType" : "java.util.List<Volume>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28832,9 +28832,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Attribute",
+          "map" : false,
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28970,9 +28970,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Attribute",
+            "map" : false,
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29242,9 +29242,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "ContainerDefinition",
+            "map" : false,
             "templateType" : "java.util.List<ContainerDefinition>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerDefinition>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29410,9 +29410,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Volume",
+            "map" : false,
             "templateType" : "java.util.List<Volume>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Volume>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29569,9 +29569,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29660,9 +29660,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30770,9 +30770,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "NetworkBinding",
+          "map" : false,
           "templateType" : "java.util.List<NetworkBinding>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31064,9 +31064,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "NetworkBinding",
+            "map" : false,
             "templateType" : "java.util.List<NetworkBinding>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkBinding>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31501,9 +31501,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Resource",
+          "map" : false,
           "templateType" : "java.util.List<Resource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31616,9 +31616,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Resource",
+          "map" : false,
           "templateType" : "java.util.List<Resource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31986,9 +31986,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Attribute",
+          "map" : false,
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32124,9 +32124,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Resource",
+            "map" : false,
             "templateType" : "java.util.List<Resource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32344,9 +32344,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Attribute",
+            "map" : false,
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32720,9 +32720,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Resource",
+            "map" : false,
             "templateType" : "java.util.List<Resource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33104,9 +33104,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33451,9 +33451,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33820,9 +33820,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "ContainerInstance",
+          "map" : false,
           "templateType" : "java.util.List<ContainerInstance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerInstance>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerInstance>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33935,9 +33935,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "Failure",
+          "map" : false,
           "templateType" : "java.util.List<Failure>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34073,9 +34073,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "ContainerInstance",
+            "map" : false,
             "templateType" : "java.util.List<ContainerInstance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerInstance>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ContainerInstance>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34189,9 +34189,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "Failure",
+            "map" : false,
             "templateType" : "java.util.List<Failure>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Failure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34558,11 +34558,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -34698,11 +34698,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -34776,9 +34776,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34867,9 +34867,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35687,9 +35687,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35802,9 +35802,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : false,
           "simpleType" : "KeyValuePair",
+          "map" : false,
           "templateType" : "java.util.List<KeyValuePair>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35940,9 +35940,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : false,
             "simpleType" : "KeyValuePair",
+            "map" : false,
             "templateType" : "java.util.List<KeyValuePair>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyValuePair>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36005,9 +36005,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -37411,9 +37411,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37601,9 +37601,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

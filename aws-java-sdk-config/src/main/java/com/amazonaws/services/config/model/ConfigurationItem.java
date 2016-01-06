@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
     private String configurationStateId;
     /**
      * <p>
-     * Unique MD5 hash that represents the configuration item's state.
+     * Unique MD5 hash that represents the configuration item&apos;s state.
      * </p>
      * <p>
      * You can use MD5 hash to compare the states of two or more configuration
@@ -387,7 +387,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique MD5 hash that represents the configuration item's state.
+     * Unique MD5 hash that represents the configuration item&apos;s state.
      * </p>
      * <p>
      * You can use MD5 hash to compare the states of two or more configuration
@@ -395,7 +395,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurationItemMD5Hash
-     *        Unique MD5 hash that represents the configuration item's
+     *        Unique MD5 hash that represents the configuration item&apos;s
      *        state.</p>
      *        <p>
      *        You can use MD5 hash to compare the states of two or more
@@ -407,14 +407,14 @@ public class ConfigurationItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique MD5 hash that represents the configuration item's state.
+     * Unique MD5 hash that represents the configuration item&apos;s state.
      * </p>
      * <p>
      * You can use MD5 hash to compare the states of two or more configuration
      * items that are associated with the same resource.
      * </p>
      * 
-     * @return Unique MD5 hash that represents the configuration item's
+     * @return Unique MD5 hash that represents the configuration item&apos;s
      *         state.</p>
      *         <p>
      *         You can use MD5 hash to compare the states of two or more
@@ -426,7 +426,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique MD5 hash that represents the configuration item's state.
+     * Unique MD5 hash that represents the configuration item&apos;s state.
      * </p>
      * <p>
      * You can use MD5 hash to compare the states of two or more configuration
@@ -434,7 +434,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurationItemMD5Hash
-     *        Unique MD5 hash that represents the configuration item's
+     *        Unique MD5 hash that represents the configuration item&apos;s
      *        state.</p>
      *        <p>
      *        You can use MD5 hash to compare the states of two or more

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,14 +15,18 @@
 package com.amazonaws.http.protocol;
 
 import java.io.IOException;
+import java.net.Socket;
 
 import org.apache.http.HttpClientConnection;
 import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.conn.ManagedHttpClientConnection;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpRequestExecutor;
 
+import com.amazonaws.internal.SdkMetricsSocket;
+import com.amazonaws.internal.SdkSSLMetricsSocket;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 
@@ -39,8 +43,20 @@ public class SdkHttpRequestExecutor extends HttpRequestExecutor {
                 throws IOException, HttpException {
         AWSRequestMetrics awsRequestMetrics = (AWSRequestMetrics) context
                 .getAttribute(AWSRequestMetrics.class.getSimpleName());
+
         if (awsRequestMetrics == null) {
             return super.doSendRequest(request, conn, context);
+        }
+        if (conn instanceof ManagedHttpClientConnection) {
+            ManagedHttpClientConnection managedConn = (ManagedHttpClientConnection)conn;
+            Socket sock = managedConn.getSocket();
+            if (sock instanceof SdkMetricsSocket) {
+                SdkMetricsSocket sdkMetricsSocket = (SdkMetricsSocket)sock;
+                sdkMetricsSocket.setMetrics(awsRequestMetrics);
+            } else if (sock instanceof SdkSSLMetricsSocket) {
+                SdkSSLMetricsSocket sdkSSLMetricsSocket = (SdkSSLMetricsSocket)sock;
+                sdkSSLMetricsSocket.setMetrics(awsRequestMetrics);
+            }
         }
         awsRequestMetrics.startEvent(Field.HttpClientSendRequestTime);
         try {

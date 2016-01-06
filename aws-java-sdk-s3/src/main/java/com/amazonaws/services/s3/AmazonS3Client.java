@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -237,6 +237,7 @@ import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
 import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
+import com.amazonaws.services.s3.request.S3HandlerContextKeys;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -412,7 +413,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public AmazonS3Client(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         this(new StaticCredentialsProvider(awsCredentials), clientConfiguration);
-        init();
     }
 
     /**
@@ -459,7 +459,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
         this(credentialsProvider, clientConfiguration, requestMetricCollector, SkipMd5CheckStrategy.INSTANCE);
-        init();
     }
 
     /**
@@ -640,6 +639,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throws AmazonClientException, AmazonServiceException {
         rejectNull(listVersionsRequest.getBucketName(), "The bucket name parameter must be specified when listing versions in a bucket");
 
+        /**
+         * This flag shows whether we need to url decode S3 key names. This flag is enabled
+         * only when the customers don't explicitly call {@link listVersionsRequest#setEncodingType(String)},
+         * otherwise, it will be disabled for maintaining backwards compatibility.
+         */
+        final boolean shouldSDKDecodeResponse = listVersionsRequest.getEncodingType() == null;
+
         Request<ListVersionsRequest> request = createRequest(listVersionsRequest.getBucketName(), null, listVersionsRequest, HttpMethodName.GET);
         request.addParameter("versions", null);
 
@@ -648,9 +654,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listVersionsRequest.getVersionIdMarker() != null) request.addParameter("version-id-marker", listVersionsRequest.getVersionIdMarker());
         if (listVersionsRequest.getDelimiter() != null) request.addParameter("delimiter", listVersionsRequest.getDelimiter());
         if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults().intValue() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
-        if (listVersionsRequest.getEncodingType() != null) request.addParameter("encoding-type", listVersionsRequest.getEncodingType());
+        request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listVersionsRequest.getEncodingType());
 
-        return invoke(request, new Unmarshallers.VersionListUnmarshaller(), listVersionsRequest.getBucketName(), null);
+        return invoke(request, new Unmarshallers.VersionListUnmarshaller(shouldSDKDecodeResponse), listVersionsRequest.getBucketName(), null);
     }
 
     @Override
@@ -670,14 +676,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throws AmazonClientException, AmazonServiceException {
         rejectNull(listObjectsRequest.getBucketName(), "The bucket name parameter must be specified when listing objects in a bucket");
 
+        /**
+         * This flag shows whether we need to url decode S3 key names. This flag is enabled
+         * only when the customers don't explicitly call {@link ListObjectsRequest#setEncodingType(String)},
+         * otherwise, it will be disabled for maintaining backwards compatibility.
+         */
+        final boolean shouldSDKDecodeResponse = listObjectsRequest.getEncodingType() == null;
+
         Request<ListObjectsRequest> request = createRequest(listObjectsRequest.getBucketName(), null, listObjectsRequest, HttpMethodName.GET);
         if (listObjectsRequest.getPrefix() != null) request.addParameter("prefix", listObjectsRequest.getPrefix());
         if (listObjectsRequest.getMarker() != null) request.addParameter("marker", listObjectsRequest.getMarker());
         if (listObjectsRequest.getDelimiter() != null) request.addParameter("delimiter", listObjectsRequest.getDelimiter());
         if (listObjectsRequest.getMaxKeys() != null && listObjectsRequest.getMaxKeys().intValue() >= 0) request.addParameter("max-keys", listObjectsRequest.getMaxKeys().toString());
-        if (listObjectsRequest.getEncodingType() != null) request.addParameter("encoding-type", listObjectsRequest.getEncodingType());
+        request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listObjectsRequest.getEncodingType());
 
-        return invoke(request, new Unmarshallers.ListObjectsUnmarshaller(), listObjectsRequest.getBucketName(), null);
+        return invoke(request, new Unmarshallers.ListObjectsUnmarshaller(shouldSDKDecodeResponse), listObjectsRequest.getBucketName(), null);
     }
 
     @Override
@@ -2994,8 +3007,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             final AmazonWebServiceRequest req = request.getOriginalRequest();
 
             if (!(signer instanceof AWSS3V4Signer) && ((upgradeToSigV4(req)))) {
-                boolean isChunkedEncodingDisabled = this.clientOptions.isChunkedEncodingDisabled();
-                final AWSS3V4Signer v4Signer = new AWSS3V4Signer(isChunkedEncodingDisabled);
+                final AWSS3V4Signer v4Signer = new AWSS3V4Signer();
                 // Always set the service name; if the user has overridden it via
                 // setEndpoint(String, String, String), this will return the right
                 // value. Otherwise it will return "s3", which is an appropriate
@@ -3569,6 +3581,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod, URI endpoint) {
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
+        request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
+                Boolean.valueOf(clientOptions.isChunkedEncodingDisabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         return request;
     }
@@ -3611,13 +3625,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         checkHttps(originalRequest);
         ExecutionContext executionContext = createExecutionContext(originalRequest);
         // Retry V4 auth errors
-        S3RequestEndpointResolver endpointResolver = buildDefaultEndpointResolver(getProtocol(request),
-                                                                                  bucket, key);
-        boolean isChunkedEncodingDisabled = this.clientOptions.isChunkedEncodingDisabled();
-        S3V4AuthErrorRetryStrategy authErrRetryStrategy = new S3V4AuthErrorRetryStrategy(endpointResolver,
-                                                                                         isChunkedEncodingDisabled);
-        executionContext.setAuthErrorRetryStrategy(authErrRetryStrategy);
-        // -- ends retry strategy.
+        executionContext.setAuthErrorRetryStrategy(
+                new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);

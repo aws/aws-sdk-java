@@ -4,13 +4,12 @@
     "apiVersion":"2015-07-01",
     "endpointPrefix":"marketplacecommerceanalytics",
     "jsonVersion":"1.1",
+    "protocol":"json",
     "serviceFullName":"AWS Marketplace Commerce Analytics",
     "signatureVersion":"v4",
     "signingName":"marketplacecommerceanalytics",
-    "targetPrefix":"MarketplaceCommerceAnalytics20150701",
-    "protocol":"json"
+    "targetPrefix":"MarketplaceCommerceAnalytics20150701"
   },
-  "documentation":"Provides AWS Marketplace business intelligence data on-demand.",
   "operations":{
     "GenerateDataSet":{
       "name":"GenerateDataSet",
@@ -18,21 +17,10 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"GenerateDataSetRequest",
-        "documentation":"Container for the parameters to the GenerateDataSet operation."
-      },
-      "output":{
-        "shape":"GenerateDataSetResult",
-        "documentation":"Container for the result of the GenerateDataSet operation."
-      },
+      "input":{"shape":"GenerateDataSetRequest"},
+      "output":{"shape":"GenerateDataSetResult"},
       "errors":[
-        {
-          "shape":"MarketplaceCommerceAnalyticsException",
-          "exception":true,
-          "fault":true,
-          "documentation":"This exception is thrown when an internal service error occurs."
-        }
+        {"shape":"MarketplaceCommerceAnalyticsException"}
       ],
       "documentation":"Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics, sns:Publish, iam:GetRolePolicy."
     }
@@ -48,6 +36,7 @@
     },
     "DataSetType":{
       "type":"string",
+      "documentation":"The type of the data set to publish.",
       "enum":[
         "customer_subscriber_hourly_monthly_subscriptions",
         "customer_subscriber_annual_subscriptions",
@@ -66,14 +55,13 @@
         "customer_profile_by_industry",
         "customer_profile_by_revenue"
       ],
-      "min":1,
       "max":255,
-      "documentation":"The type of the data set to publish."
+      "min":1
     },
     "DestinationS3BucketName":{
       "type":"string",
-      "min":1,
-      "documentation":"The name (friendly name, not ARN) of the destination S3 bucket."
+      "documentation":"The name (friendly name, not ARN) of the destination S3 bucket.",
+      "min":1
     },
     "DestinationS3Prefix":{
       "type":"string",
@@ -111,21 +99,20 @@
       "members":{
         "message":{"shape":"ExceptionMessage"}
       },
+      "documentation":"This exception is thrown when an internal service error occurs.",
       "exception":true,
-      "fault":true,
-      "documentation":"This exception is thrown when an internal service error occurs."
+      "fault":true
     },
     "RoleNameArn":{
       "type":"string",
-      "min":1,
-      "documentation":"The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services."
+      "documentation":"The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.",
+      "min":1
     },
     "SnsTopicArn":{
       "type":"string",
-      "min":1,
-      "documentation":"Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred."
+      "documentation":"Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.",
+      "min":1
     }
   },
-  "examples":{
-  }
+  "documentation":"Provides AWS Marketplace business intelligence data on-demand."
 }

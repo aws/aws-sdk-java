@@ -4,7 +4,7 @@
     "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
-    "documentation" : "<p>AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to Amazon Web Services (AWS). Using AWS Direct Connect, you can establish private connectivity between AWS and your data center, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.</p> <p>The AWS Direct Connect API Reference provides descriptions, syntax, and usage examples for each of the actions and data types for AWS Direct Connect. Use the following links to get started using the <i>AWS Direct Connect API Reference</i>:</p> <ul> <li> <a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html\">Actions</a>: An alphabetical list of all AWS Direct Connect actions.</li> <li> <a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html\">Data Types</a>: An alphabetical list of all AWS Direct Connect data types.</li> <li> <a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html\">Common Query Parameters</a>: Parameters that all Query actions can use.</li> <li> <a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html\">Common Errors</a>: Client and server errors that all actions can return.</li> </ul>",
+    "documentation" : "<p>AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to Amazon Web Services (AWS). Using AWS Direct Connect, you can establish private connectivity between AWS and your data center, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.</p> <p>The AWS Direct Connect API Reference provides descriptions, syntax, and usage examples for each of the actions and data types for AWS Direct Connect. Use the following links to get started using the <i>AWS Direct Connect API Reference</i>:</p> <ul> <li><a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html\">Actions</a>: An alphabetical list of all AWS Direct Connect actions.</li> <li><a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html\">Data Types</a>: An alphabetical list of all AWS Direct Connect data types.</li> <li><a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html\">Common Query Parameters</a>: Parameters that all Query actions can use.</li> <li><a href=\"http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html\">Common Errors</a>: Client and server errors that all actions can return.</li> </ul>",
     "defaultEndpoint" : "https://directconnect.us-east-1.amazonaws.com/",
     "defaultEndpointWithoutHttpProtocol" : "directconnect.us-east-1.amazonaws.com/",
     "syncInterface" : "AmazonDirectConnect",
@@ -1735,8 +1735,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -2393,8 +2393,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -3443,8 +3443,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -4101,8 +4101,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -4606,8 +4606,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Location",
           "simple" : false,
+          "simpleType" : "Location",
           "map" : false,
           "templateType" : "java.util.List<Location>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>"
@@ -4744,8 +4744,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Location",
             "simple" : false,
+            "simpleType" : "Location",
             "map" : false,
             "templateType" : "java.util.List<Location>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>"
@@ -4765,7 +4765,7 @@
     },
     "ConnectionState" : {
       "c2jName" : "ConnectionState",
-      "documentation" : "State of the connection. <ul> <li> <b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</li> <li> <b>Requested</b>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li> <b>Pending</b>: The connection has been approved, and is being initialized.</li> <li> <b>Available</b>: The network link is up, and the connection is ready for use.</li> <li> <b>Down</b>: The network link is down.</li> <li> <b>Deleting</b>: The connection is in the process of being deleted.</li> <li> <b>Deleted</b>: The connection has been deleted.</li> <li> <b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the end customer.</li> </ul>",
+      "documentation" : "State of the connection. <ul> <li><b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</li> <li><b>Requested</b>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li><b>Pending</b>: The connection has been approved, and is being initialized.</li> <li><b>Available</b>: The network link is up, and the connection is ready for use.</li> <li><b>Down</b>: The network link is down.</li> <li><b>Deleting</b>: The connection is in the process of being deleted.</li> <li><b>Deleted</b>: The connection has been deleted.</li> <li><b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the end customer.</li> </ul>",
       "shapeName" : "ConnectionState",
       "deprecated" : false,
       "required" : null,
@@ -5892,8 +5892,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Connection",
           "simple" : false,
+          "simpleType" : "Connection",
           "map" : false,
           "templateType" : "java.util.List<Connection>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -6030,8 +6030,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Connection",
             "simple" : false,
+            "simpleType" : "Connection",
             "map" : false,
             "templateType" : "java.util.List<Connection>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -7117,8 +7117,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -7775,8 +7775,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -10420,8 +10420,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -11078,8 +11078,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -11414,8 +11414,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Connection",
           "simple" : false,
+          "simpleType" : "Connection",
           "map" : false,
           "templateType" : "java.util.List<Connection>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -11552,8 +11552,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Connection",
             "simple" : false,
+            "simpleType" : "Connection",
             "map" : false,
             "templateType" : "java.util.List<Connection>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -11925,8 +11925,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "VirtualGateway",
           "simple" : false,
+          "simpleType" : "VirtualGateway",
           "map" : false,
           "templateType" : "java.util.List<VirtualGateway>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>"
@@ -12063,8 +12063,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "VirtualGateway",
             "simple" : false,
+            "simpleType" : "VirtualGateway",
             "map" : false,
             "templateType" : "java.util.List<VirtualGateway>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>"
@@ -17051,8 +17051,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -17501,8 +17501,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -20040,8 +20040,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -20698,8 +20698,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -22840,7 +22840,7 @@
     },
     "VirtualInterfaceState" : {
       "c2jName" : "VirtualInterfaceState",
-      "documentation" : "State of the virtual interface. <ul> <li> <b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li> <b>Verifying</b>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li> <li> <b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</li> <li> <b>Available</b>: A virtual interface that is able to forward traffic.</li> <li> <b>Down</b>: A virtual interface that is BGP down.</li> <li> <b>Deleting</b>: A virtual interface is in this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li> <b>Deleted</b>: A virtual interface that cannot forward traffic.</li> <li> <b>Rejected</b>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the 'Rejected' state.</li> </ul>",
+      "documentation" : "State of the virtual interface. <ul> <li><b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li><b>Verifying</b>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li> <li><b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</li> <li><b>Available</b>: A virtual interface that is able to forward traffic.</li> <li><b>Down</b>: A virtual interface that is BGP down.</li> <li><b>Deleting</b>: A virtual interface is in this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot forward traffic.</li> <li><b>Rejected</b>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the 'Rejected' state.</li> </ul>",
       "shapeName" : "VirtualInterfaceState",
       "deprecated" : false,
       "required" : null,
@@ -23281,8 +23281,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Interconnect",
           "simple" : false,
+          "simpleType" : "Interconnect",
           "map" : false,
           "templateType" : "java.util.List<Interconnect>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>"
@@ -23419,8 +23419,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Interconnect",
             "simple" : false,
+            "simpleType" : "Interconnect",
             "map" : false,
             "templateType" : "java.util.List<Interconnect>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>"
@@ -23547,8 +23547,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "VirtualInterface",
           "simple" : false,
+          "simpleType" : "VirtualInterface",
           "map" : false,
           "templateType" : "java.util.List<VirtualInterface>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>"
@@ -23685,8 +23685,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "VirtualInterface",
             "simple" : false,
+            "simpleType" : "VirtualInterface",
             "map" : false,
             "templateType" : "java.util.List<VirtualInterface>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>"
@@ -24119,8 +24119,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "RouteFilterPrefix",
           "simple" : false,
+          "simpleType" : "RouteFilterPrefix",
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -24569,8 +24569,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "RouteFilterPrefix",
             "simple" : false,
+            "simpleType" : "RouteFilterPrefix",
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -24590,7 +24590,7 @@
     },
     "InterconnectState" : {
       "c2jName" : "InterconnectState",
-      "documentation" : "State of the interconnect. <ul> <li> <b>Requested</b>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li> <b>Pending</b>: The interconnect has been approved, and is being initialized.</li> <li> <b>Available</b>: The network link is up, and the interconnect is ready for use.</li> <li> <b>Down</b>: The network link is down.</li> <li> <b>Deleting</b>: The interconnect is in the process of being deleted.</li> <li> <b>Deleted</b>: The interconnect has been deleted.</li> </ul>",
+      "documentation" : "State of the interconnect. <ul> <li><b>Requested</b>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</li> <li><b>Pending</b>: The interconnect has been approved, and is being initialized.</li> <li><b>Available</b>: The network link is up, and the interconnect is ready for use.</li> <li><b>Down</b>: The network link is down.</li> <li><b>Deleting</b>: The interconnect is in the process of being deleted.</li> <li><b>Deleted</b>: The interconnect has been deleted.</li> </ul>",
       "shapeName" : "InterconnectState",
       "deprecated" : false,
       "required" : null,

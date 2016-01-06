@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,18 +31,18 @@ public class FieldToMatch implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>HEADER</code>: A specified request header, for example, the
+     * <li><code>HEADER</code>: A specified request header, for example, the
      * value of the <code>User-Agent</code> or <code>Referer</code> header. If
      * you choose <code>HEADER</code> for the type, specify the name of the
      * header in <code>Data</code>.</li>
-     * <li> <code>METHOD</code>: The HTTP method, which indicated the type of
+     * <li><code>METHOD</code>: The HTTP method, which indicated the type of
      * operation that the request is asking the origin to perform. Amazon
      * CloudFront supports the following methods: <code>DELETE</code>,
      * <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      * <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-     * <li> <code>QUERY_STRING</code>: A query string, which is the part of a URL
+     * <li><code>QUERY_STRING</code>: A query string, which is the part of a URL
      * that appears after a <code>?</code> character, if any.</li>
-     * <li> <code>URI</code>: The part of a web request that identifies a
+     * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * </ul>
      */
@@ -67,18 +67,18 @@ public class FieldToMatch implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>HEADER</code>: A specified request header, for example, the
+     * <li><code>HEADER</code>: A specified request header, for example, the
      * value of the <code>User-Agent</code> or <code>Referer</code> header. If
      * you choose <code>HEADER</code> for the type, specify the name of the
      * header in <code>Data</code>.</li>
-     * <li> <code>METHOD</code>: The HTTP method, which indicated the type of
+     * <li><code>METHOD</code>: The HTTP method, which indicated the type of
      * operation that the request is asking the origin to perform. Amazon
      * CloudFront supports the following methods: <code>DELETE</code>,
      * <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      * <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-     * <li> <code>QUERY_STRING</code>: A query string, which is the part of a URL
+     * <li><code>QUERY_STRING</code>: A query string, which is the part of a URL
      * that appears after a <code>?</code> character, if any.</li>
-     * <li> <code>URI</code>: The part of a web request that identifies a
+     * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * </ul>
      * 
@@ -87,19 +87,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        specified string. Parts of a request that you can search include
      *        the following:</p>
      *        <ul>
-     *        <li> <code>HEADER</code>: A specified request header, for example,
+     *        <li><code>HEADER</code>: A specified request header, for example,
      *        the value of the <code>User-Agent</code> or <code>Referer</code>
      *        header. If you choose <code>HEADER</code> for the type, specify
      *        the name of the header in <code>Data</code>.</li>
-     *        <li> <code>METHOD</code>: The HTTP method, which indicated the type
+     *        <li><code>METHOD</code>: The HTTP method, which indicated the type
      *        of operation that the request is asking the origin to perform.
      *        Amazon CloudFront supports the following methods:
      *        <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
      *        <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
      *        <code>PUT</code>.</li>
-     *        <li> <code>QUERY_STRING</code>: A query string, which is the part
+     *        <li><code>QUERY_STRING</code>: A query string, which is the part
      *        of a URL that appears after a <code>?</code> character, if any.</li>
-     *        <li> <code>URI</code>: The part of a web request that identifies a
+     *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * @see MatchFieldType
      */
@@ -114,18 +114,18 @@ public class FieldToMatch implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>HEADER</code>: A specified request header, for example, the
+     * <li><code>HEADER</code>: A specified request header, for example, the
      * value of the <code>User-Agent</code> or <code>Referer</code> header. If
      * you choose <code>HEADER</code> for the type, specify the name of the
      * header in <code>Data</code>.</li>
-     * <li> <code>METHOD</code>: The HTTP method, which indicated the type of
+     * <li><code>METHOD</code>: The HTTP method, which indicated the type of
      * operation that the request is asking the origin to perform. Amazon
      * CloudFront supports the following methods: <code>DELETE</code>,
      * <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      * <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-     * <li> <code>QUERY_STRING</code>: A query string, which is the part of a URL
+     * <li><code>QUERY_STRING</code>: A query string, which is the part of a URL
      * that appears after a <code>?</code> character, if any.</li>
-     * <li> <code>URI</code>: The part of a web request that identifies a
+     * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * </ul>
      * 
@@ -133,19 +133,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         specified string. Parts of a request that you can search include
      *         the following:</p>
      *         <ul>
-     *         <li> <code>HEADER</code>: A specified request header, for example,
+     *         <li><code>HEADER</code>: A specified request header, for example,
      *         the value of the <code>User-Agent</code> or <code>Referer</code>
      *         header. If you choose <code>HEADER</code> for the type, specify
      *         the name of the header in <code>Data</code>.</li>
-     *         <li> <code>METHOD</code>: The HTTP method, which indicated the
+     *         <li><code>METHOD</code>: The HTTP method, which indicated the
      *         type of operation that the request is asking the origin to
      *         perform. Amazon CloudFront supports the following methods:
      *         <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
      *         <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
      *         <code>PUT</code>.</li>
-     *         <li> <code>QUERY_STRING</code>: A query string, which is the part
+     *         <li><code>QUERY_STRING</code>: A query string, which is the part
      *         of a URL that appears after a <code>?</code> character, if any.</li>
-     *         <li> <code>URI</code>: The part of a web request that identifies a
+     *         <li><code>URI</code>: The part of a web request that identifies a
      *         resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * @see MatchFieldType
      */
@@ -160,18 +160,18 @@ public class FieldToMatch implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>HEADER</code>: A specified request header, for example, the
+     * <li><code>HEADER</code>: A specified request header, for example, the
      * value of the <code>User-Agent</code> or <code>Referer</code> header. If
      * you choose <code>HEADER</code> for the type, specify the name of the
      * header in <code>Data</code>.</li>
-     * <li> <code>METHOD</code>: The HTTP method, which indicated the type of
+     * <li><code>METHOD</code>: The HTTP method, which indicated the type of
      * operation that the request is asking the origin to perform. Amazon
      * CloudFront supports the following methods: <code>DELETE</code>,
      * <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      * <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-     * <li> <code>QUERY_STRING</code>: A query string, which is the part of a URL
+     * <li><code>QUERY_STRING</code>: A query string, which is the part of a URL
      * that appears after a <code>?</code> character, if any.</li>
-     * <li> <code>URI</code>: The part of a web request that identifies a
+     * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * </ul>
      * 
@@ -180,19 +180,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        specified string. Parts of a request that you can search include
      *        the following:</p>
      *        <ul>
-     *        <li> <code>HEADER</code>: A specified request header, for example,
+     *        <li><code>HEADER</code>: A specified request header, for example,
      *        the value of the <code>User-Agent</code> or <code>Referer</code>
      *        header. If you choose <code>HEADER</code> for the type, specify
      *        the name of the header in <code>Data</code>.</li>
-     *        <li> <code>METHOD</code>: The HTTP method, which indicated the type
+     *        <li><code>METHOD</code>: The HTTP method, which indicated the type
      *        of operation that the request is asking the origin to perform.
      *        Amazon CloudFront supports the following methods:
      *        <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
      *        <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
      *        <code>PUT</code>.</li>
-     *        <li> <code>QUERY_STRING</code>: A query string, which is the part
+     *        <li><code>QUERY_STRING</code>: A query string, which is the part
      *        of a URL that appears after a <code>?</code> character, if any.</li>
-     *        <li> <code>URI</code>: The part of a web request that identifies a
+     *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -210,18 +210,18 @@ public class FieldToMatch implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>HEADER</code>: A specified request header, for example, the
+     * <li><code>HEADER</code>: A specified request header, for example, the
      * value of the <code>User-Agent</code> or <code>Referer</code> header. If
      * you choose <code>HEADER</code> for the type, specify the name of the
      * header in <code>Data</code>.</li>
-     * <li> <code>METHOD</code>: The HTTP method, which indicated the type of
+     * <li><code>METHOD</code>: The HTTP method, which indicated the type of
      * operation that the request is asking the origin to perform. Amazon
      * CloudFront supports the following methods: <code>DELETE</code>,
      * <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      * <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-     * <li> <code>QUERY_STRING</code>: A query string, which is the part of a URL
+     * <li><code>QUERY_STRING</code>: A query string, which is the part of a URL
      * that appears after a <code>?</code> character, if any.</li>
-     * <li> <code>URI</code>: The part of a web request that identifies a
+     * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * </ul>
      * 
@@ -230,19 +230,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        specified string. Parts of a request that you can search include
      *        the following:</p>
      *        <ul>
-     *        <li> <code>HEADER</code>: A specified request header, for example,
+     *        <li><code>HEADER</code>: A specified request header, for example,
      *        the value of the <code>User-Agent</code> or <code>Referer</code>
      *        header. If you choose <code>HEADER</code> for the type, specify
      *        the name of the header in <code>Data</code>.</li>
-     *        <li> <code>METHOD</code>: The HTTP method, which indicated the type
+     *        <li><code>METHOD</code>: The HTTP method, which indicated the type
      *        of operation that the request is asking the origin to perform.
      *        Amazon CloudFront supports the following methods:
      *        <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
      *        <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
      *        <code>PUT</code>.</li>
-     *        <li> <code>QUERY_STRING</code>: A query string, which is the part
+     *        <li><code>QUERY_STRING</code>: A query string, which is the part
      *        of a URL that appears after a <code>?</code> character, if any.</li>
-     *        <li> <code>URI</code>: The part of a web request that identifies a
+     *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -259,18 +259,18 @@ public class FieldToMatch implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>HEADER</code>: A specified request header, for example, the
+     * <li><code>HEADER</code>: A specified request header, for example, the
      * value of the <code>User-Agent</code> or <code>Referer</code> header. If
      * you choose <code>HEADER</code> for the type, specify the name of the
      * header in <code>Data</code>.</li>
-     * <li> <code>METHOD</code>: The HTTP method, which indicated the type of
+     * <li><code>METHOD</code>: The HTTP method, which indicated the type of
      * operation that the request is asking the origin to perform. Amazon
      * CloudFront supports the following methods: <code>DELETE</code>,
      * <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      * <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-     * <li> <code>QUERY_STRING</code>: A query string, which is the part of a URL
+     * <li><code>QUERY_STRING</code>: A query string, which is the part of a URL
      * that appears after a <code>?</code> character, if any.</li>
-     * <li> <code>URI</code>: The part of a web request that identifies a
+     * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * </ul>
      * 
@@ -279,19 +279,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        specified string. Parts of a request that you can search include
      *        the following:</p>
      *        <ul>
-     *        <li> <code>HEADER</code>: A specified request header, for example,
+     *        <li><code>HEADER</code>: A specified request header, for example,
      *        the value of the <code>User-Agent</code> or <code>Referer</code>
      *        header. If you choose <code>HEADER</code> for the type, specify
      *        the name of the header in <code>Data</code>.</li>
-     *        <li> <code>METHOD</code>: The HTTP method, which indicated the type
+     *        <li><code>METHOD</code>: The HTTP method, which indicated the type
      *        of operation that the request is asking the origin to perform.
      *        Amazon CloudFront supports the following methods:
      *        <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
      *        <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
      *        <code>PUT</code>.</li>
-     *        <li> <code>QUERY_STRING</code>: A query string, which is the part
+     *        <li><code>QUERY_STRING</code>: A query string, which is the part
      *        of a URL that appears after a <code>?</code> character, if any.</li>
-     *        <li> <code>URI</code>: The part of a web request that identifies a
+     *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

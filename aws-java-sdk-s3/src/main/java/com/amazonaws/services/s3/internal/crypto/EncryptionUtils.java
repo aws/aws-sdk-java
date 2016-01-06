@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.LengthCheckInputStream;
+import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
 
@@ -411,7 +412,7 @@ public class EncryptionUtils {
     @Deprecated
     public static PutObjectRequest createInstructionPutRequest(PutObjectRequest request, EncryptionInstruction instruction) {
         JSONObject instructionJSON = convertInstructionToJSONObject(instruction);
-        byte[] instructionBytes = instructionJSON.toString().getBytes();
+        byte[] instructionBytes = instructionJSON.toString().getBytes(StringUtils.UTF8);
         InputStream instructionInputStream = new ByteArrayInputStream(instructionBytes);
 
         ObjectMetadata metadata = request.getMetadata();
@@ -436,7 +437,7 @@ public class EncryptionUtils {
     @Deprecated
     public static PutObjectRequest createInstructionPutRequest(String bucketName, String key, EncryptionInstruction instruction) {
         JSONObject instructionJSON = convertInstructionToJSONObject(instruction);
-        byte[] instructionBytes = instructionJSON.toString().getBytes();
+        byte[] instructionBytes = instructionJSON.toString().getBytes(StringUtils.UTF8);
         InputStream instructionInputStream = new ByteArrayInputStream(instructionBytes);
 
         ObjectMetadata metadata = new ObjectMetadata();
@@ -992,7 +993,8 @@ public class EncryptionUtils {
             StringBuilder stringBuilder = new StringBuilder();
             String line;
             try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                BufferedReader reader = new BufferedReader(new
+                        InputStreamReader(inputStream, StringUtils.UTF8));
                 while ((line = reader.readLine()) != null) {
                     stringBuilder.append(line);
                 }

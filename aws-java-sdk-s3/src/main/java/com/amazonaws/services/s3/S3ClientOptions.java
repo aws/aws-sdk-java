@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,21 +62,21 @@ public class S3ClientOptions {
 
     /**
      * <p>
-     * Returns whether the client has chunked encoding disabled for all
+     * Returns whether the client has chunked encoding disabled for all requests.
+     * </p>
+     * <p>
+     * The default behavior is to enable chunked encoding automatically for PutObjectRequest and
+     * UploadPartRequest. Setting this flag will result in disabling chunked encoding for all
      * requests.
      * </p>
      * <p>
-     * The default behaviour is to detect API request which enables chunked
-     * encoding automatically for PutObjectRequest and UploadPartRequest.
-     * Setting this flag will result in disabling chunked encoding for all
-     * requests.
-     * Note: Enabling this option has performance implications since each
-     * payload will have to be checksum calculated. If your payload is large
-     * this will affect the overall time required to upload an object.
-     * Using this option is recommended only if your endpoint does not
-     * implement chunked uploading.
+     * <b>Note:</b> Enabling this option has performance implications since the checksum for the
+     * payload will have to be pre-calculated before sending the data. If your payload is large this
+     * will affect the overall time required to upload an object. Using this option is recommended
+     * only if your endpoint does not implement chunked uploading.
      * </p>
-     * @return True is the client should always enable chunked encoding.
+     * 
+     * @return True if chunked encoding is explicitly disabled for all requests
      */
     public boolean isChunkedEncodingDisabled() {
         return chunkedEncodingDisabled;
@@ -137,22 +137,22 @@ public class S3ClientOptions {
      * Configures the client to disable chunked encoding for all requests.
      * </p>
      * <p>
-     * The default behaviour is to detect API request which enables chunked
-     * encoding automatically for PutObjectRequest and UploadPartRequest.
-     * Setting this flag will result in disabling chunked encoding for all
+     * The default behavior is to enable chunked encoding automatically for PutObjectRequest and
+     * UploadPartRequest. Setting this flag will result in disabling chunked encoding for all
      * requests.
-     * Note: Enabling this option has performance implications since each
-     * payload will have to be checksum calculated. If your payload is large
-     * this will affect the overall time required to upload an object.
-     * Using this option is recommended only if your endpoint does not
-     * implement chunked uploading.
      * </p>
-     * @return The updated S3ClientOptions object with chunked encoding
-     *         disabled setting.
+     * <p>
+     * <b>Note:</b> Enabling this option has performance implications since the checksum for the
+     * payload will have to be pre-calculated before sending the data. If your payload is large this
+     * will affect the overall time required to upload an object. Using this option is recommended
+     * only if your endpoint does not implement chunked uploading.
+     * </p>
+     * 
+     * @return The updated S3ClientOptions object with chunked encoding disabled setting.
      */
     public S3ClientOptions disableChunkedEncoding() {
-      this.chunkedEncodingDisabled = true;
-      return this;
+        this.chunkedEncodingDisabled = true;
+        return this;
     }
 
 }

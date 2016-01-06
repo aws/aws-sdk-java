@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -374,7 +374,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -404,7 +404,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -439,7 +439,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -468,7 +468,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *         <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item
      *         images of the item.
      *         </p>
      *         </li>
@@ -503,7 +503,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -533,7 +533,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -571,7 +571,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -601,7 +601,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -638,7 +638,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -668,7 +668,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> ??? both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>

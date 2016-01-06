@@ -2508,6 +2508,169 @@
         <Hostname>redshift.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
+    <Region>
+      <Name>ap-northeast-2</Name>
+      <Endpoint>
+        <ServiceName>kms</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kms.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudformation</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudformation.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudfront</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>monitoring</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>monitoring.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>logs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>logs.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>dynamodb.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ec2</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>ec2.ap-northeast-2.amazonaws.com</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticmapreduce</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticmapreduce.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticache</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticache.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>rds</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>rds.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>route53</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sns</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sns.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sqs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sqs.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>s3</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>s3.ap-northeast-2.amazonaws.com</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>autoscaling</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>autoscaling.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticbeanstalk</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticbeanstalk.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>iam</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sts</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>sts.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticloadbalancing</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticloadbalancing.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>glacier</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>glacier.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>directconnect</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>directconnect.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>kinesis</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kinesis.ap-northeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+    </Region>
   </Regions>
   <Services>
     <Service>
@@ -2577,6 +2740,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>cognito-sync</Name>
@@ -2605,6 +2769,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>cloudfront</Name>
@@ -2618,6 +2783,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>cloudsearch</Name>
@@ -2646,6 +2812,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>monitoring</Name>
@@ -2661,6 +2828,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>logs</Name>
@@ -2673,6 +2841,7 @@
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>dynamodb</Name>
@@ -2688,6 +2857,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>streams.dynamodb</Name>
@@ -2703,6 +2873,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>ec2</Name>
@@ -2718,6 +2889,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>elasticmapreduce</Name>
@@ -2733,6 +2905,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>elasticache</Name>
@@ -2747,6 +2920,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>rds</Name>
@@ -2762,6 +2936,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>route53</Name>
@@ -2775,6 +2950,7 @@
       <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>route53domains</Name>
@@ -2822,6 +2998,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>sqs</Name>
@@ -2837,6 +3014,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>s3</Name>
@@ -2852,6 +3030,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>autoscaling</Name>
@@ -2867,6 +3046,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>elasticbeanstalk</Name>
@@ -2881,6 +3061,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>iam</Name>
@@ -2896,6 +3077,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>importexport</Name>
@@ -2923,6 +3105,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>storagegateway</Name>
@@ -2957,6 +3140,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>swf</Name>
@@ -2972,6 +3156,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>glacier</Name>
@@ -2985,6 +3170,7 @@
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>directconnect</Name>
@@ -2999,6 +3185,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>datapipeline</Name>
@@ -3020,6 +3207,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>us-gov-west-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>kinesis</Name>
@@ -3033,6 +3221,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>eu-central-1</RegionName>
       <RegionName>cn-north-1</RegionName>
+      <RegionName>ap-northeast-2</RegionName>
     </Service>
     <Service>
       <Name>opsworks</Name>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,9 +59,10 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
-     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
-     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
+     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     * . If no alias has been created for the directory,
+     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      */
     private String accessUrl;
@@ -387,16 +388,18 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
-     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
-     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
+     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     * . If no alias has been created for the directory,
+     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param accessUrl
      *        The access URL for the directory, such as
-     *        <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has
-     *        been created for the directory, <code>&#x3C;alias&#x3E;</code> is
-     *        the directory identifier, such as <code>d-XXXXXXXXXX</code>.
+     *        <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     *        . If no alias has been created for the directory,
+     *        <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
+     *        directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
     public void setAccessUrl(String accessUrl) {
         this.accessUrl = accessUrl;
@@ -405,16 +408,17 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
-     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
-     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
+     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     * . If no alias has been created for the directory,
+     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @return The access URL for the directory, such as
-     *         <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias
-     *         has been created for the directory,
-     *         <code>&#x3C;alias&#x3E;</code> is the directory identifier, such
-     *         as <code>d-XXXXXXXXXX</code>.
+     *         <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     *         . If no alias has been created for the directory,
+     *         <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
+     *         directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
     public String getAccessUrl() {
         return this.accessUrl;
@@ -423,16 +427,18 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has been
-     * created for the directory, <code>&#x3C;alias&#x3E;</code> is the
-     * directory identifier, such as <code>d-XXXXXXXXXX</code>.
+     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     * . If no alias has been created for the directory,
+     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param accessUrl
      *        The access URL for the directory, such as
-     *        <code>http://&#x3C;alias&#x3E;.awsapps.com</code>. If no alias has
-     *        been created for the directory, <code>&#x3C;alias&#x3E;</code> is
-     *        the directory identifier, such as <code>d-XXXXXXXXXX</code>.
+     *        <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
+     *        . If no alias has been created for the directory,
+     *        <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
+     *        directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
