@@ -36,7 +36,7 @@ import com.amazonaws.util.BinaryUtils;
  */
 public class AWSS3V4Signer extends AWS4Signer {
     private static final String CONTENT_SHA_256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
-    private static boolean isChunkedEncodingDisabled;
+    private final boolean isChunkedEncodingDisabled;
 
     /**
      * Don't double-url-encode path elements; S3 expects path elements to be
@@ -119,7 +119,7 @@ public class AWSS3V4Signer extends AWS4Signer {
     /**
      * Determine whether to use aws-chunked for signing
      */
-    private static boolean useChunkEncoding(SignableRequest<?> request) {
+    private boolean useChunkEncoding(SignableRequest<?> request) {
         // Whether to use chunked encoding for signing the request
         boolean chunkedEncodingEnabled = false;
         // if chunked encoding is explicitly disabled through client options
