@@ -442,12 +442,35 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the optional proxy host the client will connect through.
+     * Returns the Java system property for proxy host depending on
+     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * the value of the system property https.proxyHost, otherwise
+     * returns value of http.proxyHost.
+     */
+    private String getProxyHostProperty() {
+        if (getProtocol() == Protocol.HTTPS) {
+            return System.getProperty("https.proxyHost");
+        } else {
+            return System.getProperty("http.proxyHost");
+        }
+    }
+
+    /**
+     * Returns the optional proxy host the client will connect
+     * through.  Returns either the proxyHost set on this object, or
+     * if not provided, checks the value of the Java system property
+     * for proxy host according to {@link this.getProtocol()}: i.e. if
+     * protocol is https, returns the value of the system property
+     * https.proxyHost, otherwise returns value of http.proxyHost.
      *
      * @return The proxy host the client will connect through.
      */
     public String getProxyHost() {
-        return proxyHost;
+        if (proxyHost != null) {
+            return proxyHost;
+        } else {
+            return getProxyHostProperty();
+        }
     }
 
     /**
@@ -474,12 +497,41 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the optional proxy port the client will connect through.
+     * Returns the Java system property for proxy port depending on
+     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * the value of the system property https.proxyPort, otherwise
+     * returns value of http.proxyPort.
+     */
+    private int getProxyPortProperty() {
+        String proxyPortString;
+        if (getProtocol() == Protocol.HTTPS) {
+            proxyPortString = System.getProperty("https.proxyPort");
+        } else {
+            proxyPortString = System.getProperty("http.proxyPort");
+        }
+        try {
+            return Integer.parseInt(proxyPortString);
+        } catch (NumberFormatException e) {
+            return proxyPort;
+        }
+    }
+
+    /**
+     * Returns the optional proxy port the client will connect
+     * through.  Returns either the proxyPort set on this object, or
+     * if not provided, checks the value of the Java system property
+     * for proxy port according to {@link this.getProtocol()}: i.e. if
+     * protocol is https, returns the value of the system property
+     * https.proxyPort, otherwise returns value of http.proxyPort.
      *
      * @return The proxy port the client will connect through.
      */
     public int getProxyPort() {
-        return proxyPort;
+        if (proxyPort > 0) {
+            return proxyPort;
+        } else {
+            return getProxyPortProperty();
+        }
     }
 
     /**
@@ -506,13 +558,37 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the optional proxy user name to use if connecting through a proxy.
+     * Returns the Java system property for proxy user name depending on
+     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * the value of the system property https.proxyUser, otherwise
+     * returns value of http.proxyUser.
+     */
+    private String getProxyUsernameProperty() {
+        if (getProtocol() == Protocol.HTTPS) {
+            return System.getProperty("https.proxyUser");
+        } else {
+            return System.getProperty("http.proxyUser");
+        }
+    }
+
+    /**
+     * Returns the optional proxy user name to use if connecting
+     * through a proxy.  Returns either the proxyUsername set on this
+     * object, or if not provided, checks the value of the Java system
+     * property for proxy user name according to {@link this.getProtocol()}:
+     * i.e. if protocol is https, returns the value of the system
+     * property https.proxyUsername, otherwise returns value of
+     * http.proxyUsername.
      *
      * @return The optional proxy user name the configured client will use if connecting through a
      *         proxy.
      */
     public String getProxyUsername() {
-        return proxyUsername;
+        if (proxyUsername != null) {
+            return proxyUsername;
+        } else {
+            return getProxyUsernameProperty();
+        }
     }
 
     /**
@@ -538,12 +614,36 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the optional proxy password to use when connecting through a proxy.
+     * Returns the Java system property for proxy password depending on
+     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * the value of the system property https.proxyPassword, otherwise
+     * returns value of http.proxyPassword.
+     */
+    private String getProxyPasswordProperty() {
+        if (getProtocol() == Protocol.HTTPS) {
+            return System.getProperty("https.proxyPassword");
+        } else {
+            return System.getProperty("http.proxyPassword");
+        }
+    }
+
+    /**
+     * Returns the optional proxy password to use if connecting
+     * through a proxy.  Returns either the proxyPassword set on this
+     * object, or if not provided, checks the value of the Java system
+     * property for proxy password according to {@link this.getProtocol()}:
+     * i.e. if protocol is https, returns the value of the system
+     * property https.proxyPassword, otherwise returns value of
+     * http.proxyPassword.
      *
      * @return The password to use when connecting through a proxy.
      */
     public String getProxyPassword() {
-        return proxyPassword;
+        if (proxyPassword != null) {
+            return proxyPassword;
+        } else {
+            return getProxyPasswordProperty();
+        }
     }
 
     /**
