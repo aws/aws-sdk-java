@@ -466,11 +466,7 @@ public class ClientConfiguration {
      * @return The proxy host the client will connect through.
      */
     public String getProxyHost() {
-        if (proxyHost != null) {
-            return proxyHost;
-        } else {
-            return getProxyHostProperty();
-        }
+        return (proxyHost != null) ? proxyHost : getProxyHostProperty();
     }
 
     /**
@@ -500,15 +496,11 @@ public class ClientConfiguration {
      * Returns the Java system property for proxy port depending on
      * {@link this.getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyPort, otherwise
-     * returns value of http.proxyPort.
+     * returns value of http.proxyPort.  Defaults to {@link this.proxyPort}
+     * if the system property is not set with a valid port number.
      */
     private int getProxyPortProperty() {
-        String proxyPortString;
-        if (getProtocol() == Protocol.HTTPS) {
-            proxyPortString = System.getProperty("https.proxyPort");
-        } else {
-            proxyPortString = System.getProperty("http.proxyPort");
-        }
+        String proxyPortString = (getProtocol() == Protocol.HTTPS) ? System.getProperty("https.proxyPort") : System.getProperty("http.proxyPort");
         try {
             return Integer.parseInt(proxyPortString);
         } catch (NumberFormatException e) {
@@ -527,11 +519,7 @@ public class ClientConfiguration {
      * @return The proxy port the client will connect through.
      */
     public int getProxyPort() {
-        if (proxyPort > 0) {
-            return proxyPort;
-        } else {
-            return getProxyPortProperty();
-        }
+        return (proxyPort >= 0) ? proxyPort : getProxyPortProperty();
     }
 
     /**
@@ -564,11 +552,7 @@ public class ClientConfiguration {
      * returns value of http.proxyUser.
      */
     private String getProxyUsernameProperty() {
-        if (getProtocol() == Protocol.HTTPS) {
-            return System.getProperty("https.proxyUser");
-        } else {
-            return System.getProperty("http.proxyUser");
-        }
+        return (getProtocol() == Protocol.HTTPS) ? System.getProperty("https.proxyUser") : System.getProperty("http.proxyUser");
     }
 
     /**
@@ -584,11 +568,7 @@ public class ClientConfiguration {
      *         proxy.
      */
     public String getProxyUsername() {
-        if (proxyUsername != null) {
-            return proxyUsername;
-        } else {
-            return getProxyUsernameProperty();
-        }
+        return (proxyUsername != null) ? proxyUsername : getProxyUsernameProperty();
     }
 
     /**
@@ -620,11 +600,7 @@ public class ClientConfiguration {
      * returns value of http.proxyPassword.
      */
     private String getProxyPasswordProperty() {
-        if (getProtocol() == Protocol.HTTPS) {
-            return System.getProperty("https.proxyPassword");
-        } else {
-            return System.getProperty("http.proxyPassword");
-        }
+        return (getProtocol() == Protocol.HTTPS) ? System.getProperty("https.proxyPassword") : System.getProperty("http.proxyPassword");
     }
 
     /**
@@ -639,11 +615,7 @@ public class ClientConfiguration {
      * @return The password to use when connecting through a proxy.
      */
     public String getProxyPassword() {
-        if (proxyPassword != null) {
-            return proxyPassword;
-        } else {
-            return getProxyPasswordProperty();
-        }
+        return (proxyPassword != null) ? proxyPassword : getProxyPasswordProperty();
     }
 
     /**
