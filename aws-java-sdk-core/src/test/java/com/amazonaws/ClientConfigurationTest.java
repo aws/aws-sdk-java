@@ -17,6 +17,7 @@ package com.amazonaws;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.net.InetAddress;
@@ -84,6 +85,77 @@ public class ClientConfigurationTest {
         assertSame("custom dns resolver set via fluent API",
                 resolver,
                 config.getDnsResolver());
+    }
+
+    @Test
+    public void testProxySystemProperties() throws Exception {
+        ClientConfiguration config;
+        config = new ClientConfiguration();
+        assertNull(config.getProxyHost());
+        assertEquals(config.getProxyPort(), -1);
+        assertNull(config.getProxyUsername());
+        assertNull(config.getProxyPassword());
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyHost());
+        assertEquals(config.getProxyPort(), -1);
+        assertNull(config.getProxyUsername());
+        assertNull(config.getProxyPassword());
+
+        System.setProperty("https.proxyHost", "foo");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyHost(), "foo");
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyHost());
+        System.clearProperty("https.proxyHost");
+
+        System.setProperty("http.proxyHost", "foo");
+        config = new ClientConfiguration();
+        assertNull(config.getProxyHost());
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyHost(), "foo");
+        System.clearProperty("http.proxyHost");
+
+        System.setProperty("https.proxyPort", "8443");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyPort(), 8443);
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyPort(), -1);
+        System.clearProperty("https.proxyPort");
+
+        System.setProperty("http.proxyPort", "8080");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyPort(), -1);
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyPort(), 8080);
+        System.clearProperty("http.proxyPort");
+
+        System.setProperty("https.proxyUser", "foo");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyUsername(), "foo");
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyUsername());
+        System.clearProperty("https.proxyUser");
+
+        System.setProperty("http.proxyUser", "foo");
+        config = new ClientConfiguration();
+        assertNull(config.getProxyUsername());
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyUsername(), "foo");
+        System.clearProperty("http.proxyUser");
+
+        System.setProperty("https.proxyPassword", "foo");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyPassword(), "foo");
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyPassword());
+        System.clearProperty("https.proxyPassword");
+
+        System.setProperty("http.proxyPassword", "foo");
+        config = new ClientConfiguration();
+        assertNull(config.getProxyPassword());
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyPassword(), "foo");
+        System.clearProperty("http.proxyPassword");
     }
 
 }
