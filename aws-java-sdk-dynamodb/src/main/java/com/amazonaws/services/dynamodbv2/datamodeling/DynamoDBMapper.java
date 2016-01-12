@@ -1,16 +1,16 @@
-/*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at:
- *
- *    http://aws.amazon.com/apache2.0
- *
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
- * OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and
- * limitations under the License.
+/*   
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.   
+ *   
+ * Licensed under the Apache License, Version 2.0 (the "License");   
+ * you may not use this file except in compliance with the License.   
+ * You may obtain a copy of the License at:   
+ *   
+ *    http://aws.amazon.com/apache2.0   
+ *   
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES   
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the   
+ * License for the specific language governing permissions and   
+ * limitations under the License.   
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
@@ -189,7 +189,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     private final DynamoDBMapperConfig config;
     private final DynamoDBReflector reflector = new DynamoDBReflector();
     private final DynamoDBTableSchemaParser schemaParser = new DynamoDBTableSchemaParser();
-    private final VersionIncrementor incrementor = new VersionIncrementor();
 
     private final AttributeTransformer transformer;
 
@@ -444,7 +443,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         return object;
     }
 
-
     /**
      * Returns a key map for the key object given.
      *
@@ -488,7 +486,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         return key;
     }
-
 
     @Override
     public <T extends Object> T load(Class<T> clazz, Object hashKey, Object rangeKey, DynamoDBMapperConfig config) {
@@ -618,9 +615,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> T marshallIntoObject(
-            Class<T> clazz,
-            Map<String, AttributeValue> itemAttributes) {
+    public <T> T marshallIntoObject(Class<T> clazz, Map<String, AttributeValue> itemAttributes) {
 
         ItemConverter converter = getConverter(config);
 
@@ -717,7 +712,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression, final DynamoDBMapperConfig config) {
+    public <T extends Object> void save(T object,
+                                        DynamoDBSaveExpression saveExpression,
+                                        final DynamoDBMapperConfig config) {
         final DynamoDBMapperConfig finalConfig = mergeConfig(config);
         final ItemConverter converter = getConverter(finalConfig);
 
@@ -1188,7 +1185,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 internalExpectedValueAssertions.put(attributeName, expected);
             }
 
-            Object newVersion = incrementor.increment(method, getterResult);
+            Object newVersion = DynamoDBAutoGeneratorRegistry.instance().generatorOf(
+                    DynamoDBAutoGeneratorRegistry.Generators.VERSION, method.getReturnType())
+                .generate(getterResult);
             AttributeValue newVersionValue = converter.convert(method, newVersion);
             updateValues.put(attributeName, new AttributeValueUpdate()
                         .withAction("PUT")
@@ -1281,37 +1280,13 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         db.deleteItem(applyUserAgent(req));
     }
 
-    /**
-     * The return type of batchWrite, batchDelete and batchSave. It contains the information about the unprocessed items
-     * and the exception causing the failure.
-     *
-     */
-    public static class FailedBatch {
-
-        private Map<String, java.util.List<WriteRequest>> unprocessedItems;
-
-        private Exception exception;
-
-        public void setUnprocessedItems(Map<String, java.util.List<WriteRequest>> unprocessedItems) {
-            this.unprocessedItems = unprocessedItems;
-        }
-
-        public Map<String, java.util.List<WriteRequest>> getUnprocessedItems() {
-            return unprocessedItems;
-        }
-
-        public void setException(Exception excetpion) {
-            this.exception = excetpion;
-        }
-
-        public Exception getException() {
-            return exception;
-        }
-
+    @Override
+    public List<FailedBatch> batchDelete(List<? extends Object> objectsToDelete) {
+        return batchDelete((Iterable<?>) objectsToDelete);
     }
 
     @Override
-    public List<FailedBatch> batchDelete(List<? extends Object> objectsToDelete) {
+    public List<FailedBatch> batchDelete(Iterable<? extends Object> objectsToDelete) {
         return batchWrite(Collections.emptyList(), objectsToDelete, this.config);
     }
 
@@ -1322,6 +1297,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
     @Override
     public List<FailedBatch> batchSave(List<? extends Object> objectsToSave) {
+        return batchSave((Iterable<?>) objectsToSave);
+    }
+
+    @Override
+    public List<FailedBatch> batchSave(Iterable<? extends Object> objectsToSave) {
         return batchWrite(objectsToSave, Collections.emptyList(), this.config);
     }
 
@@ -1332,11 +1312,26 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
     @Override
     public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete) {
+        return batchWrite((Iterable<?>) objectsToWrite, (Iterable<?>) objectsToDelete);
+    }
+
+    @Override
+    public List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite,
+                                        Iterable<? extends Object> objectsToDelete) {
         return batchWrite(objectsToWrite, objectsToDelete, this.config);
     }
 
     @Override
-    public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete, DynamoDBMapperConfig config) {
+    public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite,
+                                        List<? extends Object> objectsToDelete,
+                                        DynamoDBMapperConfig config) {
+        return batchWrite((Iterable<?>) objectsToWrite, (Iterable<?>) objectsToDelete, config);
+    }
+
+    @Override
+    public List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite,
+                                        Iterable<? extends Object> objectsToDelete,
+                                        DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         List<FailedBatch> totalFailedBatches = new LinkedList<FailedBatch>();
@@ -1593,15 +1588,25 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
     @Override
     public Map<String, List<Object>> batchLoad(List<Object> itemsToGet) {
+        return batchLoad((Iterable<Object>) itemsToGet);
+    }
+
+    @Override
+    public Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet) {
         return batchLoad(itemsToGet, this.config);
     }
 
     @Override
     public Map<String, List<Object>> batchLoad(List<Object> itemsToGet, DynamoDBMapperConfig config) {
+        return batchLoad((Iterable<Object>) itemsToGet, config);
+    }
+
+    @Override
+    public Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
         boolean consistentReads = (config.getConsistentReads() == ConsistentReads.CONSISTENT);
 
-        if ( itemsToGet == null || itemsToGet.isEmpty() ) {
+        if (itemsToGet == null) {
             return new HashMap<String, List<Object>>();
         }
 
@@ -1781,14 +1786,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             ItemConverter converter,
             Method getter) {
 
-        Class<?> returnType = getter.getReturnType();
-        if (String.class.isAssignableFrom(returnType)) {
-            return converter.convert(getter, UUID.randomUUID().toString());
-        }
+        Object newValue = DynamoDBAutoGeneratorRegistry.instance().generatorOf(
+                DynamoDBAutoGeneratorRegistry.Generators.KEY, getter.getReturnType())
+            .generate(null);
 
-        throw new DynamoDBMappingException(
-                "Unsupported type for " + getter + ": " + returnType
-                + ".  Only Strings are supported when auto-generating keys.");
+        return converter.convert(getter, newValue);
     }
 
     @Override
@@ -1797,7 +1799,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
+    public <T> PaginatedScanList<T> scan(Class<T> clazz,
+                                         DynamoDBScanExpression scanExpression,
+                                         DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
@@ -1807,12 +1811,17 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz, DynamoDBScanExpression scanExpression, int totalSegments) {
+    public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz,
+                                                         DynamoDBScanExpression scanExpression,
+                                                         int totalSegments) {
         return parallelScan(clazz, scanExpression, totalSegments, config);
     }
 
     @Override
-    public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
+    public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz,
+                                                         DynamoDBScanExpression scanExpression,
+                                                         int totalSegments,
+                                                         DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         // Create hard copies of the original scan request with difference segment number.
@@ -1823,7 +1832,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> ScanResultPage<T> scanPage(Class<T> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
+    public <T> ScanResultPage<T> scanPage(Class<T> clazz,
+                                          DynamoDBScanExpression scanExpression,
+                                          DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
@@ -1853,7 +1864,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
+    public <T> PaginatedQueryList<T> query(Class<T> clazz,
+                                           DynamoDBQueryExpression<T> queryExpression,
+                                           DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
@@ -1868,7 +1881,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T> QueryResultPage<T> queryPage(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
+    public <T> QueryResultPage<T> queryPage(Class<T> clazz,
+                                            DynamoDBQueryExpression<T> queryExpression,
+                                            DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
@@ -1910,7 +1925,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         return count;
     }
-
 
     @Override
     public <T> int count(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression) {
@@ -2608,6 +2622,35 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         return request;
     }
 
+    /**
+     * The return type of batchWrite, batchDelete and batchSave. It contains the information about the unprocessed items
+     * and the exception causing the failure.
+     *
+     */
+    public static class FailedBatch {
+
+        private Map<String, java.util.List<WriteRequest>> unprocessedItems;
+
+        private Exception exception;
+
+        public void setUnprocessedItems(Map<String, java.util.List<WriteRequest>> unprocessedItems) {
+            this.unprocessedItems = unprocessedItems;
+        }
+
+        public Map<String, java.util.List<WriteRequest>> getUnprocessedItems() {
+            return unprocessedItems;
+        }
+
+        public void setException(Exception excetpion) {
+            this.exception = excetpion;
+        }
+
+        public Exception getException() {
+            return exception;
+        }
+
+    }
+
     @Override
     public S3ClientCache getS3ClientCache() {
         return s3cc;
@@ -2615,7 +2658,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
     @Override
     public S3Link createS3Link(String bucketName, String key) {
-        return createS3Link(null, bucketName , key);
+        return createS3Link(null, bucketName, key);
     }
 
     @Override

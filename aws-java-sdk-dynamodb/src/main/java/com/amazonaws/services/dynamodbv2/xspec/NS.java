@@ -90,7 +90,7 @@ public final class NS extends PathOperand {
      * of the current path operand; used for building expressions.
      * 
      * <pre>
-     * &quot;contains (path, operand) ??? true if the attribute at the specified 
+     * &quot;contains (path, operand) — true if the attribute at the specified 
      * path contains a particular operand. Note that the path and the operand 
      * must be distinct; that is, contains (a, a) will return an error&quot;
      * </pre>
@@ -161,7 +161,7 @@ public final class NS extends PathOperand {
      * of the current path operand; used for building expressions.
      * 
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
+     * "if_not_exists (path, operand) – If the item does not contain an attribute 
      * at the specified path, then if_not_exists evaluates to operand; otherwise, 
      * it evaluates to path. You can use this function to avoid overwriting an 
      * attribute already present in the item."
@@ -183,7 +183,7 @@ public final class NS extends PathOperand {
      * of the current path operand; used for building expressions.
      * 
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
+     * "if_not_exists (path, operand) – If the item does not contain an attribute 
      * at the specified path, then if_not_exists evaluates to operand; otherwise, 
      * it evaluates to path. You can use this function to avoid overwriting an 
      * attribute already present in the item."
@@ -265,7 +265,7 @@ public final class NS extends PathOperand {
      * of the current path operand; used for building expressions.
      * 
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
+     * "if_not_exists (path, operand) – If the item does not contain an attribute 
      * at the specified path, then if_not_exists evaluates to operand; otherwise, 
      * it evaluates to path. You can use this function to avoid overwriting an 
      * attribute already present in the item."

@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,8 +46,8 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      */
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
     /**
-     * (Optional) If set this returns the response of the command executions. By
-     * default this is set to False.
+     * (Optional) If set this returns the response of the command executions and
+     * any command output. By default this is set to False.
      */
     private Boolean details;
 
@@ -275,35 +276,38 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * (Optional) If set this returns the response of the command executions. By
-     * default this is set to False.
+     * (Optional) If set this returns the response of the command executions and
+     * any command output. By default this is set to False.
      * 
      * @param details
      *        (Optional) If set this returns the response of the command
-     *        executions. By default this is set to False.
+     *        executions and any command output. By default this is set to
+     *        False.
      */
     public void setDetails(Boolean details) {
         this.details = details;
     }
 
     /**
-     * (Optional) If set this returns the response of the command executions. By
-     * default this is set to False.
+     * (Optional) If set this returns the response of the command executions and
+     * any command output. By default this is set to False.
      * 
      * @return (Optional) If set this returns the response of the command
-     *         executions. By default this is set to False.
+     *         executions and any command output. By default this is set to
+     *         False.
      */
     public Boolean getDetails() {
         return this.details;
     }
 
     /**
-     * (Optional) If set this returns the response of the command executions. By
-     * default this is set to False.
+     * (Optional) If set this returns the response of the command executions and
+     * any command output. By default this is set to False.
      * 
      * @param details
      *        (Optional) If set this returns the response of the command
-     *        executions. By default this is set to False.
+     *        executions and any command output. By default this is set to
+     *        False.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -313,11 +317,12 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * (Optional) If set this returns the response of the command executions. By
-     * default this is set to False.
+     * (Optional) If set this returns the response of the command executions and
+     * any command output. By default this is set to False.
      * 
      * @return (Optional) If set this returns the response of the command
-     *         executions. By default this is set to False.
+     *         executions and any command output. By default this is set to
+     *         False.
      */
     public Boolean isDetails() {
         return this.details;

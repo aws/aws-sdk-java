@@ -7454,8 +7454,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Record",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Record>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
@@ -7592,8 +7592,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Record",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Record>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
@@ -9302,8 +9302,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Dataset",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Dataset>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dataset>"
@@ -9646,8 +9646,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Dataset",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Dataset>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dataset>"
@@ -9861,8 +9861,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10051,8 +10051,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12433,8 +12433,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RecordPatch",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RecordPatch>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecordPatch>"
@@ -12989,8 +12989,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RecordPatch",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RecordPatch>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecordPatch>"
@@ -13936,8 +13936,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "IdentityPoolUsage",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<IdentityPoolUsage>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>"
@@ -14227,8 +14227,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "IdentityPoolUsage",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<IdentityPoolUsage>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>"
@@ -14542,8 +14542,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Record",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Record>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
@@ -14810,8 +14810,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15309,8 +15309,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Record",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Record>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
@@ -15426,8 +15426,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

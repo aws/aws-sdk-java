@@ -55,7 +55,7 @@ public class SignatureChecker {
     private final String SUBJECT = "Subject";
     private final String TOPIC = "TopicArn";
     private final String TOKEN = "Token";
-    private final Set<String> INTERESTING_FIELDS = new HashSet<String>(Arrays.asList(TYPE, SUBSCRIBE_URL, MESSAGE,
+    private final Set<String> INTERESTING_FIELDS = new HashSet<String>(Arrays.asList(TYPE, SUBSCRIBE_TYPE, MESSAGE,
             TIMESTAMP, SIGNATURE, SIGNATURE_VERSION, MESSAGE_ID, SUBJECT, TOPIC, TOKEN));
 
     /**

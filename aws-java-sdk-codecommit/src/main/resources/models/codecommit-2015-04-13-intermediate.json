@@ -638,13 +638,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.*/",
         "getterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@return The ID of the AWS account associated with the repository.*/",
         "fluentSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ID of the repository.</p>",
         "name" : "RepositoryId",
@@ -689,13 +689,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.*/",
         "getterDocumentation" : "/**<p>The ID of the repository.</p>\n@return The ID of the repository.*/",
         "fluentSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The repository's name.</p>",
         "name" : "RepositoryName",
@@ -740,13 +740,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.*/",
         "getterDocumentation" : "/**<p>The repository's name.</p>\n@return The repository's name.*/",
         "fluentSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>A comment or description about the repository.</p>",
         "name" : "RepositoryDescription",
@@ -791,13 +791,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.*/",
         "getterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@return A comment or description about the repository.*/",
         "fluentSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The repository's default branch name.</p>",
         "name" : "DefaultBranch",
@@ -842,13 +842,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.*/",
         "getterDocumentation" : "/**<p>The repository's default branch name.</p>\n@return The repository's default branch name.*/",
         "fluentSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The date and time the repository was last modified, in timestamp format.</p>",
         "name" : "LastModifiedDate",
@@ -893,13 +893,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.*/",
         "getterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@return The date and time the repository was last modified, in timestamp format.*/",
         "fluentSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The date and time the repository was created, in timestamp format.</p>",
         "name" : "CreationDate",
@@ -944,13 +944,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.*/",
         "getterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@return The date and time the repository was created, in timestamp format.*/",
         "fluentSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The URL to use for cloning the repository over HTTPS.</p>",
         "name" : "CloneUrlHttp",
@@ -995,13 +995,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.*/",
         "getterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@return The URL to use for cloning the repository over HTTPS.*/",
         "fluentSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The URL to use for cloning the repository over SSH.</p>",
         "name" : "CloneUrlSsh",
@@ -1046,13 +1046,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.*/",
         "getterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@return The URL to use for cloning the repository over SSH.*/",
         "fluentSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The Amazon Resource Name (ARN) of the repository.</p>",
         "name" : "Arn",
@@ -1097,13 +1097,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.*/",
         "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@return The Amazon Resource Name (ARN) of the repository.*/",
         "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1171,13 +1171,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.*/",
           "getterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@return A comment or description about the repository.*/",
           "fluentSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoryName" : {
           "documentation" : "<p>The repository's name.</p>",
@@ -1223,13 +1223,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.*/",
           "getterDocumentation" : "/**<p>The repository's name.</p>\n@return The repository's name.*/",
           "fluentSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DefaultBranch" : {
           "documentation" : "<p>The repository's default branch name.</p>",
@@ -1275,13 +1275,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.*/",
           "getterDocumentation" : "/**<p>The repository's default branch name.</p>\n@return The repository's default branch name.*/",
           "fluentSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "AccountId" : {
           "documentation" : "<p>The ID of the AWS account associated with the repository.</p>",
@@ -1327,13 +1327,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.*/",
           "getterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@return The ID of the AWS account associated with the repository.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CloneUrlSsh" : {
           "documentation" : "<p>The URL to use for cloning the repository over SSH.</p>",
@@ -1379,13 +1379,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.*/",
           "getterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@return The URL to use for cloning the repository over SSH.*/",
           "fluentSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LastModifiedDate" : {
           "documentation" : "<p>The date and time the repository was last modified, in timestamp format.</p>",
@@ -1431,13 +1431,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.*/",
           "getterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@return The date and time the repository was last modified, in timestamp format.*/",
           "fluentSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoryId" : {
           "documentation" : "<p>The ID of the repository.</p>",
@@ -1483,13 +1483,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.*/",
           "getterDocumentation" : "/**<p>The ID of the repository.</p>\n@return The ID of the repository.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CreationDate" : {
           "documentation" : "<p>The date and time the repository was created, in timestamp format.</p>",
@@ -1535,13 +1535,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.*/",
           "getterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@return The date and time the repository was created, in timestamp format.*/",
           "fluentSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Arn" : {
           "documentation" : "<p>The Amazon Resource Name (ARN) of the repository.</p>",
@@ -1587,13 +1587,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.*/",
           "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@return The Amazon Resource Name (ARN) of the repository.*/",
           "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CloneUrlHttp" : {
           "documentation" : "<p>The URL to use for cloning the repository over HTTPS.</p>",
@@ -1639,13 +1639,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.*/",
           "getterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@return The URL to use for cloning the repository over HTTPS.*/",
           "fluentSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1703,13 +1703,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.*/",
         "getterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@return The name of the repository in which you want to create the new branch.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The name of the new branch to create.</p>",
         "name" : "BranchName",
@@ -1754,13 +1754,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.*/",
         "getterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@return The name of the new branch to create.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>",
         "name" : "CommitId",
@@ -1805,13 +1805,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.*/",
         "getterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@return The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.*/",
         "fluentSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1883,13 +1883,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.*/",
           "getterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@return The name of the repository in which you want to create the new branch.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "BranchName" : {
           "documentation" : "<p>The name of the new branch to create.</p>",
@@ -1935,13 +1935,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.*/",
           "getterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@return The name of the new branch to create.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CommitId" : {
           "documentation" : "<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>",
@@ -1987,13 +1987,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.*/",
           "getterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@return The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.</note>\n@param commitId The ID of the commit to point the new branch to.</p> <note>If this commit ID is not specified, the new branch will point to the commit that is pointed to by the repository's default branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -2051,13 +2051,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.*/",
         "getterDocumentation" : "/**<p>Information about the repository.</p>\n@return Information about the repository.*/",
         "fluentSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2125,13 +2125,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.*/",
           "getterDocumentation" : "/**<p>Information about the repository.</p>\n@return Information about the repository.*/",
           "fluentSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -2193,22 +2193,22 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "map" : false,
+          "simple" : true,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "simpleType" : "String"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n@param repositoryNames The names of the repositories to get information about.*/",
         "getterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n@return The names of the repositories to get information about.*/",
         "fluentSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2284,22 +2284,22 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "map" : false,
+            "simple" : true,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "simpleType" : "String"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n@param repositoryNames The names of the repositories to get information about.*/",
           "getterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n@return The names of the repositories to get information about.*/",
           "fluentSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -2357,13 +2357,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.*/",
         "getterDocumentation" : "/**<p>The name of the branch.</p>\n@return The name of the branch.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ID of the last commit made to the branch.</p>",
         "name" : "CommitId",
@@ -2408,13 +2408,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.*/",
         "getterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@return The ID of the last commit made to the branch.*/",
         "fluentSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2482,13 +2482,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.*/",
           "getterDocumentation" : "/**<p>The name of the branch.</p>\n@return The name of the branch.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CommitId" : {
           "documentation" : "<p>The ID of the last commit made to the branch.</p>",
@@ -2534,13 +2534,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.*/",
           "getterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@return The ID of the last commit made to the branch.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -2674,32 +2674,32 @@
             "mapModel" : null,
             "enumType" : null,
             "xmlNameSpaceUri" : null,
+            "simple" : false,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
             "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "simple" : false
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "map" : false,
+          "simple" : false,
+          "simpleType" : "RepositoryNameIdPair",
           "templateType" : "java.util.List<RepositoryNameIdPair>",
           "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
-          "simple" : false,
-          "simpleType" : "RepositoryNameIdPair"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n@param repositories Lists the repositories called by the list repositories operation.*/",
         "getterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n@return Lists the repositories called by the list repositories operation.*/",
         "fluentSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>",
         "name" : "NextToken",
@@ -2744,13 +2744,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
         "getterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@return An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
         "fluentSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2818,13 +2818,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
           "getterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@return An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
           "fluentSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Repositories" : {
           "documentation" : "<p>Lists the repositories called by the list repositories operation.</p>",
@@ -2915,32 +2915,32 @@
               "mapModel" : null,
               "enumType" : null,
               "xmlNameSpaceUri" : null,
+              "simple" : false,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
               "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "simple" : false
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "map" : false,
+            "simple" : false,
+            "simpleType" : "RepositoryNameIdPair",
             "templateType" : "java.util.List<RepositoryNameIdPair>",
             "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
-            "simple" : false,
-            "simpleType" : "RepositoryNameIdPair"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n@param repositories Lists the repositories called by the list repositories operation.*/",
           "getterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n@return Lists the repositories called by the list repositories operation.*/",
           "fluentSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3136,32 +3136,32 @@
             "mapModel" : null,
             "enumType" : null,
             "xmlNameSpaceUri" : null,
+            "simple" : false,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
             "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "simple" : false
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "map" : false,
+          "simple" : false,
+          "simpleType" : "RepositoryMetadata",
           "templateType" : "java.util.List<RepositoryMetadata>",
           "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
-          "simple" : false,
-          "simpleType" : "RepositoryMetadata"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.*/",
         "getterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n@return A list of repositories returned by the batch get repositories operation.*/",
         "fluentSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Returns a list of repository names for which information could not be found.</p>",
         "name" : "RepositoriesNotFound",
@@ -3210,22 +3210,22 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "map" : false,
+          "simple" : true,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "simpleType" : "String"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.*/",
         "getterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n@return Returns a list of repository names for which information could not be found.*/",
         "fluentSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3338,32 +3338,32 @@
               "mapModel" : null,
               "enumType" : null,
               "xmlNameSpaceUri" : null,
+              "simple" : false,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
               "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "simple" : false
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "map" : false,
+            "simple" : false,
+            "simpleType" : "RepositoryMetadata",
             "templateType" : "java.util.List<RepositoryMetadata>",
             "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
-            "simple" : false,
-            "simpleType" : "RepositoryMetadata"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.*/",
           "getterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n@return A list of repositories returned by the batch get repositories operation.*/",
           "fluentSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoriesNotFound" : {
           "documentation" : "<p>Returns a list of repository names for which information could not be found.</p>",
@@ -3413,22 +3413,22 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "map" : false,
+            "simple" : true,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "simpleType" : "String"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.*/",
           "getterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n@return Returns a list of repository names for which information could not be found.*/",
           "fluentSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3486,13 +3486,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.*/",
         "getterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@return The name of the repository to delete.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3564,13 +3564,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.*/",
           "getterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@return The name of the repository to delete.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3690,13 +3690,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.*/",
         "getterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@return Information about the newly created repository.*/",
         "fluentSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3764,13 +3764,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.*/",
           "getterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@return Information about the newly created repository.*/",
           "fluentSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3859,13 +3859,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
         "getterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@return An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
         "fluentSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The criteria used to sort the results of a list repositories operation.</p>",
         "name" : "SortBy",
@@ -3910,13 +3910,13 @@
         "mapModel" : null,
         "enumType" : "SortByEnum",
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@see SortByEnum*/",
         "getterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@return The criteria used to sort the results of a list repositories operation.\n@see SortByEnum*/",
         "fluentSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/",
-        "varargSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/"
       }, {
         "documentation" : "<p>The order in which to sort the results of a list repositories operation.</p>",
         "name" : "Order",
@@ -3961,13 +3961,13 @@
         "mapModel" : null,
         "enumType" : "OrderEnum",
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@see OrderEnum*/",
         "getterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@return The order in which to sort the results of a list repositories operation.\n@see OrderEnum*/",
         "fluentSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/",
-        "varargSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4039,13 +4039,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
           "getterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@return An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.*/",
           "fluentSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SortBy" : {
           "documentation" : "<p>The criteria used to sort the results of a list repositories operation.</p>",
@@ -4091,13 +4091,13 @@
           "mapModel" : null,
           "enumType" : "SortByEnum",
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@see SortByEnum*/",
           "getterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@return The criteria used to sort the results of a list repositories operation.\n@see SortByEnum*/",
           "fluentSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/",
-          "varargSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/"
         },
         "Order" : {
           "documentation" : "<p>The order in which to sort the results of a list repositories operation.</p>",
@@ -4143,13 +4143,13 @@
           "mapModel" : null,
           "enumType" : "OrderEnum",
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@see OrderEnum*/",
           "getterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@return The order in which to sort the results of a list repositories operation.\n@see OrderEnum*/",
           "fluentSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/",
-          "varargSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/"
         }
       }
     },
@@ -4207,13 +4207,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.*/",
         "getterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@return The name of the repository that contains the branches.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>An enumeration token that allows the operation to batch the results. </p>",
         "name" : "NextToken",
@@ -4258,13 +4258,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.*/",
         "getterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@return An enumeration token that allows the operation to batch the results.*/",
         "fluentSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4336,13 +4336,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.*/",
           "getterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@return The name of the repository that contains the branches.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "NextToken" : {
           "documentation" : "<p>An enumeration token that allows the operation to batch the results. </p>",
@@ -4388,13 +4388,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.*/",
           "getterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@return An enumeration token that allows the operation to batch the results.*/",
           "fluentSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results. </p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -4678,13 +4678,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.*/",
         "getterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@return The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>A comment or description about the new repository.</p>",
         "name" : "RepositoryDescription",
@@ -4729,13 +4729,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.*/",
         "getterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@return A comment or description about the new repository.*/",
         "fluentSetterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4807,13 +4807,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.*/",
           "getterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@return A comment or description about the new repository.*/",
           "fluentSetterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>A comment or description about the new repository.</p>\n@param repositoryDescription A comment or description about the new repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoryName" : {
           "documentation" : "<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>",
@@ -4859,13 +4859,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.*/",
           "getterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@return The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.</note>\n@param repositoryName The name of the new repository to be created.</p> <note>The repository name must be unique across the calling AWS account. In addition, repository names are restricted to alphanumeric characters. The suffix \".git\" is prohibited.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -4967,22 +4967,22 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "map" : false,
+          "simple" : true,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "simpleType" : "String"
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**<p>The list of branch names.</p>\n@param branches The list of branch names.*/",
         "getterDocumentation" : "/**<p>The list of branch names.</p>\n@return The list of branch names.*/",
         "fluentSetterDocumentation" : "/**<p>The list of branch names.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The list of branch names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>The list of branch names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>An enumeration token that returns the batch of the results. </p>",
         "name" : "NextToken",
@@ -5027,13 +5027,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.*/",
         "getterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@return An enumeration token that returns the batch of the results.*/",
         "fluentSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5101,13 +5101,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.*/",
           "getterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@return An enumeration token that returns the batch of the results.*/",
           "fluentSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results. </p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Branches" : {
           "documentation" : "<p>The list of branch names.</p>",
@@ -5157,22 +5157,22 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "map" : false,
+            "simple" : true,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "simpleType" : "String"
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**<p>The list of branch names.</p>\n@param branches The list of branch names.*/",
           "getterDocumentation" : "/**<p>The list of branch names.</p>\n@return The list of branch names.*/",
           "fluentSetterDocumentation" : "/**<p>The list of branch names.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The list of branch names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>The list of branch names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5230,13 +5230,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : false,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.*/",
         "getterDocumentation" : "/**<p>The name of the branch.</p>\n@return The name of the branch.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : false
+        "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5304,13 +5304,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : false,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.*/",
           "getterDocumentation" : "/**<p>The name of the branch.</p>\n@return The name of the branch.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : false
+          "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5399,13 +5399,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.*/",
         "getterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@return The name of the repository to get information about.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5477,13 +5477,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.*/",
           "getterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@return The name of the repository to get information about.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5603,13 +5603,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.*/",
         "getterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@return The name of the repository to set or change the comment or description for.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The new comment or description for the specified repository.</p>",
         "name" : "RepositoryDescription",
@@ -5654,13 +5654,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.*/",
         "getterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@return The new comment or description for the specified repository.*/",
         "fluentSetterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5732,13 +5732,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.*/",
           "getterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@return The new comment or description for the specified repository.*/",
           "fluentSetterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The new comment or description for the specified repository.</p>\n@param repositoryDescription The new comment or description for the specified repository.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoryName" : {
           "documentation" : "<p>The name of the repository to set or change the comment or description for.</p>",
@@ -5784,13 +5784,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.*/",
           "getterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@return The name of the repository to set or change the comment or description for.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5910,13 +5910,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.*/",
         "getterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@return The name of the repository to set or change the default branch for.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The name of the branch to set as the default.</p>",
         "name" : "DefaultBranchName",
@@ -5961,13 +5961,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.*/",
         "getterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@return The name of the branch to set as the default.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6039,13 +6039,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.*/",
           "getterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@return The name of the repository to set or change the default branch for.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DefaultBranchName" : {
           "documentation" : "<p>The name of the branch to set as the default.</p>",
@@ -6091,13 +6091,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.*/",
           "getterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@return The name of the branch to set as the default.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6186,13 +6186,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param repositoryName */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ID associated with the repository name.</p>",
         "name" : "RepositoryId",
@@ -6237,13 +6237,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.*/",
         "getterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@return The ID associated with the repository name.*/",
         "fluentSetterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6311,13 +6311,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param repositoryName */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "RepositoryId" : {
           "documentation" : "<p>The ID associated with the repository name.</p>",
@@ -6363,13 +6363,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.*/",
           "getterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@return The ID associated with the repository name.*/",
           "fluentSetterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The ID associated with the repository name.</p>\n@param repositoryId The ID associated with the repository name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6520,13 +6520,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param repositoryName */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The name of the branch for which you want to retrieve information.</p>",
         "name" : "BranchName",
@@ -6571,13 +6571,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.*/",
         "getterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@return The name of the branch for which you want to retrieve information.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6649,13 +6649,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param repositoryName */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param repositoryName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "BranchName" : {
           "documentation" : "<p>The name of the branch for which you want to retrieve information.</p>",
@@ -6701,13 +6701,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.*/",
           "getterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@return The name of the branch for which you want to retrieve information.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6796,13 +6796,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param oldName */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "NewName",
@@ -6847,13 +6847,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param newName */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6925,13 +6925,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param newName */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param newName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "OldName" : {
           "documentation" : "",
@@ -6977,13 +6977,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param oldName */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param oldName \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7041,13 +7041,13 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.*/",
         "getterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@return The ID of the repository that was deleted.*/",
         "fluentSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -7115,13 +7115,13 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.*/",
           "getterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@return The ID of the repository that was deleted.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     }

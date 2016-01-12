@@ -39,7 +39,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.43</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -121,4 +121,3 @@ mvn clean install -Dgpg.skip=true
 [sdk-license]: http://aws.amazon.com/apache2.0/
 [sdk-website]: http://aws.amazon.com/sdkforjava
 [aws-java-sdk-bom]: https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-bom
-

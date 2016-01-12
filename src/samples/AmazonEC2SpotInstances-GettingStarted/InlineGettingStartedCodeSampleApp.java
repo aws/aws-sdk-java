@@ -150,7 +150,7 @@ public class InlineGettingStartedCodeSampleApp {
             DescribeSpotInstanceRequestsRequest describeRequest = new DescribeSpotInstanceRequestsRequest();
             describeRequest.setSpotInstanceRequestIds(spotInstanceRequestIds);
 
-            // Initialize the anyOpen variable to false ??? which assumes there are no requests open unless
+            // Initialize the anyOpen variable to false � which assumes there are no requests open unless
             // we find one that is still open.
             anyOpen=false;
 

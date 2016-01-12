@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +31,7 @@ public class DocumentParameter implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The type of parameter. The type can be either ???String??? or ???StringList???.
+     * The type of parameter. The type can be either “String” or “StringList”.
      * </p>
      */
     private String type;
@@ -89,12 +90,12 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either ???String??? or ???StringList???.
+     * The type of parameter. The type can be either “String” or “StringList”.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either ???String??? or
-     *        ???StringList???.
+     *        The type of parameter. The type can be either “String” or
+     *        “StringList”.
      * @see DocumentParameterType
      */
     public void setType(String type) {
@@ -103,11 +104,11 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either ???String??? or ???StringList???.
+     * The type of parameter. The type can be either “String” or “StringList”.
      * </p>
      * 
-     * @return The type of parameter. The type can be either ???String??? or
-     *         ???StringList???.
+     * @return The type of parameter. The type can be either “String” or
+     *         “StringList”.
      * @see DocumentParameterType
      */
     public String getType() {
@@ -116,12 +117,12 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either ???String??? or ???StringList???.
+     * The type of parameter. The type can be either “String” or “StringList”.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either ???String??? or
-     *        ???StringList???.
+     *        The type of parameter. The type can be either “String” or
+     *        “StringList”.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DocumentParameterType
@@ -133,12 +134,12 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either ???String??? or ???StringList???.
+     * The type of parameter. The type can be either “String” or “StringList”.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either ???String??? or
-     *        ???StringList???.
+     *        The type of parameter. The type can be either “String” or
+     *        “StringList”.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DocumentParameterType
@@ -149,12 +150,12 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either ???String??? or ???StringList???.
+     * The type of parameter. The type can be either “String” or “StringList”.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either ???String??? or
-     *        ???StringList???.
+     *        The type of parameter. The type can be either “String” or
+     *        “StringList”.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DocumentParameterType

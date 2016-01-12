@@ -122,7 +122,7 @@ public final class BOOL extends PathOperand {
      * of the current path operand; used for building expressions.
      * 
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
+     * "if_not_exists (path, operand) – If the item does not contain an attribute 
      * at the specified path, then if_not_exists evaluates to operand; otherwise, 
      * it evaluates to path. You can use this function to avoid overwriting an 
      * attribute already present in the item."
@@ -143,7 +143,7 @@ public final class BOOL extends PathOperand {
      * of the current path operand; used for building expressions.
      * 
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute 
+     * "if_not_exists (path, operand) – If the item does not contain an attribute 
      * at the specified path, then if_not_exists evaluates to operand; otherwise, 
      * it evaluates to path. You can use this function to avoid overwriting an 
      * attribute already present in the item."

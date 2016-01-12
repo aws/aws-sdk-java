@@ -1182,9 +1182,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "ActionState",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ActionState>",
-          "templateImplType" : "java.util.ArrayList<ActionState>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ActionState>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1424,9 +1424,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "ActionState",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ActionState>",
-            "templateImplType" : "java.util.ArrayList<ActionState>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ActionState>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6395,9 +6395,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "ActionConfigurationProperty",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
-          "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6843,9 +6843,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "ActionConfigurationProperty",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
-            "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11429,9 +11429,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "ThirdPartyJob",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ThirdPartyJob>",
-          "templateImplType" : "java.util.ArrayList<ThirdPartyJob>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11567,9 +11567,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "ThirdPartyJob",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ThirdPartyJob>",
-            "templateImplType" : "java.util.ArrayList<ThirdPartyJob>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13702,9 +13702,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "StageDeclaration",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<StageDeclaration>",
-          "templateImplType" : "java.util.ArrayList<StageDeclaration>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<StageDeclaration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13943,9 +13943,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "StageDeclaration",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<StageDeclaration>",
-            "templateImplType" : "java.util.ArrayList<StageDeclaration>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<StageDeclaration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14278,9 +14278,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "BlockerDeclaration",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<BlockerDeclaration>",
-          "templateImplType" : "java.util.ArrayList<BlockerDeclaration>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14393,9 +14393,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "ActionDeclaration",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ActionDeclaration>",
-          "templateImplType" : "java.util.ArrayList<ActionDeclaration>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14583,9 +14583,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "BlockerDeclaration",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<BlockerDeclaration>",
-            "templateImplType" : "java.util.ArrayList<BlockerDeclaration>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14699,9 +14699,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "ActionDeclaration",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ActionDeclaration>",
-            "templateImplType" : "java.util.ArrayList<ActionDeclaration>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15544,9 +15544,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Job",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "java.util.ArrayList<Job>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15682,9 +15682,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Job",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "java.util.ArrayList<Job>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15963,9 +15963,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16078,9 +16078,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16629,9 +16629,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16745,9 +16745,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20210,9 +20210,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "PipelineSummary",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<PipelineSummary>",
-          "templateImplType" : "java.util.ArrayList<PipelineSummary>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<PipelineSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20451,9 +20451,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "PipelineSummary",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<PipelineSummary>",
-            "templateImplType" : "java.util.ArrayList<PipelineSummary>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<PipelineSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20864,9 +20864,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20979,9 +20979,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "Artifact",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21530,9 +21530,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21646,9 +21646,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "Artifact",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22644,9 +22644,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "OutputArtifact",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<OutputArtifact>",
-          "templateImplType" : "java.util.ArrayList<OutputArtifact>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<OutputArtifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22759,9 +22759,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "InputArtifact",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<InputArtifact>",
-          "templateImplType" : "java.util.ArrayList<InputArtifact>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<InputArtifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23052,9 +23052,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "OutputArtifact",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<OutputArtifact>",
-            "templateImplType" : "java.util.ArrayList<OutputArtifact>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<OutputArtifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23220,9 +23220,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "InputArtifact",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<InputArtifact>",
-            "templateImplType" : "java.util.ArrayList<InputArtifact>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<InputArtifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23707,9 +23707,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "ActionConfigurationProperty",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
-          "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24263,9 +24263,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "ActionConfigurationProperty",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
-            "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25324,9 +25324,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "ActionType",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ActionType>",
-          "templateImplType" : "java.util.ArrayList<ActionType>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ActionType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25565,9 +25565,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "ActionType",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ActionType>",
-            "templateImplType" : "java.util.ArrayList<ActionType>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ActionType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26872,9 +26872,9 @@
           "memberAdditionalUnmarshallingPath" : null,
           "simpleType" : "StageState",
           "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<StageState>",
-          "templateImplType" : "java.util.ArrayList<StageState>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<StageState>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27164,9 +27164,9 @@
             "memberAdditionalUnmarshallingPath" : null,
             "simpleType" : "StageState",
             "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<StageState>",
-            "templateImplType" : "java.util.ArrayList<StageState>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<StageState>"
           },
           "mapModel" : null,
           "enumType" : null,

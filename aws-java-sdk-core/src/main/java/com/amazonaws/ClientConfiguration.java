@@ -442,17 +442,22 @@ public class ClientConfiguration {
     }
 
     /**
+     * Returns the value for the given system property.
+     */
+    private String getSystemProperty(String property) {
+        return System.getProperty(property);
+    }
+
+    /**
      * Returns the Java system property for proxy host depending on
      * {@link this.getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyHost, otherwise
      * returns value of http.proxyHost.
      */
     private String getProxyHostProperty() {
-        if (getProtocol() == Protocol.HTTPS) {
-            return System.getProperty("https.proxyHost");
-        } else {
-            return System.getProperty("http.proxyHost");
-        }
+        return getProtocol() == Protocol.HTTPS
+                ? getSystemProperty("https.proxyHost")
+                : getSystemProperty("http.proxyHost");
     }
 
     /**
@@ -500,7 +505,9 @@ public class ClientConfiguration {
      * if the system property is not set with a valid port number.
      */
     private int getProxyPortProperty() {
-        String proxyPortString = (getProtocol() == Protocol.HTTPS) ? System.getProperty("https.proxyPort") : System.getProperty("http.proxyPort");
+        final String proxyPortString = (getProtocol() == Protocol.HTTPS)
+                    ? getSystemProperty("https.proxyPort")
+                    : getSystemProperty("http.proxyPort");
         try {
             return Integer.parseInt(proxyPortString);
         } catch (NumberFormatException e) {
@@ -552,7 +559,9 @@ public class ClientConfiguration {
      * returns value of http.proxyUser.
      */
     private String getProxyUsernameProperty() {
-        return (getProtocol() == Protocol.HTTPS) ? System.getProperty("https.proxyUser") : System.getProperty("http.proxyUser");
+        return (getProtocol() == Protocol.HTTPS)
+                ? getSystemProperty("https.proxyUser")
+                : getSystemProperty("http.proxyUser");
     }
 
     /**
@@ -600,7 +609,9 @@ public class ClientConfiguration {
      * returns value of http.proxyPassword.
      */
     private String getProxyPasswordProperty() {
-        return (getProtocol() == Protocol.HTTPS) ? System.getProperty("https.proxyPassword") : System.getProperty("http.proxyPassword");
+        return (getProtocol() == Protocol.HTTPS)
+                ? getSystemProperty("https.proxyPassword")
+                : getSystemProperty("http.proxyPassword");
     }
 
     /**
