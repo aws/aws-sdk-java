@@ -760,87 +760,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 }
             };
         } else {
-            saveObjectHandler = this.new SaveObjectHandler(clazz, object,
-                    tableName, finalConfig, converter, saveExpression) {
-
-                @Override
-                protected void onPrimaryKeyAttributeValue(String attributeName,
-                        AttributeValue keyAttributeValue) {
-                    /* Put it in the key collection which is later used in the updateItem request. */
-                    getPrimaryKeyAttributeValues().put(attributeName, keyAttributeValue);
-                }
-
-
-                @Override
-                protected void onNonKeyAttribute(String attributeName,
-                        AttributeValue currentValue) {
-                    /* If it's a set attribute and the mapper is configured with APPEND_SET,
-                     * we do an "ADD" update instead of the default "PUT".
-                     */
-                    if (getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
-                        if (currentValue.getBS() != null
-                                || currentValue.getNS() != null
-                                || currentValue.getSS() != null) {
-                            getAttributeValueUpdates().put(
-                                    attributeName,
-                                    new AttributeValueUpdate().withValue(
-                                            currentValue).withAction("ADD"));
-                            return;
-                        }
-                    }
-                    /* Otherwise, we do the default "PUT" update. */
-                    super.onNonKeyAttribute(attributeName, currentValue);
-                }
-
-                @Override
-                protected void onNullNonKeyAttribute(String attributeName) {
-                    /*
-                     * If UPDATE_SKIP_NULL_ATTRIBUTES or APPEND_SET is
-                     * configured, we don't delete null value attributes.
-                     */
-                    if (getLocalSaveBehavior() == SaveBehavior.UPDATE_SKIP_NULL_ATTRIBUTES
-                            || getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
-                        return;
-                    }
-
-                    else {
-                        /* Delete attributes that are set as null in the object. */
-                        getAttributeValueUpdates()
-                                .put(attributeName,
-                                        new AttributeValueUpdate()
-                                                .withAction("DELETE"));
-                    }
-                }
-
-                @Override
-                protected void executeLowLevelRequest() {
-                    UpdateItemResult updateItemResult = doUpdateItem();
-
-                    // The UpdateItem request is specified to return ALL_NEW
-                    // attributes of the affected item. So if the returned
-                    // UpdateItemResult does not include any ReturnedAttributes,
-                    // it indicates the UpdateItem failed silently (e.g. the
-                    // key-only-put nightmare -
-                    // https://forums.aws.amazon.com/thread.jspa?threadID=86798&tstart=25),
-                    // in which case we should re-send a PutItem
-                    // request instead.
-                    if (updateItemResult.getAttributes() == null
-                            || updateItemResult.getAttributes().isEmpty()) {
-                        // Before we proceed with PutItem, we need to put all
-                        // the key attributes (prepared for the
-                        // UpdateItemRequest) into the AttributeValueUpdates
-                        // collection.
-                        for (String keyAttributeName : getPrimaryKeyAttributeValues().keySet()) {
-                            getAttributeValueUpdates().put(keyAttributeName,
-                                    new AttributeValueUpdate()
-                                            .withValue(getPrimaryKeyAttributeValues().get(keyAttributeName))
-                                            .withAction("PUT"));
-                        }
-
-                        doPutItem();
-                    }
-                }
-            };
+            saveObjectHandler = this.new DefaultSaveObjectHandler(clazz, object,
+                    tableName, finalConfig, converter, saveExpression);
         }
 
         saveObjectHandler.execute();
@@ -1194,6 +1115,100 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         .withValue(newVersionValue));
 
             inMemoryUpdates.add(new ValueUpdate(method, newVersionValue, object, converter));
+        }
+    }
+
+    protected class DefaultSaveObjectHandler extends SaveObjectHandler {
+        /**
+         * Constructs a handler for saving the specified model object.
+         *
+         * @param clazz          The domain class of the object.
+         * @param object         The model object to be saved.
+         * @param tableName      The table name.
+         * @param saveConfig
+         * @param converter
+         * @param saveExpression The save expression, including the user-provided conditions and an optional logic operator.
+         */
+        public DefaultSaveObjectHandler(Class<?> clazz, Object object, String tableName, DynamoDBMapperConfig saveConfig, ItemConverter converter, DynamoDBSaveExpression saveExpression) {
+            super(clazz, object, tableName, saveConfig, converter, saveExpression);
+        }
+
+        @Override
+            protected void onPrimaryKeyAttributeValue(String attributeName,
+                AttributeValue keyAttributeValue) {
+                    /* Put it in the key collection which is later used in the updateItem request. */
+            getPrimaryKeyAttributeValues().put(attributeName, keyAttributeValue);
+        }
+
+
+            @Override
+            protected void onNonKeyAttribute(String attributeName,
+                AttributeValue currentValue) {
+                    /* If it's a set attribute and the mapper is configured with APPEND_SET,
+                     * we do an "ADD" update instead of the default "PUT".
+                     */
+            if (getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
+                if (currentValue.getBS() != null
+                        || currentValue.getNS() != null
+                        || currentValue.getSS() != null) {
+                    getAttributeValueUpdates().put(
+                            attributeName,
+                            new AttributeValueUpdate().withValue(
+                                    currentValue).withAction("ADD"));
+                    return;
+                }
+            }
+                    /* Otherwise, we do the default "PUT" update. */
+            super.onNonKeyAttribute(attributeName, currentValue);
+        }
+
+            @Override
+            protected void onNullNonKeyAttribute(String attributeName) {
+                    /*
+                     * If UPDATE_SKIP_NULL_ATTRIBUTES or APPEND_SET is
+                     * configured, we don't delete null value attributes.
+                     */
+            if (getLocalSaveBehavior() == SaveBehavior.UPDATE_SKIP_NULL_ATTRIBUTES
+                    || getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
+                return;
+            }
+
+            else {
+                        /* Delete attributes that are set as null in the object. */
+                getAttributeValueUpdates()
+                        .put(attributeName,
+                                new AttributeValueUpdate()
+                                        .withAction("DELETE"));
+            }
+        }
+
+            @Override
+            protected void executeLowLevelRequest() {
+            UpdateItemResult updateItemResult = doUpdateItem();
+
+            // The UpdateItem request is specified to return ALL_NEW
+            // attributes of the affected item. So if the returned
+            // UpdateItemResult does not include any ReturnedAttributes,
+            // it indicates the UpdateItem failed silently (e.g. the
+            // key-only-put nightmare -
+            // https://forums.aws.amazon.com/thread.jspa?threadID=86798&tstart=25),
+            // in which case we should re-send a PutItem
+            // request instead.
+            if (updateItemResult.getAttributes() == null
+                    || updateItemResult.getAttributes().isEmpty()) {
+                // Before we proceed with PutItem, we need to put all
+                // the key attributes (prepared for the
+                // UpdateItemRequest) into the AttributeValueUpdates
+                // collection.
+                for (String keyAttributeName : getPrimaryKeyAttributeValues().keySet()) {
+                    getAttributeValueUpdates().put(keyAttributeName,
+                            new AttributeValueUpdate()
+                                    .withValue(getPrimaryKeyAttributeValues().get(keyAttributeName))
+                                    .withAction("PUT"));
+                }
+
+                doPutItem();
+            }
         }
     }
 
