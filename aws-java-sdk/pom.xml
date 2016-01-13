@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.10.46-SNAPSHOT</version>
+    <version>1.10.47-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk</artifactId>
@@ -16,355 +16,355 @@
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-support</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-simpledb</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-simpleworkflow</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-storagegateway</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-route53</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-s3</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-importexport</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-sts</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-sqs</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-rds</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-redshift</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-elasticbeanstalk</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-glacier</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-iam</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-datapipeline</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-elasticloadbalancing</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-emr</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-elasticache</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-elastictranscoder</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-ec2</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-dynamodb</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-sns</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudtrail</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudwatch</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-logs</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cognitoidentity</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cognitosync</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-directconnect</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudformation</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudfront</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-kinesis</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-opsworks</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-ses</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-autoscaling</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudsearch</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudwatchmetrics</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-swf-libraries</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-codedeploy</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-codepipeline</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-kms</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-config</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-lambda</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-ecs</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-ecr</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-cloudhsm</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-ssm</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-workspaces</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-machinelearning</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-directory</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-efs</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-codecommit</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-devicefarm</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-elasticsearch</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-waf</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-marketplacecommerceanalytics</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-inspector</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-iot</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-api-gateway</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-core</artifactId>
-      <version>1.10.45</version>
+      <version>1.10.46</version>
       <optional>false</optional>
     </dependency>
   </dependencies>

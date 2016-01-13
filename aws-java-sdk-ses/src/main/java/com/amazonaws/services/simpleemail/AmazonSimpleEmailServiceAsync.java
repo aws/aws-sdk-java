@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1433,7 +1434,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * <note>All of the rules in the rule set must be represented in this
      * request. That is, this API will return an error if the reorder request
-     * doesn???t explicitly position all of the rules.</note>
+     * doesn’t explicitly position all of the rules.</note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1457,7 +1458,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * <note>All of the rules in the rule set must be represented in this
      * request. That is, this API will return an error if the reorder request
-     * doesn???t explicitly position all of the rules.</note>
+     * doesn’t explicitly position all of the rules.</note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"

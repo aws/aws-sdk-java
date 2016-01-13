@@ -21,10 +21,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeIdFormat(DescribeIdFormatRequest) DescribeIdFormat operation}.
  * <p>
- * <b>Important: This command is reserved for future use, and is
- * currently not available for you to use.</b>
- * </p>
- * <p>
  * Describes the ID format settings for your resources on a per-region
  * basis, for example, to view which resource types are enabled for
  * longer IDs. This request only returns information about resource types

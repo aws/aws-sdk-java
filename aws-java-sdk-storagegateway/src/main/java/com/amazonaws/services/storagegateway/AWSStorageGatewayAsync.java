@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -902,8 +903,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You no longer pay software charges after the gateway is deleted; however,
      * your existing Amazon EBS snapshots persist and you will continue to be
-     * billed for these snapshots.??You can choose to remove all remaining Amazon
-     * EBS snapshots by canceling your Amazon EC2 subscription.?? If you prefer
+     * billed for these snapshots. You can choose to remove all remaining Amazon
+     * EBS snapshots by canceling your Amazon EC2 subscription.  If you prefer
      * not to cancel your Amazon EC2 subscription, you can delete your snapshots
      * using the Amazon EC2 console. For more information, see the <a
      * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
@@ -937,8 +938,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You no longer pay software charges after the gateway is deleted; however,
      * your existing Amazon EBS snapshots persist and you will continue to be
-     * billed for these snapshots.??You can choose to remove all remaining Amazon
-     * EBS snapshots by canceling your Amazon EC2 subscription.?? If you prefer
+     * billed for these snapshots. You can choose to remove all remaining Amazon
+     * EBS snapshots by canceling your Amazon EC2 subscription.  If you prefer
      * not to cancel your Amazon EC2 subscription, you can delete your snapshots
      * using the Amazon EC2 console. For more information, see the <a
      * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail

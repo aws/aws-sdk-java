@@ -111,10 +111,10 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
      * Sets the KMS customer key id used for server side encryption.
      * <p>
      * Note S3 does not require HTTP header
-     * ???x-amz-server-side-encryption-aws-kms-key-id??? to be always present (a
+     * “x-amz-server-side-encryption-aws-kms-key-id” to be always present (a
      * default key ID will be used if this header is not present).
      * <p>
-     * It is also possible to set the header to ???alias/aws/s3??? to refer to the
+     * It is also possible to set the header to “alias/aws/s3” to refer to the
      * default KMS CMK ID.
      */
     public void setKmsCmkId(String kmsCmkId) {
@@ -620,10 +620,10 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
         }
         /*
          * S3 does not require HTTP header
-         * ???x-amz-server-side-encryption-aws-kms-key-id??? to be always present (a
+         * “x-amz-server-side-encryption-aws-kms-key-id” to be always present (a
          * default key ID will be used if this header is not present).
          *
-         * It is also possible to set the header to ???alias/aws/s3??? to refer
+         * It is also possible to set the header to “alias/aws/s3” to refer
          * to the default KMS CMK ID.
          */
     }

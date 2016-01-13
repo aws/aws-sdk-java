@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -78,37 +79,124 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html"
  * >Managing Windows Instance Configuration</a>.
  * </p>
- * <para>SSM Config and Run Command include the following pre-defined
- * documents.</para>
+ * <p>
+ * SSM Config and Run Command include the following pre-defined documents.
+ * </p>
  * <table>
  * <title>Amazon Pre-defined SSM Documents</title> <tgroup cols="3"> <colspec
  * colnum="1" colname="col1" colwidth="1*"></colspec> <colspec colnum="2"
  * colname="col2" colwidth="1*"></colspec> <colspec colnum="3" colname="col3"
  * colwidth="1*"></colspec> <thead> <row> <entry>Name</entry>
  * <entry>Description</entry> <entry>Platform</entry> </row> </thead> <tbody>
- * <row> <entry> <para>AWS-RunShellScript</para> </entry> <entry> <para>Run
- * shell scripts</para> </entry> <entry> <para>Linux</para> </entry> </row>
- * <row> <entry> <para>AWS-UpdateSSMAgent</para> </entry> <entry> <para>Update
- * the Amazon SSM agent</para> </entry> <entry> <para>Linux</para> </entry>
- * </row> <row> <entry> <para>AWS-JoinDirectoryServiceDomain </para> </entry>
- * <entry> <para>Join an AWS Directory </para> </entry> <entry>
- * <para>Windows</para> </entry> </row> <row> <entry>
- * <para>AWS-RunPowerShellScript</para> </entry> <entry> <para>Run PowerShell
- * commands or scripts</para> </entry> <entry> <para>Windows</para> </entry>
- * </row> <row> <entry> <para>AWS-UpdateEC2Config</para> </entry> <entry>
- * <para>Update the EC2Config service </para> </entry> <entry>
- * <para>Windows</para> </entry> </row> <row> <entry>
- * <para>AWS-ConfigureWindowsUpdate</para> </entry> <entry> <para>Configure
- * Windows Update settings</para> </entry> <entry> <para>Windows</para> </entry>
- * </row> <row> <entry> <para>AWS-InstallApplication</para> </entry> <entry>
- * <para>Install, repair, or uninstall software using an MSI package</para>
- * </entry> <entry> <para>Windows</para> </entry> </row> <row> <entry>
- * <para>AWS-InstallPowerShellModule</para> </entry> <entry> <para>Install
- * PowerShell modules </para> </entry> <entry> <para>Windows</para> </entry>
- * </row> <row> <entry> <para>AWS-ConfigureCloudWatch</para> </entry> <entry>
- * <para>Configure Amazon CloudWatch Logs to monitor applications and
- * systems</para> </entry> <entry> <para>Windows</para> </entry> </row> </tbody>
- * </tgroup>
+ * <row> <entry>
+ * <p>
+ * AWS-RunShellScript
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Run shell scripts
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Linux
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-UpdateSSMAgent
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Update the Amazon SSM agent
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Linux
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-JoinDirectoryServiceDomain
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Join an AWS Directory
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-RunPowerShellScript
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Run PowerShell commands or scripts
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-UpdateEC2Config
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Update the EC2Config service
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-ConfigureWindowsUpdate
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Configure Windows Update settings
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-InstallApplication
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Install, repair, or uninstall software using an MSI package
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-InstallPowerShellModule
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Install PowerShell modules
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> <row> <entry>
+ * <p>
+ * AWS-ConfigureCloudWatch
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Configure Amazon CloudWatch Logs to monitor applications and systems
+ * </p>
+ * </entry> <entry>
+ * <p>
+ * Windows
+ * </p>
+ * </entry> </row> </tbody> </tgroup>
  * </table>
  * <important> <simpara>The commands or scripts specified in SSM documents run
  * with administrative privilege on your instances because the Amazon SSM agent

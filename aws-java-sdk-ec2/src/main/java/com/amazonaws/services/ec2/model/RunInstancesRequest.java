@@ -135,7 +135,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
-     * The Base64-encoded MIME user data for the instances.
+     * Data to configure the instance, or a script to run during instance
+     * launch. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be
+     * base64-encoded. Command line tools perform encoding for you.
      */
     private String userData;
 
@@ -732,29 +738,65 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The Base64-encoded MIME user data for the instances.
+     * Data to configure the instance, or a script to run during instance
+     * launch. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be
+     * base64-encoded. Command line tools perform encoding for you.
      *
-     * @return The Base64-encoded MIME user data for the instances.
+     * @return Data to configure the instance, or a script to run during instance
+     *         launch. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     *         Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     *         User Data</a> (Windows). For API calls, the text must be
+     *         base64-encoded. Command line tools perform encoding for you.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * The Base64-encoded MIME user data for the instances.
+     * Data to configure the instance, or a script to run during instance
+     * launch. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be
+     * base64-encoded. Command line tools perform encoding for you.
      *
-     * @param userData The Base64-encoded MIME user data for the instances.
+     * @param userData Data to configure the instance, or a script to run during instance
+     *         launch. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     *         Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     *         User Data</a> (Windows). For API calls, the text must be
+     *         base64-encoded. Command line tools perform encoding for you.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * The Base64-encoded MIME user data for the instances.
+     * Data to configure the instance, or a script to run during instance
+     * launch. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be
+     * base64-encoded. Command line tools perform encoding for you.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userData The Base64-encoded MIME user data for the instances.
+     * @param userData Data to configure the instance, or a script to run during instance
+     *         launch. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     *         Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     *         User Data</a> (Windows). For API calls, the text must be
+     *         base64-encoded. Command line tools perform encoding for you.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

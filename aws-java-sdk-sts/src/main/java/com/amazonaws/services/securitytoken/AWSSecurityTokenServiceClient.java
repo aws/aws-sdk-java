@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -924,7 +925,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      * <code>GetFederationToken</code> to create temporary security credentials,
      * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"
-     * >GetFederationToken???Federation Through a Custom Identity Broker</a>.
+     * >GetFederationToken—Federation Through a Custom Identity Broker</a>.
      * </p>
      * 
      * @param getFederationTokenRequest

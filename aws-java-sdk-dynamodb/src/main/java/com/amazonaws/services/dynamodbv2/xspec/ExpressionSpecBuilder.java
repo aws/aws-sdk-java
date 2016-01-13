@@ -579,7 +579,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -602,7 +602,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -628,7 +628,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -654,7 +654,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -680,7 +680,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -706,7 +706,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -732,7 +732,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -758,7 +758,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -784,7 +784,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -810,7 +810,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -836,7 +836,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -862,7 +862,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -888,7 +888,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "list_append(operand, operand) ??? This function evaluates to a list with a
+     * "list_append(operand, operand) – This function evaluates to a list with a
      * new element added to it. You can append the new element to the start or
      * the end of the list by reversing the order of the operands."
      * </pre>
@@ -911,7 +911,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "list_append(operand, operand) ??? This function evaluates to a list with a
+     * "list_append(operand, operand) – This function evaluates to a list with a
      * new element added to it. You can append the new element to the start or
      * the end of the list by reversing the order of the operands."
      * </pre>
@@ -934,7 +934,7 @@ public final class ExpressionSpecBuilder implements Cloneable {
      * expression.
      *
      * <pre>
-     * "list_append(operand, operand) ??? This function evaluates to a list with a
+     * "list_append(operand, operand) – This function evaluates to a list with a
      * new element added to it. You can append the new element to the start or
      * the end of the list by reversing the order of the operands."
      * </pre>

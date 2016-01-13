@@ -36,7 +36,8 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
     private java.util.Date timestamp;
 
     /**
-     * The console output, Base64 encoded.
+     * The console output, Base64 encoded. If using a command line tool, the
+     * tools decode the output for you.
      */
     private String output;
 
@@ -107,29 +108,35 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
     }
 
     /**
-     * The console output, Base64 encoded.
+     * The console output, Base64 encoded. If using a command line tool, the
+     * tools decode the output for you.
      *
-     * @return The console output, Base64 encoded.
+     * @return The console output, Base64 encoded. If using a command line tool, the
+     *         tools decode the output for you.
      */
     public String getOutput() {
         return output;
     }
     
     /**
-     * The console output, Base64 encoded.
+     * The console output, Base64 encoded. If using a command line tool, the
+     * tools decode the output for you.
      *
-     * @param output The console output, Base64 encoded.
+     * @param output The console output, Base64 encoded. If using a command line tool, the
+     *         tools decode the output for you.
      */
     public void setOutput(String output) {
         this.output = output;
     }
     
     /**
-     * The console output, Base64 encoded.
+     * The console output, Base64 encoded. If using a command line tool, the
+     * tools decode the output for you.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param output The console output, Base64 encoded.
+     * @param output The console output, Base64 encoded. If using a command line tool, the
+     *         tools decode the output for you.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

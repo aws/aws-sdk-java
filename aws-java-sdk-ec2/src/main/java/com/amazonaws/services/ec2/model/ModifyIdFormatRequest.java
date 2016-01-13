@@ -21,10 +21,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyIdFormat(ModifyIdFormatRequest) ModifyIdFormat operation}.
  * <p>
- * <b>Important: This command is reserved for future use, and is
- * currently not available for you to use.</b>
- * </p>
- * <p>
  * Modifies the ID format for the specified resource on a per-region
  * basis. You can specify that resources should receive longer IDs
  * (17-character IDs) when they are created. The following resource types

@@ -37,14 +37,14 @@ import java.util.concurrent.Semaphore;
 public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     /**
-     * Refresh interval
+     * Default refresh interval
      */
-    private static final long REFRESH_INTERVAL_NANOS = 5*60*1000*1000*1000L;
+    private static final long DEFAULT_REFRESH_INTERVAL_NANOS = 5 * 60 * 1000 * 1000 * 1000L;
 
     /**
-     * Force reload interval
+     * Default force reload interval
      */
-    private static final long FORCE_RELOAD_INTERVAL_NANOS = 2*REFRESH_INTERVAL_NANOS;
+    private static final long DEFAULT_FORCE_RELOAD_INTERVAL_NANOS = 2 * DEFAULT_REFRESH_INTERVAL_NANOS;
 
     /**
      * The credential profiles file from which this provider loads the security
@@ -66,6 +66,16 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
      * at least one call every REFRESH_INTERVAL_NANOS.
      */
     private final Semaphore refreshSemaphore = new Semaphore(1);
+
+    /**
+     * Refresh interval. Defaults to {@link #DEFAULT_REFRESH_INTERVAL_NANOS}
+     */
+    private long refreshIntervalNanos = DEFAULT_REFRESH_INTERVAL_NANOS;
+
+    /**
+     * Force reload interval. Defaults to {@link #DEFAULT_FORCE_RELOAD_INTERVAL_NANOS}
+     */
+    private long refreshForceIntervalNanos = DEFAULT_FORCE_RELOAD_INTERVAL_NANOS;
 
     /**
      * Creates a new profile credentials provider that returns the AWS security
@@ -160,9 +170,9 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
         // credentials are never too stale.
         long now = System.nanoTime();
         long age = now - lastRefreshed;
-        if (age > FORCE_RELOAD_INTERVAL_NANOS) {
+        if (age > refreshForceIntervalNanos) {
             refresh();
-        } else if (age > REFRESH_INTERVAL_NANOS) {
+        } else if (age > refreshIntervalNanos) {
             if (refreshSemaphore.tryAcquire()) {
                 try {
                     refresh();
@@ -179,5 +189,41 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
     public void refresh() {
         profilesConfigFile.refresh();
         lastRefreshed = System.nanoTime();
+    }
+
+    /**
+     * Gets the refresh interval in nanoseconds.
+     * 
+     * @return nanoseconds
+     */
+    public long getRefreshIntervalNanos() {
+        return refreshIntervalNanos;
+    }
+
+    /**
+     * Sets the refresh interval in nanoseconds.
+     * 
+     * @param refreshIntervalNanos nanoseconds
+     */
+    public void setRefreshIntervalNanos(long refreshIntervalNanos) {
+        this.refreshIntervalNanos = refreshIntervalNanos;
+    }
+
+    /**
+     * Gets the forced refresh interval in nanoseconds.
+     * 
+     * @return nanoseconds
+     */
+    public long getRefreshForceIntervalNanos() {
+        return refreshForceIntervalNanos;
+    }
+
+    /**
+     * Sets the forced refresh interval in nanoseconds.
+     * 
+     * @param refreshForceIntervalNanos
+     */
+    public void setRefreshForceIntervalNanos(long refreshForceIntervalNanos) {
+        this.refreshForceIntervalNanos = refreshForceIntervalNanos;
     }
 }
