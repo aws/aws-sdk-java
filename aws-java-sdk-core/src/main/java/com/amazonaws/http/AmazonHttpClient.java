@@ -820,8 +820,8 @@ public class AmazonHttpClient {
 
         try {
             execParams.apacheResponse = httpClient.execute(execParams.apacheRequest, httpContext);
-            if ((execContext.getClientExecutionTrackerTask().isEnabled() || requestAbortTaskTracker.isEnabled())
-                    && !responseHandler.needsConnectionLeftOpen()) {
+            if (shouldBufferHttpEntity(responseHandler.needsConnectionLeftOpen(), execContext, execParams,
+                    requestAbortTaskTracker)) {
                 execParams.apacheResponse.setEntity(new BufferedHttpEntity(execParams.apacheResponse.getEntity()));
             }
             isHeaderReqIdAvail = logHeaderRequestId(execParams.apacheResponse);
@@ -903,6 +903,17 @@ public class AmazonHttpClient {
             request.setTimeOffset(timeOffset); // adjust time offset for the retry
         }
         return null; // => retry
+    }
+
+    /**
+     * @return True if the {@link HttpEntity} should be wrapped in a {@link BufferedHttpEntity}
+     */
+    private boolean shouldBufferHttpEntity(final boolean needsConnectionLeftOpen,
+                                           final ExecutionContext execContext,
+                                           ExecOneRequestParams execParams,
+                                           final HttpRequestAbortTaskTracker requestAbortTaskTracker) {
+        return (execContext.getClientExecutionTrackerTask().isEnabled() || requestAbortTaskTracker.isEnabled())
+                && !needsConnectionLeftOpen && execParams.apacheResponse.getEntity() != null;
     }
 
     /**

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the price for a Reserved instance.
+ * Describes the price for a Reserved Instance.
  * </p>
  */
 public class PriceSchedule implements Serializable, Cloneable {
@@ -35,7 +35,7 @@ public class PriceSchedule implements Serializable, Cloneable {
     private Double price;
 
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -45,9 +45,9 @@ public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved instance in the listing. <p>A specific price schedule is
+     * the Reserved Instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved instance listing that has five
+     * time. Take, for example, a Reserved Instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -129,13 +129,13 @@ public class PriceSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @return The currency for transacting the Reserved instance resale. At this
+     * @return The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
@@ -145,13 +145,13 @@ public class PriceSchedule implements Serializable, Cloneable {
     }
     
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
@@ -161,7 +161,7 @@ public class PriceSchedule implements Serializable, Cloneable {
     }
     
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -169,7 +169,7 @@ public class PriceSchedule implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -183,13 +183,13 @@ public class PriceSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
@@ -199,7 +199,7 @@ public class PriceSchedule implements Serializable, Cloneable {
     }
     
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -207,7 +207,7 @@ public class PriceSchedule implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -222,9 +222,9 @@ public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved instance in the listing. <p>A specific price schedule is
+     * the Reserved Instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved instance listing that has five
+     * time. Take, for example, a Reserved Instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -232,9 +232,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * term, will be active for months 2 and 1.
      *
      * @return The current price schedule, as determined by the term remaining for
-     *         the Reserved instance in the listing. <p>A specific price schedule is
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved instance listing that has five
+     *         time. Take, for example, a Reserved Instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months
@@ -247,9 +247,9 @@ public class PriceSchedule implements Serializable, Cloneable {
     
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved instance in the listing. <p>A specific price schedule is
+     * the Reserved Instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved instance listing that has five
+     * time. Take, for example, a Reserved Instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -257,9 +257,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * term, will be active for months 2 and 1.
      *
      * @param active The current price schedule, as determined by the term remaining for
-     *         the Reserved instance in the listing. <p>A specific price schedule is
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved instance listing that has five
+     *         time. Take, for example, a Reserved Instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months
@@ -272,9 +272,9 @@ public class PriceSchedule implements Serializable, Cloneable {
     
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved instance in the listing. <p>A specific price schedule is
+     * the Reserved Instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved instance listing that has five
+     * time. Take, for example, a Reserved Instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -284,9 +284,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param active The current price schedule, as determined by the term remaining for
-     *         the Reserved instance in the listing. <p>A specific price schedule is
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved instance listing that has five
+     *         time. Take, for example, a Reserved Instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months
@@ -303,9 +303,9 @@ public class PriceSchedule implements Serializable, Cloneable {
 
     /**
      * The current price schedule, as determined by the term remaining for
-     * the Reserved instance in the listing. <p>A specific price schedule is
+     * the Reserved Instance in the listing. <p>A specific price schedule is
      * always in effect, but only one price schedule can be active at any
-     * time. Take, for example, a Reserved instance listing that has five
+     * time. Take, for example, a Reserved Instance listing that has five
      * months remaining in its term. When you specify price schedules for
      * five months and two months, this means that schedule 1, covering the
      * first three months of the remaining term, will be active during months
@@ -313,9 +313,9 @@ public class PriceSchedule implements Serializable, Cloneable {
      * term, will be active for months 2 and 1.
      *
      * @return The current price schedule, as determined by the term remaining for
-     *         the Reserved instance in the listing. <p>A specific price schedule is
+     *         the Reserved Instance in the listing. <p>A specific price schedule is
      *         always in effect, but only one price schedule can be active at any
-     *         time. Take, for example, a Reserved instance listing that has five
+     *         time. Take, for example, a Reserved Instance listing that has five
      *         months remaining in its term. When you specify price schedules for
      *         five months and two months, this means that schedule 1, covering the
      *         first three months of the remaining term, will be active during months

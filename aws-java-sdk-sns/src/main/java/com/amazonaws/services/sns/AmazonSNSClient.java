@@ -247,10 +247,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 .add(new TopicLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://sns.us-east-1.amazonaws.com");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("https://sns.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

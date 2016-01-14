@@ -20,6 +20,7 @@ package com.amazonaws.retry;
 
 import java.util.Random;
 
+import com.amazonaws.http.response.NullResponseHandler;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -138,7 +139,7 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
 
         try {
             testedClient.execute(getSampleRequestWithRepeatableContent(originalRequest),
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonServiceException is expected.");

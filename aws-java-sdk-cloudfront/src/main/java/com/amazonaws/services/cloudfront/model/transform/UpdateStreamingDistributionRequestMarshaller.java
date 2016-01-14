@@ -1,24 +1,25 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudfront.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,190 +35,191 @@ import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
- * Update Streaming Distribution Request Marshaller
+ * UpdateStreamingDistributionRequest Marshaller
  */
-public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<Request<UpdateStreamingDistributionRequest>, UpdateStreamingDistributionRequest> {
 
-    private static final String RESOURCE_PATH_TEMPLATE;
-    private static final Map<String, String> STATIC_QUERY_PARAMS;
-    private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
-    static {
-        String path = "2015-09-17/streaming-distribution/{Id}/config";
-        Map<String, String> staticMap = new HashMap<String, String>();
-        Map<String, String> dynamicMap = new HashMap<String, String>();
+public class UpdateStreamingDistributionRequestMarshaller
+        implements
+        Marshaller<Request<UpdateStreamingDistributionRequest>, UpdateStreamingDistributionRequest> {
 
-        int index = path.indexOf("?");
-        if (index != -1) {
-            String queryString = path.substring(index + 1);
-            path = path.substring(0, index);
-
-            for (String s : queryString.split("[;&]")) {
-                index = s.indexOf("=");
-                if (index != -1) {
-                    String name = s.substring(0, index);
-                    String value = s.substring(index + 1);
-
-                    if (value.startsWith("{") && value.endsWith("}")) {
-                        dynamicMap.put(value.substring(1, value.length() - 1), name);
-                    } else {
-                        staticMap.put(name, value);
-                    }
-                }
-            }
-        }
-
-        RESOURCE_PATH_TEMPLATE = path;
-        STATIC_QUERY_PARAMS = Collections.unmodifiableMap(staticMap);
-        DYNAMIC_QUERY_PARAMS = Collections.unmodifiableMap(dynamicMap);
-    }
-
-    public Request<UpdateStreamingDistributionRequest> marshall(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) {
+    public Request<UpdateStreamingDistributionRequest> marshall(
+            UpdateStreamingDistributionRequest updateStreamingDistributionRequest) {
 
         if (updateStreamingDistributionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateStreamingDistributionRequest> request = new DefaultRequest<UpdateStreamingDistributionRequest>(updateStreamingDistributionRequest, "AmazonCloudFront");
+        Request<UpdateStreamingDistributionRequest> request = new DefaultRequest<UpdateStreamingDistributionRequest>(
+                updateStreamingDistributionRequest, "AmazonCloudFront");
+
         request.setHttpMethod(HttpMethodName.PUT);
-        if (updateStreamingDistributionRequest.getIfMatch() != null)
-          request.addHeader("If-Match", StringUtils.fromString(updateStreamingDistributionRequest.getIfMatch()));
 
-        String uriResourcePath = RESOURCE_PATH_TEMPLATE;
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("Id");
-            String value = (updateStreamingDistributionRequest.getId() == null) ? null : StringUtils.fromString(updateStreamingDistributionRequest.getId());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{Id}", (updateStreamingDistributionRequest.getId() == null) ? "" : StringUtils.fromString(updateStreamingDistributionRequest.getId())); 
+        if (updateStreamingDistributionRequest.getIfMatch() != null) {
+            request.addHeader("If-Match",
+                    StringUtils.fromString(updateStreamingDistributionRequest
+                            .getIfMatch()));
         }
 
-        request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
+        String uriResourcePath = "/2016-01-13/streaming-distribution/{Id}/config";
 
-        for (Map.Entry<String, String> entry : STATIC_QUERY_PARAMS.entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (updateStreamingDistributionRequest.getId() == null) ? ""
+                        : StringUtils
+                                .fromString(updateStreamingDistributionRequest
+                                        .getId()));
+        request.setResourcePath(uriResourcePath);
 
+        try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-09-17/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter,
+                    "http://cloudfront.amazonaws.com/doc/2016-01-13/");
 
-                    if (updateStreamingDistributionRequest != null) {
-            StreamingDistributionConfig streamingDistributionConfigStreamingDistributionConfig = updateStreamingDistributionRequest.getStreamingDistributionConfig();
-            if (streamingDistributionConfigStreamingDistributionConfig != null) {
+            StreamingDistributionConfig streamingDistributionConfig = updateStreamingDistributionRequest
+                    .getStreamingDistributionConfig();
+            if (streamingDistributionConfig != null) {
                 xmlWriter.startElement("StreamingDistributionConfig");
-                if (streamingDistributionConfigStreamingDistributionConfig.getCallerReference() != null) {
-                    xmlWriter.startElement("CallerReference").value(streamingDistributionConfigStreamingDistributionConfig.getCallerReference()).endElement();
+
+                if (streamingDistributionConfig.getCallerReference() != null) {
+                    xmlWriter
+                            .startElement("CallerReference")
+                            .value(streamingDistributionConfig
+                                    .getCallerReference()).endElement();
                 }
-                if (streamingDistributionConfigStreamingDistributionConfig != null) {
-                    S3Origin s3OriginS3Origin = streamingDistributionConfigStreamingDistributionConfig.getS3Origin();
-                    if (s3OriginS3Origin != null) {
-                        xmlWriter.startElement("S3Origin");
-                        if (s3OriginS3Origin.getDomainName() != null) {
-                            xmlWriter.startElement("DomainName").value(s3OriginS3Origin.getDomainName()).endElement();
-                        }
-                        if (s3OriginS3Origin.getOriginAccessIdentity() != null) {
-                            xmlWriter.startElement("OriginAccessIdentity").value(s3OriginS3Origin.getOriginAccessIdentity()).endElement();
+
+                S3Origin s3Origin = streamingDistributionConfig.getS3Origin();
+                if (s3Origin != null) {
+                    xmlWriter.startElement("S3Origin");
+
+                    if (s3Origin.getDomainName() != null) {
+                        xmlWriter.startElement("DomainName")
+                                .value(s3Origin.getDomainName()).endElement();
+                    }
+
+                    if (s3Origin.getOriginAccessIdentity() != null) {
+                        xmlWriter.startElement("OriginAccessIdentity")
+                                .value(s3Origin.getOriginAccessIdentity())
+                                .endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                Aliases aliases = streamingDistributionConfig.getAliases();
+                if (aliases != null) {
+                    xmlWriter.startElement("Aliases");
+
+                    if (aliases.getQuantity() != null) {
+                        xmlWriter.startElement("Quantity")
+                                .value(aliases.getQuantity()).endElement();
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<String> aliasesItemsList = (com.amazonaws.internal.SdkInternalList<String>) aliases
+                            .getItems();
+                    if (!aliasesItemsList.isEmpty()
+                            || !aliasesItemsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Items");
+
+                        for (String aliasesItemsListValue : aliasesItemsList) {
+                            xmlWriter.startElement("CNAME");
+                            xmlWriter.value(aliasesItemsListValue);
+                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
+                    xmlWriter.endElement();
                 }
-                if (streamingDistributionConfigStreamingDistributionConfig != null) {
-                    Aliases aliasesAliases = streamingDistributionConfigStreamingDistributionConfig.getAliases();
-                    if (aliasesAliases != null) {
-                        xmlWriter.startElement("Aliases");
-                        if (aliasesAliases.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(aliasesAliases.getQuantity()).endElement();
-                        }
 
-                        if (aliasesAliases != null) {
-                            java.util.List<String> aliasesAliasesitemsList = aliasesAliases.getItems();
-                            if (aliasesAliasesitemsList != null && aliasesAliasesitemsList.size() > 0) {
-                                int aliasesAliasesitemsListIndex = 1;
-                                xmlWriter.startElement("Items");
-                                for (String aliasesAliasesitemsListValue : aliasesAliasesitemsList) {
+                if (streamingDistributionConfig.getComment() != null) {
+                    xmlWriter.startElement("Comment")
+                            .value(streamingDistributionConfig.getComment())
+                            .endElement();
+                }
 
-                                xmlWriter.startElement("CNAME");
-                                    xmlWriter.value(aliasesAliasesitemsListValue);
-                                xmlWriter.endElement();
+                StreamingLoggingConfig logging = streamingDistributionConfig
+                        .getLogging();
+                if (logging != null) {
+                    xmlWriter.startElement("Logging");
 
-                                    aliasesAliasesitemsListIndex++;
-                                }
-                                xmlWriter.endElement();
-                            }
+                    if (logging.getEnabled() != null) {
+                        xmlWriter.startElement("Enabled")
+                                .value(logging.getEnabled()).endElement();
+                    }
+
+                    if (logging.getBucket() != null) {
+                        xmlWriter.startElement("Bucket")
+                                .value(logging.getBucket()).endElement();
+                    }
+
+                    if (logging.getPrefix() != null) {
+                        xmlWriter.startElement("Prefix")
+                                .value(logging.getPrefix()).endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                TrustedSigners trustedSigners = streamingDistributionConfig
+                        .getTrustedSigners();
+                if (trustedSigners != null) {
+                    xmlWriter.startElement("TrustedSigners");
+
+                    if (trustedSigners.getEnabled() != null) {
+                        xmlWriter.startElement("Enabled")
+                                .value(trustedSigners.getEnabled())
+                                .endElement();
+                    }
+
+                    if (trustedSigners.getQuantity() != null) {
+                        xmlWriter.startElement("Quantity")
+                                .value(trustedSigners.getQuantity())
+                                .endElement();
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
+                            .getItems();
+                    if (!trustedSignersItemsList.isEmpty()
+                            || !trustedSignersItemsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Items");
+
+                        for (String trustedSignersItemsListValue : trustedSignersItemsList) {
+                            xmlWriter.startElement("AwsAccountNumber");
+                            xmlWriter.value(trustedSignersItemsListValue);
+                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
+                    xmlWriter.endElement();
                 }
-                if (streamingDistributionConfigStreamingDistributionConfig.getComment() != null) {
-                    xmlWriter.startElement("Comment").value(streamingDistributionConfigStreamingDistributionConfig.getComment()).endElement();
-                }
-                if (streamingDistributionConfigStreamingDistributionConfig != null) {
-                    StreamingLoggingConfig streamingLoggingConfigLogging = streamingDistributionConfigStreamingDistributionConfig.getLogging();
-                    if (streamingLoggingConfigLogging != null) {
-                        xmlWriter.startElement("Logging");
-                        if (streamingLoggingConfigLogging.isEnabled() != null) {
-                            xmlWriter.startElement("Enabled").value(streamingLoggingConfigLogging.isEnabled()).endElement();
-                        }
-                        if (streamingLoggingConfigLogging.getBucket() != null) {
-                            xmlWriter.startElement("Bucket").value(streamingLoggingConfigLogging.getBucket()).endElement();
-                        }
-                        if (streamingLoggingConfigLogging.getPrefix() != null) {
-                            xmlWriter.startElement("Prefix").value(streamingLoggingConfigLogging.getPrefix()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (streamingDistributionConfigStreamingDistributionConfig != null) {
-                    TrustedSigners trustedSignersTrustedSigners = streamingDistributionConfigStreamingDistributionConfig.getTrustedSigners();
-                    if (trustedSignersTrustedSigners != null) {
-                        xmlWriter.startElement("TrustedSigners");
-                        if (trustedSignersTrustedSigners.isEnabled() != null) {
-                            xmlWriter.startElement("Enabled").value(trustedSignersTrustedSigners.isEnabled()).endElement();
-                        }
-                        if (trustedSignersTrustedSigners.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(trustedSignersTrustedSigners.getQuantity()).endElement();
-                        }
 
-                        if (trustedSignersTrustedSigners != null) {
-                            java.util.List<String> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.getItems();
-                            if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.size() > 0) {
-                                int trustedSignersTrustedSignersitemsListIndex = 1;
-                                xmlWriter.startElement("Items");
-                                for (String trustedSignersTrustedSignersitemsListValue : trustedSignersTrustedSignersitemsList) {
-
-                                xmlWriter.startElement("AwsAccountNumber");
-                                    xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
-                                xmlWriter.endElement();
-
-                                    trustedSignersTrustedSignersitemsListIndex++;
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-                        xmlWriter.endElement();
-                    }
+                if (streamingDistributionConfig.getPriceClass() != null) {
+                    xmlWriter.startElement("PriceClass")
+                            .value(streamingDistributionConfig.getPriceClass())
+                            .endElement();
                 }
-                if (streamingDistributionConfigStreamingDistributionConfig.getPriceClass() != null) {
-                    xmlWriter.startElement("PriceClass").value(streamingDistributionConfigStreamingDistributionConfig.getPriceClass()).endElement();
-                }
-                if (streamingDistributionConfigStreamingDistributionConfig.isEnabled() != null) {
-                    xmlWriter.startElement("Enabled").value(streamingDistributionConfigStreamingDistributionConfig.isEnabled()).endElement();
+
+                if (streamingDistributionConfig.getEnabled() != null) {
+                    xmlWriter.startElement("Enabled")
+                            .value(streamingDistributionConfig.getEnabled())
+                            .endElement();
                 }
                 xmlWriter.endElement();
             }
-        }
 
-            try {
-                request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
-                request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes(UTF8).length));
+            request.setContent(new StringInputStream(stringWriter.getBuffer()
+                    .toString()));
+            request.addHeader(
+                    "Content-Length",
+                    Integer.toString(stringWriter.getBuffer().toString()
+                            .getBytes(UTF8).length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
                 request.addHeader("Content-Type", "application/xml");
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to marshall request to XML", e);
             }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to XML: " + t.getMessage(), t);
+        }
 
         return request;
     }
+
 }

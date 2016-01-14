@@ -18,24 +18,24 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a Reserved instance modification.
+ * Describes a Reserved Instance modification.
  * </p>
  */
 public class ReservedInstancesModification implements Serializable, Cloneable {
 
     /**
-     * A unique ID for the Reserved instance modification.
+     * A unique ID for the Reserved Instance modification.
      */
     private String reservedInstancesModificationId;
 
     /**
-     * The IDs of one or more Reserved instances.
+     * The IDs of one or more Reserved Instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesId> reservedInstancesIds;
 
     /**
      * Contains target configurations along with their corresponding new
-     * Reserved instance IDs.
+     * Reserved Instance IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesModificationResult> modificationResults;
 
@@ -55,7 +55,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     private java.util.Date effectiveDate;
 
     /**
-     * The status of the Reserved instances modification request.
+     * The status of the Reserved Instances modification request.
      */
     private String status;
 
@@ -73,29 +73,29 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     private String clientToken;
 
     /**
-     * A unique ID for the Reserved instance modification.
+     * A unique ID for the Reserved Instance modification.
      *
-     * @return A unique ID for the Reserved instance modification.
+     * @return A unique ID for the Reserved Instance modification.
      */
     public String getReservedInstancesModificationId() {
         return reservedInstancesModificationId;
     }
     
     /**
-     * A unique ID for the Reserved instance modification.
+     * A unique ID for the Reserved Instance modification.
      *
-     * @param reservedInstancesModificationId A unique ID for the Reserved instance modification.
+     * @param reservedInstancesModificationId A unique ID for the Reserved Instance modification.
      */
     public void setReservedInstancesModificationId(String reservedInstancesModificationId) {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
     }
     
     /**
-     * A unique ID for the Reserved instance modification.
+     * A unique ID for the Reserved Instance modification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesModificationId A unique ID for the Reserved instance modification.
+     * @param reservedInstancesModificationId A unique ID for the Reserved Instance modification.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -106,9 +106,9 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     }
 
     /**
-     * The IDs of one or more Reserved instances.
+     * The IDs of one or more Reserved Instances.
      *
-     * @return The IDs of one or more Reserved instances.
+     * @return The IDs of one or more Reserved Instances.
      */
     public java.util.List<ReservedInstancesId> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
@@ -119,9 +119,9 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     }
     
     /**
-     * The IDs of one or more Reserved instances.
+     * The IDs of one or more Reserved Instances.
      *
-     * @param reservedInstancesIds The IDs of one or more Reserved instances.
+     * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      */
     public void setReservedInstancesIds(java.util.Collection<ReservedInstancesId> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -134,7 +134,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     }
     
     /**
-     * The IDs of one or more Reserved instances.
+     * The IDs of one or more Reserved Instances.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setReservedInstancesIds(java.util.Collection)} or
@@ -143,7 +143,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The IDs of one or more Reserved instances.
+     * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -157,11 +157,11 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     }
     
     /**
-     * The IDs of one or more Reserved instances.
+     * The IDs of one or more Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesIds The IDs of one or more Reserved instances.
+     * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -180,10 +180,10 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
 
     /**
      * Contains target configurations along with their corresponding new
-     * Reserved instance IDs.
+     * Reserved Instance IDs.
      *
      * @return Contains target configurations along with their corresponding new
-     *         Reserved instance IDs.
+     *         Reserved Instance IDs.
      */
     public java.util.List<ReservedInstancesModificationResult> getModificationResults() {
         if (modificationResults == null) {
@@ -195,10 +195,10 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     
     /**
      * Contains target configurations along with their corresponding new
-     * Reserved instance IDs.
+     * Reserved Instance IDs.
      *
      * @param modificationResults Contains target configurations along with their corresponding new
-     *         Reserved instance IDs.
+     *         Reserved Instance IDs.
      */
     public void setModificationResults(java.util.Collection<ReservedInstancesModificationResult> modificationResults) {
         if (modificationResults == null) {
@@ -212,7 +212,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     
     /**
      * Contains target configurations along with their corresponding new
-     * Reserved instance IDs.
+     * Reserved Instance IDs.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setModificationResults(java.util.Collection)} or
@@ -222,7 +222,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param modificationResults Contains target configurations along with their corresponding new
-     *         Reserved instance IDs.
+     *         Reserved Instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -237,12 +237,12 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     
     /**
      * Contains target configurations along with their corresponding new
-     * Reserved instance IDs.
+     * Reserved Instance IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param modificationResults Contains target configurations along with their corresponding new
-     *         Reserved instance IDs.
+     *         Reserved Instance IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -359,29 +359,29 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the Reserved instances modification request.
+     * The status of the Reserved Instances modification request.
      *
-     * @return The status of the Reserved instances modification request.
+     * @return The status of the Reserved Instances modification request.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The status of the Reserved instances modification request.
+     * The status of the Reserved Instances modification request.
      *
-     * @param status The status of the Reserved instances modification request.
+     * @param status The status of the Reserved Instances modification request.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The status of the Reserved instances modification request.
+     * The status of the Reserved Instances modification request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the Reserved instances modification request.
+     * @param status The status of the Reserved Instances modification request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

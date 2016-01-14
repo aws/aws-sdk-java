@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the limit price of a Reserved instance offering.
+ * Describes the limit price of a Reserved Instance offering.
  * </p>
  */
 public class ReservedInstanceLimitPrice implements Serializable, Cloneable {

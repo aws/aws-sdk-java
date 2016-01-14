@@ -121,10 +121,10 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the Reserved instances that you purchased.
+     * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved instances, see
+     * For more information about Reserved Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -570,26 +570,26 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a listing for Amazon EC2 Reserved instances to be sold in the
-     * Reserved Instance Marketplace. You can submit one Reserved instance
-     * listing at a time. To get a list of your Reserved instances, you can
+     * Creates a listing for Amazon EC2 Reserved Instances to be sold in the
+     * Reserved Instance Marketplace. You can submit one Reserved Instance
+     * listing at a time. To get a list of your Reserved Instances, you can
      * use the DescribeReservedInstances operation.
      * </p>
      * <p>
      * The Reserved Instance Marketplace matches sellers who want to resell
-     * Reserved instance capacity that they no longer need with buyers who
-     * want to purchase additional capacity. Reserved instances bought and
+     * Reserved Instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved Instances bought and
      * sold through the Reserved Instance Marketplace work like any other
-     * Reserved instances.
+     * Reserved Instances.
      * </p>
      * <p>
-     * To sell your Reserved instances, you must first register as a seller
+     * To sell your Reserved Instances, you must first register as a seller
      * in the Reserved Instance Marketplace. After completing the
      * registration process, you can create a Reserved Instance Marketplace
-     * listing of some or all of your Reserved instances, and specify the
-     * upfront price to receive for them. Your Reserved instance listings
+     * listing of some or all of your Reserved Instances, and specify the
+     * upfront price to receive for them. Your Reserved Instance listings
      * then become available for purchase. To view the details of your
-     * Reserved instance listing, you can use the
+     * Reserved Instance listing, you can use the
      * DescribeReservedInstancesListings operation.
      * </p>
      * <p>
@@ -1034,8 +1034,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Modifies the Availability Zone, instance count, instance type, or
-     * network platform (EC2-Classic or EC2-VPC) of your Reserved instances.
-     * The Reserved instances to be modified must be identical, except for
+     * network platform (EC2-Classic or EC2-VPC) of your Reserved Instances.
+     * The Reserved Instances to be modified must be identical, except for
      * Availability Zone, network platform, and instance type.
      * </p>
      * <p>
@@ -1481,6 +1481,73 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeNetworkAclsResult describeNetworkAcls(DescribeNetworkAclsRequest describeNetworkAclsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Launches the specified Scheduled Instances.
+     * </p>
+     * <p>
+     * Before you can launch a Scheduled Instance, you must purchase it and
+     * obtain an identifier using PurchaseScheduledInstances.
+     * </p>
+     * <p>
+     * You must launch a Scheduled Instance during its scheduled time
+     * period. You can't stop or reboot a Scheduled Instance, but you can
+     * terminate it as needed. If you terminate a Scheduled Instance before
+     * the current scheduled time period ends, you can launch it again after
+     * a few minutes.
+     * </p>
+     *
+     * @param runScheduledInstancesRequest Container for the necessary
+     *           parameters to execute the RunScheduledInstances service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the RunScheduledInstances service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RunScheduledInstancesResult runScheduledInstances(RunScheduledInstancesRequest runScheduledInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Purchases one or more Scheduled Instances with the specified
+     * schedule.
+     * </p>
+     * <p>
+     * Scheduled Instances enable you to purchase Amazon EC2 compute
+     * capacity by the hour for a one-year term. Before you can purchase a
+     * Scheduled Instance, you must call
+     * DescribeScheduledInstanceAvailability to check for available schedules
+     * and obtain a purchase token.
+     * </p>
+     *
+     * @param purchaseScheduledInstancesRequest Container for the necessary
+     *           parameters to execute the PurchaseScheduledInstances service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the PurchaseScheduledInstances service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public PurchaseScheduledInstancesResult purchaseScheduledInstances(PurchaseScheduledInstancesRequest purchaseScheduledInstancesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2500,16 +2567,16 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Purchases a Reserved instance for use with your account. With Amazon
-     * EC2 Reserved instances, you obtain a capacity reservation for a
-     * certain instance configuration over a specified period of time and pay
-     * a lower hourly rate compared to On-Demand Instance pricing.
+     * Purchases a Reserved Instance for use with your account. With
+     * Reserved Instances, you obtain a capacity reservation for a certain
+     * instance configuration over a specified period of time and pay a lower
+     * hourly rate compared to On-Demand instance pricing.
      * </p>
      * <p>
      * Use DescribeReservedInstancesOfferings to get a list of Reserved
-     * instance offerings that match your specifications. After you've
-     * purchased a Reserved instance, you can check for your new Reserved
-     * instance with DescribeReservedInstances.
+     * Instance offerings that match your specifications. After you've
+     * purchased a Reserved Instance, you can check for your new Reserved
+     * Instance with DescribeReservedInstances.
      * </p>
      * <p>
      * For more information, see
@@ -2567,8 +2634,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the modifications made to your Reserved instances. If no
-     * parameter is specified, information about all your Reserved instances
+     * Describes the modifications made to your Reserved Instances. If no
+     * parameter is specified, information about all your Reserved Instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
      * </p>
@@ -3194,31 +3261,6 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Replaces an entry (rule) in a network ACL. For more information about
-     * network ACLs, see
-     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
-     * </p>
-     *
-     * @param replaceNetworkAclEntryRequest Container for the necessary
-     *           parameters to execute the ReplaceNetworkAclEntry service method on
-     *           AmazonEC2.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2
      * stores the public key and displays the private key for you to save to
      * a file. The private key is returned as an unencrypted PEM encoded
@@ -3255,6 +3297,31 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Replaces an entry (rule) in a network ACL. For more information about
+     * network ACLs, see
+     * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> .
+     * </p>
+     *
+     * @param replaceNetworkAclEntryRequest Container for the necessary
+     *           parameters to execute the ReplaceNetworkAclEntry service method on
+     *           AmazonEC2.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -4579,6 +4646,42 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Finds available schedules that meet the specified criteria.
+     * </p>
+     * <p>
+     * You can search for an available schedule no more than 3 months in
+     * advance. You must meet the minimum required duration of 1,200 hours
+     * per year. For example, the minimum daily schedule is 4 hours, the
+     * minimum weekly schedule is 24 hours, and the minimum monthly schedule
+     * is 100 hours.
+     * </p>
+     * <p>
+     * After you find a schedule that meets your needs, call
+     * PurchaseScheduledInstances to purchase Scheduled Instances with that
+     * schedule.
+     * </p>
+     *
+     * @param describeScheduledInstanceAvailabilityRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeScheduledInstanceAvailability service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeScheduledInstanceAvailability
+     *         service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeScheduledInstanceAvailabilityResult describeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest describeScheduledInstanceAvailabilityRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Detaches an Internet gateway from a VPC, disabling connectivity
      * between the Internet and the VPC. The VPC must not contain any running
      * instances with Elastic IP addresses.
@@ -4720,27 +4823,27 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes your account's Reserved instance listings in the Reserved
+     * Describes your account's Reserved Instance listings in the Reserved
      * Instance Marketplace.
      * </p>
      * <p>
      * The Reserved Instance Marketplace matches sellers who want to resell
-     * Reserved instance capacity that they no longer need with buyers who
-     * want to purchase additional capacity. Reserved instances bought and
+     * Reserved Instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved Instances bought and
      * sold through the Reserved Instance Marketplace work like any other
      * Reserved Instances.
      * </p>
      * <p>
      * As a seller, you choose to list some or all of your Reserved
-     * instances, and you specify the upfront price to receive for them. Your
-     * Reserved instances are then listed in the Reserved Instance
+     * Instances, and you specify the upfront price to receive for them. Your
+     * Reserved Instances are then listed in the Reserved Instance
      * Marketplace and are available for purchase.
      * </p>
      * <p>
-     * As a buyer, you specify the configuration of the Reserved instance to
+     * As a buyer, you specify the configuration of the Reserved Instance to
      * purchase, and the Marketplace matches what you're searching for with
      * what's available. The Marketplace first sells the lowest priced
-     * Reserved instances to you, and continues to sell available Reserved
+     * Reserved Instances to you, and continues to sell available Reserved
      * Instance listings to you until your demand is met. You are charged
      * based on the total price of all of the listings that you purchase.
      * </p>
@@ -5313,7 +5416,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Cancels the specified Reserved instance listing in the Reserved
+     * Cancels the specified Reserved Instance listing in the Reserved
      * Instance Marketplace.
      * </p>
      * <p>
@@ -5764,6 +5867,36 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Modify the auto-placement setting of a Dedicated host. When
+     * auto-placement is enabled, AWS will place instances that you launch
+     * with a tenancy of <code>host</code> , but without targeting a specific
+     * host ID, onto any available Dedicated host in your account which has
+     * auto-placement enabled. When auto-placement is disabled, you need to
+     * provide a host ID if you want the instance to launch onto a specific
+     * host. If no host ID is provided, the instance will be launched onto a
+     * suitable host which has auto-placement enabled.
+     * </p>
+     *
+     * @param modifyHostsRequest Container for the necessary parameters to
+     *           execute the ModifyHosts service method on AmazonEC2.
+     * 
+     * @return The response from the ModifyHosts service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyHostsResult modifyHosts(ModifyHostsRequest modifyHostsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Adds or removes permission settings for the specified snapshot. You
      * may add or remove specified AWS account IDs from a snapshot's list of
      * create volume permissions, but you cannot do both in a single API
@@ -5795,36 +5928,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void modifySnapshotAttribute(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Modify the auto-placement setting of a Dedicated host. When
-     * auto-placement is enabled, AWS will place instances that you launch
-     * with a tenancy of <code>host</code> , but without targeting a specific
-     * host ID, onto any available Dedicated host in your account which has
-     * auto-placement enabled. When auto-placement is disabled, you need to
-     * provide a host ID if you want the instance to launch onto a specific
-     * host. If no host ID is provided, the instance will be launched onto a
-     * suitable host which has auto-placement enabled.
-     * </p>
-     *
-     * @param modifyHostsRequest Container for the necessary parameters to
-     *           execute the ModifyHosts service method on AmazonEC2.
-     * 
-     * @return The response from the ModifyHosts service method, as returned
-     *         by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ModifyHostsResult modifyHosts(ModifyHostsRequest modifyHostsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -6162,18 +6265,18 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes Reserved instance offerings that are available for
-     * purchase. With Reserved instances, you purchase the right to launch
+     * Describes Reserved Instance offerings that are available for
+     * purchase. With Reserved Instances, you purchase the right to launch
      * instances for a period of time. During that time period, you do not
      * receive insufficient capacity errors, and you pay a lower usage rate
      * than the rate charged for On-Demand instances for the actual time
      * used.
      * </p>
      * <p>
-     * If you have listed your own Reserved instances for sale in the
+     * If you have listed your own Reserved Instances for sale in the
      * Reserved Instance Marketplace, they will be excluded from these
      * results. This is to ensure that you do not purchase your own Reserved
-     * instances.
+     * Instances.
      * </p>
      * <p>
      * For more information, see
@@ -6465,10 +6568,34 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the Reserved instances that you purchased.
+     * Describes one or more of your Scheduled Instances.
+     * </p>
+     *
+     * @param describeScheduledInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeScheduledInstances service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeScheduledInstances service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeScheduledInstancesResult describeScheduledInstances(DescribeScheduledInstancesRequest describeScheduledInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
-     * For more information about Reserved instances, see
+     * For more information about Reserved Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -7065,8 +7192,8 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Describes the modifications made to your Reserved instances. If no
-     * parameter is specified, information about all your Reserved instances
+     * Describes the modifications made to your Reserved Instances. If no
+     * parameter is specified, information about all your Reserved Instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
      * </p>
@@ -7486,27 +7613,27 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Describes your account's Reserved instance listings in the Reserved
+     * Describes your account's Reserved Instance listings in the Reserved
      * Instance Marketplace.
      * </p>
      * <p>
      * The Reserved Instance Marketplace matches sellers who want to resell
-     * Reserved instance capacity that they no longer need with buyers who
-     * want to purchase additional capacity. Reserved instances bought and
+     * Reserved Instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved Instances bought and
      * sold through the Reserved Instance Marketplace work like any other
      * Reserved Instances.
      * </p>
      * <p>
      * As a seller, you choose to list some or all of your Reserved
-     * instances, and you specify the upfront price to receive for them. Your
-     * Reserved instances are then listed in the Reserved Instance
+     * Instances, and you specify the upfront price to receive for them. Your
+     * Reserved Instances are then listed in the Reserved Instance
      * Marketplace and are available for purchase.
      * </p>
      * <p>
-     * As a buyer, you specify the configuration of the Reserved instance to
+     * As a buyer, you specify the configuration of the Reserved Instance to
      * purchase, and the Marketplace matches what you're searching for with
      * what's available. The Marketplace first sells the lowest priced
-     * Reserved instances to you, and continues to sell available Reserved
+     * Reserved Instances to you, and continues to sell available Reserved
      * Instance listings to you until your demand is met. You are charged
      * based on the total price of all of the listings that you purchase.
      * </p>
@@ -7962,18 +8089,18 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Describes Reserved instance offerings that are available for
-     * purchase. With Reserved instances, you purchase the right to launch
+     * Describes Reserved Instance offerings that are available for
+     * purchase. With Reserved Instances, you purchase the right to launch
      * instances for a period of time. During that time period, you do not
      * receive insufficient capacity errors, and you pay a lower usage rate
      * than the rate charged for On-Demand instances for the actual time
      * used.
      * </p>
      * <p>
-     * If you have listed your own Reserved instances for sale in the
+     * If you have listed your own Reserved Instances for sale in the
      * Reserved Instance Marketplace, they will be excluded from these
      * results. This is to ensure that you do not purchase your own Reserved
-     * instances.
+     * Instances.
      * </p>
      * <p>
      * For more information, see
@@ -8074,6 +8201,25 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeVpcEndpointsResult describeVpcEndpoints() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Describes one or more of your Scheduled Instances.
+     * </p>
+     * 
+     * @return The response from the DescribeScheduledInstances service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeScheduledInstancesResult describeScheduledInstances() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Checks whether you have the required permissions for the provided

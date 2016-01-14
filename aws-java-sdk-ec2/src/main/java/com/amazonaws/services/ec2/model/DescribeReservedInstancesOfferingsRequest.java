@@ -23,17 +23,17 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesOffer
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest) DescribeReservedInstancesOfferings operation}.
  * <p>
- * Describes Reserved instance offerings that are available for purchase.
- * With Reserved instances, you purchase the right to launch instances
+ * Describes Reserved Instance offerings that are available for purchase.
+ * With Reserved Instances, you purchase the right to launch instances
  * for a period of time. During that time period, you do not receive
  * insufficient capacity errors, and you pay a lower usage rate than the
  * rate charged for On-Demand instances for the actual time used.
  * </p>
  * <p>
- * If you have listed your own Reserved instances for sale in the
+ * If you have listed your own Reserved Instances for sale in the
  * Reserved Instance Marketplace, they will be excluded from these
  * results. This is to ensure that you do not purchase your own Reserved
- * instances.
+ * Instances.
  * </p>
  * <p>
  * For more information, see
@@ -46,7 +46,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesOffer
 public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeReservedInstancesOfferingsRequest> {
 
     /**
-     * One or more Reserved instances offering IDs.
+     * One or more Reserved Instances offering IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesOfferingIds;
 
@@ -62,12 +62,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private String instanceType;
 
     /**
-     * The Availability Zone in which the Reserved instance can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      */
     private String availabilityZone;
 
     /**
-     * The Reserved instance product platform description. Instances that
+     * The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the description are for use with
      * Amazon VPC.
      * <p>
@@ -78,18 +78,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone where the Reserved instance can be used. </li> <li>
-     * <p><code>duration</code> - The duration of the Reserved instance (for
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (for
      * example, one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     * purchase price of the Reserved instance (for example, 9800.0). </li>
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
      * <li> <p><code>instance-type</code> - The instance type that is covered
      * by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
      * behavior, all offerings from both AWS and the Reserved Instance
      * Marketplace are listed. </li> <li> <p><code>product-description</code>
-     * - The Reserved instance product platform description. Instances that
+     * - The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the product platform description
      * will only be displayed to EC2-Classic account holders and are for use
      * with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -103,17 +103,17 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * SQL Server Enterprise</code> | <code>Windows with SQL Server
      * Enterprise (Amazon VPC)</code>) </li> <li>
      * <p><code>reserved-instances-offering-id</code> - The Reserved
-     * instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     * usage price of the Reserved instance, per hour (for example, 0.84).
+     * Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     * usage price of the Reserved Instance, per hour (for example, 0.84).
      * </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The tenancy of the instances covered by the reservation. A Reserved
-     * instance with a tenancy of <code>dedicated</code> is applied to
+     * Instance with a tenancy of <code>dedicated</code> is applied to
      * instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     * instances). <p>Default: <code>default</code>
+     * Instances). <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated, host
@@ -121,9 +121,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private String instanceTenancy;
 
     /**
-     * The Reserved instance offering type. If you are using tools that
+     * The Reserved Instance offering type. If you are using tools that
      * predate the 2011-11-01 API version, you only have access to the
-     * <code>Medium Utilization</code> Reserved instance offering type.
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
@@ -167,9 +167,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private Integer maxInstanceCount;
 
     /**
-     * One or more Reserved instances offering IDs.
+     * One or more Reserved Instances offering IDs.
      *
-     * @return One or more Reserved instances offering IDs.
+     * @return One or more Reserved Instances offering IDs.
      */
     public java.util.List<String> getReservedInstancesOfferingIds() {
         if (reservedInstancesOfferingIds == null) {
@@ -180,9 +180,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * One or more Reserved instances offering IDs.
+     * One or more Reserved Instances offering IDs.
      *
-     * @param reservedInstancesOfferingIds One or more Reserved instances offering IDs.
+     * @param reservedInstancesOfferingIds One or more Reserved Instances offering IDs.
      */
     public void setReservedInstancesOfferingIds(java.util.Collection<String> reservedInstancesOfferingIds) {
         if (reservedInstancesOfferingIds == null) {
@@ -195,7 +195,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * One or more Reserved instances offering IDs.
+     * One or more Reserved Instances offering IDs.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link
@@ -205,7 +205,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesOfferingIds One or more Reserved instances offering IDs.
+     * @param reservedInstancesOfferingIds One or more Reserved Instances offering IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -219,11 +219,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * One or more Reserved instances offering IDs.
+     * One or more Reserved Instances offering IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesOfferingIds One or more Reserved instances offering IDs.
+     * @param reservedInstancesOfferingIds One or more Reserved Instances offering IDs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -353,29 +353,29 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Availability Zone in which the Reserved instance can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      *
-     * @return The Availability Zone in which the Reserved instance can be used.
+     * @return The Availability Zone in which the Reserved Instance can be used.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone in which the Reserved instance can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      *
-     * @param availabilityZone The Availability Zone in which the Reserved instance can be used.
+     * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone in which the Reserved instance can be used.
+     * The Availability Zone in which the Reserved Instance can be used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone in which the Reserved instance can be used.
+     * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -386,14 +386,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Reserved instance product platform description. Instances that
+     * The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the description are for use with
      * Amazon VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @return The Reserved instance product platform description. Instances that
+     * @return The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the description are for use with
      *         Amazon VPC.
      *
@@ -404,14 +404,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved instance product platform description. Instances that
+     * The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the description are for use with
      * Amazon VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved instance product platform description. Instances that
+     * @param productDescription The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the description are for use with
      *         Amazon VPC.
      *
@@ -422,7 +422,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved instance product platform description. Instances that
+     * The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the description are for use with
      * Amazon VPC.
      * <p>
@@ -431,7 +431,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved instance product platform description. Instances that
+     * @param productDescription The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the description are for use with
      *         Amazon VPC.
      *
@@ -446,14 +446,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Reserved instance product platform description. Instances that
+     * The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the description are for use with
      * Amazon VPC.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved instance product platform description. Instances that
+     * @param productDescription The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the description are for use with
      *         Amazon VPC.
      *
@@ -464,7 +464,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved instance product platform description. Instances that
+     * The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the description are for use with
      * Amazon VPC.
      * <p>
@@ -473,7 +473,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
-     * @param productDescription The Reserved instance product platform description. Instances that
+     * @param productDescription The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the description are for use with
      *         Amazon VPC.
      *
@@ -489,18 +489,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone where the Reserved instance can be used. </li> <li>
-     * <p><code>duration</code> - The duration of the Reserved instance (for
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (for
      * example, one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     * purchase price of the Reserved instance (for example, 9800.0). </li>
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
      * <li> <p><code>instance-type</code> - The instance type that is covered
      * by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
      * behavior, all offerings from both AWS and the Reserved Instance
      * Marketplace are listed. </li> <li> <p><code>product-description</code>
-     * - The Reserved instance product platform description. Instances that
+     * - The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the product platform description
      * will only be displayed to EC2-Classic account holders and are for use
      * with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -514,23 +514,23 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * SQL Server Enterprise</code> | <code>Windows with SQL Server
      * Enterprise (Amazon VPC)</code>) </li> <li>
      * <p><code>reserved-instances-offering-id</code> - The Reserved
-     * instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     * usage price of the Reserved instance, per hour (for example, 0.84).
+     * Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     * usage price of the Reserved Instance, per hour (for example, 0.84).
      * </li> </ul>
      *
      * @return One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone where the Reserved instance can be used. </li> <li>
-     *         <p><code>duration</code> - The duration of the Reserved instance (for
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (for
      *         example, one year or three years), in seconds (<code>31536000</code> |
      *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     *         purchase price of the Reserved instance (for example, 9800.0). </li>
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
      *         <li> <p><code>instance-type</code> - The instance type that is covered
      *         by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      *         <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
      *         behavior, all offerings from both AWS and the Reserved Instance
      *         Marketplace are listed. </li> <li> <p><code>product-description</code>
-     *         - The Reserved instance product platform description. Instances that
+     *         - The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the product platform description
      *         will only be displayed to EC2-Classic account holders and are for use
      *         with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -544,8 +544,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         SQL Server Enterprise</code> | <code>Windows with SQL Server
      *         Enterprise (Amazon VPC)</code>) </li> <li>
      *         <p><code>reserved-instances-offering-id</code> - The Reserved
-     *         instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     *         usage price of the Reserved instance, per hour (for example, 0.84).
+     *         Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     *         usage price of the Reserved Instance, per hour (for example, 0.84).
      *         </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
@@ -558,18 +558,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone where the Reserved instance can be used. </li> <li>
-     * <p><code>duration</code> - The duration of the Reserved instance (for
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (for
      * example, one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     * purchase price of the Reserved instance (for example, 9800.0). </li>
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
      * <li> <p><code>instance-type</code> - The instance type that is covered
      * by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
      * behavior, all offerings from both AWS and the Reserved Instance
      * Marketplace are listed. </li> <li> <p><code>product-description</code>
-     * - The Reserved instance product platform description. Instances that
+     * - The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the product platform description
      * will only be displayed to EC2-Classic account holders and are for use
      * with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -583,23 +583,23 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * SQL Server Enterprise</code> | <code>Windows with SQL Server
      * Enterprise (Amazon VPC)</code>) </li> <li>
      * <p><code>reserved-instances-offering-id</code> - The Reserved
-     * instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     * usage price of the Reserved instance, per hour (for example, 0.84).
+     * Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     * usage price of the Reserved Instance, per hour (for example, 0.84).
      * </li> </ul>
      *
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone where the Reserved instance can be used. </li> <li>
-     *         <p><code>duration</code> - The duration of the Reserved instance (for
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (for
      *         example, one year or three years), in seconds (<code>31536000</code> |
      *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     *         purchase price of the Reserved instance (for example, 9800.0). </li>
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
      *         <li> <p><code>instance-type</code> - The instance type that is covered
      *         by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      *         <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
      *         behavior, all offerings from both AWS and the Reserved Instance
      *         Marketplace are listed. </li> <li> <p><code>product-description</code>
-     *         - The Reserved instance product platform description. Instances that
+     *         - The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the product platform description
      *         will only be displayed to EC2-Classic account holders and are for use
      *         with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -613,8 +613,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         SQL Server Enterprise</code> | <code>Windows with SQL Server
      *         Enterprise (Amazon VPC)</code>) </li> <li>
      *         <p><code>reserved-instances-offering-id</code> - The Reserved
-     *         instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     *         usage price of the Reserved instance, per hour (for example, 0.84).
+     *         Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     *         usage price of the Reserved Instance, per hour (for example, 0.84).
      *         </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -629,18 +629,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone where the Reserved instance can be used. </li> <li>
-     * <p><code>duration</code> - The duration of the Reserved instance (for
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (for
      * example, one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     * purchase price of the Reserved instance (for example, 9800.0). </li>
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
      * <li> <p><code>instance-type</code> - The instance type that is covered
      * by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
      * behavior, all offerings from both AWS and the Reserved Instance
      * Marketplace are listed. </li> <li> <p><code>product-description</code>
-     * - The Reserved instance product platform description. Instances that
+     * - The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the product platform description
      * will only be displayed to EC2-Classic account holders and are for use
      * with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -654,8 +654,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * SQL Server Enterprise</code> | <code>Windows with SQL Server
      * Enterprise (Amazon VPC)</code>) </li> <li>
      * <p><code>reserved-instances-offering-id</code> - The Reserved
-     * instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     * usage price of the Reserved instance, per hour (for example, 0.84).
+     * Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     * usage price of the Reserved Instance, per hour (for example, 0.84).
      * </li> </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -666,18 +666,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone where the Reserved instance can be used. </li> <li>
-     *         <p><code>duration</code> - The duration of the Reserved instance (for
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (for
      *         example, one year or three years), in seconds (<code>31536000</code> |
      *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     *         purchase price of the Reserved instance (for example, 9800.0). </li>
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
      *         <li> <p><code>instance-type</code> - The instance type that is covered
      *         by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      *         <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
      *         behavior, all offerings from both AWS and the Reserved Instance
      *         Marketplace are listed. </li> <li> <p><code>product-description</code>
-     *         - The Reserved instance product platform description. Instances that
+     *         - The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the product platform description
      *         will only be displayed to EC2-Classic account holders and are for use
      *         with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -691,8 +691,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         SQL Server Enterprise</code> | <code>Windows with SQL Server
      *         Enterprise (Amazon VPC)</code>) </li> <li>
      *         <p><code>reserved-instances-offering-id</code> - The Reserved
-     *         instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     *         usage price of the Reserved instance, per hour (for example, 0.84).
+     *         Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     *         usage price of the Reserved Instance, per hour (for example, 0.84).
      *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -708,18 +708,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone where the Reserved instance can be used. </li> <li>
-     * <p><code>duration</code> - The duration of the Reserved instance (for
+     * Availability Zone where the Reserved Instance can be used. </li> <li>
+     * <p><code>duration</code> - The duration of the Reserved Instance (for
      * example, one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     * purchase price of the Reserved instance (for example, 9800.0). </li>
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
      * <li> <p><code>instance-type</code> - The instance type that is covered
      * by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
      * behavior, all offerings from both AWS and the Reserved Instance
      * Marketplace are listed. </li> <li> <p><code>product-description</code>
-     * - The Reserved instance product platform description. Instances that
+     * - The Reserved Instance product platform description. Instances that
      * include <code>(Amazon VPC)</code> in the product platform description
      * will only be displayed to EC2-Classic account holders and are for use
      * with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -733,25 +733,25 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * SQL Server Enterprise</code> | <code>Windows with SQL Server
      * Enterprise (Amazon VPC)</code>) </li> <li>
      * <p><code>reserved-instances-offering-id</code> - The Reserved
-     * instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     * usage price of the Reserved instance, per hour (for example, 0.84).
+     * Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     * usage price of the Reserved Instance, per hour (for example, 0.84).
      * </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone where the Reserved instance can be used. </li> <li>
-     *         <p><code>duration</code> - The duration of the Reserved instance (for
+     *         Availability Zone where the Reserved Instance can be used. </li> <li>
+     *         <p><code>duration</code> - The duration of the Reserved Instance (for
      *         example, one year or three years), in seconds (<code>31536000</code> |
      *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
-     *         purchase price of the Reserved instance (for example, 9800.0). </li>
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
      *         <li> <p><code>instance-type</code> - The instance type that is covered
      *         by the reservation. </li> <li> <p><code>marketplace</code> - Set to
      *         <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
      *         behavior, all offerings from both AWS and the Reserved Instance
      *         Marketplace are listed. </li> <li> <p><code>product-description</code>
-     *         - The Reserved instance product platform description. Instances that
+     *         - The Reserved Instance product platform description. Instances that
      *         include <code>(Amazon VPC)</code> in the product platform description
      *         will only be displayed to EC2-Classic account holders and are for use
      *         with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
@@ -765,8 +765,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         SQL Server Enterprise</code> | <code>Windows with SQL Server
      *         Enterprise (Amazon VPC)</code>) </li> <li>
      *         <p><code>reserved-instances-offering-id</code> - The Reserved
-     *         instances' offering ID. </li> <li> <p><code>usage-price</code> - The
-     *         usage price of the Reserved instance, per hour (for example, 0.84).
+     *         Instances offering ID. </li> <li> <p><code>usage-price</code> - The
+     *         usage price of the Reserved Instance, per hour (for example, 0.84).
      *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -786,17 +786,17 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * The tenancy of the instances covered by the reservation. A Reserved
-     * instance with a tenancy of <code>dedicated</code> is applied to
+     * Instance with a tenancy of <code>dedicated</code> is applied to
      * instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     * instances). <p>Default: <code>default</code>
+     * Instances). <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated, host
      *
      * @return The tenancy of the instances covered by the reservation. A Reserved
-     *         instance with a tenancy of <code>dedicated</code> is applied to
+     *         Instance with a tenancy of <code>dedicated</code> is applied to
      *         instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     *         instances). <p>Default: <code>default</code>
+     *         Instances). <p>Default: <code>default</code>
      *
      * @see Tenancy
      */
@@ -806,17 +806,17 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The tenancy of the instances covered by the reservation. A Reserved
-     * instance with a tenancy of <code>dedicated</code> is applied to
+     * Instance with a tenancy of <code>dedicated</code> is applied to
      * instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     * instances). <p>Default: <code>default</code>
+     * Instances). <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The tenancy of the instances covered by the reservation. A Reserved
-     *         instance with a tenancy of <code>dedicated</code> is applied to
+     *         Instance with a tenancy of <code>dedicated</code> is applied to
      *         instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     *         instances). <p>Default: <code>default</code>
+     *         Instances). <p>Default: <code>default</code>
      *
      * @see Tenancy
      */
@@ -826,9 +826,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The tenancy of the instances covered by the reservation. A Reserved
-     * instance with a tenancy of <code>dedicated</code> is applied to
+     * Instance with a tenancy of <code>dedicated</code> is applied to
      * instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     * instances). <p>Default: <code>default</code>
+     * Instances). <p>Default: <code>default</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -836,9 +836,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The tenancy of the instances covered by the reservation. A Reserved
-     *         instance with a tenancy of <code>dedicated</code> is applied to
+     *         Instance with a tenancy of <code>dedicated</code> is applied to
      *         instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     *         instances). <p>Default: <code>default</code>
+     *         Instances). <p>Default: <code>default</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -852,17 +852,17 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * The tenancy of the instances covered by the reservation. A Reserved
-     * instance with a tenancy of <code>dedicated</code> is applied to
+     * Instance with a tenancy of <code>dedicated</code> is applied to
      * instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     * instances). <p>Default: <code>default</code>
+     * Instances). <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The tenancy of the instances covered by the reservation. A Reserved
-     *         instance with a tenancy of <code>dedicated</code> is applied to
+     *         Instance with a tenancy of <code>dedicated</code> is applied to
      *         instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     *         instances). <p>Default: <code>default</code>
+     *         Instances). <p>Default: <code>default</code>
      *
      * @see Tenancy
      */
@@ -872,9 +872,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The tenancy of the instances covered by the reservation. A Reserved
-     * instance with a tenancy of <code>dedicated</code> is applied to
+     * Instance with a tenancy of <code>dedicated</code> is applied to
      * instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     * instances). <p>Default: <code>default</code>
+     * Instances). <p>Default: <code>default</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -882,9 +882,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <b>Allowed Values: </b>default, dedicated, host
      *
      * @param instanceTenancy The tenancy of the instances covered by the reservation. A Reserved
-     *         instance with a tenancy of <code>dedicated</code> is applied to
+     *         Instance with a tenancy of <code>dedicated</code> is applied to
      *         instances that run in a VPC on single-tenant hardware (i.e., Dedicated
-     *         instances). <p>Default: <code>default</code>
+     *         Instances). <p>Default: <code>default</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -897,16 +897,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Reserved instance offering type. If you are using tools that
+     * The Reserved Instance offering type. If you are using tools that
      * predate the 2011-11-01 API version, you only have access to the
-     * <code>Medium Utilization</code> Reserved instance offering type.
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
-     * @return The Reserved instance offering type. If you are using tools that
+     * @return The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
-     *         <code>Medium Utilization</code> Reserved instance offering type.
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @see OfferingTypeValues
      */
@@ -915,16 +915,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved instance offering type. If you are using tools that
+     * The Reserved Instance offering type. If you are using tools that
      * predate the 2011-11-01 API version, you only have access to the
-     * <code>Medium Utilization</code> Reserved instance offering type.
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
-     * @param offeringType The Reserved instance offering type. If you are using tools that
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
-     *         <code>Medium Utilization</code> Reserved instance offering type.
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @see OfferingTypeValues
      */
@@ -933,18 +933,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved instance offering type. If you are using tools that
+     * The Reserved Instance offering type. If you are using tools that
      * predate the 2011-11-01 API version, you only have access to the
-     * <code>Medium Utilization</code> Reserved instance offering type.
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
-     * @param offeringType The Reserved instance offering type. If you are using tools that
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
-     *         <code>Medium Utilization</code> Reserved instance offering type.
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -957,16 +957,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Reserved instance offering type. If you are using tools that
+     * The Reserved Instance offering type. If you are using tools that
      * predate the 2011-11-01 API version, you only have access to the
-     * <code>Medium Utilization</code> Reserved instance offering type.
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
-     * @param offeringType The Reserved instance offering type. If you are using tools that
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
-     *         <code>Medium Utilization</code> Reserved instance offering type.
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @see OfferingTypeValues
      */
@@ -975,18 +975,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved instance offering type. If you are using tools that
+     * The Reserved Instance offering type. If you are using tools that
      * predate the 2011-11-01 API version, you only have access to the
-     * <code>Medium Utilization</code> Reserved instance offering type.
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization, No Upfront, Partial Upfront, All Upfront
      *
-     * @param offeringType The Reserved instance offering type. If you are using tools that
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
      *         predate the 2011-11-01 API version, you only have access to the
-     *         <code>Medium Utilization</code> Reserved instance offering type.
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
