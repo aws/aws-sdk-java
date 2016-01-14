@@ -21,6 +21,7 @@ package com.amazonaws.services.dynamodbv2.model;
  */
 public enum AttributeAction {
 
+    NONE(""),
     ADD("ADD"),
     PUT("PUT"),
     DELETE("DELETE");

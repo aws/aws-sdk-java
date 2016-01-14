@@ -14,6 +14,10 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
+import com.amazonaws.services.dynamodbv2.model.AttributeAction;
+import com.amazonaws.services.dynamodbv2.model.AttributeValueUpdate;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -47,4 +51,10 @@ public @interface DynamoDBAttribute {
      * should differ from the name used by the getter / setter.
      */
     String attributeName() default "";
+
+    /**
+     * Optional parameter when you want specify the action of {@link AttributeValueUpdate}
+     * This parameter perform that when {@link SaveBehavior} of {@link DynamoDBMapperConfig} is CUSTOM
+     */
+    AttributeAction saveAction() default AttributeAction.NONE;
 }

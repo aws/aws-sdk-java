@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import com.amazonaws.services.dynamodbv2.model.AttributeAction;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -81,6 +82,11 @@ public class PojoReflectionTest {
             if (getter.getName().equals("getVersionedAttr")) {
                 assertTrue(reflector.isVersionAttributeGetter(getter));
             }
+
+            // @DynamoDBAttribute
+            if (getter.getName().equals("real-attribute-name")) {
+                assertEquals(AttributeAction.PUT, reflector.getAttributeSaveAction(getter));
+            }
         }
 
         // Key getters
@@ -142,7 +148,7 @@ public class PojoReflectionTest {
             this.indexRangeKey = indexRangeKey;
         }
 
-        @DynamoDBAttribute(attributeName="real-attribute-name")
+        @DynamoDBAttribute(attributeName="real-attribute-name", saveAction = AttributeAction.PUT)
         public String getAttrWithAttrAnnotation() {
             return attrWithAttrAnnotation;
         }
@@ -199,7 +205,7 @@ public class PojoReflectionTest {
         @DynamoDBIndexRangeKey(globalSecondaryIndexName="index")
         private String indexRangeKey;
 
-        @DynamoDBAttribute(attributeName="real-attribute-name")
+        @DynamoDBAttribute(attributeName="real-attribute-name", saveAction = AttributeAction.PUT)
         private String attrWithAttrAnnotation;
 
         @DynamoDBVersionAttribute
@@ -294,7 +300,7 @@ public class PojoReflectionTest {
 
         private String indexRangeKey;
 
-        @DynamoDBAttribute(attributeName="real-attribute-name")
+        @DynamoDBAttribute(attributeName="real-attribute-name", saveAction = AttributeAction.PUT)
         private String attrWithAttrAnnotation;
 
         private String versionedAttr;
