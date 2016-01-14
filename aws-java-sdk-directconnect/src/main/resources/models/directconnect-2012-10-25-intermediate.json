@@ -1735,8 +1735,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -2393,8 +2393,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -3443,8 +3443,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -4101,8 +4101,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -4606,8 +4606,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Location",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Location>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>"
@@ -4744,8 +4744,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Location",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Location>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>"
@@ -5892,8 +5892,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Connection",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Connection>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -6030,8 +6030,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Connection",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Connection>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -7117,8 +7117,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -7775,8 +7775,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -10420,8 +10420,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -11078,8 +11078,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -11414,8 +11414,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Connection",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Connection>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -11552,8 +11552,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Connection",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Connection>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
@@ -11925,8 +11925,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "VirtualGateway",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<VirtualGateway>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>"
@@ -12063,8 +12063,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "VirtualGateway",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<VirtualGateway>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>"
@@ -17051,8 +17051,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -17501,8 +17501,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -20040,8 +20040,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -20698,8 +20698,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -23281,8 +23281,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Interconnect",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Interconnect>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>"
@@ -23419,8 +23419,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Interconnect",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Interconnect>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>"
@@ -23547,8 +23547,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "VirtualInterface",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<VirtualInterface>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>"
@@ -23685,8 +23685,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "VirtualInterface",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<VirtualInterface>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>"
@@ -24119,8 +24119,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RouteFilterPrefix",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RouteFilterPrefix>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
@@ -24569,8 +24569,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RouteFilterPrefix",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RouteFilterPrefix>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"

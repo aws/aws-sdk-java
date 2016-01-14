@@ -3549,8 +3549,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -3791,8 +3791,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4538,8 +4538,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4784,8 +4784,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5553,8 +5553,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5743,8 +5743,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5871,8 +5871,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "DeploymentInfo",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<DeploymentInfo>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>"
@@ -6009,8 +6009,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "DeploymentInfo",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<DeploymentInfo>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>"
@@ -7283,8 +7283,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Tag",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -7347,8 +7347,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7489,8 +7489,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Tag",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -7554,8 +7554,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7682,8 +7682,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "RevisionLocation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RevisionLocation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
@@ -7923,8 +7923,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "RevisionLocation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RevisionLocation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
@@ -9674,8 +9674,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "EC2TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<EC2TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
@@ -9789,8 +9789,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -9904,8 +9904,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AutoScalingGroup",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AutoScalingGroup>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
@@ -10248,8 +10248,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -10416,8 +10416,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AutoScalingGroup",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AutoScalingGroup>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
@@ -10532,8 +10532,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "EC2TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<EC2TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
@@ -10912,8 +10912,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11003,8 +11003,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11300,8 +11300,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Tag",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -11364,8 +11364,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11506,8 +11506,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Tag",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -11571,8 +11571,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11648,8 +11648,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11838,8 +11838,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12345,8 +12345,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -12642,8 +12642,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -12923,8 +12923,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "EC2TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<EC2TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
@@ -13038,8 +13038,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -13102,8 +13102,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13347,8 +13347,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -13464,8 +13464,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13580,8 +13580,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "EC2TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<EC2TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
@@ -15425,8 +15425,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "ApplicationInfo",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ApplicationInfo>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>"
@@ -15563,8 +15563,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "ApplicationInfo",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ApplicationInfo>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>"
@@ -15691,8 +15691,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "InstanceInfo",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<InstanceInfo>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>"
@@ -15829,8 +15829,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "InstanceInfo",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<InstanceInfo>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>"
@@ -16564,8 +16564,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16754,8 +16754,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16831,8 +16831,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -16922,8 +16922,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17271,8 +17271,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17362,8 +17362,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17909,8 +17909,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -18099,8 +18099,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -18781,8 +18781,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "LifecycleEvent",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<LifecycleEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>"
@@ -19075,8 +19075,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "LifecycleEvent",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<LifecycleEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>"
@@ -19357,8 +19357,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -19601,8 +19601,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -20244,8 +20244,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "Tag",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -20382,8 +20382,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "Tag",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
@@ -21129,8 +21129,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AutoScalingGroup",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AutoScalingGroup>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
@@ -21267,8 +21267,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AutoScalingGroup",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AutoScalingGroup>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
@@ -21892,8 +21892,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -22082,8 +22082,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24070,8 +24070,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "EC2TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<EC2TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
@@ -24185,8 +24185,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "TagFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<TagFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -24249,8 +24249,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24494,8 +24494,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
@@ -24559,8 +24559,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24727,8 +24727,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "EC2TagFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<EC2TagFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
@@ -26875,8 +26875,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : false,
           "simpleType" : "AutoScalingGroup",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AutoScalingGroup>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
@@ -27013,8 +27013,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : false,
             "simpleType" : "AutoScalingGroup",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AutoScalingGroup>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
@@ -28076,8 +28076,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -28524,8 +28524,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

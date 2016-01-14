@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a Reserved instance offering.
+ * Describes a Reserved Instance offering.
  * </p>
  */
 public class PricingDetail implements Serializable, Cloneable {

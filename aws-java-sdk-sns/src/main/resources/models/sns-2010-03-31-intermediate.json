@@ -1056,11 +1056,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1196,11 +1196,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1323,8 +1323,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Subscription",
           "simple" : false,
+          "simpleType" : "Subscription",
           "map" : false,
           "templateType" : "java.util.List<Subscription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
@@ -1564,8 +1564,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Subscription",
             "simple" : false,
+            "simpleType" : "Subscription",
             "map" : false,
             "templateType" : "java.util.List<Subscription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
@@ -1937,8 +1937,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Subscription",
           "simple" : false,
+          "simpleType" : "Subscription",
           "map" : false,
           "templateType" : "java.util.List<Subscription>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
@@ -2178,8 +2178,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Subscription",
             "simple" : false,
+            "simpleType" : "Subscription",
             "map" : false,
             "templateType" : "java.util.List<Subscription>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
@@ -2831,8 +2831,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "PlatformApplication",
           "simple" : false,
+          "simpleType" : "PlatformApplication",
           "map" : false,
           "templateType" : "java.util.List<PlatformApplication>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>"
@@ -3020,8 +3020,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "PlatformApplication",
             "simple" : false,
+            "simpleType" : "PlatformApplication",
             "map" : false,
             "templateType" : "java.util.List<PlatformApplication>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>"
@@ -3202,11 +3202,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -3294,11 +3294,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -3788,8 +3788,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Endpoint",
           "simple" : false,
+          "simpleType" : "Endpoint",
           "map" : false,
           "templateType" : "java.util.List<Endpoint>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>"
@@ -4029,8 +4029,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Endpoint",
             "simple" : false,
+            "simpleType" : "Endpoint",
             "map" : false,
             "templateType" : "java.util.List<Endpoint>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>"
@@ -4330,8 +4330,8 @@
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "Topic",
           "simple" : false,
+          "simpleType" : "Topic",
           "map" : false,
           "templateType" : "java.util.List<Topic>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>"
@@ -4571,8 +4571,8 @@
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "Topic",
             "simple" : false,
+            "simpleType" : "Topic",
             "map" : false,
             "templateType" : "java.util.List<Topic>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>"
@@ -4792,11 +4792,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4880,11 +4880,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5784,11 +5784,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5872,11 +5872,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6001,11 +6001,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6089,11 +6089,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6270,11 +6270,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6414,11 +6414,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7236,11 +7236,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7380,11 +7380,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8358,8 +8358,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8422,8 +8422,8 @@
           "listMemberModel" : null,
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8565,8 +8565,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8630,8 +8630,8 @@
             "listMemberModel" : null,
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9378,11 +9378,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,MessageAttributeValue>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,MessageAttributeValue>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -9521,11 +9521,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,MessageAttributeValue>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,MessageAttributeValue>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10514,11 +10514,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10602,11 +10602,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -11058,11 +11058,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11202,11 +11202,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -11474,11 +11474,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11562,11 +11562,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

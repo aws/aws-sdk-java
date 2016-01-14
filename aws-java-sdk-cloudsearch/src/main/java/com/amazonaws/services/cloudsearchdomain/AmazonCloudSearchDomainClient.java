@@ -250,6 +250,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
                         "DocumentServiceException"));
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();

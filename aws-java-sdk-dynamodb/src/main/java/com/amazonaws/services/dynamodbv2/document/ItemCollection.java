@@ -84,6 +84,11 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
                         consumedCapacity.getLocalSecondaryIndexes(),
                         totalConsumedCapacity.getLocalSecondaryIndexes()));
                 }
+                // Accumulate table capacity
+                final Capacity tableCapacity = consumedCapacity.getTable();
+                if (tableCapacity != null) {
+                    totalConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
+                }
             }
         }
         if (count != null) {

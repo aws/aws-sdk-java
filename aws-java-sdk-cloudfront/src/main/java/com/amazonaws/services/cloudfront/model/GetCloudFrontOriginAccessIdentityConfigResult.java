@@ -1,101 +1,80 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 
 /**
- * <p>
- * The returned result of the corresponding request.
- * </p>
+ * 
  */
-public class GetCloudFrontOriginAccessIdentityConfigResult implements Serializable, Cloneable {
+public class GetCloudFrontOriginAccessIdentityConfigResult implements
+        Serializable, Cloneable {
 
-    /**
-     * The origin access identity's configuration information.
-     */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
 
-    /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     */
     private String eTag;
 
     /**
-     * The origin access identity's configuration information.
-     *
-     * @return The origin access identity's configuration information.
+     * @param cloudFrontOriginAccessIdentityConfig
+     */
+    public void setCloudFrontOriginAccessIdentityConfig(
+            CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
+        this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
+    }
+
+    /**
+     * @return
      */
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
-        return cloudFrontOriginAccessIdentityConfig;
+        return this.cloudFrontOriginAccessIdentityConfig;
     }
-    
+
     /**
-     * The origin access identity's configuration information.
-     *
-     * @param cloudFrontOriginAccessIdentityConfig The origin access identity's configuration information.
+     * @param cloudFrontOriginAccessIdentityConfig
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
-        this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
-    }
-    
-    /**
-     * The origin access identity's configuration information.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cloudFrontOriginAccessIdentityConfig The origin access identity's configuration information.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetCloudFrontOriginAccessIdentityConfigResult withCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
-        this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
+    public GetCloudFrontOriginAccessIdentityConfigResult withCloudFrontOriginAccessIdentityConfig(
+            CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
+        setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
         return this;
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     */
-    public String getETag() {
-        return eTag;
-    }
-    
-    /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * @param eTag
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
-    
+
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
+     */
+    public String getETag() {
+        return this.eTag;
+    }
+
+    /**
+     * @param eTag
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public GetCloudFrontOriginAccessIdentityConfigResult withETag(String eTag) {
-        this.eTag = eTag;
+        setETag(eTag);
         return this;
     }
 
@@ -111,50 +90,63 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements Serializab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() + ",");
-        if (getETag() != null) sb.append("ETag: " + getETag() );
+        if (getCloudFrontOriginAccessIdentityConfig() != null)
+            sb.append("CloudFrontOriginAccessIdentityConfig: "
+                    + getCloudFrontOriginAccessIdentityConfig() + ",");
+        if (getETag() != null)
+            sb.append("ETag: " + getETag());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetCloudFrontOriginAccessIdentityConfigResult == false)
+            return false;
+        GetCloudFrontOriginAccessIdentityConfigResult other = (GetCloudFrontOriginAccessIdentityConfigResult) obj;
+        if (other.getCloudFrontOriginAccessIdentityConfig() == null
+                ^ this.getCloudFrontOriginAccessIdentityConfig() == null)
+            return false;
+        if (other.getCloudFrontOriginAccessIdentityConfig() != null
+                && other.getCloudFrontOriginAccessIdentityConfig().equals(
+                        this.getCloudFrontOriginAccessIdentityConfig()) == false)
+            return false;
+        if (other.getETag() == null ^ this.getETag() == null)
+            return false;
+        if (other.getETag() != null
+                && other.getETag().equals(this.getETag()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCloudFrontOriginAccessIdentityConfig() == null) ? 0 : getCloudFrontOriginAccessIdentityConfig().hashCode()); 
-        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCloudFrontOriginAccessIdentityConfig() == null) ? 0
+                        : getCloudFrontOriginAccessIdentityConfig().hashCode());
+        hashCode = prime * hashCode
+                + ((getETag() == null) ? 0 : getETag().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof GetCloudFrontOriginAccessIdentityConfigResult == false) return false;
-        GetCloudFrontOriginAccessIdentityConfigResult other = (GetCloudFrontOriginAccessIdentityConfigResult)obj;
-        
-        if (other.getCloudFrontOriginAccessIdentityConfig() == null ^ this.getCloudFrontOriginAccessIdentityConfig() == null) return false;
-        if (other.getCloudFrontOriginAccessIdentityConfig() != null && other.getCloudFrontOriginAccessIdentityConfig().equals(this.getCloudFrontOriginAccessIdentityConfig()) == false) return false; 
-        if (other.getETag() == null ^ this.getETag() == null) return false;
-        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public GetCloudFrontOriginAccessIdentityConfigResult clone() {
         try {
-            return (GetCloudFrontOriginAccessIdentityConfigResult) super.clone();
-        
+            return (GetCloudFrontOriginAccessIdentityConfigResult) super
+                    .clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

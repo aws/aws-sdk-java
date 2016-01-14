@@ -313,10 +313,11 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
                         "InternalErrorException"));
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        setEndpoint("https://cognito-identity.us-east-1.amazonaws.com");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        setEndpoint("https://cognito-identity.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

@@ -204,8 +204,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
-                executorService);
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig(), executorService);
     }
 
     /**
@@ -297,7 +297,8 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
                 executorService);
     }
 

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,51 +28,80 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Streaming Distribution Config StAX Unmarshaller
+ * StreamingDistributionConfig StAX Unmarshaller
  */
-public class StreamingDistributionConfigStaxUnmarshaller implements Unmarshaller<StreamingDistributionConfig, StaxUnmarshallerContext> {
+public class StreamingDistributionConfigStaxUnmarshaller implements
+        Unmarshaller<StreamingDistributionConfig, StaxUnmarshallerContext> {
 
-    public StreamingDistributionConfig unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public StreamingDistributionConfig unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         StreamingDistributionConfig streamingDistributionConfig = new StreamingDistributionConfig();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
-        if (context.isStartOfDocument()) targetDepth += 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return streamingDistributionConfig;
+            if (xmlEvent.isEndDocument())
+                return streamingDistributionConfig;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("CallerReference", targetDepth)) {
-                    streamingDistributionConfig.setCallerReference(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setCallerReference(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("S3Origin", targetDepth)) {
-                    streamingDistributionConfig.setS3Origin(S3OriginStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setS3Origin(S3OriginStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Aliases", targetDepth)) {
-                    streamingDistributionConfig.setAliases(AliasesStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setAliases(AliasesStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Comment", targetDepth)) {
-                    streamingDistributionConfig.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setComment(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Logging", targetDepth)) {
-                    streamingDistributionConfig.setLogging(StreamingLoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setLogging(StreamingLoggingConfigStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("TrustedSigners", targetDepth)) {
-                    streamingDistributionConfig.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setTrustedSigners(TrustedSignersStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("PriceClass", targetDepth)) {
-                    streamingDistributionConfig.setPriceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setPriceClass(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Enabled", targetDepth)) {
-                    streamingDistributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig
+                            .setEnabled(BooleanStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -83,9 +113,10 @@ public class StreamingDistributionConfigStaxUnmarshaller implements Unmarshaller
     }
 
     private static StreamingDistributionConfigStaxUnmarshaller instance;
+
     public static StreamingDistributionConfigStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new StreamingDistributionConfigStaxUnmarshaller();
+        if (instance == null)
+            instance = new StreamingDistributionConfigStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -318,10 +318,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
         exceptionUnmarshallers
                 .add(new CredentialReportNotPresentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("iam.amazonaws.com");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("iam.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

@@ -181,8 +181,8 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     public AWSLogsAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
-                executorService);
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig(), executorService);
     }
 
     /**
@@ -273,7 +273,8 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
                 executorService);
     }
 

@@ -19,29 +19,29 @@ import java.io.Serializable;
 /**
  * <p>
  * Describes the configuration settings for the modified Reserved
- * instances.
+ * Instances.
  * </p>
  */
 public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
-     * The Availability Zone for the modified Reserved instances.
+     * The Availability Zone for the modified Reserved Instances.
      */
     private String availabilityZone;
 
     /**
-     * The network platform of the modified Reserved instances, which is
+     * The network platform of the modified Reserved Instances, which is
      * either EC2-Classic or EC2-VPC.
      */
     private String platform;
 
     /**
-     * The number of modified Reserved instances.
+     * The number of modified Reserved Instances.
      */
     private Integer instanceCount;
 
     /**
-     * The instance type for the modified Reserved instances.
+     * The instance type for the modified Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, t2.nano, t2.micro, t2.small, t2.medium, t2.large, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.large, c4.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge
@@ -49,29 +49,29 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     private String instanceType;
 
     /**
-     * The Availability Zone for the modified Reserved instances.
+     * The Availability Zone for the modified Reserved Instances.
      *
-     * @return The Availability Zone for the modified Reserved instances.
+     * @return The Availability Zone for the modified Reserved Instances.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The Availability Zone for the modified Reserved instances.
+     * The Availability Zone for the modified Reserved Instances.
      *
-     * @param availabilityZone The Availability Zone for the modified Reserved instances.
+     * @param availabilityZone The Availability Zone for the modified Reserved Instances.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The Availability Zone for the modified Reserved instances.
+     * The Availability Zone for the modified Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The Availability Zone for the modified Reserved instances.
+     * @param availabilityZone The Availability Zone for the modified Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -82,10 +82,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The network platform of the modified Reserved instances, which is
+     * The network platform of the modified Reserved Instances, which is
      * either EC2-Classic or EC2-VPC.
      *
-     * @return The network platform of the modified Reserved instances, which is
+     * @return The network platform of the modified Reserved Instances, which is
      *         either EC2-Classic or EC2-VPC.
      */
     public String getPlatform() {
@@ -93,10 +93,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The network platform of the modified Reserved instances, which is
+     * The network platform of the modified Reserved Instances, which is
      * either EC2-Classic or EC2-VPC.
      *
-     * @param platform The network platform of the modified Reserved instances, which is
+     * @param platform The network platform of the modified Reserved Instances, which is
      *         either EC2-Classic or EC2-VPC.
      */
     public void setPlatform(String platform) {
@@ -104,12 +104,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The network platform of the modified Reserved instances, which is
+     * The network platform of the modified Reserved Instances, which is
      * either EC2-Classic or EC2-VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param platform The network platform of the modified Reserved instances, which is
+     * @param platform The network platform of the modified Reserved Instances, which is
      *         either EC2-Classic or EC2-VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -121,29 +121,29 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The number of modified Reserved instances.
+     * The number of modified Reserved Instances.
      *
-     * @return The number of modified Reserved instances.
+     * @return The number of modified Reserved Instances.
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * The number of modified Reserved instances.
+     * The number of modified Reserved Instances.
      *
-     * @param instanceCount The number of modified Reserved instances.
+     * @param instanceCount The number of modified Reserved Instances.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * The number of modified Reserved instances.
+     * The number of modified Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount The number of modified Reserved instances.
+     * @param instanceCount The number of modified Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -154,12 +154,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The instance type for the modified Reserved instances.
+     * The instance type for the modified Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, t2.nano, t2.micro, t2.small, t2.medium, t2.large, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.large, c4.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge
      *
-     * @return The instance type for the modified Reserved instances.
+     * @return The instance type for the modified Reserved Instances.
      *
      * @see InstanceType
      */
@@ -168,12 +168,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The instance type for the modified Reserved instances.
+     * The instance type for the modified Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, t2.nano, t2.micro, t2.small, t2.medium, t2.large, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.large, c4.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge
      *
-     * @param instanceType The instance type for the modified Reserved instances.
+     * @param instanceType The instance type for the modified Reserved Instances.
      *
      * @see InstanceType
      */
@@ -182,14 +182,14 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The instance type for the modified Reserved instances.
+     * The instance type for the modified Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, t2.nano, t2.micro, t2.small, t2.medium, t2.large, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.large, c4.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge
      *
-     * @param instanceType The instance type for the modified Reserved instances.
+     * @param instanceType The instance type for the modified Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -202,12 +202,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * The instance type for the modified Reserved instances.
+     * The instance type for the modified Reserved Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, t2.nano, t2.micro, t2.small, t2.medium, t2.large, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.large, c4.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge
      *
-     * @param instanceType The instance type for the modified Reserved instances.
+     * @param instanceType The instance type for the modified Reserved Instances.
      *
      * @see InstanceType
      */
@@ -216,14 +216,14 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
     
     /**
-     * The instance type for the modified Reserved instances.
+     * The instance type for the modified Reserved Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, t2.nano, t2.micro, t2.small, t2.medium, t2.large, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.large, c4.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge
      *
-     * @param instanceType The instance type for the modified Reserved instances.
+     * @param instanceType The instance type for the modified Reserved Instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

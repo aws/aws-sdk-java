@@ -19,11 +19,11 @@
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "route53domains",
     "signingName" : "route53domains",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
     "serviceName" : "Amazon Route 53 Domains",
     "jsonProtocol" : true,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext"
   },
   "operations" : {
     "CheckDomainAvailability" : {
