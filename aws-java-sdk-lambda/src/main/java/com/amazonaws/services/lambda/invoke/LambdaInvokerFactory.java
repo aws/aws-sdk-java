@@ -112,9 +112,12 @@ public final class LambdaInvokerFactory {
 
             LambdaFunction annotation = super.validateInterfaceMethod(method, args);
 
-            String functionName = annotation.functionName();
-            if (functionName.isEmpty() || !keys.containsKey(functionName)) {
-                throw new LambdaSerializationException("No lambda name provided for " + functionName + " in keys map");
+            String functionKey = annotation.functionName();
+            if (functionKey.isEmpty()) {
+                functionKey = method.getName();
+            }
+            if (!keys.containsKey(functionKey)) {
+                throw new LambdaSerializationException("No lambda name provided for " + functionKey + " in keys map");
             }
 
             return annotation;
@@ -125,7 +128,11 @@ public final class LambdaInvokerFactory {
 
             InvokeRequest invokeRequest = super.buildInvokeRequest(method, annotation, input);
 
-            String functionName = keys.get(annotation.functionName());
+            String functionKey = annotation.functionName();
+            if (functionKey.isEmpty()) {
+                functionKey = method.getName();
+            }
+            String functionName = keys.get(functionKey);
             invokeRequest.setFunctionName(functionName);
 
             return invokeRequest;
