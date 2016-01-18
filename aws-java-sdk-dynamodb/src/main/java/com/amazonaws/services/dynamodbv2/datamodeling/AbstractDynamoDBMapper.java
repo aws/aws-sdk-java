@@ -20,6 +20,7 @@ import java.util.Map;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.s3.model.Region;
 
 /**
@@ -300,4 +301,8 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public DeleteTableRequest generateDeleteTableRequest(Class<?> clazz) {
+        throw new UnsupportedOperationException();
+    }
 }
