@@ -54,17 +54,16 @@ public class AmazonS3URI {
 
         this.uri = uri;
 
-        String host = uri.getHost();
-        if (host == null) {
-            throw new IllegalArgumentException("Invalid S3 URI: no hostname: "
-                                               + uri);
-        }
-
         // s3://*
         if (uri.getScheme().equalsIgnoreCase("s3")) {
             this.region = null;
             this.isPathStyle = false;
-            this.bucket = uri.getHost();
+            this.bucket = uri.getAuthority();
+
+            if (bucket == null) {
+                throw new IllegalArgumentException("Invalid S3 URI: no bucket: "
+                        + uri);
+            }
 
             String path = uri.getPath();
             if (path.length() <= 1) {
@@ -76,6 +75,12 @@ public class AmazonS3URI {
                 this.key = uri.getPath().substring(1);
             }
             return;
+        }
+
+        String host = uri.getHost();
+        if (host == null) {
+            throw new IllegalArgumentException("Invalid S3 URI: no hostname: "
+                                               + uri);
         }
 
         Matcher matcher = ENDPOINT_PATTERN.matcher(host);

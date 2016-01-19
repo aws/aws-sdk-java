@@ -85,7 +85,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -159,7 +161,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -547,7 +550,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -576,8 +581,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default option is the current Amazon Linux version. If you set
      *        this parameter to <code>Custom</code>, you must use the
      *        <a>CreateInstance</a> action's AmiId parameter to specify the
-     *        custom AMI that you want to use. For more information on the
-     *        supported operating systems, see <a href=
+     *        custom AMI that you want to use. Block device mappings are not
+     *        supported if the value is <code>Custom</code>. For more
+     *        information on the supported operating systems, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >Operating Systems</a>For more information on how to use custom
      *        AMIs with AWS OpsWorks, see <a href=
@@ -610,7 +616,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -638,8 +646,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         The default option is the current Amazon Linux version. If you
      *         set this parameter to <code>Custom</code>, you must use the
      *         <a>CreateInstance</a> action's AmiId parameter to specify the
-     *         custom AMI that you want to use. For more information on the
-     *         supported operating systems, see <a href=
+     *         custom AMI that you want to use. Block device mappings are not
+     *         supported if the value is <code>Custom</code>. For more
+     *         information on the supported operating systems, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *         >Operating Systems</a>For more information on how to use custom
      *         AMIs with AWS OpsWorks, see <a href=
@@ -672,7 +681,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -701,8 +712,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default option is the current Amazon Linux version. If you set
      *        this parameter to <code>Custom</code>, you must use the
      *        <a>CreateInstance</a> action's AmiId parameter to specify the
-     *        custom AMI that you want to use. For more information on the
-     *        supported operating systems, see <a href=
+     *        custom AMI that you want to use. Block device mappings are not
+     *        supported if the value is <code>Custom</code>. For more
+     *        information on the supported operating systems, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >Operating Systems</a>For more information on how to use custom
      *        AMIs with AWS OpsWorks, see <a href=
@@ -1193,13 +1205,15 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * 
      * @return An array of <code>BlockDeviceMapping</code> objects that specify
      *         the instance's block devices. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *         >Block Device Mapping</a>.
+     *         >Block Device Mapping</a>. Note that block device mappings are
+     *         not supported for custom AMIs.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -1213,14 +1227,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * 
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify
      *        the instance's block devices. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *        >Block Device Mapping</a>.
+     *        >Block Device Mapping</a>. Note that block device mappings are not
+     *        supported for custom AMIs.
      */
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -1238,7 +1254,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1251,7 +1268,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        An array of <code>BlockDeviceMapping</code> objects that specify
      *        the instance's block devices. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *        >Block Device Mapping</a>.
+     *        >Block Device Mapping</a>. Note that block device mappings are not
+     *        supported for custom AMIs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1272,14 +1290,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * 
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify
      *        the instance's block devices. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *        >Block Device Mapping</a>.
+     *        >Block Device Mapping</a>. Note that block device mappings are not
+     *        supported for custom AMIs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

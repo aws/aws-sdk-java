@@ -280,6 +280,14 @@ public class XmlResponsesSaxParser {
     }
 
     /**
+     * Perform a url decode on the given value if specified.
+     * Return value by default;
+     */
+    private static String decodeIfSpecified(String value, boolean decode) {
+        return decode ? SdkHttpUtils.urlDecode(value) : value;
+    }
+
+    /**
      * Parses a ListBucket response XML document from an input stream.
      *
      * @param inputStream
@@ -558,23 +566,27 @@ public class XmlResponsesSaxParser {
                     }
 
                 } else if (name.equals("Prefix")) {
-                    objectListing.setPrefix(checkForEmptyString(getText()));
+                    objectListing.setPrefix(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("Marker")) {
-                    objectListing.setMarker(checkForEmptyString(getText()));
+                    objectListing.setMarker(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("NextMarker")) {
-                    objectListing.setNextMarker(getText());
+                    objectListing.setNextMarker(decodeIfSpecified
+                            (getText(), shouldSDKDecodeResponse));
 
                 } else if (name.equals("MaxKeys")) {
                     objectListing.setMaxKeys(parseInt(getText()));
 
                 } else if (name.equals("Delimiter")) {
-                    objectListing.setDelimiter(checkForEmptyString(getText()));
+                    objectListing.setDelimiter(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("EncodingType")) {
-                    objectListing.setEncodingType(checkForEmptyString(getText()));
-
+                    objectListing.setEncodingType(shouldSDKDecodeResponse ?
+                            null : checkForEmptyString(getText()));
                 } else if (name.equals("IsTruncated")) {
                     String isTruncatedStr =
                         getText().toLowerCase(Locale.getDefault());
@@ -598,9 +610,8 @@ public class XmlResponsesSaxParser {
             else if (in("ListBucketResult", "Contents")) {
                 if (name.equals("Key")) {
                     lastKey = getText();
-                    currentObject.setKey(
-                            shouldSDKDecodeResponse ? SdkHttpUtils.urlDecode(lastKey) : lastKey);
-
+                    currentObject.setKey(decodeIfSpecified
+                                    (lastKey, shouldSDKDecodeResponse));
                 } else if (name.equals("LastModified")) {
                     currentObject.setLastModified(
                             ServiceUtils.parseIso8601Date(getText()));
@@ -632,7 +643,8 @@ public class XmlResponsesSaxParser {
 
             else if (in("ListBucketResult", "CommonPrefixes")) {
                 if (name.equals("Prefix")) {
-                    objectListing.getCommonPrefixes().add(getText());
+                    objectListing.getCommonPrefixes().add
+                            (decodeIfSpecified(getText(), shouldSDKDecodeResponse));
                 }
             }
         }
@@ -1102,11 +1114,11 @@ public class XmlResponsesSaxParser {
                     versionListing.setBucketName(getText());
 
                 } else if (name.equals("Prefix")) {
-                    versionListing.setPrefix(checkForEmptyString(getText()));
-
+                    versionListing.setPrefix(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
                 } else if (name.equals("KeyMarker")) {
-                    versionListing.setKeyMarker(checkForEmptyString(getText()));
-
+                    versionListing.setKeyMarker(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
                 } else if (name.equals("VersionIdMarker")) {
                     versionListing.setVersionIdMarker(checkForEmptyString(
                             getText()));
@@ -1115,14 +1127,15 @@ public class XmlResponsesSaxParser {
                     versionListing.setMaxKeys(Integer.parseInt(getText()));
 
                 } else if (name.equals("Delimiter")) {
-                    versionListing.setDelimiter(checkForEmptyString(getText()));
+                    versionListing.setDelimiter(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("EncodingType")) {
-                    versionListing.setEncodingType(checkForEmptyString(
-                            getText()));
-
+                    versionListing.setEncodingType(shouldSDKDecodeResponse ?
+                            null : checkForEmptyString(getText()));
                 } else if (name.equals("NextKeyMarker")) {
-                    versionListing.setNextKeyMarker(getText());
+                    versionListing.setNextKeyMarker(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("NextVersionIdMarker")) {
                     versionListing.setNextVersionIdMarker(getText());
@@ -1142,8 +1155,10 @@ public class XmlResponsesSaxParser {
 
             else if (in("ListVersionsResult", "CommonPrefixes")) {
                 if (name.equals("Prefix")) {
+                    final String commonPrefix = checkForEmptyString(getText());
                     versionListing.getCommonPrefixes()
-                        .add(checkForEmptyString(getText()));
+                        .add(shouldSDKDecodeResponse ?
+                                SdkHttpUtils.urlDecode(commonPrefix) : commonPrefix);
                 }
             }
 
@@ -1151,7 +1166,7 @@ public class XmlResponsesSaxParser {
                     || in("ListVersionsResult", "DeleteMarker")) {
 
                 if (name.equals("Key")) {
-                    currentVersionSummary.setKey(shouldSDKDecodeResponse ? SdkHttpUtils.urlDecode(getText()) : getText());
+                    currentVersionSummary.setKey(decodeIfSpecified(getText(), shouldSDKDecodeResponse));
 
                 } else if (name.equals("VersionId")) {
                     currentVersionSummary.setVersionId(getText());

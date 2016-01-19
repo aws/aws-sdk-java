@@ -56,20 +56,23 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
     private Integer ignoreMetricsTime;
     /**
      * <p>
-     * The CPU utilization threshold, as a percent of the available CPU.
+     * The CPU utilization threshold, as a percent of the available CPU. A value
+     * of -1 disables the threshold.
      * </p>
      */
     private Double cpuThreshold;
     /**
      * <p>
-     * The memory utilization threshold, as a percent of the available memory.
+     * The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.
      * </p>
      */
     private Double memoryThreshold;
     /**
      * <p>
-     * The load threshold. For more information about how load is computed, see
-     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
+     * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.
      * </p>
      */
@@ -264,11 +267,13 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CPU utilization threshold, as a percent of the available CPU.
+     * The CPU utilization threshold, as a percent of the available CPU. A value
+     * of -1 disables the threshold.
      * </p>
      * 
      * @param cpuThreshold
      *        The CPU utilization threshold, as a percent of the available CPU.
+     *        A value of -1 disables the threshold.
      */
     public void setCpuThreshold(Double cpuThreshold) {
         this.cpuThreshold = cpuThreshold;
@@ -276,10 +281,12 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CPU utilization threshold, as a percent of the available CPU.
+     * The CPU utilization threshold, as a percent of the available CPU. A value
+     * of -1 disables the threshold.
      * </p>
      * 
      * @return The CPU utilization threshold, as a percent of the available CPU.
+     *         A value of -1 disables the threshold.
      */
     public Double getCpuThreshold() {
         return this.cpuThreshold;
@@ -287,11 +294,13 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CPU utilization threshold, as a percent of the available CPU.
+     * The CPU utilization threshold, as a percent of the available CPU. A value
+     * of -1 disables the threshold.
      * </p>
      * 
      * @param cpuThreshold
      *        The CPU utilization threshold, as a percent of the available CPU.
+     *        A value of -1 disables the threshold.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -302,12 +311,13 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The memory utilization threshold, as a percent of the available memory.
+     * The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.
      * </p>
      * 
      * @param memoryThreshold
      *        The memory utilization threshold, as a percent of the available
-     *        memory.
+     *        memory. A value of -1 disables the threshold.
      */
     public void setMemoryThreshold(Double memoryThreshold) {
         this.memoryThreshold = memoryThreshold;
@@ -315,11 +325,12 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The memory utilization threshold, as a percent of the available memory.
+     * The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.
      * </p>
      * 
      * @return The memory utilization threshold, as a percent of the available
-     *         memory.
+     *         memory. A value of -1 disables the threshold.
      */
     public Double getMemoryThreshold() {
         return this.memoryThreshold;
@@ -327,12 +338,13 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The memory utilization threshold, as a percent of the available memory.
+     * The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.
      * </p>
      * 
      * @param memoryThreshold
      *        The memory utilization threshold, as a percent of the available
-     *        memory.
+     *        memory. A value of -1 disables the threshold.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -343,14 +355,15 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The load threshold. For more information about how load is computed, see
-     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
+     * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.
      * </p>
      * 
      * @param loadThreshold
-     *        The load threshold. For more information about how load is
-     *        computed, see <a
+     *        The load threshold. A value of -1 disables the threshold. For more
+     *        information about how load is computed, see <a
      *        href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *        (computing)</a>.
      */
@@ -360,13 +373,14 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The load threshold. For more information about how load is computed, see
-     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
+     * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.
      * </p>
      * 
-     * @return The load threshold. For more information about how load is
-     *         computed, see <a
+     * @return The load threshold. A value of -1 disables the threshold. For
+     *         more information about how load is computed, see <a
      *         href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *         (computing)</a>.
      */
@@ -376,14 +390,15 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The load threshold. For more information about how load is computed, see
-     * <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
+     * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.
      * </p>
      * 
      * @param loadThreshold
-     *        The load threshold. For more information about how load is
-     *        computed, see <a
+     *        The load threshold. A value of -1 disables the threshold. For more
+     *        information about how load is computed, see <a
      *        href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *        (computing)</a>.
      * @return Returns a reference to this object so that method calls can be

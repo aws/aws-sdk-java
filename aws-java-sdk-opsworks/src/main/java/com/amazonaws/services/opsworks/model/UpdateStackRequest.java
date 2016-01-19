@@ -152,9 +152,10 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     private String customJson;
     /**
      * <p>
-     * The configuration manager. When you clone a stack, we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you update a stack, we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      */
     private StackConfigurationManager configurationManager;
@@ -1067,15 +1068,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration manager. When you clone a stack, we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you update a stack, we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      * 
      * @param configurationManager
-     *        The configuration manager. When you clone a stack, we recommend
+     *        The configuration manager. When you update a stack, we recommend
      *        that you use the configuration manager to specify the Chef
-     *        version: 0.9, 11.4, or 11.10. The default value is currently 11.4.
+     *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
+     *        stacks. The default value for Linux stacks is currently 11.4.
      */
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
@@ -1084,15 +1087,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration manager. When you clone a stack, we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you update a stack, we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      * 
-     * @return The configuration manager. When you clone a stack, we recommend
+     * @return The configuration manager. When you update a stack, we recommend
      *         that you use the configuration manager to specify the Chef
-     *         version: 0.9, 11.4, or 11.10. The default value is currently
-     *         11.4.
+     *         version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
+     *         stacks. The default value for Linux stacks is currently 11.4.
      */
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
@@ -1100,15 +1104,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration manager. When you clone a stack, we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you update a stack, we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      * 
      * @param configurationManager
-     *        The configuration manager. When you clone a stack, we recommend
+     *        The configuration manager. When you update a stack, we recommend
      *        that you use the configuration manager to specify the Chef
-     *        version: 0.9, 11.4, or 11.10. The default value is currently 11.4.
+     *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
+     *        stacks. The default value for Linux stacks is currently 11.4.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -28,7 +28,15 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Credentials for the service API authentication.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security (or session) token.
+     * </p>
+     * <p>
+     * <b>Note:</b> The size of the security token that STS APIs return is not
+     * fixed. We strongly recommend that you make no assumptions about the
+     * maximum size. As of this writing, the typical size is less than 4096
+     * bytes, but that can vary. Also, future updates to AWS might require
+     * larger sizes.
      * </p>
      */
     private Credentials credentials;
@@ -52,11 +60,26 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Credentials for the service API authentication.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security (or session) token.
+     * </p>
+     * <p>
+     * <b>Note:</b> The size of the security token that STS APIs return is not
+     * fixed. We strongly recommend that you make no assumptions about the
+     * maximum size. As of this writing, the typical size is less than 4096
+     * bytes, but that can vary. Also, future updates to AWS might require
+     * larger sizes.
      * </p>
      * 
      * @param credentials
-     *        Credentials for the service API authentication.
+     *        The temporary security credentials, which include an access key
+     *        ID, a secret access key, and a security (or session) token.</p>
+     *        <p>
+     *        <b>Note:</b> The size of the security token that STS APIs return
+     *        is not fixed. We strongly recommend that you make no assumptions
+     *        about the maximum size. As of this writing, the typical size is
+     *        less than 4096 bytes, but that can vary. Also, future updates to
+     *        AWS might require larger sizes.
      */
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
@@ -64,10 +87,25 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Credentials for the service API authentication.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security (or session) token.
+     * </p>
+     * <p>
+     * <b>Note:</b> The size of the security token that STS APIs return is not
+     * fixed. We strongly recommend that you make no assumptions about the
+     * maximum size. As of this writing, the typical size is less than 4096
+     * bytes, but that can vary. Also, future updates to AWS might require
+     * larger sizes.
      * </p>
      * 
-     * @return Credentials for the service API authentication.
+     * @return The temporary security credentials, which include an access key
+     *         ID, a secret access key, and a security (or session) token.</p>
+     *         <p>
+     *         <b>Note:</b> The size of the security token that STS APIs return
+     *         is not fixed. We strongly recommend that you make no assumptions
+     *         about the maximum size. As of this writing, the typical size is
+     *         less than 4096 bytes, but that can vary. Also, future updates to
+     *         AWS might require larger sizes.
      */
     public Credentials getCredentials() {
         return this.credentials;
@@ -75,11 +113,26 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Credentials for the service API authentication.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security (or session) token.
+     * </p>
+     * <p>
+     * <b>Note:</b> The size of the security token that STS APIs return is not
+     * fixed. We strongly recommend that you make no assumptions about the
+     * maximum size. As of this writing, the typical size is less than 4096
+     * bytes, but that can vary. Also, future updates to AWS might require
+     * larger sizes.
      * </p>
      * 
      * @param credentials
-     *        Credentials for the service API authentication.
+     *        The temporary security credentials, which include an access key
+     *        ID, a secret access key, and a security (or session) token.</p>
+     *        <p>
+     *        <b>Note:</b> The size of the security token that STS APIs return
+     *        is not fixed. We strongly recommend that you make no assumptions
+     *        about the maximum size. As of this writing, the typical size is
+     *        less than 4096 bytes, but that can vary. Also, future updates to
+     *        AWS might require larger sizes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

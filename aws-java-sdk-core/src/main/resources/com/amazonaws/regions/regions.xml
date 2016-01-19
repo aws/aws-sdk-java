@@ -519,6 +519,12 @@
         <Hostname>elastictranscoder.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.us-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>waf</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1067,6 +1073,12 @@
         <Hostname>elastictranscoder.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>workspaces</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1306,6 +1318,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>elastictranscoder.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>workspaces</ServiceName>
@@ -1549,6 +1567,12 @@
         <Hostname>kinesis.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>workspaces</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1740,6 +1764,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>directconnect.sa-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.sa-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>waf</ServiceName>
@@ -2242,6 +2272,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>kinesis.eu-central-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ssm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>ssm.eu-central-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>waf</ServiceName>
@@ -3242,8 +3278,14 @@
       <Name>ssm</Name>
       <FullName>Amazon Simple Systems Management</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
+      <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
+      <RegionName>eu-central-1</RegionName>
     </Service>
     <Service>
       <Name>machinelearning</Name>

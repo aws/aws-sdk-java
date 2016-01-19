@@ -287,6 +287,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
         exceptionUnmarshallers
                 .add(new PackedPolicyTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ExpiredTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RegionDisabledExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new IDPCommunicationErrorExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -422,6 +423,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The request was rejected because the policy document was too
      *         large. The error message describes how big the policy document
      *         is, in packed form, as a percentage of what the API allows.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console.
      * @sample AWSSecurityTokenService.AssumeRole
      */
     @Override
@@ -553,6 +559,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The web identity token that was passed is expired or is not
      *         valid. Get a new identity token from the identity provider and
      *         then retry the request.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
      */
     @Override
@@ -718,6 +729,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The web identity token that was passed is expired or is not
      *         valid. Get a new identity token from the identity provider and
      *         then retry the request.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
      */
     @Override
@@ -939,6 +955,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The request was rejected because the policy document was too
      *         large. The error message describes how big the policy document
      *         is, in packed form, as a percentage of what the API allows.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console.
      * @sample AWSSecurityTokenService.GetFederationToken
      */
     @Override
@@ -1026,6 +1047,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      * 
      * @param getSessionTokenRequest
      * @return Result of the GetSessionToken operation returned by the service.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console.
      * @sample AWSSecurityTokenService.GetSessionToken
      */
     @Override
