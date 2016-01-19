@@ -205,6 +205,64 @@ public class AccessControlList implements Serializable {
         return grantList;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((owner == null) ? 0 : owner.hashCode());
+        result = prime * result + ((grantSet == null) ? 0 : grantSet.hashCode());
+        result = prime * result + ((grantList == null) ? 0 : grantList.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } else if (obj == null) {
+            return false;
+        } else if (getClass() != obj.getClass()) {
+            return false;
+        }
+        AccessControlList other = (AccessControlList) obj;
+
+        if (owner == null) {
+            if (other.owner != null) {
+                return false;
+            }
+        } else if (!owner.equals(other.owner)) {
+            return false;
+        }
+
+        if (grantSet == null) {
+            if (other.grantSet != null) {
+                return false;
+            }
+        } else if (!grantSet.equals(other.grantSet)) {
+            return false;
+        }
+
+        if (grantList == null) {
+            if (other.grantList != null) {
+                return false;
+            }
+        } else if (!grantList.equals(other.grantList)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
     public String toString() {
         return "AccessControlList [owner=" + owner + ", grants=" + getGrantsAsList() + "]";
     }
