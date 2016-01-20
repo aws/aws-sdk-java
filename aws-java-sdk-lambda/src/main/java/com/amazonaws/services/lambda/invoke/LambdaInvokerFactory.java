@@ -32,7 +32,6 @@ import java.io.IOException;
 import java.lang.reflect.*;
 import java.nio.ByteBuffer;
 import java.util.List;
-import java.util.Map;
 
 /**
  * A factory for objects that implement a user-supplied interface by invoking a remote Lambda
@@ -70,10 +69,7 @@ public final class LambdaInvokerFactory {
      *            the lambda client to use for making remote calls
      */
     public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda) {
-        Object proxy = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[] { interfaceClass },
-                new LambdaInvocationHandler(interfaceClass, awsLambda));
-
-        return interfaceClass.cast(proxy);
+        return build(interfaceClass, awsLambda, new LambdaInvokerFactoryConfig());
     }
 
     /**
@@ -84,13 +80,12 @@ public final class LambdaInvokerFactory {
      *            the interface to implement
      * @param awsLambda
      *            the lambda client to use for making remote calls
-     * @param keys
-     *            the map of key->name where key is functionName value passed to @LambdaFunction annotation,
-     *            and name is the name of the actual AWS lambda
+     * @param config
+     *            configuration for the LambdaInvokerFactory
      */
-    public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda, Map<String, String> keys) {
+    public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
         Object proxy = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[] { interfaceClass },
-                new LambdaKeyInvocationHandler(interfaceClass, awsLambda, keys));
+                new LambdaInvocationHandler(interfaceClass, awsLambda, config));
 
         return interfaceClass.cast(proxy);
     }
@@ -98,60 +93,17 @@ public final class LambdaInvokerFactory {
     private LambdaInvokerFactory() {
     }
 
-    private static class LambdaKeyInvocationHandler extends LambdaInvocationHandler {
-
-        private final Map<String, String> keys;
-
-        public LambdaKeyInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, Map<String, String> keys) {
-            super(interfaceClass, awsLambda);
-            this.keys = keys;
-        }
-
-        @Override
-        protected LambdaFunction validateInterfaceMethod(Method method, Object[] args) {
-
-            LambdaFunction annotation = super.validateInterfaceMethod(method, args);
-
-            if (getFunctionName(method, annotation) == null) {
-                throw new LambdaSerializationException("No lambda name provided for " + getFunctionKey(method, annotation) + " in keys map");
-            }
-
-            return annotation;
-        }
-
-        @Override
-        protected InvokeRequest buildInvokeRequest(Method method, LambdaFunction annotation, Object input) {
-
-            InvokeRequest invokeRequest = super.buildInvokeRequest(method, annotation, input);
-
-            String functionName = getFunctionName(method, annotation);
-            invokeRequest.setFunctionName(functionName);
-
-            return invokeRequest;
-        }
-
-        private String getFunctionKey(Method method, LambdaFunction annotation) {
-            String functionKey = annotation.functionName();
-            if (functionKey.isEmpty()) {
-                functionKey = method.getName();
-            }
-            return functionKey;
-        }
-
-        private String getFunctionName(Method method, LambdaFunction annotation) {
-            return keys.get(getFunctionKey(method, annotation));
-        }
-    }
-
     private static class LambdaInvocationHandler implements InvocationHandler {
 
-        protected final AWSLambda awsLambda;
-        protected final Log log;
+        private final AWSLambda awsLambda;
+        private final Log log;
+        private final LambdaInvokerFactoryConfig config;
 
-        public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda) {
+        public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
 
             this.awsLambda = awsLambda;
             this.log = LogFactory.getLog(interfaceClass);
+            this.config = config;
         }
 
         @Override
@@ -169,7 +121,7 @@ public final class LambdaInvokerFactory {
         /**
          * Verifies that the given method is annotated appropriately.
          */
-        protected LambdaFunction validateInterfaceMethod(Method method, Object[] args) {
+        private LambdaFunction validateInterfaceMethod(Method method, Object[] args) {
 
             LambdaFunction annotation = method.getAnnotation(LambdaFunction.class);
 
@@ -192,14 +144,11 @@ public final class LambdaInvokerFactory {
          * Builds an InvokeRequest from the given method, its {@code LambdaFunction} annotation, and
          * the input parameter (if any).
          */
-        protected InvokeRequest buildInvokeRequest(Method method, LambdaFunction annotation, Object input) {
+        private InvokeRequest buildInvokeRequest(Method method, LambdaFunction annotation, Object input) {
 
             InvokeRequest invokeRequest = new InvokeRequest();
 
-            String functionName = annotation.functionName();
-            if (functionName.isEmpty()) {
-                functionName = method.getName();
-            }
+            String functionName = config.getLambdaFunctionNameResolver().getFunctionName(method, annotation, config);
 
             invokeRequest.setFunctionName(functionName);
             invokeRequest.setInvocationType(annotation.invocationType());
