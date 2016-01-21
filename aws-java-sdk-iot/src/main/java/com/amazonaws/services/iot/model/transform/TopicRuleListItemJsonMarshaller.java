@@ -51,6 +51,10 @@ public class TopicRuleListItemJsonMarshaller {
         try {
             jsonWriter.object();
 
+            if (topicRuleListItem.getRuleArn() != null) {
+                jsonWriter.key("ruleArn").value(topicRuleListItem.getRuleArn());
+            }
+
             if (topicRuleListItem.getRuleName() != null) {
                 jsonWriter.key("ruleName").value(
                         topicRuleListItem.getRuleName());

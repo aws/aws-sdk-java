@@ -33,8 +33,8 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<StackEvent> stackEvents;
     /**
      * <p>
-     * String that identifies the start of the next list of events, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of events. If no additional page exists, this value is null.
      * </p>
      */
     private String nextToken;
@@ -116,13 +116,14 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that identifies the start of the next list of events, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of events. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of events, if
-     *        there is one.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of events. If no additional page exists, this value is
+     *        null.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -130,12 +131,13 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that identifies the start of the next list of events, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of events. If no additional page exists, this value is null.
      * </p>
      * 
-     * @return String that identifies the start of the next list of events, if
-     *         there is one.
+     * @return If the output exceeds 1 MB in size, a string that identifies the
+     *         next page of events. If no additional page exists, this value is
+     *         null.
      */
     public String getNextToken() {
         return this.nextToken;
@@ -143,13 +145,14 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that identifies the start of the next list of events, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of events. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of events, if
-     *        there is one.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of events. If no additional page exists, this value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

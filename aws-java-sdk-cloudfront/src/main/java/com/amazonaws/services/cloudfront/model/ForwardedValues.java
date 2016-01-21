@@ -19,32 +19,61 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that specifies how CloudFront handles query strings, cookies
+ * and headers.
  */
 public class ForwardedValues implements Serializable, Cloneable {
 
+    /**
+     * Indicates whether you want CloudFront to forward query strings to the
+     * origin that is associated with this cache behavior. If so, specify true;
+     * if not, specify false.
+     */
     private Boolean queryString;
-
+    /** A complex type that specifies how CloudFront handles cookies. */
     private CookiePreference cookies;
-
+    /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     */
     private Headers headers;
 
     /**
+     * Indicates whether you want CloudFront to forward query strings to the
+     * origin that is associated with this cache behavior. If so, specify true;
+     * if not, specify false.
+     * 
      * @param queryString
+     *        Indicates whether you want CloudFront to forward query strings to
+     *        the origin that is associated with this cache behavior. If so,
+     *        specify true; if not, specify false.
      */
     public void setQueryString(Boolean queryString) {
         this.queryString = queryString;
     }
 
     /**
-     * @return
+     * Indicates whether you want CloudFront to forward query strings to the
+     * origin that is associated with this cache behavior. If so, specify true;
+     * if not, specify false.
+     * 
+     * @return Indicates whether you want CloudFront to forward query strings to
+     *         the origin that is associated with this cache behavior. If so,
+     *         specify true; if not, specify false.
      */
     public Boolean getQueryString() {
         return this.queryString;
     }
 
     /**
+     * Indicates whether you want CloudFront to forward query strings to the
+     * origin that is associated with this cache behavior. If so, specify true;
+     * if not, specify false.
+     * 
      * @param queryString
+     *        Indicates whether you want CloudFront to forward query strings to
+     *        the origin that is associated with this cache behavior. If so,
+     *        specify true; if not, specify false.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -54,28 +83,42 @@ public class ForwardedValues implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Indicates whether you want CloudFront to forward query strings to the
+     * origin that is associated with this cache behavior. If so, specify true;
+     * if not, specify false.
+     * 
+     * @return Indicates whether you want CloudFront to forward query strings to
+     *         the origin that is associated with this cache behavior. If so,
+     *         specify true; if not, specify false.
      */
     public Boolean isQueryString() {
         return this.queryString;
     }
 
     /**
+     * A complex type that specifies how CloudFront handles cookies.
+     * 
      * @param cookies
+     *        A complex type that specifies how CloudFront handles cookies.
      */
     public void setCookies(CookiePreference cookies) {
         this.cookies = cookies;
     }
 
     /**
-     * @return
+     * A complex type that specifies how CloudFront handles cookies.
+     * 
+     * @return A complex type that specifies how CloudFront handles cookies.
      */
     public CookiePreference getCookies() {
         return this.cookies;
     }
 
     /**
+     * A complex type that specifies how CloudFront handles cookies.
+     * 
      * @param cookies
+     *        A complex type that specifies how CloudFront handles cookies.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -85,21 +128,35 @@ public class ForwardedValues implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     * 
      * @param headers
+     *        A complex type that specifies the Headers, if any, that you want
+     *        CloudFront to vary upon for this cache behavior.
      */
     public void setHeaders(Headers headers) {
         this.headers = headers;
     }
 
     /**
-     * @return
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     * 
+     * @return A complex type that specifies the Headers, if any, that you want
+     *         CloudFront to vary upon for this cache behavior.
      */
     public Headers getHeaders() {
         return this.headers;
     }
 
     /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     * 
      * @param headers
+     *        A complex type that specifies the Headers, if any, that you want
+     *        CloudFront to vary upon for this cache behavior.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

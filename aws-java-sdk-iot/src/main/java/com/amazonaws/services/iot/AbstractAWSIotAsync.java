@@ -328,6 +328,36 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest request) {
+
+        return disableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest request) {
+
+        return enableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(
             GetLoggingOptionsRequest request) {
 

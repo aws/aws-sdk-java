@@ -19,30 +19,97 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that specifies the headers that you want CloudFront to forward
+ * to the origin for this cache behavior. For the headers that you specify,
+ * CloudFront also caches separate versions of a given object based on the
+ * header values in viewer requests; this is known as varying on headers. For
+ * example, suppose viewer requests for logo.jpg contain a custom Product header
+ * that has a value of either Acme or Apex, and you configure CloudFront to vary
+ * on the Product header. CloudFront forwards the Product header to the origin
+ * and caches the response from the origin once for each header value.
  */
 public class Headers implements Serializable, Cloneable {
 
+    /**
+     * The number of different headers that you want CloudFront to forward to
+     * the origin and to vary on for this cache behavior. The maximum number of
+     * headers that you can specify by name is 10. If you want CloudFront to
+     * forward all headers to the origin and vary on all of them, specify 1 for
+     * Quantity and * for Name. If you don't want CloudFront to forward any
+     * additional headers to the origin or to vary on any headers, specify 0 for
+     * Quantity and omit Items.
+     */
     private Integer quantity;
-
+    /**
+     * Optional: A complex type that contains a Name element for each header
+     * that you want CloudFront to forward to the origin and to vary on for this
+     * cache behavior. If Quantity is 0, omit Items.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * The number of different headers that you want CloudFront to forward to
+     * the origin and to vary on for this cache behavior. The maximum number of
+     * headers that you can specify by name is 10. If you want CloudFront to
+     * forward all headers to the origin and vary on all of them, specify 1 for
+     * Quantity and * for Name. If you don't want CloudFront to forward any
+     * additional headers to the origin or to vary on any headers, specify 0 for
+     * Quantity and omit Items.
+     * 
      * @param quantity
+     *        The number of different headers that you want CloudFront to
+     *        forward to the origin and to vary on for this cache behavior. The
+     *        maximum number of headers that you can specify by name is 10. If
+     *        you want CloudFront to forward all headers to the origin and vary
+     *        on all of them, specify 1 for Quantity and * for Name. If you
+     *        don't want CloudFront to forward any additional headers to the
+     *        origin or to vary on any headers, specify 0 for Quantity and omit
+     *        Items.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of different headers that you want CloudFront to forward to
+     * the origin and to vary on for this cache behavior. The maximum number of
+     * headers that you can specify by name is 10. If you want CloudFront to
+     * forward all headers to the origin and vary on all of them, specify 1 for
+     * Quantity and * for Name. If you don't want CloudFront to forward any
+     * additional headers to the origin or to vary on any headers, specify 0 for
+     * Quantity and omit Items.
+     * 
+     * @return The number of different headers that you want CloudFront to
+     *         forward to the origin and to vary on for this cache behavior. The
+     *         maximum number of headers that you can specify by name is 10. If
+     *         you want CloudFront to forward all headers to the origin and vary
+     *         on all of them, specify 1 for Quantity and * for Name. If you
+     *         don't want CloudFront to forward any additional headers to the
+     *         origin or to vary on any headers, specify 0 for Quantity and omit
+     *         Items.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of different headers that you want CloudFront to forward to
+     * the origin and to vary on for this cache behavior. The maximum number of
+     * headers that you can specify by name is 10. If you want CloudFront to
+     * forward all headers to the origin and vary on all of them, specify 1 for
+     * Quantity and * for Name. If you don't want CloudFront to forward any
+     * additional headers to the origin or to vary on any headers, specify 0 for
+     * Quantity and omit Items.
+     * 
      * @param quantity
+     *        The number of different headers that you want CloudFront to
+     *        forward to the origin and to vary on for this cache behavior. The
+     *        maximum number of headers that you can specify by name is 10. If
+     *        you want CloudFront to forward all headers to the origin and vary
+     *        on all of them, specify 1 for Quantity and * for Name. If you
+     *        don't want CloudFront to forward any additional headers to the
+     *        origin or to vary on any headers, specify 0 for Quantity and omit
+     *        Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +119,13 @@ public class Headers implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Optional: A complex type that contains a Name element for each header
+     * that you want CloudFront to forward to the origin and to vary on for this
+     * cache behavior. If Quantity is 0, omit Items.
+     * 
+     * @return Optional: A complex type that contains a Name element for each
+     *         header that you want CloudFront to forward to the origin and to
+     *         vary on for this cache behavior. If Quantity is 0, omit Items.
      */
     public java.util.List<String> getItems() {
         if (items == null) {
@@ -62,7 +135,14 @@ public class Headers implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains a Name element for each header
+     * that you want CloudFront to forward to the origin and to vary on for this
+     * cache behavior. If Quantity is 0, omit Items.
+     * 
      * @param items
+     *        Optional: A complex type that contains a Name element for each
+     *        header that you want CloudFront to forward to the origin and to
+     *        vary on for this cache behavior. If Quantity is 0, omit Items.
      */
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
@@ -74,6 +154,9 @@ public class Headers implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains a Name element for each header
+     * that you want CloudFront to forward to the origin and to vary on for this
+     * cache behavior. If Quantity is 0, omit Items.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -82,6 +165,9 @@ public class Headers implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        Optional: A complex type that contains a Name element for each
+     *        header that you want CloudFront to forward to the origin and to
+     *        vary on for this cache behavior. If Quantity is 0, omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -97,7 +183,14 @@ public class Headers implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains a Name element for each header
+     * that you want CloudFront to forward to the origin and to vary on for this
+     * cache behavior. If Quantity is 0, omit Items.
+     * 
      * @param items
+     *        Optional: A complex type that contains a Name element for each
+     *        header that you want CloudFront to forward to the origin and to
+     *        vary on for this cache behavior. If Quantity is 0, omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

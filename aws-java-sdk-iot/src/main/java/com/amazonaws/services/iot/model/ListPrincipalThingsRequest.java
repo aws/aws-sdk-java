@@ -27,6 +27,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A token used to retrieve the next value.
+     * </p>
+     */
     private String nextToken;
     /**
      * <p>
@@ -42,21 +47,35 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
     private String principal;
 
     /**
+     * <p>
+     * A token used to retrieve the next value.
+     * </p>
+     * 
      * @param nextToken
+     *        A token used to retrieve the next value.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
-     * @return
+     * <p>
+     * A token used to retrieve the next value.
+     * </p>
+     * 
+     * @return A token used to retrieve the next value.
      */
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
+     * <p>
+     * A token used to retrieve the next value.
+     * </p>
+     * 
      * @param nextToken
+     *        A token used to retrieve the next value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

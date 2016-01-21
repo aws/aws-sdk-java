@@ -20,11 +20,12 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * To request to get a streaming distribution configuration.
  */
 public class GetStreamingDistributionConfigRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The streaming distribution's id. */
     private String id;
 
     /**
@@ -41,27 +42,36 @@ public class GetStreamingDistributionConfigRequest extends
      * any additional object members.
      * 
      * @param id
+     *        The streaming distribution's id.
      */
     public GetStreamingDistributionConfigRequest(String id) {
         setId(id);
     }
 
     /**
+     * The streaming distribution's id.
+     * 
      * @param id
+     *        The streaming distribution's id.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The streaming distribution's id.
+     * 
+     * @return The streaming distribution's id.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The streaming distribution's id.
+     * 
      * @param id
+     *        The streaming distribution's id.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

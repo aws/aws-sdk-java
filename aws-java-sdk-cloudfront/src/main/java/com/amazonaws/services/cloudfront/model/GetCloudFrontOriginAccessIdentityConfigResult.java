@@ -19,17 +19,21 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class GetCloudFrontOriginAccessIdentityConfigResult implements
         Serializable, Cloneable {
 
+    /** The origin access identity's configuration information. */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
-
+    /** The current version of the configuration. For example: E2QWRUHAPOMQZL. */
     private String eTag;
 
     /**
+     * The origin access identity's configuration information.
+     * 
      * @param cloudFrontOriginAccessIdentityConfig
+     *        The origin access identity's configuration information.
      */
     public void setCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
@@ -37,14 +41,19 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
     }
 
     /**
-     * @return
+     * The origin access identity's configuration information.
+     * 
+     * @return The origin access identity's configuration information.
      */
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
         return this.cloudFrontOriginAccessIdentityConfig;
     }
 
     /**
+     * The origin access identity's configuration information.
+     * 
      * @param cloudFrontOriginAccessIdentityConfig
+     *        The origin access identity's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -55,21 +64,32 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
     }
 
     /**
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the configuration. For example:
+     *        E2QWRUHAPOMQZL.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The current version of the configuration. For example:
+     *         E2QWRUHAPOMQZL.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the configuration. For example:
+     *        E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

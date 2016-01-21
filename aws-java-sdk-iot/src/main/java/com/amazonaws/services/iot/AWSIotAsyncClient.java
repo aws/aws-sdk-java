@@ -978,6 +978,78 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest request) {
+
+        return disableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            final DisableTopicRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            disableTopicRule(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest request) {
+
+        return enableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            final EnableTopicRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            enableTopicRule(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(
             GetLoggingOptionsRequest request) {
 

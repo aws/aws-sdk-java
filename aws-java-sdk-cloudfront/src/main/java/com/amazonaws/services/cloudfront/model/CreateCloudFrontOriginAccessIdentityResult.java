@@ -19,19 +19,28 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class CreateCloudFrontOriginAccessIdentityResult implements
         Serializable, Cloneable {
 
+    /** The origin access identity's information. */
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
-
+    /**
+     * The fully qualified URI of the new origin access identity just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
+     * /cloudfront/E74FTE3AJFJ256A.
+     */
     private String location;
-
+    /** The current version of the origin access identity created. */
     private String eTag;
 
     /**
+     * The origin access identity's information.
+     * 
      * @param cloudFrontOriginAccessIdentity
+     *        The origin access identity's information.
      */
     public void setCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
@@ -39,14 +48,19 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
     }
 
     /**
-     * @return
+     * The origin access identity's information.
+     * 
+     * @return The origin access identity's information.
      */
     public CloudFrontOriginAccessIdentity getCloudFrontOriginAccessIdentity() {
         return this.cloudFrontOriginAccessIdentity;
     }
 
     /**
+     * The origin access identity's information.
+     * 
      * @param cloudFrontOriginAccessIdentity
+     *        The origin access identity's information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -57,21 +71,47 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
     }
 
     /**
+     * The fully qualified URI of the new origin access identity just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
+     * /cloudfront/E74FTE3AJFJ256A.
+     * 
      * @param location
+     *        The fully qualified URI of the new origin access identity just
+     *        created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/origin
+     *        -access-identity/cloudfront/E74FTE3AJFJ256A.
      */
     public void setLocation(String location) {
         this.location = location;
     }
 
     /**
-     * @return
+     * The fully qualified URI of the new origin access identity just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
+     * /cloudfront/E74FTE3AJFJ256A.
+     * 
+     * @return The fully qualified URI of the new origin access identity just
+     *         created. For example:
+     *         https://cloudfront.amazonaws.com/2010-11-01/
+     *         origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      */
     public String getLocation() {
         return this.location;
     }
 
     /**
+     * The fully qualified URI of the new origin access identity just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity
+     * /cloudfront/E74FTE3AJFJ256A.
+     * 
      * @param location
+     *        The fully qualified URI of the new origin access identity just
+     *        created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/origin
+     *        -access-identity/cloudfront/E74FTE3AJFJ256A.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,21 +122,29 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
     }
 
     /**
+     * The current version of the origin access identity created.
+     * 
      * @param eTag
+     *        The current version of the origin access identity created.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the origin access identity created.
+     * 
+     * @return The current version of the origin access identity created.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the origin access identity created.
+     * 
      * @param eTag
+     *        The current version of the origin access identity created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

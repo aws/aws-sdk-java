@@ -19,30 +19,39 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class UpdateDistributionResult implements Serializable, Cloneable {
 
+    /** The distribution's information. */
     private Distribution distribution;
-
+    /** The current version of the configuration. For example: E2QWRUHAPOMQZL. */
     private String eTag;
 
     /**
+     * The distribution's information.
+     * 
      * @param distribution
+     *        The distribution's information.
      */
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
     }
 
     /**
-     * @return
+     * The distribution's information.
+     * 
+     * @return The distribution's information.
      */
     public Distribution getDistribution() {
         return this.distribution;
     }
 
     /**
+     * The distribution's information.
+     * 
      * @param distribution
+     *        The distribution's information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,21 +61,32 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
     }
 
     /**
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the configuration. For example:
+     *        E2QWRUHAPOMQZL.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The current version of the configuration. For example:
+     *         E2QWRUHAPOMQZL.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the configuration. For example:
+     *        E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

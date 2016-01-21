@@ -19,14 +19,27 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that lists the AWS accounts, if any, that you included in the
+ * TrustedSigners complex type for the default cache behavior or for any of the
+ * other cache behaviors for this distribution. These are accounts that you want
+ * to allow to create signed URLs for private content.
  */
 public class ActiveTrustedSigners implements Serializable, Cloneable {
 
+    /** Each active trusted signer. */
     private Boolean enabled;
-
+    /**
+     * The number of unique trusted signers included in all cache behaviors. For
+     * example, if three cache behaviors all list the same three AWS accounts,
+     * the value of Quantity for ActiveTrustedSigners will be 3.
+     */
     private Integer quantity;
-
+    /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of the
+     * other cache behaviors.
+     */
     private com.amazonaws.internal.SdkInternalList<Signer> items;
 
     /**
@@ -43,27 +56,39 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * object members.
      * 
      * @param items
+     *        A complex type that contains one Signer complex type for each
+     *        unique trusted signer that is specified in the TrustedSigners
+     *        complex type, including trusted signers in the default cache
+     *        behavior and in all of the other cache behaviors.
      */
     public ActiveTrustedSigners(java.util.List<Signer> items) {
         setItems(items);
     }
 
     /**
+     * Each active trusted signer.
+     * 
      * @param enabled
+     *        Each active trusted signer.
      */
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
     /**
-     * @return
+     * Each active trusted signer.
+     * 
+     * @return Each active trusted signer.
      */
     public Boolean getEnabled() {
         return this.enabled;
     }
 
     /**
+     * Each active trusted signer.
+     * 
      * @param enabled
+     *        Each active trusted signer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -73,28 +98,53 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Each active trusted signer.
+     * 
+     * @return Each active trusted signer.
      */
     public Boolean isEnabled() {
         return this.enabled;
     }
 
     /**
+     * The number of unique trusted signers included in all cache behaviors. For
+     * example, if three cache behaviors all list the same three AWS accounts,
+     * the value of Quantity for ActiveTrustedSigners will be 3.
+     * 
      * @param quantity
+     *        The number of unique trusted signers included in all cache
+     *        behaviors. For example, if three cache behaviors all list the same
+     *        three AWS accounts, the value of Quantity for ActiveTrustedSigners
+     *        will be 3.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of unique trusted signers included in all cache behaviors. For
+     * example, if three cache behaviors all list the same three AWS accounts,
+     * the value of Quantity for ActiveTrustedSigners will be 3.
+     * 
+     * @return The number of unique trusted signers included in all cache
+     *         behaviors. For example, if three cache behaviors all list the
+     *         same three AWS accounts, the value of Quantity for
+     *         ActiveTrustedSigners will be 3.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of unique trusted signers included in all cache behaviors. For
+     * example, if three cache behaviors all list the same three AWS accounts,
+     * the value of Quantity for ActiveTrustedSigners will be 3.
+     * 
      * @param quantity
+     *        The number of unique trusted signers included in all cache
+     *        behaviors. For example, if three cache behaviors all list the same
+     *        three AWS accounts, the value of Quantity for ActiveTrustedSigners
+     *        will be 3.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,7 +154,15 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of the
+     * other cache behaviors.
+     * 
+     * @return A complex type that contains one Signer complex type for each
+     *         unique trusted signer that is specified in the TrustedSigners
+     *         complex type, including trusted signers in the default cache
+     *         behavior and in all of the other cache behaviors.
      */
     public java.util.List<Signer> getItems() {
         if (items == null) {
@@ -114,7 +172,16 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of the
+     * other cache behaviors.
+     * 
      * @param items
+     *        A complex type that contains one Signer complex type for each
+     *        unique trusted signer that is specified in the TrustedSigners
+     *        complex type, including trusted signers in the default cache
+     *        behavior and in all of the other cache behaviors.
      */
     public void setItems(java.util.Collection<Signer> items) {
         if (items == null) {
@@ -126,6 +193,10 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of the
+     * other cache behaviors.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -134,6 +205,10 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that contains one Signer complex type for each
+     *        unique trusted signer that is specified in the TrustedSigners
+     *        complex type, including trusted signers in the default cache
+     *        behavior and in all of the other cache behaviors.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -149,7 +224,16 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of the
+     * other cache behaviors.
+     * 
      * @param items
+     *        A complex type that contains one Signer complex type for each
+     *        unique trusted signer that is specified in the TrustedSigners
+     *        complex type, including trusted signers in the default cache
+     *        behavior and in all of the other cache behaviors.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

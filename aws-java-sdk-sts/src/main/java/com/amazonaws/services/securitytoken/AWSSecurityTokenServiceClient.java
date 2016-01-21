@@ -427,7 +427,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         STS is not activated in the requested region for the account that
      *         is being asked to create temporary credentials. The account
      *         administrator must activate STS in that region using the IAM
-     *         Console.
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRole
      */
     @Override
@@ -563,7 +566,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         STS is not activated in the requested region for the account that
      *         is being asked to create temporary credentials. The account
      *         administrator must activate STS in that region using the IAM
-     *         Console.
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
      */
     @Override
@@ -733,7 +739,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         STS is not activated in the requested region for the account that
      *         is being asked to create temporary credentials. The account
      *         administrator must activate STS in that region using the IAM
-     *         Console.
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
      */
     @Override
@@ -959,7 +968,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         STS is not activated in the requested region for the account that
      *         is being asked to create temporary credentials. The account
      *         administrator must activate STS in that region using the IAM
-     *         Console.
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.GetFederationToken
      */
     @Override
@@ -1051,7 +1063,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         STS is not activated in the requested region for the account that
      *         is being asked to create temporary credentials. The account
      *         administrator must activate STS in that region using the IAM
-     *         Console.
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.GetSessionToken
      */
     @Override

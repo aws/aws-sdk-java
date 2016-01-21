@@ -19,34 +19,55 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * An invalidation.
  */
 public class Invalidation implements Serializable, Cloneable {
 
+    /**
+     * The identifier for the invalidation request. For example:
+     * IDFDVBD632BHDS5.
+     */
     private String id;
-
+    /**
+     * The status of the invalidation request. When the invalidation batch is
+     * finished, the status is Completed.
+     */
     private String status;
-
+    /** The date and time the invalidation request was first made. */
     private java.util.Date createTime;
-
+    /** The current invalidation information for the batch request. */
     private InvalidationBatch invalidationBatch;
 
     /**
+     * The identifier for the invalidation request. For example:
+     * IDFDVBD632BHDS5.
+     * 
      * @param id
+     *        The identifier for the invalidation request. For example:
+     *        IDFDVBD632BHDS5.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The identifier for the invalidation request. For example:
+     * IDFDVBD632BHDS5.
+     * 
+     * @return The identifier for the invalidation request. For example:
+     *         IDFDVBD632BHDS5.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The identifier for the invalidation request. For example:
+     * IDFDVBD632BHDS5.
+     * 
      * @param id
+     *        The identifier for the invalidation request. For example:
+     *        IDFDVBD632BHDS5.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -56,21 +77,35 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * The status of the invalidation request. When the invalidation batch is
+     * finished, the status is Completed.
+     * 
      * @param status
+     *        The status of the invalidation request. When the invalidation
+     *        batch is finished, the status is Completed.
      */
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * @return
+     * The status of the invalidation request. When the invalidation batch is
+     * finished, the status is Completed.
+     * 
+     * @return The status of the invalidation request. When the invalidation
+     *         batch is finished, the status is Completed.
      */
     public String getStatus() {
         return this.status;
     }
 
     /**
+     * The status of the invalidation request. When the invalidation batch is
+     * finished, the status is Completed.
+     * 
      * @param status
+     *        The status of the invalidation request. When the invalidation
+     *        batch is finished, the status is Completed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -80,21 +115,29 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * The date and time the invalidation request was first made.
+     * 
      * @param createTime
+     *        The date and time the invalidation request was first made.
      */
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * @return
+     * The date and time the invalidation request was first made.
+     * 
+     * @return The date and time the invalidation request was first made.
      */
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
 
     /**
+     * The date and time the invalidation request was first made.
+     * 
      * @param createTime
+     *        The date and time the invalidation request was first made.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,21 +147,29 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * The current invalidation information for the batch request.
+     * 
      * @param invalidationBatch
+     *        The current invalidation information for the batch request.
      */
     public void setInvalidationBatch(InvalidationBatch invalidationBatch) {
         this.invalidationBatch = invalidationBatch;
     }
 
     /**
-     * @return
+     * The current invalidation information for the batch request.
+     * 
+     * @return The current invalidation information for the batch request.
      */
     public InvalidationBatch getInvalidationBatch() {
         return this.invalidationBatch;
     }
 
     /**
+     * The current invalidation information for the batch request.
+     * 
      * @param invalidationBatch
+     *        The current invalidation information for the batch request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

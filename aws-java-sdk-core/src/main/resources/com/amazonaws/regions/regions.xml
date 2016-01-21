@@ -324,6 +324,12 @@
         <Hostname>ecs.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>codedeploy</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codedeploy.us-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>config</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2743,6 +2749,7 @@
       <Name>codedeploy</Name>
       <FullName>AWS CodeDeploy</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>

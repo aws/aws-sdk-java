@@ -20,13 +20,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to delete a streaming distribution.
  */
 public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /** The distribution id. */
     private String id;
-
+    /**
+     * The value of the ETag header you received when you disabled the streaming
+     * distribution. For example: E2QWRUHAPOMQZL.
+     */
     private String ifMatch;
 
     /**
@@ -43,7 +47,10 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      * any additional object members.
      * 
      * @param id
+     *        The distribution id.
      * @param ifMatch
+     *        The value of the ETag header you received when you disabled the
+     *        streaming distribution. For example: E2QWRUHAPOMQZL.
      */
     public DeleteStreamingDistributionRequest(String id, String ifMatch) {
         setId(id);
@@ -51,21 +58,29 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The distribution id.
+     * 
      * @param id
+     *        The distribution id.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The distribution id.
+     * 
+     * @return The distribution id.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The distribution id.
+     * 
      * @param id
+     *        The distribution id.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -75,21 +90,35 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The value of the ETag header you received when you disabled the streaming
+     * distribution. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received when you disabled the
+     *        streaming distribution. For example: E2QWRUHAPOMQZL.
      */
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
 
     /**
-     * @return
+     * The value of the ETag header you received when you disabled the streaming
+     * distribution. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The value of the ETag header you received when you disabled the
+     *         streaming distribution. For example: E2QWRUHAPOMQZL.
      */
     public String getIfMatch() {
         return this.ifMatch;
     }
 
     /**
+     * The value of the ETag header you received when you disabled the streaming
+     * distribution. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received when you disabled the
+     *        streaming distribution. For example: E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

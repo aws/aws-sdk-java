@@ -19,11 +19,11 @@
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "events",
     "signingName" : "events",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
     "serviceName" : "Amazon CloudWatch Events",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "DeleteRule" : {

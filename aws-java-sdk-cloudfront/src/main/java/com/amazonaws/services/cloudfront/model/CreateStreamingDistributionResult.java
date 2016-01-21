@@ -19,19 +19,28 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class CreateStreamingDistributionResult implements Serializable,
         Cloneable {
 
+    /** The streaming distribution's information. */
     private StreamingDistribution streamingDistribution;
-
+    /**
+     * The fully qualified URI of the new streaming distribution resource just
+     * created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming
+     * -distribution/EGTXBD79H29TRA8.
+     */
     private String location;
-
+    /** The current version of the streaming distribution created. */
     private String eTag;
 
     /**
+     * The streaming distribution's information.
+     * 
      * @param streamingDistribution
+     *        The streaming distribution's information.
      */
     public void setStreamingDistribution(
             StreamingDistribution streamingDistribution) {
@@ -39,14 +48,19 @@ public class CreateStreamingDistributionResult implements Serializable,
     }
 
     /**
-     * @return
+     * The streaming distribution's information.
+     * 
+     * @return The streaming distribution's information.
      */
     public StreamingDistribution getStreamingDistribution() {
         return this.streamingDistribution;
     }
 
     /**
+     * The streaming distribution's information.
+     * 
      * @param streamingDistribution
+     *        The streaming distribution's information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -57,21 +71,47 @@ public class CreateStreamingDistributionResult implements Serializable,
     }
 
     /**
+     * The fully qualified URI of the new streaming distribution resource just
+     * created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming
+     * -distribution/EGTXBD79H29TRA8.
+     * 
      * @param location
+     *        The fully qualified URI of the new streaming distribution resource
+     *        just created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11
+     *        -01/streaming-distribution/EGTXBD79H29TRA8.
      */
     public void setLocation(String location) {
         this.location = location;
     }
 
     /**
-     * @return
+     * The fully qualified URI of the new streaming distribution resource just
+     * created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming
+     * -distribution/EGTXBD79H29TRA8.
+     * 
+     * @return The fully qualified URI of the new streaming distribution
+     *         resource just created. For example:
+     *         https://cloudfront.amazonaws.com
+     *         /2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
     public String getLocation() {
         return this.location;
     }
 
     /**
+     * The fully qualified URI of the new streaming distribution resource just
+     * created. For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming
+     * -distribution/EGTXBD79H29TRA8.
+     * 
      * @param location
+     *        The fully qualified URI of the new streaming distribution resource
+     *        just created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11
+     *        -01/streaming-distribution/EGTXBD79H29TRA8.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -81,21 +121,29 @@ public class CreateStreamingDistributionResult implements Serializable,
     }
 
     /**
+     * The current version of the streaming distribution created.
+     * 
      * @param eTag
+     *        The current version of the streaming distribution created.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the streaming distribution created.
+     * 
+     * @return The current version of the streaming distribution created.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the streaming distribution created.
+     * 
      * @param eTag
+     *        The current version of the streaming distribution created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

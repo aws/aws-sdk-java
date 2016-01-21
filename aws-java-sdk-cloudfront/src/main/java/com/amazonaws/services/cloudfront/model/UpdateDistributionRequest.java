@@ -20,15 +20,19 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to update a distribution.
  */
 public class UpdateDistributionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /** The distribution's configuration information. */
     private DistributionConfig distributionConfig;
-
+    /** The distribution's id. */
     private String id;
-
+    /**
+     * The value of the ETag header you received when retrieving the
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     */
     private String ifMatch;
 
     /**
@@ -45,8 +49,12 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      * @param id
+     *        The distribution's id.
      * @param ifMatch
+     *        The value of the ETag header you received when retrieving the
+     *        distribution's configuration. For example: E2QWRUHAPOMQZL.
      */
     public UpdateDistributionRequest(DistributionConfig distributionConfig,
             String id, String ifMatch) {
@@ -56,21 +64,29 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The distribution's configuration information.
+     * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      */
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
 
     /**
-     * @return
+     * The distribution's configuration information.
+     * 
+     * @return The distribution's configuration information.
      */
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
 
     /**
+     * The distribution's configuration information.
+     * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -81,21 +97,29 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The distribution's id.
+     * 
      * @param id
+     *        The distribution's id.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The distribution's id.
+     * 
+     * @return The distribution's id.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The distribution's id.
+     * 
      * @param id
+     *        The distribution's id.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,21 +129,35 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The value of the ETag header you received when retrieving the
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received when retrieving the
+     *        distribution's configuration. For example: E2QWRUHAPOMQZL.
      */
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
 
     /**
-     * @return
+     * The value of the ETag header you received when retrieving the
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The value of the ETag header you received when retrieving the
+     *         distribution's configuration. For example: E2QWRUHAPOMQZL.
      */
     public String getIfMatch() {
         return this.ifMatch;
     }
 
     /**
+     * The value of the ETag header you received when retrieving the
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received when retrieving the
+     *        distribution's configuration. For example: E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

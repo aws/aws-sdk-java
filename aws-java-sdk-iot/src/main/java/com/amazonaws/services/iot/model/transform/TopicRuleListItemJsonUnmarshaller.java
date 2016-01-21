@@ -51,6 +51,11 @@ public class TopicRuleListItemJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ruleArn", targetDepth)) {
+                    context.nextToken();
+                    topicRuleListItem.setRuleArn(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ruleName", targetDepth)) {
                     context.nextToken();
                     topicRuleListItem.setRuleName(StringJsonUnmarshaller

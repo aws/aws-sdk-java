@@ -36,7 +36,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * An identifier for the assumed role session.
      * </p>
      * <p>
-     * Use the role session name to uniquely identity a session when the same
+     * Use the role session name to uniquely identify a session when the same
      * role is assumed by different principals or for different reasons. In
      * cross-account scenarios, the role session name is visible to, and can be
      * logged by the account that owns the role. The role session name is also
@@ -161,7 +161,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * An identifier for the assumed role session.
      * </p>
      * <p>
-     * Use the role session name to uniquely identity a session when the same
+     * Use the role session name to uniquely identify a session when the same
      * role is assumed by different principals or for different reasons. In
      * cross-account scenarios, the role session name is visible to, and can be
      * logged by the account that owns the role. The role session name is also
@@ -174,7 +174,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @param roleSessionName
      *        An identifier for the assumed role session. </p>
      *        <p>
-     *        Use the role session name to uniquely identity a session when the
+     *        Use the role session name to uniquely identify a session when the
      *        same role is assumed by different principals or for different
      *        reasons. In cross-account scenarios, the role session name is
      *        visible to, and can be logged by the account that owns the role.
@@ -192,7 +192,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * An identifier for the assumed role session.
      * </p>
      * <p>
-     * Use the role session name to uniquely identity a session when the same
+     * Use the role session name to uniquely identify a session when the same
      * role is assumed by different principals or for different reasons. In
      * cross-account scenarios, the role session name is visible to, and can be
      * logged by the account that owns the role. The role session name is also
@@ -204,7 +204,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * 
      * @return An identifier for the assumed role session. </p>
      *         <p>
-     *         Use the role session name to uniquely identity a session when the
+     *         Use the role session name to uniquely identify a session when the
      *         same role is assumed by different principals or for different
      *         reasons. In cross-account scenarios, the role session name is
      *         visible to, and can be logged by the account that owns the role.
@@ -222,7 +222,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * An identifier for the assumed role session.
      * </p>
      * <p>
-     * Use the role session name to uniquely identity a session when the same
+     * Use the role session name to uniquely identify a session when the same
      * role is assumed by different principals or for different reasons. In
      * cross-account scenarios, the role session name is visible to, and can be
      * logged by the account that owns the role. The role session name is also
@@ -235,7 +235,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @param roleSessionName
      *        An identifier for the assumed role session. </p>
      *        <p>
-     *        Use the role session name to uniquely identity a session when the
+     *        Use the role session name to uniquely identify a session when the
      *        same role is assumed by different principals or for different
      *        reasons. In cross-account scenarios, the role session name is
      *        visible to, and can be logged by the account that owns the role.

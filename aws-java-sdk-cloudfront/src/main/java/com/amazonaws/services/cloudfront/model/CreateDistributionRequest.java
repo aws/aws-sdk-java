@@ -20,11 +20,12 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to create a new distribution.
  */
 public class CreateDistributionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /** The distribution's configuration information. */
     private DistributionConfig distributionConfig;
 
     /**
@@ -41,27 +42,36 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      */
     public CreateDistributionRequest(DistributionConfig distributionConfig) {
         setDistributionConfig(distributionConfig);
     }
 
     /**
+     * The distribution's configuration information.
+     * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      */
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
 
     /**
-     * @return
+     * The distribution's configuration information.
+     * 
+     * @return The distribution's configuration information.
      */
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
 
     /**
+     * The distribution's configuration information.
+     * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

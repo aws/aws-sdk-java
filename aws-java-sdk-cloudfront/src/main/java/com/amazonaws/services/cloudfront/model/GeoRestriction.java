@@ -19,14 +19,43 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that controls the countries in which your content is
+ * distributed. For more information about geo restriction, go to Customizing
+ * Error Responses in the Amazon CloudFront Developer Guide. CloudFront
+ * determines the location of your users using MaxMind GeoIP databases. For
+ * information about the accuracy of these databases, see How accurate are your
+ * GeoIP databases? on the MaxMind website.
  */
 public class GeoRestriction implements Serializable, Cloneable {
 
+    /**
+     * The method that you want to use to restrict distribution of your content
+     * by country: - none: No geo restriction is enabled, meaning access to
+     * content is not restricted by client geo location. - blacklist: The
+     * Location elements specify the countries in which you do not want
+     * CloudFront to distribute your content. - whitelist: The Location elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.
+     */
     private String restrictionType;
-
+    /**
+     * When geo restriction is enabled, this is the number of countries in your
+     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0,
+     * and you can omit Items.
+     */
     private Integer quantity;
-
+    /**
+     * A complex type that contains a Location element for each country in which
+     * you want CloudFront either to distribute your content (whitelist) or not
+     * distribute your content (blacklist). The Location element is a two-letter,
+     * uppercase country code for a country that you want to include in your
+     * blacklist or whitelist. Include one Location element for each country.
+     * CloudFront and MaxMind both use ISO 3166 country codes. For the current
+     * list of countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     * on the International Organization for Standardization website. You can
+     * also refer to the country list in the CloudFront console, which includes
+     * both country names and codes.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
@@ -43,6 +72,13 @@ public class GeoRestriction implements Serializable, Cloneable {
      * members.
      * 
      * @param restrictionType
+     *        The method that you want to use to restrict distribution of your
+     *        content by country: - none: No geo restriction is enabled, meaning
+     *        access to content is not restricted by client geo location. -
+     *        blacklist: The Location elements specify the countries in which
+     *        you do not want CloudFront to distribute your content. -
+     *        whitelist: The Location elements specify the countries in which
+     *        you want CloudFront to distribute your content.
      */
     public GeoRestriction(String restrictionType) {
         setRestrictionType(restrictionType);
@@ -54,13 +90,35 @@ public class GeoRestriction implements Serializable, Cloneable {
      * members.
      * 
      * @param restrictionType
+     *        The method that you want to use to restrict distribution of your
+     *        content by country: - none: No geo restriction is enabled, meaning
+     *        access to content is not restricted by client geo location. -
+     *        blacklist: The Location elements specify the countries in which
+     *        you do not want CloudFront to distribute your content. -
+     *        whitelist: The Location elements specify the countries in which
+     *        you want CloudFront to distribute your content.
      */
     public GeoRestriction(GeoRestrictionType restrictionType) {
         setRestrictionType(restrictionType.toString());
     }
 
     /**
+     * The method that you want to use to restrict distribution of your content
+     * by country: - none: No geo restriction is enabled, meaning access to
+     * content is not restricted by client geo location. - blacklist: The
+     * Location elements specify the countries in which you do not want
+     * CloudFront to distribute your content. - whitelist: The Location elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.
+     * 
      * @param restrictionType
+     *        The method that you want to use to restrict distribution of your
+     *        content by country: - none: No geo restriction is enabled, meaning
+     *        access to content is not restricted by client geo location. -
+     *        blacklist: The Location elements specify the countries in which
+     *        you do not want CloudFront to distribute your content. -
+     *        whitelist: The Location elements specify the countries in which
+     *        you want CloudFront to distribute your content.
      * @see GeoRestrictionType
      */
     public void setRestrictionType(String restrictionType) {
@@ -68,7 +126,21 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The method that you want to use to restrict distribution of your content
+     * by country: - none: No geo restriction is enabled, meaning access to
+     * content is not restricted by client geo location. - blacklist: The
+     * Location elements specify the countries in which you do not want
+     * CloudFront to distribute your content. - whitelist: The Location elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.
+     * 
+     * @return The method that you want to use to restrict distribution of your
+     *         content by country: - none: No geo restriction is enabled,
+     *         meaning access to content is not restricted by client geo
+     *         location. - blacklist: The Location elements specify the
+     *         countries in which you do not want CloudFront to distribute your
+     *         content. - whitelist: The Location elements specify the countries
+     *         in which you want CloudFront to distribute your content.
      * @see GeoRestrictionType
      */
     public String getRestrictionType() {
@@ -76,7 +148,22 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * The method that you want to use to restrict distribution of your content
+     * by country: - none: No geo restriction is enabled, meaning access to
+     * content is not restricted by client geo location. - blacklist: The
+     * Location elements specify the countries in which you do not want
+     * CloudFront to distribute your content. - whitelist: The Location elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.
+     * 
      * @param restrictionType
+     *        The method that you want to use to restrict distribution of your
+     *        content by country: - none: No geo restriction is enabled, meaning
+     *        access to content is not restricted by client geo location. -
+     *        blacklist: The Location elements specify the countries in which
+     *        you do not want CloudFront to distribute your content. -
+     *        whitelist: The Location elements specify the countries in which
+     *        you want CloudFront to distribute your content.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GeoRestrictionType
@@ -87,7 +174,22 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * The method that you want to use to restrict distribution of your content
+     * by country: - none: No geo restriction is enabled, meaning access to
+     * content is not restricted by client geo location. - blacklist: The
+     * Location elements specify the countries in which you do not want
+     * CloudFront to distribute your content. - whitelist: The Location elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.
+     * 
      * @param restrictionType
+     *        The method that you want to use to restrict distribution of your
+     *        content by country: - none: No geo restriction is enabled, meaning
+     *        access to content is not restricted by client geo location. -
+     *        blacklist: The Location elements specify the countries in which
+     *        you do not want CloudFront to distribute your content. -
+     *        whitelist: The Location elements specify the countries in which
+     *        you want CloudFront to distribute your content.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GeoRestrictionType
@@ -97,7 +199,22 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * The method that you want to use to restrict distribution of your content
+     * by country: - none: No geo restriction is enabled, meaning access to
+     * content is not restricted by client geo location. - blacklist: The
+     * Location elements specify the countries in which you do not want
+     * CloudFront to distribute your content. - whitelist: The Location elements
+     * specify the countries in which you want CloudFront to distribute your
+     * content.
+     * 
      * @param restrictionType
+     *        The method that you want to use to restrict distribution of your
+     *        content by country: - none: No geo restriction is enabled, meaning
+     *        access to content is not restricted by client geo location. -
+     *        blacklist: The Location elements specify the countries in which
+     *        you do not want CloudFront to distribute your content. -
+     *        whitelist: The Location elements specify the countries in which
+     *        you want CloudFront to distribute your content.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GeoRestrictionType
@@ -108,21 +225,41 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * When geo restriction is enabled, this is the number of countries in your
+     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0,
+     * and you can omit Items.
+     * 
      * @param quantity
+     *        When geo restriction is enabled, this is the number of countries
+     *        in your whitelist or blacklist. Otherwise, when it is not enabled,
+     *        Quantity is 0, and you can omit Items.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * When geo restriction is enabled, this is the number of countries in your
+     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0,
+     * and you can omit Items.
+     * 
+     * @return When geo restriction is enabled, this is the number of countries
+     *         in your whitelist or blacklist. Otherwise, when it is not
+     *         enabled, Quantity is 0, and you can omit Items.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * When geo restriction is enabled, this is the number of countries in your
+     * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0,
+     * and you can omit Items.
+     * 
      * @param quantity
+     *        When geo restriction is enabled, this is the number of countries
+     *        in your whitelist or blacklist. Otherwise, when it is not enabled,
+     *        Quantity is 0, and you can omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -132,7 +269,28 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains a Location element for each country in which
+     * you want CloudFront either to distribute your content (whitelist) or not
+     * distribute your content (blacklist). The Location element is a two-letter,
+     * uppercase country code for a country that you want to include in your
+     * blacklist or whitelist. Include one Location element for each country.
+     * CloudFront and MaxMind both use ISO 3166 country codes. For the current
+     * list of countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     * on the International Organization for Standardization website. You can
+     * also refer to the country list in the CloudFront console, which includes
+     * both country names and codes.
+     * 
+     * @return A complex type that contains a Location element for each country
+     *         in which you want CloudFront either to distribute your content
+     *         (whitelist) or not distribute your content (blacklist). The
+     *         Location element is a two-letter, uppercase country code for a
+     *         country that you want to include in your blacklist or whitelist.
+     *         Include one Location element for each country. CloudFront and
+     *         MaxMind both use ISO 3166 country codes. For the current list of
+     *         countries and the corresponding codes, see ISO 3166-1-alpha-2
+     *         code on the International Organization for Standardization
+     *         website. You can also refer to the country list in the CloudFront
+     *         console, which includes both country names and codes.
      */
     public java.util.List<String> getItems() {
         if (items == null) {
@@ -142,7 +300,29 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains a Location element for each country in which
+     * you want CloudFront either to distribute your content (whitelist) or not
+     * distribute your content (blacklist). The Location element is a two-letter,
+     * uppercase country code for a country that you want to include in your
+     * blacklist or whitelist. Include one Location element for each country.
+     * CloudFront and MaxMind both use ISO 3166 country codes. For the current
+     * list of countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     * on the International Organization for Standardization website. You can
+     * also refer to the country list in the CloudFront console, which includes
+     * both country names and codes.
+     * 
      * @param items
+     *        A complex type that contains a Location element for each country
+     *        in which you want CloudFront either to distribute your content
+     *        (whitelist) or not distribute your content (blacklist). The
+     *        Location element is a two-letter, uppercase country code for a
+     *        country that you want to include in your blacklist or whitelist.
+     *        Include one Location element for each country. CloudFront and
+     *        MaxMind both use ISO 3166 country codes. For the current list of
+     *        countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     *        on the International Organization for Standardization website. You
+     *        can also refer to the country list in the CloudFront console,
+     *        which includes both country names and codes.
      */
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
@@ -154,6 +334,16 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains a Location element for each country in which
+     * you want CloudFront either to distribute your content (whitelist) or not
+     * distribute your content (blacklist). The Location element is a two-letter,
+     * uppercase country code for a country that you want to include in your
+     * blacklist or whitelist. Include one Location element for each country.
+     * CloudFront and MaxMind both use ISO 3166 country codes. For the current
+     * list of countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     * on the International Organization for Standardization website. You can
+     * also refer to the country list in the CloudFront console, which includes
+     * both country names and codes.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -162,6 +352,17 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that contains a Location element for each country
+     *        in which you want CloudFront either to distribute your content
+     *        (whitelist) or not distribute your content (blacklist). The
+     *        Location element is a two-letter, uppercase country code for a
+     *        country that you want to include in your blacklist or whitelist.
+     *        Include one Location element for each country. CloudFront and
+     *        MaxMind both use ISO 3166 country codes. For the current list of
+     *        countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     *        on the International Organization for Standardization website. You
+     *        can also refer to the country list in the CloudFront console,
+     *        which includes both country names and codes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -177,7 +378,29 @@ public class GeoRestriction implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains a Location element for each country in which
+     * you want CloudFront either to distribute your content (whitelist) or not
+     * distribute your content (blacklist). The Location element is a two-letter,
+     * uppercase country code for a country that you want to include in your
+     * blacklist or whitelist. Include one Location element for each country.
+     * CloudFront and MaxMind both use ISO 3166 country codes. For the current
+     * list of countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     * on the International Organization for Standardization website. You can
+     * also refer to the country list in the CloudFront console, which includes
+     * both country names and codes.
+     * 
      * @param items
+     *        A complex type that contains a Location element for each country
+     *        in which you want CloudFront either to distribute your content
+     *        (whitelist) or not distribute your content (blacklist). The
+     *        Location element is a two-letter, uppercase country code for a
+     *        country that you want to include in your blacklist or whitelist.
+     *        Include one Location element for each country. CloudFront and
+     *        MaxMind both use ISO 3166 country codes. For the current list of
+     *        countries and the corresponding codes, see ISO 3166-1-alpha-2 code
+     *        on the International Organization for Standardization website. You
+     *        can also refer to the country list in the CloudFront console,
+     *        which includes both country names and codes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

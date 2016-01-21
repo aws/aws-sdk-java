@@ -19,17 +19,24 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
         Cloneable {
 
+    /** The origin access identity's information. */
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
-
+    /**
+     * The current version of the origin access identity's information. For
+     * example: E2QWRUHAPOMQZL.
+     */
     private String eTag;
 
     /**
+     * The origin access identity's information.
+     * 
      * @param cloudFrontOriginAccessIdentity
+     *        The origin access identity's information.
      */
     public void setCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
@@ -37,14 +44,19 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
     }
 
     /**
-     * @return
+     * The origin access identity's information.
+     * 
+     * @return The origin access identity's information.
      */
     public CloudFrontOriginAccessIdentity getCloudFrontOriginAccessIdentity() {
         return this.cloudFrontOriginAccessIdentity;
     }
 
     /**
+     * The origin access identity's information.
+     * 
      * @param cloudFrontOriginAccessIdentity
+     *        The origin access identity's information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -55,21 +67,35 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
     }
 
     /**
+     * The current version of the origin access identity's information. For
+     * example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the origin access identity's information.
+     *        For example: E2QWRUHAPOMQZL.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the origin access identity's information. For
+     * example: E2QWRUHAPOMQZL.
+     * 
+     * @return The current version of the origin access identity's information.
+     *         For example: E2QWRUHAPOMQZL.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the origin access identity's information. For
+     * example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the origin access identity's information.
+     *        For example: E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

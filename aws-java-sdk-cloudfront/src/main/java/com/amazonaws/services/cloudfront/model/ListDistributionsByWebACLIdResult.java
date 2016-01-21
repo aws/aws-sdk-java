@@ -19,29 +19,39 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The response to a request to list the distributions that are associated with
+ * a specified AWS WAF web ACL.
  */
 public class ListDistributionsByWebACLIdResult implements Serializable,
         Cloneable {
 
+    /** The DistributionList type. */
     private DistributionList distributionList;
 
     /**
+     * The DistributionList type.
+     * 
      * @param distributionList
+     *        The DistributionList type.
      */
     public void setDistributionList(DistributionList distributionList) {
         this.distributionList = distributionList;
     }
 
     /**
-     * @return
+     * The DistributionList type.
+     * 
+     * @return The DistributionList type.
      */
     public DistributionList getDistributionList() {
         return this.distributionList;
     }
 
     /**
+     * The DistributionList type.
+     * 
      * @param distributionList
+     *        The DistributionList type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -45,6 +45,21 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
+            ContinueUpdateRollbackRequest request) {
+
+        return continueUpdateRollbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
+            ContinueUpdateRollbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest request) {
 

@@ -19,30 +19,67 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that lists the AWS accounts that were included in the
+ * TrustedSigners complex type, as well as their active CloudFront key pair IDs,
+ * if any.
  */
 public class Signer implements Serializable, Cloneable {
 
+    /**
+     * Specifies an AWS account that can create signed URLs. Values: self, which
+     * indicates that the AWS account that was used to create the distribution
+     * can created signed URLs, or an AWS account number. Omit the dashes in the
+     * account number.
+     */
     private String awsAccountNumber;
-
+    /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     */
     private KeyPairIds keyPairIds;
 
     /**
+     * Specifies an AWS account that can create signed URLs. Values: self, which
+     * indicates that the AWS account that was used to create the distribution
+     * can created signed URLs, or an AWS account number. Omit the dashes in the
+     * account number.
+     * 
      * @param awsAccountNumber
+     *        Specifies an AWS account that can create signed URLs. Values:
+     *        self, which indicates that the AWS account that was used to create
+     *        the distribution can created signed URLs, or an AWS account
+     *        number. Omit the dashes in the account number.
      */
     public void setAwsAccountNumber(String awsAccountNumber) {
         this.awsAccountNumber = awsAccountNumber;
     }
 
     /**
-     * @return
+     * Specifies an AWS account that can create signed URLs. Values: self, which
+     * indicates that the AWS account that was used to create the distribution
+     * can created signed URLs, or an AWS account number. Omit the dashes in the
+     * account number.
+     * 
+     * @return Specifies an AWS account that can create signed URLs. Values:
+     *         self, which indicates that the AWS account that was used to
+     *         create the distribution can created signed URLs, or an AWS
+     *         account number. Omit the dashes in the account number.
      */
     public String getAwsAccountNumber() {
         return this.awsAccountNumber;
     }
 
     /**
+     * Specifies an AWS account that can create signed URLs. Values: self, which
+     * indicates that the AWS account that was used to create the distribution
+     * can created signed URLs, or an AWS account number. Omit the dashes in the
+     * account number.
+     * 
      * @param awsAccountNumber
+     *        Specifies an AWS account that can create signed URLs. Values:
+     *        self, which indicates that the AWS account that was used to create
+     *        the distribution can created signed URLs, or an AWS account
+     *        number. Omit the dashes in the account number.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,21 +89,35 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     * 
      * @param keyPairIds
+     *        A complex type that lists the active CloudFront key pairs, if any,
+     *        that are associated with AwsAccountNumber.
      */
     public void setKeyPairIds(KeyPairIds keyPairIds) {
         this.keyPairIds = keyPairIds;
     }
 
     /**
-     * @return
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     * 
+     * @return A complex type that lists the active CloudFront key pairs, if
+     *         any, that are associated with AwsAccountNumber.
      */
     public KeyPairIds getKeyPairIds() {
         return this.keyPairIds;
     }
 
     /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     * 
      * @param keyPairIds
+     *        A complex type that lists the active CloudFront key pairs, if any,
+     *        that are associated with AwsAccountNumber.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

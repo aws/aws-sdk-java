@@ -148,6 +148,16 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public void disableTopicRule(DisableTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public void enableTopicRule(EnableTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLoggingOptionsResult getLoggingOptions(
             GetLoggingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();

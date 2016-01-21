@@ -19,30 +19,42 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that contains zero or more CustomErrorResponse elements.
  */
 public class CustomErrorResponses implements Serializable, Cloneable {
 
+    /** The number of custom error responses for this distribution. */
     private Integer quantity;
-
+    /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     */
     private com.amazonaws.internal.SdkInternalList<CustomErrorResponse> items;
 
     /**
+     * The number of custom error responses for this distribution.
+     * 
      * @param quantity
+     *        The number of custom error responses for this distribution.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of custom error responses for this distribution.
+     * 
+     * @return The number of custom error responses for this distribution.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of custom error responses for this distribution.
+     * 
      * @param quantity
+     *        The number of custom error responses for this distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +64,11 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     * 
+     * @return Optional: A complex type that contains custom error responses for
+     *         this distribution. If Quantity is 0, you can omit Items.
      */
     public java.util.List<CustomErrorResponse> getItems() {
         if (items == null) {
@@ -62,7 +78,12 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     * 
      * @param items
+     *        Optional: A complex type that contains custom error responses for
+     *        this distribution. If Quantity is 0, you can omit Items.
      */
     public void setItems(java.util.Collection<CustomErrorResponse> items) {
         if (items == null) {
@@ -75,6 +96,8 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -83,6 +106,8 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        Optional: A complex type that contains custom error responses for
+     *        this distribution. If Quantity is 0, you can omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -98,7 +123,12 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains custom error responses for this
+     * distribution. If Quantity is 0, you can omit Items.
+     * 
      * @param items
+     *        Optional: A complex type that contains custom error responses for
+     *        this distribution. If Quantity is 0, you can omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

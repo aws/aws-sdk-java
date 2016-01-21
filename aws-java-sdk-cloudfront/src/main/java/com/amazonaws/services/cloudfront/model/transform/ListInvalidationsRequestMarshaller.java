@@ -54,7 +54,7 @@ public class ListInvalidationsRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-01-13/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2016-01-28/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = uriResourcePath.replace(
                 "{DistributionId}",

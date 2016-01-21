@@ -20,11 +20,12 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to create a new origin access identity.
  */
 public class CreateCloudFrontOriginAccessIdentityRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The origin access identity's configuration information. */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
 
     /**
@@ -41,6 +42,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends
      * initialize any additional object members.
      * 
      * @param cloudFrontOriginAccessIdentityConfig
+     *        The origin access identity's configuration information.
      */
     public CreateCloudFrontOriginAccessIdentityRequest(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
@@ -48,7 +50,10 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
+     * The origin access identity's configuration information.
+     * 
      * @param cloudFrontOriginAccessIdentityConfig
+     *        The origin access identity's configuration information.
      */
     public void setCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
@@ -56,14 +61,19 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
-     * @return
+     * The origin access identity's configuration information.
+     * 
+     * @return The origin access identity's configuration information.
      */
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
         return this.cloudFrontOriginAccessIdentityConfig;
     }
 
     /**
+     * The origin access identity's configuration information.
+     * 
      * @param cloudFrontOriginAccessIdentityConfig
+     *        The origin access identity's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

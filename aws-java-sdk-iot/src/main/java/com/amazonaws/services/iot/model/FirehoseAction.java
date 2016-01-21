@@ -19,30 +19,55 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an action that writes data to a Kinesis Firehose stream.
+ * </p>
  */
 public class FirehoseAction implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The IAM role that grants access to the firehose stream.
+     * </p>
+     */
     private String roleArn;
-
+    /**
+     * <p>
+     * The delivery stream name.
+     * </p>
+     */
     private String deliveryStreamName;
 
     /**
+     * <p>
+     * The IAM role that grants access to the firehose stream.
+     * </p>
+     * 
      * @param roleArn
+     *        The IAM role that grants access to the firehose stream.
      */
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The IAM role that grants access to the firehose stream.
+     * </p>
+     * 
+     * @return The IAM role that grants access to the firehose stream.
      */
     public String getRoleArn() {
         return this.roleArn;
     }
 
     /**
+     * <p>
+     * The IAM role that grants access to the firehose stream.
+     * </p>
+     * 
      * @param roleArn
+     *        The IAM role that grants access to the firehose stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,21 +77,35 @@ public class FirehoseAction implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The delivery stream name.
+     * </p>
+     * 
      * @param deliveryStreamName
+     *        The delivery stream name.
      */
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
 
     /**
-     * @return
+     * <p>
+     * The delivery stream name.
+     * </p>
+     * 
+     * @return The delivery stream name.
      */
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
 
     /**
+     * <p>
+     * The delivery stream name.
+     * </p>
+     * 
      * @param deliveryStreamName
+     *        The delivery stream name.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

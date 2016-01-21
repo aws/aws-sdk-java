@@ -19,15 +19,19 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class ListCloudFrontOriginAccessIdentitiesResult implements
         Serializable, Cloneable {
 
+    /** The CloudFrontOriginAccessIdentityList type. */
     private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
 
     /**
+     * The CloudFrontOriginAccessIdentityList type.
+     * 
      * @param cloudFrontOriginAccessIdentityList
+     *        The CloudFrontOriginAccessIdentityList type.
      */
     public void setCloudFrontOriginAccessIdentityList(
             CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList) {
@@ -35,14 +39,19 @@ public class ListCloudFrontOriginAccessIdentitiesResult implements
     }
 
     /**
-     * @return
+     * The CloudFrontOriginAccessIdentityList type.
+     * 
+     * @return The CloudFrontOriginAccessIdentityList type.
      */
     public CloudFrontOriginAccessIdentityList getCloudFrontOriginAccessIdentityList() {
         return this.cloudFrontOriginAccessIdentityList;
     }
 
     /**
+     * The CloudFrontOriginAccessIdentityList type.
+     * 
      * @param cloudFrontOriginAccessIdentityList
+     *        The CloudFrontOriginAccessIdentityList type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

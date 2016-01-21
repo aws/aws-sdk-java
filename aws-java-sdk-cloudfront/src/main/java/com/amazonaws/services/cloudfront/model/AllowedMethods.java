@@ -19,32 +19,75 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that controls which HTTP methods CloudFront processes and
+ * forwards to your Amazon S3 bucket or your custom origin. There are three
+ * choices: - CloudFront forwards only GET and HEAD requests. - CloudFront
+ * forwards only GET, HEAD and OPTIONS requests. - CloudFront forwards GET,
+ * HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If you pick the third
+ * choice, you may need to restrict access to your Amazon S3 bucket or to your
+ * custom origin so users can't perform operations that you don't want them to.
+ * For example, you may not want users to have permission to delete objects from
+ * your origin.
  */
 public class AllowedMethods implements Serializable, Cloneable {
 
+    /**
+     * The number of HTTP methods that you want CloudFront to forward to your
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD
+     * and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
+     * DELETE requests).
+     */
     private Integer quantity;
-
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     private CachedMethods cachedMethods;
 
     /**
+     * The number of HTTP methods that you want CloudFront to forward to your
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD
+     * and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
+     * DELETE requests).
+     * 
      * @param quantity
+     *        The number of HTTP methods that you want CloudFront to forward to
+     *        your origin. Valid values are 2 (for GET and HEAD requests), 3
+     *        (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD,
+     *        OPTIONS, PUT, PATCH, POST, and DELETE requests).
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of HTTP methods that you want CloudFront to forward to your
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD
+     * and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
+     * DELETE requests).
+     * 
+     * @return The number of HTTP methods that you want CloudFront to forward to
+     *         your origin. Valid values are 2 (for GET and HEAD requests), 3
+     *         (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD,
+     *         OPTIONS, PUT, PATCH, POST, and DELETE requests).
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of HTTP methods that you want CloudFront to forward to your
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD
+     * and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
+     * DELETE requests).
+     * 
      * @param quantity
+     *        The number of HTTP methods that you want CloudFront to forward to
+     *        your origin. Valid values are 2 (for GET and HEAD requests), 3
+     *        (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD,
+     *        OPTIONS, PUT, PATCH, POST, and DELETE requests).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -54,7 +97,11 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     * 
+     * @return A complex type that contains the HTTP methods that you want
+     *         CloudFront to process and forward to your origin.
      * @see Method
      */
     public java.util.List<String> getItems() {
@@ -65,7 +112,12 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to process and forward to your origin.
      * @see Method
      */
     public void setItems(java.util.Collection<String> items) {
@@ -78,6 +130,8 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -86,6 +140,8 @@ public class AllowedMethods implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to process and forward to your origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Method
@@ -102,7 +158,12 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to process and forward to your origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Method
@@ -113,7 +174,12 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * process and forward to your origin.
+     * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to process and forward to your origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Method

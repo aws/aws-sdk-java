@@ -19,16 +19,23 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class GetStreamingDistributionResult implements Serializable, Cloneable {
 
+    /** The streaming distribution's information. */
     private StreamingDistribution streamingDistribution;
-
+    /**
+     * The current version of the streaming distribution's information. For
+     * example: E2QWRUHAPOMQZL.
+     */
     private String eTag;
 
     /**
+     * The streaming distribution's information.
+     * 
      * @param streamingDistribution
+     *        The streaming distribution's information.
      */
     public void setStreamingDistribution(
             StreamingDistribution streamingDistribution) {
@@ -36,14 +43,19 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The streaming distribution's information.
+     * 
+     * @return The streaming distribution's information.
      */
     public StreamingDistribution getStreamingDistribution() {
         return this.streamingDistribution;
     }
 
     /**
+     * The streaming distribution's information.
+     * 
      * @param streamingDistribution
+     *        The streaming distribution's information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -54,21 +66,35 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
     }
 
     /**
+     * The current version of the streaming distribution's information. For
+     * example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the streaming distribution's information.
+     *        For example: E2QWRUHAPOMQZL.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the streaming distribution's information. For
+     * example: E2QWRUHAPOMQZL.
+     * 
+     * @return The current version of the streaming distribution's information.
+     *         For example: E2QWRUHAPOMQZL.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the streaming distribution's information. For
+     * example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the streaming distribution's information.
+     *        For example: E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

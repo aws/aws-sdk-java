@@ -19,30 +19,71 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that controls whether CloudFront caches the response to
+ * requests using the specified HTTP methods. There are two choices: -
+ * CloudFront caches responses to GET and HEAD requests. - CloudFront caches
+ * responses to GET, HEAD, and OPTIONS requests. If you pick the second choice
+ * for your S3 Origin, you may need to forward Access-Control-Request-Method,
+ * Access-Control-Request-Headers and Origin headers for the responses to be
+ * cached correctly.
  */
 public class CachedMethods implements Serializable, Cloneable {
 
+    /**
+     * The number of HTTP methods for which you want CloudFront to cache
+     * responses. Valid values are 2 (for caching responses to GET and HEAD
+     * requests) and 3 (for caching responses to GET, HEAD, and OPTIONS
+     * requests).
+     */
     private Integer quantity;
-
+    /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * The number of HTTP methods for which you want CloudFront to cache
+     * responses. Valid values are 2 (for caching responses to GET and HEAD
+     * requests) and 3 (for caching responses to GET, HEAD, and OPTIONS
+     * requests).
+     * 
      * @param quantity
+     *        The number of HTTP methods for which you want CloudFront to cache
+     *        responses. Valid values are 2 (for caching responses to GET and
+     *        HEAD requests) and 3 (for caching responses to GET, HEAD, and
+     *        OPTIONS requests).
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of HTTP methods for which you want CloudFront to cache
+     * responses. Valid values are 2 (for caching responses to GET and HEAD
+     * requests) and 3 (for caching responses to GET, HEAD, and OPTIONS
+     * requests).
+     * 
+     * @return The number of HTTP methods for which you want CloudFront to cache
+     *         responses. Valid values are 2 (for caching responses to GET and
+     *         HEAD requests) and 3 (for caching responses to GET, HEAD, and
+     *         OPTIONS requests).
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of HTTP methods for which you want CloudFront to cache
+     * responses. Valid values are 2 (for caching responses to GET and HEAD
+     * requests) and 3 (for caching responses to GET, HEAD, and OPTIONS
+     * requests).
+     * 
      * @param quantity
+     *        The number of HTTP methods for which you want CloudFront to cache
+     *        responses. Valid values are 2 (for caching responses to GET and
+     *        HEAD requests) and 3 (for caching responses to GET, HEAD, and
+     *        OPTIONS requests).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +93,11 @@ public class CachedMethods implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.
+     * 
+     * @return A complex type that contains the HTTP methods that you want
+     *         CloudFront to cache responses to.
      * @see Method
      */
     public java.util.List<String> getItems() {
@@ -63,7 +108,12 @@ public class CachedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.
+     * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to cache responses to.
      * @see Method
      */
     public void setItems(java.util.Collection<String> items) {
@@ -76,6 +126,8 @@ public class CachedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -84,6 +136,8 @@ public class CachedMethods implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to cache responses to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Method
@@ -100,7 +154,12 @@ public class CachedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.
+     * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to cache responses to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Method
@@ -111,7 +170,12 @@ public class CachedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.
+     * 
      * @param items
+     *        A complex type that contains the HTTP methods that you want
+     *        CloudFront to cache responses to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Method

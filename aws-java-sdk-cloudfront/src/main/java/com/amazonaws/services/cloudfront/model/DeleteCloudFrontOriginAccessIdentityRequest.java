@@ -20,13 +20,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to delete a origin access identity.
  */
 public class DeleteCloudFrontOriginAccessIdentityRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The origin access identity's id. */
     private String id;
-
+    /**
+     * The value of the ETag header you received from a previous GET or PUT
+     * request. For example: E2QWRUHAPOMQZL.
+     */
     private String ifMatch;
 
     /**
@@ -43,7 +47,10 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * initialize any additional object members.
      * 
      * @param id
+     *        The origin access identity's id.
      * @param ifMatch
+     *        The value of the ETag header you received from a previous GET or
+     *        PUT request. For example: E2QWRUHAPOMQZL.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest(String id, String ifMatch) {
         setId(id);
@@ -51,21 +58,29 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
+     * The origin access identity's id.
+     * 
      * @param id
+     *        The origin access identity's id.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The origin access identity's id.
+     * 
+     * @return The origin access identity's id.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The origin access identity's id.
+     * 
      * @param id
+     *        The origin access identity's id.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -75,21 +90,35 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
     }
 
     /**
+     * The value of the ETag header you received from a previous GET or PUT
+     * request. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received from a previous GET or
+     *        PUT request. For example: E2QWRUHAPOMQZL.
      */
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
 
     /**
-     * @return
+     * The value of the ETag header you received from a previous GET or PUT
+     * request. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The value of the ETag header you received from a previous GET or
+     *         PUT request. For example: E2QWRUHAPOMQZL.
      */
     public String getIfMatch() {
         return this.ifMatch;
     }
 
     /**
+     * The value of the ETag header you received from a previous GET or PUT
+     * request. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received from a previous GET or
+     *        PUT request. For example: E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -19,24 +19,65 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The configuration for the streaming distribution.
  */
 public class StreamingDistributionConfig implements Serializable, Cloneable {
 
+    /**
+     * A unique number that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the
+     * StreamingDistributionConfig object), a new streaming distribution is
+     * created. If the CallerReference is a value you already sent in a previous
+     * request to create a streaming distribution, and the content of the
+     * StreamingDistributionConfig is identical to the original request (ignoring
+     * white space), the response includes the same information returned to the
+     * original request. If the CallerReference is a value you already sent in a
+     * previous request to create a streaming distribution but the content of the
+     * StreamingDistributionConfig is different from the original request,
+     * CloudFront returns a DistributionAlreadyExists error.
+     */
     private String callerReference;
-
+    /**
+     * A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.
+     */
     private S3Origin s3Origin;
-
+    /**
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.
+     */
     private Aliases aliases;
-
+    /** Any comments you want to include about the streaming distribution. */
     private String comment;
-
+    /**
+     * A complex type that controls whether access logs are written for the
+     * streaming distribution.
+     */
     private StreamingLoggingConfig logging;
-
+    /**
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     */
     private TrustedSigners trustedSigners;
-
+    /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     */
     private String priceClass;
-
+    /**
+     * Whether the streaming distribution is enabled to accept end user requests
+     * for content.
+     */
     private Boolean enabled;
 
     /**
@@ -53,8 +94,25 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * additional object members.
      * 
      * @param callerReference
+     *        A unique number that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the
+     *        StreamingDistributionConfig object), a new streaming distribution
+     *        is created. If the CallerReference is a value you already sent in
+     *        a previous request to create a streaming distribution, and the
+     *        content of the StreamingDistributionConfig is identical to the
+     *        original request (ignoring white space), the response includes the
+     *        same information returned to the original request. If the
+     *        CallerReference is a value you already sent in a previous request
+     *        to create a streaming distribution but the content of the
+     *        StreamingDistributionConfig is different from the original
+     *        request, CloudFront returns a DistributionAlreadyExists error.
      * @param s3Origin
+     *        A complex type that contains information about the Amazon S3
+     *        bucket from which you want CloudFront to get your media files for
+     *        distribution.
      * @param enabled
+     *        Whether the streaming distribution is enabled to accept end user
+     *        requests for content.
      */
     public StreamingDistributionConfig(String callerReference,
             S3Origin s3Origin, Boolean enabled) {
@@ -64,21 +122,92 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A unique number that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the
+     * StreamingDistributionConfig object), a new streaming distribution is
+     * created. If the CallerReference is a value you already sent in a previous
+     * request to create a streaming distribution, and the content of the
+     * StreamingDistributionConfig is identical to the original request (ignoring
+     * white space), the response includes the same information returned to the
+     * original request. If the CallerReference is a value you already sent in a
+     * previous request to create a streaming distribution but the content of the
+     * StreamingDistributionConfig is different from the original request,
+     * CloudFront returns a DistributionAlreadyExists error.
+     * 
      * @param callerReference
+     *        A unique number that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the
+     *        StreamingDistributionConfig object), a new streaming distribution
+     *        is created. If the CallerReference is a value you already sent in
+     *        a previous request to create a streaming distribution, and the
+     *        content of the StreamingDistributionConfig is identical to the
+     *        original request (ignoring white space), the response includes the
+     *        same information returned to the original request. If the
+     *        CallerReference is a value you already sent in a previous request
+     *        to create a streaming distribution but the content of the
+     *        StreamingDistributionConfig is different from the original
+     *        request, CloudFront returns a DistributionAlreadyExists error.
      */
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
 
     /**
-     * @return
+     * A unique number that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the
+     * StreamingDistributionConfig object), a new streaming distribution is
+     * created. If the CallerReference is a value you already sent in a previous
+     * request to create a streaming distribution, and the content of the
+     * StreamingDistributionConfig is identical to the original request (ignoring
+     * white space), the response includes the same information returned to the
+     * original request. If the CallerReference is a value you already sent in a
+     * previous request to create a streaming distribution but the content of the
+     * StreamingDistributionConfig is different from the original request,
+     * CloudFront returns a DistributionAlreadyExists error.
+     * 
+     * @return A unique number that ensures the request can't be replayed. If
+     *         the CallerReference is new (no matter the content of the
+     *         StreamingDistributionConfig object), a new streaming distribution
+     *         is created. If the CallerReference is a value you already sent in
+     *         a previous request to create a streaming distribution, and the
+     *         content of the StreamingDistributionConfig is identical to the
+     *         original request (ignoring white space), the response includes
+     *         the same information returned to the original request. If the
+     *         CallerReference is a value you already sent in a previous request
+     *         to create a streaming distribution but the content of the
+     *         StreamingDistributionConfig is different from the original
+     *         request, CloudFront returns a DistributionAlreadyExists error.
      */
     public String getCallerReference() {
         return this.callerReference;
     }
 
     /**
+     * A unique number that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the
+     * StreamingDistributionConfig object), a new streaming distribution is
+     * created. If the CallerReference is a value you already sent in a previous
+     * request to create a streaming distribution, and the content of the
+     * StreamingDistributionConfig is identical to the original request (ignoring
+     * white space), the response includes the same information returned to the
+     * original request. If the CallerReference is a value you already sent in a
+     * previous request to create a streaming distribution but the content of the
+     * StreamingDistributionConfig is different from the original request,
+     * CloudFront returns a DistributionAlreadyExists error.
+     * 
      * @param callerReference
+     *        A unique number that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the
+     *        StreamingDistributionConfig object), a new streaming distribution
+     *        is created. If the CallerReference is a value you already sent in
+     *        a previous request to create a streaming distribution, and the
+     *        content of the StreamingDistributionConfig is identical to the
+     *        original request (ignoring white space), the response includes the
+     *        same information returned to the original request. If the
+     *        CallerReference is a value you already sent in a previous request
+     *        to create a streaming distribution but the content of the
+     *        StreamingDistributionConfig is different from the original
+     *        request, CloudFront returns a DistributionAlreadyExists error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -89,21 +218,38 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.
+     * 
      * @param s3Origin
+     *        A complex type that contains information about the Amazon S3
+     *        bucket from which you want CloudFront to get your media files for
+     *        distribution.
      */
     public void setS3Origin(S3Origin s3Origin) {
         this.s3Origin = s3Origin;
     }
 
     /**
-     * @return
+     * A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.
+     * 
+     * @return A complex type that contains information about the Amazon S3
+     *         bucket from which you want CloudFront to get your media files for
+     *         distribution.
      */
     public S3Origin getS3Origin() {
         return this.s3Origin;
     }
 
     /**
+     * A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.
+     * 
      * @param s3Origin
+     *        A complex type that contains information about the Amazon S3
+     *        bucket from which you want CloudFront to get your media files for
+     *        distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -113,21 +259,35 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.
+     * 
      * @param aliases
+     *        A complex type that contains information about CNAMEs (alternate
+     *        domain names), if any, for this streaming distribution.
      */
     public void setAliases(Aliases aliases) {
         this.aliases = aliases;
     }
 
     /**
-     * @return
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.
+     * 
+     * @return A complex type that contains information about CNAMEs (alternate
+     *         domain names), if any, for this streaming distribution.
      */
     public Aliases getAliases() {
         return this.aliases;
     }
 
     /**
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.
+     * 
      * @param aliases
+     *        A complex type that contains information about CNAMEs (alternate
+     *        domain names), if any, for this streaming distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -137,21 +297,30 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * Any comments you want to include about the streaming distribution.
+     * 
      * @param comment
+     *        Any comments you want to include about the streaming distribution.
      */
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
-     * @return
+     * Any comments you want to include about the streaming distribution.
+     * 
+     * @return Any comments you want to include about the streaming
+     *         distribution.
      */
     public String getComment() {
         return this.comment;
     }
 
     /**
+     * Any comments you want to include about the streaming distribution.
+     * 
      * @param comment
+     *        Any comments you want to include about the streaming distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -161,21 +330,35 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that controls whether access logs are written for the
+     * streaming distribution.
+     * 
      * @param logging
+     *        A complex type that controls whether access logs are written for
+     *        the streaming distribution.
      */
     public void setLogging(StreamingLoggingConfig logging) {
         this.logging = logging;
     }
 
     /**
-     * @return
+     * A complex type that controls whether access logs are written for the
+     * streaming distribution.
+     * 
+     * @return A complex type that controls whether access logs are written for
+     *         the streaming distribution.
      */
     public StreamingLoggingConfig getLogging() {
         return this.logging;
     }
 
     /**
+     * A complex type that controls whether access logs are written for the
+     * streaming distribution.
+     * 
      * @param logging
+     *        A complex type that controls whether access logs are written for
+     *        the streaming distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -186,21 +369,99 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     * 
      * @param trustedSigners
+     *        A complex type that specifies the AWS accounts, if any, that you
+     *        want to allow to create signed URLs for private content. If you
+     *        want to require signed URLs in requests for objects in the target
+     *        origin that match the PathPattern for this cache behavior, specify
+     *        true for Enabled, and specify the applicable values for Quantity
+     *        and Items. For more information, go to Using a Signed URL to Serve
+     *        Private Content in the Amazon CloudFront Developer Guide. If you
+     *        don't want to require signed URLs in requests for objects that
+     *        match PathPattern, specify false for Enabled and 0 for Quantity.
+     *        Omit Items. To add, change, or remove one or more trusted signers,
+     *        change Enabled to true (if it's currently false), change Quantity
+     *        as applicable, and specify all of the trusted signers that you
+     *        want to include in the updated distribution.
      */
     public void setTrustedSigners(TrustedSigners trustedSigners) {
         this.trustedSigners = trustedSigners;
     }
 
     /**
-     * @return
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     * 
+     * @return A complex type that specifies the AWS accounts, if any, that you
+     *         want to allow to create signed URLs for private content. If you
+     *         want to require signed URLs in requests for objects in the target
+     *         origin that match the PathPattern for this cache behavior,
+     *         specify true for Enabled, and specify the applicable values for
+     *         Quantity and Items. For more information, go to Using a Signed
+     *         URL to Serve Private Content in the Amazon CloudFront Developer
+     *         Guide. If you don't want to require signed URLs in requests for
+     *         objects that match PathPattern, specify false for Enabled and 0
+     *         for Quantity. Omit Items. To add, change, or remove one or more
+     *         trusted signers, change Enabled to true (if it's currently
+     *         false), change Quantity as applicable, and specify all of the
+     *         trusted signers that you want to include in the updated
+     *         distribution.
      */
     public TrustedSigners getTrustedSigners() {
         return this.trustedSigners;
     }
 
     /**
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     * 
      * @param trustedSigners
+     *        A complex type that specifies the AWS accounts, if any, that you
+     *        want to allow to create signed URLs for private content. If you
+     *        want to require signed URLs in requests for objects in the target
+     *        origin that match the PathPattern for this cache behavior, specify
+     *        true for Enabled, and specify the applicable values for Quantity
+     *        and Items. For more information, go to Using a Signed URL to Serve
+     *        Private Content in the Amazon CloudFront Developer Guide. If you
+     *        don't want to require signed URLs in requests for objects that
+     *        match PathPattern, specify false for Enabled and 0 for Quantity.
+     *        Omit Items. To add, change, or remove one or more trusted signers,
+     *        change Enabled to true (if it's currently false), change Quantity
+     *        as applicable, and specify all of the trusted signers that you
+     *        want to include in the updated distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -211,7 +472,12 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * 
      * @param priceClass
+     *        A complex type that contains information about price class for
+     *        this streaming distribution.
      * @see PriceClass
      */
     public void setPriceClass(String priceClass) {
@@ -219,7 +485,11 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * 
+     * @return A complex type that contains information about price class for
+     *         this streaming distribution.
      * @see PriceClass
      */
     public String getPriceClass() {
@@ -227,7 +497,12 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * 
      * @param priceClass
+     *        A complex type that contains information about price class for
+     *        this streaming distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PriceClass
@@ -238,7 +513,12 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * 
      * @param priceClass
+     *        A complex type that contains information about price class for
+     *        this streaming distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PriceClass
@@ -248,7 +528,12 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * 
      * @param priceClass
+     *        A complex type that contains information about price class for
+     *        this streaming distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PriceClass
@@ -259,21 +544,35 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * Whether the streaming distribution is enabled to accept end user requests
+     * for content.
+     * 
      * @param enabled
+     *        Whether the streaming distribution is enabled to accept end user
+     *        requests for content.
      */
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
     /**
-     * @return
+     * Whether the streaming distribution is enabled to accept end user requests
+     * for content.
+     * 
+     * @return Whether the streaming distribution is enabled to accept end user
+     *         requests for content.
      */
     public Boolean getEnabled() {
         return this.enabled;
     }
 
     /**
+     * Whether the streaming distribution is enabled to accept end user requests
+     * for content.
+     * 
      * @param enabled
+     *        Whether the streaming distribution is enabled to accept end user
+     *        requests for content.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -283,7 +582,11 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Whether the streaming distribution is enabled to accept end user requests
+     * for content.
+     * 
+     * @return Whether the streaming distribution is enabled to accept end user
+     *         requests for content.
      */
     public Boolean isEnabled() {
         return this.enabled;

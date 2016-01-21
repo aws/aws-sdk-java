@@ -20,15 +20,19 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to update a streaming distribution.
  */
 public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /** The streaming distribution's configuration information. */
     private StreamingDistributionConfig streamingDistributionConfig;
-
+    /** The streaming distribution's id. */
     private String id;
-
+    /**
+     * The value of the ETag header you received when retrieving the streaming
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     */
     private String ifMatch;
 
     /**
@@ -45,8 +49,13 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * any additional object members.
      * 
      * @param streamingDistributionConfig
+     *        The streaming distribution's configuration information.
      * @param id
+     *        The streaming distribution's id.
      * @param ifMatch
+     *        The value of the ETag header you received when retrieving the
+     *        streaming distribution's configuration. For example:
+     *        E2QWRUHAPOMQZL.
      */
     public UpdateStreamingDistributionRequest(
             StreamingDistributionConfig streamingDistributionConfig, String id,
@@ -57,7 +66,10 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The streaming distribution's configuration information.
+     * 
      * @param streamingDistributionConfig
+     *        The streaming distribution's configuration information.
      */
     public void setStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
@@ -65,14 +77,19 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * The streaming distribution's configuration information.
+     * 
+     * @return The streaming distribution's configuration information.
      */
     public StreamingDistributionConfig getStreamingDistributionConfig() {
         return this.streamingDistributionConfig;
     }
 
     /**
+     * The streaming distribution's configuration information.
+     * 
      * @param streamingDistributionConfig
+     *        The streaming distribution's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -83,21 +100,29 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The streaming distribution's id.
+     * 
      * @param id
+     *        The streaming distribution's id.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The streaming distribution's id.
+     * 
+     * @return The streaming distribution's id.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The streaming distribution's id.
+     * 
      * @param id
+     *        The streaming distribution's id.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -107,21 +132,38 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The value of the ETag header you received when retrieving the streaming
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received when retrieving the
+     *        streaming distribution's configuration. For example:
+     *        E2QWRUHAPOMQZL.
      */
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
 
     /**
-     * @return
+     * The value of the ETag header you received when retrieving the streaming
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The value of the ETag header you received when retrieving the
+     *         streaming distribution's configuration. For example:
+     *         E2QWRUHAPOMQZL.
      */
     public String getIfMatch() {
         return this.ifMatch;
     }
 
     /**
+     * The value of the ETag header you received when retrieving the streaming
+     * distribution's configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param ifMatch
+     *        The value of the ETag header you received when retrieving the
+     *        streaming distribution's configuration. For example:
+     *        E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

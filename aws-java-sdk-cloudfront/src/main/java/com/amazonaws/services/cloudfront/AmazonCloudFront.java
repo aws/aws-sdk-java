@@ -84,7 +84,10 @@ public interface AmazonCloudFront {
     void setRegion(Region region);
 
     /**
+     * Create a new origin access identity.
+     * 
      * @param createCloudFrontOriginAccessIdentityRequest
+     *        The request to create a new origin access identity.
      * @return Result of the CreateCloudFrontOriginAccessIdentity operation
      *         returned by the service.
      * @throws CloudFrontOriginAccessIdentityAlreadyExistsException
@@ -109,7 +112,10 @@ public interface AmazonCloudFront {
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Create a new distribution.
+     * 
      * @param createDistributionRequest
+     *        The request to create a new distribution.
      * @return Result of the CreateDistribution operation returned by the
      *         service.
      * @throws CNAMEAlreadyExistsException
@@ -188,7 +194,10 @@ public interface AmazonCloudFront {
             CreateDistributionRequest createDistributionRequest);
 
     /**
+     * Create a new invalidation.
+     * 
      * @param createInvalidationRequest
+     *        The request to create an invalidation.
      * @return Result of the CreateInvalidation operation returned by the
      *         service.
      * @throws AccessDeniedException
@@ -212,7 +221,10 @@ public interface AmazonCloudFront {
             CreateInvalidationRequest createInvalidationRequest);
 
     /**
+     * Create a new streaming distribution.
+     * 
      * @param createStreamingDistributionRequest
+     *        The request to create a new streaming distribution.
      * @return Result of the CreateStreamingDistribution operation returned by
      *         the service.
      * @throws CNAMEAlreadyExistsException
@@ -246,7 +258,10 @@ public interface AmazonCloudFront {
             CreateStreamingDistributionRequest createStreamingDistributionRequest);
 
     /**
+     * Delete an origin access identity.
+     * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
+     *        The request to delete a origin access identity.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
@@ -264,7 +279,10 @@ public interface AmazonCloudFront {
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Delete a distribution.
+     * 
      * @param deleteDistributionRequest
+     *        The request to delete a distribution.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws DistributionNotDisabledException
@@ -281,7 +299,10 @@ public interface AmazonCloudFront {
     void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
 
     /**
+     * Delete a streaming distribution.
+     * 
      * @param deleteStreamingDistributionRequest
+     *        The request to delete a streaming distribution.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws StreamingDistributionNotDisabledException
@@ -299,7 +320,10 @@ public interface AmazonCloudFront {
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**
+     * Get the information about an origin access identity.
+     * 
      * @param getCloudFrontOriginAccessIdentityRequest
+     *        The request to get an origin access identity's information.
      * @return Result of the GetCloudFrontOriginAccessIdentity operation
      *         returned by the service.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
@@ -312,7 +336,10 @@ public interface AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Get the configuration information about an origin access identity.
+     * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
+     *        The request to get an origin access identity's configuration.
      * @return Result of the GetCloudFrontOriginAccessIdentityConfig operation
      *         returned by the service.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
@@ -325,7 +352,10 @@ public interface AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
 
     /**
+     * Get the information about a distribution.
+     * 
      * @param getDistributionRequest
+     *        The request to get a distribution's information.
      * @return Result of the GetDistribution operation returned by the service.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
@@ -337,7 +367,10 @@ public interface AmazonCloudFront {
             GetDistributionRequest getDistributionRequest);
 
     /**
+     * Get the configuration information about a distribution.
+     * 
      * @param getDistributionConfigRequest
+     *        The request to get a distribution configuration.
      * @return Result of the GetDistributionConfig operation returned by the
      *         service.
      * @throws NoSuchDistributionException
@@ -350,7 +383,10 @@ public interface AmazonCloudFront {
             GetDistributionConfigRequest getDistributionConfigRequest);
 
     /**
+     * Get the information about an invalidation.
+     * 
      * @param getInvalidationRequest
+     *        The request to get an invalidation's information.
      * @return Result of the GetInvalidation operation returned by the service.
      * @throws NoSuchInvalidationException
      *         The specified invalidation does not exist.
@@ -364,7 +400,10 @@ public interface AmazonCloudFront {
             GetInvalidationRequest getInvalidationRequest);
 
     /**
+     * Get the information about a streaming distribution.
+     * 
      * @param getStreamingDistributionRequest
+     *        The request to get a streaming distribution's information.
      * @return Result of the GetStreamingDistribution operation returned by the
      *         service.
      * @throws NoSuchStreamingDistributionException
@@ -377,7 +416,10 @@ public interface AmazonCloudFront {
             GetStreamingDistributionRequest getStreamingDistributionRequest);
 
     /**
+     * Get the configuration information about a streaming distribution.
+     * 
      * @param getStreamingDistributionConfigRequest
+     *        To request to get a streaming distribution configuration.
      * @return Result of the GetStreamingDistributionConfig operation returned
      *         by the service.
      * @throws NoSuchStreamingDistributionException
@@ -390,7 +432,10 @@ public interface AmazonCloudFront {
             GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
     /**
+     * List origin access identities.
+     * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
+     *        The request to list origin access identities.
      * @return Result of the ListCloudFrontOriginAccessIdentities operation
      *         returned by the service.
      * @throws InvalidArgumentException
@@ -401,7 +446,10 @@ public interface AmazonCloudFront {
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest);
 
     /**
+     * List distributions.
+     * 
      * @param listDistributionsRequest
+     *        The request to list your distributions.
      * @return Result of the ListDistributions operation returned by the
      *         service.
      * @throws InvalidArgumentException
@@ -412,7 +460,12 @@ public interface AmazonCloudFront {
             ListDistributionsRequest listDistributionsRequest);
 
     /**
+     * List the distributions that are associated with a specified AWS WAF web
+     * ACL.
+     * 
      * @param listDistributionsByWebACLIdRequest
+     *        The request to list distributions that are associated with a
+     *        specified AWS WAF web ACL.
      * @return Result of the ListDistributionsByWebACLId operation returned by
      *         the service.
      * @throws InvalidArgumentException
@@ -424,7 +477,10 @@ public interface AmazonCloudFront {
             ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
 
     /**
+     * List invalidation batches.
+     * 
      * @param listInvalidationsRequest
+     *        The request to list invalidations.
      * @return Result of the ListInvalidations operation returned by the
      *         service.
      * @throws InvalidArgumentException
@@ -439,7 +495,10 @@ public interface AmazonCloudFront {
             ListInvalidationsRequest listInvalidationsRequest);
 
     /**
+     * List streaming distributions.
+     * 
      * @param listStreamingDistributionsRequest
+     *        The request to list your streaming distributions.
      * @return Result of the ListStreamingDistributions operation returned by
      *         the service.
      * @throws InvalidArgumentException
@@ -450,7 +509,10 @@ public interface AmazonCloudFront {
             ListStreamingDistributionsRequest listStreamingDistributionsRequest);
 
     /**
+     * Update an origin access identity.
+     * 
      * @param updateCloudFrontOriginAccessIdentityRequest
+     *        The request to update an origin access identity.
      * @return Result of the UpdateCloudFrontOriginAccessIdentity operation
      *         returned by the service.
      * @throws AccessDeniedException
@@ -478,7 +540,10 @@ public interface AmazonCloudFront {
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Update a distribution.
+     * 
      * @param updateDistributionRequest
+     *        The request to update a distribution.
      * @return Result of the UpdateDistribution operation returned by the
      *         service.
      * @throws AccessDeniedException
@@ -554,7 +619,10 @@ public interface AmazonCloudFront {
             UpdateDistributionRequest updateDistributionRequest);
 
     /**
+     * Update a streaming distribution.
+     * 
      * @param updateStreamingDistributionRequest
+     *        The request to update a streaming distribution.
      * @return Result of the UpdateStreamingDistribution operation returned by
      *         the service.
      * @throws AccessDeniedException

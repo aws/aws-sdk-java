@@ -67,7 +67,11 @@ public class Action implements Serializable, Cloneable {
      * </p>
      */
     private S3Action s3;
-
+    /**
+     * <p>
+     * Write to a Kinesis Firehose stream.
+     * </p>
+     */
     private FirehoseAction firehose;
 
     /**
@@ -337,21 +341,35 @@ public class Action implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Write to a Kinesis Firehose stream.
+     * </p>
+     * 
      * @param firehose
+     *        Write to a Kinesis Firehose stream.
      */
     public void setFirehose(FirehoseAction firehose) {
         this.firehose = firehose;
     }
 
     /**
-     * @return
+     * <p>
+     * Write to a Kinesis Firehose stream.
+     * </p>
+     * 
+     * @return Write to a Kinesis Firehose stream.
      */
     public FirehoseAction getFirehose() {
         return this.firehose;
     }
 
     /**
+     * <p>
+     * Write to a Kinesis Firehose stream.
+     * </p>
+     * 
      * @param firehose
+     *        Write to a Kinesis Firehose stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

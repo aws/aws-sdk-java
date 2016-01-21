@@ -19,46 +19,142 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that describes the default cache behavior if you do not
+ * specify a CacheBehavior element or if files don't match any of the values of
+ * PathPattern in CacheBehavior elements.You must create exactly one default
+ * cache behavior.
  */
 public class DefaultCacheBehavior implements Serializable, Cloneable {
 
+    /**
+     * The value of ID for the origin that you want CloudFront to route requests
+     * to when a request matches the path pattern either for a cache behavior or
+     * for the default cache behavior.
+     */
     private String targetOriginId;
-
+    /**
+     * A complex type that specifies how CloudFront handles query strings,
+     * cookies and headers.
+     */
     private ForwardedValues forwardedValues;
-
+    /**
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     */
     private TrustedSigners trustedSigners;
-
+    /**
+     * Use this element to specify the protocol that users can use to access the
+     * files in the origin specified by TargetOriginId when a request matches
+     * the path pattern in PathPattern. If you want CloudFront to allow end users
+     * to use any available protocol, specify allow-all. If you want CloudFront
+     * to require HTTPS, specify https. If you want CloudFront to respond to an
+     * HTTP request with an HTTP status code of 301 (Moved Permanently) and the
+     * HTTPS URL, specify redirect-to-https. The viewer then resubmits the
+     * request using the HTTPS URL.
+     */
     private String viewerProtocolPolicy;
-
+    /**
+     * The minimum amount of time that you want objects to stay in CloudFront
+     * caches before CloudFront queries your origin to see whether the object
+     * has been updated.You can specify a value from 0 to 3,153,600,000 seconds
+     * (100 years).
+     */
     private Long minTTL;
 
     private AllowedMethods allowedMethods;
-
+    /**
+     * Indicates whether you want to distribute media files in Microsoft Smooth
+     * Streaming format using the origin that is associated with this cache
+     * behavior. If so, specify true; if not, specify false.
+     */
     private Boolean smoothStreaming;
-
+    /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of time
+     * (in seconds) that an object is in a CloudFront cache before CloudFront
+     * forwards another request to your origin to determine whether the object
+     * has been updated. The value that you specify applies only when your origin
+     * does not add HTTP headers such as Cache-Control max-age, Cache-Control
+     * s-maxage, and Expires to objects. You can specify a value from 0 to
+     * 3,153,600,000 seconds (100 years).
+     */
     private Long defaultTTL;
-
+    /**
+     * The maximum amount of time (in seconds) that an object is in a CloudFront
+     * cache before CloudFront forwards another request to your origin to
+     * determine whether the object has been updated. The value that you specify
+     * applies only when your origin adds HTTP headers such as Cache-Control
+     * max-age, Cache-Control s-maxage, and Expires to objects. You can specify a
+     * value from 0 to 3,153,600,000 seconds (100 years).
+     */
     private Long maxTTL;
-
+    /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If so,
+     * specify true; if not, specify false. CloudFront compresses files larger
+     * than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom
+     * origins. When a CloudFront edge location is unusually busy, some files
+     * might not be compressed. The value of the Content-Type header must be on
+     * the list of file types that CloudFront will compress. For the current
+     * list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     * >Serving Compressed Content</a> in the Amazon CloudFront Developer Guide.
+     * If you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag header
+     * indicates that the version in a CloudFront edge cache is identical to the
+     * version on the origin server, but after compression the two versions are
+     * no longer identical. As a result, for compressed objects, CloudFront can't
+     * use the ETag header to determine whether an expired object in the
+     * CloudFront edge cache is still the latest version.
+     */
     private Boolean compress;
 
     /**
+     * The value of ID for the origin that you want CloudFront to route requests
+     * to when a request matches the path pattern either for a cache behavior or
+     * for the default cache behavior.
+     * 
      * @param targetOriginId
+     *        The value of ID for the origin that you want CloudFront to route
+     *        requests to when a request matches the path pattern either for a
+     *        cache behavior or for the default cache behavior.
      */
     public void setTargetOriginId(String targetOriginId) {
         this.targetOriginId = targetOriginId;
     }
 
     /**
-     * @return
+     * The value of ID for the origin that you want CloudFront to route requests
+     * to when a request matches the path pattern either for a cache behavior or
+     * for the default cache behavior.
+     * 
+     * @return The value of ID for the origin that you want CloudFront to route
+     *         requests to when a request matches the path pattern either for a
+     *         cache behavior or for the default cache behavior.
      */
     public String getTargetOriginId() {
         return this.targetOriginId;
     }
 
     /**
+     * The value of ID for the origin that you want CloudFront to route requests
+     * to when a request matches the path pattern either for a cache behavior or
+     * for the default cache behavior.
+     * 
      * @param targetOriginId
+     *        The value of ID for the origin that you want CloudFront to route
+     *        requests to when a request matches the path pattern either for a
+     *        cache behavior or for the default cache behavior.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -68,21 +164,35 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that specifies how CloudFront handles query strings,
+     * cookies and headers.
+     * 
      * @param forwardedValues
+     *        A complex type that specifies how CloudFront handles query
+     *        strings, cookies and headers.
      */
     public void setForwardedValues(ForwardedValues forwardedValues) {
         this.forwardedValues = forwardedValues;
     }
 
     /**
-     * @return
+     * A complex type that specifies how CloudFront handles query strings,
+     * cookies and headers.
+     * 
+     * @return A complex type that specifies how CloudFront handles query
+     *         strings, cookies and headers.
      */
     public ForwardedValues getForwardedValues() {
         return this.forwardedValues;
     }
 
     /**
+     * A complex type that specifies how CloudFront handles query strings,
+     * cookies and headers.
+     * 
      * @param forwardedValues
+     *        A complex type that specifies how CloudFront handles query
+     *        strings, cookies and headers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -93,21 +203,99 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     * 
      * @param trustedSigners
+     *        A complex type that specifies the AWS accounts, if any, that you
+     *        want to allow to create signed URLs for private content. If you
+     *        want to require signed URLs in requests for objects in the target
+     *        origin that match the PathPattern for this cache behavior, specify
+     *        true for Enabled, and specify the applicable values for Quantity
+     *        and Items. For more information, go to Using a Signed URL to Serve
+     *        Private Content in the Amazon CloudFront Developer Guide. If you
+     *        don't want to require signed URLs in requests for objects that
+     *        match PathPattern, specify false for Enabled and 0 for Quantity.
+     *        Omit Items. To add, change, or remove one or more trusted signers,
+     *        change Enabled to true (if it's currently false), change Quantity
+     *        as applicable, and specify all of the trusted signers that you
+     *        want to include in the updated distribution.
      */
     public void setTrustedSigners(TrustedSigners trustedSigners) {
         this.trustedSigners = trustedSigners;
     }
 
     /**
-     * @return
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     * 
+     * @return A complex type that specifies the AWS accounts, if any, that you
+     *         want to allow to create signed URLs for private content. If you
+     *         want to require signed URLs in requests for objects in the target
+     *         origin that match the PathPattern for this cache behavior,
+     *         specify true for Enabled, and specify the applicable values for
+     *         Quantity and Items. For more information, go to Using a Signed
+     *         URL to Serve Private Content in the Amazon CloudFront Developer
+     *         Guide. If you don't want to require signed URLs in requests for
+     *         objects that match PathPattern, specify false for Enabled and 0
+     *         for Quantity. Omit Items. To add, change, or remove one or more
+     *         trusted signers, change Enabled to true (if it's currently
+     *         false), change Quantity as applicable, and specify all of the
+     *         trusted signers that you want to include in the updated
+     *         distribution.
      */
     public TrustedSigners getTrustedSigners() {
         return this.trustedSigners;
     }
 
     /**
+     * A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require
+     * signed URLs in requests for objects in the target origin that match the
+     * PathPattern for this cache behavior, specify true for Enabled, and specify
+     * the applicable values for Quantity and Items. For more information, go to
+     * Using a Signed URL to Serve Private Content in the Amazon CloudFront
+     * Developer Guide. If you don't want to require signed URLs in requests for
+     * objects that match PathPattern, specify false for Enabled and 0 for
+     * Quantity. Omit Items. To add, change, or remove one or more trusted
+     * signers, change Enabled to true (if it's currently false), change Quantity
+     * as applicable, and specify all of the trusted signers that you want to
+     * include in the updated distribution.
+     * 
      * @param trustedSigners
+     *        A complex type that specifies the AWS accounts, if any, that you
+     *        want to allow to create signed URLs for private content. If you
+     *        want to require signed URLs in requests for objects in the target
+     *        origin that match the PathPattern for this cache behavior, specify
+     *        true for Enabled, and specify the applicable values for Quantity
+     *        and Items. For more information, go to Using a Signed URL to Serve
+     *        Private Content in the Amazon CloudFront Developer Guide. If you
+     *        don't want to require signed URLs in requests for objects that
+     *        match PathPattern, specify false for Enabled and 0 for Quantity.
+     *        Omit Items. To add, change, or remove one or more trusted signers,
+     *        change Enabled to true (if it's currently false), change Quantity
+     *        as applicable, and specify all of the trusted signers that you
+     *        want to include in the updated distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -117,7 +305,25 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify the protocol that users can use to access the
+     * files in the origin specified by TargetOriginId when a request matches
+     * the path pattern in PathPattern. If you want CloudFront to allow end users
+     * to use any available protocol, specify allow-all. If you want CloudFront
+     * to require HTTPS, specify https. If you want CloudFront to respond to an
+     * HTTP request with an HTTP status code of 301 (Moved Permanently) and the
+     * HTTPS URL, specify redirect-to-https. The viewer then resubmits the
+     * request using the HTTPS URL.
+     * 
      * @param viewerProtocolPolicy
+     *        Use this element to specify the protocol that users can use to
+     *        access the files in the origin specified by TargetOriginId when a
+     *        request matches the path pattern in PathPattern. If you want
+     *        CloudFront to allow end users to use any available protocol,
+     *        specify allow-all. If you want CloudFront to require HTTPS,
+     *        specify https. If you want CloudFront to respond to an HTTP
+     *        request with an HTTP status code of 301 (Moved Permanently) and
+     *        the HTTPS URL, specify redirect-to-https. The viewer then
+     *        resubmits the request using the HTTPS URL.
      * @see ViewerProtocolPolicy
      */
     public void setViewerProtocolPolicy(String viewerProtocolPolicy) {
@@ -125,7 +331,24 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Use this element to specify the protocol that users can use to access the
+     * files in the origin specified by TargetOriginId when a request matches
+     * the path pattern in PathPattern. If you want CloudFront to allow end users
+     * to use any available protocol, specify allow-all. If you want CloudFront
+     * to require HTTPS, specify https. If you want CloudFront to respond to an
+     * HTTP request with an HTTP status code of 301 (Moved Permanently) and the
+     * HTTPS URL, specify redirect-to-https. The viewer then resubmits the
+     * request using the HTTPS URL.
+     * 
+     * @return Use this element to specify the protocol that users can use to
+     *         access the files in the origin specified by TargetOriginId when a
+     *         request matches the path pattern in PathPattern. If you want
+     *         CloudFront to allow end users to use any available protocol,
+     *         specify allow-all. If you want CloudFront to require HTTPS,
+     *         specify https. If you want CloudFront to respond to an HTTP
+     *         request with an HTTP status code of 301 (Moved Permanently) and
+     *         the HTTPS URL, specify redirect-to-https. The viewer then
+     *         resubmits the request using the HTTPS URL.
      * @see ViewerProtocolPolicy
      */
     public String getViewerProtocolPolicy() {
@@ -133,7 +356,25 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify the protocol that users can use to access the
+     * files in the origin specified by TargetOriginId when a request matches
+     * the path pattern in PathPattern. If you want CloudFront to allow end users
+     * to use any available protocol, specify allow-all. If you want CloudFront
+     * to require HTTPS, specify https. If you want CloudFront to respond to an
+     * HTTP request with an HTTP status code of 301 (Moved Permanently) and the
+     * HTTPS URL, specify redirect-to-https. The viewer then resubmits the
+     * request using the HTTPS URL.
+     * 
      * @param viewerProtocolPolicy
+     *        Use this element to specify the protocol that users can use to
+     *        access the files in the origin specified by TargetOriginId when a
+     *        request matches the path pattern in PathPattern. If you want
+     *        CloudFront to allow end users to use any available protocol,
+     *        specify allow-all. If you want CloudFront to require HTTPS,
+     *        specify https. If you want CloudFront to respond to an HTTP
+     *        request with an HTTP status code of 301 (Moved Permanently) and
+     *        the HTTPS URL, specify redirect-to-https. The viewer then
+     *        resubmits the request using the HTTPS URL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ViewerProtocolPolicy
@@ -145,7 +386,25 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify the protocol that users can use to access the
+     * files in the origin specified by TargetOriginId when a request matches
+     * the path pattern in PathPattern. If you want CloudFront to allow end users
+     * to use any available protocol, specify allow-all. If you want CloudFront
+     * to require HTTPS, specify https. If you want CloudFront to respond to an
+     * HTTP request with an HTTP status code of 301 (Moved Permanently) and the
+     * HTTPS URL, specify redirect-to-https. The viewer then resubmits the
+     * request using the HTTPS URL.
+     * 
      * @param viewerProtocolPolicy
+     *        Use this element to specify the protocol that users can use to
+     *        access the files in the origin specified by TargetOriginId when a
+     *        request matches the path pattern in PathPattern. If you want
+     *        CloudFront to allow end users to use any available protocol,
+     *        specify allow-all. If you want CloudFront to require HTTPS,
+     *        specify https. If you want CloudFront to respond to an HTTP
+     *        request with an HTTP status code of 301 (Moved Permanently) and
+     *        the HTTPS URL, specify redirect-to-https. The viewer then
+     *        resubmits the request using the HTTPS URL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ViewerProtocolPolicy
@@ -156,7 +415,25 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify the protocol that users can use to access the
+     * files in the origin specified by TargetOriginId when a request matches
+     * the path pattern in PathPattern. If you want CloudFront to allow end users
+     * to use any available protocol, specify allow-all. If you want CloudFront
+     * to require HTTPS, specify https. If you want CloudFront to respond to an
+     * HTTP request with an HTTP status code of 301 (Moved Permanently) and the
+     * HTTPS URL, specify redirect-to-https. The viewer then resubmits the
+     * request using the HTTPS URL.
+     * 
      * @param viewerProtocolPolicy
+     *        Use this element to specify the protocol that users can use to
+     *        access the files in the origin specified by TargetOriginId when a
+     *        request matches the path pattern in PathPattern. If you want
+     *        CloudFront to allow end users to use any available protocol,
+     *        specify allow-all. If you want CloudFront to require HTTPS,
+     *        specify https. If you want CloudFront to respond to an HTTP
+     *        request with an HTTP status code of 301 (Moved Permanently) and
+     *        the HTTPS URL, specify redirect-to-https. The viewer then
+     *        resubmits the request using the HTTPS URL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ViewerProtocolPolicy
@@ -168,21 +445,47 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * The minimum amount of time that you want objects to stay in CloudFront
+     * caches before CloudFront queries your origin to see whether the object
+     * has been updated.You can specify a value from 0 to 3,153,600,000 seconds
+     * (100 years).
+     * 
      * @param minTTL
+     *        The minimum amount of time that you want objects to stay in
+     *        CloudFront caches before CloudFront queries your origin to see
+     *        whether the object has been updated.You can specify a value from 0
+     *        to 3,153,600,000 seconds (100 years).
      */
     public void setMinTTL(Long minTTL) {
         this.minTTL = minTTL;
     }
 
     /**
-     * @return
+     * The minimum amount of time that you want objects to stay in CloudFront
+     * caches before CloudFront queries your origin to see whether the object
+     * has been updated.You can specify a value from 0 to 3,153,600,000 seconds
+     * (100 years).
+     * 
+     * @return The minimum amount of time that you want objects to stay in
+     *         CloudFront caches before CloudFront queries your origin to see
+     *         whether the object has been updated.You can specify a value from
+     *         0 to 3,153,600,000 seconds (100 years).
      */
     public Long getMinTTL() {
         return this.minTTL;
     }
 
     /**
+     * The minimum amount of time that you want objects to stay in CloudFront
+     * caches before CloudFront queries your origin to see whether the object
+     * has been updated.You can specify a value from 0 to 3,153,600,000 seconds
+     * (100 years).
+     * 
      * @param minTTL
+     *        The minimum amount of time that you want objects to stay in
+     *        CloudFront caches before CloudFront queries your origin to see
+     *        whether the object has been updated.You can specify a value from 0
+     *        to 3,153,600,000 seconds (100 years).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -216,21 +519,41 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Indicates whether you want to distribute media files in Microsoft Smooth
+     * Streaming format using the origin that is associated with this cache
+     * behavior. If so, specify true; if not, specify false.
+     * 
      * @param smoothStreaming
+     *        Indicates whether you want to distribute media files in Microsoft
+     *        Smooth Streaming format using the origin that is associated with
+     *        this cache behavior. If so, specify true; if not, specify false.
      */
     public void setSmoothStreaming(Boolean smoothStreaming) {
         this.smoothStreaming = smoothStreaming;
     }
 
     /**
-     * @return
+     * Indicates whether you want to distribute media files in Microsoft Smooth
+     * Streaming format using the origin that is associated with this cache
+     * behavior. If so, specify true; if not, specify false.
+     * 
+     * @return Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with
+     *         this cache behavior. If so, specify true; if not, specify false.
      */
     public Boolean getSmoothStreaming() {
         return this.smoothStreaming;
     }
 
     /**
+     * Indicates whether you want to distribute media files in Microsoft Smooth
+     * Streaming format using the origin that is associated with this cache
+     * behavior. If so, specify true; if not, specify false.
+     * 
      * @param smoothStreaming
+     *        Indicates whether you want to distribute media files in Microsoft
+     *        Smooth Streaming format using the origin that is associated with
+     *        this cache behavior. If so, specify true; if not, specify false.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -240,28 +563,87 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Indicates whether you want to distribute media files in Microsoft Smooth
+     * Streaming format using the origin that is associated with this cache
+     * behavior. If so, specify true; if not, specify false.
+     * 
+     * @return Indicates whether you want to distribute media files in Microsoft
+     *         Smooth Streaming format using the origin that is associated with
+     *         this cache behavior. If so, specify true; if not, specify false.
      */
     public Boolean isSmoothStreaming() {
         return this.smoothStreaming;
     }
 
     /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of time
+     * (in seconds) that an object is in a CloudFront cache before CloudFront
+     * forwards another request to your origin to determine whether the object
+     * has been updated. The value that you specify applies only when your origin
+     * does not add HTTP headers such as Cache-Control max-age, Cache-Control
+     * s-maxage, and Expires to objects. You can specify a value from 0 to
+     * 3,153,600,000 seconds (100 years).
+     * 
      * @param defaultTTL
+     *        If you don't configure your origin to add a Cache-Control max-age
+     *        directive or an Expires header, DefaultTTL is the default amount
+     *        of time (in seconds) that an object is in a CloudFront cache
+     *        before CloudFront forwards another request to your origin to
+     *        determine whether the object has been updated. The value that you
+     *        specify applies only when your origin does not add HTTP headers
+     *        such as Cache-Control max-age, Cache-Control s-maxage, and Expires
+     *        to objects. You can specify a value from 0 to 3,153,600,000
+     *        seconds (100 years).
      */
     public void setDefaultTTL(Long defaultTTL) {
         this.defaultTTL = defaultTTL;
     }
 
     /**
-     * @return
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of time
+     * (in seconds) that an object is in a CloudFront cache before CloudFront
+     * forwards another request to your origin to determine whether the object
+     * has been updated. The value that you specify applies only when your origin
+     * does not add HTTP headers such as Cache-Control max-age, Cache-Control
+     * s-maxage, and Expires to objects. You can specify a value from 0 to
+     * 3,153,600,000 seconds (100 years).
+     * 
+     * @return If you don't configure your origin to add a Cache-Control max-age
+     *         directive or an Expires header, DefaultTTL is the default amount
+     *         of time (in seconds) that an object is in a CloudFront cache
+     *         before CloudFront forwards another request to your origin to
+     *         determine whether the object has been updated. The value that you
+     *         specify applies only when your origin does not add HTTP headers
+     *         such as Cache-Control max-age, Cache-Control s-maxage, and
+     *         Expires to objects. You can specify a value from 0 to
+     *         3,153,600,000 seconds (100 years).
      */
     public Long getDefaultTTL() {
         return this.defaultTTL;
     }
 
     /**
+     * If you don't configure your origin to add a Cache-Control max-age
+     * directive or an Expires header, DefaultTTL is the default amount of time
+     * (in seconds) that an object is in a CloudFront cache before CloudFront
+     * forwards another request to your origin to determine whether the object
+     * has been updated. The value that you specify applies only when your origin
+     * does not add HTTP headers such as Cache-Control max-age, Cache-Control
+     * s-maxage, and Expires to objects. You can specify a value from 0 to
+     * 3,153,600,000 seconds (100 years).
+     * 
      * @param defaultTTL
+     *        If you don't configure your origin to add a Cache-Control max-age
+     *        directive or an Expires header, DefaultTTL is the default amount
+     *        of time (in seconds) that an object is in a CloudFront cache
+     *        before CloudFront forwards another request to your origin to
+     *        determine whether the object has been updated. The value that you
+     *        specify applies only when your origin does not add HTTP headers
+     *        such as Cache-Control max-age, Cache-Control s-maxage, and Expires
+     *        to objects. You can specify a value from 0 to 3,153,600,000
+     *        seconds (100 years).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -271,21 +653,62 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * The maximum amount of time (in seconds) that an object is in a CloudFront
+     * cache before CloudFront forwards another request to your origin to
+     * determine whether the object has been updated. The value that you specify
+     * applies only when your origin adds HTTP headers such as Cache-Control
+     * max-age, Cache-Control s-maxage, and Expires to objects. You can specify a
+     * value from 0 to 3,153,600,000 seconds (100 years).
+     * 
      * @param maxTTL
+     *        The maximum amount of time (in seconds) that an object is in a
+     *        CloudFront cache before CloudFront forwards another request to
+     *        your origin to determine whether the object has been updated. The
+     *        value that you specify applies only when your origin adds HTTP
+     *        headers such as Cache-Control max-age, Cache-Control s-maxage, and
+     *        Expires to objects. You can specify a value from 0 to
+     *        3,153,600,000 seconds (100 years).
      */
     public void setMaxTTL(Long maxTTL) {
         this.maxTTL = maxTTL;
     }
 
     /**
-     * @return
+     * The maximum amount of time (in seconds) that an object is in a CloudFront
+     * cache before CloudFront forwards another request to your origin to
+     * determine whether the object has been updated. The value that you specify
+     * applies only when your origin adds HTTP headers such as Cache-Control
+     * max-age, Cache-Control s-maxage, and Expires to objects. You can specify a
+     * value from 0 to 3,153,600,000 seconds (100 years).
+     * 
+     * @return The maximum amount of time (in seconds) that an object is in a
+     *         CloudFront cache before CloudFront forwards another request to
+     *         your origin to determine whether the object has been updated. The
+     *         value that you specify applies only when your origin adds HTTP
+     *         headers such as Cache-Control max-age, Cache-Control s-maxage,
+     *         and Expires to objects. You can specify a value from 0 to
+     *         3,153,600,000 seconds (100 years).
      */
     public Long getMaxTTL() {
         return this.maxTTL;
     }
 
     /**
+     * The maximum amount of time (in seconds) that an object is in a CloudFront
+     * cache before CloudFront forwards another request to your origin to
+     * determine whether the object has been updated. The value that you specify
+     * applies only when your origin adds HTTP headers such as Cache-Control
+     * max-age, Cache-Control s-maxage, and Expires to objects. You can specify a
+     * value from 0 to 3,153,600,000 seconds (100 years).
+     * 
      * @param maxTTL
+     *        The maximum amount of time (in seconds) that an object is in a
+     *        CloudFront cache before CloudFront forwards another request to
+     *        your origin to determine whether the object has been updated. The
+     *        value that you specify applies only when your origin adds HTTP
+     *        headers such as Cache-Control max-age, Cache-Control s-maxage, and
+     *        Expires to objects. You can specify a value from 0 to
+     *        3,153,600,000 seconds (100 years).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -295,21 +718,131 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If so,
+     * specify true; if not, specify false. CloudFront compresses files larger
+     * than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom
+     * origins. When a CloudFront edge location is unusually busy, some files
+     * might not be compressed. The value of the Content-Type header must be on
+     * the list of file types that CloudFront will compress. For the current
+     * list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     * >Serving Compressed Content</a> in the Amazon CloudFront Developer Guide.
+     * If you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag header
+     * indicates that the version in a CloudFront edge cache is identical to the
+     * version on the origin server, but after compression the two versions are
+     * no longer identical. As a result, for compressed objects, CloudFront can't
+     * use the ETag header to determine whether an expired object in the
+     * CloudFront edge cache is still the latest version.
+     * 
      * @param compress
+     *        Whether you want CloudFront to automatically compress content for
+     *        web requests that include Accept-Encoding: gzip in the request
+     *        header. If so, specify true; if not, specify false. CloudFront
+     *        compresses files larger than 1000 bytes and less than 1 megabyte
+     *        for both Amazon S3 and custom origins. When a CloudFront edge
+     *        location is unusually busy, some files might not be compressed.
+     *        The value of the Content-Type header must be on the list of file
+     *        types that CloudFront will compress. For the current list, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     *        >Serving Compressed Content</a> in the Amazon CloudFront Developer
+     *        Guide. If you configure CloudFront to compress content, CloudFront
+     *        removes the ETag response header from the objects that it
+     *        compresses. The ETag header indicates that the version in a
+     *        CloudFront edge cache is identical to the version on the origin
+     *        server, but after compression the two versions are no longer
+     *        identical. As a result, for compressed objects, CloudFront can't
+     *        use the ETag header to determine whether an expired object in the
+     *        CloudFront edge cache is still the latest version.
      */
     public void setCompress(Boolean compress) {
         this.compress = compress;
     }
 
     /**
-     * @return
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If so,
+     * specify true; if not, specify false. CloudFront compresses files larger
+     * than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom
+     * origins. When a CloudFront edge location is unusually busy, some files
+     * might not be compressed. The value of the Content-Type header must be on
+     * the list of file types that CloudFront will compress. For the current
+     * list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     * >Serving Compressed Content</a> in the Amazon CloudFront Developer Guide.
+     * If you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag header
+     * indicates that the version in a CloudFront edge cache is identical to the
+     * version on the origin server, but after compression the two versions are
+     * no longer identical. As a result, for compressed objects, CloudFront can't
+     * use the ETag header to determine whether an expired object in the
+     * CloudFront edge cache is still the latest version.
+     * 
+     * @return Whether you want CloudFront to automatically compress content for
+     *         web requests that include Accept-Encoding: gzip in the request
+     *         header. If so, specify true; if not, specify false. CloudFront
+     *         compresses files larger than 1000 bytes and less than 1 megabyte
+     *         for both Amazon S3 and custom origins. When a CloudFront edge
+     *         location is unusually busy, some files might not be compressed.
+     *         The value of the Content-Type header must be on the list of file
+     *         types that CloudFront will compress. For the current list, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     *         >Serving Compressed Content</a> in the Amazon CloudFront
+     *         Developer Guide. If you configure CloudFront to compress content,
+     *         CloudFront removes the ETag response header from the objects that
+     *         it compresses. The ETag header indicates that the version in a
+     *         CloudFront edge cache is identical to the version on the origin
+     *         server, but after compression the two versions are no longer
+     *         identical. As a result, for compressed objects, CloudFront can't
+     *         use the ETag header to determine whether an expired object in the
+     *         CloudFront edge cache is still the latest version.
      */
     public Boolean getCompress() {
         return this.compress;
     }
 
     /**
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If so,
+     * specify true; if not, specify false. CloudFront compresses files larger
+     * than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom
+     * origins. When a CloudFront edge location is unusually busy, some files
+     * might not be compressed. The value of the Content-Type header must be on
+     * the list of file types that CloudFront will compress. For the current
+     * list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     * >Serving Compressed Content</a> in the Amazon CloudFront Developer Guide.
+     * If you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag header
+     * indicates that the version in a CloudFront edge cache is identical to the
+     * version on the origin server, but after compression the two versions are
+     * no longer identical. As a result, for compressed objects, CloudFront can't
+     * use the ETag header to determine whether an expired object in the
+     * CloudFront edge cache is still the latest version.
+     * 
      * @param compress
+     *        Whether you want CloudFront to automatically compress content for
+     *        web requests that include Accept-Encoding: gzip in the request
+     *        header. If so, specify true; if not, specify false. CloudFront
+     *        compresses files larger than 1000 bytes and less than 1 megabyte
+     *        for both Amazon S3 and custom origins. When a CloudFront edge
+     *        location is unusually busy, some files might not be compressed.
+     *        The value of the Content-Type header must be on the list of file
+     *        types that CloudFront will compress. For the current list, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     *        >Serving Compressed Content</a> in the Amazon CloudFront Developer
+     *        Guide. If you configure CloudFront to compress content, CloudFront
+     *        removes the ETag response header from the objects that it
+     *        compresses. The ETag header indicates that the version in a
+     *        CloudFront edge cache is identical to the version on the origin
+     *        server, but after compression the two versions are no longer
+     *        identical. As a result, for compressed objects, CloudFront can't
+     *        use the ETag header to determine whether an expired object in the
+     *        CloudFront edge cache is still the latest version.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -319,7 +852,43 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Whether you want CloudFront to automatically compress content for web
+     * requests that include Accept-Encoding: gzip in the request header. If so,
+     * specify true; if not, specify false. CloudFront compresses files larger
+     * than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom
+     * origins. When a CloudFront edge location is unusually busy, some files
+     * might not be compressed. The value of the Content-Type header must be on
+     * the list of file types that CloudFront will compress. For the current
+     * list, see <a
+     * href="http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     * >Serving Compressed Content</a> in the Amazon CloudFront Developer Guide.
+     * If you configure CloudFront to compress content, CloudFront removes the
+     * ETag response header from the objects that it compresses. The ETag header
+     * indicates that the version in a CloudFront edge cache is identical to the
+     * version on the origin server, but after compression the two versions are
+     * no longer identical. As a result, for compressed objects, CloudFront can't
+     * use the ETag header to determine whether an expired object in the
+     * CloudFront edge cache is still the latest version.
+     * 
+     * @return Whether you want CloudFront to automatically compress content for
+     *         web requests that include Accept-Encoding: gzip in the request
+     *         header. If so, specify true; if not, specify false. CloudFront
+     *         compresses files larger than 1000 bytes and less than 1 megabyte
+     *         for both Amazon S3 and custom origins. When a CloudFront edge
+     *         location is unusually busy, some files might not be compressed.
+     *         The value of the Content-Type header must be on the list of file
+     *         types that CloudFront will compress. For the current list, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/console/cloudfront/compressed-content"
+     *         >Serving Compressed Content</a> in the Amazon CloudFront
+     *         Developer Guide. If you configure CloudFront to compress content,
+     *         CloudFront removes the ETag response header from the objects that
+     *         it compresses. The ETag header indicates that the version in a
+     *         CloudFront edge cache is identical to the version on the origin
+     *         server, but after compression the two versions are no longer
+     *         identical. As a result, for compressed objects, CloudFront can't
+     *         use the ETag header to determine whether an expired object in the
+     *         CloudFront edge cache is still the latest version.
      */
     public Boolean isCompress() {
         return this.compress;

@@ -20,31 +20,76 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to list origin access identities.
  */
 public class ListCloudFrontOriginAccessIdentitiesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * Use this when paginating results to indicate where to begin in your list
+     * of origin access identities. The results include identities in the list
+     * that occur after the marker. To get the next page of results, set the
+     * Marker to the value of the NextMarker from the current page's response
+     * (which is also the ID of the last identity on that page).
+     */
     private String marker;
-
+    /**
+     * The maximum number of origin access identities you want in the response
+     * body.
+     */
     private String maxItems;
 
     /**
+     * Use this when paginating results to indicate where to begin in your list
+     * of origin access identities. The results include identities in the list
+     * that occur after the marker. To get the next page of results, set the
+     * Marker to the value of the NextMarker from the current page's response
+     * (which is also the ID of the last identity on that page).
+     * 
      * @param marker
+     *        Use this when paginating results to indicate where to begin in
+     *        your list of origin access identities. The results include
+     *        identities in the list that occur after the marker. To get the
+     *        next page of results, set the Marker to the value of the
+     *        NextMarker from the current page's response (which is also the ID
+     *        of the last identity on that page).
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
 
     /**
-     * @return
+     * Use this when paginating results to indicate where to begin in your list
+     * of origin access identities. The results include identities in the list
+     * that occur after the marker. To get the next page of results, set the
+     * Marker to the value of the NextMarker from the current page's response
+     * (which is also the ID of the last identity on that page).
+     * 
+     * @return Use this when paginating results to indicate where to begin in
+     *         your list of origin access identities. The results include
+     *         identities in the list that occur after the marker. To get the
+     *         next page of results, set the Marker to the value of the
+     *         NextMarker from the current page's response (which is also the ID
+     *         of the last identity on that page).
      */
     public String getMarker() {
         return this.marker;
     }
 
     /**
+     * Use this when paginating results to indicate where to begin in your list
+     * of origin access identities. The results include identities in the list
+     * that occur after the marker. To get the next page of results, set the
+     * Marker to the value of the NextMarker from the current page's response
+     * (which is also the ID of the last identity on that page).
+     * 
      * @param marker
+     *        Use this when paginating results to indicate where to begin in
+     *        your list of origin access identities. The results include
+     *        identities in the list that occur after the marker. To get the
+     *        next page of results, set the Marker to the value of the
+     *        NextMarker from the current page's response (which is also the ID
+     *        of the last identity on that page).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -54,21 +99,35 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends
     }
 
     /**
+     * The maximum number of origin access identities you want in the response
+     * body.
+     * 
      * @param maxItems
+     *        The maximum number of origin access identities you want in the
+     *        response body.
      */
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
 
     /**
-     * @return
+     * The maximum number of origin access identities you want in the response
+     * body.
+     * 
+     * @return The maximum number of origin access identities you want in the
+     *         response body.
      */
     public String getMaxItems() {
         return this.maxItems;
     }
 
     /**
+     * The maximum number of origin access identities you want in the response
+     * body.
+     * 
      * @param maxItems
+     *        The maximum number of origin access identities you want in the
+     *        response body.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

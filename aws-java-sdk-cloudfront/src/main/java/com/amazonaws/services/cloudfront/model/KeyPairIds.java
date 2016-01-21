@@ -19,30 +19,43 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that lists the active CloudFront key pairs, if any, that are
+ * associated with AwsAccountNumber.
  */
 public class KeyPairIds implements Serializable, Cloneable {
 
+    /** The number of active CloudFront key pairs for AwsAccountNumber. */
     private Integer quantity;
-
+    /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * The number of active CloudFront key pairs for AwsAccountNumber.
+     * 
      * @param quantity
+     *        The number of active CloudFront key pairs for AwsAccountNumber.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of active CloudFront key pairs for AwsAccountNumber.
+     * 
+     * @return The number of active CloudFront key pairs for AwsAccountNumber.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of active CloudFront key pairs for AwsAccountNumber.
+     * 
      * @param quantity
+     *        The number of active CloudFront key pairs for AwsAccountNumber.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +65,11 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     * 
+     * @return A complex type that lists the active CloudFront key pairs, if
+     *         any, that are associated with AwsAccountNumber.
      */
     public java.util.List<String> getItems() {
         if (items == null) {
@@ -62,7 +79,12 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     * 
      * @param items
+     *        A complex type that lists the active CloudFront key pairs, if any,
+     *        that are associated with AwsAccountNumber.
      */
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
@@ -74,6 +96,8 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -82,6 +106,8 @@ public class KeyPairIds implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that lists the active CloudFront key pairs, if any,
+     *        that are associated with AwsAccountNumber.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -97,7 +123,12 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that lists the active CloudFront key pairs, if any, that
+     * are associated with AwsAccountNumber.
+     * 
      * @param items
+     *        A complex type that lists the active CloudFront key pairs, if any,
+     *        that are associated with AwsAccountNumber.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

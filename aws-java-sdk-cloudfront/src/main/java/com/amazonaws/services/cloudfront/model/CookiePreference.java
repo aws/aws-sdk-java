@@ -19,16 +19,37 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that specifies the cookie preferences associated with this
+ * cache behavior.
  */
 public class CookiePreference implements Serializable, Cloneable {
 
+    /**
+     * Use this element to specify whether you want CloudFront to forward
+     * cookies to the origin that is associated with this cache behavior. You
+     * can specify all, none or whitelist. If you choose All, CloudFront forwards
+     * all cookies regardless of how many your application uses.
+     */
     private String forward;
-
+    /**
+     * A complex type that specifies the whitelisted cookies, if any, that you
+     * want CloudFront to forward to your origin that is associated with this
+     * cache behavior.
+     */
     private CookieNames whitelistedNames;
 
     /**
+     * Use this element to specify whether you want CloudFront to forward
+     * cookies to the origin that is associated with this cache behavior. You
+     * can specify all, none or whitelist. If you choose All, CloudFront forwards
+     * all cookies regardless of how many your application uses.
+     * 
      * @param forward
+     *        Use this element to specify whether you want CloudFront to forward
+     *        cookies to the origin that is associated with this cache behavior.
+     *        You can specify all, none or whitelist. If you choose All,
+     *        CloudFront forwards all cookies regardless of how many your
+     *        application uses.
      * @see ItemSelection
      */
     public void setForward(String forward) {
@@ -36,7 +57,16 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Use this element to specify whether you want CloudFront to forward
+     * cookies to the origin that is associated with this cache behavior. You
+     * can specify all, none or whitelist. If you choose All, CloudFront forwards
+     * all cookies regardless of how many your application uses.
+     * 
+     * @return Use this element to specify whether you want CloudFront to
+     *         forward cookies to the origin that is associated with this cache
+     *         behavior. You can specify all, none or whitelist. If you choose
+     *         All, CloudFront forwards all cookies regardless of how many your
+     *         application uses.
      * @see ItemSelection
      */
     public String getForward() {
@@ -44,7 +74,17 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify whether you want CloudFront to forward
+     * cookies to the origin that is associated with this cache behavior. You
+     * can specify all, none or whitelist. If you choose All, CloudFront forwards
+     * all cookies regardless of how many your application uses.
+     * 
      * @param forward
+     *        Use this element to specify whether you want CloudFront to forward
+     *        cookies to the origin that is associated with this cache behavior.
+     *        You can specify all, none or whitelist. If you choose All,
+     *        CloudFront forwards all cookies regardless of how many your
+     *        application uses.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ItemSelection
@@ -55,7 +95,17 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify whether you want CloudFront to forward
+     * cookies to the origin that is associated with this cache behavior. You
+     * can specify all, none or whitelist. If you choose All, CloudFront forwards
+     * all cookies regardless of how many your application uses.
+     * 
      * @param forward
+     *        Use this element to specify whether you want CloudFront to forward
+     *        cookies to the origin that is associated with this cache behavior.
+     *        You can specify all, none or whitelist. If you choose All,
+     *        CloudFront forwards all cookies regardless of how many your
+     *        application uses.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ItemSelection
@@ -65,7 +115,17 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
+     * Use this element to specify whether you want CloudFront to forward
+     * cookies to the origin that is associated with this cache behavior. You
+     * can specify all, none or whitelist. If you choose All, CloudFront forwards
+     * all cookies regardless of how many your application uses.
+     * 
      * @param forward
+     *        Use this element to specify whether you want CloudFront to forward
+     *        cookies to the origin that is associated with this cache behavior.
+     *        You can specify all, none or whitelist. If you choose All,
+     *        CloudFront forwards all cookies regardless of how many your
+     *        application uses.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ItemSelection
@@ -76,21 +136,41 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that specifies the whitelisted cookies, if any, that you
+     * want CloudFront to forward to your origin that is associated with this
+     * cache behavior.
+     * 
      * @param whitelistedNames
+     *        A complex type that specifies the whitelisted cookies, if any,
+     *        that you want CloudFront to forward to your origin that is
+     *        associated with this cache behavior.
      */
     public void setWhitelistedNames(CookieNames whitelistedNames) {
         this.whitelistedNames = whitelistedNames;
     }
 
     /**
-     * @return
+     * A complex type that specifies the whitelisted cookies, if any, that you
+     * want CloudFront to forward to your origin that is associated with this
+     * cache behavior.
+     * 
+     * @return A complex type that specifies the whitelisted cookies, if any,
+     *         that you want CloudFront to forward to your origin that is
+     *         associated with this cache behavior.
      */
     public CookieNames getWhitelistedNames() {
         return this.whitelistedNames;
     }
 
     /**
+     * A complex type that specifies the whitelisted cookies, if any, that you
+     * want CloudFront to forward to your origin that is associated with this
+     * cache behavior.
+     * 
      * @param whitelistedNames
+     *        A complex type that specifies the whitelisted cookies, if any,
+     *        that you want CloudFront to forward to your origin that is
+     *        associated with this cache behavior.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

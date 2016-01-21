@@ -19,15 +19,19 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class ListStreamingDistributionsResult implements Serializable,
         Cloneable {
 
+    /** The StreamingDistributionList type. */
     private StreamingDistributionList streamingDistributionList;
 
     /**
+     * The StreamingDistributionList type.
+     * 
      * @param streamingDistributionList
+     *        The StreamingDistributionList type.
      */
     public void setStreamingDistributionList(
             StreamingDistributionList streamingDistributionList) {
@@ -35,14 +39,19 @@ public class ListStreamingDistributionsResult implements Serializable,
     }
 
     /**
-     * @return
+     * The StreamingDistributionList type.
+     * 
+     * @return The StreamingDistributionList type.
      */
     public StreamingDistributionList getStreamingDistributionList() {
         return this.streamingDistributionList;
     }
 
     /**
+     * The StreamingDistributionList type.
+     * 
      * @param streamingDistributionList
+     *        The StreamingDistributionList type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

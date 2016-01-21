@@ -19,38 +19,96 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that describes the Amazon S3 bucket or the HTTP server (for
+ * example, a web server) from which CloudFront gets your files.You must create
+ * at least one origin.
  */
 public class Origin implements Serializable, Cloneable {
 
+    /**
+     * A unique identifier for the origin. The value of Id must be unique within
+     * the distribution. You use the value of Id when you create a cache
+     * behavior. The Id identifies the origin that CloudFront routes a request to
+     * when the request matches the path pattern for that cache behavior.
+     */
     private String id;
-
+    /**
+     * Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you
+     * want CloudFront to get objects for this origin, for example,
+     * myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the
+     * HTTP server from which you want CloudFront to get objects for this origin,
+     * for example, www.example.com.
+     */
     private String domainName;
-
+    /**
+     * An optional element that causes CloudFront to request your content from a
+     * directory in your Amazon S3 bucket or your custom origin. When you
+     * include the OriginPath element, specify the directory name, beginning with
+     * a /. CloudFront appends the directory name to the value of DomainName.
+     */
     private String originPath;
-
+    /**
+     * A complex type that contains information about the custom headers
+     * associated with this Origin.
+     */
     private CustomHeaders customHeaders;
-
+    /**
+     * A complex type that contains information about the Amazon S3 origin. If
+     * the origin is a custom origin, use the CustomOriginConfig element
+     * instead.
+     */
     private S3OriginConfig s3OriginConfig;
-
+    /**
+     * A complex type that contains information about a custom origin. If the
+     * origin is an Amazon S3 bucket, use the S3OriginConfig element instead.
+     */
     private CustomOriginConfig customOriginConfig;
 
     /**
+     * A unique identifier for the origin. The value of Id must be unique within
+     * the distribution. You use the value of Id when you create a cache
+     * behavior. The Id identifies the origin that CloudFront routes a request to
+     * when the request matches the path pattern for that cache behavior.
+     * 
      * @param id
+     *        A unique identifier for the origin. The value of Id must be unique
+     *        within the distribution. You use the value of Id when you create a
+     *        cache behavior. The Id identifies the origin that CloudFront
+     *        routes a request to when the request matches the path pattern for
+     *        that cache behavior.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * A unique identifier for the origin. The value of Id must be unique within
+     * the distribution. You use the value of Id when you create a cache
+     * behavior. The Id identifies the origin that CloudFront routes a request to
+     * when the request matches the path pattern for that cache behavior.
+     * 
+     * @return A unique identifier for the origin. The value of Id must be
+     *         unique within the distribution. You use the value of Id when you
+     *         create a cache behavior. The Id identifies the origin that
+     *         CloudFront routes a request to when the request matches the path
+     *         pattern for that cache behavior.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * A unique identifier for the origin. The value of Id must be unique within
+     * the distribution. You use the value of Id when you create a cache
+     * behavior. The Id identifies the origin that CloudFront routes a request to
+     * when the request matches the path pattern for that cache behavior.
+     * 
      * @param id
+     *        A unique identifier for the origin. The value of Id must be unique
+     *        within the distribution. You use the value of Id when you create a
+     *        cache behavior. The Id identifies the origin that CloudFront
+     *        routes a request to when the request matches the path pattern for
+     *        that cache behavior.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -60,21 +118,53 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you
+     * want CloudFront to get objects for this origin, for example,
+     * myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the
+     * HTTP server from which you want CloudFront to get objects for this origin,
+     * for example, www.example.com.
+     * 
      * @param domainName
+     *        Amazon S3 origins: The DNS name of the Amazon S3 bucket from which
+     *        you want CloudFront to get objects for this origin, for example,
+     *        myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name
+     *        for the HTTP server from which you want CloudFront to get objects
+     *        for this origin, for example, www.example.com.
      */
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
 
     /**
-     * @return
+     * Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you
+     * want CloudFront to get objects for this origin, for example,
+     * myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the
+     * HTTP server from which you want CloudFront to get objects for this origin,
+     * for example, www.example.com.
+     * 
+     * @return Amazon S3 origins: The DNS name of the Amazon S3 bucket from
+     *         which you want CloudFront to get objects for this origin, for
+     *         example, myawsbucket.s3.amazonaws.com. Custom origins: The DNS
+     *         domain name for the HTTP server from which you want CloudFront to
+     *         get objects for this origin, for example, www.example.com.
      */
     public String getDomainName() {
         return this.domainName;
     }
 
     /**
+     * Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you
+     * want CloudFront to get objects for this origin, for example,
+     * myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the
+     * HTTP server from which you want CloudFront to get objects for this origin,
+     * for example, www.example.com.
+     * 
      * @param domainName
+     *        Amazon S3 origins: The DNS name of the Amazon S3 bucket from which
+     *        you want CloudFront to get objects for this origin, for example,
+     *        myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name
+     *        for the HTTP server from which you want CloudFront to get objects
+     *        for this origin, for example, www.example.com.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -84,21 +174,50 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * An optional element that causes CloudFront to request your content from a
+     * directory in your Amazon S3 bucket or your custom origin. When you
+     * include the OriginPath element, specify the directory name, beginning with
+     * a /. CloudFront appends the directory name to the value of DomainName.
+     * 
      * @param originPath
+     *        An optional element that causes CloudFront to request your content
+     *        from a directory in your Amazon S3 bucket or your custom origin.
+     *        When you include the OriginPath element, specify the directory
+     *        name, beginning with a /. CloudFront appends the directory name to
+     *        the value of DomainName.
      */
     public void setOriginPath(String originPath) {
         this.originPath = originPath;
     }
 
     /**
-     * @return
+     * An optional element that causes CloudFront to request your content from a
+     * directory in your Amazon S3 bucket or your custom origin. When you
+     * include the OriginPath element, specify the directory name, beginning with
+     * a /. CloudFront appends the directory name to the value of DomainName.
+     * 
+     * @return An optional element that causes CloudFront to request your
+     *         content from a directory in your Amazon S3 bucket or your custom
+     *         origin. When you include the OriginPath element, specify the
+     *         directory name, beginning with a /. CloudFront appends the
+     *         directory name to the value of DomainName.
      */
     public String getOriginPath() {
         return this.originPath;
     }
 
     /**
+     * An optional element that causes CloudFront to request your content from a
+     * directory in your Amazon S3 bucket or your custom origin. When you
+     * include the OriginPath element, specify the directory name, beginning with
+     * a /. CloudFront appends the directory name to the value of DomainName.
+     * 
      * @param originPath
+     *        An optional element that causes CloudFront to request your content
+     *        from a directory in your Amazon S3 bucket or your custom origin.
+     *        When you include the OriginPath element, specify the directory
+     *        name, beginning with a /. CloudFront appends the directory name to
+     *        the value of DomainName.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -108,21 +227,35 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about the custom headers
+     * associated with this Origin.
+     * 
      * @param customHeaders
+     *        A complex type that contains information about the custom headers
+     *        associated with this Origin.
      */
     public void setCustomHeaders(CustomHeaders customHeaders) {
         this.customHeaders = customHeaders;
     }
 
     /**
-     * @return
+     * A complex type that contains information about the custom headers
+     * associated with this Origin.
+     * 
+     * @return A complex type that contains information about the custom headers
+     *         associated with this Origin.
      */
     public CustomHeaders getCustomHeaders() {
         return this.customHeaders;
     }
 
     /**
+     * A complex type that contains information about the custom headers
+     * associated with this Origin.
+     * 
      * @param customHeaders
+     *        A complex type that contains information about the custom headers
+     *        associated with this Origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -132,21 +265,41 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about the Amazon S3 origin. If
+     * the origin is a custom origin, use the CustomOriginConfig element
+     * instead.
+     * 
      * @param s3OriginConfig
+     *        A complex type that contains information about the Amazon S3
+     *        origin. If the origin is a custom origin, use the
+     *        CustomOriginConfig element instead.
      */
     public void setS3OriginConfig(S3OriginConfig s3OriginConfig) {
         this.s3OriginConfig = s3OriginConfig;
     }
 
     /**
-     * @return
+     * A complex type that contains information about the Amazon S3 origin. If
+     * the origin is a custom origin, use the CustomOriginConfig element
+     * instead.
+     * 
+     * @return A complex type that contains information about the Amazon S3
+     *         origin. If the origin is a custom origin, use the
+     *         CustomOriginConfig element instead.
      */
     public S3OriginConfig getS3OriginConfig() {
         return this.s3OriginConfig;
     }
 
     /**
+     * A complex type that contains information about the Amazon S3 origin. If
+     * the origin is a custom origin, use the CustomOriginConfig element
+     * instead.
+     * 
      * @param s3OriginConfig
+     *        A complex type that contains information about the Amazon S3
+     *        origin. If the origin is a custom origin, use the
+     *        CustomOriginConfig element instead.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -156,21 +309,38 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about a custom origin. If the
+     * origin is an Amazon S3 bucket, use the S3OriginConfig element instead.
+     * 
      * @param customOriginConfig
+     *        A complex type that contains information about a custom origin. If
+     *        the origin is an Amazon S3 bucket, use the S3OriginConfig element
+     *        instead.
      */
     public void setCustomOriginConfig(CustomOriginConfig customOriginConfig) {
         this.customOriginConfig = customOriginConfig;
     }
 
     /**
-     * @return
+     * A complex type that contains information about a custom origin. If the
+     * origin is an Amazon S3 bucket, use the S3OriginConfig element instead.
+     * 
+     * @return A complex type that contains information about a custom origin.
+     *         If the origin is an Amazon S3 bucket, use the S3OriginConfig
+     *         element instead.
      */
     public CustomOriginConfig getCustomOriginConfig() {
         return this.customOriginConfig;
     }
 
     /**
+     * A complex type that contains information about a custom origin. If the
+     * origin is an Amazon S3 bucket, use the S3OriginConfig element instead.
+     * 
      * @param customOriginConfig
+     *        A complex type that contains information about a custom origin. If
+     *        the origin is an Amazon S3 bucket, use the S3OriginConfig element
+     *        instead.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

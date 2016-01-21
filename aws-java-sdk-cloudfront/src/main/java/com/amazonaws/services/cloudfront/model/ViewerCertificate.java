@@ -19,38 +19,127 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that contains information about viewer certificates for this
+ * distribution.
  */
 public class ViewerCertificate implements Serializable, Cloneable {
 
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. For ACM, set to the ACM certificate ARN. For IAM, set to the
+     * IAM certificate identifier.
+     */
     private String certificate;
-
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * the CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     * "cloudfront". If you want viewers to use HTTPS to request your objects and
+     * you're using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. To use an ACM certificate, set to "acm" and update the
+     * Certificate to the ACM certificate ARN. To use an IAM certificate, set to
+     * "iam" and update the Certificate to the IAM certificate identifier.
+     */
     private String certificateSource;
-
+    /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+     * your content and can respond to HTTPS requests from any viewer. However,
+     * you must request permission to use this feature, and you incur additional
+     * monthly charges. If you specify sni-only, CloudFront can only respond to
+     * HTTPS requests from viewers that support Server Name Indication (SNI). All
+     * modern browsers support SNI, but some browsers still in use don't support
+     * SNI. Do not specify a value for SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     */
     private String sSLSupportMethod;
-
+    /**
+     * Specify the minimum version of the SSL protocol that you want CloudFront
+     * to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your
+     * objects only to browsers or devices that support at least the SSL version
+     * that you specify. The TLSv1 protocol is more secure, so we recommend that
+     * you specify SSLv3 only if your users are using browsers or devices that
+     * don't support TLSv1. If you're using a custom certificate (if you specify
+     * a value for IAMCertificateId) and if you're using dedicated IP (if you
+     * specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     */
     private String minimumProtocolVersion;
-
+    /**
+     * Note: this field is deprecated. Please use "iam" as CertificateSource and
+     * specify the IAM certificate Id as the Certificate. If you want viewers to
+     * use HTTPS to request your objects and you're using an alternate domain
+     * name in your object URLs (for example, https://example.com/logo.jpg),
+     * specify the IAM certificate identifier of the custom viewer certificate
+     * for this distribution. Specify either this value or
+     * CloudFrontDefaultCertificate.
+     */
     private String iAMCertificateId;
-
+    /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want viewers
+     * to use HTTPS to request your objects and you're using the CloudFront
+     * domain name of your distribution in your object URLs (for example,
+     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this
+     * value if you are setting an IAMCertificateId.
+     */
     private Boolean cloudFrontDefaultCertificate;
 
     /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. For ACM, set to the ACM certificate ARN. For IAM, set to the
+     * IAM certificate identifier.
+     * 
      * @param certificate
+     *        If you want viewers to use HTTPS to request your objects and
+     *        you're using an alternate domain name in your object URLs (for
+     *        example, https://example.com/logo.jpg), you can use your own IAM
+     *        or ACM certificate. For ACM, set to the ACM certificate ARN. For
+     *        IAM, set to the IAM certificate identifier.
      */
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
 
     /**
-     * @return
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. For ACM, set to the ACM certificate ARN. For IAM, set to the
+     * IAM certificate identifier.
+     * 
+     * @return If you want viewers to use HTTPS to request your objects and
+     *         you're using an alternate domain name in your object URLs (for
+     *         example, https://example.com/logo.jpg), you can use your own IAM
+     *         or ACM certificate. For ACM, set to the ACM certificate ARN. For
+     *         IAM, set to the IAM certificate identifier.
      */
     public String getCertificate() {
         return this.certificate;
     }
 
     /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. For ACM, set to the ACM certificate ARN. For IAM, set to the
+     * IAM certificate identifier.
+     * 
      * @param certificate
+     *        If you want viewers to use HTTPS to request your objects and
+     *        you're using an alternate domain name in your object URLs (for
+     *        example, https://example.com/logo.jpg), you can use your own IAM
+     *        or ACM certificate. For ACM, set to the ACM certificate ARN. For
+     *        IAM, set to the IAM certificate identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -60,7 +149,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * the CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     * "cloudfront". If you want viewers to use HTTPS to request your objects and
+     * you're using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. To use an ACM certificate, set to "acm" and update the
+     * Certificate to the ACM certificate ARN. To use an IAM certificate, set to
+     * "iam" and update the Certificate to the IAM certificate identifier.
+     * 
      * @param certificateSource
+     *        If you want viewers to use HTTPS to request your objects and
+     *        you're using the CloudFront domain name of your distribution in
+     *        your object URLs (for example,
+     *        https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     *        "cloudfront". If you want viewers to use HTTPS to request your
+     *        objects and you're using an alternate domain name in your object
+     *        URLs (for example, https://example.com/logo.jpg), you can use your
+     *        own IAM or ACM certificate. To use an ACM certificate, set to
+     *        "acm" and update the Certificate to the ACM certificate ARN. To
+     *        use an IAM certificate, set to "iam" and update the Certificate to
+     *        the IAM certificate identifier.
      * @see CertificateSource
      */
     public void setCertificateSource(String certificateSource) {
@@ -68,7 +178,27 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * the CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     * "cloudfront". If you want viewers to use HTTPS to request your objects and
+     * you're using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. To use an ACM certificate, set to "acm" and update the
+     * Certificate to the ACM certificate ARN. To use an IAM certificate, set to
+     * "iam" and update the Certificate to the IAM certificate identifier.
+     * 
+     * @return If you want viewers to use HTTPS to request your objects and
+     *         you're using the CloudFront domain name of your distribution in
+     *         your object URLs (for example,
+     *         https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     *         "cloudfront". If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object
+     *         URLs (for example, https://example.com/logo.jpg), you can use
+     *         your own IAM or ACM certificate. To use an ACM certificate, set
+     *         to "acm" and update the Certificate to the ACM certificate ARN.
+     *         To use an IAM certificate, set to "iam" and update the
+     *         Certificate to the IAM certificate identifier.
      * @see CertificateSource
      */
     public String getCertificateSource() {
@@ -76,7 +206,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * the CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     * "cloudfront". If you want viewers to use HTTPS to request your objects and
+     * you're using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. To use an ACM certificate, set to "acm" and update the
+     * Certificate to the ACM certificate ARN. To use an IAM certificate, set to
+     * "iam" and update the Certificate to the IAM certificate identifier.
+     * 
      * @param certificateSource
+     *        If you want viewers to use HTTPS to request your objects and
+     *        you're using the CloudFront domain name of your distribution in
+     *        your object URLs (for example,
+     *        https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     *        "cloudfront". If you want viewers to use HTTPS to request your
+     *        objects and you're using an alternate domain name in your object
+     *        URLs (for example, https://example.com/logo.jpg), you can use your
+     *        own IAM or ACM certificate. To use an ACM certificate, set to
+     *        "acm" and update the Certificate to the ACM certificate ARN. To
+     *        use an IAM certificate, set to "iam" and update the Certificate to
+     *        the IAM certificate identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateSource
@@ -87,7 +238,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * the CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     * "cloudfront". If you want viewers to use HTTPS to request your objects and
+     * you're using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. To use an ACM certificate, set to "acm" and update the
+     * Certificate to the ACM certificate ARN. To use an IAM certificate, set to
+     * "iam" and update the Certificate to the IAM certificate identifier.
+     * 
      * @param certificateSource
+     *        If you want viewers to use HTTPS to request your objects and
+     *        you're using the CloudFront domain name of your distribution in
+     *        your object URLs (for example,
+     *        https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     *        "cloudfront". If you want viewers to use HTTPS to request your
+     *        objects and you're using an alternate domain name in your object
+     *        URLs (for example, https://example.com/logo.jpg), you can use your
+     *        own IAM or ACM certificate. To use an ACM certificate, set to
+     *        "acm" and update the Certificate to the ACM certificate ARN. To
+     *        use an IAM certificate, set to "iam" and update the Certificate to
+     *        the IAM certificate identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateSource
@@ -97,7 +269,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you want viewers to use HTTPS to request your objects and you're using
+     * the CloudFront domain name of your distribution in your object URLs (for
+     * example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     * "cloudfront". If you want viewers to use HTTPS to request your objects and
+     * you're using an alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), you can use your own IAM or ACM
+     * certificate. To use an ACM certificate, set to "acm" and update the
+     * Certificate to the ACM certificate ARN. To use an IAM certificate, set to
+     * "iam" and update the Certificate to the IAM certificate identifier.
+     * 
      * @param certificateSource
+     *        If you want viewers to use HTTPS to request your objects and
+     *        you're using the CloudFront domain name of your distribution in
+     *        your object URLs (for example,
+     *        https://d111111abcdef8.cloudfront.net/logo.jpg), set to
+     *        "cloudfront". If you want viewers to use HTTPS to request your
+     *        objects and you're using an alternate domain name in your object
+     *        URLs (for example, https://example.com/logo.jpg), you can use your
+     *        own IAM or ACM certificate. To use an ACM certificate, set to
+     *        "acm" and update the Certificate to the ACM certificate ARN. To
+     *        use an IAM certificate, set to "iam" and update the Certificate to
+     *        the IAM certificate identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateSource
@@ -109,7 +302,29 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+     * your content and can respond to HTTPS requests from any viewer. However,
+     * you must request permission to use this feature, and you incur additional
+     * monthly charges. If you specify sni-only, CloudFront can only respond to
+     * HTTPS requests from viewers that support Server Name Indication (SNI). All
+     * modern browsers support SNI, but some browsers still in use don't support
+     * SNI. Do not specify a value for SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * 
      * @param sSLSupportMethod
+     *        If you specify a value for IAMCertificateId, you must also specify
+     *        how you want CloudFront to serve HTTPS requests. Valid values are
+     *        vip and sni-only. If you specify vip, CloudFront uses dedicated IP
+     *        addresses for your content and can respond to HTTPS requests from
+     *        any viewer. However, you must request permission to use this
+     *        feature, and you incur additional monthly charges. If you specify
+     *        sni-only, CloudFront can only respond to HTTPS requests from
+     *        viewers that support Server Name Indication (SNI). All modern
+     *        browsers support SNI, but some browsers still in use don't support
+     *        SNI. Do not specify a value for SSLSupportMethod if you specified
+     *        true for CloudFrontDefaultCertificate.
      * @see SSLSupportMethod
      */
     public void setSSLSupportMethod(String sSLSupportMethod) {
@@ -117,7 +332,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+     * your content and can respond to HTTPS requests from any viewer. However,
+     * you must request permission to use this feature, and you incur additional
+     * monthly charges. If you specify sni-only, CloudFront can only respond to
+     * HTTPS requests from viewers that support Server Name Indication (SNI). All
+     * modern browsers support SNI, but some browsers still in use don't support
+     * SNI. Do not specify a value for SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * 
+     * @return If you specify a value for IAMCertificateId, you must also
+     *         specify how you want CloudFront to serve HTTPS requests. Valid
+     *         values are vip and sni-only. If you specify vip, CloudFront uses
+     *         dedicated IP addresses for your content and can respond to HTTPS
+     *         requests from any viewer. However, you must request permission to
+     *         use this feature, and you incur additional monthly charges. If
+     *         you specify sni-only, CloudFront can only respond to HTTPS
+     *         requests from viewers that support Server Name Indication (SNI).
+     *         All modern browsers support SNI, but some browsers still in use
+     *         don't support SNI. Do not specify a value for SSLSupportMethod if
+     *         you specified true for CloudFrontDefaultCertificate.
      * @see SSLSupportMethod
      */
     public String getSSLSupportMethod() {
@@ -125,7 +361,29 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+     * your content and can respond to HTTPS requests from any viewer. However,
+     * you must request permission to use this feature, and you incur additional
+     * monthly charges. If you specify sni-only, CloudFront can only respond to
+     * HTTPS requests from viewers that support Server Name Indication (SNI). All
+     * modern browsers support SNI, but some browsers still in use don't support
+     * SNI. Do not specify a value for SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * 
      * @param sSLSupportMethod
+     *        If you specify a value for IAMCertificateId, you must also specify
+     *        how you want CloudFront to serve HTTPS requests. Valid values are
+     *        vip and sni-only. If you specify vip, CloudFront uses dedicated IP
+     *        addresses for your content and can respond to HTTPS requests from
+     *        any viewer. However, you must request permission to use this
+     *        feature, and you incur additional monthly charges. If you specify
+     *        sni-only, CloudFront can only respond to HTTPS requests from
+     *        viewers that support Server Name Indication (SNI). All modern
+     *        browsers support SNI, but some browsers still in use don't support
+     *        SNI. Do not specify a value for SSLSupportMethod if you specified
+     *        true for CloudFrontDefaultCertificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SSLSupportMethod
@@ -136,7 +394,29 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+     * your content and can respond to HTTPS requests from any viewer. However,
+     * you must request permission to use this feature, and you incur additional
+     * monthly charges. If you specify sni-only, CloudFront can only respond to
+     * HTTPS requests from viewers that support Server Name Indication (SNI). All
+     * modern browsers support SNI, but some browsers still in use don't support
+     * SNI. Do not specify a value for SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * 
      * @param sSLSupportMethod
+     *        If you specify a value for IAMCertificateId, you must also specify
+     *        how you want CloudFront to serve HTTPS requests. Valid values are
+     *        vip and sni-only. If you specify vip, CloudFront uses dedicated IP
+     *        addresses for your content and can respond to HTTPS requests from
+     *        any viewer. However, you must request permission to use this
+     *        feature, and you incur additional monthly charges. If you specify
+     *        sni-only, CloudFront can only respond to HTTPS requests from
+     *        viewers that support Server Name Indication (SNI). All modern
+     *        browsers support SNI, but some browsers still in use don't support
+     *        SNI. Do not specify a value for SSLSupportMethod if you specified
+     *        true for CloudFrontDefaultCertificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SSLSupportMethod
@@ -146,7 +426,29 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * If you specify a value for IAMCertificateId, you must also specify how
+     * you want CloudFront to serve HTTPS requests. Valid values are vip and
+     * sni-only. If you specify vip, CloudFront uses dedicated IP addresses for
+     * your content and can respond to HTTPS requests from any viewer. However,
+     * you must request permission to use this feature, and you incur additional
+     * monthly charges. If you specify sni-only, CloudFront can only respond to
+     * HTTPS requests from viewers that support Server Name Indication (SNI). All
+     * modern browsers support SNI, but some browsers still in use don't support
+     * SNI. Do not specify a value for SSLSupportMethod if you specified true for
+     * CloudFrontDefaultCertificate.
+     * 
      * @param sSLSupportMethod
+     *        If you specify a value for IAMCertificateId, you must also specify
+     *        how you want CloudFront to serve HTTPS requests. Valid values are
+     *        vip and sni-only. If you specify vip, CloudFront uses dedicated IP
+     *        addresses for your content and can respond to HTTPS requests from
+     *        any viewer. However, you must request permission to use this
+     *        feature, and you incur additional monthly charges. If you specify
+     *        sni-only, CloudFront can only respond to HTTPS requests from
+     *        viewers that support Server Name Indication (SNI). All modern
+     *        browsers support SNI, but some browsers still in use don't support
+     *        SNI. Do not specify a value for SSLSupportMethod if you specified
+     *        true for CloudFrontDefaultCertificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SSLSupportMethod
@@ -158,7 +460,34 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Specify the minimum version of the SSL protocol that you want CloudFront
+     * to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your
+     * objects only to browsers or devices that support at least the SSL version
+     * that you specify. The TLSv1 protocol is more secure, so we recommend that
+     * you specify SSLv3 only if your users are using browsers or devices that
+     * don't support TLSv1. If you're using a custom certificate (if you specify
+     * a value for IAMCertificateId) and if you're using dedicated IP (if you
+     * specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * 
      * @param minimumProtocolVersion
+     *        Specify the minimum version of the SSL protocol that you want
+     *        CloudFront to use, SSLv3 or TLSv1, for HTTPS connections.
+     *        CloudFront will serve your objects only to browsers or devices
+     *        that support at least the SSL version that you specify. The TLSv1
+     *        protocol is more secure, so we recommend that you specify SSLv3
+     *        only if your users are using browsers or devices that don't
+     *        support TLSv1. If you're using a custom certificate (if you
+     *        specify a value for IAMCertificateId) and if you're using
+     *        dedicated IP (if you specify vip for SSLSupportMethod), you can
+     *        choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're
+     *        using a custom certificate (if you specify a value for
+     *        IAMCertificateId) and if you're using SNI (if you specify sni-only
+     *        for SSLSupportMethod), you must specify TLSv1 for
+     *        MinimumProtocolVersion.
      * @see MinimumProtocolVersion
      */
     public void setMinimumProtocolVersion(String minimumProtocolVersion) {
@@ -166,7 +495,33 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Specify the minimum version of the SSL protocol that you want CloudFront
+     * to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your
+     * objects only to browsers or devices that support at least the SSL version
+     * that you specify. The TLSv1 protocol is more secure, so we recommend that
+     * you specify SSLv3 only if your users are using browsers or devices that
+     * don't support TLSv1. If you're using a custom certificate (if you specify
+     * a value for IAMCertificateId) and if you're using dedicated IP (if you
+     * specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * 
+     * @return Specify the minimum version of the SSL protocol that you want
+     *         CloudFront to use, SSLv3 or TLSv1, for HTTPS connections.
+     *         CloudFront will serve your objects only to browsers or devices
+     *         that support at least the SSL version that you specify. The TLSv1
+     *         protocol is more secure, so we recommend that you specify SSLv3
+     *         only if your users are using browsers or devices that don't
+     *         support TLSv1. If you're using a custom certificate (if you
+     *         specify a value for IAMCertificateId) and if you're using
+     *         dedicated IP (if you specify vip for SSLSupportMethod), you can
+     *         choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're
+     *         using a custom certificate (if you specify a value for
+     *         IAMCertificateId) and if you're using SNI (if you specify
+     *         sni-only for SSLSupportMethod), you must specify TLSv1 for
+     *         MinimumProtocolVersion.
      * @see MinimumProtocolVersion
      */
     public String getMinimumProtocolVersion() {
@@ -174,7 +529,34 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Specify the minimum version of the SSL protocol that you want CloudFront
+     * to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your
+     * objects only to browsers or devices that support at least the SSL version
+     * that you specify. The TLSv1 protocol is more secure, so we recommend that
+     * you specify SSLv3 only if your users are using browsers or devices that
+     * don't support TLSv1. If you're using a custom certificate (if you specify
+     * a value for IAMCertificateId) and if you're using dedicated IP (if you
+     * specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * 
      * @param minimumProtocolVersion
+     *        Specify the minimum version of the SSL protocol that you want
+     *        CloudFront to use, SSLv3 or TLSv1, for HTTPS connections.
+     *        CloudFront will serve your objects only to browsers or devices
+     *        that support at least the SSL version that you specify. The TLSv1
+     *        protocol is more secure, so we recommend that you specify SSLv3
+     *        only if your users are using browsers or devices that don't
+     *        support TLSv1. If you're using a custom certificate (if you
+     *        specify a value for IAMCertificateId) and if you're using
+     *        dedicated IP (if you specify vip for SSLSupportMethod), you can
+     *        choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're
+     *        using a custom certificate (if you specify a value for
+     *        IAMCertificateId) and if you're using SNI (if you specify sni-only
+     *        for SSLSupportMethod), you must specify TLSv1 for
+     *        MinimumProtocolVersion.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumProtocolVersion
@@ -186,7 +568,34 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Specify the minimum version of the SSL protocol that you want CloudFront
+     * to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your
+     * objects only to browsers or devices that support at least the SSL version
+     * that you specify. The TLSv1 protocol is more secure, so we recommend that
+     * you specify SSLv3 only if your users are using browsers or devices that
+     * don't support TLSv1. If you're using a custom certificate (if you specify
+     * a value for IAMCertificateId) and if you're using dedicated IP (if you
+     * specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * 
      * @param minimumProtocolVersion
+     *        Specify the minimum version of the SSL protocol that you want
+     *        CloudFront to use, SSLv3 or TLSv1, for HTTPS connections.
+     *        CloudFront will serve your objects only to browsers or devices
+     *        that support at least the SSL version that you specify. The TLSv1
+     *        protocol is more secure, so we recommend that you specify SSLv3
+     *        only if your users are using browsers or devices that don't
+     *        support TLSv1. If you're using a custom certificate (if you
+     *        specify a value for IAMCertificateId) and if you're using
+     *        dedicated IP (if you specify vip for SSLSupportMethod), you can
+     *        choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're
+     *        using a custom certificate (if you specify a value for
+     *        IAMCertificateId) and if you're using SNI (if you specify sni-only
+     *        for SSLSupportMethod), you must specify TLSv1 for
+     *        MinimumProtocolVersion.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumProtocolVersion
@@ -197,7 +606,34 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Specify the minimum version of the SSL protocol that you want CloudFront
+     * to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your
+     * objects only to browsers or devices that support at least the SSL version
+     * that you specify. The TLSv1 protocol is more secure, so we recommend that
+     * you specify SSLv3 only if your users are using browsers or devices that
+     * don't support TLSv1. If you're using a custom certificate (if you specify
+     * a value for IAMCertificateId) and if you're using dedicated IP (if you
+     * specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * 
      * @param minimumProtocolVersion
+     *        Specify the minimum version of the SSL protocol that you want
+     *        CloudFront to use, SSLv3 or TLSv1, for HTTPS connections.
+     *        CloudFront will serve your objects only to browsers or devices
+     *        that support at least the SSL version that you specify. The TLSv1
+     *        protocol is more secure, so we recommend that you specify SSLv3
+     *        only if your users are using browsers or devices that don't
+     *        support TLSv1. If you're using a custom certificate (if you
+     *        specify a value for IAMCertificateId) and if you're using
+     *        dedicated IP (if you specify vip for SSLSupportMethod), you can
+     *        choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're
+     *        using a custom certificate (if you specify a value for
+     *        IAMCertificateId) and if you're using SNI (if you specify sni-only
+     *        for SSLSupportMethod), you must specify TLSv1 for
+     *        MinimumProtocolVersion.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumProtocolVersion
@@ -209,21 +645,68 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Note: this field is deprecated. Please use "iam" as CertificateSource and
+     * specify the IAM certificate Id as the Certificate. If you want viewers to
+     * use HTTPS to request your objects and you're using an alternate domain
+     * name in your object URLs (for example, https://example.com/logo.jpg),
+     * specify the IAM certificate identifier of the custom viewer certificate
+     * for this distribution. Specify either this value or
+     * CloudFrontDefaultCertificate.
+     * 
      * @param iAMCertificateId
+     *        Note: this field is deprecated. Please use "iam" as
+     *        CertificateSource and specify the IAM certificate Id as the
+     *        Certificate. If you want viewers to use HTTPS to request your
+     *        objects and you're using an alternate domain name in your object
+     *        URLs (for example, https://example.com/logo.jpg), specify the IAM
+     *        certificate identifier of the custom viewer certificate for this
+     *        distribution. Specify either this value or
+     *        CloudFrontDefaultCertificate.
      */
     public void setIAMCertificateId(String iAMCertificateId) {
         this.iAMCertificateId = iAMCertificateId;
     }
 
     /**
-     * @return
+     * Note: this field is deprecated. Please use "iam" as CertificateSource and
+     * specify the IAM certificate Id as the Certificate. If you want viewers to
+     * use HTTPS to request your objects and you're using an alternate domain
+     * name in your object URLs (for example, https://example.com/logo.jpg),
+     * specify the IAM certificate identifier of the custom viewer certificate
+     * for this distribution. Specify either this value or
+     * CloudFrontDefaultCertificate.
+     * 
+     * @return Note: this field is deprecated. Please use "iam" as
+     *         CertificateSource and specify the IAM certificate Id as the
+     *         Certificate. If you want viewers to use HTTPS to request your
+     *         objects and you're using an alternate domain name in your object
+     *         URLs (for example, https://example.com/logo.jpg), specify the IAM
+     *         certificate identifier of the custom viewer certificate for this
+     *         distribution. Specify either this value or
+     *         CloudFrontDefaultCertificate.
      */
     public String getIAMCertificateId() {
         return this.iAMCertificateId;
     }
 
     /**
+     * Note: this field is deprecated. Please use "iam" as CertificateSource and
+     * specify the IAM certificate Id as the Certificate. If you want viewers to
+     * use HTTPS to request your objects and you're using an alternate domain
+     * name in your object URLs (for example, https://example.com/logo.jpg),
+     * specify the IAM certificate identifier of the custom viewer certificate
+     * for this distribution. Specify either this value or
+     * CloudFrontDefaultCertificate.
+     * 
      * @param iAMCertificateId
+     *        Note: this field is deprecated. Please use "iam" as
+     *        CertificateSource and specify the IAM certificate Id as the
+     *        Certificate. If you want viewers to use HTTPS to request your
+     *        objects and you're using an alternate domain name in your object
+     *        URLs (for example, https://example.com/logo.jpg), specify the IAM
+     *        certificate identifier of the custom viewer certificate for this
+     *        distribution. Specify either this value or
+     *        CloudFrontDefaultCertificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -233,7 +716,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want viewers
+     * to use HTTPS to request your objects and you're using the CloudFront
+     * domain name of your distribution in your object URLs (for example,
+     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this
+     * value if you are setting an IAMCertificateId.
+     * 
      * @param cloudFrontDefaultCertificate
+     *        Note: this field is deprecated. Please use "cloudfront" as
+     *        CertificateSource and omit specifying a Certificate. If you want
+     *        viewers to use HTTPS to request your objects and you're using the
+     *        CloudFront domain name of your distribution in your object URLs
+     *        (for example, https://d111111abcdef8.cloudfront.net/logo.jpg), set
+     *        to true. Omit this value if you are setting an IAMCertificateId.
      */
     public void setCloudFrontDefaultCertificate(
             Boolean cloudFrontDefaultCertificate) {
@@ -241,14 +737,40 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want viewers
+     * to use HTTPS to request your objects and you're using the CloudFront
+     * domain name of your distribution in your object URLs (for example,
+     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this
+     * value if you are setting an IAMCertificateId.
+     * 
+     * @return Note: this field is deprecated. Please use "cloudfront" as
+     *         CertificateSource and omit specifying a Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using the
+     *         CloudFront domain name of your distribution in your object URLs
+     *         (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to true. Omit this value if you are setting an
+     *         IAMCertificateId.
      */
     public Boolean getCloudFrontDefaultCertificate() {
         return this.cloudFrontDefaultCertificate;
     }
 
     /**
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want viewers
+     * to use HTTPS to request your objects and you're using the CloudFront
+     * domain name of your distribution in your object URLs (for example,
+     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this
+     * value if you are setting an IAMCertificateId.
+     * 
      * @param cloudFrontDefaultCertificate
+     *        Note: this field is deprecated. Please use "cloudfront" as
+     *        CertificateSource and omit specifying a Certificate. If you want
+     *        viewers to use HTTPS to request your objects and you're using the
+     *        CloudFront domain name of your distribution in your object URLs
+     *        (for example, https://d111111abcdef8.cloudfront.net/logo.jpg), set
+     *        to true. Omit this value if you are setting an IAMCertificateId.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -259,7 +781,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Note: this field is deprecated. Please use "cloudfront" as
+     * CertificateSource and omit specifying a Certificate. If you want viewers
+     * to use HTTPS to request your objects and you're using the CloudFront
+     * domain name of your distribution in your object URLs (for example,
+     * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this
+     * value if you are setting an IAMCertificateId.
+     * 
+     * @return Note: this field is deprecated. Please use "cloudfront" as
+     *         CertificateSource and omit specifying a Certificate. If you want
+     *         viewers to use HTTPS to request your objects and you're using the
+     *         CloudFront domain name of your distribution in your object URLs
+     *         (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+     *         set to true. Omit this value if you are setting an
+     *         IAMCertificateId.
      */
     public Boolean isCloudFrontDefaultCertificate() {
         return this.cloudFrontDefaultCertificate;

@@ -44,6 +44,12 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ContinueUpdateRollbackResult continueUpdateRollback(
+            ContinueUpdateRollbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStackResult createStack(CreateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

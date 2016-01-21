@@ -19,30 +19,39 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that contains the list of Custom Headers for each origin.
  */
 public class CustomHeaders implements Serializable, Cloneable {
 
+    /** The number of custom headers for this origin. */
     private Integer quantity;
-
+    /** A complex type that contains the custom headers for this Origin. */
     private com.amazonaws.internal.SdkInternalList<OriginCustomHeader> items;
 
     /**
+     * The number of custom headers for this origin.
+     * 
      * @param quantity
+     *        The number of custom headers for this origin.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of custom headers for this origin.
+     * 
+     * @return The number of custom headers for this origin.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of custom headers for this origin.
+     * 
      * @param quantity
+     *        The number of custom headers for this origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +61,9 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains the custom headers for this Origin.
+     * 
+     * @return A complex type that contains the custom headers for this Origin.
      */
     public java.util.List<OriginCustomHeader> getItems() {
         if (items == null) {
@@ -62,7 +73,10 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the custom headers for this Origin.
+     * 
      * @param items
+     *        A complex type that contains the custom headers for this Origin.
      */
     public void setItems(java.util.Collection<OriginCustomHeader> items) {
         if (items == null) {
@@ -75,6 +89,7 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the custom headers for this Origin.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -83,6 +98,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that contains the custom headers for this Origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -98,7 +114,10 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains the custom headers for this Origin.
+     * 
      * @param items
+     *        A complex type that contains the custom headers for this Origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

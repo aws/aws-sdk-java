@@ -55,7 +55,7 @@ public class GetDistributionConfigRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-01-13/distribution/{Id}/config";
+        String uriResourcePath = "/2016-01-28/distribution/{Id}/config";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",

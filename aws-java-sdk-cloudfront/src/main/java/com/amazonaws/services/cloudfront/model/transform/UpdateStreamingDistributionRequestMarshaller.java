@@ -61,7 +61,7 @@ public class UpdateStreamingDistributionRequestMarshaller
                             .getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-01-13/streaming-distribution/{Id}/config";
+        String uriResourcePath = "/2016-01-28/streaming-distribution/{Id}/config";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
@@ -74,7 +74,7 @@ public class UpdateStreamingDistributionRequestMarshaller
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-01-13/");
+                    "http://cloudfront.amazonaws.com/doc/2016-01-28/");
 
             StreamingDistributionConfig streamingDistributionConfig = updateStreamingDistributionRequest
                     .getStreamingDistributionConfig();

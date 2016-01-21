@@ -19,56 +19,87 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A summary of the information for an Amazon CloudFront distribution.
  */
 public class DistributionSummary implements Serializable, Cloneable {
 
+    /** The identifier for the distribution. For example: EDFDVBD632BHDS5. */
     private String id;
-
+    /**
+     * This response element indicates the current status of the distribution.
+     * When the status is Deployed, the distribution's information is fully
+     * propagated throughout the Amazon CloudFront system.
+     */
     private String status;
-
+    /** The date and time the distribution was last modified. */
     private java.util.Date lastModifiedTime;
-
+    /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     */
     private String domainName;
-
+    /**
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.
+     */
     private Aliases aliases;
-
+    /**
+     * A complex type that contains information about origins for this
+     * distribution.
+     */
     private Origins origins;
-
+    /**
+     * A complex type that describes the default cache behavior if you do not
+     * specify a CacheBehavior element or if files don't match any of the values
+     * of PathPattern in CacheBehavior elements.You must create exactly one
+     * default cache behavior.
+     */
     private DefaultCacheBehavior defaultCacheBehavior;
-
+    /** A complex type that contains zero or more CacheBehavior elements. */
     private CacheBehaviors cacheBehaviors;
-
+    /** A complex type that contains zero or more CustomErrorResponses elements. */
     private CustomErrorResponses customErrorResponses;
-
+    /** The comment originally specified when this distribution was created. */
     private String comment;
 
     private String priceClass;
-
+    /**
+     * Whether the distribution is enabled to accept end user requests for
+     * content.
+     */
     private Boolean enabled;
 
     private ViewerCertificate viewerCertificate;
 
     private Restrictions restrictions;
-
+    /** The Web ACL Id (if any) associated with the distribution. */
     private String webACLId;
 
     /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * 
      * @param id
+     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * 
+     * @return The identifier for the distribution. For example:
+     *         EDFDVBD632BHDS5.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * 
      * @param id
+     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -78,21 +109,44 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * This response element indicates the current status of the distribution.
+     * When the status is Deployed, the distribution's information is fully
+     * propagated throughout the Amazon CloudFront system.
+     * 
      * @param status
+     *        This response element indicates the current status of the
+     *        distribution. When the status is Deployed, the distribution's
+     *        information is fully propagated throughout the Amazon CloudFront
+     *        system.
      */
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * @return
+     * This response element indicates the current status of the distribution.
+     * When the status is Deployed, the distribution's information is fully
+     * propagated throughout the Amazon CloudFront system.
+     * 
+     * @return This response element indicates the current status of the
+     *         distribution. When the status is Deployed, the distribution's
+     *         information is fully propagated throughout the Amazon CloudFront
+     *         system.
      */
     public String getStatus() {
         return this.status;
     }
 
     /**
+     * This response element indicates the current status of the distribution.
+     * When the status is Deployed, the distribution's information is fully
+     * propagated throughout the Amazon CloudFront system.
+     * 
      * @param status
+     *        This response element indicates the current status of the
+     *        distribution. When the status is Deployed, the distribution's
+     *        information is fully propagated throughout the Amazon CloudFront
+     *        system.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,21 +156,29 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * The date and time the distribution was last modified.
+     * 
      * @param lastModifiedTime
+     *        The date and time the distribution was last modified.
      */
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
     }
 
     /**
-     * @return
+     * The date and time the distribution was last modified.
+     * 
+     * @return The date and time the distribution was last modified.
      */
     public java.util.Date getLastModifiedTime() {
         return this.lastModifiedTime;
     }
 
     /**
+     * The date and time the distribution was last modified.
+     * 
      * @param lastModifiedTime
+     *        The date and time the distribution was last modified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -127,21 +189,35 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     * 
      * @param domainName
+     *        The domain name corresponding to the distribution. For example:
+     *        d604721fxaaqy9.cloudfront.net.
      */
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
 
     /**
-     * @return
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     * 
+     * @return The domain name corresponding to the distribution. For example:
+     *         d604721fxaaqy9.cloudfront.net.
      */
     public String getDomainName() {
         return this.domainName;
     }
 
     /**
+     * The domain name corresponding to the distribution. For example:
+     * d604721fxaaqy9.cloudfront.net.
+     * 
      * @param domainName
+     *        The domain name corresponding to the distribution. For example:
+     *        d604721fxaaqy9.cloudfront.net.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -151,21 +227,35 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.
+     * 
      * @param aliases
+     *        A complex type that contains information about CNAMEs (alternate
+     *        domain names), if any, for this distribution.
      */
     public void setAliases(Aliases aliases) {
         this.aliases = aliases;
     }
 
     /**
-     * @return
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.
+     * 
+     * @return A complex type that contains information about CNAMEs (alternate
+     *         domain names), if any, for this distribution.
      */
     public Aliases getAliases() {
         return this.aliases;
     }
 
     /**
+     * A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.
+     * 
      * @param aliases
+     *        A complex type that contains information about CNAMEs (alternate
+     *        domain names), if any, for this distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -175,21 +265,35 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains information about origins for this
+     * distribution.
+     * 
      * @param origins
+     *        A complex type that contains information about origins for this
+     *        distribution.
      */
     public void setOrigins(Origins origins) {
         this.origins = origins;
     }
 
     /**
-     * @return
+     * A complex type that contains information about origins for this
+     * distribution.
+     * 
+     * @return A complex type that contains information about origins for this
+     *         distribution.
      */
     public Origins getOrigins() {
         return this.origins;
     }
 
     /**
+     * A complex type that contains information about origins for this
+     * distribution.
+     * 
      * @param origins
+     *        A complex type that contains information about origins for this
+     *        distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -199,7 +303,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that describes the default cache behavior if you do not
+     * specify a CacheBehavior element or if files don't match any of the values
+     * of PathPattern in CacheBehavior elements.You must create exactly one
+     * default cache behavior.
+     * 
      * @param defaultCacheBehavior
+     *        A complex type that describes the default cache behavior if you do
+     *        not specify a CacheBehavior element or if files don't match any of
+     *        the values of PathPattern in CacheBehavior elements.You must
+     *        create exactly one default cache behavior.
      */
     public void setDefaultCacheBehavior(
             DefaultCacheBehavior defaultCacheBehavior) {
@@ -207,14 +320,31 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that describes the default cache behavior if you do not
+     * specify a CacheBehavior element or if files don't match any of the values
+     * of PathPattern in CacheBehavior elements.You must create exactly one
+     * default cache behavior.
+     * 
+     * @return A complex type that describes the default cache behavior if you
+     *         do not specify a CacheBehavior element or if files don't match
+     *         any of the values of PathPattern in CacheBehavior elements.You
+     *         must create exactly one default cache behavior.
      */
     public DefaultCacheBehavior getDefaultCacheBehavior() {
         return this.defaultCacheBehavior;
     }
 
     /**
+     * A complex type that describes the default cache behavior if you do not
+     * specify a CacheBehavior element or if files don't match any of the values
+     * of PathPattern in CacheBehavior elements.You must create exactly one
+     * default cache behavior.
+     * 
      * @param defaultCacheBehavior
+     *        A complex type that describes the default cache behavior if you do
+     *        not specify a CacheBehavior element or if files don't match any of
+     *        the values of PathPattern in CacheBehavior elements.You must
+     *        create exactly one default cache behavior.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -225,21 +355,29 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains zero or more CacheBehavior elements.
+     * 
      * @param cacheBehaviors
+     *        A complex type that contains zero or more CacheBehavior elements.
      */
     public void setCacheBehaviors(CacheBehaviors cacheBehaviors) {
         this.cacheBehaviors = cacheBehaviors;
     }
 
     /**
-     * @return
+     * A complex type that contains zero or more CacheBehavior elements.
+     * 
+     * @return A complex type that contains zero or more CacheBehavior elements.
      */
     public CacheBehaviors getCacheBehaviors() {
         return this.cacheBehaviors;
     }
 
     /**
+     * A complex type that contains zero or more CacheBehavior elements.
+     * 
      * @param cacheBehaviors
+     *        A complex type that contains zero or more CacheBehavior elements.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -249,7 +387,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains zero or more CustomErrorResponses elements.
+     * 
      * @param customErrorResponses
+     *        A complex type that contains zero or more CustomErrorResponses
+     *        elements.
      */
     public void setCustomErrorResponses(
             CustomErrorResponses customErrorResponses) {
@@ -257,14 +399,21 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains zero or more CustomErrorResponses elements.
+     * 
+     * @return A complex type that contains zero or more CustomErrorResponses
+     *         elements.
      */
     public CustomErrorResponses getCustomErrorResponses() {
         return this.customErrorResponses;
     }
 
     /**
+     * A complex type that contains zero or more CustomErrorResponses elements.
+     * 
      * @param customErrorResponses
+     *        A complex type that contains zero or more CustomErrorResponses
+     *        elements.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -275,21 +424,32 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * The comment originally specified when this distribution was created.
+     * 
      * @param comment
+     *        The comment originally specified when this distribution was
+     *        created.
      */
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
-     * @return
+     * The comment originally specified when this distribution was created.
+     * 
+     * @return The comment originally specified when this distribution was
+     *         created.
      */
     public String getComment() {
         return this.comment;
     }
 
     /**
+     * The comment originally specified when this distribution was created.
+     * 
      * @param comment
+     *        The comment originally specified when this distribution was
+     *        created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -347,21 +507,35 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * Whether the distribution is enabled to accept end user requests for
+     * content.
+     * 
      * @param enabled
+     *        Whether the distribution is enabled to accept end user requests
+     *        for content.
      */
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
     /**
-     * @return
+     * Whether the distribution is enabled to accept end user requests for
+     * content.
+     * 
+     * @return Whether the distribution is enabled to accept end user requests
+     *         for content.
      */
     public Boolean getEnabled() {
         return this.enabled;
     }
 
     /**
+     * Whether the distribution is enabled to accept end user requests for
+     * content.
+     * 
      * @param enabled
+     *        Whether the distribution is enabled to accept end user requests
+     *        for content.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -371,7 +545,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Whether the distribution is enabled to accept end user requests for
+     * content.
+     * 
+     * @return Whether the distribution is enabled to accept end user requests
+     *         for content.
      */
     public Boolean isEnabled() {
         return this.enabled;
@@ -427,21 +605,29 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * The Web ACL Id (if any) associated with the distribution.
+     * 
      * @param webACLId
+     *        The Web ACL Id (if any) associated with the distribution.
      */
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
 
     /**
-     * @return
+     * The Web ACL Id (if any) associated with the distribution.
+     * 
+     * @return The Web ACL Id (if any) associated with the distribution.
      */
     public String getWebACLId() {
         return this.webACLId;
     }
 
     /**
+     * The Web ACL Id (if any) associated with the distribution.
+     * 
      * @param webACLId
+     *        The Web ACL Id (if any) associated with the distribution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

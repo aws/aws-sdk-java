@@ -19,33 +19,52 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * Summary of the information about a CloudFront origin access identity.
  */
 public class CloudFrontOriginAccessIdentitySummary implements Serializable,
         Cloneable {
 
+    /** The ID for the origin access identity. For example: E74FTE3AJFJ256A. */
     private String id;
-
+    /**
+     * The Amazon S3 canonical user ID for the origin access identity, which you
+     * use when giving the origin access identity read permission to an object
+     * in Amazon S3.
+     */
     private String s3CanonicalUserId;
-
+    /**
+     * The comment for this origin access identity, as originally specified when
+     * created.
+     */
     private String comment;
 
     /**
+     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * 
      * @param id
+     *        The ID for the origin access identity. For example:
+     *        E74FTE3AJFJ256A.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * 
+     * @return The ID for the origin access identity. For example:
+     *         E74FTE3AJFJ256A.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * 
      * @param id
+     *        The ID for the origin access identity. For example:
+     *        E74FTE3AJFJ256A.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -55,21 +74,41 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
+     * The Amazon S3 canonical user ID for the origin access identity, which you
+     * use when giving the origin access identity read permission to an object
+     * in Amazon S3.
+     * 
      * @param s3CanonicalUserId
+     *        The Amazon S3 canonical user ID for the origin access identity,
+     *        which you use when giving the origin access identity read
+     *        permission to an object in Amazon S3.
      */
     public void setS3CanonicalUserId(String s3CanonicalUserId) {
         this.s3CanonicalUserId = s3CanonicalUserId;
     }
 
     /**
-     * @return
+     * The Amazon S3 canonical user ID for the origin access identity, which you
+     * use when giving the origin access identity read permission to an object
+     * in Amazon S3.
+     * 
+     * @return The Amazon S3 canonical user ID for the origin access identity,
+     *         which you use when giving the origin access identity read
+     *         permission to an object in Amazon S3.
      */
     public String getS3CanonicalUserId() {
         return this.s3CanonicalUserId;
     }
 
     /**
+     * The Amazon S3 canonical user ID for the origin access identity, which you
+     * use when giving the origin access identity read permission to an object
+     * in Amazon S3.
+     * 
      * @param s3CanonicalUserId
+     *        The Amazon S3 canonical user ID for the origin access identity,
+     *        which you use when giving the origin access identity read
+     *        permission to an object in Amazon S3.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -80,21 +119,35 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
+     * The comment for this origin access identity, as originally specified when
+     * created.
+     * 
      * @param comment
+     *        The comment for this origin access identity, as originally
+     *        specified when created.
      */
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
-     * @return
+     * The comment for this origin access identity, as originally specified when
+     * created.
+     * 
+     * @return The comment for this origin access identity, as originally
+     *         specified when created.
      */
     public String getComment() {
         return this.comment;
     }
 
     /**
+     * The comment for this origin access identity, as originally specified when
+     * created.
+     * 
      * @param comment
+     *        The comment for this origin access identity, as originally
+     *        specified when created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

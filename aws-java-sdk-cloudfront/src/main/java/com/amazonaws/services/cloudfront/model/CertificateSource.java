@@ -22,7 +22,8 @@ package com.amazonaws.services.cloudfront.model;
 public enum CertificateSource {
 
     Cloudfront("cloudfront"),
-    Iam("iam");
+    Iam("iam"),
+    Acm("acm");
 
     private String value;
 
@@ -49,6 +50,8 @@ public enum CertificateSource {
             return Cloudfront;
         } else if ("iam".equals(value)) {
             return Iam;
+        } else if ("acm".equals(value)) {
+            return Acm;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

@@ -55,7 +55,7 @@ public class CreateInvalidationRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-01-13/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2016-01-28/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = uriResourcePath.replace(
                 "{DistributionId}",
@@ -67,7 +67,7 @@ public class CreateInvalidationRequestMarshaller
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-01-13/");
+                    "http://cloudfront.amazonaws.com/doc/2016-01-28/");
 
             InvalidationBatch invalidationBatch = createInvalidationRequest
                     .getInvalidationBatch();

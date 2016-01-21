@@ -44,11 +44,8 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest
     private String stackName;
     /**
      * <p>
-     * String that identifies the start of the next list of stack resource
-     * summaries, if there is one.
-     * </p>
-     * <p>
-     * Default: There is no default value.
+     * A string that identifies the next page of stack resources that you want
+     * to retrieve.
      * </p>
      */
     private String nextToken;
@@ -144,18 +141,13 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String that identifies the start of the next list of stack resource
-     * summaries, if there is one.
-     * </p>
-     * <p>
-     * Default: There is no default value.
+     * A string that identifies the next page of stack resources that you want
+     * to retrieve.
      * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stack
-     *        resource summaries, if there is one.</p>
-     *        <p>
-     *        Default: There is no default value.
+     *        A string that identifies the next page of stack resources that you
+     *        want to retrieve.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -163,17 +155,12 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String that identifies the start of the next list of stack resource
-     * summaries, if there is one.
-     * </p>
-     * <p>
-     * Default: There is no default value.
+     * A string that identifies the next page of stack resources that you want
+     * to retrieve.
      * </p>
      * 
-     * @return String that identifies the start of the next list of stack
-     *         resource summaries, if there is one.</p>
-     *         <p>
-     *         Default: There is no default value.
+     * @return A string that identifies the next page of stack resources that
+     *         you want to retrieve.
      */
     public String getNextToken() {
         return this.nextToken;
@@ -181,18 +168,13 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String that identifies the start of the next list of stack resource
-     * summaries, if there is one.
-     * </p>
-     * <p>
-     * Default: There is no default value.
+     * A string that identifies the next page of stack resources that you want
+     * to retrieve.
      * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stack
-     *        resource summaries, if there is one.</p>
-     *        <p>
-     *        Default: There is no default value.
+     *        A string that identifies the next page of stack resources that you
+     *        want to retrieve.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

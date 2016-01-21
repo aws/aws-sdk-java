@@ -20,13 +20,14 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to create an invalidation.
  */
 public class CreateInvalidationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /** The distribution's id. */
     private String distributionId;
-
+    /** The batch information for the invalidation. */
     private InvalidationBatch invalidationBatch;
 
     /**
@@ -43,7 +44,9 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param distributionId
+     *        The distribution's id.
      * @param invalidationBatch
+     *        The batch information for the invalidation.
      */
     public CreateInvalidationRequest(String distributionId,
             InvalidationBatch invalidationBatch) {
@@ -52,21 +55,29 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The distribution's id.
+     * 
      * @param distributionId
+     *        The distribution's id.
      */
     public void setDistributionId(String distributionId) {
         this.distributionId = distributionId;
     }
 
     /**
-     * @return
+     * The distribution's id.
+     * 
+     * @return The distribution's id.
      */
     public String getDistributionId() {
         return this.distributionId;
     }
 
     /**
+     * The distribution's id.
+     * 
      * @param distributionId
+     *        The distribution's id.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -76,21 +87,29 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The batch information for the invalidation.
+     * 
      * @param invalidationBatch
+     *        The batch information for the invalidation.
      */
     public void setInvalidationBatch(InvalidationBatch invalidationBatch) {
         this.invalidationBatch = invalidationBatch;
     }
 
     /**
-     * @return
+     * The batch information for the invalidation.
+     * 
+     * @return The batch information for the invalidation.
      */
     public InvalidationBatch getInvalidationBatch() {
         return this.invalidationBatch;
     }
 
     /**
+     * The batch information for the invalidation.
+     * 
      * @param invalidationBatch
+     *        The batch information for the invalidation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

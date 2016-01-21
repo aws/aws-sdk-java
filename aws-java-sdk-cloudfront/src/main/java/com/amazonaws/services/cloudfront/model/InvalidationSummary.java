@@ -19,32 +19,41 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * Summary of an invalidation request.
  */
 public class InvalidationSummary implements Serializable, Cloneable {
 
+    /** The unique ID for an invalidation request. */
     private String id;
 
     private java.util.Date createTime;
-
+    /** The status of an invalidation request. */
     private String status;
 
     /**
+     * The unique ID for an invalidation request.
+     * 
      * @param id
+     *        The unique ID for an invalidation request.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return
+     * The unique ID for an invalidation request.
+     * 
+     * @return The unique ID for an invalidation request.
      */
     public String getId() {
         return this.id;
     }
 
     /**
+     * The unique ID for an invalidation request.
+     * 
      * @param id
+     *        The unique ID for an invalidation request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -78,21 +87,29 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * The status of an invalidation request.
+     * 
      * @param status
+     *        The status of an invalidation request.
      */
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * @return
+     * The status of an invalidation request.
+     * 
+     * @return The status of an invalidation request.
      */
     public String getStatus() {
         return this.status;
     }
 
     /**
+     * The status of an invalidation request.
+     * 
      * @param status
+     *        The status of an invalidation request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

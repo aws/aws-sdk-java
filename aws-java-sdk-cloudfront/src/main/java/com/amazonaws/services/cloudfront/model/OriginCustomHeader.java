@@ -19,30 +19,39 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that contains information related to a Header
  */
 public class OriginCustomHeader implements Serializable, Cloneable {
 
+    /** The header's name. */
     private String headerName;
-
+    /** The header's value. */
     private String headerValue;
 
     /**
+     * The header's name.
+     * 
      * @param headerName
+     *        The header's name.
      */
     public void setHeaderName(String headerName) {
         this.headerName = headerName;
     }
 
     /**
-     * @return
+     * The header's name.
+     * 
+     * @return The header's name.
      */
     public String getHeaderName() {
         return this.headerName;
     }
 
     /**
+     * The header's name.
+     * 
      * @param headerName
+     *        The header's name.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,21 +61,29 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
+     * The header's value.
+     * 
      * @param headerValue
+     *        The header's value.
      */
     public void setHeaderValue(String headerValue) {
         this.headerValue = headerValue;
     }
 
     /**
-     * @return
+     * The header's value.
+     * 
+     * @return The header's value.
      */
     public String getHeaderValue() {
         return this.headerValue;
     }
 
     /**
+     * The header's value.
+     * 
      * @param headerValue
+     *        The header's value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

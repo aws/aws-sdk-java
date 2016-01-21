@@ -78,6 +78,7 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
             requestForPresigning.setHttpMethod(HttpMethodName.GET);
 
             AWS4Signer signer = new AWS4Signer();
+            signer.setServiceName(serviceName);
 
             signer.presignRequest(requestForPresigning, awsCredentials, null);
 

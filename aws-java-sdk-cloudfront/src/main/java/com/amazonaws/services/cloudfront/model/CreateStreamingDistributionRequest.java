@@ -20,11 +20,12 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * The request to create a new streaming distribution.
  */
 public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /** The streaming distribution's configuration information. */
     private StreamingDistributionConfig streamingDistributionConfig;
 
     /**
@@ -41,6 +42,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
      * any additional object members.
      * 
      * @param streamingDistributionConfig
+     *        The streaming distribution's configuration information.
      */
     public CreateStreamingDistributionRequest(
             StreamingDistributionConfig streamingDistributionConfig) {
@@ -48,7 +50,10 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * The streaming distribution's configuration information.
+     * 
      * @param streamingDistributionConfig
+     *        The streaming distribution's configuration information.
      */
     public void setStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
@@ -56,14 +61,19 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * The streaming distribution's configuration information.
+     * 
+     * @return The streaming distribution's configuration information.
      */
     public StreamingDistributionConfig getStreamingDistributionConfig() {
         return this.streamingDistributionConfig;
     }
 
     /**
+     * The streaming distribution's configuration information.
+     * 
      * @param streamingDistributionConfig
+     *        The streaming distribution's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

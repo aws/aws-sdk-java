@@ -704,6 +704,44 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Disables the specified rule
+     * </p>
+     * 
+     * @param disableTopicRuleRequest
+     *        The input for the DisableTopicRuleRequest operation.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.DisableTopicRule
+     */
+    void disableTopicRule(DisableTopicRuleRequest disableTopicRuleRequest);
+
+    /**
+     * <p>
+     * Enables the specified rule.
+     * </p>
+     * 
+     * @param enableTopicRuleRequest
+     *        The input for the EnableTopicRuleRequest operation.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.EnableTopicRule
+     */
+    void enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest);
+
+    /**
+     * <p>
      * Gets the logging options.
      * </p>
      * 

@@ -19,30 +19,39 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class GetDistributionConfigResult implements Serializable, Cloneable {
 
+    /** The distribution's configuration information. */
     private DistributionConfig distributionConfig;
-
+    /** The current version of the configuration. For example: E2QWRUHAPOMQZL. */
     private String eTag;
 
     /**
+     * The distribution's configuration information.
+     * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      */
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
 
     /**
-     * @return
+     * The distribution's configuration information.
+     * 
+     * @return The distribution's configuration information.
      */
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
 
     /**
+     * The distribution's configuration information.
+     * 
      * @param distributionConfig
+     *        The distribution's configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -53,21 +62,32 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
     }
 
     /**
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the configuration. For example:
+     *        E2QWRUHAPOMQZL.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
+     * @return The current version of the configuration. For example:
+     *         E2QWRUHAPOMQZL.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * 
      * @param eTag
+     *        The current version of the configuration. For example:
+     *        E2QWRUHAPOMQZL.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

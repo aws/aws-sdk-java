@@ -19,30 +19,44 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that specifies the whitelisted cookies, if any, that you want
+ * CloudFront to forward to your origin that is associated with this cache
+ * behavior.
  */
 public class CookieNames implements Serializable, Cloneable {
 
+    /** The number of whitelisted cookies for this cache behavior. */
     private Integer quantity;
-
+    /**
+     * Optional: A complex type that contains whitelisted cookies for this cache
+     * behavior. If Quantity is 0, you can omit Items.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * The number of whitelisted cookies for this cache behavior.
+     * 
      * @param quantity
+     *        The number of whitelisted cookies for this cache behavior.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of whitelisted cookies for this cache behavior.
+     * 
+     * @return The number of whitelisted cookies for this cache behavior.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of whitelisted cookies for this cache behavior.
+     * 
      * @param quantity
+     *        The number of whitelisted cookies for this cache behavior.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +66,11 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * Optional: A complex type that contains whitelisted cookies for this cache
+     * behavior. If Quantity is 0, you can omit Items.
+     * 
+     * @return Optional: A complex type that contains whitelisted cookies for
+     *         this cache behavior. If Quantity is 0, you can omit Items.
      */
     public java.util.List<String> getItems() {
         if (items == null) {
@@ -62,7 +80,12 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains whitelisted cookies for this cache
+     * behavior. If Quantity is 0, you can omit Items.
+     * 
      * @param items
+     *        Optional: A complex type that contains whitelisted cookies for
+     *        this cache behavior. If Quantity is 0, you can omit Items.
      */
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
@@ -74,6 +97,8 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains whitelisted cookies for this cache
+     * behavior. If Quantity is 0, you can omit Items.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -82,6 +107,8 @@ public class CookieNames implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        Optional: A complex type that contains whitelisted cookies for
+     *        this cache behavior. If Quantity is 0, you can omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -97,7 +124,12 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
+     * Optional: A complex type that contains whitelisted cookies for this cache
+     * behavior. If Quantity is 0, you can omit Items.
+     * 
      * @param items
+     *        Optional: A complex type that contains whitelisted cookies for
+     *        this cache behavior. If Quantity is 0, you can omit Items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

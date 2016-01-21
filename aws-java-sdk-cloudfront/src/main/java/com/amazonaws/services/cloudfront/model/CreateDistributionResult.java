@@ -19,32 +19,45 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class CreateDistributionResult implements Serializable, Cloneable {
 
+    /** The distribution's information. */
     private Distribution distribution;
-
+    /**
+     * The fully qualified URI of the new distribution resource just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     */
     private String location;
-
+    /** The current version of the distribution created. */
     private String eTag;
 
     /**
+     * The distribution's information.
+     * 
      * @param distribution
+     *        The distribution's information.
      */
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
     }
 
     /**
-     * @return
+     * The distribution's information.
+     * 
+     * @return The distribution's information.
      */
     public Distribution getDistribution() {
         return this.distribution;
     }
 
     /**
+     * The distribution's information.
+     * 
      * @param distribution
+     *        The distribution's information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -54,21 +67,44 @@ public class CreateDistributionResult implements Serializable, Cloneable {
     }
 
     /**
+     * The fully qualified URI of the new distribution resource just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * 
      * @param location
+     *        The fully qualified URI of the new distribution resource just
+     *        created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/distribution
+     *        /EDFDVBD632BHDS5.
      */
     public void setLocation(String location) {
         this.location = location;
     }
 
     /**
-     * @return
+     * The fully qualified URI of the new distribution resource just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * 
+     * @return The fully qualified URI of the new distribution resource just
+     *         created. For example:
+     *         https://cloudfront.amazonaws.com/2010-11-01/
+     *         distribution/EDFDVBD632BHDS5.
      */
     public String getLocation() {
         return this.location;
     }
 
     /**
+     * The fully qualified URI of the new distribution resource just created.
+     * For example:
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * 
      * @param location
+     *        The fully qualified URI of the new distribution resource just
+     *        created. For example:
+     *        https://cloudfront.amazonaws.com/2010-11-01/distribution
+     *        /EDFDVBD632BHDS5.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -78,21 +114,29 @@ public class CreateDistributionResult implements Serializable, Cloneable {
     }
 
     /**
+     * The current version of the distribution created.
+     * 
      * @param eTag
+     *        The current version of the distribution created.
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * @return
+     * The current version of the distribution created.
+     * 
+     * @return The current version of the distribution created.
      */
     public String getETag() {
         return this.eTag;
     }
 
     /**
+     * The current version of the distribution created.
+     * 
      * @param eTag
+     *        The current version of the distribution created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

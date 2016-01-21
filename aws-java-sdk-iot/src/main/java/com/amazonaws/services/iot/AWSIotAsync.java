@@ -917,6 +917,66 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Disables the specified rule
+     * </p>
+     * 
+     * @param disableTopicRuleRequest
+     *        The input for the DisableTopicRuleRequest operation.
+     * @sample AWSIotAsync.DisableTopicRule
+     */
+    java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest disableTopicRuleRequest);
+
+    /**
+     * <p>
+     * Disables the specified rule
+     * </p>
+     * 
+     * @param disableTopicRuleRequest
+     *        The input for the DisableTopicRuleRequest operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.DisableTopicRule
+     */
+    java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest disableTopicRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Enables the specified rule.
+     * </p>
+     * 
+     * @param enableTopicRuleRequest
+     *        The input for the EnableTopicRuleRequest operation.
+     * @sample AWSIotAsync.EnableTopicRule
+     */
+    java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest enableTopicRuleRequest);
+
+    /**
+     * <p>
+     * Enables the specified rule.
+     * </p>
+     * 
+     * @param enableTopicRuleRequest
+     *        The input for the EnableTopicRuleRequest operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.EnableTopicRule
+     */
+    java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest enableTopicRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler);
+
+    /**
+     * <p>
      * Gets the logging options.
      * </p>
      * 

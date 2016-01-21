@@ -26,7 +26,10 @@ import com.amazonaws.services.cloudfront.model.*;
 public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
+     * Create a new origin access identity.
+     * 
      * @param createCloudFrontOriginAccessIdentityRequest
+     *        The request to create a new origin access identity.
      * @return A Java Future containing the result of the
      *         CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
@@ -36,7 +39,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Create a new origin access identity.
+     * 
      * @param createCloudFrontOriginAccessIdentityRequest
+     *        The request to create a new origin access identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -52,7 +58,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
+     * Create a new distribution.
+     * 
      * @param createDistributionRequest
+     *        The request to create a new distribution.
      * @return A Java Future containing the result of the CreateDistribution
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistribution
@@ -61,7 +70,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateDistributionRequest createDistributionRequest);
 
     /**
+     * Create a new distribution.
+     * 
      * @param createDistributionRequest
+     *        The request to create a new distribution.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -76,7 +88,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler);
 
     /**
+     * Create a new invalidation.
+     * 
      * @param createInvalidationRequest
+     *        The request to create an invalidation.
      * @return A Java Future containing the result of the CreateInvalidation
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateInvalidation
@@ -85,7 +100,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateInvalidationRequest createInvalidationRequest);
 
     /**
+     * Create a new invalidation.
+     * 
      * @param createInvalidationRequest
+     *        The request to create an invalidation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -100,7 +118,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult> asyncHandler);
 
     /**
+     * Create a new streaming distribution.
+     * 
      * @param createStreamingDistributionRequest
+     *        The request to create a new streaming distribution.
      * @return A Java Future containing the result of the
      *         CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistribution
@@ -109,7 +130,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateStreamingDistributionRequest createStreamingDistributionRequest);
 
     /**
+     * Create a new streaming distribution.
+     * 
      * @param createStreamingDistributionRequest
+     *        The request to create a new streaming distribution.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -124,14 +148,20 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult> asyncHandler);
 
     /**
+     * Delete an origin access identity.
+     * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
+     *        The request to delete a origin access identity.
      * @sample AmazonCloudFrontAsync.DeleteCloudFrontOriginAccessIdentity
      */
     java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Delete an origin access identity.
+     * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
+     *        The request to delete a origin access identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -144,14 +174,20 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, Void> asyncHandler);
 
     /**
+     * Delete a distribution.
+     * 
      * @param deleteDistributionRequest
+     *        The request to delete a distribution.
      * @sample AmazonCloudFrontAsync.DeleteDistribution
      */
     java.util.concurrent.Future<Void> deleteDistributionAsync(
             DeleteDistributionRequest deleteDistributionRequest);
 
     /**
+     * Delete a distribution.
+     * 
      * @param deleteDistributionRequest
+     *        The request to delete a distribution.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -164,14 +200,20 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, Void> asyncHandler);
 
     /**
+     * Delete a streaming distribution.
+     * 
      * @param deleteStreamingDistributionRequest
+     *        The request to delete a streaming distribution.
      * @sample AmazonCloudFrontAsync.DeleteStreamingDistribution
      */
     java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**
+     * Delete a streaming distribution.
+     * 
      * @param deleteStreamingDistributionRequest
+     *        The request to delete a streaming distribution.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -184,7 +226,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, Void> asyncHandler);
 
     /**
+     * Get the information about an origin access identity.
+     * 
      * @param getCloudFrontOriginAccessIdentityRequest
+     *        The request to get an origin access identity's information.
      * @return A Java Future containing the result of the
      *         GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
@@ -194,7 +239,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Get the information about an origin access identity.
+     * 
      * @param getCloudFrontOriginAccessIdentityRequest
+     *        The request to get an origin access identity's information.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -210,7 +258,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
+     * Get the configuration information about an origin access identity.
+     * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
+     *        The request to get an origin access identity's configuration.
      * @return A Java Future containing the result of the
      *         GetCloudFrontOriginAccessIdentityConfig operation returned by the
      *         service.
@@ -220,7 +271,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
 
     /**
+     * Get the configuration information about an origin access identity.
+     * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
+     *        The request to get an origin access identity's configuration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -237,7 +291,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult> asyncHandler);
 
     /**
+     * Get the information about a distribution.
+     * 
      * @param getDistributionRequest
+     *        The request to get a distribution's information.
      * @return A Java Future containing the result of the GetDistribution
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistribution
@@ -246,7 +303,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetDistributionRequest getDistributionRequest);
 
     /**
+     * Get the information about a distribution.
+     * 
      * @param getDistributionRequest
+     *        The request to get a distribution's information.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -261,7 +321,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult> asyncHandler);
 
     /**
+     * Get the configuration information about a distribution.
+     * 
      * @param getDistributionConfigRequest
+     *        The request to get a distribution configuration.
      * @return A Java Future containing the result of the GetDistributionConfig
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistributionConfig
@@ -270,7 +333,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetDistributionConfigRequest getDistributionConfigRequest);
 
     /**
+     * Get the configuration information about a distribution.
+     * 
      * @param getDistributionConfigRequest
+     *        The request to get a distribution configuration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -285,7 +351,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult> asyncHandler);
 
     /**
+     * Get the information about an invalidation.
+     * 
      * @param getInvalidationRequest
+     *        The request to get an invalidation's information.
      * @return A Java Future containing the result of the GetInvalidation
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetInvalidation
@@ -294,7 +363,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetInvalidationRequest getInvalidationRequest);
 
     /**
+     * Get the information about an invalidation.
+     * 
      * @param getInvalidationRequest
+     *        The request to get an invalidation's information.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -309,7 +381,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult> asyncHandler);
 
     /**
+     * Get the information about a streaming distribution.
+     * 
      * @param getStreamingDistributionRequest
+     *        The request to get a streaming distribution's information.
      * @return A Java Future containing the result of the
      *         GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistribution
@@ -318,7 +393,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetStreamingDistributionRequest getStreamingDistributionRequest);
 
     /**
+     * Get the information about a streaming distribution.
+     * 
      * @param getStreamingDistributionRequest
+     *        The request to get a streaming distribution's information.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -333,7 +411,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult> asyncHandler);
 
     /**
+     * Get the configuration information about a streaming distribution.
+     * 
      * @param getStreamingDistributionConfigRequest
+     *        To request to get a streaming distribution configuration.
      * @return A Java Future containing the result of the
      *         GetStreamingDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistributionConfig
@@ -342,7 +423,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
     /**
+     * Get the configuration information about a streaming distribution.
+     * 
      * @param getStreamingDistributionConfigRequest
+     *        To request to get a streaming distribution configuration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -357,7 +441,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult> asyncHandler);
 
     /**
+     * List origin access identities.
+     * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
+     *        The request to list origin access identities.
      * @return A Java Future containing the result of the
      *         ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
@@ -367,7 +454,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest);
 
     /**
+     * List origin access identities.
+     * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
+     *        The request to list origin access identities.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -383,7 +473,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult> asyncHandler);
 
     /**
+     * List distributions.
+     * 
      * @param listDistributionsRequest
+     *        The request to list your distributions.
      * @return A Java Future containing the result of the ListDistributions
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributions
@@ -392,7 +485,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListDistributionsRequest listDistributionsRequest);
 
     /**
+     * List distributions.
+     * 
      * @param listDistributionsRequest
+     *        The request to list your distributions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -407,7 +503,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult> asyncHandler);
 
     /**
+     * List the distributions that are associated with a specified AWS WAF web
+     * ACL.
+     * 
      * @param listDistributionsByWebACLIdRequest
+     *        The request to list distributions that are associated with a
+     *        specified AWS WAF web ACL.
      * @return A Java Future containing the result of the
      *         ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributionsByWebACLId
@@ -416,7 +517,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
 
     /**
+     * List the distributions that are associated with a specified AWS WAF web
+     * ACL.
+     * 
      * @param listDistributionsByWebACLIdRequest
+     *        The request to list distributions that are associated with a
+     *        specified AWS WAF web ACL.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -431,7 +537,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListDistributionsByWebACLIdRequest, ListDistributionsByWebACLIdResult> asyncHandler);
 
     /**
+     * List invalidation batches.
+     * 
      * @param listInvalidationsRequest
+     *        The request to list invalidations.
      * @return A Java Future containing the result of the ListInvalidations
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListInvalidations
@@ -440,7 +549,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListInvalidationsRequest listInvalidationsRequest);
 
     /**
+     * List invalidation batches.
+     * 
      * @param listInvalidationsRequest
+     *        The request to list invalidations.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -455,7 +567,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler);
 
     /**
+     * List streaming distributions.
+     * 
      * @param listStreamingDistributionsRequest
+     *        The request to list your streaming distributions.
      * @return A Java Future containing the result of the
      *         ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListStreamingDistributions
@@ -464,7 +579,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListStreamingDistributionsRequest listStreamingDistributionsRequest);
 
     /**
+     * List streaming distributions.
+     * 
      * @param listStreamingDistributionsRequest
+     *        The request to list your streaming distributions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -479,7 +597,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult> asyncHandler);
 
     /**
+     * Update an origin access identity.
+     * 
      * @param updateCloudFrontOriginAccessIdentityRequest
+     *        The request to update an origin access identity.
      * @return A Java Future containing the result of the
      *         UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
@@ -489,7 +610,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * Update an origin access identity.
+     * 
      * @param updateCloudFrontOriginAccessIdentityRequest
+     *        The request to update an origin access identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -505,7 +629,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
+     * Update a distribution.
+     * 
      * @param updateDistributionRequest
+     *        The request to update a distribution.
      * @return A Java Future containing the result of the UpdateDistribution
      *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateDistribution
@@ -514,7 +641,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             UpdateDistributionRequest updateDistributionRequest);
 
     /**
+     * Update a distribution.
+     * 
      * @param updateDistributionRequest
+     *        The request to update a distribution.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -529,7 +659,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler);
 
     /**
+     * Update a streaming distribution.
+     * 
      * @param updateStreamingDistributionRequest
+     *        The request to update a streaming distribution.
      * @return A Java Future containing the result of the
      *         UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateStreamingDistribution
@@ -538,7 +671,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             UpdateStreamingDistributionRequest updateStreamingDistributionRequest);
 
     /**
+     * Update a streaming distribution.
+     * 
      * @param updateStreamingDistributionRequest
+     *        The request to update a streaming distribution.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

@@ -85,9 +85,12 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
                         totalConsumedCapacity.getLocalSecondaryIndexes()));
                 }
                 // Accumulate table capacity
-                final Capacity tableCapacity = consumedCapacity.getTable();
-                if (tableCapacity != null) {
+                final Capacity tableCapacity = totalConsumedCapacity.getTable();
+                if (tableCapacity == null) {
                     totalConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
+                } else {
+                    totalConsumedCapacity.setTable(add(consumedCapacity.getTable(),
+                            totalConsumedCapacity.getTable()));
                 }
             }
         }
@@ -116,6 +119,10 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
             }
         }
         return to;
+    }
+
+    private Capacity add(final Capacity from, final Capacity to) {
+        return new Capacity().withCapacityUnits(doubleOf(from) + doubleOf(to));
     }
 
     private Map<String, Capacity> clone(Map<String, Capacity> capacityMap) {

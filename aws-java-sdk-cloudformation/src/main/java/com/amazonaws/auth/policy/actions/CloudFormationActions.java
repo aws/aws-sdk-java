@@ -29,6 +29,8 @@ public enum CloudFormationActions implements Action {
 
     /** Action for the CancelUpdateStack operation. */
     CancelUpdateStack("cloudformation:CancelUpdateStack"),
+    /** Action for the ContinueUpdateRollback operation. */
+    ContinueUpdateRollback("cloudformation:ContinueUpdateRollback"),
     /** Action for the CreateStack operation. */
     CreateStack("cloudformation:CreateStack"),
     /** Action for the DeleteStack operation. */

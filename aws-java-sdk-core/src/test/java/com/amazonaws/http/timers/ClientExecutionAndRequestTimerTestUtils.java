@@ -232,4 +232,18 @@ public class ClientExecutionAndRequestTimerTestUtils {
         }
     }
 
+    public static void interruptCurrentThreadAfterDelay(final long delay) {
+        final Thread currentThread = Thread.currentThread();
+        new Thread() {
+            public void run() {
+                try {
+                    Thread.sleep(delay);
+                    currentThread.interrupt();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            };
+        }.start();
+    }
+
 }

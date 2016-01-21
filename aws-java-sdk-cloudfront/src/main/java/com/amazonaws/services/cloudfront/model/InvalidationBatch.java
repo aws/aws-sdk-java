@@ -19,12 +19,32 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * An invalidation batch.
  */
 public class InvalidationBatch implements Serializable, Cloneable {
 
+    /**
+     * The path of the object to invalidate. The path is relative to the
+     * distribution and must begin with a slash (/). You must enclose each
+     * invalidation object with the Path element tags. If the path includes
+     * non-ASCII characters or unsafe characters as defined in RFC 1783
+     * (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not
+     * URL encode any other characters in the path, or CloudFront will not
+     * invalidate the old version of the updated object.
+     */
     private Paths paths;
-
+    /**
+     * A unique name that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the Path object), a new
+     * distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create an invalidation batch, and the
+     * content of each Path element is identical to the original request, the
+     * response includes the same information returned to the original request.
+     * If the CallerReference is a value you already sent in a previous request
+     * to create a distribution but the content of any Path is different from the
+     * original request, CloudFront returns an InvalidationBatchAlreadyExists
+     * error.
+     */
     private String callerReference;
 
     /**
@@ -41,7 +61,26 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * members.
      * 
      * @param paths
+     *        The path of the object to invalidate. The path is relative to the
+     *        distribution and must begin with a slash (/). You must enclose
+     *        each invalidation object with the Path element tags. If the path
+     *        includes non-ASCII characters or unsafe characters as defined in
+     *        RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
+     *        characters. Do not URL encode any other characters in the path, or
+     *        CloudFront will not invalidate the old version of the updated
+     *        object.
      * @param callerReference
+     *        A unique name that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the Path object),
+     *        a new distribution is created. If the CallerReference is a value
+     *        you already sent in a previous request to create an invalidation
+     *        batch, and the content of each Path element is identical to the
+     *        original request, the response includes the same information
+     *        returned to the original request. If the CallerReference is a
+     *        value you already sent in a previous request to create a
+     *        distribution but the content of any Path is different from the
+     *        original request, CloudFront returns an
+     *        InvalidationBatchAlreadyExists error.
      */
     public InvalidationBatch(Paths paths, String callerReference) {
         setPaths(paths);
@@ -54,27 +93,85 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * members.
      * 
      * @param callerReference
+     *        A unique name that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the Path object),
+     *        a new distribution is created. If the CallerReference is a value
+     *        you already sent in a previous request to create an invalidation
+     *        batch, and the content of each Path element is identical to the
+     *        original request, the response includes the same information
+     *        returned to the original request. If the CallerReference is a
+     *        value you already sent in a previous request to create a
+     *        distribution but the content of any Path is different from the
+     *        original request, CloudFront returns an
+     *        InvalidationBatchAlreadyExists error.
      */
     public InvalidationBatch(String callerReference) {
         setCallerReference(callerReference);
     }
 
     /**
+     * The path of the object to invalidate. The path is relative to the
+     * distribution and must begin with a slash (/). You must enclose each
+     * invalidation object with the Path element tags. If the path includes
+     * non-ASCII characters or unsafe characters as defined in RFC 1783
+     * (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not
+     * URL encode any other characters in the path, or CloudFront will not
+     * invalidate the old version of the updated object.
+     * 
      * @param paths
+     *        The path of the object to invalidate. The path is relative to the
+     *        distribution and must begin with a slash (/). You must enclose
+     *        each invalidation object with the Path element tags. If the path
+     *        includes non-ASCII characters or unsafe characters as defined in
+     *        RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
+     *        characters. Do not URL encode any other characters in the path, or
+     *        CloudFront will not invalidate the old version of the updated
+     *        object.
      */
     public void setPaths(Paths paths) {
         this.paths = paths;
     }
 
     /**
-     * @return
+     * The path of the object to invalidate. The path is relative to the
+     * distribution and must begin with a slash (/). You must enclose each
+     * invalidation object with the Path element tags. If the path includes
+     * non-ASCII characters or unsafe characters as defined in RFC 1783
+     * (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not
+     * URL encode any other characters in the path, or CloudFront will not
+     * invalidate the old version of the updated object.
+     * 
+     * @return The path of the object to invalidate. The path is relative to the
+     *         distribution and must begin with a slash (/). You must enclose
+     *         each invalidation object with the Path element tags. If the path
+     *         includes non-ASCII characters or unsafe characters as defined in
+     *         RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
+     *         characters. Do not URL encode any other characters in the path,
+     *         or CloudFront will not invalidate the old version of the updated
+     *         object.
      */
     public Paths getPaths() {
         return this.paths;
     }
 
     /**
+     * The path of the object to invalidate. The path is relative to the
+     * distribution and must begin with a slash (/). You must enclose each
+     * invalidation object with the Path element tags. If the path includes
+     * non-ASCII characters or unsafe characters as defined in RFC 1783
+     * (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not
+     * URL encode any other characters in the path, or CloudFront will not
+     * invalidate the old version of the updated object.
+     * 
      * @param paths
+     *        The path of the object to invalidate. The path is relative to the
+     *        distribution and must begin with a slash (/). You must enclose
+     *        each invalidation object with the Path element tags. If the path
+     *        includes non-ASCII characters or unsafe characters as defined in
+     *        RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those
+     *        characters. Do not URL encode any other characters in the path, or
+     *        CloudFront will not invalidate the old version of the updated
+     *        object.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -84,21 +181,86 @@ public class InvalidationBatch implements Serializable, Cloneable {
     }
 
     /**
+     * A unique name that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the Path object), a new
+     * distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create an invalidation batch, and the
+     * content of each Path element is identical to the original request, the
+     * response includes the same information returned to the original request.
+     * If the CallerReference is a value you already sent in a previous request
+     * to create a distribution but the content of any Path is different from the
+     * original request, CloudFront returns an InvalidationBatchAlreadyExists
+     * error.
+     * 
      * @param callerReference
+     *        A unique name that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the Path object),
+     *        a new distribution is created. If the CallerReference is a value
+     *        you already sent in a previous request to create an invalidation
+     *        batch, and the content of each Path element is identical to the
+     *        original request, the response includes the same information
+     *        returned to the original request. If the CallerReference is a
+     *        value you already sent in a previous request to create a
+     *        distribution but the content of any Path is different from the
+     *        original request, CloudFront returns an
+     *        InvalidationBatchAlreadyExists error.
      */
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
 
     /**
-     * @return
+     * A unique name that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the Path object), a new
+     * distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create an invalidation batch, and the
+     * content of each Path element is identical to the original request, the
+     * response includes the same information returned to the original request.
+     * If the CallerReference is a value you already sent in a previous request
+     * to create a distribution but the content of any Path is different from the
+     * original request, CloudFront returns an InvalidationBatchAlreadyExists
+     * error.
+     * 
+     * @return A unique name that ensures the request can't be replayed. If the
+     *         CallerReference is new (no matter the content of the Path
+     *         object), a new distribution is created. If the CallerReference is
+     *         a value you already sent in a previous request to create an
+     *         invalidation batch, and the content of each Path element is
+     *         identical to the original request, the response includes the same
+     *         information returned to the original request. If the
+     *         CallerReference is a value you already sent in a previous request
+     *         to create a distribution but the content of any Path is different
+     *         from the original request, CloudFront returns an
+     *         InvalidationBatchAlreadyExists error.
      */
     public String getCallerReference() {
         return this.callerReference;
     }
 
     /**
+     * A unique name that ensures the request can't be replayed. If the
+     * CallerReference is new (no matter the content of the Path object), a new
+     * distribution is created. If the CallerReference is a value you already
+     * sent in a previous request to create an invalidation batch, and the
+     * content of each Path element is identical to the original request, the
+     * response includes the same information returned to the original request.
+     * If the CallerReference is a value you already sent in a previous request
+     * to create a distribution but the content of any Path is different from the
+     * original request, CloudFront returns an InvalidationBatchAlreadyExists
+     * error.
+     * 
      * @param callerReference
+     *        A unique name that ensures the request can't be replayed. If the
+     *        CallerReference is new (no matter the content of the Path object),
+     *        a new distribution is created. If the CallerReference is a value
+     *        you already sent in a previous request to create an invalidation
+     *        batch, and the content of each Path element is identical to the
+     *        original request, the response includes the same information
+     *        returned to the original request. If the CallerReference is a
+     *        value you already sent in a previous request to create a
+     *        distribution but the content of any Path is different from the
+     *        original request, CloudFront returns an
+     *        InvalidationBatchAlreadyExists error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

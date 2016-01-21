@@ -19,12 +19,14 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that contains information about the Amazon S3 bucket from
+ * which you want CloudFront to get your media files for distribution.
  */
 public class S3Origin implements Serializable, Cloneable {
 
+    /** The DNS name of the S3 origin. */
     private String domainName;
-
+    /** Your S3 origin's origin access identity. */
     private String originAccessIdentity;
 
     /**
@@ -40,6 +42,7 @@ public class S3Origin implements Serializable, Cloneable {
      * setter (with...) methods to initialize any additional object members.
      * 
      * @param domainName
+     *        The DNS name of the S3 origin.
      */
     public S3Origin(String domainName) {
         setDomainName(domainName);
@@ -50,7 +53,9 @@ public class S3Origin implements Serializable, Cloneable {
      * setter (with...) methods to initialize any additional object members.
      * 
      * @param domainName
+     *        The DNS name of the S3 origin.
      * @param originAccessIdentity
+     *        Your S3 origin's origin access identity.
      */
     public S3Origin(String domainName, String originAccessIdentity) {
         setDomainName(domainName);
@@ -58,21 +63,29 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
+     * The DNS name of the S3 origin.
+     * 
      * @param domainName
+     *        The DNS name of the S3 origin.
      */
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
 
     /**
-     * @return
+     * The DNS name of the S3 origin.
+     * 
+     * @return The DNS name of the S3 origin.
      */
     public String getDomainName() {
         return this.domainName;
     }
 
     /**
+     * The DNS name of the S3 origin.
+     * 
      * @param domainName
+     *        The DNS name of the S3 origin.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,21 +95,29 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
+     * Your S3 origin's origin access identity.
+     * 
      * @param originAccessIdentity
+     *        Your S3 origin's origin access identity.
      */
     public void setOriginAccessIdentity(String originAccessIdentity) {
         this.originAccessIdentity = originAccessIdentity;
     }
 
     /**
-     * @return
+     * Your S3 origin's origin access identity.
+     * 
+     * @return Your S3 origin's origin access identity.
      */
     public String getOriginAccessIdentity() {
         return this.originAccessIdentity;
     }
 
     /**
+     * Your S3 origin's origin access identity.
+     * 
      * @param originAccessIdentity
+     *        Your S3 origin's origin access identity.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

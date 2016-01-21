@@ -19,30 +19,43 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * A complex type that contains information about the objects that you want to
+ * invalidate.
  */
 public class Paths implements Serializable, Cloneable {
 
+    /** The number of objects that you want to invalidate. */
     private Integer quantity;
-
+    /**
+     * A complex type that contains a list of the objects that you want to
+     * invalidate.
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * The number of objects that you want to invalidate.
+     * 
      * @param quantity
+     *        The number of objects that you want to invalidate.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     * @return
+     * The number of objects that you want to invalidate.
+     * 
+     * @return The number of objects that you want to invalidate.
      */
     public Integer getQuantity() {
         return this.quantity;
     }
 
     /**
+     * The number of objects that you want to invalidate.
+     * 
      * @param quantity
+     *        The number of objects that you want to invalidate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -52,7 +65,11 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * A complex type that contains a list of the objects that you want to
+     * invalidate.
+     * 
+     * @return A complex type that contains a list of the objects that you want
+     *         to invalidate.
      */
     public java.util.List<String> getItems() {
         if (items == null) {
@@ -62,7 +79,12 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains a list of the objects that you want to
+     * invalidate.
+     * 
      * @param items
+     *        A complex type that contains a list of the objects that you want
+     *        to invalidate.
      */
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
@@ -74,6 +96,8 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains a list of the objects that you want to
+     * invalidate.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
@@ -82,6 +106,8 @@ public class Paths implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        A complex type that contains a list of the objects that you want
+     *        to invalidate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -97,7 +123,12 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
+     * A complex type that contains a list of the objects that you want to
+     * invalidate.
+     * 
      * @param items
+     *        A complex type that contains a list of the objects that you want
+     *        to invalidate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

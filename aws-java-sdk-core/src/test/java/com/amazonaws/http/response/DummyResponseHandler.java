@@ -27,6 +27,8 @@ import com.amazonaws.http.HttpResponseHandler;
  */
 public class DummyResponseHandler implements HttpResponseHandler<AmazonWebServiceResponse<String>> {
 
+    private boolean needsConnectionLeftOpen = false;
+
     @Override
     public AmazonWebServiceResponse<String> handle(HttpResponse response) throws Exception {
         return new AmazonWebServiceResponse<String>() {
@@ -35,6 +37,15 @@ public class DummyResponseHandler implements HttpResponseHandler<AmazonWebServic
 
     @Override
     public boolean needsConnectionLeftOpen() {
-        return false;
+        return needsConnectionLeftOpen;
+    }
+
+    /**
+     * Enable streaming
+     * @return Object for method chaining
+     */
+    public DummyResponseHandler leaveConnectionOpen() {
+        this.needsConnectionLeftOpen = true;
+        return this;
     }
 }

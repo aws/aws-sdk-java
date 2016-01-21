@@ -19,28 +19,37 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * 
+ * The returned result of the corresponding request.
  */
 public class ListInvalidationsResult implements Serializable, Cloneable {
 
+    /** Information about invalidation batches. */
     private InvalidationList invalidationList;
 
     /**
+     * Information about invalidation batches.
+     * 
      * @param invalidationList
+     *        Information about invalidation batches.
      */
     public void setInvalidationList(InvalidationList invalidationList) {
         this.invalidationList = invalidationList;
     }
 
     /**
-     * @return
+     * Information about invalidation batches.
+     * 
+     * @return Information about invalidation batches.
      */
     public InvalidationList getInvalidationList() {
         return this.invalidationList;
     }
 
     /**
+     * Information about invalidation batches.
+     * 
      * @param invalidationList
+     *        Information about invalidation batches.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
