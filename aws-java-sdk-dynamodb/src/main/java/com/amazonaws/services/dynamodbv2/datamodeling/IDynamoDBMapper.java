@@ -25,6 +25,7 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.BatchGetItemRequest;
 import com.amazonaws.services.dynamodbv2.model.BatchWriteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 import com.amazonaws.services.s3.model.Region;
@@ -741,5 +742,12 @@ public interface IDynamoDBMapper {
      * indexes are initialized with the default projection type - KEY_ONLY.
      */
     CreateTableRequest generateCreateTableRequest(Class<?> clazz);
+
+
+    /**
+     * Parse the given POJO class and return the DeleteTableRequest for the DynamoDB table it
+     * represents.
+     */
+    DeleteTableRequest generateDeleteTableRequest(Class<?> clazz);
 
 }

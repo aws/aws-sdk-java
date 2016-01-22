@@ -55,6 +55,7 @@ import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteRequest;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
@@ -2674,5 +2675,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         ItemConverter converter = getConverter(config);
         return schemaParser.parseTablePojoToCreateTableRequest(
                 clazz, config, reflector, converter);
+    }
+
+    @Override
+    public DeleteTableRequest generateDeleteTableRequest(Class<?> clazz) {
+        return schemaParser.parseTablePojoToDeleteTableRequest(
+                clazz, config);
     }
 }
