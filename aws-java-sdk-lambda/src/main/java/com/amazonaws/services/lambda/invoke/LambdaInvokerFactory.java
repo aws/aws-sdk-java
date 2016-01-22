@@ -14,18 +14,6 @@
  */
 package com.amazonaws.services.lambda.invoke;
 
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-import java.lang.reflect.Type;
-import java.nio.ByteBuffer;
-import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.lambda.AWSLambda;
 import com.amazonaws.services.lambda.model.InvocationType;
 import com.amazonaws.services.lambda.model.InvokeRequest;
@@ -37,6 +25,13 @@ import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+import java.lang.reflect.*;
+import java.nio.ByteBuffer;
+import java.util.List;
 
 /**
  * A factory for objects that implement a user-supplied interface by invoking a remote Lambda
@@ -74,8 +69,23 @@ public final class LambdaInvokerFactory {
      *            the lambda client to use for making remote calls
      */
     public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda) {
+        return build(interfaceClass, awsLambda, new LambdaInvokerFactoryConfig());
+    }
+
+    /**
+     * Creates a new Lambda invoker implementing the given interface and wrapping the given
+     * {@code AWSLambda} client.
+     *
+     * @param interfaceClass
+     *            the interface to implement
+     * @param awsLambda
+     *            the lambda client to use for making remote calls
+     * @param config
+     *            configuration for the LambdaInvokerFactory
+     */
+    public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
         Object proxy = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[] { interfaceClass },
-                new LambdaInvocationHandler(interfaceClass, awsLambda));
+                new LambdaInvocationHandler(interfaceClass, awsLambda, config));
 
         return interfaceClass.cast(proxy);
     }
@@ -87,11 +97,13 @@ public final class LambdaInvokerFactory {
 
         private final AWSLambda awsLambda;
         private final Log log;
+        private final LambdaInvokerFactoryConfig config;
 
-        public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda) {
+        public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
 
             this.awsLambda = awsLambda;
             this.log = LogFactory.getLog(interfaceClass);
+            this.config = config;
         }
 
         @Override
@@ -136,10 +148,7 @@ public final class LambdaInvokerFactory {
 
             InvokeRequest invokeRequest = new InvokeRequest();
 
-            String functionName = annotation.functionName();
-            if (functionName.isEmpty()) {
-                functionName = method.getName();
-            }
+            String functionName = config.getLambdaFunctionNameResolver().getFunctionName(method, annotation, config);
 
             invokeRequest.setFunctionName(functionName);
             invokeRequest.setInvocationType(annotation.invocationType());
