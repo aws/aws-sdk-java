@@ -16,6 +16,8 @@
 package com.amazonaws.auth;
 
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.ThreadSafe;
@@ -57,6 +59,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     
     /** The Duration for assume role sessions. */
     private final int roleSessionDurationSeconds;
+
+    /** Lock used to serialize access to expiration check and session renewal logic across
+     * multiple threads sharing this instance */
+    private final Lock sessionRenewalLock = new ReentrantLock();
 
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which makes a
@@ -243,8 +249,13 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     
     @Override
     public AWSSessionCredentials getCredentials() {
-        if (needsNewSession()) {
-            startSession();
+        try {
+            sessionRenewalLock.lock();
+            if (needsNewSession()) {
+                startSession();
+            }
+        } finally {
+            sessionRenewalLock.unlock();
         }
         Credentials tempCredentials = sessionCredentials.get();
         return new BasicSessionCredentials(tempCredentials.getAccessKeyId(),
