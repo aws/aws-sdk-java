@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.10.45-SNAPSHOT</version>
+  <version>1.10.50-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -57,6 +57,7 @@
     <module>aws-java-sdk-cloudtrail</module>
     <module>aws-java-sdk-cloudwatch</module>
     <module>aws-java-sdk-logs</module>
+    <module>aws-java-sdk-events</module>
     <module>aws-java-sdk-cognitoidentity</module>
     <module>aws-java-sdk-cognitosync</module>
     <module>aws-java-sdk-directconnect</module>
@@ -90,6 +91,7 @@
     <module>aws-java-sdk-inspector</module>
     <module>aws-java-sdk-iot</module>
     <module>aws-java-sdk-api-gateway</module>
+    <module>aws-java-sdk-acm</module>
     <module>aws-java-sdk</module>
     <module>aws-java-sdk-osgi</module>
     <module>aws-java-sdk-core</module>

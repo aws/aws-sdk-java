@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,25 +46,19 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
             + "buckets located in regions that require V4 signing.";
 
     private final S3RequestEndpointResolver endpointResolver;
-    private final boolean isChunkedEncodingDisabled;
     private final SdkPredicate<AmazonServiceException> sigV4RetryPredicate;
 
-  public S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver,
-                                    boolean isChunkedEncodingDisabled) {
-        this.endpointResolver = endpointResolver;
-        this.isChunkedEncodingDisabled = isChunkedEncodingDisabled;
-        this.sigV4RetryPredicate = new IsSigV4RetryablePredicate();
+    public S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver) {
+        this(endpointResolver, new IsSigV4RetryablePredicate());
     }
 
     /**
      * Currently only used for testing
      */
     S3V4AuthErrorRetryStrategy(S3RequestEndpointResolver endpointResolver,
-                               SdkPredicate<AmazonServiceException> isSigV4Retryable,
-                               boolean isChunkedEncodingDisabled) {
+            SdkPredicate<AmazonServiceException> isSigV4Retryable) {
         this.endpointResolver = endpointResolver;
         this.sigV4RetryPredicate = isSigV4Retryable;
-        this.isChunkedEncodingDisabled = isChunkedEncodingDisabled;
     }
 
     @Override
@@ -103,16 +97,17 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
     private AuthRetryParameters redirectToS3External() {
         AWSS3V4Signer v4Signer = buildSigV4Signer(Regions.US_EAST_1.getName());
         try {
-            URI bucketEndpoint = new URI(String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
+            URI bucketEndpoint = new URI(
+                    String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
             return buildRetryParams(v4Signer, bucketEndpoint);
         } catch (URISyntaxException e) {
-            throw new AmazonClientException("Failed to re-send the request to \"s3-external-1.amazonaws.com\". "
-                    + V4_REGION_WARNING, e);
+            throw new AmazonClientException(
+                    "Failed to re-send the request to \"s3-external-1.amazonaws.com\". " + V4_REGION_WARNING, e);
         }
     }
 
     private AWSS3V4Signer buildSigV4Signer(final String region) {
-        AWSS3V4Signer v4Signer = new AWSS3V4Signer(isChunkedEncodingDisabled);
+        AWSS3V4Signer v4Signer = new AWSS3V4Signer();
         v4Signer.setRegionName(region);
         v4Signer.setServiceName(AmazonS3Client.S3_SERVICE_NAME);
         return v4Signer;

@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,8 +43,10 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      */
     private String stackName;
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * A string that identifies the next page of stacks that you want to
+     * retrieve.
+     * </p>
      */
     private String nextToken;
 
@@ -137,35 +140,41 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * A string that identifies the next page of stacks that you want to
+     * retrieve.
+     * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stacks, if
-     *        there is one.
+     *        A string that identifies the next page of stacks that you want to
+     *        retrieve.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * A string that identifies the next page of stacks that you want to
+     * retrieve.
+     * </p>
      * 
-     * @return String that identifies the start of the next list of stacks, if
-     *         there is one.
+     * @return A string that identifies the next page of stacks that you want to
+     *         retrieve.
      */
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * A string that identifies the next page of stacks that you want to
+     * retrieve.
+     * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stacks, if
-     *        there is one.
+     *        A string that identifies the next page of stacks that you want to
+     *        retrieve.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

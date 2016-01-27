@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,14 +96,19 @@ public class AWSRequestMetrics {
         HttpClientRetryCount,
         /**
          * Time taken to send a request to AWS by the http client library,
-         * excluding any retry. 
+         * excluding any retry.
          */
         HttpClientSendRequestTime,
         /**
          * Time taken to receive a response from AWS by the http client library,
-         * excluding any retry. 
+         * excluding any retry.
          */
         HttpClientReceiveResponseTime,
+
+        /**
+         * Time taken for socket to read.
+         */
+        HttpSocketReadTime,
 
         /**
          * The number of idle persistent connections.
@@ -145,7 +150,7 @@ public class AWSRequestMetrics {
      * This constructor should be used only in the case when AWS SDK metrics
      * collector is disabled, when minimal timing info is supported for backward
      * compatibility reasons.
-     * 
+     *
      * @see AWSRequestMetricsFullSupport
      */
     public AWSRequestMetrics() {

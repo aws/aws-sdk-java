@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -246,10 +247,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 .add(new TopicLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://sns.us-east-1.amazonaws.com");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("https://sns.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,26 +28,35 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Update Streaming Distribution Result StAX Unmarshaller
+ * UpdateStreamingDistributionResult StAX Unmarshaller
  */
-public class UpdateStreamingDistributionResultStaxUnmarshaller implements Unmarshaller<UpdateStreamingDistributionResult, StaxUnmarshallerContext> {
+public class UpdateStreamingDistributionResultStaxUnmarshaller
+        implements
+        Unmarshaller<UpdateStreamingDistributionResult, StaxUnmarshallerContext> {
 
-    public UpdateStreamingDistributionResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public UpdateStreamingDistributionResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         UpdateStreamingDistributionResult updateStreamingDistributionResult = new UpdateStreamingDistributionResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            updateStreamingDistributionResult.setETag(context.getHeader("ETag"));
+            updateStreamingDistributionResult
+                    .setETag(context.getHeader("ETag"));
         }
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return updateStreamingDistributionResult;
+            if (xmlEvent.isEndDocument())
+                return updateStreamingDistributionResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("StreamingDistribution", targetDepth)) {
-                    updateStreamingDistributionResult.setStreamingDistribution(StreamingDistributionStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("StreamingDistribution", targetDepth)) {
+                    updateStreamingDistributionResult
+                            .setStreamingDistribution(StreamingDistributionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -58,9 +68,10 @@ public class UpdateStreamingDistributionResultStaxUnmarshaller implements Unmars
     }
 
     private static UpdateStreamingDistributionResultStaxUnmarshaller instance;
+
     public static UpdateStreamingDistributionResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new UpdateStreamingDistributionResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new UpdateStreamingDistributionResultStaxUnmarshaller();
         return instance;
     }
 }
-    

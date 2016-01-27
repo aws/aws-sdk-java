@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,16 +78,15 @@ import com.amazonaws.services.opsworks.model.*;
  * <p>
  * When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we
  * recommend you use the <code>ConfigurationManager</code> parameter to specify
- * the Chef version. The recommended value for Linux stacks, which is also the
- * default value, is currently 11.10. Windows stacks use Chef 12.2. For more
- * information, see <a href=
+ * the Chef version. The recommended value for Linux stacks is currently 12 (the
+ * default is 11.4). Windows stacks use Chef 12.2. For more information, see <a
+ * href=
  * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"
  * >Chef Versions</a>.
  * </p>
- * <note>You can also specify Chef 11.4 or Chef 0.9 for your Linux stack.
- * However, Chef 0.9 has been deprecated. We do not recommend using Chef 0.9 for
- * new stacks, and we recommend migrating your existing Chef 0.9 stacks to Chef
- * 11.10 as soon as possible.</note>
+ * <note>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We
+ * recommend migrating your existing Linux stacks to Chef 12 as soon as
+ * possible.</note>
  */
 public interface AWSOpsWorks {
 
@@ -586,7 +586,7 @@ public interface AWSOpsWorks {
      * explicitly grants permissions. For more information on user permissions,
      * see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * ></a>.
+     * />.
      * </p>
      * 
      * @param deregisterEcsClusterRequest

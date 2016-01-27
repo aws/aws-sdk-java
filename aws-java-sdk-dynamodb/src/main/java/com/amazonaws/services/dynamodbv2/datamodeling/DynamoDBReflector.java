@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Amazon Technologies, Inc.
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ class DynamoDBReflector {
     private final Map<Class<?>, Collection<Method>> getterCache = new HashMap<Class<?>, Collection<Method>>();
     private final Map<Class<?>, Method> primaryHashKeyGetterCache = new HashMap<Class<?>, Method>();
     private final Map<Class<?>, Method> primaryRangeKeyGetterCache = new HashMap<Class<?>, Method>();
+    private final Map<Class<?>, List<Method>> primaryKeyGettersCache = new HashMap<Class<?>, List<Method>>();
 
     /*
      * All caches keyed by a Method use the getter for a particular mapped
@@ -123,19 +124,21 @@ class DynamoDBReflector {
      * Returns all annotated {@link DynamoDBHashKey} and
      * {@link DynamoDBRangeKey} getters for the class given, throwing an
      * exception if there isn't one.
-     *
-     * TODO: caching
      */
     <T> Collection<Method> getPrimaryKeyGetters(Class<T> clazz) {
-        List<Method> keyGetters = new LinkedList<Method>();
-        for (Method getter : getRelevantGetters(clazz)) {
-            if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class)
-                    || ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBRangeKey.class)) {
-                keyGetters.add(getter);
+        synchronized (primaryKeyGettersCache) {
+            if ( !primaryKeyGettersCache.containsKey(clazz) ) {
+                List<Method> keyGetters = new LinkedList<Method>();
+                for (Method getter : getRelevantGetters(clazz)) {
+                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBHashKey.class)
+                        || ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBRangeKey.class)) {
+                        keyGetters.add(getter);
+                    }
+                }
+                primaryKeyGettersCache.put(clazz, keyGetters);
             }
+            return primaryKeyGettersCache.get(clazz);
         }
-
-        return keyGetters;
     }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2015 Amazon Technologies, Inc.
+ * Copyright 2013-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,10 @@ public enum Regions {
     AP_SOUTHEAST_1("ap-southeast-1"),
     AP_SOUTHEAST_2("ap-southeast-2"),
     AP_NORTHEAST_1("ap-northeast-1"),
+    AP_NORTHEAST_2("ap-northeast-2"),
     SA_EAST_1("sa-east-1"),
-    CN_NORTH_1("cn-north-1");
+    CN_NORTH_1("cn-north-1"),
+    ;
 
     /**
      * The default region that new customers in the US are encouraged to use

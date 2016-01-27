@@ -1,24 +1,25 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudfront.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,711 +35,973 @@ import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
- * Update Distribution Request Marshaller
+ * UpdateDistributionRequest Marshaller
  */
-public class UpdateDistributionRequestMarshaller implements Marshaller<Request<UpdateDistributionRequest>, UpdateDistributionRequest> {
 
-    private static final String RESOURCE_PATH_TEMPLATE;
-    private static final Map<String, String> STATIC_QUERY_PARAMS;
-    private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
-    static {
-        String path = "2015-09-17/distribution/{Id}/config";
-        Map<String, String> staticMap = new HashMap<String, String>();
-        Map<String, String> dynamicMap = new HashMap<String, String>();
+public class UpdateDistributionRequestMarshaller
+        implements
+        Marshaller<Request<UpdateDistributionRequest>, UpdateDistributionRequest> {
 
-        int index = path.indexOf("?");
-        if (index != -1) {
-            String queryString = path.substring(index + 1);
-            path = path.substring(0, index);
-
-            for (String s : queryString.split("[;&]")) {
-                index = s.indexOf("=");
-                if (index != -1) {
-                    String name = s.substring(0, index);
-                    String value = s.substring(index + 1);
-
-                    if (value.startsWith("{") && value.endsWith("}")) {
-                        dynamicMap.put(value.substring(1, value.length() - 1), name);
-                    } else {
-                        staticMap.put(name, value);
-                    }
-                }
-            }
-        }
-
-        RESOURCE_PATH_TEMPLATE = path;
-        STATIC_QUERY_PARAMS = Collections.unmodifiableMap(staticMap);
-        DYNAMIC_QUERY_PARAMS = Collections.unmodifiableMap(dynamicMap);
-    }
-
-    public Request<UpdateDistributionRequest> marshall(UpdateDistributionRequest updateDistributionRequest) {
+    public Request<UpdateDistributionRequest> marshall(
+            UpdateDistributionRequest updateDistributionRequest) {
 
         if (updateDistributionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateDistributionRequest> request = new DefaultRequest<UpdateDistributionRequest>(updateDistributionRequest, "AmazonCloudFront");
+        Request<UpdateDistributionRequest> request = new DefaultRequest<UpdateDistributionRequest>(
+                updateDistributionRequest, "AmazonCloudFront");
+
         request.setHttpMethod(HttpMethodName.PUT);
-        if (updateDistributionRequest.getIfMatch() != null)
-          request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
 
-        String uriResourcePath = RESOURCE_PATH_TEMPLATE;
-        
-        if (DYNAMIC_QUERY_PARAMS.containsKey("Id")) {
-            String name = DYNAMIC_QUERY_PARAMS.get("Id");
-            String value = (updateDistributionRequest.getId() == null) ? null : StringUtils.fromString(updateDistributionRequest.getId());
-
-            if (!(value == null || value.isEmpty())) {
-                request.addParameter(name, value);
-            }
-        } else {
-            uriResourcePath = uriResourcePath.replace("{Id}", (updateDistributionRequest.getId() == null) ? "" : StringUtils.fromString(updateDistributionRequest.getId())); 
+        if (updateDistributionRequest.getIfMatch() != null) {
+            request.addHeader("If-Match", StringUtils
+                    .fromString(updateDistributionRequest.getIfMatch()));
         }
 
-        request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
+        String uriResourcePath = "/2016-01-28/distribution/{Id}/config";
 
-        for (Map.Entry<String, String> entry : STATIC_QUERY_PARAMS.entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
+        uriResourcePath = uriResourcePath.replace(
+                "{Id}",
+                (updateDistributionRequest.getId() == null) ? "" : StringUtils
+                        .fromString(updateDistributionRequest.getId()));
+        request.setResourcePath(uriResourcePath);
 
+        try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2015-09-17/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter,
+                    "http://cloudfront.amazonaws.com/doc/2016-01-28/");
 
-                    if (updateDistributionRequest != null) {
-            DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
-            if (distributionConfigDistributionConfig != null) {
+            DistributionConfig distributionConfig = updateDistributionRequest
+                    .getDistributionConfig();
+            if (distributionConfig != null) {
                 xmlWriter.startElement("DistributionConfig");
-                if (distributionConfigDistributionConfig.getCallerReference() != null) {
-                    xmlWriter.startElement("CallerReference").value(distributionConfigDistributionConfig.getCallerReference()).endElement();
+
+                if (distributionConfig.getCallerReference() != null) {
+                    xmlWriter.startElement("CallerReference")
+                            .value(distributionConfig.getCallerReference())
+                            .endElement();
                 }
-                if (distributionConfigDistributionConfig != null) {
-                    Aliases aliasesAliases = distributionConfigDistributionConfig.getAliases();
-                    if (aliasesAliases != null) {
-                        xmlWriter.startElement("Aliases");
-                        if (aliasesAliases.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(aliasesAliases.getQuantity()).endElement();
-                        }
 
-                        if (aliasesAliases != null) {
-                            java.util.List<String> aliasesAliasesitemsList = aliasesAliases.getItems();
-                            if (aliasesAliasesitemsList != null && aliasesAliasesitemsList.size() > 0) {
-                                int aliasesAliasesitemsListIndex = 1;
-                                xmlWriter.startElement("Items");
-                                for (String aliasesAliasesitemsListValue : aliasesAliasesitemsList) {
+                Aliases aliases = distributionConfig.getAliases();
+                if (aliases != null) {
+                    xmlWriter.startElement("Aliases");
 
-                                xmlWriter.startElement("CNAME");
-                                    xmlWriter.value(aliasesAliasesitemsListValue);
-                                xmlWriter.endElement();
+                    if (aliases.getQuantity() != null) {
+                        xmlWriter.startElement("Quantity")
+                                .value(aliases.getQuantity()).endElement();
+                    }
 
-                                    aliasesAliasesitemsListIndex++;
-                                }
-                                xmlWriter.endElement();
-                            }
+                    com.amazonaws.internal.SdkInternalList<String> aliasesItemsList = (com.amazonaws.internal.SdkInternalList<String>) aliases
+                            .getItems();
+                    if (!aliasesItemsList.isEmpty()
+                            || !aliasesItemsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Items");
+
+                        for (String aliasesItemsListValue : aliasesItemsList) {
+                            xmlWriter.startElement("CNAME");
+                            xmlWriter.value(aliasesItemsListValue);
+                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
+                    xmlWriter.endElement();
                 }
-                if (distributionConfigDistributionConfig.getDefaultRootObject() != null) {
-                    xmlWriter.startElement("DefaultRootObject").value(distributionConfigDistributionConfig.getDefaultRootObject()).endElement();
+
+                if (distributionConfig.getDefaultRootObject() != null) {
+                    xmlWriter.startElement("DefaultRootObject")
+                            .value(distributionConfig.getDefaultRootObject())
+                            .endElement();
                 }
-                if (distributionConfigDistributionConfig != null) {
-                    Origins originsOrigins = distributionConfigDistributionConfig.getOrigins();
-                    if (originsOrigins != null) {
-                        xmlWriter.startElement("Origins");
-                        if (originsOrigins.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(originsOrigins.getQuantity()).endElement();
-                        }
 
-                        if (originsOrigins != null) {
-                            java.util.List<Origin> originsOriginsitemsList = originsOrigins.getItems();
-                            if (originsOriginsitemsList != null && originsOriginsitemsList.size() > 0) {
-                                int originsOriginsitemsListIndex = 1;
-                                xmlWriter.startElement("Items");
-                                for (Origin originsOriginsitemsListValue : originsOriginsitemsList) {
+                Origins origins = distributionConfig.getOrigins();
+                if (origins != null) {
+                    xmlWriter.startElement("Origins");
 
-                                xmlWriter.startElement("Origin");
-                                    if (originsOriginsitemsListValue.getId() != null) {
-                                        xmlWriter.startElement("Id").value(originsOriginsitemsListValue.getId()).endElement();
-                                    }
-                                    if (originsOriginsitemsListValue.getDomainName() != null) {
-                                        xmlWriter.startElement("DomainName").value(originsOriginsitemsListValue.getDomainName()).endElement();
-                                    }
-                                    if (originsOriginsitemsListValue.getOriginPath() != null) {
-                                        xmlWriter.startElement("OriginPath").value(originsOriginsitemsListValue.getOriginPath()).endElement();
-                                    }
-                                    if (originsOriginsitemsListValue != null) {
-                                        S3OriginConfig s3OriginConfigS3OriginConfig = originsOriginsitemsListValue.getS3OriginConfig();
-                                        if (s3OriginConfigS3OriginConfig != null) {
-                                            xmlWriter.startElement("S3OriginConfig");
-                                            if (s3OriginConfigS3OriginConfig.getOriginAccessIdentity() != null) {
-                                                xmlWriter.startElement("OriginAccessIdentity").value(s3OriginConfigS3OriginConfig.getOriginAccessIdentity()).endElement();
-                                            }
-                                            xmlWriter.endElement();
+                    if (origins.getQuantity() != null) {
+                        xmlWriter.startElement("Quantity")
+                                .value(origins.getQuantity()).endElement();
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<Origin> originsItemsList = (com.amazonaws.internal.SdkInternalList<Origin>) origins
+                            .getItems();
+                    if (!originsItemsList.isEmpty()
+                            || !originsItemsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Items");
+
+                        for (Origin originsItemsListValue : originsItemsList) {
+                            xmlWriter.startElement("Origin");
+
+                            if (originsItemsListValue.getId() != null) {
+                                xmlWriter.startElement("Id")
+                                        .value(originsItemsListValue.getId())
+                                        .endElement();
+                            }
+
+                            if (originsItemsListValue.getDomainName() != null) {
+                                xmlWriter
+                                        .startElement("DomainName")
+                                        .value(originsItemsListValue
+                                                .getDomainName()).endElement();
+                            }
+
+                            if (originsItemsListValue.getOriginPath() != null) {
+                                xmlWriter
+                                        .startElement("OriginPath")
+                                        .value(originsItemsListValue
+                                                .getOriginPath()).endElement();
+                            }
+
+                            CustomHeaders customHeaders = originsItemsListValue
+                                    .getCustomHeaders();
+                            if (customHeaders != null) {
+                                xmlWriter.startElement("CustomHeaders");
+
+                                if (customHeaders.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity")
+                                            .value(customHeaders.getQuantity())
+                                            .endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<OriginCustomHeader> customHeadersItemsList = (com.amazonaws.internal.SdkInternalList<OriginCustomHeader>) customHeaders
+                                        .getItems();
+                                if (!customHeadersItemsList.isEmpty()
+                                        || !customHeadersItemsList
+                                                .isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (OriginCustomHeader customHeadersItemsListValue : customHeadersItemsList) {
+                                        xmlWriter
+                                                .startElement("OriginCustomHeader");
+
+                                        if (customHeadersItemsListValue
+                                                .getHeaderName() != null) {
+                                            xmlWriter
+                                                    .startElement("HeaderName")
+                                                    .value(customHeadersItemsListValue
+                                                            .getHeaderName())
+                                                    .endElement();
                                         }
-                                    }
-                                    if (originsOriginsitemsListValue != null) {
-                                        CustomOriginConfig customOriginConfigCustomOriginConfig = originsOriginsitemsListValue.getCustomOriginConfig();
-                                        if (customOriginConfigCustomOriginConfig != null) {
-                                            xmlWriter.startElement("CustomOriginConfig");
-                                            if (customOriginConfigCustomOriginConfig.getHTTPPort() != null) {
-                                                xmlWriter.startElement("HTTPPort").value(customOriginConfigCustomOriginConfig.getHTTPPort()).endElement();
-                                            }
-                                            if (customOriginConfigCustomOriginConfig.getHTTPSPort() != null) {
-                                                xmlWriter.startElement("HTTPSPort").value(customOriginConfigCustomOriginConfig.getHTTPSPort()).endElement();
-                                            }
-                                            if (customOriginConfigCustomOriginConfig.getOriginProtocolPolicy() != null) {
-                                                xmlWriter.startElement("OriginProtocolPolicy").value(customOriginConfigCustomOriginConfig.getOriginProtocolPolicy()).endElement();
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                    }
-                                xmlWriter.endElement();
 
-                                    originsOriginsitemsListIndex++;
+                                        if (customHeadersItemsListValue
+                                                .getHeaderValue() != null) {
+                                            xmlWriter
+                                                    .startElement("HeaderValue")
+                                                    .value(customHeadersItemsListValue
+                                                            .getHeaderValue())
+                                                    .endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
+
+                            S3OriginConfig s3OriginConfig = originsItemsListValue
+                                    .getS3OriginConfig();
+                            if (s3OriginConfig != null) {
+                                xmlWriter.startElement("S3OriginConfig");
+
+                                if (s3OriginConfig.getOriginAccessIdentity() != null) {
+                                    xmlWriter
+                                            .startElement(
+                                                    "OriginAccessIdentity")
+                                            .value(s3OriginConfig
+                                                    .getOriginAccessIdentity())
+                                            .endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+
+                            CustomOriginConfig customOriginConfig = originsItemsListValue
+                                    .getCustomOriginConfig();
+                            if (customOriginConfig != null) {
+                                xmlWriter.startElement("CustomOriginConfig");
+
+                                if (customOriginConfig.getHTTPPort() != null) {
+                                    xmlWriter
+                                            .startElement("HTTPPort")
+                                            .value(customOriginConfig
+                                                    .getHTTPPort())
+                                            .endElement();
+                                }
+
+                                if (customOriginConfig.getHTTPSPort() != null) {
+                                    xmlWriter
+                                            .startElement("HTTPSPort")
+                                            .value(customOriginConfig
+                                                    .getHTTPSPort())
+                                            .endElement();
+                                }
+
+                                if (customOriginConfig
+                                        .getOriginProtocolPolicy() != null) {
+                                    xmlWriter
+                                            .startElement(
+                                                    "OriginProtocolPolicy")
+                                            .value(customOriginConfig
+                                                    .getOriginProtocolPolicy())
+                                            .endElement();
+                                }
+
+                                OriginSslProtocols originSslProtocols = customOriginConfig
+                                        .getOriginSslProtocols();
+                                if (originSslProtocols != null) {
+                                    xmlWriter
+                                            .startElement("OriginSslProtocols");
+
+                                    if (originSslProtocols.getQuantity() != null) {
+                                        xmlWriter
+                                                .startElement("Quantity")
+                                                .value(originSslProtocols
+                                                        .getQuantity())
+                                                .endElement();
+                                    }
+
+                                    com.amazonaws.internal.SdkInternalList<String> originSslProtocolsItemsList = (com.amazonaws.internal.SdkInternalList<String>) originSslProtocols
+                                            .getItems();
+                                    if (!originSslProtocolsItemsList.isEmpty()
+                                            || !originSslProtocolsItemsList
+                                                    .isAutoConstruct()) {
+                                        xmlWriter.startElement("Items");
+
+                                        for (String originSslProtocolsItemsListValue : originSslProtocolsItemsList) {
+                                            xmlWriter
+                                                    .startElement("SslProtocol");
+                                            xmlWriter
+                                                    .value(originSslProtocolsItemsListValue);
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
+                    xmlWriter.endElement();
                 }
-                if (distributionConfigDistributionConfig != null) {
-                    DefaultCacheBehavior defaultCacheBehaviorDefaultCacheBehavior = distributionConfigDistributionConfig.getDefaultCacheBehavior();
-                    if (defaultCacheBehaviorDefaultCacheBehavior != null) {
-                        xmlWriter.startElement("DefaultCacheBehavior");
-                        if (defaultCacheBehaviorDefaultCacheBehavior.getTargetOriginId() != null) {
-                            xmlWriter.startElement("TargetOriginId").value(defaultCacheBehaviorDefaultCacheBehavior.getTargetOriginId()).endElement();
+
+                DefaultCacheBehavior defaultCacheBehavior = distributionConfig
+                        .getDefaultCacheBehavior();
+                if (defaultCacheBehavior != null) {
+                    xmlWriter.startElement("DefaultCacheBehavior");
+
+                    if (defaultCacheBehavior.getTargetOriginId() != null) {
+                        xmlWriter
+                                .startElement("TargetOriginId")
+                                .value(defaultCacheBehavior.getTargetOriginId())
+                                .endElement();
+                    }
+
+                    ForwardedValues forwardedValues = defaultCacheBehavior
+                            .getForwardedValues();
+                    if (forwardedValues != null) {
+                        xmlWriter.startElement("ForwardedValues");
+
+                        if (forwardedValues.getQueryString() != null) {
+                            xmlWriter.startElement("QueryString")
+                                    .value(forwardedValues.getQueryString())
+                                    .endElement();
                         }
-                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
-                            ForwardedValues forwardedValuesForwardedValues = defaultCacheBehaviorDefaultCacheBehavior.getForwardedValues();
-                            if (forwardedValuesForwardedValues != null) {
+
+                        CookiePreference cookies = forwardedValues.getCookies();
+                        if (cookies != null) {
+                            xmlWriter.startElement("Cookies");
+
+                            if (cookies.getForward() != null) {
+                                xmlWriter.startElement("Forward")
+                                        .value(cookies.getForward())
+                                        .endElement();
+                            }
+
+                            CookieNames whitelistedNames = cookies
+                                    .getWhitelistedNames();
+                            if (whitelistedNames != null) {
+                                xmlWriter.startElement("WhitelistedNames");
+
+                                if (whitelistedNames.getQuantity() != null) {
+                                    xmlWriter
+                                            .startElement("Quantity")
+                                            .value(whitelistedNames
+                                                    .getQuantity())
+                                            .endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<String> cookieNamesItemsList = (com.amazonaws.internal.SdkInternalList<String>) whitelistedNames
+                                        .getItems();
+                                if (!cookieNamesItemsList.isEmpty()
+                                        || !cookieNamesItemsList
+                                                .isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (String cookieNamesItemsListValue : cookieNamesItemsList) {
+                                        xmlWriter.startElement("Name");
+                                        xmlWriter
+                                                .value(cookieNamesItemsListValue);
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+
+                        Headers headers = forwardedValues.getHeaders();
+                        if (headers != null) {
+                            xmlWriter.startElement("Headers");
+
+                            if (headers.getQuantity() != null) {
+                                xmlWriter.startElement("Quantity")
+                                        .value(headers.getQuantity())
+                                        .endElement();
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<String> headersItemsList = (com.amazonaws.internal.SdkInternalList<String>) headers
+                                    .getItems();
+                            if (!headersItemsList.isEmpty()
+                                    || !headersItemsList.isAutoConstruct()) {
+                                xmlWriter.startElement("Items");
+
+                                for (String headersItemsListValue : headersItemsList) {
+                                    xmlWriter.startElement("Name");
+                                    xmlWriter.value(headersItemsListValue);
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    TrustedSigners trustedSigners = defaultCacheBehavior
+                            .getTrustedSigners();
+                    if (trustedSigners != null) {
+                        xmlWriter.startElement("TrustedSigners");
+
+                        if (trustedSigners.getEnabled() != null) {
+                            xmlWriter.startElement("Enabled")
+                                    .value(trustedSigners.getEnabled())
+                                    .endElement();
+                        }
+
+                        if (trustedSigners.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity")
+                                    .value(trustedSigners.getQuantity())
+                                    .endElement();
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
+                                .getItems();
+                        if (!trustedSignersItemsList.isEmpty()
+                                || !trustedSignersItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
+
+                            for (String trustedSignersItemsListValue : trustedSignersItemsList) {
+                                xmlWriter.startElement("AwsAccountNumber");
+                                xmlWriter.value(trustedSignersItemsListValue);
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    if (defaultCacheBehavior.getViewerProtocolPolicy() != null) {
+                        xmlWriter
+                                .startElement("ViewerProtocolPolicy")
+                                .value(defaultCacheBehavior
+                                        .getViewerProtocolPolicy())
+                                .endElement();
+                    }
+
+                    if (defaultCacheBehavior.getMinTTL() != null) {
+                        xmlWriter.startElement("MinTTL")
+                                .value(defaultCacheBehavior.getMinTTL())
+                                .endElement();
+                    }
+
+                    AllowedMethods allowedMethods = defaultCacheBehavior
+                            .getAllowedMethods();
+                    if (allowedMethods != null) {
+                        xmlWriter.startElement("AllowedMethods");
+
+                        if (allowedMethods.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity")
+                                    .value(allowedMethods.getQuantity())
+                                    .endElement();
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<String> allowedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) allowedMethods
+                                .getItems();
+                        if (!allowedMethodsItemsList.isEmpty()
+                                || !allowedMethodsItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
+
+                            for (String allowedMethodsItemsListValue : allowedMethodsItemsList) {
+                                xmlWriter.startElement("Method");
+                                xmlWriter.value(allowedMethodsItemsListValue);
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+
+                        CachedMethods cachedMethods = allowedMethods
+                                .getCachedMethods();
+                        if (cachedMethods != null) {
+                            xmlWriter.startElement("CachedMethods");
+
+                            if (cachedMethods.getQuantity() != null) {
+                                xmlWriter.startElement("Quantity")
+                                        .value(cachedMethods.getQuantity())
+                                        .endElement();
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<String> cachedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) cachedMethods
+                                    .getItems();
+                            if (!cachedMethodsItemsList.isEmpty()
+                                    || !cachedMethodsItemsList
+                                            .isAutoConstruct()) {
+                                xmlWriter.startElement("Items");
+
+                                for (String cachedMethodsItemsListValue : cachedMethodsItemsList) {
+                                    xmlWriter.startElement("Method");
+                                    xmlWriter
+                                            .value(cachedMethodsItemsListValue);
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    if (defaultCacheBehavior.getSmoothStreaming() != null) {
+                        xmlWriter
+                                .startElement("SmoothStreaming")
+                                .value(defaultCacheBehavior
+                                        .getSmoothStreaming()).endElement();
+                    }
+
+                    if (defaultCacheBehavior.getDefaultTTL() != null) {
+                        xmlWriter.startElement("DefaultTTL")
+                                .value(defaultCacheBehavior.getDefaultTTL())
+                                .endElement();
+                    }
+
+                    if (defaultCacheBehavior.getMaxTTL() != null) {
+                        xmlWriter.startElement("MaxTTL")
+                                .value(defaultCacheBehavior.getMaxTTL())
+                                .endElement();
+                    }
+
+                    if (defaultCacheBehavior.getCompress() != null) {
+                        xmlWriter.startElement("Compress")
+                                .value(defaultCacheBehavior.getCompress())
+                                .endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                CacheBehaviors cacheBehaviors = distributionConfig
+                        .getCacheBehaviors();
+                if (cacheBehaviors != null) {
+                    xmlWriter.startElement("CacheBehaviors");
+
+                    if (cacheBehaviors.getQuantity() != null) {
+                        xmlWriter.startElement("Quantity")
+                                .value(cacheBehaviors.getQuantity())
+                                .endElement();
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<CacheBehavior> cacheBehaviorsItemsList = (com.amazonaws.internal.SdkInternalList<CacheBehavior>) cacheBehaviors
+                            .getItems();
+                    if (!cacheBehaviorsItemsList.isEmpty()
+                            || !cacheBehaviorsItemsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Items");
+
+                        for (CacheBehavior cacheBehaviorsItemsListValue : cacheBehaviorsItemsList) {
+                            xmlWriter.startElement("CacheBehavior");
+
+                            if (cacheBehaviorsItemsListValue.getPathPattern() != null) {
+                                xmlWriter
+                                        .startElement("PathPattern")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getPathPattern()).endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue
+                                    .getTargetOriginId() != null) {
+                                xmlWriter
+                                        .startElement("TargetOriginId")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getTargetOriginId())
+                                        .endElement();
+                            }
+
+                            ForwardedValues forwardedValues = cacheBehaviorsItemsListValue
+                                    .getForwardedValues();
+                            if (forwardedValues != null) {
                                 xmlWriter.startElement("ForwardedValues");
-                                if (forwardedValuesForwardedValues.isQueryString() != null) {
-                                    xmlWriter.startElement("QueryString").value(forwardedValuesForwardedValues.isQueryString()).endElement();
+
+                                if (forwardedValues.getQueryString() != null) {
+                                    xmlWriter
+                                            .startElement("QueryString")
+                                            .value(forwardedValues
+                                                    .getQueryString())
+                                            .endElement();
                                 }
-                                if (forwardedValuesForwardedValues != null) {
-                                    CookiePreference cookiePreferenceCookies = forwardedValuesForwardedValues.getCookies();
-                                    if (cookiePreferenceCookies != null) {
-                                        xmlWriter.startElement("Cookies");
-                                        if (cookiePreferenceCookies.getForward() != null) {
-                                            xmlWriter.startElement("Forward").value(cookiePreferenceCookies.getForward()).endElement();
-                                        }
-                                        if (cookiePreferenceCookies != null) {
-                                            CookieNames cookieNamesWhitelistedNames = cookiePreferenceCookies.getWhitelistedNames();
-                                            if (cookieNamesWhitelistedNames != null) {
-                                                xmlWriter.startElement("WhitelistedNames");
-                                                if (cookieNamesWhitelistedNames.getQuantity() != null) {
-                                                    xmlWriter.startElement("Quantity").value(cookieNamesWhitelistedNames.getQuantity()).endElement();
-                                                }
 
-                                                if (cookieNamesWhitelistedNames != null) {
-                                                    java.util.List<String> cookieNamesWhitelistedNamesitemsList = cookieNamesWhitelistedNames.getItems();
-                                                    if (cookieNamesWhitelistedNamesitemsList != null && cookieNamesWhitelistedNamesitemsList.size() > 0) {
-                                                        int cookieNamesWhitelistedNamesitemsListIndex = 1;
-                                                        xmlWriter.startElement("Items");
-                                                        for (String cookieNamesWhitelistedNamesitemsListValue : cookieNamesWhitelistedNamesitemsList) {
+                                CookiePreference cookies = forwardedValues
+                                        .getCookies();
+                                if (cookies != null) {
+                                    xmlWriter.startElement("Cookies");
 
-                                                        xmlWriter.startElement("Name");
-                                                            xmlWriter.value(cookieNamesWhitelistedNamesitemsListValue);
-                                                        xmlWriter.endElement();
-
-                                                            cookieNamesWhitelistedNamesitemsListIndex++;
-                                                        }
-                                                        xmlWriter.endElement();
-                                                    }
-                                                }
-                                                xmlWriter.endElement();
-                                            }
-                                        }
-                                        xmlWriter.endElement();
+                                    if (cookies.getForward() != null) {
+                                        xmlWriter.startElement("Forward")
+                                                .value(cookies.getForward())
+                                                .endElement();
                                     }
-                                }
-                                if (forwardedValuesForwardedValues != null) {
-                                    Headers headersHeaders = forwardedValuesForwardedValues.getHeaders();
-                                    if (headersHeaders != null) {
-                                        xmlWriter.startElement("Headers");
-                                        if (headersHeaders.getQuantity() != null) {
-                                            xmlWriter.startElement("Quantity").value(headersHeaders.getQuantity()).endElement();
+
+                                    CookieNames whitelistedNames = cookies
+                                            .getWhitelistedNames();
+                                    if (whitelistedNames != null) {
+                                        xmlWriter
+                                                .startElement("WhitelistedNames");
+
+                                        if (whitelistedNames.getQuantity() != null) {
+                                            xmlWriter
+                                                    .startElement("Quantity")
+                                                    .value(whitelistedNames
+                                                            .getQuantity())
+                                                    .endElement();
                                         }
 
-                                        if (headersHeaders != null) {
-                                            java.util.List<String> headersHeadersitemsList = headersHeaders.getItems();
-                                            if (headersHeadersitemsList != null && headersHeadersitemsList.size() > 0) {
-                                                int headersHeadersitemsListIndex = 1;
-                                                xmlWriter.startElement("Items");
-                                                for (String headersHeadersitemsListValue : headersHeadersitemsList) {
+                                        com.amazonaws.internal.SdkInternalList<String> cookieNamesItemsList = (com.amazonaws.internal.SdkInternalList<String>) whitelistedNames
+                                                .getItems();
+                                        if (!cookieNamesItemsList.isEmpty()
+                                                || !cookieNamesItemsList
+                                                        .isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
 
+                                            for (String cookieNamesItemsListValue : cookieNamesItemsList) {
                                                 xmlWriter.startElement("Name");
-                                                    xmlWriter.value(headersHeadersitemsListValue);
-                                                xmlWriter.endElement();
-
-                                                    headersHeadersitemsListIndex++;
-                                                }
+                                                xmlWriter
+                                                        .value(cookieNamesItemsListValue);
                                                 xmlWriter.endElement();
                                             }
+                                            xmlWriter.endElement();
                                         }
                                         xmlWriter.endElement();
                                     }
+                                    xmlWriter.endElement();
+                                }
+
+                                Headers headers = forwardedValues.getHeaders();
+                                if (headers != null) {
+                                    xmlWriter.startElement("Headers");
+
+                                    if (headers.getQuantity() != null) {
+                                        xmlWriter.startElement("Quantity")
+                                                .value(headers.getQuantity())
+                                                .endElement();
+                                    }
+
+                                    com.amazonaws.internal.SdkInternalList<String> headersItemsList = (com.amazonaws.internal.SdkInternalList<String>) headers
+                                            .getItems();
+                                    if (!headersItemsList.isEmpty()
+                                            || !headersItemsList
+                                                    .isAutoConstruct()) {
+                                        xmlWriter.startElement("Items");
+
+                                        for (String headersItemsListValue : headersItemsList) {
+                                            xmlWriter.startElement("Name");
+                                            xmlWriter
+                                                    .value(headersItemsListValue);
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
-                            TrustedSigners trustedSignersTrustedSigners = defaultCacheBehaviorDefaultCacheBehavior.getTrustedSigners();
-                            if (trustedSignersTrustedSigners != null) {
+
+                            TrustedSigners trustedSigners = cacheBehaviorsItemsListValue
+                                    .getTrustedSigners();
+                            if (trustedSigners != null) {
                                 xmlWriter.startElement("TrustedSigners");
-                                if (trustedSignersTrustedSigners.isEnabled() != null) {
-                                    xmlWriter.startElement("Enabled").value(trustedSignersTrustedSigners.isEnabled()).endElement();
+
+                                if (trustedSigners.getEnabled() != null) {
+                                    xmlWriter.startElement("Enabled")
+                                            .value(trustedSigners.getEnabled())
+                                            .endElement();
                                 }
-                                if (trustedSignersTrustedSigners.getQuantity() != null) {
-                                    xmlWriter.startElement("Quantity").value(trustedSignersTrustedSigners.getQuantity()).endElement();
+
+                                if (trustedSigners.getQuantity() != null) {
+                                    xmlWriter
+                                            .startElement("Quantity")
+                                            .value(trustedSigners.getQuantity())
+                                            .endElement();
                                 }
 
-                                if (trustedSignersTrustedSigners != null) {
-                                    java.util.List<String> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.getItems();
-                                    if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.size() > 0) {
-                                        int trustedSignersTrustedSignersitemsListIndex = 1;
-                                        xmlWriter.startElement("Items");
-                                        for (String trustedSignersTrustedSignersitemsListValue : trustedSignersTrustedSignersitemsList) {
+                                com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
+                                        .getItems();
+                                if (!trustedSignersItemsList.isEmpty()
+                                        || !trustedSignersItemsList
+                                                .isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
 
-                                        xmlWriter.startElement("AwsAccountNumber");
-                                            xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
-                                        xmlWriter.endElement();
-
-                                            trustedSignersTrustedSignersitemsListIndex++;
-                                        }
+                                    for (String trustedSignersItemsListValue : trustedSignersItemsList) {
+                                        xmlWriter
+                                                .startElement("AwsAccountNumber");
+                                        xmlWriter
+                                                .value(trustedSignersItemsListValue);
                                         xmlWriter.endElement();
                                     }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.getViewerProtocolPolicy() != null) {
-                            xmlWriter.startElement("ViewerProtocolPolicy").value(defaultCacheBehaviorDefaultCacheBehavior.getViewerProtocolPolicy()).endElement();
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.getMinTTL() != null) {
-                            xmlWriter.startElement("MinTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMinTTL()).endElement();
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
-                            AllowedMethods allowedMethodsAllowedMethods = defaultCacheBehaviorDefaultCacheBehavior.getAllowedMethods();
-                            if (allowedMethodsAllowedMethods != null) {
+
+                            if (cacheBehaviorsItemsListValue
+                                    .getViewerProtocolPolicy() != null) {
+                                xmlWriter
+                                        .startElement("ViewerProtocolPolicy")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getViewerProtocolPolicy())
+                                        .endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue.getMinTTL() != null) {
+                                xmlWriter
+                                        .startElement("MinTTL")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getMinTTL()).endElement();
+                            }
+
+                            AllowedMethods allowedMethods = cacheBehaviorsItemsListValue
+                                    .getAllowedMethods();
+                            if (allowedMethods != null) {
                                 xmlWriter.startElement("AllowedMethods");
-                                if (allowedMethodsAllowedMethods.getQuantity() != null) {
-                                    xmlWriter.startElement("Quantity").value(allowedMethodsAllowedMethods.getQuantity()).endElement();
+
+                                if (allowedMethods.getQuantity() != null) {
+                                    xmlWriter
+                                            .startElement("Quantity")
+                                            .value(allowedMethods.getQuantity())
+                                            .endElement();
                                 }
 
-                                if (allowedMethodsAllowedMethods != null) {
-                                    java.util.List<String> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.getItems();
-                                    if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.size() > 0) {
-                                        int allowedMethodsAllowedMethodsitemsListIndex = 1;
-                                        xmlWriter.startElement("Items");
-                                        for (String allowedMethodsAllowedMethodsitemsListValue : allowedMethodsAllowedMethodsitemsList) {
+                                com.amazonaws.internal.SdkInternalList<String> allowedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) allowedMethods
+                                        .getItems();
+                                if (!allowedMethodsItemsList.isEmpty()
+                                        || !allowedMethodsItemsList
+                                                .isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
 
+                                    for (String allowedMethodsItemsListValue : allowedMethodsItemsList) {
                                         xmlWriter.startElement("Method");
-                                            xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
-                                        xmlWriter.endElement();
-
-                                            allowedMethodsAllowedMethodsitemsListIndex++;
-                                        }
+                                        xmlWriter
+                                                .value(allowedMethodsItemsListValue);
                                         xmlWriter.endElement();
                                     }
-                                }
-                                if (allowedMethodsAllowedMethods != null) {
-                                    CachedMethods cachedMethodsCachedMethods = allowedMethodsAllowedMethods.getCachedMethods();
-                                    if (cachedMethodsCachedMethods != null) {
-                                        xmlWriter.startElement("CachedMethods");
-                                        if (cachedMethodsCachedMethods.getQuantity() != null) {
-                                            xmlWriter.startElement("Quantity").value(cachedMethodsCachedMethods.getQuantity()).endElement();
-                                        }
-
-                                        if (cachedMethodsCachedMethods != null) {
-                                            java.util.List<String> cachedMethodsCachedMethodsitemsList = cachedMethodsCachedMethods.getItems();
-                                            if (cachedMethodsCachedMethodsitemsList != null && cachedMethodsCachedMethodsitemsList.size() > 0) {
-                                                int cachedMethodsCachedMethodsitemsListIndex = 1;
-                                                xmlWriter.startElement("Items");
-                                                for (String cachedMethodsCachedMethodsitemsListValue : cachedMethodsCachedMethodsitemsList) {
-
-                                                xmlWriter.startElement("Method");
-                                                    xmlWriter.value(cachedMethodsCachedMethodsitemsListValue);
-                                                xmlWriter.endElement();
-
-                                                    cachedMethodsCachedMethodsitemsListIndex++;
-                                                }
-                                                xmlWriter.endElement();
-                                            }
-                                        }
-                                        xmlWriter.endElement();
-                                    }
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.isSmoothStreaming() != null) {
-                            xmlWriter.startElement("SmoothStreaming").value(defaultCacheBehaviorDefaultCacheBehavior.isSmoothStreaming()).endElement();
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.getDefaultTTL() != null) {
-                            xmlWriter.startElement("DefaultTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getDefaultTTL()).endElement();
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.getMaxTTL() != null) {
-                            xmlWriter.startElement("MaxTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMaxTTL()).endElement();
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.isCompress() != null) {
-                            xmlWriter.startElement("Compress").value(defaultCacheBehaviorDefaultCacheBehavior.isCompress()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    CacheBehaviors cacheBehaviorsCacheBehaviors = distributionConfigDistributionConfig.getCacheBehaviors();
-                    if (cacheBehaviorsCacheBehaviors != null) {
-                        xmlWriter.startElement("CacheBehaviors");
-                        if (cacheBehaviorsCacheBehaviors.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(cacheBehaviorsCacheBehaviors.getQuantity()).endElement();
-                        }
-
-                        if (cacheBehaviorsCacheBehaviors != null) {
-                            java.util.List<CacheBehavior> cacheBehaviorsCacheBehaviorsitemsList = cacheBehaviorsCacheBehaviors.getItems();
-                            if (cacheBehaviorsCacheBehaviorsitemsList != null && cacheBehaviorsCacheBehaviorsitemsList.size() > 0) {
-                                int cacheBehaviorsCacheBehaviorsitemsListIndex = 1;
-                                xmlWriter.startElement("Items");
-                                for (CacheBehavior cacheBehaviorsCacheBehaviorsitemsListValue : cacheBehaviorsCacheBehaviorsitemsList) {
-
-                                xmlWriter.startElement("CacheBehavior");
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getPathPattern() != null) {
-                                        xmlWriter.startElement("PathPattern").value(cacheBehaviorsCacheBehaviorsitemsListValue.getPathPattern()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getTargetOriginId() != null) {
-                                        xmlWriter.startElement("TargetOriginId").value(cacheBehaviorsCacheBehaviorsitemsListValue.getTargetOriginId()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
-                                        ForwardedValues forwardedValuesForwardedValues = cacheBehaviorsCacheBehaviorsitemsListValue.getForwardedValues();
-                                        if (forwardedValuesForwardedValues != null) {
-                                            xmlWriter.startElement("ForwardedValues");
-                                            if (forwardedValuesForwardedValues.isQueryString() != null) {
-                                                xmlWriter.startElement("QueryString").value(forwardedValuesForwardedValues.isQueryString()).endElement();
-                                            }
-                                            if (forwardedValuesForwardedValues != null) {
-                                                CookiePreference cookiePreferenceCookies = forwardedValuesForwardedValues.getCookies();
-                                                if (cookiePreferenceCookies != null) {
-                                                    xmlWriter.startElement("Cookies");
-                                                    if (cookiePreferenceCookies.getForward() != null) {
-                                                        xmlWriter.startElement("Forward").value(cookiePreferenceCookies.getForward()).endElement();
-                                                    }
-                                                    if (cookiePreferenceCookies != null) {
-                                                        CookieNames cookieNamesWhitelistedNames = cookiePreferenceCookies.getWhitelistedNames();
-                                                        if (cookieNamesWhitelistedNames != null) {
-                                                            xmlWriter.startElement("WhitelistedNames");
-                                                            if (cookieNamesWhitelistedNames.getQuantity() != null) {
-                                                                xmlWriter.startElement("Quantity").value(cookieNamesWhitelistedNames.getQuantity()).endElement();
-                                                            }
-
-                                                            if (cookieNamesWhitelistedNames != null) {
-                                                                java.util.List<String> cookieNamesWhitelistedNamesitemsList = cookieNamesWhitelistedNames.getItems();
-                                                                if (cookieNamesWhitelistedNamesitemsList != null && cookieNamesWhitelistedNamesitemsList.size() > 0) {
-                                                                    int cookieNamesWhitelistedNamesitemsListIndex = 1;
-                                                                    xmlWriter.startElement("Items");
-                                                                    for (String cookieNamesWhitelistedNamesitemsListValue : cookieNamesWhitelistedNamesitemsList) {
-
-                                                                    xmlWriter.startElement("Name");
-                                                                        xmlWriter.value(cookieNamesWhitelistedNamesitemsListValue);
-                                                                    xmlWriter.endElement();
-
-                                                                        cookieNamesWhitelistedNamesitemsListIndex++;
-                                                                    }
-                                                                    xmlWriter.endElement();
-                                                                }
-                                                            }
-                                                            xmlWriter.endElement();
-                                                        }
-                                                    }
-                                                    xmlWriter.endElement();
-                                                }
-                                            }
-                                            if (forwardedValuesForwardedValues != null) {
-                                                Headers headersHeaders = forwardedValuesForwardedValues.getHeaders();
-                                                if (headersHeaders != null) {
-                                                    xmlWriter.startElement("Headers");
-                                                    if (headersHeaders.getQuantity() != null) {
-                                                        xmlWriter.startElement("Quantity").value(headersHeaders.getQuantity()).endElement();
-                                                    }
-
-                                                    if (headersHeaders != null) {
-                                                        java.util.List<String> headersHeadersitemsList = headersHeaders.getItems();
-                                                        if (headersHeadersitemsList != null && headersHeadersitemsList.size() > 0) {
-                                                            int headersHeadersitemsListIndex = 1;
-                                                            xmlWriter.startElement("Items");
-                                                            for (String headersHeadersitemsListValue : headersHeadersitemsList) {
-
-                                                            xmlWriter.startElement("Name");
-                                                                xmlWriter.value(headersHeadersitemsListValue);
-                                                            xmlWriter.endElement();
-
-                                                                headersHeadersitemsListIndex++;
-                                                            }
-                                                            xmlWriter.endElement();
-                                                        }
-                                                    }
-                                                    xmlWriter.endElement();
-                                                }
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
-                                        TrustedSigners trustedSignersTrustedSigners = cacheBehaviorsCacheBehaviorsitemsListValue.getTrustedSigners();
-                                        if (trustedSignersTrustedSigners != null) {
-                                            xmlWriter.startElement("TrustedSigners");
-                                            if (trustedSignersTrustedSigners.isEnabled() != null) {
-                                                xmlWriter.startElement("Enabled").value(trustedSignersTrustedSigners.isEnabled()).endElement();
-                                            }
-                                            if (trustedSignersTrustedSigners.getQuantity() != null) {
-                                                xmlWriter.startElement("Quantity").value(trustedSignersTrustedSigners.getQuantity()).endElement();
-                                            }
-
-                                            if (trustedSignersTrustedSigners != null) {
-                                                java.util.List<String> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.getItems();
-                                                if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.size() > 0) {
-                                                    int trustedSignersTrustedSignersitemsListIndex = 1;
-                                                    xmlWriter.startElement("Items");
-                                                    for (String trustedSignersTrustedSignersitemsListValue : trustedSignersTrustedSignersitemsList) {
-
-                                                    xmlWriter.startElement("AwsAccountNumber");
-                                                        xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
-                                                    xmlWriter.endElement();
-
-                                                        trustedSignersTrustedSignersitemsListIndex++;
-                                                    }
-                                                    xmlWriter.endElement();
-                                                }
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getViewerProtocolPolicy() != null) {
-                                        xmlWriter.startElement("ViewerProtocolPolicy").value(cacheBehaviorsCacheBehaviorsitemsListValue.getViewerProtocolPolicy()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL() != null) {
-                                        xmlWriter.startElement("MinTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
-                                        AllowedMethods allowedMethodsAllowedMethods = cacheBehaviorsCacheBehaviorsitemsListValue.getAllowedMethods();
-                                        if (allowedMethodsAllowedMethods != null) {
-                                            xmlWriter.startElement("AllowedMethods");
-                                            if (allowedMethodsAllowedMethods.getQuantity() != null) {
-                                                xmlWriter.startElement("Quantity").value(allowedMethodsAllowedMethods.getQuantity()).endElement();
-                                            }
-
-                                            if (allowedMethodsAllowedMethods != null) {
-                                                java.util.List<String> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.getItems();
-                                                if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.size() > 0) {
-                                                    int allowedMethodsAllowedMethodsitemsListIndex = 1;
-                                                    xmlWriter.startElement("Items");
-                                                    for (String allowedMethodsAllowedMethodsitemsListValue : allowedMethodsAllowedMethodsitemsList) {
-
-                                                    xmlWriter.startElement("Method");
-                                                        xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
-                                                    xmlWriter.endElement();
-
-                                                        allowedMethodsAllowedMethodsitemsListIndex++;
-                                                    }
-                                                    xmlWriter.endElement();
-                                                }
-                                            }
-                                            if (allowedMethodsAllowedMethods != null) {
-                                                CachedMethods cachedMethodsCachedMethods = allowedMethodsAllowedMethods.getCachedMethods();
-                                                if (cachedMethodsCachedMethods != null) {
-                                                    xmlWriter.startElement("CachedMethods");
-                                                    if (cachedMethodsCachedMethods.getQuantity() != null) {
-                                                        xmlWriter.startElement("Quantity").value(cachedMethodsCachedMethods.getQuantity()).endElement();
-                                                    }
-
-                                                    if (cachedMethodsCachedMethods != null) {
-                                                        java.util.List<String> cachedMethodsCachedMethodsitemsList = cachedMethodsCachedMethods.getItems();
-                                                        if (cachedMethodsCachedMethodsitemsList != null && cachedMethodsCachedMethodsitemsList.size() > 0) {
-                                                            int cachedMethodsCachedMethodsitemsListIndex = 1;
-                                                            xmlWriter.startElement("Items");
-                                                            for (String cachedMethodsCachedMethodsitemsListValue : cachedMethodsCachedMethodsitemsList) {
-
-                                                            xmlWriter.startElement("Method");
-                                                                xmlWriter.value(cachedMethodsCachedMethodsitemsListValue);
-                                                            xmlWriter.endElement();
-
-                                                                cachedMethodsCachedMethodsitemsListIndex++;
-                                                            }
-                                                            xmlWriter.endElement();
-                                                        }
-                                                    }
-                                                    xmlWriter.endElement();
-                                                }
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.isSmoothStreaming() != null) {
-                                        xmlWriter.startElement("SmoothStreaming").value(cacheBehaviorsCacheBehaviorsitemsListValue.isSmoothStreaming()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getDefaultTTL() != null) {
-                                        xmlWriter.startElement("DefaultTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getDefaultTTL()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getMaxTTL() != null) {
-                                        xmlWriter.startElement("MaxTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMaxTTL()).endElement();
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.isCompress() != null) {
-                                        xmlWriter.startElement("Compress").value(cacheBehaviorsCacheBehaviorsitemsListValue.isCompress()).endElement();
-                                    }
-                                xmlWriter.endElement();
-
-                                    cacheBehaviorsCacheBehaviorsitemsListIndex++;
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    CustomErrorResponses customErrorResponsesCustomErrorResponses = distributionConfigDistributionConfig.getCustomErrorResponses();
-                    if (customErrorResponsesCustomErrorResponses != null) {
-                        xmlWriter.startElement("CustomErrorResponses");
-                        if (customErrorResponsesCustomErrorResponses.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(customErrorResponsesCustomErrorResponses.getQuantity()).endElement();
-                        }
-
-                        if (customErrorResponsesCustomErrorResponses != null) {
-                            java.util.List<CustomErrorResponse> customErrorResponsesCustomErrorResponsesitemsList = customErrorResponsesCustomErrorResponses.getItems();
-                            if (customErrorResponsesCustomErrorResponsesitemsList != null && customErrorResponsesCustomErrorResponsesitemsList.size() > 0) {
-                                int customErrorResponsesCustomErrorResponsesitemsListIndex = 1;
-                                xmlWriter.startElement("Items");
-                                for (CustomErrorResponse customErrorResponsesCustomErrorResponsesitemsListValue : customErrorResponsesCustomErrorResponsesitemsList) {
-
-                                xmlWriter.startElement("CustomErrorResponse");
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCode() != null) {
-                                        xmlWriter.startElement("ErrorCode").value(customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCode()).endElement();
-                                    }
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getResponsePagePath() != null) {
-                                        xmlWriter.startElement("ResponsePagePath").value(customErrorResponsesCustomErrorResponsesitemsListValue.getResponsePagePath()).endElement();
-                                    }
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getResponseCode() != null) {
-                                        xmlWriter.startElement("ResponseCode").value(customErrorResponsesCustomErrorResponsesitemsListValue.getResponseCode()).endElement();
-                                    }
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCachingMinTTL() != null) {
-                                        xmlWriter.startElement("ErrorCachingMinTTL").value(customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCachingMinTTL()).endElement();
-                                    }
-                                xmlWriter.endElement();
-
-                                    customErrorResponsesCustomErrorResponsesitemsListIndex++;
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig.getComment() != null) {
-                    xmlWriter.startElement("Comment").value(distributionConfigDistributionConfig.getComment()).endElement();
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    LoggingConfig loggingConfigLogging = distributionConfigDistributionConfig.getLogging();
-                    if (loggingConfigLogging != null) {
-                        xmlWriter.startElement("Logging");
-                        if (loggingConfigLogging.isEnabled() != null) {
-                            xmlWriter.startElement("Enabled").value(loggingConfigLogging.isEnabled()).endElement();
-                        }
-                        if (loggingConfigLogging.isIncludeCookies() != null) {
-                            xmlWriter.startElement("IncludeCookies").value(loggingConfigLogging.isIncludeCookies()).endElement();
-                        }
-                        if (loggingConfigLogging.getBucket() != null) {
-                            xmlWriter.startElement("Bucket").value(loggingConfigLogging.getBucket()).endElement();
-                        }
-                        if (loggingConfigLogging.getPrefix() != null) {
-                            xmlWriter.startElement("Prefix").value(loggingConfigLogging.getPrefix()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig.getPriceClass() != null) {
-                    xmlWriter.startElement("PriceClass").value(distributionConfigDistributionConfig.getPriceClass()).endElement();
-                }
-                if (distributionConfigDistributionConfig.isEnabled() != null) {
-                    xmlWriter.startElement("Enabled").value(distributionConfigDistributionConfig.isEnabled()).endElement();
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    ViewerCertificate viewerCertificateViewerCertificate = distributionConfigDistributionConfig.getViewerCertificate();
-                    if (viewerCertificateViewerCertificate != null) {
-                        xmlWriter.startElement("ViewerCertificate");
-                        if (viewerCertificateViewerCertificate.getCertificate() != null) {
-                            xmlWriter.startElement("Certificate").value(viewerCertificateViewerCertificate.getCertificate()).endElement();
-                        }
-                        if (viewerCertificateViewerCertificate.getCertificateSource() != null) {
-                            xmlWriter.startElement("CertificateSource").value(viewerCertificateViewerCertificate.getCertificateSource()).endElement();
-                        }
-                        if (viewerCertificateViewerCertificate.getSSLSupportMethod() != null) {
-                            xmlWriter.startElement("SSLSupportMethod").value(viewerCertificateViewerCertificate.getSSLSupportMethod()).endElement();
-                        }
-                        if (viewerCertificateViewerCertificate.getMinimumProtocolVersion() != null) {
-                            xmlWriter.startElement("MinimumProtocolVersion").value(viewerCertificateViewerCertificate.getMinimumProtocolVersion()).endElement();
-                        }
-                        if (viewerCertificateViewerCertificate.getIAMCertificateId() != null) {
-                            xmlWriter.startElement("IAMCertificateId").value(viewerCertificateViewerCertificate.getIAMCertificateId()).endElement();
-                        }
-                        if (viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate() != null) {
-                            xmlWriter.startElement("CloudFrontDefaultCertificate").value(viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    Restrictions restrictionsRestrictions = distributionConfigDistributionConfig.getRestrictions();
-                    if (restrictionsRestrictions != null) {
-                        xmlWriter.startElement("Restrictions");
-                        if (restrictionsRestrictions != null) {
-                            GeoRestriction geoRestrictionGeoRestriction = restrictionsRestrictions.getGeoRestriction();
-                            if (geoRestrictionGeoRestriction != null) {
-                                xmlWriter.startElement("GeoRestriction");
-                                if (geoRestrictionGeoRestriction.getRestrictionType() != null) {
-                                    xmlWriter.startElement("RestrictionType").value(geoRestrictionGeoRestriction.getRestrictionType()).endElement();
-                                }
-                                if (geoRestrictionGeoRestriction.getQuantity() != null) {
-                                    xmlWriter.startElement("Quantity").value(geoRestrictionGeoRestriction.getQuantity()).endElement();
+                                    xmlWriter.endElement();
                                 }
 
-                                if (geoRestrictionGeoRestriction != null) {
-                                    java.util.List<String> geoRestrictionGeoRestrictionitemsList = geoRestrictionGeoRestriction.getItems();
-                                    if (geoRestrictionGeoRestrictionitemsList != null && geoRestrictionGeoRestrictionitemsList.size() > 0) {
-                                        int geoRestrictionGeoRestrictionitemsListIndex = 1;
+                                CachedMethods cachedMethods = allowedMethods
+                                        .getCachedMethods();
+                                if (cachedMethods != null) {
+                                    xmlWriter.startElement("CachedMethods");
+
+                                    if (cachedMethods.getQuantity() != null) {
+                                        xmlWriter
+                                                .startElement("Quantity")
+                                                .value(cachedMethods
+                                                        .getQuantity())
+                                                .endElement();
+                                    }
+
+                                    com.amazonaws.internal.SdkInternalList<String> cachedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) cachedMethods
+                                            .getItems();
+                                    if (!cachedMethodsItemsList.isEmpty()
+                                            || !cachedMethodsItemsList
+                                                    .isAutoConstruct()) {
                                         xmlWriter.startElement("Items");
-                                        for (String geoRestrictionGeoRestrictionitemsListValue : geoRestrictionGeoRestrictionitemsList) {
 
-                                        xmlWriter.startElement("Location");
-                                            xmlWriter.value(geoRestrictionGeoRestrictionitemsListValue);
-                                        xmlWriter.endElement();
-
-                                            geoRestrictionGeoRestrictionitemsListIndex++;
+                                        for (String cachedMethodsItemsListValue : cachedMethodsItemsList) {
+                                            xmlWriter.startElement("Method");
+                                            xmlWriter
+                                                    .value(cachedMethodsItemsListValue);
+                                            xmlWriter.endElement();
                                         }
                                         xmlWriter.endElement();
                                     }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
+
+                            if (cacheBehaviorsItemsListValue
+                                    .getSmoothStreaming() != null) {
+                                xmlWriter
+                                        .startElement("SmoothStreaming")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getSmoothStreaming())
+                                        .endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue.getDefaultTTL() != null) {
+                                xmlWriter
+                                        .startElement("DefaultTTL")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getDefaultTTL()).endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue.getMaxTTL() != null) {
+                                xmlWriter
+                                        .startElement("MaxTTL")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getMaxTTL()).endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue.getCompress() != null) {
+                                xmlWriter
+                                        .startElement("Compress")
+                                        .value(cacheBehaviorsItemsListValue
+                                                .getCompress()).endElement();
+                            }
+                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
+                    xmlWriter.endElement();
                 }
-                if (distributionConfigDistributionConfig.getWebACLId() != null) {
-                    xmlWriter.startElement("WebACLId").value(distributionConfigDistributionConfig.getWebACLId()).endElement();
+
+                CustomErrorResponses customErrorResponses = distributionConfig
+                        .getCustomErrorResponses();
+                if (customErrorResponses != null) {
+                    xmlWriter.startElement("CustomErrorResponses");
+
+                    if (customErrorResponses.getQuantity() != null) {
+                        xmlWriter.startElement("Quantity")
+                                .value(customErrorResponses.getQuantity())
+                                .endElement();
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<CustomErrorResponse> customErrorResponsesItemsList = (com.amazonaws.internal.SdkInternalList<CustomErrorResponse>) customErrorResponses
+                            .getItems();
+                    if (!customErrorResponsesItemsList.isEmpty()
+                            || !customErrorResponsesItemsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Items");
+
+                        for (CustomErrorResponse customErrorResponsesItemsListValue : customErrorResponsesItemsList) {
+                            xmlWriter.startElement("CustomErrorResponse");
+
+                            if (customErrorResponsesItemsListValue
+                                    .getErrorCode() != null) {
+                                xmlWriter
+                                        .startElement("ErrorCode")
+                                        .value(customErrorResponsesItemsListValue
+                                                .getErrorCode()).endElement();
+                            }
+
+                            if (customErrorResponsesItemsListValue
+                                    .getResponsePagePath() != null) {
+                                xmlWriter
+                                        .startElement("ResponsePagePath")
+                                        .value(customErrorResponsesItemsListValue
+                                                .getResponsePagePath())
+                                        .endElement();
+                            }
+
+                            if (customErrorResponsesItemsListValue
+                                    .getResponseCode() != null) {
+                                xmlWriter
+                                        .startElement("ResponseCode")
+                                        .value(customErrorResponsesItemsListValue
+                                                .getResponseCode())
+                                        .endElement();
+                            }
+
+                            if (customErrorResponsesItemsListValue
+                                    .getErrorCachingMinTTL() != null) {
+                                xmlWriter
+                                        .startElement("ErrorCachingMinTTL")
+                                        .value(customErrorResponsesItemsListValue
+                                                .getErrorCachingMinTTL())
+                                        .endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                if (distributionConfig.getComment() != null) {
+                    xmlWriter.startElement("Comment")
+                            .value(distributionConfig.getComment())
+                            .endElement();
+                }
+
+                LoggingConfig logging = distributionConfig.getLogging();
+                if (logging != null) {
+                    xmlWriter.startElement("Logging");
+
+                    if (logging.getEnabled() != null) {
+                        xmlWriter.startElement("Enabled")
+                                .value(logging.getEnabled()).endElement();
+                    }
+
+                    if (logging.getIncludeCookies() != null) {
+                        xmlWriter.startElement("IncludeCookies")
+                                .value(logging.getIncludeCookies())
+                                .endElement();
+                    }
+
+                    if (logging.getBucket() != null) {
+                        xmlWriter.startElement("Bucket")
+                                .value(logging.getBucket()).endElement();
+                    }
+
+                    if (logging.getPrefix() != null) {
+                        xmlWriter.startElement("Prefix")
+                                .value(logging.getPrefix()).endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                if (distributionConfig.getPriceClass() != null) {
+                    xmlWriter.startElement("PriceClass")
+                            .value(distributionConfig.getPriceClass())
+                            .endElement();
+                }
+
+                if (distributionConfig.getEnabled() != null) {
+                    xmlWriter.startElement("Enabled")
+                            .value(distributionConfig.getEnabled())
+                            .endElement();
+                }
+
+                ViewerCertificate viewerCertificate = distributionConfig
+                        .getViewerCertificate();
+                if (viewerCertificate != null) {
+                    xmlWriter.startElement("ViewerCertificate");
+
+                    if (viewerCertificate.getCertificate() != null) {
+                        xmlWriter.startElement("Certificate")
+                                .value(viewerCertificate.getCertificate())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getCertificateSource() != null) {
+                        xmlWriter
+                                .startElement("CertificateSource")
+                                .value(viewerCertificate.getCertificateSource())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getSSLSupportMethod() != null) {
+                        xmlWriter.startElement("SSLSupportMethod")
+                                .value(viewerCertificate.getSSLSupportMethod())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getMinimumProtocolVersion() != null) {
+                        xmlWriter
+                                .startElement("MinimumProtocolVersion")
+                                .value(viewerCertificate
+                                        .getMinimumProtocolVersion())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getIAMCertificateId() != null) {
+                        xmlWriter.startElement("IAMCertificateId")
+                                .value(viewerCertificate.getIAMCertificateId())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getCloudFrontDefaultCertificate() != null) {
+                        xmlWriter
+                                .startElement("CloudFrontDefaultCertificate")
+                                .value(viewerCertificate
+                                        .getCloudFrontDefaultCertificate())
+                                .endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                Restrictions restrictions = distributionConfig
+                        .getRestrictions();
+                if (restrictions != null) {
+                    xmlWriter.startElement("Restrictions");
+
+                    GeoRestriction geoRestriction = restrictions
+                            .getGeoRestriction();
+                    if (geoRestriction != null) {
+                        xmlWriter.startElement("GeoRestriction");
+
+                        if (geoRestriction.getRestrictionType() != null) {
+                            xmlWriter.startElement("RestrictionType")
+                                    .value(geoRestriction.getRestrictionType())
+                                    .endElement();
+                        }
+
+                        if (geoRestriction.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity")
+                                    .value(geoRestriction.getQuantity())
+                                    .endElement();
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<String> geoRestrictionItemsList = (com.amazonaws.internal.SdkInternalList<String>) geoRestriction
+                                .getItems();
+                        if (!geoRestrictionItemsList.isEmpty()
+                                || !geoRestrictionItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
+
+                            for (String geoRestrictionItemsListValue : geoRestrictionItemsList) {
+                                xmlWriter.startElement("Location");
+                                xmlWriter.value(geoRestrictionItemsListValue);
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                if (distributionConfig.getWebACLId() != null) {
+                    xmlWriter.startElement("WebACLId")
+                            .value(distributionConfig.getWebACLId())
+                            .endElement();
                 }
                 xmlWriter.endElement();
             }
-        }
 
-            try {
-                request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
-                request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes(UTF8).length));
+            request.setContent(new StringInputStream(stringWriter.getBuffer()
+                    .toString()));
+            request.addHeader(
+                    "Content-Length",
+                    Integer.toString(stringWriter.getBuffer().toString()
+                            .getBytes(UTF8).length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
                 request.addHeader("Content-Type", "application/xml");
-            } catch (UnsupportedEncodingException e) {
-                throw new AmazonClientException("Unable to marshall request to XML", e);
             }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to XML: " + t.getMessage(), t);
+        }
 
         return request;
     }
+
 }

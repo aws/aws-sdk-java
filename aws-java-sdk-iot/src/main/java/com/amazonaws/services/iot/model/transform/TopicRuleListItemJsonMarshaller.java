@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +50,10 @@ public class TopicRuleListItemJsonMarshaller {
 
         try {
             jsonWriter.object();
+
+            if (topicRuleListItem.getRuleArn() != null) {
+                jsonWriter.key("ruleArn").value(topicRuleListItem.getRuleArn());
+            }
 
             if (topicRuleListItem.getRuleName() != null) {
                 jsonWriter.key("ruleName").value(

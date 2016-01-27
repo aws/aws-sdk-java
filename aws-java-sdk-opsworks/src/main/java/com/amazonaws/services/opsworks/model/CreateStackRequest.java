@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,7 +118,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
@@ -200,9 +201,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     private String customJson;
     /**
      * <p>
-     * The configuration manager. When you clone a stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you create a stack we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      */
     private StackConfigurationManager configurationManager;
@@ -296,10 +298,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * version on the stack's instances.</li>
      * </ul>
      * <p>
-     * The default setting is <code>LATEST</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * The default setting is the most recent release of the agent. To specify
+     * an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent
+     * version numbers, call <a>DescribeAgentVersions</a>.
      * </p>
      * <note>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</note>
@@ -851,7 +853,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
@@ -873,7 +875,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
      *        you want to use when you create instances. For more information,
      *        see <a href=
@@ -901,7 +903,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
@@ -922,7 +924,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         such as <code>Amazon Linux 2015.03</code>,
      *         <code>Red Hat Enterprise Linux 7</code>,
      *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *         <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
      *         you want to use when you create instances. For more information,
      *         see <a href=
@@ -950,7 +952,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
      * want to use when you create instances. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
@@ -972,7 +974,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
      *        you want to use when you create instances. For more information,
      *        see <a href=
@@ -1412,15 +1414,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration manager. When you clone a stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you create a stack we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      * 
      * @param configurationManager
-     *        The configuration manager. When you clone a stack we recommend
+     *        The configuration manager. When you create a stack we recommend
      *        that you use the configuration manager to specify the Chef
-     *        version: 0.9, 11.4, or 11.10. The default value is currently 11.4.
+     *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
+     *        stacks. The default value for Linux stacks is currently 11.4.
      */
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
@@ -1429,15 +1433,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration manager. When you clone a stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you create a stack we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      * 
-     * @return The configuration manager. When you clone a stack we recommend
+     * @return The configuration manager. When you create a stack we recommend
      *         that you use the configuration manager to specify the Chef
-     *         version: 0.9, 11.4, or 11.10. The default value is currently
-     *         11.4.
+     *         version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
+     *         stacks. The default value for Linux stacks is currently 11.4.
      */
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
@@ -1445,15 +1450,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration manager. When you clone a stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or
-     * 11.10. The default value is currently 11.4.
+     * The configuration manager. When you create a stack we recommend that you
+     * use the configuration manager to specify the Chef version: 12, 11.10, or
+     * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
+     * Linux stacks is currently 11.4.
      * </p>
      * 
      * @param configurationManager
-     *        The configuration manager. When you clone a stack we recommend
+     *        The configuration manager. When you create a stack we recommend
      *        that you use the configuration manager to specify the Chef
-     *        version: 0.9, 11.4, or 11.10. The default value is currently 11.4.
+     *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
+     *        stacks. The default value for Linux stacks is currently 11.4.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2086,10 +2093,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * version on the stack's instances.</li>
      * </ul>
      * <p>
-     * The default setting is <code>LATEST</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * The default setting is the most recent release of the agent. To specify
+     * an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent
+     * version numbers, call <a>DescribeAgentVersions</a>.
      * </p>
      * <note>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</note>
@@ -2107,10 +2114,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        automatically installs that version on the stack's instances.</li>
      *        </ul>
      *        <p>
-     *        The default setting is <code>LATEST</code>. To specify an agent
-     *        version, you must use the complete version number, not the
-     *        abbreviated number shown on the console. For a list of available
-     *        agent version numbers, call <a>DescribeAgentVersions</a>.
+     *        The default setting is the most recent release of the agent. To
+     *        specify an agent version, you must use the complete version
+     *        number, not the abbreviated number shown on the console. For a
+     *        list of available agent version numbers, call
+     *        <a>DescribeAgentVersions</a>.
      *        </p>
      *        <note>You can also specify an agent version when you create or
      *        update an instance, which overrides the stack's default setting.
@@ -2133,10 +2141,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * version on the stack's instances.</li>
      * </ul>
      * <p>
-     * The default setting is <code>LATEST</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * The default setting is the most recent release of the agent. To specify
+     * an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent
+     * version numbers, call <a>DescribeAgentVersions</a>.
      * </p>
      * <note>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</note>
@@ -2153,10 +2161,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         automatically installs that version on the stack's instances.</li>
      *         </ul>
      *         <p>
-     *         The default setting is <code>LATEST</code>. To specify an agent
-     *         version, you must use the complete version number, not the
-     *         abbreviated number shown on the console. For a list of available
-     *         agent version numbers, call <a>DescribeAgentVersions</a>.
+     *         The default setting is the most recent release of the agent. To
+     *         specify an agent version, you must use the complete version
+     *         number, not the abbreviated number shown on the console. For a
+     *         list of available agent version numbers, call
+     *         <a>DescribeAgentVersions</a>.
      *         </p>
      *         <note>You can also specify an agent version when you create or
      *         update an instance, which overrides the stack's default setting.
@@ -2179,10 +2188,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * version on the stack's instances.</li>
      * </ul>
      * <p>
-     * The default setting is <code>LATEST</code>. To specify an agent version,
-     * you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * The default setting is the most recent release of the agent. To specify
+     * an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent
+     * version numbers, call <a>DescribeAgentVersions</a>.
      * </p>
      * <note>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</note>
@@ -2200,10 +2209,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        automatically installs that version on the stack's instances.</li>
      *        </ul>
      *        <p>
-     *        The default setting is <code>LATEST</code>. To specify an agent
-     *        version, you must use the complete version number, not the
-     *        abbreviated number shown on the console. For a list of available
-     *        agent version numbers, call <a>DescribeAgentVersions</a>.
+     *        The default setting is the most recent release of the agent. To
+     *        specify an agent version, you must use the complete version
+     *        number, not the abbreviated number shown on the console. For a
+     *        list of available agent version numbers, call
+     *        <a>DescribeAgentVersions</a>.
      *        </p>
      *        <note>You can also specify an agent version when you create or
      *        update an instance, which overrides the stack's default setting.

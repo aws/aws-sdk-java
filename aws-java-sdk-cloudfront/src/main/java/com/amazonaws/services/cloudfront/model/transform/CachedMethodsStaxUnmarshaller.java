@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,29 +28,40 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Cached Methods StAX Unmarshaller
+ * CachedMethods StAX Unmarshaller
  */
-public class CachedMethodsStaxUnmarshaller implements Unmarshaller<CachedMethods, StaxUnmarshallerContext> {
+public class CachedMethodsStaxUnmarshaller implements
+        Unmarshaller<CachedMethods, StaxUnmarshallerContext> {
 
-    public CachedMethods unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CachedMethods unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         CachedMethods cachedMethods = new CachedMethods();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
-        if (context.isStartOfDocument()) targetDepth += 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return cachedMethods;
+            if (xmlEvent.isEndDocument())
+                return cachedMethods;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Quantity", targetDepth)) {
-                    cachedMethods.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    cachedMethods.setQuantity(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Items/Method", targetDepth)) {
-                    cachedMethods.getItems().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cachedMethods.getItems().add(
+                            StringStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cachedMethods;
@@ -59,9 +71,10 @@ public class CachedMethodsStaxUnmarshaller implements Unmarshaller<CachedMethods
     }
 
     private static CachedMethodsStaxUnmarshaller instance;
+
     public static CachedMethodsStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CachedMethodsStaxUnmarshaller();
+        if (instance == null)
+            instance = new CachedMethodsStaxUnmarshaller();
         return instance;
     }
 }
-    

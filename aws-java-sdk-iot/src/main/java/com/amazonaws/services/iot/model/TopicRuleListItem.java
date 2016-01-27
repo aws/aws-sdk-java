@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,6 +27,12 @@ public class TopicRuleListItem implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The rule ARN.
+     * </p>
+     */
+    private String ruleArn;
+    /**
+     * <p>
      * The name of the rule.
      * </p>
      */
@@ -48,6 +55,44 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * </p>
      */
     private Boolean ruleDisabled;
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @param ruleArn
+     *        The rule ARN.
+     */
+    public void setRuleArn(String ruleArn) {
+        this.ruleArn = ruleArn;
+    }
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @return The rule ARN.
+     */
+    public String getRuleArn() {
+        return this.ruleArn;
+    }
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @param ruleArn
+     *        The rule ARN.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public TopicRuleListItem withRuleArn(String ruleArn) {
+        setRuleArn(ruleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -224,6 +269,8 @@ public class TopicRuleListItem implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRuleArn() != null)
+            sb.append("RuleArn: " + getRuleArn() + ",");
         if (getRuleName() != null)
             sb.append("RuleName: " + getRuleName() + ",");
         if (getTopicPattern() != null)
@@ -246,6 +293,11 @@ public class TopicRuleListItem implements Serializable, Cloneable {
         if (obj instanceof TopicRuleListItem == false)
             return false;
         TopicRuleListItem other = (TopicRuleListItem) obj;
+        if (other.getRuleArn() == null ^ this.getRuleArn() == null)
+            return false;
+        if (other.getRuleArn() != null
+                && other.getRuleArn().equals(this.getRuleArn()) == false)
+            return false;
         if (other.getRuleName() == null ^ this.getRuleName() == null)
             return false;
         if (other.getRuleName() != null
@@ -274,6 +326,8 @@ public class TopicRuleListItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode
+                + ((getRuleArn() == null) ? 0 : getRuleArn().hashCode());
         hashCode = prime * hashCode
                 + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
         hashCode = prime

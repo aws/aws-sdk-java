@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,7 +73,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -153,7 +154,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
@@ -496,7 +497,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -527,7 +528,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>.</li>
      *        </ul>
      *        <p>
@@ -565,7 +566,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -595,7 +596,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         such as <code>Amazon Linux 2015.03</code>,
      *         <code>Red Hat Enterprise Linux 7</code>,
      *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *         <li>A custom AMI: <code>Custom</code>.</li>
      *         </ul>
      *         <p>
@@ -633,7 +634,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -664,7 +665,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>.</li>
      *        </ul>
      *        <p>
@@ -1114,7 +1115,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
@@ -1132,7 +1133,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li> <code>INHERIT</code> - Use the stack's default agent version
+     *        <li><code>INHERIT</code> - Use the stack's default agent version
      *        setting.</li>
      *        <li><i>version_number</i> - Use the specified agent version. This
      *        value overrides the stack's default setting. To update the agent
@@ -1155,7 +1156,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
@@ -1172,7 +1173,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return The default AWS OpsWorks agent version. You have the following
      *         options:</p>
      *         <ul>
-     *         <li> <code>INHERIT</code> - Use the stack's default agent version
+     *         <li><code>INHERIT</code> - Use the stack's default agent version
      *         setting.</li>
      *         <li><i>version_number</i> - Use the specified agent version. This
      *         value overrides the stack's default setting. To update the agent
@@ -1195,7 +1196,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
@@ -1213,7 +1214,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li> <code>INHERIT</code> - Use the stack's default agent version
+     *        <li><code>INHERIT</code> - Use the stack's default agent version
      *        setting.</li>
      *        <li><i>version_number</i> - Use the specified agent version. This
      *        value overrides the stack's default setting. To update the agent

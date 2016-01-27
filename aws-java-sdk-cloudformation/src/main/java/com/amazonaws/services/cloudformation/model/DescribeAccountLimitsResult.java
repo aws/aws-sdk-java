@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,8 +34,8 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<AccountLimit> accountLimits;
     /**
      * <p>
-     * A string that identifies the next page of limits. If no additional page
-     * exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of limits. If no additional page exists, this value is null.
      * </p>
      */
     private String nextToken;
@@ -126,13 +127,14 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that identifies the next page of limits. If no additional page
-     * exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of limits. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        A string that identifies the next page of limits. If no additional
-     *        page exists, this value is null.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of limits. If no additional page exists, this value is
+     *        null.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -140,12 +142,13 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that identifies the next page of limits. If no additional page
-     * exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of limits. If no additional page exists, this value is null.
      * </p>
      * 
-     * @return A string that identifies the next page of limits. If no
-     *         additional page exists, this value is null.
+     * @return If the output exceeds 1 MB in size, a string that identifies the
+     *         next page of limits. If no additional page exists, this value is
+     *         null.
      */
     public String getNextToken() {
         return this.nextToken;
@@ -153,13 +156,14 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that identifies the next page of limits. If no additional page
-     * exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of limits. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        A string that identifies the next page of limits. If no additional
-     *        page exists, this value is null.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of limits. If no additional page exists, this value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

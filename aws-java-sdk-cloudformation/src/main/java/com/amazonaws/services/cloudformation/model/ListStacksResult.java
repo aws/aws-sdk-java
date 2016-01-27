@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,8 +34,8 @@ public class ListStacksResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<StackSummary> stackSummaries;
     /**
      * <p>
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
      * </p>
      */
     private String nextToken;
@@ -125,13 +126,14 @@ public class ListStacksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stacks, if
-     *        there is one.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of stacks. If no additional page exists, this value is
+     *        null.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -139,12 +141,13 @@ public class ListStacksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
      * </p>
      * 
-     * @return String that identifies the start of the next list of stacks, if
-     *         there is one.
+     * @return If the output exceeds 1 MB in size, a string that identifies the
+     *         next page of stacks. If no additional page exists, this value is
+     *         null.
      */
     public String getNextToken() {
         return this.nextToken;
@@ -152,13 +155,14 @@ public class ListStacksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stacks, if
-     *        there is one.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of stacks. If no additional page exists, this value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

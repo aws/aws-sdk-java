@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.UUID;
 
+import com.amazonaws.http.response.NullResponseHandler;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -77,7 +78,7 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         AmazonServiceException expectedServiceException = null;
         try {
             testedClient.execute(testedRepeatableRequest,
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonServiceException is expected.");
@@ -125,7 +126,7 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         AmazonClientException expectedClientException = null;
         try {
             testedClient.execute(testedRepeatableRequest,
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonClientException is expected.");
@@ -173,7 +174,7 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // custom shouldRetry(..) method.
         try {
             testedClient.execute(testedNonRepeatableRequest,
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonServiceException is expected.");
@@ -218,7 +219,7 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // custom shouldRetry(..) method.
         try {
             testedClient.execute(testedRepeatableRequest,
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonClientException is expected.");
@@ -261,7 +262,7 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // consulting the custom shouldRetry(..) method.
         try {
             testedClient.execute(testedRepeatableRequest,
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonClientException is expected.");

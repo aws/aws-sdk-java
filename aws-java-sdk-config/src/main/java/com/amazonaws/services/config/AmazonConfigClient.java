@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -358,10 +359,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                         "NoSuchBucketException"));
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        setEndpoint("config.us-east-1.amazonaws.com/");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        setEndpoint("config.us-east-1.amazonaws.com/");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory
@@ -1475,8 +1477,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * >Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS
      * Config Developer Guide</i>.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param putConfigRuleRequest
      * @throws InvalidParameterValueException
@@ -1490,7 +1491,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      *         The rule is currently being deleted. Wait for a while and try
      *         again.
      * @throws InsufficientPermissionsException
-     *         Indicates one of the following errors:</p>
+     *         Indicates one of the following errors:
+     *         </p>
      *         <ul>
      *         <li>The rule cannot be created because the IAM role assigned to
      *         AWS Config lacks permissions to perform the config:Put* action.</li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,22 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyIdFormat(ModifyIdFormatRequest) ModifyIdFormat operation}.
  * <p>
- * <b>Important: This command is reserved for future use, and is
- * currently not available for you to use.</b>
- * </p>
- * <p>
- * Modifies the ID format for the specified resource. You can specify
- * that resources should receive longer IDs (17-character IDs) when they
- * are created. The following resource types support longer IDs:
- * <code>instance</code> |
+ * Modifies the ID format for the specified resource on a per-region
+ * basis. You can specify that resources should receive longer IDs
+ * (17-character IDs) when they are created. The following resource types
+ * support longer IDs: <code>instance</code> |
+ * 
  * <code>reservation</code> .
  * </p>
  * <p>
  * This setting applies to the IAM user who makes the request; it does
  * not apply to the entire AWS account. By default, an IAM user defaults
  * to the same settings as the root user, unless they explicitly override
- * the settings by running this request. These settings are applied on a
- * per-region basis.
+ * the settings by running this request. Resources created with longer
+ * IDs are visible to all IAM users, regardless of these settings and
+ * provided that they have permission to use the relevant
+ * <code>Describe</code> command for the resource type.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyIdFormat(ModifyIdFormatRequest)

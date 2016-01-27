@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,7 +73,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -84,7 +85,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -158,7 +161,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -191,7 +195,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, edit
@@ -534,7 +538,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -546,7 +550,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -562,7 +568,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>.</li>
      *        </ul>
      *        <p>
@@ -575,8 +581,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default option is the current Amazon Linux version. If you set
      *        this parameter to <code>Custom</code>, you must use the
      *        <a>CreateInstance</a> action's AmiId parameter to specify the
-     *        custom AMI that you want to use. For more information on the
-     *        supported operating systems, see <a href=
+     *        custom AMI that you want to use. Block device mappings are not
+     *        supported if the value is <code>Custom</code>. For more
+     *        information on the supported operating systems, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >Operating Systems</a>For more information on how to use custom
      *        AMIs with AWS OpsWorks, see <a href=
@@ -597,7 +604,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -609,7 +616,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -624,7 +633,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         such as <code>Amazon Linux 2015.03</code>,
      *         <code>Red Hat Enterprise Linux 7</code>,
      *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *         <li>A custom AMI: <code>Custom</code>.</li>
      *         </ul>
      *         <p>
@@ -637,8 +646,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         The default option is the current Amazon Linux version. If you
      *         set this parameter to <code>Custom</code>, you must use the
      *         <a>CreateInstance</a> action's AmiId parameter to specify the
-     *         custom AMI that you want to use. For more information on the
-     *         supported operating systems, see <a href=
+     *         custom AMI that you want to use. Block device mappings are not
+     *         supported if the value is <code>Custom</code>. For more
+     *         information on the supported operating systems, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *         >Operating Systems</a>For more information on how to use custom
      *         AMIs with AWS OpsWorks, see <a href=
@@ -659,7 +669,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * <code>Amazon Linux 2015.03</code>,
      * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
      * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      * <li>A custom AMI: <code>Custom</code>.</li>
      * </ul>
      * <p>
@@ -671,7 +681,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default option is the current Amazon Linux version. If you set this
      * parameter to <code>Custom</code>, you must use the <a>CreateInstance</a>
      * action's AmiId parameter to specify the custom AMI that you want to use.
-     * For more information on the supported operating systems, see <a href=
+     * Block device mappings are not supported if the value is
+     * <code>Custom</code>. For more information on the supported operating
+     * systems, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >Operating Systems</a>For more information on how to use custom AMIs with
      * AWS OpsWorks, see <a href=
@@ -687,7 +699,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        such as <code>Amazon Linux 2015.03</code>,
      *        <code>Red Hat Enterprise Linux 7</code>,
      *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li>
+     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
      *        <li>A custom AMI: <code>Custom</code>.</li>
      *        </ul>
      *        <p>
@@ -700,8 +712,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default option is the current Amazon Linux version. If you set
      *        this parameter to <code>Custom</code>, you must use the
      *        <a>CreateInstance</a> action's AmiId parameter to specify the
-     *        custom AMI that you want to use. For more information on the
-     *        supported operating systems, see <a href=
+     *        custom AMI that you want to use. Block device mappings are not
+     *        supported if the value is <code>Custom</code>. For more
+     *        information on the supported operating systems, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >Operating Systems</a>For more information on how to use custom
      *        AMIs with AWS OpsWorks, see <a href=
@@ -1192,13 +1205,15 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * 
      * @return An array of <code>BlockDeviceMapping</code> objects that specify
      *         the instance's block devices. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *         >Block Device Mapping</a>.
+     *         >Block Device Mapping</a>. Note that block device mappings are
+     *         not supported for custom AMIs.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -1212,14 +1227,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * 
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify
      *        the instance's block devices. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *        >Block Device Mapping</a>.
+     *        >Block Device Mapping</a>. Note that block device mappings are not
+     *        supported for custom AMIs.
      */
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -1237,7 +1254,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1250,7 +1268,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        An array of <code>BlockDeviceMapping</code> objects that specify
      *        the instance's block devices. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *        >Block Device Mapping</a>.
+     *        >Block Device Mapping</a>. Note that block device mappings are not
+     *        supported for custom AMIs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1271,14 +1290,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block devices. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     * >Block Device Mapping</a>.
+     * >Block Device Mapping</a>. Note that block device mappings are not
+     * supported for custom AMIs.
      * </p>
      * 
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify
      *        the instance's block devices. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html"
-     *        >Block Device Mapping</a>.
+     *        >Block Device Mapping</a>. Note that block device mappings are not
+     *        supported for custom AMIs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1486,7 +1507,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, edit
@@ -1504,7 +1525,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li> <code>INHERIT</code> - Use the stack's default agent version
+     *        <li><code>INHERIT</code> - Use the stack's default agent version
      *        setting.</li>
      *        <li><i>version_number</i> - Use the specified agent version. This
      *        value overrides the stack's default setting. To update the agent
@@ -1527,7 +1548,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, edit
@@ -1544,7 +1565,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return The default AWS OpsWorks agent version. You have the following
      *         options:</p>
      *         <ul>
-     *         <li> <code>INHERIT</code> - Use the stack's default agent version
+     *         <li><code>INHERIT</code> - Use the stack's default agent version
      *         setting.</li>
      *         <li><i>version_number</i> - Use the specified agent version. This
      *         value overrides the stack's default setting. To update the agent
@@ -1567,7 +1588,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li> <code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
      * </li>
      * <li><i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, edit
@@ -1585,7 +1606,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li> <code>INHERIT</code> - Use the stack's default agent version
+     *        <li><code>INHERIT</code> - Use the stack's default agent version
      *        setting.</li>
      *        <li><i>version_number</i> - Use the specified agent version. This
      *        value overrides the stack's default setting. To update the agent

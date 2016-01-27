@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,7 +86,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * deployment attributes to be installed on the layer's instances. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>.
+     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
+     * of the AWS CLI.
      * </p>
      */
     private String customJson;
@@ -586,7 +588,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * deployment attributes to be installed on the layer's instances. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>.
+     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
+     * of the AWS CLI.
      * </p>
      * 
      * @param customJson
@@ -594,7 +597,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        deployment attributes to be installed on the layer's instances.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     *        > Using Custom JSON</a>.
+     *        > Using Custom JSON</a>. This feature is supported as of version
+     *        1.7.42 of the AWS CLI.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
@@ -606,14 +610,16 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * deployment attributes to be installed on the layer's instances. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>.
+     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
+     * of the AWS CLI.
      * </p>
      * 
      * @return A JSON-formatted string containing custom stack configuration and
      *         deployment attributes to be installed on the layer's instances.
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     *         > Using Custom JSON</a>.
+     *         > Using Custom JSON</a>. This feature is supported as of version
+     *         1.7.42 of the AWS CLI.
      */
     public String getCustomJson() {
         return this.customJson;
@@ -625,7 +631,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * deployment attributes to be installed on the layer's instances. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>.
+     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
+     * of the AWS CLI.
      * </p>
      * 
      * @param customJson
@@ -633,7 +640,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        deployment attributes to be installed on the layer's instances.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     *        > Using Custom JSON</a>.
+     *        > Using Custom JSON</a>. This feature is supported as of version
+     *        1.7.42 of the AWS CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

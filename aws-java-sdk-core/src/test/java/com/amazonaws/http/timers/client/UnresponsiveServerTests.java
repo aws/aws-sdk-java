@@ -1,7 +1,22 @@
+/*
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 package com.amazonaws.http.timers.client;
 
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertClientExecutionTimerExecutorNotCreated;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertNumberOfTasksTriggered;
+import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.interruptCurrentThreadAfterDelay;
 import static com.amazonaws.http.timers.TimeoutTestConstants.CLIENT_EXECUTION_TIMEOUT;
 import static com.amazonaws.http.timers.TimeoutTestConstants.PRECISION_MULTIPLIER;
 import static com.amazonaws.http.timers.TimeoutTestConstants.TEST_TIMEOUT;
@@ -85,19 +100,6 @@ public class UnresponsiveServerTests extends UnresponsiveMockServerTestBase {
             assertTrue(Thread.currentThread().isInterrupted());
             assertThat(e.getCause(), instanceOf(InterruptedException.class));
         }
-    }
-
-    private void interruptCurrentThreadAfterDelay(final long delay) {
-        final Thread currentThread = Thread.currentThread();
-        new Thread() {
-            public void run() {
-                try {
-                    Thread.sleep(delay);
-                    currentThread.interrupt();
-                } catch (InterruptedException ignored) {
-                }
-            };
-        }.start();
     }
 
     @Test(timeout = TEST_TIMEOUT)

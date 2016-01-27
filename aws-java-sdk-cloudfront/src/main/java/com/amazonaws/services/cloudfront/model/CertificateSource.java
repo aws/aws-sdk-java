@@ -1,26 +1,29 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * Certificate Source
+ * 
  */
 public enum CertificateSource {
-    
+
     Cloudfront("cloudfront"),
-    Iam("iam");
+    Iam("iam"),
+    Acm("acm");
 
     private String value;
 
@@ -37,20 +40,21 @@ public enum CertificateSource {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return CertificateSource corresponding to the value
      */
     public static CertificateSource fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("cloudfront".equals(value)) {
-            return CertificateSource.Cloudfront;
+            return Cloudfront;
         } else if ("iam".equals(value)) {
-            return CertificateSource.Iam;
+            return Iam;
+        } else if ("acm".equals(value)) {
+            return Acm;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +34,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * <note>A stack name can contain only alphanumeric characters (case
      * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 255 characters.</note>
+     * cannot be longer than 128 characters.</note>
      */
     private String stackName;
     /**
@@ -67,7 +68,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters
-     * for the stack.
+     * for the stack. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     * >Parameter</a> data type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -187,10 +190,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     private String stackPolicyURL;
     /**
      * <p>
-     * A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated
-     * to EC2 resources that are created as part of the stack. A maximum number
-     * of 10 tags can be specified.
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum
+     * number of 10 tags can be specified.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -202,14 +204,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * <note>A stack name can contain only alphanumeric characters (case
      * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 255 characters.</note>
+     * cannot be longer than 128 characters.</note>
      * 
      * @param stackName
      *        The name that is associated with the stack. The name must be
      *        unique in the region in which you are creating the stack.</p>
      *        <note>A stack name can contain only alphanumeric characters (case
      *        sensitive) and hyphens. It must start with an alphabetic character
-     *        and cannot be longer than 255 characters.
+     *        and cannot be longer than 128 characters.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
@@ -222,13 +224,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * <note>A stack name can contain only alphanumeric characters (case
      * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 255 characters.</note>
+     * cannot be longer than 128 characters.</note>
      * 
      * @return The name that is associated with the stack. The name must be
      *         unique in the region in which you are creating the stack.</p>
      *         <note>A stack name can contain only alphanumeric characters (case
      *         sensitive) and hyphens. It must start with an alphabetic
-     *         character and cannot be longer than 255 characters.
+     *         character and cannot be longer than 128 characters.
      */
     public String getStackName() {
         return this.stackName;
@@ -241,14 +243,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * <note>A stack name can contain only alphanumeric characters (case
      * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 255 characters.</note>
+     * cannot be longer than 128 characters.</note>
      * 
      * @param stackName
      *        The name that is associated with the stack. The name must be
      *        unique in the region in which you are creating the stack.</p>
      *        <note>A stack name can contain only alphanumeric characters (case
      *        sensitive) and hyphens. It must start with an alphabetic character
-     *        and cannot be longer than 255 characters.
+     *        and cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -428,11 +430,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters
-     * for the stack.
+     * for the stack. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     * >Parameter</a> data type.
      * </p>
      * 
      * @return A list of <code>Parameter</code> structures that specify input
-     *         parameters for the stack.
+     *         parameters for the stack. For more information, see the <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     *         >Parameter</a> data type.
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
@@ -444,12 +450,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters
-     * for the stack.
+     * for the stack. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     * >Parameter</a> data type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input
-     *        parameters for the stack.
+     *        parameters for the stack. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     *        >Parameter</a> data type.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -464,7 +474,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters
-     * for the stack.
+     * for the stack. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     * >Parameter</a> data type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -475,7 +487,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input
-     *        parameters for the stack.
+     *        parameters for the stack. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     *        >Parameter</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -493,12 +507,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters
-     * for the stack.
+     * for the stack. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     * >Parameter</a> data type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input
-     *        parameters for the stack.
+     *        parameters for the stack. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
+     *        >Parameter</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1578,16 +1596,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated
-     * to EC2 resources that are created as part of the stack. A maximum number
-     * of 10 tags can be specified.
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum
+     * number of 10 tags can be specified.
      * </p>
      * 
-     * @return A set of user-defined <code>Tags</code> to associate with this
-     *         stack, represented by key/value pairs. Tags defined for the stack
-     *         are propagated to EC2 resources that are created as part of the
-     *         stack. A maximum number of 10 tags can be specified.
+     * @return Key-value pairs to associate with this stack. AWS CloudFormation
+     *         also propagates these tags to the resources created in the stack.
+     *         A maximum number of 10 tags can be specified.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -1598,17 +1614,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated
-     * to EC2 resources that are created as part of the stack. A maximum number
-     * of 10 tags can be specified.
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum
+     * number of 10 tags can be specified.
      * </p>
      * 
      * @param tags
-     *        A set of user-defined <code>Tags</code> to associate with this
-     *        stack, represented by key/value pairs. Tags defined for the stack
-     *        are propagated to EC2 resources that are created as part of the
-     *        stack. A maximum number of 10 tags can be specified.
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to the resources created in the stack.
+     *        A maximum number of 10 tags can be specified.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -1621,10 +1635,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated
-     * to EC2 resources that are created as part of the stack. A maximum number
-     * of 10 tags can be specified.
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum
+     * number of 10 tags can be specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1634,10 +1647,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param tags
-     *        A set of user-defined <code>Tags</code> to associate with this
-     *        stack, represented by key/value pairs. Tags defined for the stack
-     *        are propagated to EC2 resources that are created as part of the
-     *        stack. A maximum number of 10 tags can be specified.
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to the resources created in the stack.
+     *        A maximum number of 10 tags can be specified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1653,17 +1665,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated
-     * to EC2 resources that are created as part of the stack. A maximum number
-     * of 10 tags can be specified.
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum
+     * number of 10 tags can be specified.
      * </p>
      * 
      * @param tags
-     *        A set of user-defined <code>Tags</code> to associate with this
-     *        stack, represented by key/value pairs. Tags defined for the stack
-     *        are propagated to EC2 resources that are created as part of the
-     *        stack. A maximum number of 10 tags can be specified.
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to the resources created in the stack.
+     *        A maximum number of 10 tags can be specified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

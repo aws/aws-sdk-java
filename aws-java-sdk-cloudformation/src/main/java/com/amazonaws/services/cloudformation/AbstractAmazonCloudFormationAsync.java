@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +40,21 @@ public class AbstractAmazonCloudFormationAsync extends
     public java.util.concurrent.Future<Void> cancelUpdateStackAsync(
             CancelUpdateStackRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
+            ContinueUpdateRollbackRequest request) {
+
+        return continueUpdateRollbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
+            ContinueUpdateRollbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

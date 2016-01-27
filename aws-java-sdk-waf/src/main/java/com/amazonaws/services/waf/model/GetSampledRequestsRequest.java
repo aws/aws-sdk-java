@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +39,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li> <code>Default_Action</code>, which causes
+     * <li><code>Default_Action</code>, which causes
      * <code>GetSampledRequests</code> to return a sample of the requests that
      * didn't match any of the rules in the specified <code>WebACL</code>.</li>
      * </ul>
@@ -118,7 +119,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li> <code>Default_Action</code>, which causes
+     * <li><code>Default_Action</code>, which causes
      * <code>GetSampledRequests</code> to return a sample of the requests that
      * didn't match any of the rules in the specified <code>WebACL</code>.</li>
      * </ul>
@@ -129,7 +130,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *        <li>The <code>RuleId</code> of the <code>Rule</code> for which you
      *        want <code>GetSampledRequests</code> to return a sample of
      *        requests.</li>
-     *        <li> <code>Default_Action</code>, which causes
+     *        <li><code>Default_Action</code>, which causes
      *        <code>GetSampledRequests</code> to return a sample of the requests
      *        that didn't match any of the rules in the specified
      *        <code>WebACL</code>.
@@ -145,7 +146,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li> <code>Default_Action</code>, which causes
+     * <li><code>Default_Action</code>, which causes
      * <code>GetSampledRequests</code> to return a sample of the requests that
      * didn't match any of the rules in the specified <code>WebACL</code>.</li>
      * </ul>
@@ -155,7 +156,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *         <li>The <code>RuleId</code> of the <code>Rule</code> for which
      *         you want <code>GetSampledRequests</code> to return a sample of
      *         requests.</li>
-     *         <li> <code>Default_Action</code>, which causes
+     *         <li><code>Default_Action</code>, which causes
      *         <code>GetSampledRequests</code> to return a sample of the
      *         requests that didn't match any of the rules in the specified
      *         <code>WebACL</code>.
@@ -171,7 +172,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li> <code>Default_Action</code>, which causes
+     * <li><code>Default_Action</code>, which causes
      * <code>GetSampledRequests</code> to return a sample of the requests that
      * didn't match any of the rules in the specified <code>WebACL</code>.</li>
      * </ul>
@@ -182,7 +183,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *        <li>The <code>RuleId</code> of the <code>Rule</code> for which you
      *        want <code>GetSampledRequests</code> to return a sample of
      *        requests.</li>
-     *        <li> <code>Default_Action</code>, which causes
+     *        <li><code>Default_Action</code>, which causes
      *        <code>GetSampledRequests</code> to return a sample of the requests
      *        that didn't match any of the rules in the specified
      *        <code>WebACL</code>.

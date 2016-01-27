@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -160,6 +160,18 @@ public enum Region {
      * </p>
      */
     AP_Tokyo("ap-northeast-1"),
+
+    /**
+     * The Asia Pacific (Seoul) Region. This region uses Amazon S3 servers
+     * located in Seoul.
+     * <p>
+     * When using buckets in this region, set the client endpoint to
+     * <code>s3.ap-northeast-2.amazonaws.com</code> on all requests to these
+     * buckets to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
+    AP_Seoul("ap-northeast-2"),
 
     /**
      * The South America (Sao Paulo) Region. This region uses Amazon S3 servers

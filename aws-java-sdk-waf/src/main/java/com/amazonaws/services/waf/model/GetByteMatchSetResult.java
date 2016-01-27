@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +32,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      * <ul>
      * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      * <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     * <li> <code>ByteMatchTuples</code>: Contains an array of
+     * <li><code>ByteMatchTuples</code>: Contains an array of
      * <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object
      * contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
      * <code>TargetString</code>, and <code>TextTransformation</code></li>
@@ -50,7 +51,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      * <ul>
      * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      * <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     * <li> <code>ByteMatchTuples</code>: Contains an array of
+     * <li><code>ByteMatchTuples</code>: Contains an array of
      * <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object
      * contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
      * <code>TargetString</code>, and <code>TextTransformation</code></li>
@@ -65,7 +66,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      *        <ul>
      *        <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      *        <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     *        <li> <code>ByteMatchTuples</code>: Contains an array of
+     *        <li><code>ByteMatchTuples</code>: Contains an array of
      *        <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code>
      *        object contains <a>FieldToMatch</a>,
      *        <code>PositionalConstraint</code>, <code>TargetString</code>, and
@@ -86,7 +87,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      * <ul>
      * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      * <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     * <li> <code>ByteMatchTuples</code>: Contains an array of
+     * <li><code>ByteMatchTuples</code>: Contains an array of
      * <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object
      * contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
      * <code>TargetString</code>, and <code>TextTransformation</code></li>
@@ -100,7 +101,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      *         <ul>
      *         <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      *         <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     *         <li> <code>ByteMatchTuples</code>: Contains an array of
+     *         <li><code>ByteMatchTuples</code>: Contains an array of
      *         <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code>
      *         object contains <a>FieldToMatch</a>,
      *         <code>PositionalConstraint</code>, <code>TargetString</code>, and
@@ -121,7 +122,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      * <ul>
      * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      * <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     * <li> <code>ByteMatchTuples</code>: Contains an array of
+     * <li><code>ByteMatchTuples</code>: Contains an array of
      * <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object
      * contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
      * <code>TargetString</code>, and <code>TextTransformation</code></li>
@@ -136,7 +137,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      *        <ul>
      *        <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>,
      *        <code>ByteMatchTuples</code>, and <code>Name</code></li>
-     *        <li> <code>ByteMatchTuples</code>: Contains an array of
+     *        <li><code>ByteMatchTuples</code>: Contains an array of
      *        <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code>
      *        object contains <a>FieldToMatch</a>,
      *        <code>PositionalConstraint</code>, <code>TargetString</code>, and

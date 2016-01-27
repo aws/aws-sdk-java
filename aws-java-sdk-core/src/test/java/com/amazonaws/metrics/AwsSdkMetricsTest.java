@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -107,7 +107,7 @@ public class AwsSdkMetricsTest {
     public void removeNull() {
         assertFalse(AwsSdkMetrics.remove(null));
     }
-    
+
     @Test
     public void addAndRemove() {
         Set<MetricType> orig = AwsSdkMetrics.getPredefinedMetrics();
@@ -151,6 +151,13 @@ public class AwsSdkMetricsTest {
         assertFalse(b == AwsSdkMetrics.isPerHostMetricIncluded());
         AwsSdkMetrics.setPerHostMetricsIncluded(b);
         assertTrue(b == AwsSdkMetrics.isPerHostMetricIncluded());
+    }
+
+    @Test
+    public void testEnableHttpSocketReadMetric() {
+        assertFalse(AwsSdkMetrics.isHttpSocketReadMetricEnabled());
+        AwsSdkMetrics.enableHttpSocketReadMetric();
+        assertTrue(AwsSdkMetrics.isHttpSocketReadMetricEnabled());
     }
 
     @Test

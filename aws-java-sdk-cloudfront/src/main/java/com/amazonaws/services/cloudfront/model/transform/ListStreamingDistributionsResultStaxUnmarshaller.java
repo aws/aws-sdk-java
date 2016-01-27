@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,22 +28,29 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * List Streaming Distributions Result StAX Unmarshaller
+ * ListStreamingDistributionsResult StAX Unmarshaller
  */
-public class ListStreamingDistributionsResultStaxUnmarshaller implements Unmarshaller<ListStreamingDistributionsResult, StaxUnmarshallerContext> {
+public class ListStreamingDistributionsResultStaxUnmarshaller implements
+        Unmarshaller<ListStreamingDistributionsResult, StaxUnmarshallerContext> {
 
-    public ListStreamingDistributionsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ListStreamingDistributionsResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         ListStreamingDistributionsResult listStreamingDistributionsResult = new ListStreamingDistributionsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return listStreamingDistributionsResult;
+            if (xmlEvent.isEndDocument())
+                return listStreamingDistributionsResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("StreamingDistributionList", targetDepth)) {
-                    listStreamingDistributionsResult.setStreamingDistributionList(StreamingDistributionListStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("StreamingDistributionList",
+                        targetDepth)) {
+                    listStreamingDistributionsResult
+                            .setStreamingDistributionList(StreamingDistributionListStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -54,9 +62,10 @@ public class ListStreamingDistributionsResultStaxUnmarshaller implements Unmarsh
     }
 
     private static ListStreamingDistributionsResultStaxUnmarshaller instance;
+
     public static ListStreamingDistributionsResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ListStreamingDistributionsResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new ListStreamingDistributionsResultStaxUnmarshaller();
         return instance;
     }
 }
-    

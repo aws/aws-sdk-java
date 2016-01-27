@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,14 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeIdFormat(DescribeIdFormatRequest) DescribeIdFormat operation}.
  * <p>
- * <b>Important: This command is reserved for future use, and is
- * currently not available for you to use.</b>
- * </p>
- * <p>
- * Describes the ID format settings for your resources, for example, to
- * view which resource types are enabled for longer IDs. This request
- * only returns information about resource types whose ID formats can be
- * modified; it does not return information about other resource types.
+ * Describes the ID format settings for your resources on a per-region
+ * basis, for example, to view which resource types are enabled for
+ * longer IDs. This request only returns information about resource types
+ * whose ID formats can be modified; it does not return information about
+ * other resource types.
  * </p>
  * <p>
  * The following resource types support longer IDs: <code>instance</code>
@@ -40,8 +37,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * These settings apply to the IAM user who makes the request; they do
  * not apply to the entire AWS account. By default, an IAM user defaults
  * to the same settings as the root user, unless they explicitly override
- * the settings by running the ModifyIdFormat command. These settings are
- * applied on a per-region basis.
+ * the settings by running the ModifyIdFormat command. Resources created
+ * with longer IDs are visible to all IAM users, regardless of these
+ * settings and provided that they have permission to use the relevant
+ * <code>Describe</code> command for the resource type.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeIdFormat(DescribeIdFormatRequest)

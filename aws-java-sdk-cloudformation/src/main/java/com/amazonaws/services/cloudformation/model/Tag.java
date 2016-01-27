@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,7 +21,7 @@ import java.io.Serializable;
 /**
  * <p>
  * The Tag type is used by <code>CreateStack</code> in the <code>Tags</code>
- * parameter. It allows you to specify a key/value pair that can be used to
+ * parameter. It allows you to specify a key-value pair that can be used to
  * store information related to cost allocation for an AWS CloudFormation stack.
  * </p>
  */

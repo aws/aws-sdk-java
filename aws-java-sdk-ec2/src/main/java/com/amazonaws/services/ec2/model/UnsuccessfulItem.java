@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,47 +25,14 @@ import java.io.Serializable;
 public class UnsuccessfulItem implements Serializable, Cloneable {
 
     /**
-     * Information about the error.
-     */
-    private UnsuccessfulItemError error;
-
-    /**
      * The ID of the resource.
      */
     private String resourceId;
 
     /**
      * Information about the error.
-     *
-     * @return Information about the error.
      */
-    public UnsuccessfulItemError getError() {
-        return error;
-    }
-    
-    /**
-     * Information about the error.
-     *
-     * @param error Information about the error.
-     */
-    public void setError(UnsuccessfulItemError error) {
-        this.error = error;
-    }
-    
-    /**
-     * Information about the error.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param error Information about the error.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public UnsuccessfulItem withError(UnsuccessfulItemError error) {
-        this.error = error;
-        return this;
-    }
+    private UnsuccessfulItemError error;
 
     /**
      * The ID of the resource.
@@ -101,6 +68,39 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     }
 
     /**
+     * Information about the error.
+     *
+     * @return Information about the error.
+     */
+    public UnsuccessfulItemError getError() {
+        return error;
+    }
+    
+    /**
+     * Information about the error.
+     *
+     * @param error Information about the error.
+     */
+    public void setError(UnsuccessfulItemError error) {
+        this.error = error;
+    }
+    
+    /**
+     * Information about the error.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param error Information about the error.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UnsuccessfulItem withError(UnsuccessfulItemError error) {
+        this.error = error;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -112,8 +112,8 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getError() != null) sb.append("Error: " + getError() + ",");
-        if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() );
+        if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ",");
+        if (getError() != null) sb.append("Error: " + getError() );
         sb.append("}");
         return sb.toString();
     }
@@ -123,8 +123,8 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode()); 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode()); 
         return hashCode;
     }
     
@@ -136,10 +136,10 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         if (obj instanceof UnsuccessfulItem == false) return false;
         UnsuccessfulItem other = (UnsuccessfulItem)obj;
         
-        if (other.getError() == null ^ this.getError() == null) return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false) return false; 
         if (other.getResourceId() == null ^ this.getResourceId() == null) return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false) return false; 
+        if (other.getError() == null ^ this.getError() == null) return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false) return false; 
         return true;
     }
     

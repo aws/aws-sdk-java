@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,8 +46,8 @@ import com.amazonaws.services.cloudformation.model.*;
  * Amazon CloudFormation makes use of other AWS products. If you need additional
  * technical information about a specific AWS product, you can find the
  * product's technical documentation at <a
- * href="http://aws.amazon.com/documentation/"
- * >http://aws.amazon.com/documentation/</a>.
+ * href="http://docs.aws.amazon.com/documentation/"
+ * >http://docs.aws.amazon.com/documentation/</a>.
  * </p>
  */
 public interface AmazonCloudFormation {
@@ -123,6 +124,37 @@ public interface AmazonCloudFormation {
      * @sample AmazonCloudFormation.CancelUpdateStack
      */
     void cancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest);
+
+    /**
+     * <p>
+     * For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code>
+     * state, continues rolling it back to the
+     * <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the cause of
+     * the failure, you can manually <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * > fix the error</a> and continue the rollback. By continuing the
+     * rollback, you can return your stack to a working state (the
+     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), return the stack to its
+     * original settings, and then try to update the stack again.
+     * </p>
+     * <p>
+     * A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS
+     * CloudFormation cannot roll back all changes after a failed stack update.
+     * For example, you might have a stack that is rolling back to an old
+     * database instance that was deleted outside of AWS CloudFormation. Because
+     * AWS CloudFormation doesn't know the database was deleted, it assumes that
+     * the database instance still exists and attempts to roll back to it,
+     * causing the update rollback to fail.
+     * </p>
+     * 
+     * @param continueUpdateRollbackRequest
+     *        The input for the <a>ContinueUpdateRollback</a> action.
+     * @return Result of the ContinueUpdateRollback operation returned by the
+     *         service.
+     * @sample AmazonCloudFormation.ContinueUpdateRollback
+     */
+    ContinueUpdateRollbackResult continueUpdateRollback(
+            ContinueUpdateRollbackRequest continueUpdateRollbackRequest);
 
     /**
      * <p>
@@ -232,7 +264,7 @@ public interface AmazonCloudFormation {
      * specify <code>LogicalResourceId</code> to filter the returned result. For
      * more information about resources, the <code>LogicalResourceId</code> and
      * <code>PhysicalResourceId</code>, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.
      * </p>
      * <note>A <code>ValidationError</code> is returned if you specify both

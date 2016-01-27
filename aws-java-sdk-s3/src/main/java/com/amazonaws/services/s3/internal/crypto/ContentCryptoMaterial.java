@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.internal.crypto;
 import static com.amazonaws.services.s3.internal.crypto.KMSSecuredCEK.isKMSKeyWrapped;
 import static com.amazonaws.services.s3.model.ExtraMaterialsDescription.NONE;
 import static com.amazonaws.util.BinaryUtils.copyAllBytesFrom;
+import com.amazonaws.util.StringUtils;
 import static com.amazonaws.util.Throwables.failure;
 
 import java.io.BufferedReader;
@@ -566,7 +567,8 @@ final class ContentCryptoMaterial {
             String line;
             try {
                 BufferedReader reader =
-                    new BufferedReader(new InputStreamReader(inputStream));
+                    new BufferedReader(new InputStreamReader(inputStream,
+                            StringUtils.UTF8));
                 while ((line = reader.readLine()) != null) {
                     stringBuilder.append(line);
                 }
@@ -903,12 +905,8 @@ final class ContentCryptoMaterial {
             MaterialsDescriptionProvider mdp = (MaterialsDescriptionProvider) req;
             Map<String, String> matdesc_req = mdp.getMaterialsDescription();
             if (matdesc_req != null) {
-                if (matdesc == null) {
-                    return matdesc_req;
-                } else {
-                    matdesc = new TreeMap<String, String>(matdesc);
-                    matdesc.putAll(matdesc_req);    // request takes precedence
-                }
+                matdesc = new TreeMap<String, String>(matdesc);
+                matdesc.putAll(matdesc_req);    // request takes precedence
             }
         }
         return matdesc;

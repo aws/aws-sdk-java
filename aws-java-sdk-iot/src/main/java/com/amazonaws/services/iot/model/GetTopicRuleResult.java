@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,10 +27,54 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The rule ARN.
+     * </p>
+     */
+    private String ruleArn;
+    /**
+     * <p>
      * The rule.
      * </p>
      */
     private TopicRule rule;
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @param ruleArn
+     *        The rule ARN.
+     */
+    public void setRuleArn(String ruleArn) {
+        this.ruleArn = ruleArn;
+    }
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @return The rule ARN.
+     */
+    public String getRuleArn() {
+        return this.ruleArn;
+    }
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @param ruleArn
+     *        The rule ARN.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public GetTopicRuleResult withRuleArn(String ruleArn) {
+        setRuleArn(ruleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -81,6 +126,8 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRuleArn() != null)
+            sb.append("RuleArn: " + getRuleArn() + ",");
         if (getRule() != null)
             sb.append("Rule: " + getRule());
         sb.append("}");
@@ -97,6 +144,11 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
         if (obj instanceof GetTopicRuleResult == false)
             return false;
         GetTopicRuleResult other = (GetTopicRuleResult) obj;
+        if (other.getRuleArn() == null ^ this.getRuleArn() == null)
+            return false;
+        if (other.getRuleArn() != null
+                && other.getRuleArn().equals(this.getRuleArn()) == false)
+            return false;
         if (other.getRule() == null ^ this.getRule() == null)
             return false;
         if (other.getRule() != null
@@ -110,6 +162,8 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode
+                + ((getRuleArn() == null) ? 0 : getRuleArn().hashCode());
         hashCode = prime * hashCode
                 + ((getRule() == null) ? 0 : getRule().hashCode());
         return hashCode;

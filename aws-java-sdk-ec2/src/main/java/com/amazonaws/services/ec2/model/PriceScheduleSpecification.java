@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the price for a Reserved instance.
+ * Describes the price for a Reserved Instance.
  * </p>
  */
 public class PriceScheduleSpecification implements Serializable, Cloneable {
@@ -35,7 +35,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     private Double price;
 
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -116,13 +116,13 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @return The currency for transacting the Reserved instance resale. At this
+     * @return The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
@@ -132,13 +132,13 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
@@ -148,7 +148,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -156,7 +156,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -170,13 +170,13 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @see CurrencyCodeValues
@@ -186,7 +186,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     }
     
     /**
-     * The currency for transacting the Reserved instance resale. At this
+     * The currency for transacting the Reserved Instance resale. At this
      * time, the only supported currency is <code>USD</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -194,7 +194,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>USD
      *
-     * @param currencyCode The currency for transacting the Reserved instance resale. At this
+     * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

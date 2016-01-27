@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -177,7 +177,7 @@ public class InlineTaggingCodeSampleApp {
             DescribeSpotInstanceRequestsRequest describeRequest = new DescribeSpotInstanceRequestsRequest();
             describeRequest.setSpotInstanceRequestIds(spotInstanceRequestIds);
 
-            // Initialize the anyOpen variable to false ??? which assumes there are no requests open unless
+            // Initialize the anyOpen variable to false, which assumes there are no requests open unless
             // we find one that is still open.
             anyOpen=false;
 

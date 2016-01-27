@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -81,7 +82,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
      * decimal 160</li>
      * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      * <li>Replaces characters that are represented in hexadecimal format,
      * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
      * <li>Replaces characters that are represented in decimal format,
@@ -187,7 +188,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
      * decimal 160</li>
      * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      * <li>Replaces characters that are represented in hexadecimal format,
      * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
      * <li>Replaces characters that are represented in decimal format,
@@ -268,7 +269,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        space, decimal 160</li>
      *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      *        <li>Replaces characters that are represented in hexadecimal
      *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
      *        characters</li>
@@ -354,7 +355,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
      * decimal 160</li>
      * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      * <li>Replaces characters that are represented in hexadecimal format,
      * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
      * <li>Replaces characters that are represented in decimal format,
@@ -434,7 +435,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         space, decimal 160</li>
      *         <li>Replaces <code>(ampersand)lt;</code> with a "less than"
      *         symbol</li>
-     *         <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     *         <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      *         <li>Replaces characters that are represented in hexadecimal
      *         format, <code>(ampersand)#xhhhh;</code>, with the corresponding
      *         characters</li>
@@ -521,7 +522,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
      * decimal 160</li>
      * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      * <li>Replaces characters that are represented in hexadecimal format,
      * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
      * <li>Replaces characters that are represented in decimal format,
@@ -602,7 +603,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        space, decimal 160</li>
      *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      *        <li>Replaces characters that are represented in hexadecimal
      *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
      *        characters</li>
@@ -692,7 +693,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
      * decimal 160</li>
      * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      * <li>Replaces characters that are represented in hexadecimal format,
      * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
      * <li>Replaces characters that are represented in decimal format,
@@ -773,7 +774,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        space, decimal 160</li>
      *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      *        <li>Replaces characters that are represented in hexadecimal
      *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
      *        characters</li>
@@ -861,7 +862,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
      * decimal 160</li>
      * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      * <li>Replaces characters that are represented in hexadecimal format,
      * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
      * <li>Replaces characters that are represented in decimal format,
@@ -942,7 +943,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        space, decimal 160</li>
      *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></li>
+     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
      *        <li>Replaces characters that are represented in hexadecimal
      *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
      *        characters</li>

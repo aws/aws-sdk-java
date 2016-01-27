@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -700,6 +701,44 @@ public interface AWSIot {
      */
     DetachThingPrincipalResult detachThingPrincipal(
             DetachThingPrincipalRequest detachThingPrincipalRequest);
+
+    /**
+     * <p>
+     * Disables the specified rule
+     * </p>
+     * 
+     * @param disableTopicRuleRequest
+     *        The input for the DisableTopicRuleRequest operation.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.DisableTopicRule
+     */
+    void disableTopicRule(DisableTopicRuleRequest disableTopicRuleRequest);
+
+    /**
+     * <p>
+     * Enables the specified rule.
+     * </p>
+     * 
+     * @param enableTopicRuleRequest
+     *        The input for the EnableTopicRuleRequest operation.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.EnableTopicRule
+     */
+    void enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest);
 
     /**
      * <p>

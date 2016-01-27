@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +36,11 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The new status.
+     * </p>
+     * <p>
+     * Note: setting the status to PENDING_TRANSFER will result in an exception
+     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
+     * is not meant to be used by developers.
      * </p>
      */
     private String newStatus;
@@ -81,9 +87,18 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * Note: setting the status to PENDING_TRANSFER will result in an exception
+     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
+     * is not meant to be used by developers.
+     * </p>
      * 
      * @param newStatus
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        Note: setting the status to PENDING_TRANSFER will result in an
+     *        exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT and is not meant to be used by developers.
      * @see CertificateStatus
      */
     public void setNewStatus(String newStatus) {
@@ -94,8 +109,17 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * Note: setting the status to PENDING_TRANSFER will result in an exception
+     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
+     * is not meant to be used by developers.
+     * </p>
      * 
-     * @return The new status.
+     * @return The new status.</p>
+     *         <p>
+     *         Note: setting the status to PENDING_TRANSFER will result in an
+     *         exception being thrown. PENDING_TRANSFER is a status used
+     *         internally by AWS IoT and is not meant to be used by developers.
      * @see CertificateStatus
      */
     public String getNewStatus() {
@@ -106,9 +130,18 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * Note: setting the status to PENDING_TRANSFER will result in an exception
+     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
+     * is not meant to be used by developers.
+     * </p>
      * 
      * @param newStatus
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        Note: setting the status to PENDING_TRANSFER will result in an
+     *        exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT and is not meant to be used by developers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
@@ -122,9 +155,18 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * Note: setting the status to PENDING_TRANSFER will result in an exception
+     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
+     * is not meant to be used by developers.
+     * </p>
      * 
      * @param newStatus
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        Note: setting the status to PENDING_TRANSFER will result in an
+     *        exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT and is not meant to be used by developers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
@@ -137,9 +179,18 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * <p>
      * The new status.
      * </p>
+     * <p>
+     * Note: setting the status to PENDING_TRANSFER will result in an exception
+     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
+     * is not meant to be used by developers.
+     * </p>
      * 
      * @param newStatus
-     *        The new status.
+     *        The new status.</p>
+     *        <p>
+     *        Note: setting the status to PENDING_TRANSFER will result in an
+     *        exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT and is not meant to be used by developers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus

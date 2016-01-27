@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,8 +46,8 @@ import com.amazonaws.services.cloudformation.model.*;
  * Amazon CloudFormation makes use of other AWS products. If you need additional
  * technical information about a specific AWS product, you can find the
  * product's technical documentation at <a
- * href="http://aws.amazon.com/documentation/"
- * >http://aws.amazon.com/documentation/</a>.
+ * href="http://docs.aws.amazon.com/documentation/"
+ * >http://docs.aws.amazon.com/documentation/</a>.
  * </p>
  */
 public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
@@ -148,8 +149,8 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
-                executorService);
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig(), executorService);
     }
 
     /**
@@ -241,7 +242,8 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
                 executorService);
     }
 
@@ -301,6 +303,41 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
                         try {
                             cancelUpdateStack(request);
                             result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
+            ContinueUpdateRollbackRequest request) {
+
+        return continueUpdateRollbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
+            final ContinueUpdateRollbackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ContinueUpdateRollbackResult>() {
+                    @Override
+                    public ContinueUpdateRollbackResult call() throws Exception {
+                        ContinueUpdateRollbackResult result;
+
+                        try {
+                            result = continueUpdateRollback(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

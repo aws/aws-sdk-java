@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import static com.amazonaws.util.DateUtils.cloneDate;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.Map;
 
 import com.amazonaws.services.s3.Headers;
@@ -46,13 +46,13 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * Custom user metadata, represented in responses with the x-amz-meta-
      * header prefix
      */
-    private Map<String, String> userMetadata = new HashMap<String, String>();
+    private Map<String, String> userMetadata = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
 
     /**
      * All other (non user custom) headers such as Content-Length, Content-Type,
      * etc.
      */
-    private Map<String, Object> metadata = new HashMap<String, Object>();
+    private Map<String, Object> metadata = new TreeMap<String, Object>(String.CASE_INSENSITIVE_ORDER);
 
     public static final String AES_256_SERVER_SIDE_ENCRYPTION =
             SSEAlgorithm.AES256.getAlgorithm();
@@ -94,11 +94,11 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     private ObjectMetadata(ObjectMetadata from) {
         this.userMetadata = from.userMetadata == null
             ? null
-            : new HashMap<String,String>(from.userMetadata);
+            : new TreeMap<String,String>(from.userMetadata);
         // shallow clone the meata data
         this.metadata = from.metadata == null
             ? null
-            : new HashMap<String, Object>(from.metadata);
+            : new TreeMap<String, Object>(from.metadata);
         this.expirationTime = cloneDate(from.expirationTime);
         this.expirationTimeRuleId = from.expirationTimeRuleId;
         this.httpExpiresDate = cloneDate(from.httpExpiresDate);
@@ -228,7 +228,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * @return A map of the raw metadata/headers for the associated object.
      */
     public Map<String, Object> getRawMetadata() {
-        return Collections.unmodifiableMap(new HashMap<String,Object>(metadata));
+        return Collections.unmodifiableMap(new TreeMap<String,Object>(metadata));
     }
 
     /**

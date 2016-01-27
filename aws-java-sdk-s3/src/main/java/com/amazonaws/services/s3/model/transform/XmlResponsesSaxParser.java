@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -91,6 +91,7 @@ import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -279,6 +280,14 @@ public class XmlResponsesSaxParser {
     }
 
     /**
+     * Perform a url decode on the given value if specified.
+     * Return value by default;
+     */
+    private static String decodeIfSpecified(String value, boolean decode) {
+        return decode ? SdkHttpUtils.urlDecode(value) : value;
+    }
+
+    /**
      * Parses a ListBucket response XML document from an input stream.
      *
      * @param inputStream
@@ -287,10 +296,11 @@ public class XmlResponsesSaxParser {
      *         stream.
      * @throws AmazonClientException
      */
-    public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream)
+    public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
-        ListBucketHandler handler = new ListBucketHandler();
+        ListBucketHandler handler = new ListBucketHandler(shouldSDKDecodeResponse);
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
+
         return handler;
     }
 
@@ -303,9 +313,9 @@ public class XmlResponsesSaxParser {
      *         stream.
      * @throws AmazonClientException
      */
-    public ListVersionsHandler parseListVersionsResponse(InputStream inputStream)
+    public ListVersionsHandler parseListVersionsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
-        ListVersionsHandler handler = new ListVersionsHandler();
+        ListVersionsHandler handler = new ListVersionsHandler(shouldSDKDecodeResponse);
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
         return handler;
     }
@@ -479,10 +489,15 @@ public class XmlResponsesSaxParser {
      */
     public static class ListBucketHandler extends AbstractHandler {
         private final ObjectListing objectListing = new ObjectListing();
+        private final boolean shouldSDKDecodeResponse;
 
         private S3ObjectSummary currentObject = null;
         private Owner currentOwner = null;
         private String lastKey = null;
+
+        public ListBucketHandler(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
 
         public ObjectListing getObjectListing() {
             return objectListing;
@@ -551,23 +566,27 @@ public class XmlResponsesSaxParser {
                     }
 
                 } else if (name.equals("Prefix")) {
-                    objectListing.setPrefix(checkForEmptyString(getText()));
+                    objectListing.setPrefix(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("Marker")) {
-                    objectListing.setMarker(checkForEmptyString(getText()));
+                    objectListing.setMarker(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("NextMarker")) {
-                    objectListing.setNextMarker(getText());
+                    objectListing.setNextMarker(decodeIfSpecified
+                            (getText(), shouldSDKDecodeResponse));
 
                 } else if (name.equals("MaxKeys")) {
                     objectListing.setMaxKeys(parseInt(getText()));
 
                 } else if (name.equals("Delimiter")) {
-                    objectListing.setDelimiter(checkForEmptyString(getText()));
+                    objectListing.setDelimiter(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("EncodingType")) {
-                    objectListing.setEncodingType(checkForEmptyString(getText()));
-
+                    objectListing.setEncodingType(shouldSDKDecodeResponse ?
+                            null : checkForEmptyString(getText()));
                 } else if (name.equals("IsTruncated")) {
                     String isTruncatedStr =
                         getText().toLowerCase(Locale.getDefault());
@@ -591,8 +610,8 @@ public class XmlResponsesSaxParser {
             else if (in("ListBucketResult", "Contents")) {
                 if (name.equals("Key")) {
                     lastKey = getText();
-                    currentObject.setKey(lastKey);
-
+                    currentObject.setKey(decodeIfSpecified
+                                    (lastKey, shouldSDKDecodeResponse));
                 } else if (name.equals("LastModified")) {
                     currentObject.setLastModified(
                             ServiceUtils.parseIso8601Date(getText()));
@@ -624,7 +643,8 @@ public class XmlResponsesSaxParser {
 
             else if (in("ListBucketResult", "CommonPrefixes")) {
                 if (name.equals("Prefix")) {
-                    objectListing.getCommonPrefixes().add(getText());
+                    objectListing.getCommonPrefixes().add
+                            (decodeIfSpecified(getText(), shouldSDKDecodeResponse));
                 }
             }
         }
@@ -1041,9 +1061,14 @@ public class XmlResponsesSaxParser {
     public static class ListVersionsHandler extends AbstractHandler {
 
         private final VersionListing versionListing = new VersionListing();
+        private final boolean shouldSDKDecodeResponse;
 
         private S3VersionSummary currentVersionSummary;
         private Owner currentOwner;
+
+        public ListVersionsHandler(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
 
         public VersionListing getListing() {
             return versionListing;
@@ -1089,11 +1114,11 @@ public class XmlResponsesSaxParser {
                     versionListing.setBucketName(getText());
 
                 } else if (name.equals("Prefix")) {
-                    versionListing.setPrefix(checkForEmptyString(getText()));
-
+                    versionListing.setPrefix(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
                 } else if (name.equals("KeyMarker")) {
-                    versionListing.setKeyMarker(checkForEmptyString(getText()));
-
+                    versionListing.setKeyMarker(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
                 } else if (name.equals("VersionIdMarker")) {
                     versionListing.setVersionIdMarker(checkForEmptyString(
                             getText()));
@@ -1102,14 +1127,15 @@ public class XmlResponsesSaxParser {
                     versionListing.setMaxKeys(Integer.parseInt(getText()));
 
                 } else if (name.equals("Delimiter")) {
-                    versionListing.setDelimiter(checkForEmptyString(getText()));
+                    versionListing.setDelimiter(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("EncodingType")) {
-                    versionListing.setEncodingType(checkForEmptyString(
-                            getText()));
-
+                    versionListing.setEncodingType(shouldSDKDecodeResponse ?
+                            null : checkForEmptyString(getText()));
                 } else if (name.equals("NextKeyMarker")) {
-                    versionListing.setNextKeyMarker(getText());
+                    versionListing.setNextKeyMarker(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
 
                 } else if (name.equals("NextVersionIdMarker")) {
                     versionListing.setNextVersionIdMarker(getText());
@@ -1129,8 +1155,10 @@ public class XmlResponsesSaxParser {
 
             else if (in("ListVersionsResult", "CommonPrefixes")) {
                 if (name.equals("Prefix")) {
+                    final String commonPrefix = checkForEmptyString(getText());
                     versionListing.getCommonPrefixes()
-                        .add(checkForEmptyString(getText()));
+                        .add(shouldSDKDecodeResponse ?
+                                SdkHttpUtils.urlDecode(commonPrefix) : commonPrefix);
                 }
             }
 
@@ -1138,7 +1166,7 @@ public class XmlResponsesSaxParser {
                     || in("ListVersionsResult", "DeleteMarker")) {
 
                 if (name.equals("Key")) {
-                    currentVersionSummary.setKey(getText());
+                    currentVersionSummary.setKey(decodeIfSpecified(getText(), shouldSDKDecodeResponse));
 
                 } else if (name.equals("VersionId")) {
                     currentVersionSummary.setVersionId(getText());

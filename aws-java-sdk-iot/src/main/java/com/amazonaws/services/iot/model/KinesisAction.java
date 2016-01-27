@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,7 +27,7 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access.
+     * The ARN of the IAM role that grants access to the Kinesis stream.
      * </p>
      */
     private String roleArn;
@@ -45,11 +46,11 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access.
+     * The ARN of the IAM role that grants access to the Kinesis stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that grants access.
+     *        The ARN of the IAM role that grants access to the Kinesis stream.
      */
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
@@ -57,10 +58,10 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access.
+     * The ARN of the IAM role that grants access to the Kinesis stream.
      * </p>
      * 
-     * @return The ARN of the IAM role that grants access.
+     * @return The ARN of the IAM role that grants access to the Kinesis stream.
      */
     public String getRoleArn() {
         return this.roleArn;
@@ -68,11 +69,11 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access.
+     * The ARN of the IAM role that grants access to the Kinesis stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that grants access.
+     *        The ARN of the IAM role that grants access to the Kinesis stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

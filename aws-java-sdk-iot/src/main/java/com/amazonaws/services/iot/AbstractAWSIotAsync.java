@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -322,6 +323,36 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DetachThingPrincipalResult> detachThingPrincipalAsync(
             DetachThingPrincipalRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachThingPrincipalRequest, DetachThingPrincipalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest request) {
+
+        return disableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest request) {
+
+        return enableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

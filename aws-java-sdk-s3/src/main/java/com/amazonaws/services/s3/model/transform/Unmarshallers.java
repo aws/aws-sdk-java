@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@ package com.amazonaws.services.s3.model.transform;
 
 import java.io.InputStream;
 import java.util.List;
-
 
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -35,11 +34,13 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
+import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.BucketCrossOriginConfigurationHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * Collection of unmarshallers for S3 XML responses.
@@ -74,9 +75,16 @@ public class Unmarshallers {
      */
     public static final class ListObjectsUnmarshaller implements
             Unmarshaller<ObjectListing, InputStream> {
+
+        private final boolean shouldSDKDecodeResponse;
+
+        public ListObjectsUnmarshaller(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
+
         public ObjectListing unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
-                    .parseListBucketObjectsResponse(in).getObjectListing();
+                    .parseListBucketObjectsResponse(in, shouldSDKDecodeResponse).getObjectListing();
         }
     }
 
@@ -85,9 +93,16 @@ public class Unmarshallers {
      */
     public static final class VersionListUnmarshaller implements
             Unmarshaller<VersionListing, InputStream> {
+
+        private final boolean shouldSDKDecodeResponse;
+
+        public VersionListUnmarshaller(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
+
         public VersionListing unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
-                    .parseListVersionsResponse(in).getListing();
+                    .parseListVersionsResponse(in, shouldSDKDecodeResponse).getListing();
         }
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectId;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import com.amazonaws.util.StringUtils;
 
 /**
  * A convenient S3 object wrapper useful for crypto purposes.
@@ -136,7 +137,7 @@ class S3ObjectWrapper implements Closeable {
         StringBuilder sb = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(is));
+                    new InputStreamReader(is, StringUtils.UTF8));
             String line;
             while ((line = reader.readLine()) != null) {
                 sb.append(line);

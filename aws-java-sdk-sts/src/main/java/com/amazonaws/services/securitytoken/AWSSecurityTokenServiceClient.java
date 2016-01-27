@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -286,6 +287,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
         exceptionUnmarshallers
                 .add(new PackedPolicyTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ExpiredTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RegionDisabledExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new IDPCommunicationErrorExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -296,10 +298,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
                 .add(new InvalidAuthorizationMessageExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IDPRejectedClaimExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("sts.amazonaws.com");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("sts.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory
@@ -420,6 +423,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The request was rejected because the policy document was too
      *         large. The error message describes how big the policy document
      *         is, in packed form, as a percentage of what the API allows.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRole
      */
     @Override
@@ -551,6 +562,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The web identity token that was passed is expired or is not
      *         valid. Get a new identity token from the identity provider and
      *         then retry the request.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
      */
     @Override
@@ -716,6 +735,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The web identity token that was passed is expired or is not
      *         valid. Get a new identity token from the identity provider and
      *         then retry the request.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
      */
     @Override
@@ -937,6 +964,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      *         The request was rejected because the policy document was too
      *         large. The error message describes how big the policy document
      *         is, in packed form, as a percentage of what the API allows.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.GetFederationToken
      */
     @Override
@@ -1024,6 +1059,14 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
      * 
      * @param getSessionTokenRequest
      * @return Result of the GetSessionToken operation returned by the service.
+     * @throws RegionDisabledException
+     *         STS is not activated in the requested region for the account that
+     *         is being asked to create temporary credentials. The account
+     *         administrator must activate STS in that region using the IAM
+     *         Console. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
+     *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.GetSessionToken
      */
     @Override

@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -261,10 +262,11 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                         "WAFNonexistentItemException"));
         jsonErrorUnmarshallers
                 .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        setEndpoint("https://waf.amazonaws.com/");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        setEndpoint("https://waf.amazonaws.com/");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory
@@ -1448,12 +1450,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * following values:
      * </p>
      * <ul>
-     * <li> <code>PROVISIONED</code>: You requested the change token by calling
+     * <li><code>PROVISIONED</code>: You requested the change token by calling
      * <code>GetChangeToken</code>, but you haven't used it yet in a call to
      * create, update, or delete an AWS WAF object.</li>
-     * <li> <code>PENDING</code>: AWS WAF is propagating the create, update, or
+     * <li><code>PENDING</code>: AWS WAF is propagating the create, update, or
      * delete request to all AWS WAF servers.</li>
-     * <li> <code>IN_SYNC</code>: Propagation is complete.</li>
+     * <li><code>IN_SYNC</code>: Propagation is complete.</li>
      * </ul>
      * 
      * @param getChangeTokenStatusRequest
@@ -2534,13 +2536,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * object, you specify the following values:
      * </p>
      * <ul>
-     * <li> <code>Action</code>: Whether to insert the object into or delete the
+     * <li><code>Action</code>: Whether to insert the object into or delete the
      * object from the array. To change a <code>SqlInjectionMatchTuple</code>,
      * you delete the existing object and add a new one.</li>
-     * <li> <code>FieldToMatch</code>: The part of web requests that you want AWS
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
      * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
      * the header.</li>
-     * <li> <code>TextTransformation</code>: Which text transformation, if any,
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
      * to perform on the web request before inspecting the request for snippets
      * of malicious SQL code.</li>
      * </ul>

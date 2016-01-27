@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,8 +32,10 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      */
     private com.amazonaws.internal.SdkInternalList<Stack> stacks;
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
+     * </p>
      */
     private String nextToken;
 
@@ -110,35 +113,44 @@ public class DescribeStacksResult implements Serializable, Cloneable {
     }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
+     * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stacks, if
-     *        there is one.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of stacks. If no additional page exists, this value is
+     *        null.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
+     * </p>
      * 
-     * @return String that identifies the start of the next list of stacks, if
-     *         there is one.
+     * @return If the output exceeds 1 MB in size, a string that identifies the
+     *         next page of stacks. If no additional page exists, this value is
+     *         null.
      */
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is
-     * one.
+     * <p>
+     * If the output exceeds 1 MB in size, a string that identifies the next
+     * page of stacks. If no additional page exists, this value is null.
+     * </p>
      * 
      * @param nextToken
-     *        String that identifies the start of the next list of stacks, if
-     *        there is one.
+     *        If the output exceeds 1 MB in size, a string that identifies the
+     *        next page of stacks. If no additional page exists, this value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

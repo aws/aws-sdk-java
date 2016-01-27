@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public enum InstanceType {
     M42xlarge("m4.2xlarge"),
     M44xlarge("m4.4xlarge"),
     M410xlarge("m4.10xlarge"),
+    T2Nano("t2.nano"),
     T2Micro("t2.micro"),
     T2Small("t2.small"),
     T2Medium("t2.medium"),
@@ -123,6 +124,8 @@ public enum InstanceType {
             return InstanceType.M44xlarge;
         } else if ("m4.10xlarge".equals(value)) {
             return InstanceType.M410xlarge;
+        } else if ("t2.nano".equals(value)) {
+            return InstanceType.T2Nano;
         } else if ("t2.micro".equals(value)) {
             return InstanceType.T2Micro;
         } else if ("t2.small".equals(value)) {

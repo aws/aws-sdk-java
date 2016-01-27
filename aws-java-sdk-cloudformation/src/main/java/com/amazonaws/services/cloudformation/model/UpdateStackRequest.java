@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -146,7 +147,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * (IAM) uses this parameter for AWS CloudFormation-specific condition keys
      * in IAM policies. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     * >Controlling Access with AWS Identity and Access Management</a>
+     * >Controlling Access with AWS Identity and Access Management</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
@@ -182,8 +183,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     private String stackPolicyURL;
     /**
      * <p>
-     * Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.
+     * Amazon Simple Notification Service topic Amazon Resource Names (ARNs)
+     * that AWS CloudFormation associates with the stack. Specify an empty list
+     * to remove all notification topics.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationARNs;
@@ -1082,7 +1084,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * (IAM) uses this parameter for AWS CloudFormation-specific condition keys
      * in IAM policies. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     * >Controlling Access with AWS Identity and Access Management</a>
+     * >Controlling Access with AWS Identity and Access Management</a>.
      * </p>
      * 
      * @return The template resource types that you have permissions to work
@@ -1097,7 +1099,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         CloudFormation-specific condition keys in IAM policies. For more
      *         information, see <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     *         >Controlling Access with AWS Identity and Access Management</a>
+     *         >Controlling Access with AWS Identity and Access Management</a>.
      */
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
@@ -1119,7 +1121,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * (IAM) uses this parameter for AWS CloudFormation-specific condition keys
      * in IAM policies. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     * >Controlling Access with AWS Identity and Access Management</a>
+     * >Controlling Access with AWS Identity and Access Management</a>.
      * </p>
      * 
      * @param resourceTypes
@@ -1135,7 +1137,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        CloudFormation-specific condition keys in IAM policies. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     *        >Controlling Access with AWS Identity and Access Management</a>
+     *        >Controlling Access with AWS Identity and Access Management</a>.
      */
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
@@ -1160,7 +1162,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * (IAM) uses this parameter for AWS CloudFormation-specific condition keys
      * in IAM policies. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     * >Controlling Access with AWS Identity and Access Management</a>
+     * >Controlling Access with AWS Identity and Access Management</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1182,7 +1184,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        CloudFormation-specific condition keys in IAM policies. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     *        >Controlling Access with AWS Identity and Access Management</a>
+     *        >Controlling Access with AWS Identity and Access Management</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1210,7 +1212,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * (IAM) uses this parameter for AWS CloudFormation-specific condition keys
      * in IAM policies. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     * >Controlling Access with AWS Identity and Access Management</a>
+     * >Controlling Access with AWS Identity and Access Management</a>.
      * </p>
      * 
      * @param resourceTypes
@@ -1226,7 +1228,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        CloudFormation-specific condition keys in IAM policies. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
-     *        >Controlling Access with AWS Identity and Access Management</a>
+     *        >Controlling Access with AWS Identity and Access Management</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1416,12 +1418,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.
+     * Amazon Simple Notification Service topic Amazon Resource Names (ARNs)
+     * that AWS CloudFormation associates with the stack. Specify an empty list
+     * to remove all notification topics.
      * </p>
      * 
-     * @return Update the ARNs for the Amazon SNS topics that are associated
-     *         with the stack.
+     * @return Amazon Simple Notification Service topic Amazon Resource Names
+     *         (ARNs) that AWS CloudFormation associates with the stack. Specify
+     *         an empty list to remove all notification topics.
      */
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
@@ -1432,13 +1436,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.
+     * Amazon Simple Notification Service topic Amazon Resource Names (ARNs)
+     * that AWS CloudFormation associates with the stack. Specify an empty list
+     * to remove all notification topics.
      * </p>
      * 
      * @param notificationARNs
-     *        Update the ARNs for the Amazon SNS topics that are associated with
-     *        the stack.
+     *        Amazon Simple Notification Service topic Amazon Resource Names
+     *        (ARNs) that AWS CloudFormation associates with the stack. Specify
+     *        an empty list to remove all notification topics.
      */
     public void setNotificationARNs(
             java.util.Collection<String> notificationARNs) {
@@ -1453,8 +1459,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.
+     * Amazon Simple Notification Service topic Amazon Resource Names (ARNs)
+     * that AWS CloudFormation associates with the stack. Specify an empty list
+     * to remove all notification topics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1464,8 +1471,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param notificationARNs
-     *        Update the ARNs for the Amazon SNS topics that are associated with
-     *        the stack.
+     *        Amazon Simple Notification Service topic Amazon Resource Names
+     *        (ARNs) that AWS CloudFormation associates with the stack. Specify
+     *        an empty list to remove all notification topics.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1482,13 +1490,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.
+     * Amazon Simple Notification Service topic Amazon Resource Names (ARNs)
+     * that AWS CloudFormation associates with the stack. Specify an empty list
+     * to remove all notification topics.
      * </p>
      * 
      * @param notificationARNs
-     *        Update the ARNs for the Amazon SNS topics that are associated with
-     *        the stack.
+     *        Amazon Simple Notification Service topic Amazon Resource Names
+     *        (ARNs) that AWS CloudFormation associates with the stack. Specify
+     *        an empty list to remove all notification topics.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

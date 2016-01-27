@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2015 Amazon Technologies, Inc.
+ * Copyright 2015-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,13 +78,115 @@ public final class S extends PathOperand {
     }
 
     /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is less than or equal to the specified value) for building
+     * condition expression.
+     */
+    public ComparatorCondition le(String value) {
+        return new ComparatorCondition("<=", this, new LiteralOperand(value));
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is less than or equal to that of the specified attribute) for building
+     * condition expression.
+     */
+    public ComparatorCondition le(S that) {
+        return new ComparatorCondition("<=", this, that);
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is less than the specified value) for building
+     * condition expression.
+     */
+    public ComparatorCondition lt(String value) {
+        return new ComparatorCondition("<", this, new LiteralOperand(value));
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is less than that of the specified attribute) for building
+     * condition expression.
+     */
+    public ComparatorCondition lt(S that) {
+        return new ComparatorCondition("<", this, that);
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is greater than or equal to the specified value) for building
+     * condition expression.
+     */
+    public ComparatorCondition ge(String value) {
+        return new ComparatorCondition(">=", this, new LiteralOperand(value));
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is greater than or equal to that of the specified attribute) for building
+     * condition expression.
+     */
+    public ComparatorCondition ge(S that) {
+        return new ComparatorCondition(">=", this, that);
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is greater than the specified value) for building
+     * condition expression.
+     */
+    public ComparatorCondition gt(String value) {
+        return new ComparatorCondition(">", this, new LiteralOperand(value));
+    }
+
+    /**
+     * Returns a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >comparator condition</a> (that evaluates to true if the value of the current
+     * attribute is greater than that of the specified attribute) for building
+     * condition expression.
+     */
+    public ComparatorCondition gt(S that) {
+        return new ComparatorCondition(">", this, that);
+    }
+
+    /**
+     * Returns a <code>BetweenCondition</code> that represents a <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html#ConditionExpressionReference.Comparators"
+     * >BETWEEN comparison</a> (that evaluates to true if the value of the
+     * current attribute is greater than or equal to the given low value, and
+     * less than or equal to the given high value) for building condition
+     * expression.
+     */
+    public BetweenCondition between(String low, String high) {
+        return new BetweenCondition(this,
+                new LiteralOperand(low),
+                new LiteralOperand(high));
+    }
+
+    /**
      * Returns an <code>IfNotExists</code> object which represents an <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      * >if_not_exists(path, operand)</a> function call where path refers to that
      * of the current attribute; used for building expressions.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."
@@ -202,7 +304,7 @@ public final class S extends PathOperand {
      * of the current path operand; used for building expressions.
      *
      * <pre>
-     * "if_not_exists (path, operand) ??? If the item does not contain an attribute
+     * "if_not_exists (path, operand) – If the item does not contain an attribute
      * at the specified path, then if_not_exists evaluates to operand; otherwise,
      * it evaluates to path. You can use this function to avoid overwriting an
      * attribute already present in the item."

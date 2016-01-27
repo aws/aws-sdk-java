@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,11 +28,13 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Create Distribution Result StAX Unmarshaller
+ * CreateDistributionResult StAX Unmarshaller
  */
-public class CreateDistributionResultStaxUnmarshaller implements Unmarshaller<CreateDistributionResult, StaxUnmarshallerContext> {
+public class CreateDistributionResultStaxUnmarshaller implements
+        Unmarshaller<CreateDistributionResult, StaxUnmarshallerContext> {
 
-    public CreateDistributionResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CreateDistributionResult unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         CreateDistributionResult createDistributionResult = new CreateDistributionResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -43,11 +46,15 @@ public class CreateDistributionResultStaxUnmarshaller implements Unmarshaller<Cr
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return createDistributionResult;
+            if (xmlEvent.isEndDocument())
+                return createDistributionResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Distribution", targetDepth)) {
-                    createDistributionResult.setDistribution(DistributionStaxUnmarshaller.getInstance().unmarshall(context));
+                    createDistributionResult
+                            .setDistribution(DistributionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -59,9 +66,10 @@ public class CreateDistributionResultStaxUnmarshaller implements Unmarshaller<Cr
     }
 
     private static CreateDistributionResultStaxUnmarshaller instance;
+
     public static CreateDistributionResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateDistributionResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new CreateDistributionResultStaxUnmarshaller();
         return instance;
     }
 }
-    

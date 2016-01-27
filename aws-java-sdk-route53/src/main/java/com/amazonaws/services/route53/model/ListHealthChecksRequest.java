@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your health checks, send a <code>GET</code> request to
- * the <code>2013-04-01/healthcheck</code> resource. The response to this
+ * the <code>2015-01-01/healthcheck</code> resource. The response to this
  * request includes a <code>HealthChecks</code> element with zero or more
  * <code>HealthCheck</code> child elements. By default, the list of health
  * checks is displayed on a single page. You can control the length of the page

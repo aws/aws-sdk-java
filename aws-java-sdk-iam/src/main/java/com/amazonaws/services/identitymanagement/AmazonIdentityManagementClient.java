@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -317,10 +318,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
         exceptionUnmarshallers
                 .add(new CredentialReportNotPresentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("iam.amazonaws.com");
+
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        this.setEndpoint("iam.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s
                 .addAll(chainFactory

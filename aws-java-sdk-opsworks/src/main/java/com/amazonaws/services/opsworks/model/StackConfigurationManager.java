@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,8 +33,9 @@ public class StackConfigurationManager implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.
+     * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for
+     * Linux stacks, and to 12.2 for Windows stacks. The default value for Linux
+     * stacks is 11.4.
      * </p>
      */
     private String version;
@@ -78,13 +80,15 @@ public class StackConfigurationManager implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.
+     * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for
+     * Linux stacks, and to 12.2 for Windows stacks. The default value for Linux
+     * stacks is 11.4.
      * </p>
      * 
      * @param version
-     *        The Chef version. This parameter must be set to 0.9, 11.4, or
-     *        11.10. The default value is 11.4.
+     *        The Chef version. This parameter must be set to 12, 11.10, or 11.4
+     *        for Linux stacks, and to 12.2 for Windows stacks. The default
+     *        value for Linux stacks is 11.4.
      */
     public void setVersion(String version) {
         this.version = version;
@@ -92,12 +96,14 @@ public class StackConfigurationManager implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.
+     * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for
+     * Linux stacks, and to 12.2 for Windows stacks. The default value for Linux
+     * stacks is 11.4.
      * </p>
      * 
-     * @return The Chef version. This parameter must be set to 0.9, 11.4, or
-     *         11.10. The default value is 11.4.
+     * @return The Chef version. This parameter must be set to 12, 11.10, or
+     *         11.4 for Linux stacks, and to 12.2 for Windows stacks. The
+     *         default value for Linux stacks is 11.4.
      */
     public String getVersion() {
         return this.version;
@@ -105,13 +111,15 @@ public class StackConfigurationManager implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.
+     * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for
+     * Linux stacks, and to 12.2 for Windows stacks. The default value for Linux
+     * stacks is 11.4.
      * </p>
      * 
      * @param version
-     *        The Chef version. This parameter must be set to 0.9, 11.4, or
-     *        11.10. The default value is 11.4.
+     *        The Chef version. This parameter must be set to 12, 11.10, or 11.4
+     *        for Linux stacks, and to 12.2 for Windows stacks. The default
+     *        value for Linux stacks is 11.4.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

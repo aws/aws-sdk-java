@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,9 +43,10 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Constraints: The domain name can contain only the letters a through z,
      * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * theyaposre surrounded by letters, numbers, or other hyphens. You canapost
-     * specify a hyphen at the beginning or end of a label. To specify an
-     * Internationalized Domain Name, you must convert the name to Punycode.
+     * they&apos;re surrounded by letters, numbers, or other hyphens. You
+     * can&apos;t specify a hyphen at the beginning or end of a label. To
+     * specify an Internationalized Domain Name, you must convert the name to
+     * Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -64,7 +66,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Required: No
      * </p>
-     * '&gt;
+     * '>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagsToDelete;
 
@@ -84,9 +86,10 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Constraints: The domain name can contain only the letters a through z,
      * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * theyaposre surrounded by letters, numbers, or other hyphens. You canapost
-     * specify a hyphen at the beginning or end of a label. To specify an
-     * Internationalized Domain Name, you must convert the name to Punycode.
+     * they&apos;re surrounded by letters, numbers, or other hyphens. You
+     * can&apos;t specify a hyphen at the beginning or end of a label. To
+     * specify an Internationalized Domain Name, you must convert the name to
+     * Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -106,8 +109,8 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *        <p>
      *        Constraints: The domain name can contain only the letters a
      *        through z, the numbers 0 through 9, and hyphen (-). Hyphens are
-     *        allowed only when theyaposre surrounded by letters, numbers, or
-     *        other hyphens. You canapost specify a hyphen at the beginning or
+     *        allowed only when they&apos;re surrounded by letters, numbers, or
+     *        other hyphens. You can&apos;t specify a hyphen at the beginning or
      *        end of a label. To specify an Internationalized Domain Name, you
      *        must convert the name to Punycode.
      *        </p>
@@ -134,9 +137,10 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Constraints: The domain name can contain only the letters a through z,
      * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * theyaposre surrounded by letters, numbers, or other hyphens. You canapost
-     * specify a hyphen at the beginning or end of a label. To specify an
-     * Internationalized Domain Name, you must convert the name to Punycode.
+     * they&apos;re surrounded by letters, numbers, or other hyphens. You
+     * can&apos;t specify a hyphen at the beginning or end of a label. To
+     * specify an Internationalized Domain Name, you must convert the name to
+     * Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -155,10 +159,10 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *         <p>
      *         Constraints: The domain name can contain only the letters a
      *         through z, the numbers 0 through 9, and hyphen (-). Hyphens are
-     *         allowed only when theyaposre surrounded by letters, numbers, or
-     *         other hyphens. You canapost specify a hyphen at the beginning or
-     *         end of a label. To specify an Internationalized Domain Name, you
-     *         must convert the name to Punycode.
+     *         allowed only when they&apos;re surrounded by letters, numbers, or
+     *         other hyphens. You can&apos;t specify a hyphen at the beginning
+     *         or end of a label. To specify an Internationalized Domain Name,
+     *         you must convert the name to Punycode.
      *         </p>
      *         <p>
      *         Required: Yes
@@ -183,9 +187,10 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Constraints: The domain name can contain only the letters a through z,
      * the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when
-     * theyaposre surrounded by letters, numbers, or other hyphens. You canapost
-     * specify a hyphen at the beginning or end of a label. To specify an
-     * Internationalized Domain Name, you must convert the name to Punycode.
+     * they&apos;re surrounded by letters, numbers, or other hyphens. You
+     * can&apos;t specify a hyphen at the beginning or end of a label. To
+     * specify an Internationalized Domain Name, you must convert the name to
+     * Punycode.
      * </p>
      * <p>
      * Required: Yes
@@ -205,8 +210,8 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *        <p>
      *        Constraints: The domain name can contain only the letters a
      *        through z, the numbers 0 through 9, and hyphen (-). Hyphens are
-     *        allowed only when theyaposre surrounded by letters, numbers, or
-     *        other hyphens. You canapost specify a hyphen at the beginning or
+     *        allowed only when they&apos;re surrounded by letters, numbers, or
+     *        other hyphens. You can&apos;t specify a hyphen at the beginning or
      *        end of a label. To specify an Internationalized Domain Name, you
      *        must convert the name to Punycode.
      *        </p>
@@ -233,7 +238,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Required: No
      * </p>
-     * '&gt;
+     * '>
      * 
      * @return A list of tag keys to delete.</p>
      *         <p>
@@ -266,7 +271,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Required: No
      * </p>
-     * '&gt;
+     * '>
      * 
      * @param tagsToDelete
      *        A list of tag keys to delete.</p>
@@ -303,7 +308,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Required: No
      * </p>
-     * '&gt;
+     * '>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTagsToDelete(java.util.Collection)} or
@@ -349,7 +354,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * <p>
      * Required: No
      * </p>
-     * '&gt;
+     * '>
      * 
      * @param tagsToDelete
      *        A list of tag keys to delete.</p>

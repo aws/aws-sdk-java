@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -91,6 +92,26 @@ public class SdkHttpUtils {
 
             matcher.appendTail(buffer);
             return buffer.toString();
+
+        } catch (UnsupportedEncodingException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    /**
+     * Decode a string for use in the path of a URL; uses URLDecoder.decode,
+     * which decodes a string for use in the query portion of a URL.
+     *
+     * @param value The value to decode
+     * @return The decoded value if parameter is not null, otherwise, null is returned.
+     */
+    public static String urlDecode(final String value) {
+        if (value == null) {
+            return null;
+        }
+
+        try {
+            return URLDecoder.decode(value, DEFAULT_ENCODING);
 
         } catch (UnsupportedEncodingException ex) {
             throw new RuntimeException(ex);

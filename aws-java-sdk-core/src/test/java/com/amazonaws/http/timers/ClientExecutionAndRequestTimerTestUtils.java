@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -177,17 +178,35 @@ public class ClientExecutionAndRequestTimerTestUtils {
      *         or partially mock
      */
     public static HttpResponseProxy createHttpResponseProxySpy() throws IOException {
+        StringEntity entity = new StringEntity("mock response body");
+        HttpResponseProxy responseProxy = spy(createHttpResponseProxy(entity));
+        doReturn(entity).when(responseProxy).getEntity();
+        return responseProxy;
+    }
+
+    /**
+     * Creates Apache {@link HttpResponseProxy} with a null entity
+     */
+    public static HttpResponseProxy createHttpHeadResponseProxy() throws IOException {
+        return createHttpResponseProxy(null);
+    }
+
+    private static HttpResponseProxy createHttpResponseProxy(HttpEntity entity) {
         ProtocolVersion protocolVersion = new ProtocolVersion("HTTP", 1, 1);
         BasicStatusLine statusLine = new BasicStatusLine(protocolVersion, 200, "mock response");
         BasicHttpResponse response = new BasicHttpResponse(statusLine);
-        HttpResponseProxy responseProxy = spy(new HttpResponseProxy(response));
-        doReturn(new StringEntity("mock response body")).when(responseProxy).getEntity();
-        return responseProxy;
+        response.setEntity(entity);
+        return new HttpResponseProxy(response);
     }
 
     public static Request<?> createMockGetRequest() {
         String localhostEndpoint = "http://localhost:0";
         return new EmptyHttpRequest(localhostEndpoint, HttpMethodName.GET);
+    }
+
+    public static Request<?> createMockHeadRequest() {
+        String localhostEndpoint = "http://localhost:0";
+        return new EmptyHttpRequest(localhostEndpoint, HttpMethodName.HEAD);
     }
 
     /**
@@ -211,6 +230,20 @@ public class ClientExecutionAndRequestTimerTestUtils {
             Thread.sleep(WAIT_BEFORE_ASSERT_ON_EXECUTOR);
         } catch (InterruptedException ignored) {
         }
+    }
+
+    public static void interruptCurrentThreadAfterDelay(final long delay) {
+        final Thread currentThread = Thread.currentThread();
+        new Thread() {
+            public void run() {
+                try {
+                    Thread.sleep(delay);
+                    currentThread.interrupt();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            };
+        }.start();
     }
 
 }

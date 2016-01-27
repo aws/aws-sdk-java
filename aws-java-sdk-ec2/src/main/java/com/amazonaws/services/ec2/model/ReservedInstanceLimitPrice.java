@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the limit price of a Reserved instance offering.
+ * Describes the limit price of a Reserved Instance offering.
  * </p>
  */
 public class ReservedInstanceLimitPrice implements Serializable, Cloneable {

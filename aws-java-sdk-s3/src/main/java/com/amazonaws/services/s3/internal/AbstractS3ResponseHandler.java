@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -110,29 +110,29 @@ public abstract class AbstractS3ResponseHandler<T>
                 metadata.addUserMetadata(key, header.getValue());
             } else if (ignoredHeaders.contains(key)) {
                 // ignore...
-            } else if (key.equals(Headers.LAST_MODIFIED)) {
+            } else if (key.equalsIgnoreCase(Headers.LAST_MODIFIED)) {
                 try {
                     metadata.setHeader(key, ServiceUtils.parseRfc822Date(header.getValue()));
                 } catch (Exception pe) {
                     log.warn("Unable to parse last modified date: " + header.getValue(), pe);
                 }
-            } else if (key.equals(Headers.CONTENT_LENGTH)) {
+            } else if (key.equalsIgnoreCase(Headers.CONTENT_LENGTH)) {
                 try {
                     metadata.setHeader(key, Long.parseLong(header.getValue()));
                 } catch (NumberFormatException nfe) {
                     log.warn("Unable to parse content length: " + header.getValue(), nfe);
                 }
-            } else if (key.equals(Headers.ETAG)) {
+            } else if (key.equalsIgnoreCase(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
-            } else if (key.equals(Headers.EXPIRES)) {
+            } else if (key.equalsIgnoreCase(Headers.EXPIRES)) {
                 try {
                     metadata.setHttpExpiresDate(DateUtils.parseRFC822Date(header.getValue()));
                 } catch (Exception pe) {
                     log.warn("Unable to parse http expiration date: " + header.getValue(), pe);
                 }
-            } else if (key.equals(Headers.EXPIRATION)) {
+            } else if (key.equalsIgnoreCase(Headers.EXPIRATION)) {
                 new ObjectExpirationHeaderHandler<ObjectMetadata>().handle(metadata, response);
-            } else if (key.equals(Headers.RESTORE)) {
+            } else if (key.equalsIgnoreCase(Headers.RESTORE)) {
                 new ObjectRestoreHeaderHandler<ObjectRestoreResult>().handle(metadata, response);
             } else {
                 metadata.setHeader(key, header.getValue());

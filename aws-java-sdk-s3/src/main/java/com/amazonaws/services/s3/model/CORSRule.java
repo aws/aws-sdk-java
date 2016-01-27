@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Amazon Technologies, Inc.
+ * Copyright 2011-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -221,36 +221,34 @@ public class CORSRule implements Serializable {
      *
      */
     public static enum AllowedMethods {
-		 GET("GET"),
-		 PUT("PUT"),
-		 HEAD("HEAD"),
-		 POST("POST"),
-		 DELETE("DELETE");
+         GET("GET"),
+         PUT("PUT"),
+         HEAD("HEAD"),
+         POST("POST"),
+         DELETE("DELETE");
 
-		 private final String AllowedMethod;
+         private final String AllowedMethod;
 
-		  private AllowedMethods(String AllowedMethod) {
-		       this.AllowedMethod = AllowedMethod;
-		 }
+         private AllowedMethods(String AllowedMethod) {
+               this.AllowedMethod = AllowedMethod;
+         }
 
-		    /* (non-Javadoc)
-		     * @see java.lang.Enum#toString()
-		     */
-		  @Override
-		  public String toString() {
-		       return AllowedMethod;
-		   }
+         @Override
+         public String toString() {
+               return AllowedMethod;
+         }
 
-		  public static AllowedMethods fromValue(String allowedMethod) throws IllegalArgumentException {
-		       for (AllowedMethods method : AllowedMethods.values()) {
-		           String methodString = method.toString();
-		           if (methodString == null && allowedMethod == null) return method;
-		           if (methodString != null && methodString.equals(allowedMethod)) return method;
-		   }
+         public static AllowedMethods fromValue(String allowedMethod) throws IllegalArgumentException {
+              for (AllowedMethods method : AllowedMethods.values()) {
+                  String methodString = method.toString();
+                  if (methodString != null && methodString.equals
+                          (allowedMethod)) {
+                      return method;
+                  }
+              }
 
-		      throw new IllegalArgumentException(
-		          "Cannot create enum from " + allowedMethod + " value!");
-		   }
-	 }
-	 
+              throw new IllegalArgumentException(
+                  "Cannot create enum from " + allowedMethod + " value!");
+         }
+    }	 
 }

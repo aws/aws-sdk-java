@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2015 Amazon Technologies, Inc.
+ * Copyright 2014-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,11 @@ import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.params.HttpParams;
 
+import com.amazonaws.internal.SdkSSLMetricsSocket;
 import com.amazonaws.internal.SdkSSLSocket;
 import com.amazonaws.internal.SdkSocket;
+import com.amazonaws.internal.SdkMetricsSocket;
+import com.amazonaws.metrics.AwsSdkMetrics;
 
 /**
  * Used to enforce the preferred TLS protocol during SSL handshake.
@@ -138,15 +141,17 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
             throw sslEx;
         }
         if (socket instanceof SSLSocket) {
-            return new SdkSSLSocket((SSLSocket) socket);
+            SdkSSLSocket sslSocket = new SdkSSLSocket((SSLSocket) socket);
+            return AwsSdkMetrics.isHttpSocketReadMetricEnabled() ? new SdkSSLMetricsSocket(sslSocket) : sslSocket;
         }
-        return new SdkSocket(socket);
+        SdkSocket sdkSocket = new SdkSocket(socket);
+        return AwsSdkMetrics.isHttpSocketReadMetricEnabled() ? new SdkMetricsSocket(sdkSocket) : sdkSocket;
     }
 
     /**
      * Invalidates all SSL/TLS sessions in {@code sessionContext} associated with
      * {@code remoteAddress}.
-     * 
+     *
      * @param sessionContext
      *            collection of SSL/TLS sessions to be (potentially) invalidated
      * @param remoteAddress

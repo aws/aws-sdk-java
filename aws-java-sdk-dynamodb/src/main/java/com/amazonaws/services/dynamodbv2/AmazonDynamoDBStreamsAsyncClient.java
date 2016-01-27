@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -178,8 +179,8 @@ public class AmazonDynamoDBStreamsAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
-                executorService);
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig(), executorService);
     }
 
     /**
@@ -271,7 +272,8 @@ public class AmazonDynamoDBStreamsAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
                 executorService);
     }
 

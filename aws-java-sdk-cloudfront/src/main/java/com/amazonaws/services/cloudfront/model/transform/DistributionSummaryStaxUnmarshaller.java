@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,79 +28,120 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Distribution Summary StAX Unmarshaller
+ * DistributionSummary StAX Unmarshaller
  */
-public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<DistributionSummary, StaxUnmarshallerContext> {
+public class DistributionSummaryStaxUnmarshaller implements
+        Unmarshaller<DistributionSummary, StaxUnmarshallerContext> {
 
-    public DistributionSummary unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DistributionSummary unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         DistributionSummary distributionSummary = new DistributionSummary();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
-        if (context.isStartOfDocument()) targetDepth += 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return distributionSummary;
+            if (xmlEvent.isEndDocument())
+                return distributionSummary;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Id", targetDepth)) {
-                    distributionSummary.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Status", targetDepth)) {
-                    distributionSummary.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setStatus(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
-                    distributionSummary.setLastModifiedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary
+                            .setLastModifiedTime(DateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("DomainName", targetDepth)) {
-                    distributionSummary.setDomainName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setDomainName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Aliases", targetDepth)) {
-                    distributionSummary.setAliases(AliasesStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setAliases(AliasesStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Origins", targetDepth)) {
-                    distributionSummary.setOrigins(OriginsStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setOrigins(OriginsStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("DefaultCacheBehavior", targetDepth)) {
-                    distributionSummary.setDefaultCacheBehavior(DefaultCacheBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary
+                            .setDefaultCacheBehavior(DefaultCacheBehaviorStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CacheBehaviors", targetDepth)) {
-                    distributionSummary.setCacheBehaviors(CacheBehaviorsStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary
+                            .setCacheBehaviors(CacheBehaviorsStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CustomErrorResponses", targetDepth)) {
-                    distributionSummary.setCustomErrorResponses(CustomErrorResponsesStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary
+                            .setCustomErrorResponses(CustomErrorResponsesStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Comment", targetDepth)) {
-                    distributionSummary.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setComment(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("PriceClass", targetDepth)) {
-                    distributionSummary.setPriceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setPriceClass(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Enabled", targetDepth)) {
-                    distributionSummary.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ViewerCertificate", targetDepth)) {
-                    distributionSummary.setViewerCertificate(ViewerCertificateStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary
+                            .setViewerCertificate(ViewerCertificateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Restrictions", targetDepth)) {
-                    distributionSummary.setRestrictions(RestrictionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary
+                            .setRestrictions(RestrictionsStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("WebACLId", targetDepth)) {
-                    distributionSummary.setWebACLId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setWebACLId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -111,9 +153,10 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
     }
 
     private static DistributionSummaryStaxUnmarshaller instance;
+
     public static DistributionSummaryStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DistributionSummaryStaxUnmarshaller();
+        if (instance == null)
+            instance = new DistributionSummaryStaxUnmarshaller();
         return instance;
     }
 }
-    

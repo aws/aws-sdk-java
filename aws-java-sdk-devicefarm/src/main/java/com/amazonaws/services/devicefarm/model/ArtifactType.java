@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +38,8 @@ public enum ArtifactType {
     APPIUM_SERVER_OUTPUT("APPIUM_SERVER_OUTPUT"),
     APPIUM_JAVA_OUTPUT("APPIUM_JAVA_OUTPUT"),
     APPIUM_JAVA_XML_OUTPUT("APPIUM_JAVA_XML_OUTPUT"),
+    APPIUM_PYTHON_OUTPUT("APPIUM_PYTHON_OUTPUT"),
+    APPIUM_PYTHON_XML_OUTPUT("APPIUM_PYTHON_XML_OUTPUT"),
     EXPLORER_EVENT_LOG("EXPLORER_EVENT_LOG"),
     EXPLORER_SUMMARY_LOG("EXPLORER_SUMMARY_LOG"),
     APPLICATION_CRASH_REPORT("APPLICATION_CRASH_REPORT");
@@ -96,6 +99,10 @@ public enum ArtifactType {
             return APPIUM_JAVA_OUTPUT;
         } else if ("APPIUM_JAVA_XML_OUTPUT".equals(value)) {
             return APPIUM_JAVA_XML_OUTPUT;
+        } else if ("APPIUM_PYTHON_OUTPUT".equals(value)) {
+            return APPIUM_PYTHON_OUTPUT;
+        } else if ("APPIUM_PYTHON_XML_OUTPUT".equals(value)) {
+            return APPIUM_PYTHON_XML_OUTPUT;
         } else if ("EXPLORER_EVENT_LOG".equals(value)) {
             return EXPLORER_EVENT_LOG;
         } else if ("EXPLORER_SUMMARY_LOG".equals(value)) {

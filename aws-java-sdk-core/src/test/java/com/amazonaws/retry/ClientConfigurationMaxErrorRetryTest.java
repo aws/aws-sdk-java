@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,6 +20,7 @@ package com.amazonaws.retry;
 
 import java.util.Random;
 
+import com.amazonaws.http.response.NullResponseHandler;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -138,7 +139,7 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
 
         try {
             testedClient.execute(getSampleRequestWithRepeatableContent(originalRequest),
-                                 null,
+                                 new NullResponseHandler(),
                                  errorResponseHandler,
                                  context);
             Assert.fail("AmazonServiceException is expected.");

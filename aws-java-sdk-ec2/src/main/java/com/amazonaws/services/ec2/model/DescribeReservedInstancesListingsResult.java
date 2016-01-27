@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,14 +22,14 @@ import java.io.Serializable;
 public class DescribeReservedInstancesListingsResult implements Serializable, Cloneable {
 
     /**
-     * Information about the Reserved instance listing.
+     * Information about the Reserved Instance listing.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing> reservedInstancesListings;
 
     /**
-     * Information about the Reserved instance listing.
+     * Information about the Reserved Instance listing.
      *
-     * @return Information about the Reserved instance listing.
+     * @return Information about the Reserved Instance listing.
      */
     public java.util.List<ReservedInstancesListing> getReservedInstancesListings() {
         if (reservedInstancesListings == null) {
@@ -40,9 +40,9 @@ public class DescribeReservedInstancesListingsResult implements Serializable, Cl
     }
     
     /**
-     * Information about the Reserved instance listing.
+     * Information about the Reserved Instance listing.
      *
-     * @param reservedInstancesListings Information about the Reserved instance listing.
+     * @param reservedInstancesListings Information about the Reserved Instance listing.
      */
     public void setReservedInstancesListings(java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {
         if (reservedInstancesListings == null) {
@@ -55,7 +55,7 @@ public class DescribeReservedInstancesListingsResult implements Serializable, Cl
     }
     
     /**
-     * Information about the Reserved instance listing.
+     * Information about the Reserved Instance listing.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setReservedInstancesListings(java.util.Collection)}
@@ -64,7 +64,7 @@ public class DescribeReservedInstancesListingsResult implements Serializable, Cl
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListings Information about the Reserved instance listing.
+     * @param reservedInstancesListings Information about the Reserved Instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -78,11 +78,11 @@ public class DescribeReservedInstancesListingsResult implements Serializable, Cl
     }
     
     /**
-     * Information about the Reserved instance listing.
+     * Information about the Reserved Instance listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedInstancesListings Information about the Reserved instance listing.
+     * @param reservedInstancesListings Information about the Reserved Instance listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

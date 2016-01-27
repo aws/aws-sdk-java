@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Amazon Technologies, Inc.
+ * Copyright 2011-2016 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public class MultiObjectDeleteException extends AmazonS3Exception implements Ser
     /**
      * An error that occurred when deleting an object.
      */
-    public static class DeleteError {
+    public static class DeleteError implements Serializable {
 
         private String key;
         private String versionId;

@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Gets information about a specific traffic policy version. To get the
- * information, send a GET request to the 2013-04-01/trafficpolicy resource, and
+ * information, send a GET request to the 2015-01-01/trafficpolicy resource, and
  * specify the ID and the version of the traffic policy.
  * </p>
  */

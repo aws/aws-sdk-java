@@ -1,3 +1,17 @@
+/*
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 package com.amazonaws.http.timers.request;
 
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertCanceledTasksRemoved;
@@ -5,11 +19,14 @@ import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertResponseIsBuffered;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertResponseWasNotBuffered;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertTimerNeverTriggered;
+import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.createHttpHeadResponseProxy;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.createHttpResponseProxySpy;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.createMockGetRequest;
+import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.createMockHeadRequest;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.createRawHttpClientSpy;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.execute;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doReturn;
@@ -17,7 +34,9 @@ import static org.mockito.Mockito.doReturn;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpHead;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.protocol.HttpContext;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -69,7 +88,30 @@ public class MockedClientTests {
         // thread should exist
         assertEquals(1, requestTimerExecutor.getPoolSize());
         assertCoreThreadsShutDownAfterBeingIdle(requestTimerExecutor);
+    }
 
+    /**
+     * Response to HEAD requests don't have an entity so we shouldn't try to wrap the response in a
+     * {@link BufferedHttpEntity}.
+     */
+    @Test
+    public void requestTimeoutEnabled_HeadRequestCompletesWithinTimeout_EntityNotBuffered() throws Exception {
+        ClientConfiguration config = new ClientConfiguration().withRequestTimeout(5 * 1000).withMaxErrorRetry(0);
+        HttpClient rawHttpClient = createRawHttpClientSpy(config);
+
+        HttpResponseProxy responseProxy = createHttpHeadResponseProxy();
+        doReturn(responseProxy).when(rawHttpClient).execute(any(HttpHead.class), any(HttpContext.class));
+
+        httpClient = new AmazonHttpClient(config, rawHttpClient, null);
+
+        try {
+            execute(httpClient, createMockHeadRequest());
+            fail("Exception expected");
+        } catch (AmazonClientException e) {
+            NullResponseHandler.assertIsUnmarshallingException(e);
+        }
+
+        assertNull(responseProxy.getEntity());
     }
 
     @Test

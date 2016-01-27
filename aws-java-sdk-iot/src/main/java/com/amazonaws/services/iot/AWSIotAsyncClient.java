@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -133,8 +134,8 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     public AWSIotAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, new com.amazonaws.ClientConfiguration(),
-                executorService);
+        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
+                .defaultConfig(), executorService);
     }
 
     /**
@@ -225,7 +226,8 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider, new com.amazonaws.ClientConfiguration(),
+        this(awsCredentialsProvider,
+                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
                 executorService);
     }
 
@@ -960,6 +962,78 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                         try {
                             result = detachThingPrincipal(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            DisableTopicRuleRequest request) {
+
+        return disableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+            final DisableTopicRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            disableTopicRule(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            EnableTopicRuleRequest request) {
+
+        return enableTopicRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+            final EnableTopicRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            enableTopicRule(request);
+                            result = null;
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

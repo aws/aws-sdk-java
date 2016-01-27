@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.http.exception.HttpRequestTimeoutException;
 import com.amazonaws.http.timers.client.ClientExecutionTimeoutException;
 import com.amazonaws.http.timers.client.ClientExecutionTimer;
+import com.amazonaws.http.timers.client.SdkInterruptedException;
 import com.amazonaws.http.timers.request.HttpRequestAbortTaskTracker;
 import com.amazonaws.http.timers.request.HttpRequestTimer;
 import com.amazonaws.internal.CRC32MismatchException;
@@ -388,6 +389,11 @@ public class AmazonHttpClient {
      *         {@link InterruptedException}
      */
     private RuntimeException handleInterruptedException(ExecutionContext executionContext, InterruptedException e) {
+        if (e instanceof SdkInterruptedException) {
+            if (((SdkInterruptedException) e).getResponse() != null) {
+                ((SdkInterruptedException) e).getResponse().getHttpResponse().getHttpRequest().abort();
+            }
+        }
         if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
             // Clear the interrupt status
             Thread.interrupted();
@@ -407,8 +413,23 @@ public class AmazonHttpClient {
      *             If thread has been interrupted
      */
     private void checkInterrupted() throws InterruptedException {
+        checkInterrupted(null);
+    }
+
+    /**
+     * Check if the thread has been interrupted. If so throw an {@link InterruptedException}. Long
+     * running tasks should be periodically checked if the current thread has been interrupted and
+     * handle it appropriately
+     *
+     * @param response
+     *            Response to be closed before returning control to the caller to avoid leaking the
+     *            connection.
+     * @throws InterruptedException
+     *             If thread has been interrupted
+     */
+    private void checkInterrupted(Response<?> response) throws InterruptedException {
         if (Thread.interrupted()) {
-            throw new InterruptedException();
+            throw new SdkInterruptedException(response);
         }
     }
 
@@ -478,7 +499,7 @@ public class AmazonHttpClient {
                             AmazonClientException e) throws InterruptedException {
         for (RequestHandler2 handler2 : requestHandler2s) {
             handler2.afterError(request, response, e);
-            checkInterrupted();
+            checkInterrupted(response);
         }
     }
 
@@ -488,7 +509,7 @@ public class AmazonHttpClient {
                                    TimingInfo timingInfo) throws InterruptedException {
         for (RequestHandler2 handler2 : requestHandler2s) {
             handler2.afterResponse(request, response);
-            checkInterrupted();
+            checkInterrupted(response);
         }
     }
 
@@ -820,8 +841,8 @@ public class AmazonHttpClient {
 
         try {
             execParams.apacheResponse = httpClient.execute(execParams.apacheRequest, httpContext);
-            if ((execContext.getClientExecutionTrackerTask().isEnabled() || requestAbortTaskTracker.isEnabled())
-                    && !responseHandler.needsConnectionLeftOpen()) {
+            if (shouldBufferHttpEntity(responseHandler.needsConnectionLeftOpen(), execContext, execParams,
+                    requestAbortTaskTracker)) {
                 execParams.apacheResponse.setEntity(new BufferedHttpEntity(execParams.apacheResponse.getEntity()));
             }
             isHeaderReqIdAvail = logHeaderRequestId(execParams.apacheResponse);
@@ -903,6 +924,17 @@ public class AmazonHttpClient {
             request.setTimeOffset(timeOffset); // adjust time offset for the retry
         }
         return null; // => retry
+    }
+
+    /**
+     * @return True if the {@link HttpEntity} should be wrapped in a {@link BufferedHttpEntity}
+     */
+    private boolean shouldBufferHttpEntity(final boolean needsConnectionLeftOpen,
+                                           final ExecutionContext execContext,
+                                           ExecOneRequestParams execParams,
+                                           final HttpRequestAbortTaskTracker requestAbortTaskTracker) {
+        return (execContext.getClientExecutionTrackerTask().isEnabled() || requestAbortTaskTracker.isEnabled())
+                && !needsConnectionLeftOpen && execParams.apacheResponse.getEntity() != null;
     }
 
     /**

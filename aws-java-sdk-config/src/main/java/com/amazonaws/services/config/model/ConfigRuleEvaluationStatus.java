@@ -1,5 +1,6 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,9 +101,9 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * rule at least once.
      * </p>
      * <ul>
-     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * <li><code>true</code> - AWS Config has evaluated your AWS resources
      * against the rule at least once.</li>
-     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * <li><code>false</code> - AWS Config has not once finished evaluating your
      * AWS resources against the rule.</li>
      * </ul>
      */
@@ -532,9 +533,9 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * rule at least once.
      * </p>
      * <ul>
-     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * <li><code>true</code> - AWS Config has evaluated your AWS resources
      * against the rule at least once.</li>
-     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * <li><code>false</code> - AWS Config has not once finished evaluating your
      * AWS resources against the rule.</li>
      * </ul>
      * 
@@ -542,9 +543,9 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        Indicates whether AWS Config has evaluated your resources against
      *        the rule at least once.</p>
      *        <ul>
-     *        <li> <code>true</code> - AWS Config has evaluated your AWS
+     *        <li><code>true</code> - AWS Config has evaluated your AWS
      *        resources against the rule at least once.</li>
-     *        <li> <code>false</code> - AWS Config has not once finished
+     *        <li><code>false</code> - AWS Config has not once finished
      *        evaluating your AWS resources against the rule.</li>
      */
     public void setFirstEvaluationStarted(Boolean firstEvaluationStarted) {
@@ -557,18 +558,18 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * rule at least once.
      * </p>
      * <ul>
-     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * <li><code>true</code> - AWS Config has evaluated your AWS resources
      * against the rule at least once.</li>
-     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * <li><code>false</code> - AWS Config has not once finished evaluating your
      * AWS resources against the rule.</li>
      * </ul>
      * 
      * @return Indicates whether AWS Config has evaluated your resources against
      *         the rule at least once.</p>
      *         <ul>
-     *         <li> <code>true</code> - AWS Config has evaluated your AWS
+     *         <li><code>true</code> - AWS Config has evaluated your AWS
      *         resources against the rule at least once.</li>
-     *         <li> <code>false</code> - AWS Config has not once finished
+     *         <li><code>false</code> - AWS Config has not once finished
      *         evaluating your AWS resources against the rule.</li>
      */
     public Boolean getFirstEvaluationStarted() {
@@ -581,9 +582,9 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * rule at least once.
      * </p>
      * <ul>
-     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * <li><code>true</code> - AWS Config has evaluated your AWS resources
      * against the rule at least once.</li>
-     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * <li><code>false</code> - AWS Config has not once finished evaluating your
      * AWS resources against the rule.</li>
      * </ul>
      * 
@@ -591,9 +592,9 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        Indicates whether AWS Config has evaluated your resources against
      *        the rule at least once.</p>
      *        <ul>
-     *        <li> <code>true</code> - AWS Config has evaluated your AWS
+     *        <li><code>true</code> - AWS Config has evaluated your AWS
      *        resources against the rule at least once.</li>
-     *        <li> <code>false</code> - AWS Config has not once finished
+     *        <li><code>false</code> - AWS Config has not once finished
      *        evaluating your AWS resources against the rule.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -610,18 +611,18 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * rule at least once.
      * </p>
      * <ul>
-     * <li> <code>true</code> - AWS Config has evaluated your AWS resources
+     * <li><code>true</code> - AWS Config has evaluated your AWS resources
      * against the rule at least once.</li>
-     * <li> <code>false</code> - AWS Config has not once finished evaluating your
+     * <li><code>false</code> - AWS Config has not once finished evaluating your
      * AWS resources against the rule.</li>
      * </ul>
      * 
      * @return Indicates whether AWS Config has evaluated your resources against
      *         the rule at least once.</p>
      *         <ul>
-     *         <li> <code>true</code> - AWS Config has evaluated your AWS
+     *         <li><code>true</code> - AWS Config has evaluated your AWS
      *         resources against the rule at least once.</li>
-     *         <li> <code>false</code> - AWS Config has not once finished
+     *         <li><code>false</code> - AWS Config has not once finished
      *         evaluating your AWS resources against the rule.</li>
      */
     public Boolean isFirstEvaluationStarted() {

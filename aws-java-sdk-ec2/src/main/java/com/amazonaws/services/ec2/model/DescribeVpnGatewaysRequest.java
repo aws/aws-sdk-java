@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,10 +48,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone for the
-     * virtual private gateway. </li> <li> <p><code>state</code> - The state
-     * of the virtual private gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>). </li> <li>
+     * virtual private gateway (if applicable). </li> <li>
+     * <p><code>state</code> - The state of the virtual private gateway
+     * (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     * | <code>deleted</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -159,10 +159,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone for the
-     * virtual private gateway. </li> <li> <p><code>state</code> - The state
-     * of the virtual private gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>). </li> <li>
+     * virtual private gateway (if applicable). </li> <li>
+     * <p><code>state</code> - The state of the virtual private gateway
+     * (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     * | <code>deleted</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -186,10 +186,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone for the
-     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
-     *         of the virtual private gateway (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> |
-     *         <code>deleted</code>). </li> <li>
+     *         virtual private gateway (if applicable). </li> <li>
+     *         <p><code>state</code> - The state of the virtual private gateway
+     *         (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     *         | <code>deleted</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -222,10 +222,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone for the
-     * virtual private gateway. </li> <li> <p><code>state</code> - The state
-     * of the virtual private gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>). </li> <li>
+     * virtual private gateway (if applicable). </li> <li>
+     * <p><code>state</code> - The state of the virtual private gateway
+     * (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     * | <code>deleted</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -249,10 +249,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone for the
-     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
-     *         of the virtual private gateway (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> |
-     *         <code>deleted</code>). </li> <li>
+     *         virtual private gateway (if applicable). </li> <li>
+     *         <p><code>state</code> - The state of the virtual private gateway
+     *         (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     *         | <code>deleted</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -287,10 +287,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone for the
-     * virtual private gateway. </li> <li> <p><code>state</code> - The state
-     * of the virtual private gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>). </li> <li>
+     * virtual private gateway (if applicable). </li> <li>
+     * <p><code>state</code> - The state of the virtual private gateway
+     * (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     * | <code>deleted</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -321,10 +321,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone for the
-     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
-     *         of the virtual private gateway (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> |
-     *         <code>deleted</code>). </li> <li>
+     *         virtual private gateway (if applicable). </li> <li>
+     *         <p><code>state</code> - The state of the virtual private gateway
+     *         (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     *         | <code>deleted</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -360,10 +360,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone for the
-     * virtual private gateway. </li> <li> <p><code>state</code> - The state
-     * of the virtual private gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>). </li> <li>
+     * virtual private gateway (if applicable). </li> <li>
+     * <p><code>state</code> - The state of the virtual private gateway
+     * (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     * | <code>deleted</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -389,10 +389,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone for the
-     *         virtual private gateway. </li> <li> <p><code>state</code> - The state
-     *         of the virtual private gateway (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> |
-     *         <code>deleted</code>). </li> <li>
+     *         virtual private gateway (if applicable). </li> <li>
+     *         <p><code>state</code> - The state of the virtual private gateway
+     *         (<code>pending</code> | <code>available</code> | <code>deleting</code>
+     *         | <code>deleted</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.

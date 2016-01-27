@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,12 +42,12 @@ import com.amazonaws.util.TimingInfo;
 /**
  * Used to transform the predefined metrics of the AWS SDK into instances of
  * {@link MetricDatum}.
- * 
+ *
  * See <a href=
  * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html"
  * >http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/
  * publishingMetrics.html</a>
- * 
+ *
  * @see AWSRequestMetrics
  * @see RequestMetricCollector
  */
@@ -60,7 +60,7 @@ public class PredefinedMetricTransformer {
     /**
      * Returns a non-null list of metric datum for the metrics collected for the
      * given request/response.
-     * 
+     *
      * @param metricType the request metric type
      */
     public List<MetricDatum> toMetricData(MetricType metricType, Request<?> request, Response<?> response) {
@@ -84,6 +84,7 @@ public class PredefinedMetricTransformer {
                 case HttpClientSendRequestTime:
                 case HttpClientReceiveResponseTime:
                 case HttpRequestTime:
+                case HttpSocketReadTime:
                     return latencyMetricOf(predefined, request, response, INCLUDE_REQUEST_TYPE);
                 case Exception:
                 case ThrottleException:
@@ -115,14 +116,14 @@ public class PredefinedMetricTransformer {
     /**
      * Returns a list with a single metric datum for the specified retry or
      * request count predefined metric; or an empty list if there is none.
-     * 
+     *
      * @param metricType
      *            must be either {@link Field#RequestCount} or
      *            {@link Field#RetryCount}; or else GIGO.
      */
     protected List<MetricDatum> metricOfRequestOrRetryCount(
             Field metricType, Request<?> req, Object resp) {
-        AWSRequestMetrics m = req.getAWSRequestMetrics(); 
+        AWSRequestMetrics m = req.getAWSRequestMetrics();
         TimingInfo ti = m.getTimingInfo();
         // Always retrieve the request count even for retry which is equivalent
         // to the number of requests minus one.
@@ -137,7 +138,7 @@ public class PredefinedMetricTransformer {
                 "request count must be at least one");
             return Collections.emptyList();
         }
-        final double count = metricType == Field.RequestCount 
+        final double count = metricType == Field.RequestCount
                            ? requestCount
                            : requestCount-1 // retryCount = requestCount - 1
                            ;
@@ -158,7 +159,7 @@ public class PredefinedMetricTransformer {
 
     protected List<MetricDatum> metricOfCount(
             Field metricType, Request<?> req, Object resp) {
-        AWSRequestMetrics m = req.getAWSRequestMetrics(); 
+        AWSRequestMetrics m = req.getAWSRequestMetrics();
         TimingInfo ti = m.getTimingInfo();
         Number counter = ti.getCounter(metricType.name());
         if (counter == null) {
@@ -179,13 +180,13 @@ public class PredefinedMetricTransformer {
                 ;
         }
     }
-    
+
     /**
      * Returns all the latency metric data recorded for the specified metric
      * event type; or an empty list if there is none. The number of metric datum
      * in the returned list should be exactly one when there is no retries, or
      * more than one when there are retries.
-     * 
+     *
      * @param includesRequestType
      *            true iff the "request" dimension is to be included;
      */
@@ -206,7 +207,7 @@ public class PredefinedMetricTransformer {
                             .withName(Dimensions.MetricType.name())
                             .withValue(metricName));
                     // Either a non request type specific datum is created per
-                    // sub-measurement, or a request type specific one is 
+                    // sub-measurement, or a request type specific one is
                     // created but not both
                     if (includesRequestType) {
                         dims.add(new Dimension()
@@ -254,7 +255,7 @@ public class PredefinedMetricTransformer {
         }
         return Collections.emptyList();
     }
-    
+
     /**
      * Returns the name of the type of request.
      */
@@ -265,14 +266,14 @@ public class PredefinedMetricTransformer {
     /**
      * Returns a list of metric datum recorded for the specified counter metric
      * type; or an empty list if there is none.
-     * 
+     *
      * @param includesRequestType
      *            true iff an additional metric datum is to be created that
      *            includes the "request" dimension
      */
     protected List<MetricDatum> counterMetricOf(MetricType type,
             Request<?> req, Object resp, boolean includesRequestType) {
-        AWSRequestMetrics m = req.getAWSRequestMetrics(); 
+        AWSRequestMetrics m = req.getAWSRequestMetrics();
         TimingInfo ti = m.getTimingInfo();
         final String metricName = type.name();
         Number counter = ti.getCounter(metricName);
@@ -301,7 +302,7 @@ public class PredefinedMetricTransformer {
             Dimension requestDimension = new Dimension()
                 .withName(Dimensions.RequestType.name())
                 .withValue(requestType(req));
-            final MetricDatum second = 
+            final MetricDatum second =
                 newMetricDatum(first, metricDimension, requestDimension);
             result.add(second);
         }

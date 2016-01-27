@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Amazon Technologies, Inc.
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import java.util.Set;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.GlobalSecondaryIndex;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
@@ -103,6 +104,26 @@ class DynamoDBTableSchemaParser {
         createTableRequest.setAttributeDefinitions(attrDefinitions.values());
 
         return createTableRequest;
+    }
+
+    /**
+     * Parse the given POJO class and return the DeleteTableRequest for the
+     * DynamoDB table it represents.
+     *
+     * @param clazz
+     *            The POJO class.
+     * @param config
+     *            The DynamoDBMapperConfig which contains the TableNameOverrides
+     *            parameter used to determine the table name.
+     */
+    DeleteTableRequest parseTablePojoToDeleteTableRequest(
+            Class<?> clazz,
+            DynamoDBMapperConfig config) {
+
+        DeleteTableRequest deleteTableRequest = new DeleteTableRequest();
+        deleteTableRequest.setTableName(DynamoDBMapper.internalGetTableName(clazz, null, config));
+
+        return deleteTableRequest;
     }
 
     TableIndexesInfo parseTableIndexes(final Class<?> clazz, final DynamoDBReflector reflector) {

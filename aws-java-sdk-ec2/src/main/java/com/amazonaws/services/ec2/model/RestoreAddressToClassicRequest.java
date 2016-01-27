@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ import com.amazonaws.services.ec2.model.transform.RestoreAddressToClassicRequest
  * EC2-VPC platform back to the EC2-Classic platform. You cannot move an
  * Elastic IP address that was originally allocated for use in EC2-VPC.
  * The Elastic IP address must not be associated with an instance or
- * network interface.
+ * network interface. You cannot restore an Elastic IP address that's
+ * associated with a reverse DNS record. Contact AWS account and billing
+ * support to remove the reverse DNS record.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#restoreAddressToClassic(RestoreAddressToClassicRequest)

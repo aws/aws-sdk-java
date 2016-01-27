@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,6 +84,14 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
                         consumedCapacity.getLocalSecondaryIndexes(),
                         totalConsumedCapacity.getLocalSecondaryIndexes()));
                 }
+                // Accumulate table capacity
+                final Capacity tableCapacity = totalConsumedCapacity.getTable();
+                if (tableCapacity == null) {
+                    totalConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
+                } else {
+                    totalConsumedCapacity.setTable(add(consumedCapacity.getTable(),
+                            totalConsumedCapacity.getTable()));
+                }
             }
         }
         if (count != null) {
@@ -111,6 +119,10 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
             }
         }
         return to;
+    }
+
+    private Capacity add(final Capacity from, final Capacity to) {
+        return new Capacity().withCapacityUnits(doubleOf(from) + doubleOf(to));
     }
 
     private Map<String, Capacity> clone(Map<String, Capacity> capacityMap) {
