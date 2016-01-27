@@ -921,7 +921,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
-    public boolean doesObjectExistInBucket(String bucketName, String objectName)
+    public boolean doesObjectExist(String bucketName, String objectName)
             throws AmazonServiceException, AmazonClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }

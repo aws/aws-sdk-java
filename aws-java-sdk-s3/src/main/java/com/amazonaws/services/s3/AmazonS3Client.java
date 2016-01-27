@@ -4077,7 +4077,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
-    public boolean doesObjectExistInBucket(String bucketName, String objectName) throws AmazonServiceException, AmazonClientException {
+    public boolean doesObjectExist(String bucketName, String objectName) throws AmazonServiceException, AmazonClientException {
         try {
             getObjectMetadata(bucketName, objectName);
         } catch (AmazonS3Exception e) {

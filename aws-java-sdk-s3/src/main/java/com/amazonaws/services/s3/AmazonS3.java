@@ -4505,7 +4505,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
      */
-    boolean doesObjectExistInBucket(String bucketName, String objectName)
+    boolean doesObjectExist(String bucketName, String objectName)
             throws AmazonServiceException, AmazonClientException;
 
 }
