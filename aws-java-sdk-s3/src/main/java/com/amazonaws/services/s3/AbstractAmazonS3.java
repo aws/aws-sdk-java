@@ -14,22 +14,103 @@
  */
 package com.amazonaws.services.s3;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.HttpMethod;
-import com.amazonaws.regions.Region;
-import com.amazonaws.services.s3.model.*;
-
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.HttpMethod;
+import com.amazonaws.regions.Region;
+import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
+import com.amazonaws.services.s3.model.AccessControlList;
+import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
+import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketPolicy;
+import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
+import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
+import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.CopyObjectRequest;
+import com.amazonaws.services.s3.model.CopyObjectResult;
+import com.amazonaws.services.s3.model.CopyPartRequest;
+import com.amazonaws.services.s3.model.CopyPartResult;
+import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
+import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketTaggingConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteObjectRequest;
+import com.amazonaws.services.s3.model.DeleteObjectsRequest;
+import com.amazonaws.services.s3.model.DeleteObjectsResult;
+import com.amazonaws.services.s3.model.DeleteVersionRequest;
+import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetBucketAclRequest;
+import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
+import com.amazonaws.services.s3.model.HeadBucketRequest;
+import com.amazonaws.services.s3.model.HeadBucketResult;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.ListBucketsRequest;
+import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
+import com.amazonaws.services.s3.model.ListNextBatchOfObjectsRequest;
+import com.amazonaws.services.s3.model.ListNextBatchOfVersionsRequest;
+import com.amazonaws.services.s3.model.ListObjectsRequest;
+import com.amazonaws.services.s3.model.ListPartsRequest;
+import com.amazonaws.services.s3.model.ListVersionsRequest;
+import com.amazonaws.services.s3.model.MultipartUploadListing;
+import com.amazonaws.services.s3.model.ObjectListing;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.Owner;
+import com.amazonaws.services.s3.model.PartListing;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.PutObjectResult;
+import com.amazonaws.services.s3.model.RestoreObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.SetBucketAclRequest;
+import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.SetObjectAclRequest;
+import com.amazonaws.services.s3.model.StorageClass;
+import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.services.s3.model.UploadPartResult;
+import com.amazonaws.services.s3.model.VersionListing;
+
 /**
- * An Abstract class that users needs to extend instead of {@link AmazonS3} interface. This abstract class is provided
- * so we don't break any customers when we introduce new methods in {@link AmazonS3} interface.
+ * An Abstract class that users needs to extend instead of {@link AmazonS3}
+ * interface. This abstract class is provided so we don't break any customers
+ * when we introduce new methods in {@link AmazonS3} interface.
  */
 public abstract class AbstractAmazonS3 implements AmazonS3 {
 
@@ -52,14 +133,14 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void changeObjectStorageClass(String bucketName, String key,
-                                         StorageClass newStorageClass) throws AmazonClientException,
+            StorageClass newStorageClass) throws AmazonClientException,
             AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 
     @Override
     public void setObjectRedirectLocation(String bucketName, String key,
-                                          String newRedirectLocation) throws AmazonClientException,
+            String newRedirectLocation) throws AmazonClientException,
             AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
@@ -105,6 +186,29 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public VersionListing listVersions(String bucketName, String prefix,
+            String keyMarker, String versionIdMarker, String delimiter,
+            Integer maxResults) throws AmazonClientException,
+            AmazonServiceException {
+
+        ListVersionsRequest request = new ListVersionsRequest()
+            .withBucketName(bucketName)
+            .withPrefix(prefix)
+            .withDelimiter(delimiter)
+            .withKeyMarker(keyMarker)
+            .withVersionIdMarker(versionIdMarker)
+            .withMaxResults(maxResults);
+        return listVersions(request);
+    }
+
+    @Override
+    public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
+            throws AmazonClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+
+    }
+
+    @Override
     public VersionListing listNextBatchOfVersions(
             VersionListing previousVersionListing)
             throws AmazonClientException, AmazonServiceException {
@@ -116,29 +220,6 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
             ListNextBatchOfVersionsRequest listNextBatchOfVersionsRequest)
             throws AmazonClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
-    }
-
-    @Override
-    public VersionListing listVersions(String bucketName, String prefix,
-                                       String keyMarker, String versionIdMarker, String delimiter,
-                                       Integer maxResults) throws AmazonClientException,
-            AmazonServiceException {
-
-        ListVersionsRequest request = new ListVersionsRequest()
-                .withBucketName(bucketName)
-                .withPrefix(prefix)
-                .withDelimiter(delimiter)
-                .withKeyMarker(keyMarker)
-                .withVersionIdMarker(versionIdMarker)
-                .withMaxResults(maxResults);
-        return listVersions(request);
-    }
-
-    @Override
-    public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
-            throws AmazonClientException, AmazonServiceException {
-        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
-
     }
 
     @Override
@@ -207,7 +288,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public Bucket createBucket(String bucketName,
-                               com.amazonaws.services.s3.model.Region region)
+            com.amazonaws.services.s3.model.Region region)
             throws AmazonClientException, AmazonServiceException {
         return createBucket(new CreateBucketRequest(bucketName, region));
     }
@@ -226,7 +307,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public AccessControlList getObjectAcl(String bucketName, String key,
-                                          String versionId) throws AmazonClientException,
+            String versionId) throws AmazonClientException,
             AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
@@ -234,28 +315,28 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void setObjectAcl(String bucketName, String key,
-                             AccessControlList acl) throws AmazonClientException,
+            AccessControlList acl) throws AmazonClientException,
             AmazonServiceException {
         setObjectAcl(bucketName, key, null, acl);
     }
 
     @Override
     public void setObjectAcl(String bucketName, String key,
-                             CannedAccessControlList acl) throws AmazonClientException,
+            CannedAccessControlList acl) throws AmazonClientException,
             AmazonServiceException {
         setObjectAcl(bucketName, key, null, acl);
     }
 
     @Override
     public void setObjectAcl(String bucketName, String key, String versionId,
-                             AccessControlList acl) throws AmazonClientException,
+            AccessControlList acl) throws AmazonClientException,
             AmazonServiceException {
         setObjectAcl(new SetObjectAclRequest(bucketName, key, versionId, acl));
     }
 
     @Override
     public void setObjectAcl(String bucketName, String key, String versionId,
-                             CannedAccessControlList acl) throws AmazonClientException,
+            CannedAccessControlList acl) throws AmazonClientException,
             AmazonServiceException {
         setObjectAcl(new SetObjectAclRequest(bucketName, key, versionId, acl));
     }
@@ -271,13 +352,6 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     public AccessControlList getBucketAcl(String bucketName)
             throws AmazonClientException, AmazonServiceException {
         return getBucketAcl(new GetBucketAclRequest(bucketName));
-    }
-
-    @Override
-    public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
-            throws AmazonClientException, AmazonServiceException {
-        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
-
     }
 
     @Override
@@ -298,6 +372,13 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     public void setBucketAcl(String bucketName, CannedAccessControlList cannedAcl)
             throws AmazonClientException, AmazonServiceException {
         setBucketAcl(new SetBucketAclRequest(bucketName, cannedAcl));
+    }
+
+    @Override
+    public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
+            throws AmazonClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+
     }
 
     @Override
@@ -329,15 +410,8 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public ObjectMetadata getObject(GetObjectRequest getObjectRequest,
-                                    File destinationFile) throws AmazonClientException,
+            File destinationFile) throws AmazonClientException,
             AmazonServiceException {
-        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
-
-    }
-
-    @Override
-    public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
-            throws AmazonClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
     }
@@ -349,7 +423,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
-    public PutObjectResult putObject(PutObjectRequest putObjectRequest)
+    public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
             throws AmazonClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
@@ -359,20 +433,27 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     public PutObjectResult putObject(String bucketName, String key, File file)
             throws AmazonClientException, AmazonServiceException {
         return putObject(new PutObjectRequest(bucketName, key, file)
-                .withMetadata(new ObjectMetadata()));
+            .withMetadata(new ObjectMetadata()));
     }
 
     @Override
     public PutObjectResult putObject(String bucketName, String key,
-                                     InputStream input, ObjectMetadata metadata)
+            InputStream input, ObjectMetadata metadata)
             throws AmazonClientException, AmazonServiceException {
         return putObject(new PutObjectRequest(bucketName, key, input, metadata));
     }
 
     @Override
+    public PutObjectResult putObject(PutObjectRequest putObjectRequest)
+            throws AmazonClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+
+    }
+
+    @Override
     public CopyObjectResult copyObject(String sourceBucketName,
-                                       String sourceKey, String destinationBucketName,
-                                       String destinationKey) throws AmazonClientException,
+            String sourceKey, String destinationBucketName,
+            String destinationKey) throws AmazonClientException,
             AmazonServiceException {
         return copyObject(new CopyObjectRequest(sourceBucketName, sourceKey,
                 destinationBucketName, destinationKey));
@@ -482,7 +563,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void setBucketLifecycleConfiguration(String bucketName,
-                                                BucketLifecycleConfiguration bucketLifecycleConfiguration) {
+            BucketLifecycleConfiguration bucketLifecycleConfiguration) {
         setBucketLifecycleConfiguration(new SetBucketLifecycleConfigurationRequest(bucketName, bucketLifecycleConfiguration));
     }
 
@@ -520,7 +601,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void setBucketCrossOriginConfiguration(String bucketName,
-                                                  BucketCrossOriginConfiguration bucketCrossOriginConfiguration) {
+            BucketCrossOriginConfiguration bucketCrossOriginConfiguration) {
         setBucketCrossOriginConfiguration(new SetBucketCrossOriginConfigurationRequest(bucketName, bucketCrossOriginConfiguration));
     }
 
@@ -558,7 +639,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void setBucketTaggingConfiguration(String bucketName,
-                                              BucketTaggingConfiguration bucketTaggingConfiguration) {
+            BucketTaggingConfiguration bucketTaggingConfiguration) {
         setBucketTaggingConfiguration(new SetBucketTaggingConfigurationRequest(bucketName, bucketTaggingConfiguration));
     }
 
@@ -596,18 +677,18 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public void setBucketNotificationConfiguration(String bucketName,
+            BucketNotificationConfiguration bucketNotificationConfiguration)
+            throws AmazonClientException, AmazonServiceException {
+        setBucketNotificationConfiguration(new SetBucketNotificationConfigurationRequest(bucketName, bucketNotificationConfiguration));
+    }
+
+    @Override
     public void setBucketNotificationConfiguration(
             SetBucketNotificationConfigurationRequest setBucketNotificationConfigurationRequest)
             throws AmazonClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
-    }
-
-    @Override
-    public void setBucketNotificationConfiguration(String bucketName,
-                                                   BucketNotificationConfiguration bucketNotificationConfiguration)
-            throws AmazonClientException, AmazonServiceException {
-        setBucketNotificationConfiguration(new SetBucketNotificationConfigurationRequest(bucketName, bucketNotificationConfiguration));
     }
 
     @Override
@@ -626,7 +707,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void setBucketWebsiteConfiguration(String bucketName,
-                                              BucketWebsiteConfiguration configuration)
+            BucketWebsiteConfiguration configuration)
             throws AmazonClientException, AmazonServiceException {
         setBucketWebsiteConfiguration(new SetBucketWebsiteConfigurationRequest(bucketName, configuration));
     }
@@ -696,13 +777,13 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public URL generatePresignedUrl(String bucketName, String key,
-                                    Date expiration) throws AmazonClientException {
+            Date expiration) throws AmazonClientException {
         return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
     }
 
     @Override
     public URL generatePresignedUrl(String bucketName, String key,
-                                    Date expiration, HttpMethod method) throws AmazonClientException {
+            Date expiration, HttpMethod method) throws AmazonClientException {
         GeneratePresignedUrlRequest request = new GeneratePresignedUrlRequest(bucketName, key, method);
         request.setExpiration(expiration);
 
@@ -763,16 +844,17 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public void restoreObject(String bucketName, String key,
+            int expirationInDays) throws AmazonServiceException {
+        restoreObject(new RestoreObjectRequest(bucketName, key, expirationInDays));
+    }
+
+
+    @Override
     public void restoreObject(RestoreObjectRequest request)
             throws AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
-    }
-
-    @Override
-    public void restoreObject(String bucketName, String key,
-                              int expirationInDays) throws AmazonServiceException {
-        restoreObject(new RestoreObjectRequest(bucketName, key, expirationInDays));
     }
 
     @Override
@@ -797,7 +879,7 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void setBucketReplicationConfiguration(String bucketName,
-                                                  BucketReplicationConfiguration configuration)
+            BucketReplicationConfiguration configuration)
             throws AmazonServiceException, AmazonClientException {
         setBucketReplicationConfiguration(new SetBucketReplicationConfigurationRequest(
                 bucketName, configuration));
@@ -834,12 +916,6 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public void deleteBucketReplicationConfiguration(DeleteBucketReplicationConfigurationRequest request)
-            throws AmazonServiceException, AmazonClientException {
-        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
-    }
-
-    @Override
-    public boolean doesObjectExistInBucket(String bucketName, String objectName)
             throws AmazonServiceException, AmazonClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
