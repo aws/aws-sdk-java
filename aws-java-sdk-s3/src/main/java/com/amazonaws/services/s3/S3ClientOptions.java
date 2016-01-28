@@ -107,6 +107,28 @@ public class S3ClientOptions {
 
     /**
      * <p>
+     * Configures the client to disable chunked encoding for all requests.
+     * </p>
+     * <p>
+     * The default behavior is to enable chunked encoding automatically for PutObjectRequest and
+     * UploadPartRequest. Setting this flag will result in disabling chunked encoding for all
+     * requests.
+     * </p>
+     * <p>
+     * <b>Note:</b> Enabling this option has performance implications since the checksum for the
+     * payload will have to be pre-calculated before sending the data. If your payload is large this
+     * will affect the overall time required to upload an object. Using this option is recommended
+     * only if your endpoint does not implement chunked uploading.
+     * </p>
+     * @param chunkedEncodingDisabled
+     *            True to disable chunked encoding
+     */
+    public void setChunkedEncodingDisabled(boolean chunkedEncodingDisabled) {
+        this.chunkedEncodingDisabled = chunkedEncodingDisabled;
+    }
+
+    /**
+     * <p>
      * Configures the client to use path-style access for all requests.
      * </p>
      * <p>
@@ -147,12 +169,36 @@ public class S3ClientOptions {
      * will affect the overall time required to upload an object. Using this option is recommended
      * only if your endpoint does not implement chunked uploading.
      * </p>
+     * @param chunkedEncodingDisabled
+     *            True to disable chunked encoding
+     */
+    public S3ClientOptions withChunkedEncodingDisabled(boolean chunkedEncodingDisabled) {
+        setChunkedEncodingDisabled(chunkedEncodingDisabled);
+	return this;
+    }
+
+    /**
+     * <p>
+     * Configures the client to disable chunked encoding for all requests.
+     * </p>
+     * <p>
+     * The default behavior is to enable chunked encoding automatically for PutObjectRequest and
+     * UploadPartRequest. Setting this flag will result in disabling chunked encoding for all
+     * requests.
+     * </p>
+     * <p>
+     * <b>Note:</b> Enabling this option has performance implications since the checksum for the
+     * payload will have to be pre-calculated before sending the data. If your payload is large this
+     * will affect the overall time required to upload an object. Using this option is recommended
+     * only if your endpoint does not implement chunked uploading.
+     * </p>
      * 
      * @return The updated S3ClientOptions object with chunked encoding disabled setting.
+     *
+     * @deprecated Use {@link withChunkedEncodingDisabled(boolean)} instead
      */
     public S3ClientOptions disableChunkedEncoding() {
-        this.chunkedEncodingDisabled = true;
-        return this;
+	return withChunkedEncodingDisabled(true);
     }
 
 }
