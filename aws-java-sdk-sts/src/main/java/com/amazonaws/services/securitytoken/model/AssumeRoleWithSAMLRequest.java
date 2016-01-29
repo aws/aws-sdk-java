@@ -65,7 +65,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -262,7 +262,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -284,7 +284,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        For more information, <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *        AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <note>The policy plain text must be 2048 bytes or shorter.
      *        However, an internal conversion compresses it into a packed binary
@@ -311,7 +311,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -332,7 +332,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         being assumed. For more information, <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *         >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *         AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *         AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *         </p>
      *         <note>The policy plain text must be 2048 bytes or shorter.
      *         However, an internal conversion compresses it into a packed
@@ -360,7 +360,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -382,7 +382,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        For more information, <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *        AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <note>The policy plain text must be 2048 bytes or shorter.
      *        However, an internal conversion compresses it into a packed binary

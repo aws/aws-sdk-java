@@ -51,6 +51,9 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     private String parameter;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
+    private String reason;
+
     /**
      * Constructs a new WAFInvalidParameterException with the specified error
      * message.
@@ -131,6 +134,55 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      */
     public WAFInvalidParameterException withParameter(String parameter) {
         setParameter(parameter);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @see ParameterExceptionReason
+     */
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * @return
+     * @see ParameterExceptionReason
+     */
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ParameterExceptionReason
+     */
+    public WAFInvalidParameterException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ParameterExceptionReason
+     */
+    public void setReason(ParameterExceptionReason reason) {
+        this.reason = reason.toString();
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ParameterExceptionReason
+     */
+    public WAFInvalidParameterException withReason(
+            ParameterExceptionReason reason) {
+        setReason(reason);
         return this;
     }
 

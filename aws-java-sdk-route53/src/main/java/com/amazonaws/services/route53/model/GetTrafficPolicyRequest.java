@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Gets information about a specific traffic policy version. To get the
- * information, send a GET request to the 2015-01-01/trafficpolicy resource, and
+ * information, send a GET request to the 2013-04-01/trafficpolicy resource, and
  * specify the ID and the version of the traffic policy.
  * </p>
  */

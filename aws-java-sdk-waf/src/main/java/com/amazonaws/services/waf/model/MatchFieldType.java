@@ -24,7 +24,8 @@ public enum MatchFieldType {
     URI("URI"),
     QUERY_STRING("QUERY_STRING"),
     HEADER("HEADER"),
-    METHOD("METHOD");
+    METHOD("METHOD"),
+    BODY("BODY");
 
     private String value;
 
@@ -55,6 +56,8 @@ public enum MatchFieldType {
             return HEADER;
         } else if ("METHOD".equals(value)) {
             return METHOD;
+        } else if ("BODY".equals(value)) {
+            return BODY;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

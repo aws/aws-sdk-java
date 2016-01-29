@@ -23,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * The operation exceeds a resource limit, for example, the maximum number of
  * <code>WebACL</code> objects that you can create for an AWS account. For more
  * information, see <a
- * href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
  * >Limits</a> in the <i>AWS WAF Developer Guide</i>.
  * </p>
  */

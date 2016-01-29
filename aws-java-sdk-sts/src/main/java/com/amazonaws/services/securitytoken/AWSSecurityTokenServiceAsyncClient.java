@@ -53,7 +53,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * information about using security tokens with other AWS products, go to <a
  * href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
- * >AWS Services That Work with IAM</a> in the <i>Using IAM</i>.
+ * >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i>.
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
@@ -71,7 +71,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * Management Console before you can use a different region's endpoint. For more
  * information about activating a region for STS see <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
- * >Activating STS in a New Region</a> in the <i>Using IAM</i>.
+ * >Activating STS in a New Region</a> in the <i>IAM User Guide</i>.
  * </p>
  * <p>
  * For information about STS endpoints, see <a

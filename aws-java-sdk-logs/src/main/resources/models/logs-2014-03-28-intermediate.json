@@ -3556,8 +3556,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "SubscriptionFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<SubscriptionFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>"
@@ -3798,8 +3798,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "SubscriptionFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<SubscriptionFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>"
@@ -3927,8 +3927,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "OutputLogEvent",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<OutputLogEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>"
@@ -4168,8 +4168,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "OutputLogEvent",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<OutputLogEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>"
@@ -4735,8 +4735,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "LogStream",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<LogStream>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>"
@@ -4977,8 +4977,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "LogStream",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<LogStream>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>"
@@ -7483,8 +7483,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7933,8 +7933,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9101,8 +9101,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "LogGroup",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<LogGroup>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>"
@@ -9343,8 +9343,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "LogGroup",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<LogGroup>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>"
@@ -13368,8 +13368,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "MetricFilter",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<MetricFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>"
@@ -13610,8 +13610,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "MetricFilter",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<MetricFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>"
@@ -13984,8 +13984,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "MetricFilterMatchRecord",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<MetricFilterMatchRecord>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>"
@@ -14123,8 +14123,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "MetricFilterMatchRecord",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<MetricFilterMatchRecord>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>"
@@ -14252,8 +14252,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Destination",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Destination>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>"
@@ -14494,8 +14494,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Destination",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Destination>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>"
@@ -14947,8 +14947,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "ExportTask",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ExportTask>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>"
@@ -15189,8 +15189,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "ExportTask",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ExportTask>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>"
@@ -15420,8 +15420,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "InputLogEvent",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<InputLogEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>"
@@ -15770,8 +15770,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "InputLogEvent",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<InputLogEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>"
@@ -16001,8 +16001,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "MetricTransformation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<MetricTransformation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -16295,8 +16295,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "MetricTransformation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<MetricTransformation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -18866,8 +18866,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "FilteredLogEvent",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FilteredLogEvent>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>"
@@ -18982,8 +18982,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "SearchedLogStream",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<SearchedLogStream>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>"
@@ -19224,8 +19224,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "SearchedLogStream",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<SearchedLogStream>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>"
@@ -19341,8 +19341,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "FilteredLogEvent",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FilteredLogEvent>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>"
@@ -19623,8 +19623,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "MetricTransformation",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<MetricTransformation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -19818,8 +19818,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "MetricTransformation",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<MetricTransformation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
@@ -21435,8 +21435,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -21527,8 +21527,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

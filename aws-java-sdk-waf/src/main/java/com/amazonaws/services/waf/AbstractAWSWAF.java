@@ -55,6 +55,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public CreateSizeConstraintSetResult createSizeConstraintSet(
+            CreateSizeConstraintSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(
             CreateSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -78,6 +84,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(
+            DeleteSizeConstraintSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,6 +137,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public GetSizeConstraintSetResult getSizeConstraintSet(
+            GetSizeConstraintSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(
             GetSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -152,6 +170,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListSizeConstraintSetsResult listSizeConstraintSets(
+            ListSizeConstraintSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(
             ListSqlInjectionMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -175,6 +199,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public UpdateRuleResult updateRule(UpdateRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSizeConstraintSetResult updateSizeConstraintSet(
+            UpdateSizeConstraintSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -309,7 +309,7 @@
         <Hostname>iot.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>iotdata</ServiceName>
+        <ServiceName>data.iot</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>data.iot.us-east-1.amazonaws.com</Hostname>
@@ -419,12 +419,6 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>route53.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sdb</ServiceName>
@@ -656,12 +650,6 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
         <ServiceName>email</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -827,7 +815,7 @@
         <Hostname>iot.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>iotdata</ServiceName>
+        <ServiceName>data.iot</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>data.iot.us-west-2.amazonaws.com</Hostname>
@@ -961,12 +949,6 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>route53.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sdb</ServiceName>
@@ -1110,7 +1092,7 @@
         <Hostname>iot.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>iotdata</ServiceName>
+        <ServiceName>data.iot</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>data.iot.ap-northeast-1.amazonaws.com</Hostname>
@@ -1220,12 +1202,6 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>route53.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sdb</ServiceName>
@@ -1463,12 +1439,6 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1684,12 +1654,6 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>route53.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sdb</ServiceName>
@@ -1915,12 +1879,6 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
         <ServiceName>email</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -2074,7 +2032,7 @@
         <Hostname>iot.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
-        <ServiceName>iotdata</ServiceName>
+        <ServiceName>data.iot</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>data.iot.eu-west-1.amazonaws.com</Hostname>
@@ -2185,12 +2143,6 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>route53.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
-        <ServiceName>route53domains</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sns</ServiceName>
@@ -2999,14 +2951,6 @@
       <Name>route53domains</Name>
       <FullName>Amazon Route 53 Domains</FullName>
       <RegionName>us-east-1</RegionName>
-      <RegionName>us-west-1</RegionName>
-      <RegionName>us-west-2</RegionName>
-      <RegionName>ap-northeast-1</RegionName>
-      <RegionName>ap-southeast-1</RegionName>
-      <RegionName>ap-southeast-2</RegionName>
-      <RegionName>sa-east-1</RegionName>
-      <RegionName>eu-west-1</RegionName>
-      <RegionName>eu-central-1</RegionName>
     </Service>
     <Service>
       <Name>email</Name>
@@ -3363,7 +3307,7 @@
       <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
-      <Name>iotdata</Name>
+      <Name>data.iot</Name>
       <FullName>AWS IoT Data Plane</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-2</RegionName>

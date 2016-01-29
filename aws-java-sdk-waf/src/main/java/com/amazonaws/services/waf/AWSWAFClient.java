@@ -46,8 +46,8 @@ import com.amazonaws.services.waf.model.transform.*;
  * need detailed information about the AWS WAF API actions, data types, and
  * errors. For detailed information about AWS WAF features and an overview of
  * how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/dev/">AWS WAF Developer
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+ * Developer Guide</a>.
  * </p>
  */
 public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
@@ -351,7 +351,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateByteMatchSet
      */
@@ -462,7 +462,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateIPSet
      */
@@ -584,7 +584,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateRule
      */
@@ -610,6 +610,119 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             JsonResponseHandler<CreateRuleResult> responseHandler = new JsonResponseHandler<CreateRuleResult>(
                     new CreateRuleResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @return Result of the CreateSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateSizeConstraintSet
+     */
+    @Override
+    public CreateSizeConstraintSetResult createSizeConstraintSet(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(createSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSizeConstraintSetRequest> request = null;
+        Response<CreateSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSizeConstraintSetRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(createSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateSizeConstraintSetResult> responseHandler = new JsonResponseHandler<CreateSizeConstraintSetResult>(
+                    new CreateSizeConstraintSetResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -693,7 +806,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateSqlInjectionMatchSet
      */
@@ -817,7 +930,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateWebACL
      */
@@ -1129,6 +1242,104 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             JsonResponseHandler<DeleteRuleResult> responseHandler = new JsonResponseHandler<DeleteRuleResult>(
                     new DeleteRuleResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @return Result of the DeleteSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that
+     *         isn't empty. For example:</p>
+     *         <ul>
+     *         <li>You tried to delete a <code>WebACL</code> that still contains
+     *         one or more <code>Rule</code> objects.</li>
+     *         <li>You tried to delete a <code>Rule</code> that still contains
+     *         one or more <code>ByteMatchSet</code> objects or other
+     *         predicates.</li>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that contains
+     *         one or more <code>ByteMatchTuple</code> objects.</li>
+     *         <li>You tried to delete an <code>IPSet</code> that references one
+     *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteSizeConstraintSet
+     */
+    @Override
+    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSizeConstraintSetRequest> request = null;
+        Response<DeleteSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSizeConstraintSetRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteSizeConstraintSetResult> responseHandler = new JsonResponseHandler<DeleteSizeConstraintSetResult>(
+                    new DeleteSizeConstraintSetResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1626,6 +1837,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         service.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
      * @sample AWSWAF.GetSampledRequests
      */
     @Override
@@ -1652,6 +1866,60 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             JsonResponseHandler<GetSampledRequestsResult> responseHandler = new JsonResponseHandler<GetSampledRequestsResult>(
                     new GetSampledRequestsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @return Result of the GetSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSizeConstraintSet
+     */
+    @Override
+    public GetSizeConstraintSetResult getSizeConstraintSet(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(getSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSizeConstraintSetRequest> request = null;
+        Response<GetSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSizeConstraintSetRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(getSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetSizeConstraintSetResult> responseHandler = new JsonResponseHandler<GetSizeConstraintSetResult>(
+                    new GetSizeConstraintSetResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1917,6 +2185,57 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @return Result of the ListSizeConstraintSets operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListSizeConstraintSets
+     */
+    @Override
+    public ListSizeConstraintSetsResult listSizeConstraintSets(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSizeConstraintSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSizeConstraintSetsRequest> request = null;
+        Response<ListSizeConstraintSetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSizeConstraintSetsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listSizeConstraintSetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListSizeConstraintSetsResult> responseHandler = new JsonResponseHandler<ListSizeConstraintSetsResult>(
+                    new ListSizeConstraintSetsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of <a>SqlInjectionMatchSet</a> objects.
      * </p>
      * 
@@ -2141,7 +2460,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateByteMatchSet
      */
@@ -2320,7 +2639,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateIPSet
      */
@@ -2492,7 +2811,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateRule
      */
@@ -2518,6 +2837,183 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             JsonResponseHandler<UpdateRuleResult> responseHandler = new JsonResponseHandler<UpdateRuleResult>(
                     new UpdateRuleResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @return Result of the UpdateSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to remove a <code>Rule</code> from a
+     *         <code>WebACL</code>, but the <code>Rule</code> isn't in the
+     *         specified <code>WebACL</code>.</li>
+     *         <li>You tried to remove an IP address from an <code>IPSet</code>,
+     *         but the IP address isn't in the specified <code>IPSet</code>.</li>
+     *         <li>You tried to remove a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         isn't in the specified <code>WebACL</code>.</li>
+     *         <li>You tried to add a <code>Rule</code> to a <code>WebACL</code>
+     *         , but the <code>Rule</code> already exists in the specified
+     *         <code>WebACL</code>.</li>
+     *         <li>You tried to add an IP address to an <code>IPSet</code>, but
+     *         the IP address already exists in the specified <code>IPSet</code>
+     *         .</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         already exists in the specified <code>WebACL</code>.</li>
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or
+     *         delete an object from another object that doesn't exist. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to add a <code>Rule</code> to or delete a
+     *         <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchSet</code> to or delete a
+     *         <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't
+     *         exist.</li>
+     *         <li>You tried to add an IP address to or delete an IP address
+     *         from an <code>IPSet</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to or delete a
+     *         <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that
+     *         doesn't exist.</li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateSizeConstraintSet
+     */
+    @Override
+    public UpdateSizeConstraintSetResult updateSizeConstraintSet(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSizeConstraintSetRequest> request = null;
+        Response<UpdateSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSizeConstraintSetRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(updateSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<UpdateSizeConstraintSetResult> responseHandler = new JsonResponseHandler<UpdateSizeConstraintSetResult>(
+                    new UpdateSizeConstraintSetResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2651,7 +3147,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateSqlInjectionMatchSet
      */
@@ -2836,7 +3332,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateWebACL
      */

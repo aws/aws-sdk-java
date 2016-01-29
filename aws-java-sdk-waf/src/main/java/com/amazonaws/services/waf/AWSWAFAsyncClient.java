@@ -28,8 +28,8 @@ import com.amazonaws.services.waf.model.*;
  * need detailed information about the AWS WAF API actions, data types, and
  * errors. For detailed information about AWS WAF features and an overview of
  * how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/dev/">AWS WAF Developer
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+ * Developer Guide</a>.
  * </p>
  */
 public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
@@ -365,6 +365,42 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest request) {
+
+        return createSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            final CreateSizeConstraintSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateSizeConstraintSetResult>() {
+                    @Override
+                    public CreateSizeConstraintSetResult call()
+                            throws Exception {
+                        CreateSizeConstraintSetResult result;
+
+                        try {
+                            result = createSizeConstraintSet(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSqlInjectionMatchSetResult> createSqlInjectionMatchSetAsync(
             CreateSqlInjectionMatchSetRequest request) {
 
@@ -525,6 +561,42 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                         try {
                             result = deleteRule(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest request) {
+
+        return deleteSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            final DeleteSizeConstraintSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteSizeConstraintSetResult>() {
+                    @Override
+                    public DeleteSizeConstraintSetResult call()
+                            throws Exception {
+                        DeleteSizeConstraintSetResult result;
+
+                        try {
+                            result = deleteSizeConstraintSet(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -822,6 +894,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest request) {
+
+        return getSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            final GetSizeConstraintSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetSizeConstraintSetResult>() {
+                    @Override
+                    public GetSizeConstraintSetResult call() throws Exception {
+                        GetSizeConstraintSetResult result;
+
+                        try {
+                            result = getSizeConstraintSet(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(
             GetSqlInjectionMatchSetRequest request) {
 
@@ -998,6 +1105,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest request) {
+
+        return listSizeConstraintSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            final ListSizeConstraintSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListSizeConstraintSetsResult>() {
+                    @Override
+                    public ListSizeConstraintSetsResult call() throws Exception {
+                        ListSizeConstraintSetsResult result;
+
+                        try {
+                            result = listSizeConstraintSets(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest request) {
 
@@ -1158,6 +1300,42 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                         try {
                             result = updateRule(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest request) {
+
+        return updateSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            final UpdateSizeConstraintSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateSizeConstraintSetResult>() {
+                    @Override
+                    public UpdateSizeConstraintSetResult call()
+                            throws Exception {
+                        UpdateSizeConstraintSetResult result;
+
+                        try {
+                            result = updateSizeConstraintSet(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

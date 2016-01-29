@@ -25,8 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * activate STS in that region using the IAM Console. For more information, see
  * <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
- * >Activating and Deactivating AWS STS in an AWS Region</a> in the <i>Using
- * IAM</i>.
+ * >Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User
+ * Guide</i>.
  * </p>
  */
 public class RegionDisabledException extends AmazonServiceException {

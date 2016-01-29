@@ -107,22 +107,18 @@ class DynamoDBTableSchemaParser {
     }
 
     /**
-     * Parse the given POJO class and return the DeleteTableRequest for the
-     * DynamoDB table it represents.
+     * Parse the given POJO class and return the DeleteTableRequest for the DynamoDB table it
+     * represents.
      *
      * @param clazz
      *            The POJO class.
      * @param config
-     *            The DynamoDBMapperConfig which contains the TableNameOverrides
-     *            parameter used to determine the table name.
+     *            The DynamoDBMapperConfig which contains the TableNameOverrides parameter used to
+     *            determine the table name.
      */
-    DeleteTableRequest parseTablePojoToDeleteTableRequest(
-            Class<?> clazz,
-            DynamoDBMapperConfig config) {
-
+    DeleteTableRequest parseTablePojoToDeleteTableRequest(Class<?> clazz, DynamoDBMapperConfig config) {
         DeleteTableRequest deleteTableRequest = new DeleteTableRequest();
         deleteTableRequest.setTableName(DynamoDBMapper.internalGetTableName(clazz, null, config));
-
         return deleteTableRequest;
     }
 

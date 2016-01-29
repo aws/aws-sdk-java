@@ -73,6 +73,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest request) {
+
+        return createSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSqlInjectionMatchSetResult> createSqlInjectionMatchSetAsync(
             CreateSqlInjectionMatchSetRequest request) {
 
@@ -143,6 +158,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest request) {
+
+        return deleteSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -268,6 +298,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest request) {
+
+        return getSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(
             GetSqlInjectionMatchSetRequest request) {
 
@@ -343,6 +388,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest request) {
+
+        return listSizeConstraintSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest request) {
 
@@ -413,6 +473,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     public java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(
             UpdateRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest request) {
+
+        return updateSizeConstraintSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

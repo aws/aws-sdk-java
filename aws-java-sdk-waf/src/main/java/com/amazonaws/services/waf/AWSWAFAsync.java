@@ -28,8 +28,8 @@ import com.amazonaws.services.waf.model.*;
  * need detailed information about the AWS WAF API actions, data types, and
  * errors. For detailed information about AWS WAF features and an overview of
  * how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/dev/">AWS WAF Developer
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+ * Developer Guide</a>.
  * </p>
  */
 public interface AWSWAFAsync extends AWSWAF {
@@ -327,6 +327,94 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateRuleResult> createRuleAsync(
             CreateRuleRequest createRuleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRuleRequest, CreateRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @return A Java Future containing the result of the
+     *         CreateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsync.CreateSizeConstraintSet
+     */
+    java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateSizeConstraintSet
+     */
+    java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult> asyncHandler);
 
     /**
      * <p>
@@ -727,6 +815,76 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest deleteRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @return A Java Future containing the result of the
+     *         DeleteSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsync.DeleteSizeConstraintSet
+     */
+    java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteSizeConstraintSet
+     */
+    java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1132,6 +1290,40 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @return A Java Future containing the result of the GetSizeConstraintSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.GetSizeConstraintSet
+     */
+    java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSizeConstraintSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetSizeConstraintSet
+     */
+    java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <a>SqlInjectionMatchSet</a> that is specified by
      * <code>SqlInjectionMatchSetId</code>.
      * </p>
@@ -1293,6 +1485,38 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(
             ListRulesRequest listRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @return A Java Future containing the result of the ListSizeConstraintSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.ListSizeConstraintSets
+     */
+    java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSizeConstraintSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListSizeConstraintSets
+     */
+    java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult> asyncHandler);
 
     /**
      * <p>
@@ -1733,6 +1957,132 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(
             UpdateRuleRequest updateRuleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @return A Java Future containing the result of the
+     *         UpdateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsync.UpdateSizeConstraintSet
+     */
+    java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateSizeConstraintSet
+     */
+    java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult> asyncHandler);
 
     /**
      * <p>

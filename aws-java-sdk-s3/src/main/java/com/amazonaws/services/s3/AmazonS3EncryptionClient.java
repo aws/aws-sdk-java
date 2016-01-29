@@ -32,7 +32,6 @@ import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
-import com.amazonaws.regions.Regions;
 import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.PartCreationEvent;
@@ -459,9 +458,9 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     ) {
         final AWSKMSClient kmsClient = new AWSKMSClient(
             credentialsProvider, clientConfig, requestMetricCollector);
-        final Regions kmsRegion = cryptoConfig.getKmsRegion();
+        final Region kmsRegion = cryptoConfig.getAwsKmsRegion();
         if (kmsRegion != null)
-            kmsClient.setRegion(Region.getRegion(kmsRegion));
+            kmsClient.setRegion(kmsRegion);
         return kmsClient;
     }
 
