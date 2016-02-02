@@ -163,6 +163,7 @@ public class ParallelScanTask {
                             synchronized(segmentScanStates) {
                                 segmentScanStates.set(currentSegment, SegmentScanState.Failed);
                                 segmentScanStates.notifyAll();
+                                executorService.shutdown();
                             }
                             throw e;
                         }
