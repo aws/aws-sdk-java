@@ -6,5 +6,7 @@ jdk:
   - oraclejdk8
 install: /bin/true
 sudo: false
-script: mvn install -pl \!aws-java-sdk-osgi
+script:
+  - echo "MAVEN_OPTS='-Xmx768m -XX:MaxPermSize=512m'" > ~/.mavenrc
+  - mvn install -pl \!aws-java-sdk-osgi
 
