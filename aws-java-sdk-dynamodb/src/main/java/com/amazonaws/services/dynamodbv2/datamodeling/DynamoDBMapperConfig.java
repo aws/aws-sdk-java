@@ -352,7 +352,15 @@ public class DynamoDBMapperConfig {
          * the existing set type, otherwise it would result in a service
          * exception.
          */
-        APPEND_SET
+        APPEND_SET,
+
+        /**
+         * CUSTOM treats the attributes of non-key attributes the same as UPDATE does.
+         * However, the non-key attribute's saveAction property({@link DynamoDBAttribute})
+         * has value except NONE, it will perform the specify update action.
+         * {@code http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValueUpdate.html#API_AttributeValueUpdate_Contents}
+         */
+        CUSTOM
     };
 
     /**
