@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your hosted zones, send a <code>GET</code> request to
- * the <code>2013-04-01/hostedzone</code> resource. The response to this request
+ * the <code>2015-01-01/hostedzone</code> resource. The response to this request
  * includes a <code>HostedZones</code> element with zero or more
  * <code>HostedZone</code> child elements. By default, the list of hosted zones
  * is displayed on a single page. You can control the length of the page that is

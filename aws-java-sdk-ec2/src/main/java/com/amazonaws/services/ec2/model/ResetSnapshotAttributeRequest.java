@@ -1,68 +1,65 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetSnapshotAttributeRequestMarshaller;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest) ResetSnapshotAttribute operation}.
- * <p>
- * Resets permission settings for the specified snapshot.
- * </p>
- * <p>
- * For more information on modifying snapshot permissions, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest)
+ * 
  */
-public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ResetSnapshotAttributeRequest> {
+public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable,
+        DryRunSupportedRequest<ResetSnapshotAttributeRequest> {
 
     /**
+     * <p>
      * The ID of the snapshot.
+     * </p>
      */
     private String snapshotId;
-
     /**
-     * The attribute to reset. Currently, only the attribute for permission
-     * to create volumes can be reset.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
+     * The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.
+     * </p>
      */
     private String attribute;
 
     /**
-     * Default constructor for a new ResetSnapshotAttributeRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for ResetSnapshotAttributeRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    public ResetSnapshotAttributeRequest() {}
-    
+    public ResetSnapshotAttributeRequest() {
+    }
+
     /**
-     * Constructs a new ResetSnapshotAttributeRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ResetSnapshotAttributeRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param snapshotId The ID of the snapshot.
-     * @param attribute The attribute to reset. Currently, only the attribute
-     * for permission to create volumes can be reset.
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @param attribute
+     *        The attribute to reset. Currently, only the attribute for
+     *        permission to create volumes can be reset.
      */
     public ResetSnapshotAttributeRequest(String snapshotId, String attribute) {
         setSnapshotId(snapshotId);
@@ -70,156 +67,156 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Constructs a new ResetSnapshotAttributeRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ResetSnapshotAttributeRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param snapshotId The ID of the snapshot.
-     * @param attribute The attribute to reset. Currently, only the attribute
-     * for permission to create volumes can be reset.
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @param attribute
+     *        The attribute to reset. Currently, only the attribute for
+     *        permission to create volumes can be reset.
      */
-    public ResetSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
-        this.snapshotId = snapshotId;
-        this.attribute = attribute.toString();
+    public ResetSnapshotAttributeRequest(String snapshotId,
+            SnapshotAttributeName attribute) {
+        setSnapshotId(snapshotId);
+        setAttribute(attribute.toString());
     }
 
     /**
+     * <p>
      * The ID of the snapshot.
-     *
-     * @return The ID of the snapshot.
-     */
-    public String getSnapshotId() {
-        return snapshotId;
-    }
-    
-    /**
-     * The ID of the snapshot.
-     *
-     * @param snapshotId The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
-    
+
     /**
-     * The ID of the snapshot.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshotId The ID of the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @return The ID of the snapshot.
+     */
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ResetSnapshotAttributeRequest withSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
+        setSnapshotId(snapshotId);
         return this;
     }
 
     /**
-     * The attribute to reset. Currently, only the attribute for permission
-     * to create volumes can be reset.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @return The attribute to reset. Currently, only the attribute for permission
-     *         to create volumes can be reset.
-     *
-     * @see SnapshotAttributeName
-     */
-    public String getAttribute() {
-        return attribute;
-    }
-    
-    /**
-     * The attribute to reset. Currently, only the attribute for permission
-     * to create volumes can be reset.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The attribute to reset. Currently, only the attribute for permission
-     *         to create volumes can be reset.
-     *
+     * The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset. Currently, only the attribute for
+     *        permission to create volumes can be reset.
      * @see SnapshotAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
-    
+
     /**
-     * The attribute to reset. Currently, only the attribute for permission
-     * to create volumes can be reset.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.
+     * </p>
+     * 
+     * @return The attribute to reset. Currently, only the attribute for
+     *         permission to create volumes can be reset.
+     * @see SnapshotAttributeName
+     */
+    public String getAttribute() {
+        return this.attribute;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The attribute to reset. Currently, only the attribute for permission
-     *         to create volumes can be reset.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset. Currently, only the attribute for
+     *        permission to create volumes can be reset.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SnapshotAttributeName
      */
     public ResetSnapshotAttributeRequest withAttribute(String attribute) {
-        this.attribute = attribute;
+        setAttribute(attribute);
         return this;
     }
 
     /**
-     * The attribute to reset. Currently, only the attribute for permission
-     * to create volumes can be reset.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The attribute to reset. Currently, only the attribute for permission
-     *         to create volumes can be reset.
-     *
+     * The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset. Currently, only the attribute for
+     *        permission to create volumes can be reset.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SnapshotAttributeName
      */
     public void setAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
     }
-    
+
     /**
-     * The attribute to reset. Currently, only the attribute for permission
-     * to create volumes can be reset.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The attribute to reset. Currently, only the attribute for permission
-     *         to create volumes can be reset.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset. Currently, only the attribute for
+     *        permission to create volumes can be reset.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SnapshotAttributeName
      */
-    public ResetSnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
-        this.attribute = attribute.toString();
+    public ResetSnapshotAttributeRequest withAttribute(
+            SnapshotAttributeName attribute) {
+        setAttribute(attribute);
         return this;
     }
 
     /**
-     * This method is intended for internal use only.
-     * Returns the marshaled request configured with additional parameters to
-     * enable operation dry-run.
+     * This method is intended for internal use only. Returns the marshaled
+     * request configured with additional parameters to enable operation
+     * dry-run.
      */
     @Override
     public Request<ResetSnapshotAttributeRequest> getDryRunRequest() {
-        Request<ResetSnapshotAttributeRequest> request = new ResetSnapshotAttributeRequestMarshaller().marshall(this);
+        Request<ResetSnapshotAttributeRequest> request = new ResetSnapshotAttributeRequestMarshaller()
+                .marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -232,42 +229,51 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
+        if (getSnapshotId() != null)
+            sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (getAttribute() != null)
+            sb.append("Attribute: " + getAttribute());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ResetSnapshotAttributeRequest == false)
+            return false;
+        ResetSnapshotAttributeRequest other = (ResetSnapshotAttributeRequest) obj;
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
+            return false;
+        if (other.getSnapshotId() != null
+                && other.getSnapshotId().equals(this.getSnapshotId()) == false)
+            return false;
+        if (other.getAttribute() == null ^ this.getAttribute() == null)
+            return false;
+        if (other.getAttribute() != null
+                && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
-        hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode
+                + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ResetSnapshotAttributeRequest == false) return false;
-        ResetSnapshotAttributeRequest other = (ResetSnapshotAttributeRequest)obj;
-        
-        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null) return false;
-        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false) return false; 
-        if (other.getAttribute() == null ^ this.getAttribute() == null) return false;
-        if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ResetSnapshotAttributeRequest clone() {
-        
-            return (ResetSnapshotAttributeRequest) super.clone();
+        return (ResetSnapshotAttributeRequest) super.clone();
     }
-
 }
-    

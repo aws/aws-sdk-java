@@ -219,7 +219,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the rule, it returns
-     * <code>InsufficientData</code>. This result might indicate one of the
+     * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -258,7 +258,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the rule, it returns
-     * <code>InsufficientData</code>. This result might indicate one of the
+     * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -322,7 +322,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the resource, it
-     * returns <code>InsufficientData</code>. This result might indicate one of
+     * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -362,7 +362,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the resource, it
-     * returns <code>InsufficientData</code>. This result might indicate one of
+     * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check

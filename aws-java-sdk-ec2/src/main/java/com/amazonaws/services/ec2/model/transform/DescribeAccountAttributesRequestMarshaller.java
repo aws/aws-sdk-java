@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.HashMap;
@@ -21,37 +23,50 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
-import com.amazonaws.internal.ListWithAutoConstructFlag;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
 /**
- * Describe Account Attributes Request Marshaller
+ * DescribeAccountAttributesRequest Marshaller
  */
-public class DescribeAccountAttributesRequestMarshaller implements Marshaller<Request<DescribeAccountAttributesRequest>, DescribeAccountAttributesRequest> {
 
-    public Request<DescribeAccountAttributesRequest> marshall(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+public class DescribeAccountAttributesRequestMarshaller
+        implements
+        Marshaller<Request<DescribeAccountAttributesRequest>, DescribeAccountAttributesRequest> {
+
+    public Request<DescribeAccountAttributesRequest> marshall(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest) {
 
         if (describeAccountAttributesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeAccountAttributesRequest> request = new DefaultRequest<DescribeAccountAttributesRequest>(describeAccountAttributesRequest, "AmazonEC2");
+        Request<DescribeAccountAttributesRequest> request = new DefaultRequest<DescribeAccountAttributesRequest>(
+                describeAccountAttributesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAccountAttributes");
         request.addParameter("Version", "2015-10-01");
+        request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<String> attributeNamesList = describeAccountAttributesRequest.getAttributeNames();
-        int attributeNamesListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAccountAttributesRequest
+                .getAttributeNames();
+        if (!attributeNamesList.isEmpty()
+                || !attributeNamesList.isAutoConstruct()) {
+            int attributeNamesListIndex = 1;
 
-        for (String attributeNamesListValue : attributeNamesList) {
-            if (attributeNamesListValue != null) {
-                request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
+            for (String attributeNamesListValue : attributeNamesList) {
+                if (attributeNamesListValue != null) {
+                    request.addParameter("AttributeName."
+                            + attributeNamesListIndex,
+                            StringUtils.fromString(attributeNamesListValue));
+                }
+                attributeNamesListIndex++;
             }
-
-            attributeNamesListIndex++;
         }
 
         return request;
     }
+
 }

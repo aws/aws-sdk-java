@@ -38,6 +38,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      */
     private String complianceType;
     /**
@@ -113,10 +120,24 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @see ComplianceType
      */
     public void setComplianceType(String complianceType) {
@@ -128,9 +149,23 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @return Indicates whether the AWS resource complies with the AWS Config
-     *         rule that evaluated it.
+     *         rule that evaluated it.</p>
+     *         <p>
+     *         For the <code>EvaluationResult</code> data type, AWS Config
+     *         supports only the <code>COMPLIANT</code>,
+     *         <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *         values. AWS Config does not support the
+     *         <code>INSUFFICIENT_DATA</code> value for the
+     *         <code>EvaluationResult</code> data type.
      * @see ComplianceType
      */
     public String getComplianceType() {
@@ -142,10 +177,24 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
@@ -160,10 +209,24 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
@@ -177,10 +240,24 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType

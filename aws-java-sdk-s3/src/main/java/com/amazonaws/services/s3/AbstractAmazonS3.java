@@ -925,4 +925,5 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
             throws AmazonServiceException, AmazonClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
+
 }

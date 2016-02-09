@@ -181,19 +181,12 @@ public final class ConversionSchemas {
         @Override
         public ItemConverter getConverter(Dependencies dependencies) {
 
-            DynamoDBReflector reflector =
-                    dependencies.get(DynamoDBReflector.class);
-
-            if (reflector == null) {
-                reflector = new DynamoDBReflector();
-            }
-
             S3ClientCache s3cc = dependencies.get(S3ClientCache.class);
 
             return new StandardItemConverter(
                     marshallers,
                     unmarshallers,
-                    reflector,
+                    DynamoDBMappingsRegistry.instance(),
                     s3cc);
         }
 
@@ -208,24 +201,24 @@ public final class ConversionSchemas {
 
         private final MarshallerSet marshallerSet;
         private final UnmarshallerSet unmarshallerSet;
-        private final DynamoDBReflector reflector;
+        private final DynamoDBMappingsRegistry registry;
         private final S3ClientCache s3cc;
 
         public StandardItemConverter(
                 MarshallerSet marshallerSet,
                 UnmarshallerSet unmarshallerSet,
-                DynamoDBReflector reflector,
+                DynamoDBMappingsRegistry registry,
                 S3ClientCache s3cc) {
 
             this.marshallerSet = marshallerSet;
             this.unmarshallerSet = unmarshallerSet;
-            this.reflector = reflector;
+            this.registry = registry;
             this.s3cc = s3cc;
         }
 
         @Override
         public DynamoDBMapperFieldModel getFieldModel(Method getter) {
-            String attributeName = reflector.getAttributeName(getter);
+            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
             ArgumentMarshaller marshaller = getMarshaller(getter);
 
             DynamoDBAttributeType attributeType = null;
@@ -253,7 +246,7 @@ public final class ConversionSchemas {
                                 + marshaller);
             }
 
-            return new DynamoDBMapperFieldModel(attributeName, attributeType, marshaller);
+            return new DynamoDBMapperFieldModel(mapping.getAttributeName(), attributeType, marshaller);
         }
 
         @Override
@@ -276,15 +269,16 @@ public final class ConversionSchemas {
             Map<String, AttributeValue> result =
                     new HashMap<String, AttributeValue>();
 
-            for (Method getter : reflector.getRelevantGetters(clazz)) {
+            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
+            for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
                 Object getterResult =
-                        ReflectionUtils.safeInvoke(getter, object);
+                        mapping.getValueOf(object);
 
                 if (getterResult != null) {
-                    AttributeValue value = convert(getter, getterResult);
+                    AttributeValue value = convert(mapping.getter(), getterResult);
                     if (value != null) {
-                        String name = reflector.getAttributeName(getter);
-                        result.put(name, value);
+                        result.put(mapping.getAttributeName(), value);
                     }
                 }
             }
@@ -422,28 +416,19 @@ public final class ConversionSchemas {
                 return result;
             }
 
-            for (Method m : reflector.getRelevantGetters(clazz)) {
-                String attributeName = reflector.getAttributeName(m);
+            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
+            for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
+                String attributeName = mapping.getAttributeName();
                 AttributeValue av = value.get(attributeName);
                 if (av != null) {
-                    setValue(result, m, av);
+                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(mapping.getter(), mapping.setter());
+                    Object unmarshalled = unmarshall(unmarshaller, mapping.setter(), av);
+                    mapping.setValueOf(result, unmarshalled);
                 }
             }
 
             return result;
-        }
-
-        private void setValue(
-                Object target,
-                Method getter,
-                AttributeValue value) {
-
-            Method setter = reflector.getSetter(getter);
-            ArgumentUnmarshaller unmarshaller =
-                    getUnmarshaller(getter, setter);
-
-            Object unmarshalled = unmarshall(unmarshaller, setter, value);
-            ReflectionUtils.safeInvoke(setter, target, unmarshalled);
         }
 
         private ArgumentUnmarshaller getUnmarshaller(
@@ -1251,20 +1236,12 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentMarshaller getMarshaller(Method getter) {
-            DynamoDBMarshalling annotation =
-                    ReflectionUtils.getAnnotationFromGetterOrField(
-                            getter, DynamoDBMarshalling.class);
+            final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
+            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
 
-            if (annotation != null) {
-                return new CustomMarshaller(annotation.marshallerClass());
-            }
-
-            DynamoDBNativeBoolean boolAnnotation =
-                    ReflectionUtils.getAnnotationFromGetterOrField(
-                            getter, DynamoDBNativeBoolean.class);
-
-            if (boolAnnotation != null) {
-                return BooleanToBooleanMarshaller.instance();
+            ArgumentMarshaller customMarshaller = mapping.getCustomMarshaller();
+            if (customMarshaller != null) {
+                return customMarshaller;
             }
 
             return wrapped.getMarshaller(getter);
@@ -1290,14 +1267,12 @@ public final class ConversionSchemas {
                 Method getter,
                 Method setter) {
 
-            DynamoDBMarshalling annotation =
-                    ReflectionUtils.getAnnotationFromGetterOrField(
-                            getter, DynamoDBMarshalling.class);
+            final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
+            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
 
-            if (annotation != null) {
-                return new CustomUnmarshaller(
-                        getter.getReturnType(),
-                        annotation.marshallerClass());
+            ArgumentUnmarshaller customUnmarshaller = mapping.getCustomUnmarshaller();
+            if (customUnmarshaller != null) {
+                return customUnmarshaller;
             }
 
             return wrapped.getUnmarshaller(getter, setter);

@@ -1,228 +1,233 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancers(DescribeLoadBalancersRequest) DescribeLoadBalancers operation}.
- * <p>
- * Describes the specified the load balancers. If no load balancers are
- * specified, the call describes all of your load balancers.
- * </p>
- *
- * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancers(DescribeLoadBalancersRequest)
+ * 
  */
-public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The names of the load balancers.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNames;
-
+    private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
     /**
-     * The marker for the next set of results. (You received this marker from
-     * a previous call.)
+     * <p>
+     * The marker for the next set of results. (You received this marker from a
+     * previous call.)
+     * </p>
      */
     private String marker;
-
     /**
-     * The maximum number of results to return with this call (a number from
-     * 1 to 400). The default is 400.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 400<br/>
+     * The maximum number of results to return with this call (a number from 1
+     * to 400). The default is 400.
+     * </p>
      */
     private Integer pageSize;
 
     /**
-     * Default constructor for a new DescribeLoadBalancersRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for DescribeLoadBalancersRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    public DescribeLoadBalancersRequest() {}
-    
+    public DescribeLoadBalancersRequest() {
+    }
+
     /**
-     * Constructs a new DescribeLoadBalancersRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new DescribeLoadBalancersRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param loadBalancerNames The names of the load balancers.
+     * @param loadBalancerNames
+     *        The names of the load balancers.
      */
     public DescribeLoadBalancersRequest(java.util.List<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
     }
 
     /**
+     * <p>
      * The names of the load balancers.
-     *
+     * </p>
+     * 
      * @return The names of the load balancers.
      */
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
-              loadBalancerNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              loadBalancerNames.setAutoConstruct(true);
+            loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return loadBalancerNames;
     }
-    
+
     /**
+     * <p>
      * The names of the load balancers.
-     *
-     * @param loadBalancerNames The names of the load balancers.
+     * </p>
+     * 
+     * @param loadBalancerNames
+     *        The names of the load balancers.
      */
-    public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
+    public void setLoadBalancerNames(
+            java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
             this.loadBalancerNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(loadBalancerNames.size());
-        loadBalancerNamesCopy.addAll(loadBalancerNames);
-        this.loadBalancerNames = loadBalancerNamesCopy;
+
+        this.loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>(
+                loadBalancerNames);
     }
-    
+
     /**
+     * <p>
      * The names of the load balancers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLoadBalancerNames(java.util.Collection)} or
      * {@link #withLoadBalancerNames(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadBalancerNames The names of the load balancers.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param loadBalancerNames
+     *        The names of the load balancers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeLoadBalancersRequest withLoadBalancerNames(String... loadBalancerNames) {
-        if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>(loadBalancerNames.length));
-        for (String value : loadBalancerNames) {
-            getLoadBalancerNames().add(value);
+    public DescribeLoadBalancersRequest withLoadBalancerNames(
+            String... loadBalancerNames) {
+        if (this.loadBalancerNames == null) {
+            setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    loadBalancerNames.length));
+        }
+        for (String ele : loadBalancerNames) {
+            this.loadBalancerNames.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The names of the load balancers.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadBalancerNames The names of the load balancers.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param loadBalancerNames
+     *        The names of the load balancers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeLoadBalancersRequest withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
-        if (loadBalancerNames == null) {
-            this.loadBalancerNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(loadBalancerNames.size());
-            loadBalancerNamesCopy.addAll(loadBalancerNames);
-            this.loadBalancerNames = loadBalancerNamesCopy;
-        }
-
+    public DescribeLoadBalancersRequest withLoadBalancerNames(
+            java.util.Collection<String> loadBalancerNames) {
+        setLoadBalancerNames(loadBalancerNames);
         return this;
     }
 
     /**
-     * The marker for the next set of results. (You received this marker from
-     * a previous call.)
-     *
-     * @return The marker for the next set of results. (You received this marker from
-     *         a previous call.)
-     */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * The marker for the next set of results. (You received this marker from
-     * a previous call.)
-     *
-     * @param marker The marker for the next set of results. (You received this marker from
-     *         a previous call.)
+     * <p>
+     * The marker for the next set of results. (You received this marker from a
+     * previous call.)
+     * </p>
+     * 
+     * @param marker
+     *        The marker for the next set of results. (You received this marker
+     *        from a previous call.)
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
-     * The marker for the next set of results. (You received this marker from
-     * a previous call.)
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker The marker for the next set of results. (You received this marker from
-     *         a previous call.)
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The marker for the next set of results. (You received this marker from a
+     * previous call.)
+     * </p>
+     * 
+     * @return The marker for the next set of results. (You received this marker
+     *         from a previous call.)
+     */
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * The marker for the next set of results. (You received this marker from a
+     * previous call.)
+     * </p>
+     * 
+     * @param marker
+     *        The marker for the next set of results. (You received this marker
+     *        from a previous call.)
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeLoadBalancersRequest withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
     /**
-     * The maximum number of results to return with this call (a number from
-     * 1 to 400). The default is 400.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 400<br/>
-     *
-     * @return The maximum number of results to return with this call (a number from
-     *         1 to 400). The default is 400.
-     */
-    public Integer getPageSize() {
-        return pageSize;
-    }
-    
-    /**
-     * The maximum number of results to return with this call (a number from
-     * 1 to 400). The default is 400.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 400<br/>
-     *
-     * @param pageSize The maximum number of results to return with this call (a number from
-     *         1 to 400). The default is 400.
+     * The maximum number of results to return with this call (a number from 1
+     * to 400). The default is 400.
+     * </p>
+     * 
+     * @param pageSize
+     *        The maximum number of results to return with this call (a number
+     *        from 1 to 400). The default is 400.
      */
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
-    
+
     /**
-     * The maximum number of results to return with this call (a number from
-     * 1 to 400). The default is 400.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The maximum number of results to return with this call (a number from 1
+     * to 400). The default is 400.
+     * </p>
+     * 
+     * @return The maximum number of results to return with this call (a number
+     *         from 1 to 400). The default is 400.
+     */
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 400<br/>
-     *
-     * @param pageSize The maximum number of results to return with this call (a number from
-     *         1 to 400). The default is 400.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of results to return with this call (a number from 1
+     * to 400). The default is 400.
+     * </p>
+     * 
+     * @param pageSize
+     *        The maximum number of results to return with this call (a number
+     *        from 1 to 400). The default is 400.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public DescribeLoadBalancersRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+        setPageSize(pageSize);
         return this;
     }
 
@@ -238,46 +243,64 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (getPageSize() != null) sb.append("PageSize: " + getPageSize() );
+        if (getLoadBalancerNames() != null)
+            sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker() + ",");
+        if (getPageSize() != null)
+            sb.append("PageSize: " + getPageSize());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeLoadBalancersRequest == false)
+            return false;
+        DescribeLoadBalancersRequest other = (DescribeLoadBalancersRequest) obj;
+        if (other.getLoadBalancerNames() == null
+                ^ this.getLoadBalancerNames() == null)
+            return false;
+        if (other.getLoadBalancerNames() != null
+                && other.getLoadBalancerNames().equals(
+                        this.getLoadBalancerNames()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getPageSize() == null ^ this.getPageSize() == null)
+            return false;
+        if (other.getPageSize() != null
+                && other.getPageSize().equals(this.getPageSize()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLoadBalancerNames() == null) ? 0
+                        : getLoadBalancerNames().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode
+                + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeLoadBalancersRequest == false) return false;
-        DescribeLoadBalancersRequest other = (DescribeLoadBalancersRequest)obj;
-        
-        if (other.getLoadBalancerNames() == null ^ this.getLoadBalancerNames() == null) return false;
-        if (other.getLoadBalancerNames() != null && other.getLoadBalancerNames().equals(this.getLoadBalancerNames()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        if (other.getPageSize() == null ^ this.getPageSize() == null) return false;
-        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeLoadBalancersRequest clone() {
-        
-            return (DescribeLoadBalancersRequest) super.clone();
+        return (DescribeLoadBalancersRequest) super.clone();
     }
-
 }
-    

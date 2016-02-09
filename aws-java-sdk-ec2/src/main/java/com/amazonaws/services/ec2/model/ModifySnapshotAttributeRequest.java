@@ -1,525 +1,561 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequestMarshaller;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest) ModifySnapshotAttribute operation}.
- * <p>
- * Adds or removes permission settings for the specified snapshot. You
- * may add or remove specified AWS account IDs from a snapshot's list of
- * create volume permissions, but you cannot do both in a single API
- * call. If you need to both add and remove account IDs for a snapshot,
- * you must use multiple API calls.
- * </p>
- * <p>
- * For more information on modifying snapshot permissions, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html"> Sharing Snapshots </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
- * </p>
- * <p>
- * <b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be
- * made public.
- * </p>
- *
- * @see com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest)
+ * 
  */
-public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifySnapshotAttributeRequest> {
+public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable,
+        DryRunSupportedRequest<ModifySnapshotAttributeRequest> {
 
     /**
+     * <p>
      * The ID of the snapshot.
+     * </p>
      */
     private String snapshotId;
-
     /**
-     * The snapshot attribute to modify. <note> <p>Only volume creation
-     * permissions may be modified at the customer level. </note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
+     * The snapshot attribute to modify.
+     * </p>
+     * <note>
+     * <p>
+     * Only volume creation permissions may be modified at the customer level.
+     * </p>
+     * </note>
      */
     private String attribute;
-
     /**
-     * The type of operation to perform to the attribute.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>add, remove
+     * The type of operation to perform to the attribute.
+     * </p>
      */
     private String operationType;
-
     /**
+     * <p>
      * The account ID to modify for the snapshot.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> userIds;
-
+    private com.amazonaws.internal.SdkInternalList<String> userIds;
     /**
+     * <p>
      * The group to modify for the snapshot.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
-
+    private com.amazonaws.internal.SdkInternalList<String> groupNames;
     /**
+     * <p>
      * A JSON representation of the snapshot attribute modification.
+     * </p>
      */
     private CreateVolumePermissionModifications createVolumePermission;
 
     /**
-     * Default constructor for a new ModifySnapshotAttributeRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for ModifySnapshotAttributeRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    public ModifySnapshotAttributeRequest() {}
-    
+    public ModifySnapshotAttributeRequest() {
+    }
+
     /**
-     * Constructs a new ModifySnapshotAttributeRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ModifySnapshotAttributeRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param snapshotId The ID of the snapshot.
-     * @param attribute The snapshot attribute to modify. <note> <p>Only
-     * volume creation permissions may be modified at the customer level.
-     * </note>
-     * @param operationType The type of operation to perform to the
-     * attribute.
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @param attribute
+     *        The snapshot attribute to modify.</p> <note>
+     *        <p>
+     *        Only volume creation permissions may be modified at the customer
+     *        level.
+     *        </p>
+     * @param operationType
+     *        The type of operation to perform to the attribute.
      */
-    public ModifySnapshotAttributeRequest(String snapshotId, String attribute, String operationType) {
+    public ModifySnapshotAttributeRequest(String snapshotId, String attribute,
+            String operationType) {
         setSnapshotId(snapshotId);
         setAttribute(attribute);
         setOperationType(operationType);
     }
 
     /**
-     * Constructs a new ModifySnapshotAttributeRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ModifySnapshotAttributeRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param snapshotId The ID of the snapshot.
-     * @param attribute The snapshot attribute to modify. <note> <p>Only
-     * volume creation permissions may be modified at the customer level.
-     * </note>
-     * @param operationType The type of operation to perform to the
-     * attribute.
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @param attribute
+     *        The snapshot attribute to modify.</p> <note>
+     *        <p>
+     *        Only volume creation permissions may be modified at the customer
+     *        level.
+     *        </p>
+     * @param operationType
+     *        The type of operation to perform to the attribute.
      */
-    public ModifySnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute, OperationType operationType) {
-        this.snapshotId = snapshotId;
-        this.attribute = attribute.toString();
-        this.operationType = operationType.toString();
+    public ModifySnapshotAttributeRequest(String snapshotId,
+            SnapshotAttributeName attribute, OperationType operationType) {
+        setSnapshotId(snapshotId);
+        setAttribute(attribute.toString());
+        setOperationType(operationType.toString());
     }
 
     /**
+     * <p>
      * The ID of the snapshot.
-     *
-     * @return The ID of the snapshot.
-     */
-    public String getSnapshotId() {
-        return snapshotId;
-    }
-    
-    /**
-     * The ID of the snapshot.
-     *
-     * @param snapshotId The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
-    
+
     /**
-     * The ID of the snapshot.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshotId The ID of the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @return The ID of the snapshot.
+     */
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ModifySnapshotAttributeRequest withSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
+        setSnapshotId(snapshotId);
         return this;
     }
 
     /**
-     * The snapshot attribute to modify. <note> <p>Only volume creation
-     * permissions may be modified at the customer level. </note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @return The snapshot attribute to modify. <note> <p>Only volume creation
-     *         permissions may be modified at the customer level. </note>
-     *
-     * @see SnapshotAttributeName
-     */
-    public String getAttribute() {
-        return attribute;
-    }
-    
-    /**
-     * The snapshot attribute to modify. <note> <p>Only volume creation
-     * permissions may be modified at the customer level. </note>
+     * The snapshot attribute to modify.
+     * </p>
+     * <note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
-     *         permissions may be modified at the customer level. </note>
-     *
+     * Only volume creation permissions may be modified at the customer level.
+     * </p>
+     * </note>
+     * 
+     * @param attribute
+     *        The snapshot attribute to modify.</p> <note>
+     *        <p>
+     *        Only volume creation permissions may be modified at the customer
+     *        level.
+     *        </p>
      * @see SnapshotAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
-    
+
     /**
-     * The snapshot attribute to modify. <note> <p>Only volume creation
-     * permissions may be modified at the customer level. </note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The snapshot attribute to modify.
+     * </p>
+     * <note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
-     *         permissions may be modified at the customer level. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * Only volume creation permissions may be modified at the customer level.
+     * </p>
+     * </note>
+     * 
+     * @return The snapshot attribute to modify.</p> <note>
+     *         <p>
+     *         Only volume creation permissions may be modified at the customer
+     *         level.
+     *         </p>
+     * @see SnapshotAttributeName
+     */
+    public String getAttribute() {
+        return this.attribute;
+    }
+
+    /**
+     * <p>
+     * The snapshot attribute to modify.
+     * </p>
+     * <note>
+     * <p>
+     * Only volume creation permissions may be modified at the customer level.
+     * </p>
+     * </note>
+     * 
+     * @param attribute
+     *        The snapshot attribute to modify.</p> <note>
+     *        <p>
+     *        Only volume creation permissions may be modified at the customer
+     *        level.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SnapshotAttributeName
      */
     public ModifySnapshotAttributeRequest withAttribute(String attribute) {
-        this.attribute = attribute;
+        setAttribute(attribute);
         return this;
     }
 
     /**
-     * The snapshot attribute to modify. <note> <p>Only volume creation
-     * permissions may be modified at the customer level. </note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
-     *         permissions may be modified at the customer level. </note>
-     *
+     * The snapshot attribute to modify.
+     * </p>
+     * <note>
+     * <p>
+     * Only volume creation permissions may be modified at the customer level.
+     * </p>
+     * </note>
+     * 
+     * @param attribute
+     *        The snapshot attribute to modify.</p> <note>
+     *        <p>
+     *        Only volume creation permissions may be modified at the customer
+     *        level.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SnapshotAttributeName
      */
     public void setAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
     }
-    
+
     /**
-     * The snapshot attribute to modify. <note> <p>Only volume creation
-     * permissions may be modified at the customer level. </note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The snapshot attribute to modify.
+     * </p>
+     * <note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>productCodes, createVolumePermission
-     *
-     * @param attribute The snapshot attribute to modify. <note> <p>Only volume creation
-     *         permissions may be modified at the customer level. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * Only volume creation permissions may be modified at the customer level.
+     * </p>
+     * </note>
+     * 
+     * @param attribute
+     *        The snapshot attribute to modify.</p> <note>
+     *        <p>
+     *        Only volume creation permissions may be modified at the customer
+     *        level.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SnapshotAttributeName
      */
-    public ModifySnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
-        this.attribute = attribute.toString();
+    public ModifySnapshotAttributeRequest withAttribute(
+            SnapshotAttributeName attribute) {
+        setAttribute(attribute);
         return this;
     }
 
     /**
-     * The type of operation to perform to the attribute.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>add, remove
-     *
-     * @return The type of operation to perform to the attribute.
-     *
-     * @see OperationType
-     */
-    public String getOperationType() {
-        return operationType;
-    }
-    
-    /**
      * The type of operation to perform to the attribute.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>add, remove
-     *
-     * @param operationType The type of operation to perform to the attribute.
-     *
+     * </p>
+     * 
+     * @param operationType
+     *        The type of operation to perform to the attribute.
      * @see OperationType
      */
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
-    
+
     /**
+     * <p>
      * The type of operation to perform to the attribute.
+     * </p>
+     * 
+     * @return The type of operation to perform to the attribute.
+     * @see OperationType
+     */
+    public String getOperationType() {
+        return this.operationType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>add, remove
-     *
-     * @param operationType The type of operation to perform to the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of operation to perform to the attribute.
+     * </p>
+     * 
+     * @param operationType
+     *        The type of operation to perform to the attribute.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see OperationType
      */
     public ModifySnapshotAttributeRequest withOperationType(String operationType) {
-        this.operationType = operationType;
+        setOperationType(operationType);
         return this;
     }
 
     /**
-     * The type of operation to perform to the attribute.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>add, remove
-     *
-     * @param operationType The type of operation to perform to the attribute.
-     *
+     * The type of operation to perform to the attribute.
+     * </p>
+     * 
+     * @param operationType
+     *        The type of operation to perform to the attribute.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see OperationType
      */
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType.toString();
     }
-    
+
     /**
+     * <p>
      * The type of operation to perform to the attribute.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>add, remove
-     *
-     * @param operationType The type of operation to perform to the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param operationType
+     *        The type of operation to perform to the attribute.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see OperationType
      */
-    public ModifySnapshotAttributeRequest withOperationType(OperationType operationType) {
-        this.operationType = operationType.toString();
+    public ModifySnapshotAttributeRequest withOperationType(
+            OperationType operationType) {
+        setOperationType(operationType);
         return this;
     }
 
     /**
+     * <p>
      * The account ID to modify for the snapshot.
-     *
+     * </p>
+     * 
      * @return The account ID to modify for the snapshot.
      */
     public java.util.List<String> getUserIds() {
         if (userIds == null) {
-              userIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              userIds.setAutoConstruct(true);
+            userIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return userIds;
     }
-    
+
     /**
+     * <p>
      * The account ID to modify for the snapshot.
-     *
-     * @param userIds The account ID to modify for the snapshot.
+     * </p>
+     * 
+     * @param userIds
+     *        The account ID to modify for the snapshot.
      */
     public void setUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
             this.userIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> userIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(userIds.size());
-        userIdsCopy.addAll(userIds);
-        this.userIds = userIdsCopy;
+
+        this.userIds = new com.amazonaws.internal.SdkInternalList<String>(
+                userIds);
     }
-    
+
     /**
+     * <p>
      * The account ID to modify for the snapshot.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserIds(java.util.Collection)} or {@link
-     * #withUserIds(java.util.Collection)} if you want to override the
+     * any). Use {@link #setUserIds(java.util.Collection)} or
+     * {@link #withUserIds(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param userIds The account ID to modify for the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param userIds
+     *        The account ID to modify for the snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ModifySnapshotAttributeRequest withUserIds(String... userIds) {
-        if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>(userIds.length));
-        for (String value : userIds) {
-            getUserIds().add(value);
+        if (this.userIds == null) {
+            setUserIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    userIds.length));
+        }
+        for (String ele : userIds) {
+            this.userIds.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The account ID to modify for the snapshot.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param userIds The account ID to modify for the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The account ID to modify for the snapshot.
+     * </p>
+     * 
+     * @param userIds
+     *        The account ID to modify for the snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifySnapshotAttributeRequest withUserIds(java.util.Collection<String> userIds) {
-        if (userIds == null) {
-            this.userIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> userIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(userIds.size());
-            userIdsCopy.addAll(userIds);
-            this.userIds = userIdsCopy;
-        }
-
+    public ModifySnapshotAttributeRequest withUserIds(
+            java.util.Collection<String> userIds) {
+        setUserIds(userIds);
         return this;
     }
 
     /**
+     * <p>
      * The group to modify for the snapshot.
-     *
+     * </p>
+     * 
      * @return The group to modify for the snapshot.
      */
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
-              groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              groupNames.setAutoConstruct(true);
+            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return groupNames;
     }
-    
+
     /**
+     * <p>
      * The group to modify for the snapshot.
-     *
-     * @param groupNames The group to modify for the snapshot.
+     * </p>
+     * 
+     * @param groupNames
+     *        The group to modify for the snapshot.
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
             this.groupNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
-        groupNamesCopy.addAll(groupNames);
-        this.groupNames = groupNamesCopy;
+
+        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(
+                groupNames);
     }
-    
+
     /**
+     * <p>
      * The group to modify for the snapshot.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroupNames(java.util.Collection)} or {@link
-     * #withGroupNames(java.util.Collection)} if you want to override the
+     * any). Use {@link #setGroupNames(java.util.Collection)} or
+     * {@link #withGroupNames(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param groupNames The group to modify for the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param groupNames
+     *        The group to modify for the snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ModifySnapshotAttributeRequest withGroupNames(String... groupNames) {
-        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
-        for (String value : groupNames) {
-            getGroupNames().add(value);
+        if (this.groupNames == null) {
+            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    groupNames.length));
+        }
+        for (String ele : groupNames) {
+            this.groupNames.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The group to modify for the snapshot.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param groupNames The group to modify for the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The group to modify for the snapshot.
+     * </p>
+     * 
+     * @param groupNames
+     *        The group to modify for the snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifySnapshotAttributeRequest withGroupNames(java.util.Collection<String> groupNames) {
-        if (groupNames == null) {
-            this.groupNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
-            groupNamesCopy.addAll(groupNames);
-            this.groupNames = groupNamesCopy;
-        }
-
+    public ModifySnapshotAttributeRequest withGroupNames(
+            java.util.Collection<String> groupNames) {
+        setGroupNames(groupNames);
         return this;
     }
 
     /**
+     * <p>
      * A JSON representation of the snapshot attribute modification.
-     *
+     * </p>
+     * 
+     * @param createVolumePermission
+     *        A JSON representation of the snapshot attribute modification.
+     */
+    public void setCreateVolumePermission(
+            CreateVolumePermissionModifications createVolumePermission) {
+        this.createVolumePermission = createVolumePermission;
+    }
+
+    /**
+     * <p>
+     * A JSON representation of the snapshot attribute modification.
+     * </p>
+     * 
      * @return A JSON representation of the snapshot attribute modification.
      */
     public CreateVolumePermissionModifications getCreateVolumePermission() {
-        return createVolumePermission;
+        return this.createVolumePermission;
     }
-    
+
     /**
-     * A JSON representation of the snapshot attribute modification.
-     *
-     * @param createVolumePermission A JSON representation of the snapshot attribute modification.
-     */
-    public void setCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
-        this.createVolumePermission = createVolumePermission;
-    }
-    
-    /**
-     * A JSON representation of the snapshot attribute modification.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param createVolumePermission A JSON representation of the snapshot attribute modification.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A JSON representation of the snapshot attribute modification.
+     * </p>
+     * 
+     * @param createVolumePermission
+     *        A JSON representation of the snapshot attribute modification.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifySnapshotAttributeRequest withCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
-        this.createVolumePermission = createVolumePermission;
+    public ModifySnapshotAttributeRequest withCreateVolumePermission(
+            CreateVolumePermissionModifications createVolumePermission) {
+        setCreateVolumePermission(createVolumePermission);
         return this;
     }
 
     /**
-     * This method is intended for internal use only.
-     * Returns the marshaled request configured with additional parameters to
-     * enable operation dry-run.
+     * This method is intended for internal use only. Returns the marshaled
+     * request configured with additional parameters to enable operation
+     * dry-run.
      */
     @Override
     public Request<ModifySnapshotAttributeRequest> getDryRunRequest() {
-        Request<ModifySnapshotAttributeRequest> request = new ModifySnapshotAttributeRequestMarshaller().marshall(this);
+        Request<ModifySnapshotAttributeRequest> request = new ModifySnapshotAttributeRequestMarshaller()
+                .marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -532,58 +568,93 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");
-        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ",");
-        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ",");
-        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");
-        if (getCreateVolumePermission() != null) sb.append("CreateVolumePermission: " + getCreateVolumePermission() );
+        if (getSnapshotId() != null)
+            sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (getAttribute() != null)
+            sb.append("Attribute: " + getAttribute() + ",");
+        if (getOperationType() != null)
+            sb.append("OperationType: " + getOperationType() + ",");
+        if (getUserIds() != null)
+            sb.append("UserIds: " + getUserIds() + ",");
+        if (getGroupNames() != null)
+            sb.append("GroupNames: " + getGroupNames() + ",");
+        if (getCreateVolumePermission() != null)
+            sb.append("CreateVolumePermission: " + getCreateVolumePermission());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ModifySnapshotAttributeRequest == false)
+            return false;
+        ModifySnapshotAttributeRequest other = (ModifySnapshotAttributeRequest) obj;
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
+            return false;
+        if (other.getSnapshotId() != null
+                && other.getSnapshotId().equals(this.getSnapshotId()) == false)
+            return false;
+        if (other.getAttribute() == null ^ this.getAttribute() == null)
+            return false;
+        if (other.getAttribute() != null
+                && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getOperationType() == null ^ this.getOperationType() == null)
+            return false;
+        if (other.getOperationType() != null
+                && other.getOperationType().equals(this.getOperationType()) == false)
+            return false;
+        if (other.getUserIds() == null ^ this.getUserIds() == null)
+            return false;
+        if (other.getUserIds() != null
+                && other.getUserIds().equals(this.getUserIds()) == false)
+            return false;
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
+            return false;
+        if (other.getGroupNames() != null
+                && other.getGroupNames().equals(this.getGroupNames()) == false)
+            return false;
+        if (other.getCreateVolumePermission() == null
+                ^ this.getCreateVolumePermission() == null)
+            return false;
+        if (other.getCreateVolumePermission() != null
+                && other.getCreateVolumePermission().equals(
+                        this.getCreateVolumePermission()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
-        hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode()); 
-        hashCode = prime * hashCode + ((getOperationType() == null) ? 0 : getOperationType().hashCode()); 
-        hashCode = prime * hashCode + ((getUserIds() == null) ? 0 : getUserIds().hashCode()); 
-        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode()); 
-        hashCode = prime * hashCode + ((getCreateVolumePermission() == null) ? 0 : getCreateVolumePermission().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode
+                + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOperationType() == null) ? 0 : getOperationType()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getUserIds() == null) ? 0 : getUserIds().hashCode());
+        hashCode = prime * hashCode
+                + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCreateVolumePermission() == null) ? 0
+                        : getCreateVolumePermission().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ModifySnapshotAttributeRequest == false) return false;
-        ModifySnapshotAttributeRequest other = (ModifySnapshotAttributeRequest)obj;
-        
-        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null) return false;
-        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false) return false; 
-        if (other.getAttribute() == null ^ this.getAttribute() == null) return false;
-        if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false) return false; 
-        if (other.getOperationType() == null ^ this.getOperationType() == null) return false;
-        if (other.getOperationType() != null && other.getOperationType().equals(this.getOperationType()) == false) return false; 
-        if (other.getUserIds() == null ^ this.getUserIds() == null) return false;
-        if (other.getUserIds() != null && other.getUserIds().equals(this.getUserIds()) == false) return false; 
-        if (other.getGroupNames() == null ^ this.getGroupNames() == null) return false;
-        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false) return false; 
-        if (other.getCreateVolumePermission() == null ^ this.getCreateVolumePermission() == null) return false;
-        if (other.getCreateVolumePermission() != null && other.getCreateVolumePermission().equals(this.getCreateVolumePermission()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ModifySnapshotAttributeRequest clone() {
-        
-            return (ModifySnapshotAttributeRequest) super.clone();
+        return (ModifySnapshotAttributeRequest) super.clone();
     }
-
 }
-    

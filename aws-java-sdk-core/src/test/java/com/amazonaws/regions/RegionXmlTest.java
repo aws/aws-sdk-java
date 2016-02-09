@@ -28,8 +28,6 @@ public class RegionXmlTest {
     @Test
     public void kms() {
         RegionUtils.initialize();
-        assertEquals("/com/amazonaws/regions/regions.xml",
-                RegionUtils.getSource());
         String[] regions = {
                 "us-east-1",
                 "us-west-1",

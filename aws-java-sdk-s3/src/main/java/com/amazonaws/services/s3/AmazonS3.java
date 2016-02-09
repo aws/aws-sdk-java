@@ -4490,22 +4490,19 @@ public interface AmazonS3 extends S3DirectSpi {
     void deleteBucketReplicationConfiguration
     (DeleteBucketReplicationConfigurationRequest request)
             throws AmazonServiceException, AmazonClientException;
+
     /**
      * @param bucketName
-     *              name of bucket that presumably contains object
+     *            Name of bucket that presumably contains object
      * @param objectName
-     *              name of object that has to be checked
-     * @return
-     *              result of the search
-     *
+     *            Name of object that has to be checked
+     * @return result of the search
      * @throws AmazonServiceException
-     *             If any errors occurred in Amazon S3 while processing the
-     *             request.
+     *             If any errors occurred in Amazon S3 while processing the request.
      * @throws AmazonClientException
-     *             If any errors are encountered in the client while making the
-     *             request or handling the response.
+     *             If any errors are encountered in the client while making the request or handling
+     *             the response.
      */
     boolean doesObjectExist(String bucketName, String objectName)
             throws AmazonServiceException, AmazonClientException;
-
 }

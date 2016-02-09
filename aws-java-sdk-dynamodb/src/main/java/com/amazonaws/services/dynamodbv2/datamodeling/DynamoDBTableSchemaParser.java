@@ -55,33 +55,36 @@ class DynamoDBTableSchemaParser {
      * @param config
      *            The DynamoDBMapperConfig which contains the TableNameOverrides
      *            parameter used to determine the table name.
-     * @param reflector
-     *            The DynamoDBReflector that provides all the relevant getters
+     * @param registry
+     *            The DynamoDBMappingsRegistry that provides all the relevant getters
      *            of the POJO.
      */
     CreateTableRequest parseTablePojoToCreateTableRequest(
             Class<?> clazz,
             DynamoDBMapperConfig config,
-            DynamoDBReflector reflector,
+            DynamoDBMappingsRegistry registry,
             ItemConverter converter) {
 
         CreateTableRequest createTableRequest = new CreateTableRequest();
         createTableRequest.setTableName(DynamoDBMapper.internalGetTableName(clazz, null, config));
 
+        final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
         // Primary keys
-        Method pHashKeyGetter = reflector.getPrimaryHashKeyGetter(clazz);
+        Method pHashKeyGetter = mappings.getHashKey().getter();
         AttributeDefinition pHashAttrDefinition = getKeyAttributeDefinition(pHashKeyGetter, converter);
         createTableRequest.withKeySchema(new KeySchemaElement(pHashAttrDefinition.getAttributeName(), KeyType.HASH));
         // Primary range
-        Method pRangeKeyGetter = reflector.getPrimaryRangeKeyGetter(clazz);
+        Method pRangeKeyGetter = null;
         AttributeDefinition pRangeAttrDefinition = null;
-        if (pRangeKeyGetter != null) {
+        if (mappings.hasRangeKey()) {
+            pRangeKeyGetter = mappings.getRangeKey().getter();
             pRangeAttrDefinition = getKeyAttributeDefinition(pRangeKeyGetter, converter);
             createTableRequest.withKeySchema(new KeySchemaElement(pRangeAttrDefinition.getAttributeName(), KeyType.RANGE));
         }
 
         // Parse the index schema
-        TableIndexesInfo indexesInfo = parseTableIndexes(clazz, reflector);
+        TableIndexesInfo indexesInfo = parseTableIndexes(clazz, registry);
         if ( indexesInfo.getGlobalSecondaryIndexes().isEmpty() == false ) {
             createTableRequest.setGlobalSecondaryIndexes(indexesInfo.getGlobalSecondaryIndexes());
         }
@@ -122,23 +125,19 @@ class DynamoDBTableSchemaParser {
         return deleteTableRequest;
     }
 
-    TableIndexesInfo parseTableIndexes(final Class<?> clazz, final DynamoDBReflector reflector) {
+    TableIndexesInfo parseTableIndexes(final Class<?> clazz, final DynamoDBMappingsRegistry registry) {
         synchronized(tableIndexesInfoCache) {
             if ( !tableIndexesInfoCache.containsKey(clazz) ) {
+                final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
                 TableIndexesInfo tableIndexInfo = new TableIndexesInfo();
-                String pHashName = reflector.getPrimaryHashKeyName(clazz);
+                String pHashName = mappings.getHashKey().getAttributeName();
 
-                for (Method getter : reflector.getRelevantGetters(clazz)) {
-                    // Only consider 0-arg getters
-                    if (getter.getParameterTypes().length != 0) {
-                        continue;
-                    }
+                for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
+                    String attributeName = mapping.getAttributeName();
 
-                    String attributeName = reflector.getAttributeName(getter);
-
-                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexHashKey.class)) {
-                        DynamoDBIndexHashKey indexHashKeyAnnotation = ReflectionUtils
-                                .getAnnotationFromGetterOrField(getter, DynamoDBIndexHashKey.class);
+                    if (mapping.isIndexHashKey()) {
+                        DynamoDBIndexHashKey indexHashKeyAnnotation = mapping.getAnnotation(DynamoDBIndexHashKey.class);
                         String gsiName = indexHashKeyAnnotation.globalSecondaryIndexName();
                         String[] gsiNames = indexHashKeyAnnotation.globalSecondaryIndexNames();
 
@@ -149,11 +148,11 @@ class DynamoDBTableSchemaParser {
 
                         if ( singleGsiName && multipleGsiNames) {
                             throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexHashKey annotation on getter " + getter +
+                                    "@DynamoDBIndexHashKey annotation on getter " + mapping.getter() +
                                     " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
                         } else if ( (!singleGsiName) && (!multipleGsiNames) ) {
                             throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexHashKey annotation on getter " + getter +
+                                    "@DynamoDBIndexHashKey annotation on getter " + mapping.getter() +
                                     " doesn't contain any index name.");
                         }
 
@@ -164,12 +163,11 @@ class DynamoDBTableSchemaParser {
                                 tableIndexInfo.addGsiKeys(gsi, attributeName, null);
                             }
                         }
-                        tableIndexInfo.addIndexKeyGetter(getter);
+                        tableIndexInfo.addIndexKeyGetter(mapping.getter());
                     }
 
-                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexRangeKey.class)) {
-                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = ReflectionUtils
-                                .getAnnotationFromGetterOrField(getter, DynamoDBIndexRangeKey.class);
+                    if (mapping.isIndexRangeKey()) {
+                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = mapping.getAnnotation(DynamoDBIndexRangeKey.class);
                         String gsiName = indexRangeKeyAnnotation.globalSecondaryIndexName();
                         String[] gsiNames = indexRangeKeyAnnotation.globalSecondaryIndexNames();
                         String lsiName = indexRangeKeyAnnotation.localSecondaryIndexName();
@@ -186,17 +184,17 @@ class DynamoDBTableSchemaParser {
 
                         if ( singleGsiName && multipleGsiNames ) {
                             throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + getter +
+                                    "@DynamoDBIndexRangeKey annotation on getter " + mapping.getter() +
                                     " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
                         }
                         if ( singleLsiName && multipleLsiNames ) {
                             throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + getter +
+                                    "@DynamoDBIndexRangeKey annotation on getter " + mapping.getter() +
                                     " contains both localSecondaryIndexName and localSecondaryIndexNames.");
                         }
                         if ( (!singleGsiName) && (!multipleGsiNames) && (!singleLsiName) && (!multipleLsiNames) ) {
                             throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + getter +
+                                    "@DynamoDBIndexRangeKey annotation on getter " + mapping.getter() +
                                     " doesn't contain any index name.");
                         }
 
@@ -214,7 +212,7 @@ class DynamoDBTableSchemaParser {
                                 tableIndexInfo.addLsiRangeKey(lsi, pHashName, attributeName);
                             }
                         }
-                        tableIndexInfo.addIndexKeyGetter(getter);
+                        tableIndexInfo.addIndexKeyGetter(mapping.getter());
                     }
                 } // end of for loop
                 tableIndexesInfoCache.put(clazz, tableIndexInfo);

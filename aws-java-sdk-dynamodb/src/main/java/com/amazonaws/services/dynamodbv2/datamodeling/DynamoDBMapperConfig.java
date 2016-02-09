@@ -519,7 +519,7 @@ public class DynamoDBMapperConfig {
      */
     public static class DefaultTableNameResolver implements TableNameResolver {
         public static final DefaultTableNameResolver INSTANCE = new DefaultTableNameResolver();
-        private final DynamoDBReflector reflector = new DynamoDBReflector();
+        private final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
 
         @Override
         public String getTableName(Class<?> clazz, DynamoDBMapperConfig config) {
@@ -532,7 +532,9 @@ public class DynamoDBMapperConfig {
                 }
             }
 
-            final String tableName = reflector.getTable(clazz).tableName();
+            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
+            final String tableName = mappings.getTableName();
             final String prefix = override == null
                 ? null : override.getTableNamePrefix();
             return prefix == null ? tableName : prefix + tableName;

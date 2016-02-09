@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,40 +28,61 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Describe Spot Fleet Request History Result StAX Unmarshaller
+ * DescribeSpotFleetRequestHistoryResult StAX Unmarshaller
  */
-public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Unmarshaller<DescribeSpotFleetRequestHistoryResult, StaxUnmarshallerContext> {
+public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller
+        implements
+        Unmarshaller<DescribeSpotFleetRequestHistoryResult, StaxUnmarshallerContext> {
 
-    public DescribeSpotFleetRequestHistoryResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DescribeSpotFleetRequestHistoryResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         DescribeSpotFleetRequestHistoryResult describeSpotFleetRequestHistoryResult = new DescribeSpotFleetRequestHistoryResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return describeSpotFleetRequestHistoryResult;
+            if (xmlEvent.isEndDocument())
+                return describeSpotFleetRequestHistoryResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("spotFleetRequestId", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeSpotFleetRequestHistoryResult
+                            .setSpotFleetRequestId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("startTime", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeSpotFleetRequestHistoryResult
+                            .setStartTime(DateStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("lastEvaluatedTime", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setLastEvaluatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeSpotFleetRequestHistoryResult
+                            .setLastEvaluatedTime(DateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("historyRecordSet/item", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.getHistoryRecords().add(HistoryRecordStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("historyRecordSet/item", targetDepth)) {
+                    describeSpotFleetRequestHistoryResult.getHistoryRecords()
+                            .add(HistoryRecordStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("nextToken", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeSpotFleetRequestHistoryResult
+                            .setNextToken(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -72,9 +94,10 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Un
     }
 
     private static DescribeSpotFleetRequestHistoryResultStaxUnmarshaller instance;
+
     public static DescribeSpotFleetRequestHistoryResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeSpotFleetRequestHistoryResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DescribeSpotFleetRequestHistoryResultStaxUnmarshaller();
         return instance;
     }
 }
-    

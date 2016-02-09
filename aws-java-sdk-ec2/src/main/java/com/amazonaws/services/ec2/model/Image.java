@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -24,1457 +26,1463 @@ import java.io.Serializable;
 public class Image implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The ID of the AMI.
+     * </p>
      */
     private String imageId;
-
     /**
+     * <p>
      * The location of the AMI.
+     * </p>
      */
     private String imageLocation;
-
     /**
-     * The current state of the AMI. If the state is <code>available</code>,
-     * the image is successfully registered and can be used to launch an
-     * instance.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
+     * The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.
+     * </p>
      */
     private String state;
-
     /**
+     * <p>
      * The AWS account ID of the image owner.
+     * </p>
      */
     private String ownerId;
-
     /**
+     * <p>
      * The date and time the image was created.
+     * </p>
      */
     private String creationDate;
-
     /**
-     * Indicates whether the image has public launch permissions. The value
-     * is <code>true</code> if this image has public launch permissions or
+     * <p>
+     * Indicates whether the image has public launch permissions. The value is
+     * <code>true</code> if this image has public launch permissions or
      * <code>false</code> if it has only implicit and explicit launch
      * permissions.
+     * </p>
      */
     private Boolean publicValue;
-
     /**
-     * Any product codes associated with the AMI.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
-
-    /**
-     * The architecture of the image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>i386, x86_64
+     * Any product codes associated with the AMI.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
+    /**
+     * <p>
+     * The architecture of the image.
+     * </p>
      */
     private String architecture;
-
     /**
-     * The type of image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>machine, kernel, ramdisk
+     * The type of image.
+     * </p>
      */
     private String imageType;
-
     /**
-     * The kernel associated with the image, if any. Only applicable for
-     * machine images.
+     * <p>
+     * The kernel associated with the image, if any. Only applicable for machine
+     * images.
+     * </p>
      */
     private String kernelId;
-
     /**
+     * <p>
      * The RAM disk associated with the image, if any. Only applicable for
      * machine images.
+     * </p>
      */
     private String ramdiskId;
-
     /**
-     * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
+     * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
+     * </p>
      */
     private String platform;
-
     /**
+     * <p>
      * Specifies whether enhanced networking is enabled.
+     * </p>
      */
     private String sriovNetSupport;
-
     /**
+     * <p>
      * The reason for the state change.
+     * </p>
      */
     private StateReason stateReason;
-
     /**
+     * <p>
      * The AWS account alias (for example, <code>amazon</code>,
      * <code>self</code>) or the AWS account ID of the AMI owner.
+     * </p>
      */
     private String imageOwnerAlias;
-
     /**
+     * <p>
      * The name of the AMI that was provided during image creation.
+     * </p>
      */
     private String name;
-
     /**
+     * <p>
      * The description of the AMI that was provided during image creation.
+     * </p>
      */
     private String description;
-
     /**
-     * The type of root device used by the AMI. The AMI can use an EBS volume
-     * or an instance store volume.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
+     * The type of root device used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
+     * </p>
      */
     private String rootDeviceType;
-
     /**
-     * The device name of the root device (for example,
-     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * <p>
+     * The device name of the root device (for example, <code>/dev/sda1</code>
+     * or <code>/dev/xvda</code>).
+     * </p>
      */
     private String rootDeviceName;
-
     /**
-     * Any block device mapping entries.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
-
-    /**
-     * The type of virtualization of the AMI.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>hvm, paravirtual
+     * Any block device mapping entries.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
+    /**
+     * <p>
+     * The type of virtualization of the AMI.
+     * </p>
      */
     private String virtualizationType;
-
     /**
-     * Any tags assigned to the image.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
-
-    /**
-     * The hypervisor type of the image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ovm, xen
+     * Any tags assigned to the image.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The hypervisor type of the image.
+     * </p>
      */
     private String hypervisor;
 
     /**
+     * <p>
      * The ID of the AMI.
-     *
-     * @return The ID of the AMI.
-     */
-    public String getImageId() {
-        return imageId;
-    }
-    
-    /**
-     * The ID of the AMI.
-     *
-     * @param imageId The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
-    
+
     /**
-     * The ID of the AMI.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param imageId The ID of the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @return The ID of the AMI.
+     */
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withImageId(String imageId) {
-        this.imageId = imageId;
+        setImageId(imageId);
         return this;
     }
 
     /**
+     * <p>
      * The location of the AMI.
-     *
-     * @return The location of the AMI.
-     */
-    public String getImageLocation() {
-        return imageLocation;
-    }
-    
-    /**
-     * The location of the AMI.
-     *
-     * @param imageLocation The location of the AMI.
+     * </p>
+     * 
+     * @param imageLocation
+     *        The location of the AMI.
      */
     public void setImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
     }
-    
+
     /**
-     * The location of the AMI.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param imageLocation The location of the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The location of the AMI.
+     * </p>
+     * 
+     * @return The location of the AMI.
+     */
+    public String getImageLocation() {
+        return this.imageLocation;
+    }
+
+    /**
+     * <p>
+     * The location of the AMI.
+     * </p>
+     * 
+     * @param imageLocation
+     *        The location of the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withImageLocation(String imageLocation) {
-        this.imageLocation = imageLocation;
+        setImageLocation(imageLocation);
         return this;
     }
 
     /**
-     * The current state of the AMI. If the state is <code>available</code>,
-     * the image is successfully registered and can be used to launch an
-     * instance.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
-     *
-     * @return The current state of the AMI. If the state is <code>available</code>,
-     *         the image is successfully registered and can be used to launch an
-     *         instance.
-     *
-     * @see ImageState
-     */
-    public String getState() {
-        return state;
-    }
-    
-    /**
-     * The current state of the AMI. If the state is <code>available</code>,
-     * the image is successfully registered and can be used to launch an
-     * instance.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
-     *
-     * @param state The current state of the AMI. If the state is <code>available</code>,
-     *         the image is successfully registered and can be used to launch an
-     *         instance.
-     *
+     * The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the AMI. If the state is
+     *        <code>available</code>, the image is successfully registered and
+     *        can be used to launch an instance.
      * @see ImageState
      */
     public void setState(String state) {
         this.state = state;
     }
-    
+
     /**
-     * The current state of the AMI. If the state is <code>available</code>,
-     * the image is successfully registered and can be used to launch an
-     * instance.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.
+     * </p>
+     * 
+     * @return The current state of the AMI. If the state is
+     *         <code>available</code>, the image is successfully registered and
+     *         can be used to launch an instance.
+     * @see ImageState
+     */
+    public String getState() {
+        return this.state;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
-     *
-     * @param state The current state of the AMI. If the state is <code>available</code>,
-     *         the image is successfully registered and can be used to launch an
-     *         instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the AMI. If the state is
+     *        <code>available</code>, the image is successfully registered and
+     *        can be used to launch an instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ImageState
      */
     public Image withState(String state) {
-        this.state = state;
+        setState(state);
         return this;
     }
 
     /**
-     * The current state of the AMI. If the state is <code>available</code>,
-     * the image is successfully registered and can be used to launch an
-     * instance.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
-     *
-     * @param state The current state of the AMI. If the state is <code>available</code>,
-     *         the image is successfully registered and can be used to launch an
-     *         instance.
-     *
+     * The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the AMI. If the state is
+     *        <code>available</code>, the image is successfully registered and
+     *        can be used to launch an instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ImageState
      */
     public void setState(ImageState state) {
         this.state = state.toString();
     }
-    
+
     /**
-     * The current state of the AMI. If the state is <code>available</code>,
-     * the image is successfully registered and can be used to launch an
-     * instance.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, invalid, deregistered, transient, failed, error
-     *
-     * @param state The current state of the AMI. If the state is <code>available</code>,
-     *         the image is successfully registered and can be used to launch an
-     *         instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the AMI. If the state is
+     *        <code>available</code>, the image is successfully registered and
+     *        can be used to launch an instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ImageState
      */
     public Image withState(ImageState state) {
-        this.state = state.toString();
+        setState(state);
         return this;
     }
 
     /**
+     * <p>
      * The AWS account ID of the image owner.
-     *
-     * @return The AWS account ID of the image owner.
-     */
-    public String getOwnerId() {
-        return ownerId;
-    }
-    
-    /**
-     * The AWS account ID of the image owner.
-     *
-     * @param ownerId The AWS account ID of the image owner.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID of the image owner.
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
-    
+
     /**
-     * The AWS account ID of the image owner.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ownerId The AWS account ID of the image owner.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AWS account ID of the image owner.
+     * </p>
+     * 
+     * @return The AWS account ID of the image owner.
+     */
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the image owner.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID of the image owner.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withOwnerId(String ownerId) {
-        this.ownerId = ownerId;
+        setOwnerId(ownerId);
         return this;
     }
 
     /**
+     * <p>
      * The date and time the image was created.
-     *
-     * @return The date and time the image was created.
-     */
-    public String getCreationDate() {
-        return creationDate;
-    }
-    
-    /**
-     * The date and time the image was created.
-     *
-     * @param creationDate The date and time the image was created.
+     * </p>
+     * 
+     * @param creationDate
+     *        The date and time the image was created.
      */
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
-    
+
     /**
-     * The date and time the image was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param creationDate The date and time the image was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date and time the image was created.
+     * </p>
+     * 
+     * @return The date and time the image was created.
+     */
+    public String getCreationDate() {
+        return this.creationDate;
+    }
+
+    /**
+     * <p>
+     * The date and time the image was created.
+     * </p>
+     * 
+     * @param creationDate
+     *        The date and time the image was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withCreationDate(String creationDate) {
-        this.creationDate = creationDate;
+        setCreationDate(creationDate);
         return this;
     }
 
     /**
-     * Indicates whether the image has public launch permissions. The value
-     * is <code>true</code> if this image has public launch permissions or
+     * <p>
+     * Indicates whether the image has public launch permissions. The value is
+     * <code>true</code> if this image has public launch permissions or
      * <code>false</code> if it has only implicit and explicit launch
      * permissions.
-     *
-     * @return Indicates whether the image has public launch permissions. The value
-     *         is <code>true</code> if this image has public launch permissions or
-     *         <code>false</code> if it has only implicit and explicit launch
-     *         permissions.
-     */
-    public Boolean isPublic() {
-        return publicValue;
-    }
-    
-    /**
-     * Indicates whether the image has public launch permissions. The value
-     * is <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch
-     * permissions.
-     *
-     * @param publicValue Indicates whether the image has public launch permissions. The value
-     *         is <code>true</code> if this image has public launch permissions or
-     *         <code>false</code> if it has only implicit and explicit launch
-     *         permissions.
+     * </p>
+     * 
+     * @param publicValue
+     *        Indicates whether the image has public launch permissions. The
+     *        value is <code>true</code> if this image has public launch
+     *        permissions or <code>false</code> if it has only implicit and
+     *        explicit launch permissions.
      */
     public void setPublic(Boolean publicValue) {
         this.publicValue = publicValue;
     }
-    
+
     /**
-     * Indicates whether the image has public launch permissions. The value
-     * is <code>true</code> if this image has public launch permissions or
+     * <p>
+     * Indicates whether the image has public launch permissions. The value is
+     * <code>true</code> if this image has public launch permissions or
      * <code>false</code> if it has only implicit and explicit launch
      * permissions.
+     * </p>
+     * 
+     * @return Indicates whether the image has public launch permissions. The
+     *         value is <code>true</code> if this image has public launch
+     *         permissions or <code>false</code> if it has only implicit and
+     *         explicit launch permissions.
+     */
+    public Boolean getPublic() {
+        return this.publicValue;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param publicValue Indicates whether the image has public launch permissions. The value
-     *         is <code>true</code> if this image has public launch permissions or
-     *         <code>false</code> if it has only implicit and explicit launch
-     *         permissions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Indicates whether the image has public launch permissions. The value is
+     * <code>true</code> if this image has public launch permissions or
+     * <code>false</code> if it has only implicit and explicit launch
+     * permissions.
+     * </p>
+     * 
+     * @param publicValue
+     *        Indicates whether the image has public launch permissions. The
+     *        value is <code>true</code> if this image has public launch
+     *        permissions or <code>false</code> if it has only implicit and
+     *        explicit launch permissions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withPublic(Boolean publicValue) {
-        this.publicValue = publicValue;
+        setPublic(publicValue);
         return this;
     }
 
     /**
-     * Indicates whether the image has public launch permissions. The value
-     * is <code>true</code> if this image has public launch permissions or
+     * <p>
+     * Indicates whether the image has public launch permissions. The value is
+     * <code>true</code> if this image has public launch permissions or
      * <code>false</code> if it has only implicit and explicit launch
      * permissions.
-     *
-     * @return Indicates whether the image has public launch permissions. The value
-     *         is <code>true</code> if this image has public launch permissions or
-     *         <code>false</code> if it has only implicit and explicit launch
-     *         permissions.
+     * </p>
+     * 
+     * @return Indicates whether the image has public launch permissions. The
+     *         value is <code>true</code> if this image has public launch
+     *         permissions or <code>false</code> if it has only implicit and
+     *         explicit launch permissions.
      */
-    public Boolean getPublic() {
-        return publicValue;
+    public Boolean isPublic() {
+        return this.publicValue;
     }
 
     /**
+     * <p>
      * Any product codes associated with the AMI.
-     *
+     * </p>
+     * 
      * @return Any product codes associated with the AMI.
      */
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
-              productCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>();
-              productCodes.setAutoConstruct(true);
+            productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
         }
         return productCodes;
     }
-    
+
     /**
+     * <p>
      * Any product codes associated with the AMI.
-     *
-     * @param productCodes Any product codes associated with the AMI.
+     * </p>
+     * 
+     * @param productCodes
+     *        Any product codes associated with the AMI.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>(productCodes.size());
-        productCodesCopy.addAll(productCodes);
-        this.productCodes = productCodesCopy;
+
+        this.productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>(
+                productCodes);
     }
-    
+
     /**
+     * <p>
      * Any product codes associated with the AMI.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setProductCodes(java.util.Collection)} or {@link
-     * #withProductCodes(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param productCodes Any product codes associated with the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setProductCodes(java.util.Collection)} or
+     * {@link #withProductCodes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param productCodes
+     *        Any product codes associated with the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withProductCodes(ProductCode... productCodes) {
-        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
-        for (ProductCode value : productCodes) {
-            getProductCodes().add(value);
+        if (this.productCodes == null) {
+            setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
+                    productCodes.length));
+        }
+        for (ProductCode ele : productCodes) {
+            this.productCodes.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * Any product codes associated with the AMI.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param productCodes Any product codes associated with the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Any product codes associated with the AMI.
+     * </p>
+     * 
+     * @param productCodes
+     *        Any product codes associated with the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withProductCodes(java.util.Collection<ProductCode> productCodes) {
-        if (productCodes == null) {
-            this.productCodes = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>(productCodes.size());
-            productCodesCopy.addAll(productCodes);
-            this.productCodes = productCodesCopy;
-        }
-
+        setProductCodes(productCodes);
         return this;
     }
 
     /**
-     * The architecture of the image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>i386, x86_64
-     *
-     * @return The architecture of the image.
-     *
-     * @see ArchitectureValues
-     */
-    public String getArchitecture() {
-        return architecture;
-    }
-    
-    /**
      * The architecture of the image.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>i386, x86_64
-     *
-     * @param architecture The architecture of the image.
-     *
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the image.
      * @see ArchitectureValues
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
-    
+
     /**
+     * <p>
      * The architecture of the image.
+     * </p>
+     * 
+     * @return The architecture of the image.
+     * @see ArchitectureValues
+     */
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>i386, x86_64
-     *
-     * @param architecture The architecture of the image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The architecture of the image.
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ArchitectureValues
      */
     public Image withArchitecture(String architecture) {
-        this.architecture = architecture;
+        setArchitecture(architecture);
         return this;
     }
 
     /**
-     * The architecture of the image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>i386, x86_64
-     *
-     * @param architecture The architecture of the image.
-     *
+     * The architecture of the image.
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ArchitectureValues
      */
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
-    
+
     /**
+     * <p>
      * The architecture of the image.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>i386, x86_64
-     *
-     * @param architecture The architecture of the image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ArchitectureValues
      */
     public Image withArchitecture(ArchitectureValues architecture) {
-        this.architecture = architecture.toString();
+        setArchitecture(architecture);
         return this;
     }
 
     /**
-     * The type of image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>machine, kernel, ramdisk
-     *
-     * @return The type of image.
-     *
-     * @see ImageTypeValues
-     */
-    public String getImageType() {
-        return imageType;
-    }
-    
-    /**
      * The type of image.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>machine, kernel, ramdisk
-     *
-     * @param imageType The type of image.
-     *
+     * </p>
+     * 
+     * @param imageType
+     *        The type of image.
      * @see ImageTypeValues
      */
     public void setImageType(String imageType) {
         this.imageType = imageType;
     }
-    
+
     /**
+     * <p>
      * The type of image.
+     * </p>
+     * 
+     * @return The type of image.
+     * @see ImageTypeValues
+     */
+    public String getImageType() {
+        return this.imageType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>machine, kernel, ramdisk
-     *
-     * @param imageType The type of image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of image.
+     * </p>
+     * 
+     * @param imageType
+     *        The type of image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ImageTypeValues
      */
     public Image withImageType(String imageType) {
-        this.imageType = imageType;
+        setImageType(imageType);
         return this;
     }
 
     /**
-     * The type of image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>machine, kernel, ramdisk
-     *
-     * @param imageType The type of image.
-     *
+     * The type of image.
+     * </p>
+     * 
+     * @param imageType
+     *        The type of image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ImageTypeValues
      */
     public void setImageType(ImageTypeValues imageType) {
         this.imageType = imageType.toString();
     }
-    
+
     /**
+     * <p>
      * The type of image.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>machine, kernel, ramdisk
-     *
-     * @param imageType The type of image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param imageType
+     *        The type of image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ImageTypeValues
      */
     public Image withImageType(ImageTypeValues imageType) {
-        this.imageType = imageType.toString();
+        setImageType(imageType);
         return this;
     }
 
     /**
-     * The kernel associated with the image, if any. Only applicable for
-     * machine images.
-     *
-     * @return The kernel associated with the image, if any. Only applicable for
-     *         machine images.
-     */
-    public String getKernelId() {
-        return kernelId;
-    }
-    
-    /**
-     * The kernel associated with the image, if any. Only applicable for
-     * machine images.
-     *
-     * @param kernelId The kernel associated with the image, if any. Only applicable for
-     *         machine images.
+     * <p>
+     * The kernel associated with the image, if any. Only applicable for machine
+     * images.
+     * </p>
+     * 
+     * @param kernelId
+     *        The kernel associated with the image, if any. Only applicable for
+     *        machine images.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
-    
+
     /**
-     * The kernel associated with the image, if any. Only applicable for
-     * machine images.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param kernelId The kernel associated with the image, if any. Only applicable for
+     * The kernel associated with the image, if any. Only applicable for machine
+     * images.
+     * </p>
+     * 
+     * @return The kernel associated with the image, if any. Only applicable for
      *         machine images.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getKernelId() {
+        return this.kernelId;
+    }
+
+    /**
+     * <p>
+     * The kernel associated with the image, if any. Only applicable for machine
+     * images.
+     * </p>
+     * 
+     * @param kernelId
+     *        The kernel associated with the image, if any. Only applicable for
+     *        machine images.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withKernelId(String kernelId) {
-        this.kernelId = kernelId;
+        setKernelId(kernelId);
         return this;
     }
 
     /**
+     * <p>
      * The RAM disk associated with the image, if any. Only applicable for
      * machine images.
-     *
-     * @return The RAM disk associated with the image, if any. Only applicable for
-     *         machine images.
-     */
-    public String getRamdiskId() {
-        return ramdiskId;
-    }
-    
-    /**
-     * The RAM disk associated with the image, if any. Only applicable for
-     * machine images.
-     *
-     * @param ramdiskId The RAM disk associated with the image, if any. Only applicable for
-     *         machine images.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The RAM disk associated with the image, if any. Only applicable
+     *        for machine images.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
-    
+
     /**
+     * <p>
      * The RAM disk associated with the image, if any. Only applicable for
      * machine images.
+     * </p>
+     * 
+     * @return The RAM disk associated with the image, if any. Only applicable
+     *         for machine images.
+     */
+    public String getRamdiskId() {
+        return this.ramdiskId;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ramdiskId The RAM disk associated with the image, if any. Only applicable for
-     *         machine images.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The RAM disk associated with the image, if any. Only applicable for
+     * machine images.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The RAM disk associated with the image, if any. Only applicable
+     *        for machine images.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withRamdiskId(String ramdiskId) {
-        this.ramdiskId = ramdiskId;
+        setRamdiskId(ramdiskId);
         return this;
     }
 
     /**
-     * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @return The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     *
-     * @see PlatformValues
-     */
-    public String getPlatform() {
-        return platform;
-    }
-    
-    /**
      * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     *
+     * </p>
+     * 
+     * @param platform
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise
+     *        blank.
      * @see PlatformValues
      */
     public void setPlatform(String platform) {
         this.platform = platform;
     }
-    
+
     /**
+     * <p>
      * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
+     * </p>
+     * 
+     * @return The value is <code>Windows</code> for Windows AMIs; otherwise
+     *         blank.
+     * @see PlatformValues
+     */
+    public String getPlatform() {
+        return this.platform;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
+     * </p>
+     * 
+     * @param platform
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise
+     *        blank.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlatformValues
      */
     public Image withPlatform(String platform) {
-        this.platform = platform;
+        setPlatform(platform);
         return this;
     }
 
     /**
-     * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     *
+     * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
+     * </p>
+     * 
+     * @param platform
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise
+     *        blank.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlatformValues
      */
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
-    
+
     /**
+     * <p>
      * The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The value is <code>Windows</code> for Windows AMIs; otherwise blank.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param platform
+     *        The value is <code>Windows</code> for Windows AMIs; otherwise
+     *        blank.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlatformValues
      */
     public Image withPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        setPlatform(platform);
         return this;
     }
 
     /**
+     * <p>
      * Specifies whether enhanced networking is enabled.
-     *
-     * @return Specifies whether enhanced networking is enabled.
-     */
-    public String getSriovNetSupport() {
-        return sriovNetSupport;
-    }
-    
-    /**
-     * Specifies whether enhanced networking is enabled.
-     *
-     * @param sriovNetSupport Specifies whether enhanced networking is enabled.
+     * </p>
+     * 
+     * @param sriovNetSupport
+     *        Specifies whether enhanced networking is enabled.
      */
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
-    
+
     /**
-     * Specifies whether enhanced networking is enabled.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sriovNetSupport Specifies whether enhanced networking is enabled.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specifies whether enhanced networking is enabled.
+     * </p>
+     * 
+     * @return Specifies whether enhanced networking is enabled.
+     */
+    public String getSriovNetSupport() {
+        return this.sriovNetSupport;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking is enabled.
+     * </p>
+     * 
+     * @param sriovNetSupport
+     *        Specifies whether enhanced networking is enabled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withSriovNetSupport(String sriovNetSupport) {
-        this.sriovNetSupport = sriovNetSupport;
+        setSriovNetSupport(sriovNetSupport);
         return this;
     }
 
     /**
+     * <p>
      * The reason for the state change.
-     *
-     * @return The reason for the state change.
-     */
-    public StateReason getStateReason() {
-        return stateReason;
-    }
-    
-    /**
-     * The reason for the state change.
-     *
-     * @param stateReason The reason for the state change.
+     * </p>
+     * 
+     * @param stateReason
+     *        The reason for the state change.
      */
     public void setStateReason(StateReason stateReason) {
         this.stateReason = stateReason;
     }
-    
+
     /**
-     * The reason for the state change.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stateReason The reason for the state change.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The reason for the state change.
+     * </p>
+     * 
+     * @return The reason for the state change.
+     */
+    public StateReason getStateReason() {
+        return this.stateReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the state change.
+     * </p>
+     * 
+     * @param stateReason
+     *        The reason for the state change.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withStateReason(StateReason stateReason) {
-        this.stateReason = stateReason;
+        setStateReason(stateReason);
         return this;
     }
 
     /**
+     * <p>
      * The AWS account alias (for example, <code>amazon</code>,
      * <code>self</code>) or the AWS account ID of the AMI owner.
-     *
-     * @return The AWS account alias (for example, <code>amazon</code>,
-     *         <code>self</code>) or the AWS account ID of the AMI owner.
-     */
-    public String getImageOwnerAlias() {
-        return imageOwnerAlias;
-    }
-    
-    /**
-     * The AWS account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the AWS account ID of the AMI owner.
-     *
-     * @param imageOwnerAlias The AWS account alias (for example, <code>amazon</code>,
-     *         <code>self</code>) or the AWS account ID of the AMI owner.
+     * </p>
+     * 
+     * @param imageOwnerAlias
+     *        The AWS account alias (for example, <code>amazon</code>,
+     *        <code>self</code>) or the AWS account ID of the AMI owner.
      */
     public void setImageOwnerAlias(String imageOwnerAlias) {
         this.imageOwnerAlias = imageOwnerAlias;
     }
-    
+
     /**
+     * <p>
      * The AWS account alias (for example, <code>amazon</code>,
      * <code>self</code>) or the AWS account ID of the AMI owner.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param imageOwnerAlias The AWS account alias (for example, <code>amazon</code>,
+     * </p>
+     * 
+     * @return The AWS account alias (for example, <code>amazon</code>,
      *         <code>self</code>) or the AWS account ID of the AMI owner.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getImageOwnerAlias() {
+        return this.imageOwnerAlias;
+    }
+
+    /**
+     * <p>
+     * The AWS account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the AWS account ID of the AMI owner.
+     * </p>
+     * 
+     * @param imageOwnerAlias
+     *        The AWS account alias (for example, <code>amazon</code>,
+     *        <code>self</code>) or the AWS account ID of the AMI owner.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withImageOwnerAlias(String imageOwnerAlias) {
-        this.imageOwnerAlias = imageOwnerAlias;
+        setImageOwnerAlias(imageOwnerAlias);
         return this;
     }
 
     /**
+     * <p>
      * The name of the AMI that was provided during image creation.
-     *
-     * @return The name of the AMI that was provided during image creation.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the AMI that was provided during image creation.
-     *
-     * @param name The name of the AMI that was provided during image creation.
+     * </p>
+     * 
+     * @param name
+     *        The name of the AMI that was provided during image creation.
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The name of the AMI that was provided during image creation.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param name The name of the AMI that was provided during image creation.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the AMI that was provided during image creation.
+     * </p>
+     * 
+     * @return The name of the AMI that was provided during image creation.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the AMI that was provided during image creation.
+     * </p>
+     * 
+     * @param name
+     *        The name of the AMI that was provided during image creation.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The description of the AMI that was provided during image creation.
-     *
-     * @return The description of the AMI that was provided during image creation.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * The description of the AMI that was provided during image creation.
-     *
-     * @param description The description of the AMI that was provided during image creation.
+     * </p>
+     * 
+     * @param description
+     *        The description of the AMI that was provided during image
+     *        creation.
      */
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
-     * The description of the AMI that was provided during image creation.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param description The description of the AMI that was provided during image creation.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The description of the AMI that was provided during image creation.
+     * </p>
+     * 
+     * @return The description of the AMI that was provided during image
+     *         creation.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the AMI that was provided during image creation.
+     * </p>
+     * 
+     * @param description
+     *        The description of the AMI that was provided during image
+     *        creation.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
-     * The type of root device used by the AMI. The AMI can use an EBS volume
-     * or an instance store volume.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @return The type of root device used by the AMI. The AMI can use an EBS volume
-     *         or an instance store volume.
-     *
-     * @see DeviceType
-     */
-    public String getRootDeviceType() {
-        return rootDeviceType;
-    }
-    
-    /**
-     * The type of root device used by the AMI. The AMI can use an EBS volume
-     * or an instance store volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
-     *         or an instance store volume.
-     *
+     * The type of root device used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
+     * </p>
+     * 
+     * @param rootDeviceType
+     *        The type of root device used by the AMI. The AMI can use an EBS
+     *        volume or an instance store volume.
      * @see DeviceType
      */
     public void setRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
     }
-    
+
     /**
-     * The type of root device used by the AMI. The AMI can use an EBS volume
-     * or an instance store volume.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The type of root device used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
+     * </p>
+     * 
+     * @return The type of root device used by the AMI. The AMI can use an EBS
+     *         volume or an instance store volume.
+     * @see DeviceType
+     */
+    public String getRootDeviceType() {
+        return this.rootDeviceType;
+    }
+
+    /**
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
-     *         or an instance store volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of root device used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
+     * </p>
+     * 
+     * @param rootDeviceType
+     *        The type of root device used by the AMI. The AMI can use an EBS
+     *        volume or an instance store volume.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see DeviceType
      */
     public Image withRootDeviceType(String rootDeviceType) {
-        this.rootDeviceType = rootDeviceType;
+        setRootDeviceType(rootDeviceType);
         return this;
     }
 
     /**
-     * The type of root device used by the AMI. The AMI can use an EBS volume
-     * or an instance store volume.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
-     *         or an instance store volume.
-     *
+     * The type of root device used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
+     * </p>
+     * 
+     * @param rootDeviceType
+     *        The type of root device used by the AMI. The AMI can use an EBS
+     *        volume or an instance store volume.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see DeviceType
      */
     public void setRootDeviceType(DeviceType rootDeviceType) {
         this.rootDeviceType = rootDeviceType.toString();
     }
-    
+
     /**
-     * The type of root device used by the AMI. The AMI can use an EBS volume
-     * or an instance store volume.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ebs, instance-store
-     *
-     * @param rootDeviceType The type of root device used by the AMI. The AMI can use an EBS volume
-     *         or an instance store volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of root device used by the AMI. The AMI can use an EBS volume or
+     * an instance store volume.
+     * </p>
+     * 
+     * @param rootDeviceType
+     *        The type of root device used by the AMI. The AMI can use an EBS
+     *        volume or an instance store volume.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see DeviceType
      */
     public Image withRootDeviceType(DeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        setRootDeviceType(rootDeviceType);
         return this;
     }
 
     /**
-     * The device name of the root device (for example,
-     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
-     *
-     * @return The device name of the root device (for example,
-     *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
-     */
-    public String getRootDeviceName() {
-        return rootDeviceName;
-    }
-    
-    /**
-     * The device name of the root device (for example,
-     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
-     *
-     * @param rootDeviceName The device name of the root device (for example,
-     *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * <p>
+     * The device name of the root device (for example, <code>/dev/sda1</code>
+     * or <code>/dev/xvda</code>).
+     * </p>
+     * 
+     * @param rootDeviceName
+     *        The device name of the root device (for example,
+     *        <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
-    
+
     /**
-     * The device name of the root device (for example,
-     * <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param rootDeviceName The device name of the root device (for example,
+     * The device name of the root device (for example, <code>/dev/sda1</code>
+     * or <code>/dev/xvda</code>).
+     * </p>
+     * 
+     * @return The device name of the root device (for example,
      *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     */
+    public String getRootDeviceName() {
+        return this.rootDeviceName;
+    }
+
+    /**
+     * <p>
+     * The device name of the root device (for example, <code>/dev/sda1</code>
+     * or <code>/dev/xvda</code>).
+     * </p>
+     * 
+     * @param rootDeviceName
+     *        The device name of the root device (for example,
+     *        <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withRootDeviceName(String rootDeviceName) {
-        this.rootDeviceName = rootDeviceName;
+        setRootDeviceName(rootDeviceName);
         return this;
     }
 
     /**
+     * <p>
      * Any block device mapping entries.
-     *
+     * </p>
+     * 
      * @return Any block device mapping entries.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
-              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
-              blockDeviceMappings.setAutoConstruct(true);
+            blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
         }
         return blockDeviceMappings;
     }
-    
+
     /**
+     * <p>
      * Any block device mapping entries.
-     *
-     * @param blockDeviceMappings Any block device mapping entries.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        Any block device mapping entries.
      */
-    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(
+            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
-        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
+
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
+                blockDeviceMappings);
     }
-    
+
     /**
+     * <p>
      * Any block device mapping entries.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
      * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param blockDeviceMappings Any block device mapping entries.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        Any block device mapping entries.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Image withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
-        for (BlockDeviceMapping value : blockDeviceMappings) {
-            getBlockDeviceMappings().add(value);
+    public Image withBlockDeviceMappings(
+            BlockDeviceMapping... blockDeviceMappings) {
+        if (this.blockDeviceMappings == null) {
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
+                    blockDeviceMappings.length));
+        }
+        for (BlockDeviceMapping ele : blockDeviceMappings) {
+            this.blockDeviceMappings.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * Any block device mapping entries.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param blockDeviceMappings Any block device mapping entries.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        Any block device mapping entries.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Image withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        if (blockDeviceMappings == null) {
-            this.blockDeviceMappings = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
-            this.blockDeviceMappings = blockDeviceMappingsCopy;
-        }
-
+    public Image withBlockDeviceMappings(
+            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
 
     /**
-     * The type of virtualization of the AMI.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>hvm, paravirtual
-     *
-     * @return The type of virtualization of the AMI.
-     *
-     * @see VirtualizationType
-     */
-    public String getVirtualizationType() {
-        return virtualizationType;
-    }
-    
-    /**
      * The type of virtualization of the AMI.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>hvm, paravirtual
-     *
-     * @param virtualizationType The type of virtualization of the AMI.
-     *
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The type of virtualization of the AMI.
      * @see VirtualizationType
      */
     public void setVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
     }
-    
+
     /**
+     * <p>
      * The type of virtualization of the AMI.
+     * </p>
+     * 
+     * @return The type of virtualization of the AMI.
+     * @see VirtualizationType
+     */
+    public String getVirtualizationType() {
+        return this.virtualizationType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>hvm, paravirtual
-     *
-     * @param virtualizationType The type of virtualization of the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The type of virtualization of the AMI.
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The type of virtualization of the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see VirtualizationType
      */
     public Image withVirtualizationType(String virtualizationType) {
-        this.virtualizationType = virtualizationType;
+        setVirtualizationType(virtualizationType);
         return this;
     }
 
     /**
-     * The type of virtualization of the AMI.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>hvm, paravirtual
-     *
-     * @param virtualizationType The type of virtualization of the AMI.
-     *
+     * The type of virtualization of the AMI.
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The type of virtualization of the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see VirtualizationType
      */
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         this.virtualizationType = virtualizationType.toString();
     }
-    
+
     /**
+     * <p>
      * The type of virtualization of the AMI.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>hvm, paravirtual
-     *
-     * @param virtualizationType The type of virtualization of the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The type of virtualization of the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see VirtualizationType
      */
     public Image withVirtualizationType(VirtualizationType virtualizationType) {
-        this.virtualizationType = virtualizationType.toString();
+        setVirtualizationType(virtualizationType);
         return this;
     }
 
     /**
+     * <p>
      * Any tags assigned to the image.
-     *
+     * </p>
+     * 
      * @return Any tags assigned to the image.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
-              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
-              tags.setAutoConstruct(true);
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
         }
         return tags;
     }
-    
+
     /**
+     * <p>
      * Any tags assigned to the image.
-     *
-     * @param tags Any tags assigned to the image.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-        tagsCopy.addAll(tags);
-        this.tags = tagsCopy;
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
     }
-    
+
     /**
+     * <p>
      * Any tags assigned to the image.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or {@link
-     * #withTags(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags Any tags assigned to the image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
-        for (Tag value : tags) {
-            getTags().add(value);
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * Any tags assigned to the image.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags Any tags assigned to the image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Any tags assigned to the image.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public Image withTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-            tagsCopy.addAll(tags);
-            this.tags = tagsCopy;
-        }
-
+        setTags(tags);
         return this;
     }
 
     /**
-     * The hypervisor type of the image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ovm, xen
-     *
-     * @return The hypervisor type of the image.
-     *
-     * @see HypervisorType
-     */
-    public String getHypervisor() {
-        return hypervisor;
-    }
-    
-    /**
      * The hypervisor type of the image.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ovm, xen
-     *
-     * @param hypervisor The hypervisor type of the image.
-     *
+     * </p>
+     * 
+     * @param hypervisor
+     *        The hypervisor type of the image.
      * @see HypervisorType
      */
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
-    
+
     /**
+     * <p>
      * The hypervisor type of the image.
+     * </p>
+     * 
+     * @return The hypervisor type of the image.
+     * @see HypervisorType
+     */
+    public String getHypervisor() {
+        return this.hypervisor;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ovm, xen
-     *
-     * @param hypervisor The hypervisor type of the image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The hypervisor type of the image.
+     * </p>
+     * 
+     * @param hypervisor
+     *        The hypervisor type of the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see HypervisorType
      */
     public Image withHypervisor(String hypervisor) {
-        this.hypervisor = hypervisor;
+        setHypervisor(hypervisor);
         return this;
     }
 
     /**
-     * The hypervisor type of the image.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ovm, xen
-     *
-     * @param hypervisor The hypervisor type of the image.
-     *
+     * The hypervisor type of the image.
+     * </p>
+     * 
+     * @param hypervisor
+     *        The hypervisor type of the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see HypervisorType
      */
     public void setHypervisor(HypervisorType hypervisor) {
         this.hypervisor = hypervisor.toString();
     }
-    
+
     /**
+     * <p>
      * The hypervisor type of the image.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ovm, xen
-     *
-     * @param hypervisor The hypervisor type of the image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param hypervisor
+     *        The hypervisor type of the image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see HypervisorType
      */
     public Image withHypervisor(HypervisorType hypervisor) {
-        this.hypervisor = hypervisor.toString();
+        setHypervisor(hypervisor);
         return this;
     }
 
@@ -1490,134 +1498,276 @@ public class Image implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
-        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");
-        if (getState() != null) sb.append("State: " + getState() + ",");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
-        if (isPublic() != null) sb.append("Public: " + isPublic() + ",");
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
-        if (getImageType() != null) sb.append("ImageType: " + getImageType() + ",");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");
-        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
-        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");
-        if (getImageOwnerAlias() != null) sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ",");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
-        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
-        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
-        if (getHypervisor() != null) sb.append("Hypervisor: " + getHypervisor() );
+        if (getImageId() != null)
+            sb.append("ImageId: " + getImageId() + ",");
+        if (getImageLocation() != null)
+            sb.append("ImageLocation: " + getImageLocation() + ",");
+        if (getState() != null)
+            sb.append("State: " + getState() + ",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getCreationDate() != null)
+            sb.append("CreationDate: " + getCreationDate() + ",");
+        if (getPublic() != null)
+            sb.append("Public: " + getPublic() + ",");
+        if (getProductCodes() != null)
+            sb.append("ProductCodes: " + getProductCodes() + ",");
+        if (getArchitecture() != null)
+            sb.append("Architecture: " + getArchitecture() + ",");
+        if (getImageType() != null)
+            sb.append("ImageType: " + getImageType() + ",");
+        if (getKernelId() != null)
+            sb.append("KernelId: " + getKernelId() + ",");
+        if (getRamdiskId() != null)
+            sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getPlatform() != null)
+            sb.append("Platform: " + getPlatform() + ",");
+        if (getSriovNetSupport() != null)
+            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (getStateReason() != null)
+            sb.append("StateReason: " + getStateReason() + ",");
+        if (getImageOwnerAlias() != null)
+            sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getRootDeviceType() != null)
+            sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+        if (getRootDeviceName() != null)
+            sb.append("RootDeviceName: " + getRootDeviceName() + ",");
+        if (getBlockDeviceMappings() != null)
+            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (getVirtualizationType() != null)
+            sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags() + ",");
+        if (getHypervisor() != null)
+            sb.append("Hypervisor: " + getHypervisor());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Image == false)
+            return false;
+        Image other = (Image) obj;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null
+                && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getImageLocation() == null ^ this.getImageLocation() == null)
+            return false;
+        if (other.getImageLocation() != null
+                && other.getImageLocation().equals(this.getImageLocation()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null
+                && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null
+                && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null)
+            return false;
+        if (other.getCreationDate() != null
+                && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getPublic() == null ^ this.getPublic() == null)
+            return false;
+        if (other.getPublic() != null
+                && other.getPublic().equals(this.getPublic()) == false)
+            return false;
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null)
+            return false;
+        if (other.getProductCodes() != null
+                && other.getProductCodes().equals(this.getProductCodes()) == false)
+            return false;
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
+            return false;
+        if (other.getArchitecture() != null
+                && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
+        if (other.getImageType() == null ^ this.getImageType() == null)
+            return false;
+        if (other.getImageType() != null
+                && other.getImageType().equals(this.getImageType()) == false)
+            return false;
+        if (other.getKernelId() == null ^ this.getKernelId() == null)
+            return false;
+        if (other.getKernelId() != null
+                && other.getKernelId().equals(this.getKernelId()) == false)
+            return false;
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
+            return false;
+        if (other.getRamdiskId() != null
+                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+            return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null
+                && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
+        if (other.getSriovNetSupport() == null
+                ^ this.getSriovNetSupport() == null)
+            return false;
+        if (other.getSriovNetSupport() != null
+                && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
+            return false;
+        if (other.getStateReason() == null ^ this.getStateReason() == null)
+            return false;
+        if (other.getStateReason() != null
+                && other.getStateReason().equals(this.getStateReason()) == false)
+            return false;
+        if (other.getImageOwnerAlias() == null
+                ^ this.getImageOwnerAlias() == null)
+            return false;
+        if (other.getImageOwnerAlias() != null
+                && other.getImageOwnerAlias().equals(this.getImageOwnerAlias()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getRootDeviceType() == null
+                ^ this.getRootDeviceType() == null)
+            return false;
+        if (other.getRootDeviceType() != null
+                && other.getRootDeviceType().equals(this.getRootDeviceType()) == false)
+            return false;
+        if (other.getRootDeviceName() == null
+                ^ this.getRootDeviceName() == null)
+            return false;
+        if (other.getRootDeviceName() != null
+                && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
+            return false;
+        if (other.getBlockDeviceMappings() == null
+                ^ this.getBlockDeviceMappings() == null)
+            return false;
+        if (other.getBlockDeviceMappings() != null
+                && other.getBlockDeviceMappings().equals(
+                        this.getBlockDeviceMappings()) == false)
+            return false;
+        if (other.getVirtualizationType() == null
+                ^ this.getVirtualizationType() == null)
+            return false;
+        if (other.getVirtualizationType() != null
+                && other.getVirtualizationType().equals(
+                        this.getVirtualizationType()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getHypervisor() == null ^ this.getHypervisor() == null)
+            return false;
+        if (other.getHypervisor() != null
+                && other.getHypervisor().equals(this.getHypervisor()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
-        hashCode = prime * hashCode + ((getImageLocation() == null) ? 0 : getImageLocation().hashCode()); 
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
-        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
-        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode()); 
-        hashCode = prime * hashCode + ((isPublic() == null) ? 0 : isPublic().hashCode()); 
-        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
-        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
-        hashCode = prime * hashCode + ((getImageType() == null) ? 0 : getImageType().hashCode()); 
-        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
-        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
-        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode()); 
-        hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
-        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode()); 
-        hashCode = prime * hashCode + ((getImageOwnerAlias() == null) ? 0 : getImageOwnerAlias().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
-        hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
-        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
-        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
-        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getImageLocation() == null) ? 0 : getImageLocation()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode
+                + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCreationDate() == null) ? 0 : getCreationDate()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getPublic() == null) ? 0 : getPublic().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProductCodes() == null) ? 0 : getProductCodes()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getArchitecture() == null) ? 0 : getArchitecture()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getImageType() == null) ? 0 : getImageType().hashCode());
+        hashCode = prime * hashCode
+                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode
+                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode
+                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getImageOwnerAlias() == null) ? 0 : getImageOwnerAlias()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRootDeviceType() == null) ? 0 : getRootDeviceType()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRootDeviceName() == null) ? 0 : getRootDeviceName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBlockDeviceMappings() == null) ? 0
+                        : getBlockDeviceMappings().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVirtualizationType() == null) ? 0
+                        : getVirtualizationType().hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode
+                + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Image == false) return false;
-        Image other = (Image)obj;
-        
-        if (other.getImageId() == null ^ this.getImageId() == null) return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
-        if (other.getImageLocation() == null ^ this.getImageLocation() == null) return false;
-        if (other.getImageLocation() != null && other.getImageLocation().equals(this.getImageLocation()) == false) return false; 
-        if (other.getState() == null ^ this.getState() == null) return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
-        if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
-        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
-        if (other.getCreationDate() == null ^ this.getCreationDate() == null) return false;
-        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false) return false; 
-        if (other.isPublic() == null ^ this.isPublic() == null) return false;
-        if (other.isPublic() != null && other.isPublic().equals(this.isPublic()) == false) return false; 
-        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
-        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
-        if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
-        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
-        if (other.getImageType() == null ^ this.getImageType() == null) return false;
-        if (other.getImageType() != null && other.getImageType().equals(this.getImageType()) == false) return false; 
-        if (other.getKernelId() == null ^ this.getKernelId() == null) return false;
-        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false) return false; 
-        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null) return false;
-        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
-        if (other.getPlatform() == null ^ this.getPlatform() == null) return false;
-        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false) return false; 
-        if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
-        if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
-        if (other.getStateReason() == null ^ this.getStateReason() == null) return false;
-        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false) return false; 
-        if (other.getImageOwnerAlias() == null ^ this.getImageOwnerAlias() == null) return false;
-        if (other.getImageOwnerAlias() != null && other.getImageOwnerAlias().equals(this.getImageOwnerAlias()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null) return false;
-        if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
-        if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null) return false;
-        if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false) return false; 
-        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
-        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
-        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
-        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
-        if (other.getTags() == null ^ this.getTags() == null) return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
-        if (other.getHypervisor() == null ^ this.getHypervisor() == null) return false;
-        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Image clone() {
         try {
             return (Image) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

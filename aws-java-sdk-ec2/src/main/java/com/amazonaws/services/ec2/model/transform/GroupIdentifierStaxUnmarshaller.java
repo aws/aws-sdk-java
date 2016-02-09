@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,28 +28,36 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Group Identifier StAX Unmarshaller
+ * GroupIdentifier StAX Unmarshaller
  */
-public class GroupIdentifierStaxUnmarshaller implements Unmarshaller<GroupIdentifier, StaxUnmarshallerContext> {
+public class GroupIdentifierStaxUnmarshaller implements
+        Unmarshaller<GroupIdentifier, StaxUnmarshallerContext> {
 
-    public GroupIdentifier unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public GroupIdentifier unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         GroupIdentifier groupIdentifier = new GroupIdentifier();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return groupIdentifier;
+            if (xmlEvent.isEndDocument())
+                return groupIdentifier;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("groupName", targetDepth)) {
-                    groupIdentifier.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    groupIdentifier.setGroupName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("groupId", targetDepth)) {
-                    groupIdentifier.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    groupIdentifier.setGroupId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +69,10 @@ public class GroupIdentifierStaxUnmarshaller implements Unmarshaller<GroupIdenti
     }
 
     private static GroupIdentifierStaxUnmarshaller instance;
+
     public static GroupIdentifierStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new GroupIdentifierStaxUnmarshaller();
+        if (instance == null)
+            instance = new GroupIdentifierStaxUnmarshaller();
         return instance;
     }
 }
-    

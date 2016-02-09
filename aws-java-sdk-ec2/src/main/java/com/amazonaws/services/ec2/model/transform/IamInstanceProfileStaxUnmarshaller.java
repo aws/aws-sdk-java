@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,28 +28,36 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Iam Instance Profile StAX Unmarshaller
+ * IamInstanceProfile StAX Unmarshaller
  */
-public class IamInstanceProfileStaxUnmarshaller implements Unmarshaller<IamInstanceProfile, StaxUnmarshallerContext> {
+public class IamInstanceProfileStaxUnmarshaller implements
+        Unmarshaller<IamInstanceProfile, StaxUnmarshallerContext> {
 
-    public IamInstanceProfile unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public IamInstanceProfile unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         IamInstanceProfile iamInstanceProfile = new IamInstanceProfile();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return iamInstanceProfile;
+            if (xmlEvent.isEndDocument())
+                return iamInstanceProfile;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("arn", targetDepth)) {
-                    iamInstanceProfile.setArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    iamInstanceProfile.setArn(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("id", targetDepth)) {
-                    iamInstanceProfile.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    iamInstanceProfile.setId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +69,10 @@ public class IamInstanceProfileStaxUnmarshaller implements Unmarshaller<IamInsta
     }
 
     private static IamInstanceProfileStaxUnmarshaller instance;
+
     public static IamInstanceProfileStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new IamInstanceProfileStaxUnmarshaller();
+        if (instance == null)
+            instance = new IamInstanceProfileStaxUnmarshaller();
         return instance;
     }
 }
-    

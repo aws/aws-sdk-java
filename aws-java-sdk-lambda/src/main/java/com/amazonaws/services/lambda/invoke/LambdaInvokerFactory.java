@@ -74,8 +74,23 @@ public final class LambdaInvokerFactory {
      *            the lambda client to use for making remote calls
      */
     public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda) {
+        return build(interfaceClass, awsLambda, new LambdaInvokerFactoryConfig());
+    }
+
+    /**
+     * Creates a new Lambda invoker implementing the given interface and wrapping the given
+     * {@code AWSLambda} client.
+     *
+     * @param interfaceClass
+     *            the interface to implement
+     * @param awsLambda
+     *            the lambda client to use for making remote calls
+     * @param config
+     *            configuration for the LambdaInvokerFactory
+     */
+    public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
         Object proxy = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[] { interfaceClass },
-                new LambdaInvocationHandler(interfaceClass, awsLambda));
+                new LambdaInvocationHandler(interfaceClass, awsLambda, config));
 
         return interfaceClass.cast(proxy);
     }
@@ -87,11 +102,13 @@ public final class LambdaInvokerFactory {
 
         private final AWSLambda awsLambda;
         private final Log log;
+        private final LambdaInvokerFactoryConfig config;
 
-        public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda) {
+        public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
 
             this.awsLambda = awsLambda;
             this.log = LogFactory.getLog(interfaceClass);
+            this.config = config;
         }
 
         @Override
@@ -136,10 +153,7 @@ public final class LambdaInvokerFactory {
 
             InvokeRequest invokeRequest = new InvokeRequest();
 
-            String functionName = annotation.functionName();
-            if (functionName.isEmpty()) {
-                functionName = method.getName();
-            }
+            String functionName = config.getLambdaFunctionNameResolver().getFunctionName(method, annotation, config);
 
             invokeRequest.setFunctionName(functionName);
             invokeRequest.setInvocationType(annotation.invocationType());

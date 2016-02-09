@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,40 +28,61 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Describe Network Interface Attribute Result StAX Unmarshaller
+ * DescribeNetworkInterfaceAttributeResult StAX Unmarshaller
  */
-public class DescribeNetworkInterfaceAttributeResultStaxUnmarshaller implements Unmarshaller<DescribeNetworkInterfaceAttributeResult, StaxUnmarshallerContext> {
+public class DescribeNetworkInterfaceAttributeResultStaxUnmarshaller
+        implements
+        Unmarshaller<DescribeNetworkInterfaceAttributeResult, StaxUnmarshallerContext> {
 
-    public DescribeNetworkInterfaceAttributeResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DescribeNetworkInterfaceAttributeResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         DescribeNetworkInterfaceAttributeResult describeNetworkInterfaceAttributeResult = new DescribeNetworkInterfaceAttributeResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return describeNetworkInterfaceAttributeResult;
+            if (xmlEvent.isEndDocument())
+                return describeNetworkInterfaceAttributeResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeNetworkInterfaceAttributeResult
+                            .setNetworkInterfaceId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("description/value", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeNetworkInterfaceAttributeResult
+                            .setDescription(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("sourceDestCheck/value", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("sourceDestCheck/value", targetDepth)) {
+                    describeNetworkInterfaceAttributeResult
+                            .setSourceDestCheck(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.getGroups().add(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeNetworkInterfaceAttributeResult.getGroups().add(
+                            GroupIdentifierStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("attachment", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setAttachment(NetworkInterfaceAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeNetworkInterfaceAttributeResult
+                            .setAttachment(NetworkInterfaceAttachmentStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -72,9 +94,10 @@ public class DescribeNetworkInterfaceAttributeResultStaxUnmarshaller implements 
     }
 
     private static DescribeNetworkInterfaceAttributeResultStaxUnmarshaller instance;
+
     public static DescribeNetworkInterfaceAttributeResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller();
         return instance;
     }
 }
-    

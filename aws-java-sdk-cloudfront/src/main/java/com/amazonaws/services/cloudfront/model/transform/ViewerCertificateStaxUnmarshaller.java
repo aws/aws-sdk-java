@@ -49,15 +49,24 @@ public class ViewerCertificateStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("Certificate", targetDepth)) {
-                    viewerCertificate.setCertificate(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                if (context.testExpression("CloudFrontDefaultCertificate",
+                        targetDepth)) {
+                    viewerCertificate
+                            .setCloudFrontDefaultCertificate(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("CertificateSource", targetDepth)) {
+                if (context.testExpression("IAMCertificateId", targetDepth)) {
                     viewerCertificate
-                            .setCertificateSource(StringStaxUnmarshaller
+                            .setIAMCertificateId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ACMCertificateArn", targetDepth)) {
+                    viewerCertificate
+                            .setACMCertificateArn(StringStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
@@ -77,17 +86,15 @@ public class ViewerCertificateStaxUnmarshaller implements
                     continue;
                 }
 
-                if (context.testExpression("IAMCertificateId", targetDepth)) {
-                    viewerCertificate
-                            .setIAMCertificateId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("Certificate", targetDepth)) {
+                    viewerCertificate.setCertificate(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("CloudFrontDefaultCertificate",
-                        targetDepth)) {
+                if (context.testExpression("CertificateSource", targetDepth)) {
                     viewerCertificate
-                            .setCloudFrontDefaultCertificate(BooleanStaxUnmarshaller
+                            .setCertificateSource(StringStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

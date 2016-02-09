@@ -3258,8 +3258,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -3505,8 +3505,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -4607,8 +4607,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Stage",
           "simple" : false,
+          "simpleType" : "Stage",
           "map" : false,
           "templateType" : "java.util.List<Stage>",
           "templateImplType" : "java.util.ArrayList<Stage>"
@@ -4746,8 +4746,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Stage",
             "simple" : false,
+            "simpleType" : "Stage",
             "map" : false,
             "templateType" : "java.util.List<Stage>",
             "templateImplType" : "java.util.ArrayList<Stage>"
@@ -7454,8 +7454,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "StageKey",
           "simple" : false,
+          "simpleType" : "StageKey",
           "map" : false,
           "templateType" : "java.util.List<StageKey>",
           "templateImplType" : "java.util.ArrayList<StageKey>"
@@ -7753,8 +7753,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "StageKey",
             "simple" : false,
+            "simpleType" : "StageKey",
             "map" : false,
             "templateType" : "java.util.List<StageKey>",
             "templateImplType" : "java.util.ArrayList<StageKey>"
@@ -8511,8 +8511,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "RestApi",
           "simple" : false,
+          "simpleType" : "RestApi",
           "map" : false,
           "templateType" : "java.util.List<RestApi>",
           "templateImplType" : "java.util.ArrayList<RestApi>"
@@ -8650,8 +8650,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "RestApi",
             "simple" : false,
+            "simpleType" : "RestApi",
             "map" : false,
             "templateType" : "java.util.List<RestApi>",
             "templateImplType" : "java.util.ArrayList<RestApi>"
@@ -16923,8 +16923,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -17170,8 +17170,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -17586,8 +17586,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -17885,8 +17885,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -21982,8 +21982,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -22229,8 +22229,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -22511,8 +22511,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -22758,8 +22758,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -23966,8 +23966,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24109,8 +24109,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24637,8 +24637,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -24780,8 +24780,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -25013,8 +25013,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -25156,8 +25156,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -25619,8 +25619,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -26280,8 +26280,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -26614,8 +26614,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -27012,8 +27012,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -29286,8 +29286,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Deployment",
           "simple" : false,
+          "simpleType" : "Deployment",
           "map" : false,
           "templateType" : "java.util.List<Deployment>",
           "templateImplType" : "java.util.ArrayList<Deployment>"
@@ -29425,8 +29425,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Deployment",
             "simple" : false,
+            "simpleType" : "Deployment",
             "map" : false,
             "templateType" : "java.util.List<Deployment>",
             "templateImplType" : "java.util.ArrayList<Deployment>"
@@ -30404,8 +30404,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -30802,8 +30802,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -34695,8 +34695,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -35231,8 +35231,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -40497,8 +40497,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -41158,8 +41158,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -42120,8 +42120,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "DomainName",
           "simple" : false,
+          "simpleType" : "DomainName",
           "map" : false,
           "templateType" : "java.util.List<DomainName>",
           "templateImplType" : "java.util.ArrayList<DomainName>"
@@ -42259,8 +42259,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "DomainName",
             "simple" : false,
+            "simpleType" : "DomainName",
             "map" : false,
             "templateType" : "java.util.List<DomainName>",
             "templateImplType" : "java.util.ArrayList<DomainName>"
@@ -43661,8 +43661,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -43856,8 +43856,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -44416,8 +44416,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ClientCertificate",
           "simple" : false,
+          "simpleType" : "ClientCertificate",
           "map" : false,
           "templateType" : "java.util.List<ClientCertificate>",
           "templateImplType" : "java.util.ArrayList<ClientCertificate>"
@@ -44555,8 +44555,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ClientCertificate",
             "simple" : false,
+            "simpleType" : "ClientCertificate",
             "map" : false,
             "templateType" : "java.util.List<ClientCertificate>",
             "templateImplType" : "java.util.ArrayList<ClientCertificate>"
@@ -47122,8 +47122,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "BasePathMapping",
           "simple" : false,
+          "simpleType" : "BasePathMapping",
           "map" : false,
           "templateType" : "java.util.List<BasePathMapping>",
           "templateImplType" : "java.util.ArrayList<BasePathMapping>"
@@ -47261,8 +47261,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "BasePathMapping",
             "simple" : false,
+            "simpleType" : "BasePathMapping",
             "map" : false,
             "templateType" : "java.util.List<BasePathMapping>",
             "templateImplType" : "java.util.ArrayList<BasePathMapping>"
@@ -47776,8 +47776,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -48437,8 +48437,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -48669,8 +48669,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -48864,8 +48864,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -49994,8 +49994,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Model",
           "simple" : false,
+          "simpleType" : "Model",
           "map" : false,
           "templateType" : "java.util.List<Model>",
           "templateImplType" : "java.util.ArrayList<Model>"
@@ -50133,8 +50133,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Model",
             "simple" : false,
+            "simpleType" : "Model",
             "map" : false,
             "templateType" : "java.util.List<Model>",
             "templateImplType" : "java.util.ArrayList<Model>"
@@ -51246,8 +51246,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -51493,8 +51493,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -52277,8 +52277,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -52576,8 +52576,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -52910,8 +52910,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -53308,8 +53308,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -54017,8 +54017,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -54678,8 +54678,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -57098,8 +57098,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Resource",
           "simple" : false,
+          "simpleType" : "Resource",
           "map" : false,
           "templateType" : "java.util.List<Resource>",
           "templateImplType" : "java.util.ArrayList<Resource>"
@@ -57237,8 +57237,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Resource",
             "simple" : false,
+            "simpleType" : "Resource",
             "map" : false,
             "templateType" : "java.util.List<Resource>",
             "templateImplType" : "java.util.ArrayList<Resource>"
@@ -62559,8 +62559,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -62754,8 +62754,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -63076,8 +63076,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ApiKey",
           "simple" : false,
+          "simpleType" : "ApiKey",
           "map" : false,
           "templateType" : "java.util.List<ApiKey>",
           "templateImplType" : "java.util.ArrayList<ApiKey>"
@@ -63215,8 +63215,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ApiKey",
             "simple" : false,
+            "simpleType" : "ApiKey",
             "map" : false,
             "templateType" : "java.util.List<ApiKey>",
             "templateImplType" : "java.util.ArrayList<ApiKey>"
@@ -63549,8 +63549,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -63947,8 +63947,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -68241,8 +68241,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PatchOperation",
           "simple" : false,
+          "simpleType" : "PatchOperation",
           "map" : false,
           "templateType" : "java.util.List<PatchOperation>",
           "templateImplType" : "java.util.ArrayList<PatchOperation>"
@@ -68488,8 +68488,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PatchOperation",
             "simple" : false,
+            "simpleType" : "PatchOperation",
             "map" : false,
             "templateType" : "java.util.List<PatchOperation>",
             "templateImplType" : "java.util.ArrayList<PatchOperation>"

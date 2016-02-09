@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -24,176 +26,178 @@ import java.io.Serializable;
 public class LaunchPermissionModifications implements Serializable, Cloneable {
 
     /**
-     * The AWS account ID to add to the list of launch permissions for the
-     * AMI.
+     * <p>
+     * The AWS account ID to add to the list of launch permissions for the AMI.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> add;
+    private com.amazonaws.internal.SdkInternalList<LaunchPermission> add;
+    /**
+     * <p>
+     * The AWS account ID to remove from the list of launch permissions for the
+     * AMI.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchPermission> remove;
 
     /**
-     * The AWS account ID to remove from the list of launch permissions for
-     * the AMI.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> remove;
-
-    /**
-     * The AWS account ID to add to the list of launch permissions for the
-     * AMI.
-     *
-     * @return The AWS account ID to add to the list of launch permissions for the
-     *         AMI.
+     * <p>
+     * The AWS account ID to add to the list of launch permissions for the AMI.
+     * </p>
+     * 
+     * @return The AWS account ID to add to the list of launch permissions for
+     *         the AMI.
      */
     public java.util.List<LaunchPermission> getAdd() {
         if (add == null) {
-              add = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>();
-              add.setAutoConstruct(true);
+            add = new com.amazonaws.internal.SdkInternalList<LaunchPermission>();
         }
         return add;
     }
-    
+
     /**
-     * The AWS account ID to add to the list of launch permissions for the
-     * AMI.
-     *
-     * @param add The AWS account ID to add to the list of launch permissions for the
-     *         AMI.
+     * <p>
+     * The AWS account ID to add to the list of launch permissions for the AMI.
+     * </p>
+     * 
+     * @param add
+     *        The AWS account ID to add to the list of launch permissions for
+     *        the AMI.
      */
     public void setAdd(java.util.Collection<LaunchPermission> add) {
         if (add == null) {
             this.add = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> addCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>(add.size());
-        addCopy.addAll(add);
-        this.add = addCopy;
+
+        this.add = new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
+                add);
     }
-    
+
     /**
-     * The AWS account ID to add to the list of launch permissions for the
-     * AMI.
+     * <p>
+     * The AWS account ID to add to the list of launch permissions for the AMI.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAdd(java.util.Collection)} or {@link
-     * #withAdd(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param add The AWS account ID to add to the list of launch permissions for the
-     *         AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setAdd(java.util.Collection)} or
+     * {@link #withAdd(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param add
+     *        The AWS account ID to add to the list of launch permissions for
+     *        the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LaunchPermissionModifications withAdd(LaunchPermission... add) {
-        if (getAdd() == null) setAdd(new java.util.ArrayList<LaunchPermission>(add.length));
-        for (LaunchPermission value : add) {
-            getAdd().add(value);
+        if (this.add == null) {
+            setAdd(new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
+                    add.length));
+        }
+        for (LaunchPermission ele : add) {
+            this.add.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The AWS account ID to add to the list of launch permissions for the
-     * AMI.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param add The AWS account ID to add to the list of launch permissions for the
-     *         AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AWS account ID to add to the list of launch permissions for the AMI.
+     * </p>
+     * 
+     * @param add
+     *        The AWS account ID to add to the list of launch permissions for
+     *        the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LaunchPermissionModifications withAdd(java.util.Collection<LaunchPermission> add) {
-        if (add == null) {
-            this.add = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> addCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>(add.size());
-            addCopy.addAll(add);
-            this.add = addCopy;
-        }
-
+    public LaunchPermissionModifications withAdd(
+            java.util.Collection<LaunchPermission> add) {
+        setAdd(add);
         return this;
     }
 
     /**
-     * The AWS account ID to remove from the list of launch permissions for
-     * the AMI.
-     *
-     * @return The AWS account ID to remove from the list of launch permissions for
-     *         the AMI.
+     * <p>
+     * The AWS account ID to remove from the list of launch permissions for the
+     * AMI.
+     * </p>
+     * 
+     * @return The AWS account ID to remove from the list of launch permissions
+     *         for the AMI.
      */
     public java.util.List<LaunchPermission> getRemove() {
         if (remove == null) {
-              remove = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>();
-              remove.setAutoConstruct(true);
+            remove = new com.amazonaws.internal.SdkInternalList<LaunchPermission>();
         }
         return remove;
     }
-    
+
     /**
-     * The AWS account ID to remove from the list of launch permissions for
-     * the AMI.
-     *
-     * @param remove The AWS account ID to remove from the list of launch permissions for
-     *         the AMI.
+     * <p>
+     * The AWS account ID to remove from the list of launch permissions for the
+     * AMI.
+     * </p>
+     * 
+     * @param remove
+     *        The AWS account ID to remove from the list of launch permissions
+     *        for the AMI.
      */
     public void setRemove(java.util.Collection<LaunchPermission> remove) {
         if (remove == null) {
             this.remove = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> removeCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>(remove.size());
-        removeCopy.addAll(remove);
-        this.remove = removeCopy;
+
+        this.remove = new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
+                remove);
     }
-    
+
     /**
-     * The AWS account ID to remove from the list of launch permissions for
-     * the AMI.
+     * <p>
+     * The AWS account ID to remove from the list of launch permissions for the
+     * AMI.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRemove(java.util.Collection)} or {@link
-     * #withRemove(java.util.Collection)} if you want to override the
+     * any). Use {@link #setRemove(java.util.Collection)} or
+     * {@link #withRemove(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param remove The AWS account ID to remove from the list of launch permissions for
-     *         the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param remove
+     *        The AWS account ID to remove from the list of launch permissions
+     *        for the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public LaunchPermissionModifications withRemove(LaunchPermission... remove) {
-        if (getRemove() == null) setRemove(new java.util.ArrayList<LaunchPermission>(remove.length));
-        for (LaunchPermission value : remove) {
-            getRemove().add(value);
+        if (this.remove == null) {
+            setRemove(new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
+                    remove.length));
+        }
+        for (LaunchPermission ele : remove) {
+            this.remove.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The AWS account ID to remove from the list of launch permissions for
-     * the AMI.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param remove The AWS account ID to remove from the list of launch permissions for
-     *         the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public LaunchPermissionModifications withRemove(java.util.Collection<LaunchPermission> remove) {
-        if (remove == null) {
-            this.remove = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> removeCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>(remove.size());
-            removeCopy.addAll(remove);
-            this.remove = removeCopy;
-        }
 
+    /**
+     * <p>
+     * The AWS account ID to remove from the list of launch permissions for the
+     * AMI.
+     * </p>
+     * 
+     * @param remove
+     *        The AWS account ID to remove from the list of launch permissions
+     *        for the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public LaunchPermissionModifications withRemove(
+            java.util.Collection<LaunchPermission> remove) {
+        setRemove(remove);
         return this;
     }
 
@@ -209,50 +213,57 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAdd() != null) sb.append("Add: " + getAdd() + ",");
-        if (getRemove() != null) sb.append("Remove: " + getRemove() );
+        if (getAdd() != null)
+            sb.append("Add: " + getAdd() + ",");
+        if (getRemove() != null)
+            sb.append("Remove: " + getRemove());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof LaunchPermissionModifications == false)
+            return false;
+        LaunchPermissionModifications other = (LaunchPermissionModifications) obj;
+        if (other.getAdd() == null ^ this.getAdd() == null)
+            return false;
+        if (other.getAdd() != null
+                && other.getAdd().equals(this.getAdd()) == false)
+            return false;
+        if (other.getRemove() == null ^ this.getRemove() == null)
+            return false;
+        if (other.getRemove() != null
+                && other.getRemove().equals(this.getRemove()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAdd() == null) ? 0 : getAdd().hashCode()); 
-        hashCode = prime * hashCode + ((getRemove() == null) ? 0 : getRemove().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAdd() == null) ? 0 : getAdd().hashCode());
+        hashCode = prime * hashCode
+                + ((getRemove() == null) ? 0 : getRemove().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof LaunchPermissionModifications == false) return false;
-        LaunchPermissionModifications other = (LaunchPermissionModifications)obj;
-        
-        if (other.getAdd() == null ^ this.getAdd() == null) return false;
-        if (other.getAdd() != null && other.getAdd().equals(this.getAdd()) == false) return false; 
-        if (other.getRemove() == null ^ this.getRemove() == null) return false;
-        if (other.getRemove() != null && other.getRemove().equals(this.getRemove()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public LaunchPermissionModifications clone() {
         try {
             return (LaunchPermissionModifications) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

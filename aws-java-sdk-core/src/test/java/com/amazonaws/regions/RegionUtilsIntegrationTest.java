@@ -34,14 +34,13 @@ public class RegionUtilsIntegrationTest {
     @After
     public void clearProperties() {
         System.clearProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY);
+        RegionUtils.initialize();
     }
 
     @Test
     public void testGetRegionByEndpoint() {
 
         RegionUtils.initialize();
-        assertEquals("/com/amazonaws/regions/regions.xml", RegionUtils.getSource());
-
         assertEquals("us-east-1", RegionUtils.getRegionByEndpoint("redshift.us-east-1.amazonaws.com/bla").getName());
         assertEquals("us-east-1", RegionUtils.getRegionByEndpoint("http://redshift.us-east-1.amazonaws.com").getName());
     }
@@ -57,8 +56,6 @@ public class RegionUtilsIntegrationTest {
         System.setProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY, fakeRegionFilePath);
 
         RegionUtils.initialize();
-
-        assertEquals(fakeRegionFilePath, RegionUtils.getSource());
         assertEquals(2, RegionUtils.getRegions().size());
 
         assertEquals("hostname.com", RegionUtils.getRegion("us-east-1").getDomain());

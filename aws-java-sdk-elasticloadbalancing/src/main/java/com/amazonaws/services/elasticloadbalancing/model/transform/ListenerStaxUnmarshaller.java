@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -29,38 +30,52 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Listener StAX Unmarshaller
  */
-public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnmarshallerContext> {
+public class ListenerStaxUnmarshaller implements
+        Unmarshaller<Listener, StaxUnmarshallerContext> {
 
-    public Listener unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public Listener unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         Listener listener = new Listener();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return listener;
+            if (xmlEvent.isEndDocument())
+                return listener;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Protocol", targetDepth)) {
-                    listener.setProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listener.setProtocol(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("LoadBalancerPort", targetDepth)) {
-                    listener.setLoadBalancerPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    listener.setLoadBalancerPort(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("InstanceProtocol", targetDepth)) {
-                    listener.setInstanceProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listener.setInstanceProtocol(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("InstancePort", targetDepth)) {
-                    listener.setInstancePort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    listener.setInstancePort(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SSLCertificateId", targetDepth)) {
-                    listener.setSSLCertificateId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    listener.setSSLCertificateId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -72,9 +87,10 @@ public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnma
     }
 
     private static ListenerStaxUnmarshaller instance;
+
     public static ListenerStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ListenerStaxUnmarshaller();
+        if (instance == null)
+            instance = new ListenerStaxUnmarshaller();
         return instance;
     }
 }
-    

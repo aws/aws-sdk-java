@@ -64,6 +64,9 @@ public interface Request<T> extends SignableRequest<T> {
 
     /**
      * Sets all parameters, clearing any existing values.
+     *
+     * Note that List values within the parameters Map must
+     * use an implementation that supports null values.
      */
     public void setParameters(Map<String, List<String>> parameters);
 

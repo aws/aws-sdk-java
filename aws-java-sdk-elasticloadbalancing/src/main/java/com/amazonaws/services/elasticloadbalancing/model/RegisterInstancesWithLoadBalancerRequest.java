@@ -1,200 +1,179 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest) RegisterInstancesWithLoadBalancer operation}.
- * <p>
- * Adds the specified instances to the specified load balancer.
- * </p>
- * <p>
- * The instance must be a running instance in the same network as the
- * load balancer (EC2-Classic or the same VPC). If you have EC2-Classic
- * instances and a load balancer in a VPC with ClassicLink enabled, you
- * can link the EC2-Classic instances to that VPC and then register the
- * linked EC2-Classic instances with the load balancer in the VPC.
- * </p>
- * <p>
- * Note that <code>RegisterInstanceWithLoadBalancer</code> completes when
- * the request has been registered. Instance registration takes a little
- * time to complete. To check the state of the registered instances, use
- * DescribeLoadBalancers or DescribeInstanceHealth.
- * </p>
- * <p>
- * After the instance is registered, it starts receiving traffic and
- * requests from the load balancer. Any instance that is not in one of
- * the Availability Zones registered for the load balancer is moved to
- * the <code>OutOfService</code> state. If an Availability Zone is added
- * to the load balancer later, any instances registered with the load
- * balancer move to the <code>InService</code> state.
- * </p>
- * <p>
- * If you stop an instance registered with a load balancer and then start
- * it, the IP addresses associated with the instance changes. Elastic
- * Load Balancing cannot recognize the new IP address, which prevents it
- * from routing traffic to the instances. We recommend that you use the
- * following sequence: stop the instance, deregister the instance, start
- * the instance, and then register the instance. To deregister instances
- * from a load balancer, use DeregisterInstancesFromLoadBalancer.
- * </p>
- * <p>
- * For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> Deregister and Register EC2 Instances </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest)
+ * 
  */
-public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class RegisterInstancesWithLoadBalancerRequest extends
+        AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the load balancer.
+     * </p>
      */
     private String loadBalancerName;
-
     /**
+     * <p>
      * The IDs of the instances.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
+    private com.amazonaws.internal.SdkInternalList<Instance> instances;
 
     /**
-     * Default constructor for a new RegisterInstancesWithLoadBalancerRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public RegisterInstancesWithLoadBalancerRequest() {}
-    
-    /**
-     * Constructs a new RegisterInstancesWithLoadBalancerRequest object.
+     * Default constructor for RegisterInstancesWithLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
-     * 
-     * @param loadBalancerName The name of the load balancer.
-     * @param instances The IDs of the instances.
+     * initialize the object after creating it.
      */
-    public RegisterInstancesWithLoadBalancerRequest(String loadBalancerName, java.util.List<Instance> instances) {
+    public RegisterInstancesWithLoadBalancerRequest() {
+    }
+
+    /**
+     * Constructs a new RegisterInstancesWithLoadBalancerRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * any additional object members.
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
+     * @param instances
+     *        The IDs of the instances.
+     */
+    public RegisterInstancesWithLoadBalancerRequest(String loadBalancerName,
+            java.util.List<Instance> instances) {
         setLoadBalancerName(loadBalancerName);
         setInstances(instances);
     }
 
     /**
+     * <p>
      * The name of the load balancer.
-     *
-     * @return The name of the load balancer.
-     */
-    public String getLoadBalancerName() {
-        return loadBalancerName;
-    }
-    
-    /**
-     * The name of the load balancer.
-     *
-     * @param loadBalancerName The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
-    
+
     /**
-     * The name of the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadBalancerName The name of the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @return The name of the load balancer.
      */
-    public RegisterInstancesWithLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
-        this.loadBalancerName = loadBalancerName;
+    public String getLoadBalancerName() {
+        return this.loadBalancerName;
+    }
+
+    /**
+     * <p>
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public RegisterInstancesWithLoadBalancerRequest withLoadBalancerName(
+            String loadBalancerName) {
+        setLoadBalancerName(loadBalancerName);
         return this;
     }
 
     /**
+     * <p>
      * The IDs of the instances.
-     *
+     * </p>
+     * 
      * @return The IDs of the instances.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
-              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
-              instances.setAutoConstruct(true);
+            instances = new com.amazonaws.internal.SdkInternalList<Instance>();
         }
         return instances;
     }
-    
+
     /**
+     * <p>
      * The IDs of the instances.
-     *
-     * @param instances The IDs of the instances.
+     * </p>
+     * 
+     * @param instances
+     *        The IDs of the instances.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
-        instancesCopy.addAll(instances);
-        this.instances = instancesCopy;
+
+        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(
+                instances);
     }
-    
+
     /**
+     * <p>
      * The IDs of the instances.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstances(java.util.Collection)} or {@link
-     * #withInstances(java.util.Collection)} if you want to override the
+     * any). Use {@link #setInstances(java.util.Collection)} or
+     * {@link #withInstances(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instances The IDs of the instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param instances
+     *        The IDs of the instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public RegisterInstancesWithLoadBalancerRequest withInstances(Instance... instances) {
-        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
-        for (Instance value : instances) {
-            getInstances().add(value);
+    public RegisterInstancesWithLoadBalancerRequest withInstances(
+            Instance... instances) {
+        if (this.instances == null) {
+            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
+                    instances.length));
+        }
+        for (Instance ele : instances) {
+            this.instances.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The IDs of the instances.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instances The IDs of the instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public RegisterInstancesWithLoadBalancerRequest withInstances(java.util.Collection<Instance> instances) {
-        if (instances == null) {
-            this.instances = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
-            instancesCopy.addAll(instances);
-            this.instances = instancesCopy;
-        }
 
+    /**
+     * <p>
+     * The IDs of the instances.
+     * </p>
+     * 
+     * @param instances
+     *        The IDs of the instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public RegisterInstancesWithLoadBalancerRequest withInstances(
+            java.util.Collection<Instance> instances) {
+        setInstances(instances);
         return this;
     }
 
@@ -210,42 +189,55 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() );
+        if (getLoadBalancerName() != null)
+            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getInstances() != null)
+            sb.append("Instances: " + getInstances());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RegisterInstancesWithLoadBalancerRequest == false)
+            return false;
+        RegisterInstancesWithLoadBalancerRequest other = (RegisterInstancesWithLoadBalancerRequest) obj;
+        if (other.getLoadBalancerName() == null
+                ^ this.getLoadBalancerName() == null)
+            return false;
+        if (other.getLoadBalancerName() != null
+                && other.getLoadBalancerName().equals(
+                        this.getLoadBalancerName()) == false)
+            return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null
+                && other.getInstances().equals(this.getInstances()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
-        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getInstances() == null) ? 0 : getInstances().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RegisterInstancesWithLoadBalancerRequest == false) return false;
-        RegisterInstancesWithLoadBalancerRequest other = (RegisterInstancesWithLoadBalancerRequest)obj;
-        
-        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
-        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
-        if (other.getInstances() == null ^ this.getInstances() == null) return false;
-        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RegisterInstancesWithLoadBalancerRequest clone() {
-        
-            return (RegisterInstancesWithLoadBalancerRequest) super.clone();
+        return (RegisterInstancesWithLoadBalancerRequest) super.clone();
     }
-
 }
-    

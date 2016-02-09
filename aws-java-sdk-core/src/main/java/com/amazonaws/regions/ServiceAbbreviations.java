@@ -49,10 +49,11 @@ public final class ServiceAbbreviations {
     public static final String ElasticMapReduce = "elasticmapreduce";
     public static final String ElasticTranscoder = "elastictranscoder";
     public static final String Email = "email";
+    public static final String GameLift = "gamelift";
     public static final String Glacier = "glacier";
     public static final String IAM = "iam";
     public static final String IoT = "iot";
-    public static final String IoTData = "iotdata";
+    public static final String IoTData = "data.iot";
     public static final String ImportExport = "importexport";
     public static final String KeyManagementService = "kms";
     public static final String Kinesis = "kinesis";

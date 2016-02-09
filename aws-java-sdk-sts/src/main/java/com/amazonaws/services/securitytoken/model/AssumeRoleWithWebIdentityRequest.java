@@ -82,8 +82,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     * Guide</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -386,8 +385,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     * Guide</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -408,8 +406,8 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        allowed by the access policy of the role that is being assumed.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     *        Guide</i>.
+     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using
+     *        IAM</i>.
      *        </p>
      *        <note>The policy plain text must be 2048 bytes or shorter.
      *        However, an internal conversion compresses it into a packed binary
@@ -435,8 +433,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     * Guide</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -456,8 +453,8 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         excess of those allowed by the access policy of the role that is
      *         being assumed. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *         >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     *         Guide</i>.
+     *         >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using
+     *         IAM</i>.
      *         </p>
      *         <note>The policy plain text must be 2048 bytes or shorter.
      *         However, an internal conversion compresses it into a packed
@@ -484,8 +481,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     * Guide</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -506,8 +502,8 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        allowed by the access policy of the role that is being assumed.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
-     *        Guide</i>.
+     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using
+     *        IAM</i>.
      *        </p>
      *        <note>The policy plain text must be 2048 bytes or shorter.
      *        However, an internal conversion compresses it into a packed binary

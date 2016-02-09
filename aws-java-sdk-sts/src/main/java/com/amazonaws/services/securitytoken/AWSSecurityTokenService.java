@@ -53,7 +53,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * information about using security tokens with other AWS products, go to <a
  * href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
- * >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i>.
+ * >AWS Services That Work with IAM</a> in the <i>Using IAM</i>.
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
@@ -71,7 +71,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * Management Console before you can use a different region's endpoint. For more
  * information about activating a region for STS see <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
- * >Activating STS in a New Region</a> in the <i>IAM User Guide</i>.
+ * >Activating STS in a New Region</a> in the <i>Using IAM</i>.
  * </p>
  * <p>
  * For information about STS endpoints, see <a
@@ -174,7 +174,7 @@ public interface AWSSecurityTokenService {
      * access all the other accounts by assuming roles in those accounts. For
      * more information about roles, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-     * Roles (Delegation and Federation)</a> in the <i>IAM User Guide</i>.
+     * Roles (Delegation and Federation)</a> in the <i>Using IAM</i>.
      * </p>
      * <p>
      * For federation, you can, for example, grant single sign-on access to the
@@ -187,8 +187,7 @@ public interface AWSSecurityTokenService {
      * those temporary security credentials, you construct a sign-in URL that
      * users can use to access the console. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction"
-     * >Common Scenarios for Temporary Credentials</a> in the <i>IAM User
-     * Guide</i>.
+     * >Common Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.
      * </p>
      * <p>
      * The temporary security credentials are valid for the duration that you
@@ -210,7 +209,7 @@ public interface AWSSecurityTokenService {
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <p>
      * To assume a role, your AWS account must be trusted by the role. The trust
@@ -238,8 +237,7 @@ public interface AWSSecurityTokenService {
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html"
-     * >Configuring MFA-Protected API Access</a> in the <i>IAM User Guide</i>
-     * guide.
+     * >Configuring MFA-Protected API Access</a> in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * To use MFA with <code>AssumeRole</code>, you pass values for the
@@ -270,7 +268,7 @@ public interface AWSSecurityTokenService {
      *         Console. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>IAM User Guide</i>.
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRole
      */
     AssumeRoleResult assumeRole(AssumeRoleRequest assumeRoleRequest);
@@ -309,7 +307,7 @@ public interface AWSSecurityTokenService {
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithSAML</code>, you
@@ -331,18 +329,16 @@ public interface AWSSecurityTokenService {
      * <ul>
      * <li><a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
-     * >About SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.</li>
+     * >About SAML 2.0-based Federation</a> in the <i>Using IAM</i>.</li>
      * <li><a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html"
-     * >Creating SAML Identity Providers</a> in the <i>IAM User Guide</i>.</li>
+     * >Creating SAML Identity Providers</a> in the <i>Using IAM</i>.</li>
      * <li><a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html"
-     * >Configuring a Relying Party and Claims</a> in the <i>IAM User Guide</i>.
-     * </li>
+     * >Configuring a Relying Party and Claims</a> in the <i>Using IAM</i>.</li>
      * <li><a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html"
-     * >Creating a Role for SAML 2.0 Federation</a> in the <i>IAM User
-     * Guide</i>.</li>
+     * >Creating a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>.</li>
      * </ul>
      * <member name="RoleArn" target="arnType"/> <member name="SAMLAssertion"
      * target="SAMLAssertionType"/> <member name="Policy"
@@ -381,7 +377,7 @@ public interface AWSSecurityTokenService {
      *         Console. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>IAM User Guide</i>.
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
      */
     AssumeRoleWithSAMLResult assumeRoleWithSAML(
@@ -446,7 +442,7 @@ public interface AWSSecurityTokenService {
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithWebIdentity</code>,
@@ -523,7 +519,7 @@ public interface AWSSecurityTokenService {
      *         Console. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>IAM User Guide</i>.
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
      */
     AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(
@@ -559,8 +555,8 @@ public interface AWSSecurityTokenService {
      * <li>Whether the request was denied due to an explicit deny or due to the
      * absence of an explicit allow. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow"
-     * >Determining Whether a Request is Allowed or Denied</a> in the <i>IAM
-     * User Guide</i>.</li>
+     * >Determining Whether a Request is Allowed or Denied</a> in the <i>Using
+     * IAM</i>.</li>
      * <li>The principal who made the request.</li>
      * <li>The requested action.</li>
      * <li>The requested resource.</li>
@@ -613,7 +609,7 @@ public interface AWSSecurityTokenService {
      * actions and resources they need access to. For more information, see <a
      * href
      * ="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
-     * >IAM Best Practices</a> in the <i>IAM User Guide</i>.
+     * >IAM Best Practices</a> in the <i>Using IAM</i>.
      * </p>
      * <p>
      * The temporary security credentials that are obtained by using the
@@ -690,7 +686,7 @@ public interface AWSSecurityTokenService {
      *         Console. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>IAM User Guide</i>.
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.GetFederationToken
      */
     GetFederationTokenResult getFederationToken(
@@ -742,7 +738,7 @@ public interface AWSSecurityTokenService {
      * temporary credentials, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken"
      * >Temporary Credentials for Users in Untrusted Environments</a> in the
-     * <i>IAM User Guide</i>.
+     * <i>Using IAM</i>.
      * </p>
      * 
      * @param getSessionTokenRequest
@@ -754,7 +750,7 @@ public interface AWSSecurityTokenService {
      *         Console. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>IAM User Guide</i>.
+     *         <i>Using IAM</i>.
      * @sample AWSSecurityTokenService.GetSessionToken
      */
     GetSessionTokenResult getSessionToken(

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,36 +28,48 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Tag Description StAX Unmarshaller
+ * TagDescription StAX Unmarshaller
  */
-public class TagDescriptionStaxUnmarshaller implements Unmarshaller<TagDescription, StaxUnmarshallerContext> {
+public class TagDescriptionStaxUnmarshaller implements
+        Unmarshaller<TagDescription, StaxUnmarshallerContext> {
 
-    public TagDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public TagDescription unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         TagDescription tagDescription = new TagDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return tagDescription;
+            if (xmlEvent.isEndDocument())
+                return tagDescription;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("resourceId", targetDepth)) {
-                    tagDescription.setResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    tagDescription.setResourceId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("resourceType", targetDepth)) {
-                    tagDescription.setResourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    tagDescription.setResourceType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("key", targetDepth)) {
-                    tagDescription.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    tagDescription.setKey(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("value", targetDepth)) {
-                    tagDescription.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    tagDescription.setValue(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -68,9 +81,10 @@ public class TagDescriptionStaxUnmarshaller implements Unmarshaller<TagDescripti
     }
 
     private static TagDescriptionStaxUnmarshaller instance;
+
     public static TagDescriptionStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new TagDescriptionStaxUnmarshaller();
+        if (instance == null)
+            instance = new TagDescriptionStaxUnmarshaller();
         return instance;
     }
 }
-    

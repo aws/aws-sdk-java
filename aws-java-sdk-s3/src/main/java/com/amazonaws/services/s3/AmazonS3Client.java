@@ -1074,6 +1074,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public boolean doesObjectExist(String bucketName, String objectName)
+            throws AmazonServiceException, AmazonClientException {
+        try {
+            getObjectMetadata(bucketName, objectName);
+            return true;
+        } catch (AmazonS3Exception e) {
+            if (e.getStatusCode() == 404) {
+                return false;
+            }
+            throw e;
+        }
+    }
+
+    @Override
     public HeadBucketResult headBucket(HeadBucketRequest headBucketRequest)
             throws AmazonClientException, AmazonServiceException {
 
@@ -4083,17 +4097,5 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         return bucketRegion;
-    }
-
-    @Override
-    public boolean doesObjectExist(String bucketName, String objectName) throws AmazonServiceException, AmazonClientException {
-        try {
-            getObjectMetadata(bucketName, objectName);
-        } catch (AmazonS3Exception e) {
-            if (e.getStatusCode() == 404) return false;
-            throw e;
-        }
-
-        return true;
     }
 }

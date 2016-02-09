@@ -99,6 +99,24 @@ public class GenerateDataSetRequestMarshaller implements
                         generateDataSetRequest.getSnsTopicArn());
             }
 
+            java.util.Map<String, String> customerDefinedValuesMap = generateDataSetRequest
+                    .getCustomerDefinedValues();
+            if (customerDefinedValuesMap != null) {
+                jsonWriter.key("customerDefinedValues");
+                jsonWriter.object();
+
+                for (Map.Entry<String, String> customerDefinedValuesMapValue : customerDefinedValuesMap
+                        .entrySet()) {
+                    if (customerDefinedValuesMapValue.getValue() != null) {
+                        jsonWriter.key(customerDefinedValuesMapValue.getKey());
+
+                        jsonWriter.value(customerDefinedValuesMapValue
+                                .getValue());
+                    }
+                }
+                jsonWriter.endObject();
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

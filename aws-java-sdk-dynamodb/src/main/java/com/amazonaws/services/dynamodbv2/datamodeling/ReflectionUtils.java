@@ -27,27 +27,6 @@ import java.lang.reflect.Type;
  */
 class ReflectionUtils {
 
-    static Object safeInvoke(
-            Method method,
-            Object object,
-            Object... arguments) {
-
-        try {
-
-            return method.invoke(object, arguments);
-
-        } catch (IllegalAccessException e) {
-            throw new DynamoDBMappingException(
-                    "Couldn't invoke " + method, e);
-        } catch (IllegalArgumentException e) {
-            throw new DynamoDBMappingException(
-                    "Couldn't invoke " + method, e);
-        } catch (InvocationTargetException e) {
-            throw new DynamoDBMappingException(
-                    "Couldn't invoke " + method, e);
-        }
-    }
-
     /**
      * Returns the field name that corresponds to the given getter method,
      * according to the Java naming convention.
@@ -80,6 +59,20 @@ class ReflectionUtils {
             return fieldNameWithUpperCamelCase;
         }
 
+    }
+
+    /**
+     * Returns the declared setter method that corresponds to the given method.
+     * @param getter The getter method.
+     * @return The method.
+     */
+    static final Method getDeclaredSetterByGetter(final Method getter) {
+        final String setterName = "set" + getFieldNameByGetter(getter, false);
+        try {
+            return getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
+        } catch (final Exception e) {
+            return null;
+        }
     }
 
     /**

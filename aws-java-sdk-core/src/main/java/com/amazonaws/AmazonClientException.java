@@ -68,7 +68,10 @@ public class AmazonClientException extends RuntimeException {
 
     /**
      * Returns a hint as to whether it makes sense to retry upon this exception.
-     * Default is true, but subclass may override. 
+     * Default is true, but subclass may override.
+     *
+     * This method is internal to the SDK. Users should not depend on this method to decide
+     * if an exception from an AWS service should be retried.
      */
     public boolean isRetryable() {
         return true;

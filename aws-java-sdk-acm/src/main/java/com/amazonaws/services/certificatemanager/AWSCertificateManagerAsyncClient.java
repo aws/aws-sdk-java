@@ -30,8 +30,9 @@ import com.amazonaws.services.certificatemanager.model.*;
  * command. You can use AWS Certificate Manager to request ACM Certificates for
  * your AWS-based websites and applications. For general information about using
  * ACM and for more information about using the console, see the <a
- * href="url-acm-ug;acm-overview.html">AWS Certificate Manager User Guide</a>.
- * For more information about using the ACM API, see the <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
+ * Certificate Manager User Guide</a>. For more information about using the ACM
+ * API, see the <a
  * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
  * Certificate Manager API Reference</a>.
  * </p>

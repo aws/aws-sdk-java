@@ -1,0 +1,45 @@
+/*
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+package com.amazonaws.services.gamelift.model;
+
+import com.amazonaws.AmazonServiceException;
+
+/**
+ * <p>
+ * Exception thrown when the service is unable to resolve the routing for a
+ * particular alias because it has a TerminalRoutingStrategy associated with it.
+ * Requests that result in failures of this type should only be retried by
+ * clients if they modify the routing strategy for the specified alias. The
+ * message returned in this exception is the message defined in the
+ * TerminalRoutingStrategy itself.
+ * </p>
+ */
+public class TerminalRoutingStrategyException extends AmazonServiceException {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Constructs a new TerminalRoutingStrategyException with the specified
+     * error message.
+     *
+     * @param message
+     *        Describes the error encountered.
+     */
+    public TerminalRoutingStrategyException(String message) {
+        super(message);
+    }
+
+}

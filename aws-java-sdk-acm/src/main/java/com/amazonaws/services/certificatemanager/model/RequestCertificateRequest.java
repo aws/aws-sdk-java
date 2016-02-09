@@ -62,7 +62,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
@@ -328,7 +328,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
@@ -345,7 +345,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         email addresses that are used to send the emails. This must be
      *         the same as the <code>Domain</code> value or a superdomain of the
      *         <code>Domain</code> value. For example, if you requested a
-     *         certificate for <code>www.example.com</code> and specify
+     *         certificate for <code>test.example.com</code> and specify
      *         <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *         sends email to the domain registrant, technical contact, and
      *         administrative contact in WHOIS and the following five addresses:
@@ -367,7 +367,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
@@ -385,7 +385,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        email addresses that are used to send the emails. This must be the
      *        same as the <code>Domain</code> value or a superdomain of the
      *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>www.example.com</code> and specify
+     *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
@@ -414,7 +414,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
@@ -438,7 +438,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        email addresses that are used to send the emails. This must be the
      *        same as the <code>Domain</code> value or a superdomain of the
      *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>www.example.com</code> and specify
+     *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
@@ -470,7 +470,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
@@ -488,7 +488,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        email addresses that are used to send the emails. This must be the
      *        same as the <code>Domain</code> value or a superdomain of the
      *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>www.example.com</code> and specify
+     *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:

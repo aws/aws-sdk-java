@@ -23,24 +23,49 @@ import java.io.Serializable;
  */
 public class GenerateDataSetResult implements Serializable, Cloneable {
 
+    /**
+     * A unique identifier representing a specific request to the
+     * GenerateDataSet operation. This identifier can be used to correlate a
+     * request with notifications from the SNS topic.
+     */
     private String dataSetRequestId;
 
     /**
+     * A unique identifier representing a specific request to the
+     * GenerateDataSet operation. This identifier can be used to correlate a
+     * request with notifications from the SNS topic.
+     * 
      * @param dataSetRequestId
+     *        A unique identifier representing a specific request to the
+     *        GenerateDataSet operation. This identifier can be used to
+     *        correlate a request with notifications from the SNS topic.
      */
     public void setDataSetRequestId(String dataSetRequestId) {
         this.dataSetRequestId = dataSetRequestId;
     }
 
     /**
-     * @return
+     * A unique identifier representing a specific request to the
+     * GenerateDataSet operation. This identifier can be used to correlate a
+     * request with notifications from the SNS topic.
+     * 
+     * @return A unique identifier representing a specific request to the
+     *         GenerateDataSet operation. This identifier can be used to
+     *         correlate a request with notifications from the SNS topic.
      */
     public String getDataSetRequestId() {
         return this.dataSetRequestId;
     }
 
     /**
+     * A unique identifier representing a specific request to the
+     * GenerateDataSet operation. This identifier can be used to correlate a
+     * request with notifications from the SNS topic.
+     * 
      * @param dataSetRequestId
+     *        A unique identifier representing a specific request to the
+     *        GenerateDataSet operation. This identifier can be used to
+     *        correlate a request with notifications from the SNS topic.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

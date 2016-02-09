@@ -1,16 +1,16 @@
 /*
- * Copyright 2013-2016 Amazon Technologies, Inc. 
+ * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at:
- * 
- *    http://aws.amazon.com/apache2.0
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
  *
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
- * OR CONDITIONS OF ANY KIND, either express or implied. See the 
- * License for the specific language governing permissions and 
- * limitations under the License. 
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 package com.amazonaws.regions;
 
@@ -150,22 +150,22 @@ public class RegionMetadataParser {
         String name = getChildElementValue(REGION_ID_TAG, regionElement);
         String domain = getChildElementValue(DOMAIN_TAG, regionElement);
 
-        Region region = new Region(name, domain);
+        InMemoryRegionImpl regionImpl = new InMemoryRegionImpl(name, domain);
 
         NodeList endpointNodes =
             regionElement.getElementsByTagName(ENDPOINT_TAG);
 
         for (int i = 0; i < endpointNodes.getLength(); i++) {
-            addRegionEndpoint(region,
+            addRegionEndpoint(regionImpl,
                               (Element) endpointNodes.item(i),
                               endpointVerification);
         }
 
-        return region;
+        return new Region(regionImpl);
     }
     
     private static void addRegionEndpoint(
-            final Region region,
+            final InMemoryRegionImpl region,
             final Element endpointElement,
             final boolean endpointVerification) {
 
@@ -179,9 +179,13 @@ public class RegionMetadataParser {
                                             + hostname + ") is detected.");
         }
 
-        region.getServiceEndpoints().put(serviceName, hostname);
-        region.getHttpSupport().put(serviceName, "true".equals(http));
-        region.getHttpsSupport().put(serviceName, "true".equals(https));
+        region.addEndpoint(serviceName, hostname);
+        if (Boolean.valueOf(http)) {
+            region.addHttp(serviceName);
+        }
+        if (Boolean.valueOf(https)) {
+            region.addHttps(serviceName);
+        }
     }
 
     private static String getChildElementValue(

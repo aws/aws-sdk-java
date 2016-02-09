@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -21,179 +23,189 @@ import java.io.Serializable;
  * Describes modifications to the permissions for a volume.
  * </p>
  */
-public class CreateVolumePermissionModifications implements Serializable, Cloneable {
+public class CreateVolumePermissionModifications implements Serializable,
+        Cloneable {
 
     /**
+     * <p>
      * Adds a specific AWS account ID or group to a volume's list of create
      * volume permissions.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> add;
+    private com.amazonaws.internal.SdkInternalList<CreateVolumePermission> add;
+    /**
+     * <p>
+     * Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CreateVolumePermission> remove;
 
     /**
-     * Removes a specific AWS account ID or group from a volume's list of
-     * create volume permissions.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> remove;
-
-    /**
+     * <p>
      * Adds a specific AWS account ID or group to a volume's list of create
      * volume permissions.
-     *
-     * @return Adds a specific AWS account ID or group to a volume's list of create
-     *         volume permissions.
+     * </p>
+     * 
+     * @return Adds a specific AWS account ID or group to a volume's list of
+     *         create volume permissions.
      */
     public java.util.List<CreateVolumePermission> getAdd() {
         if (add == null) {
-              add = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>();
-              add.setAutoConstruct(true);
+            add = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>();
         }
         return add;
     }
-    
+
     /**
+     * <p>
      * Adds a specific AWS account ID or group to a volume's list of create
      * volume permissions.
-     *
-     * @param add Adds a specific AWS account ID or group to a volume's list of create
-     *         volume permissions.
+     * </p>
+     * 
+     * @param add
+     *        Adds a specific AWS account ID or group to a volume's list of
+     *        create volume permissions.
      */
     public void setAdd(java.util.Collection<CreateVolumePermission> add) {
         if (add == null) {
             this.add = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> addCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>(add.size());
-        addCopy.addAll(add);
-        this.add = addCopy;
+
+        this.add = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>(
+                add);
     }
-    
+
     /**
+     * <p>
      * Adds a specific AWS account ID or group to a volume's list of create
      * volume permissions.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAdd(java.util.Collection)} or {@link
-     * #withAdd(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param add Adds a specific AWS account ID or group to a volume's list of create
-     *         volume permissions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setAdd(java.util.Collection)} or
+     * {@link #withAdd(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param add
+     *        Adds a specific AWS account ID or group to a volume's list of
+     *        create volume permissions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public CreateVolumePermissionModifications withAdd(CreateVolumePermission... add) {
-        if (getAdd() == null) setAdd(new java.util.ArrayList<CreateVolumePermission>(add.length));
-        for (CreateVolumePermission value : add) {
-            getAdd().add(value);
+    public CreateVolumePermissionModifications withAdd(
+            CreateVolumePermission... add) {
+        if (this.add == null) {
+            setAdd(new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>(
+                    add.length));
+        }
+        for (CreateVolumePermission ele : add) {
+            this.add.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * Adds a specific AWS account ID or group to a volume's list of create
      * volume permissions.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param add Adds a specific AWS account ID or group to a volume's list of create
-     *         volume permissions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param add
+     *        Adds a specific AWS account ID or group to a volume's list of
+     *        create volume permissions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public CreateVolumePermissionModifications withAdd(java.util.Collection<CreateVolumePermission> add) {
-        if (add == null) {
-            this.add = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> addCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>(add.size());
-            addCopy.addAll(add);
-            this.add = addCopy;
-        }
-
+    public CreateVolumePermissionModifications withAdd(
+            java.util.Collection<CreateVolumePermission> add) {
+        setAdd(add);
         return this;
     }
 
     /**
-     * Removes a specific AWS account ID or group from a volume's list of
-     * create volume permissions.
-     *
-     * @return Removes a specific AWS account ID or group from a volume's list of
-     *         create volume permissions.
+     * <p>
+     * Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.
+     * </p>
+     * 
+     * @return Removes a specific AWS account ID or group from a volume's list
+     *         of create volume permissions.
      */
     public java.util.List<CreateVolumePermission> getRemove() {
         if (remove == null) {
-              remove = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>();
-              remove.setAutoConstruct(true);
+            remove = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>();
         }
         return remove;
     }
-    
+
     /**
-     * Removes a specific AWS account ID or group from a volume's list of
-     * create volume permissions.
-     *
-     * @param remove Removes a specific AWS account ID or group from a volume's list of
-     *         create volume permissions.
+     * <p>
+     * Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.
+     * </p>
+     * 
+     * @param remove
+     *        Removes a specific AWS account ID or group from a volume's list of
+     *        create volume permissions.
      */
     public void setRemove(java.util.Collection<CreateVolumePermission> remove) {
         if (remove == null) {
             this.remove = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> removeCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>(remove.size());
-        removeCopy.addAll(remove);
-        this.remove = removeCopy;
+
+        this.remove = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>(
+                remove);
     }
-    
+
     /**
-     * Removes a specific AWS account ID or group from a volume's list of
-     * create volume permissions.
+     * <p>
+     * Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRemove(java.util.Collection)} or {@link
-     * #withRemove(java.util.Collection)} if you want to override the
+     * any). Use {@link #setRemove(java.util.Collection)} or
+     * {@link #withRemove(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param remove Removes a specific AWS account ID or group from a volume's list of
-     *         create volume permissions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param remove
+     *        Removes a specific AWS account ID or group from a volume's list of
+     *        create volume permissions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public CreateVolumePermissionModifications withRemove(CreateVolumePermission... remove) {
-        if (getRemove() == null) setRemove(new java.util.ArrayList<CreateVolumePermission>(remove.length));
-        for (CreateVolumePermission value : remove) {
-            getRemove().add(value);
+    public CreateVolumePermissionModifications withRemove(
+            CreateVolumePermission... remove) {
+        if (this.remove == null) {
+            setRemove(new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>(
+                    remove.length));
+        }
+        for (CreateVolumePermission ele : remove) {
+            this.remove.add(ele);
         }
         return this;
     }
-    
-    /**
-     * Removes a specific AWS account ID or group from a volume's list of
-     * create volume permissions.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param remove Removes a specific AWS account ID or group from a volume's list of
-     *         create volume permissions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateVolumePermissionModifications withRemove(java.util.Collection<CreateVolumePermission> remove) {
-        if (remove == null) {
-            this.remove = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> removeCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>(remove.size());
-            removeCopy.addAll(remove);
-            this.remove = removeCopy;
-        }
 
+    /**
+     * <p>
+     * Removes a specific AWS account ID or group from a volume's list of create
+     * volume permissions.
+     * </p>
+     * 
+     * @param remove
+     *        Removes a specific AWS account ID or group from a volume's list of
+     *        create volume permissions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CreateVolumePermissionModifications withRemove(
+            java.util.Collection<CreateVolumePermission> remove) {
+        setRemove(remove);
         return this;
     }
 
@@ -209,50 +221,57 @@ public class CreateVolumePermissionModifications implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAdd() != null) sb.append("Add: " + getAdd() + ",");
-        if (getRemove() != null) sb.append("Remove: " + getRemove() );
+        if (getAdd() != null)
+            sb.append("Add: " + getAdd() + ",");
+        if (getRemove() != null)
+            sb.append("Remove: " + getRemove());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateVolumePermissionModifications == false)
+            return false;
+        CreateVolumePermissionModifications other = (CreateVolumePermissionModifications) obj;
+        if (other.getAdd() == null ^ this.getAdd() == null)
+            return false;
+        if (other.getAdd() != null
+                && other.getAdd().equals(this.getAdd()) == false)
+            return false;
+        if (other.getRemove() == null ^ this.getRemove() == null)
+            return false;
+        if (other.getRemove() != null
+                && other.getRemove().equals(this.getRemove()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAdd() == null) ? 0 : getAdd().hashCode()); 
-        hashCode = prime * hashCode + ((getRemove() == null) ? 0 : getRemove().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAdd() == null) ? 0 : getAdd().hashCode());
+        hashCode = prime * hashCode
+                + ((getRemove() == null) ? 0 : getRemove().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateVolumePermissionModifications == false) return false;
-        CreateVolumePermissionModifications other = (CreateVolumePermissionModifications)obj;
-        
-        if (other.getAdd() == null ^ this.getAdd() == null) return false;
-        if (other.getAdd() != null && other.getAdd().equals(this.getAdd()) == false) return false; 
-        if (other.getRemove() == null ^ this.getRemove() == null) return false;
-        if (other.getRemove() != null && other.getRemove().equals(this.getRemove()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateVolumePermissionModifications clone() {
         try {
             return (CreateVolumePermissionModifications) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

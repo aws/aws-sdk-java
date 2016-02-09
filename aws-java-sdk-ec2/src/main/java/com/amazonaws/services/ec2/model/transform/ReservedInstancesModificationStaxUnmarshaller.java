@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,56 +28,90 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Reserved Instances Modification StAX Unmarshaller
+ * ReservedInstancesModification StAX Unmarshaller
  */
-public class ReservedInstancesModificationStaxUnmarshaller implements Unmarshaller<ReservedInstancesModification, StaxUnmarshallerContext> {
+public class ReservedInstancesModificationStaxUnmarshaller implements
+        Unmarshaller<ReservedInstancesModification, StaxUnmarshallerContext> {
 
-    public ReservedInstancesModification unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ReservedInstancesModification unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         ReservedInstancesModification reservedInstancesModification = new ReservedInstancesModification();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return reservedInstancesModification;
+            if (xmlEvent.isEndDocument())
+                return reservedInstancesModification;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("reservedInstancesModificationId", targetDepth)) {
-                    reservedInstancesModification.setReservedInstancesModificationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("reservedInstancesModificationId",
+                        targetDepth)) {
+                    reservedInstancesModification
+                            .setReservedInstancesModificationId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("reservedInstancesSet/item", targetDepth)) {
-                    reservedInstancesModification.getReservedInstancesIds().add(ReservedInstancesIdStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("reservedInstancesSet/item",
+                        targetDepth)) {
+                    reservedInstancesModification.getReservedInstancesIds()
+                            .add(ReservedInstancesIdStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("modificationResultSet/item", targetDepth)) {
-                    reservedInstancesModification.getModificationResults().add(ReservedInstancesModificationResultStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("modificationResultSet/item",
+                        targetDepth)) {
+                    reservedInstancesModification.getModificationResults().add(
+                            ReservedInstancesModificationResultStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("createDate", targetDepth)) {
-                    reservedInstancesModification.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification
+                            .setCreateDate(DateStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("updateDate", targetDepth)) {
-                    reservedInstancesModification.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification
+                            .setUpdateDate(DateStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("effectiveDate", targetDepth)) {
-                    reservedInstancesModification.setEffectiveDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification
+                            .setEffectiveDate(DateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("status", targetDepth)) {
-                    reservedInstancesModification.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification
+                            .setStatus(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("statusMessage", targetDepth)) {
-                    reservedInstancesModification.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification
+                            .setStatusMessage(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("clientToken", targetDepth)) {
-                    reservedInstancesModification.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification
+                            .setClientToken(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -88,9 +123,10 @@ public class ReservedInstancesModificationStaxUnmarshaller implements Unmarshall
     }
 
     private static ReservedInstancesModificationStaxUnmarshaller instance;
+
     public static ReservedInstancesModificationStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ReservedInstancesModificationStaxUnmarshaller();
+        if (instance == null)
+            instance = new ReservedInstancesModificationStaxUnmarshaller();
         return instance;
     }
 }
-    

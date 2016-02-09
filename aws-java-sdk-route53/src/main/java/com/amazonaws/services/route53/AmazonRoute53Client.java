@@ -308,7 +308,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To associate a VPC with an hosted zone, send a <code>POST</code> request
      * to the
-     * <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
+     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
      * resource. The request body must include an XML document with a
      * <code>AssociateVPCWithHostedZoneRequest</code> element. The response
      * returns the <code>AssociateVPCWithHostedZoneResponse</code> element that
@@ -378,7 +378,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * Use this action to create or change your authoritative DNS information.
      * To use this action, send a <code>POST</code> request to the
-     * <code>2013-04-01/hostedzone/<i>hosted Zone ID</i>/rrset</code> resource.
+     * <code>2015-01-01/hostedzone/<i>hosted Zone ID</i>/rrset</code> resource.
      * The request body must include an XML document with a
      * <code>ChangeResourceRecordSetsRequest</code> element.
      * </p>
@@ -526,7 +526,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To create a new health check, send a <code>POST</code> request to the
-     * <code>2013-04-01/healthcheck</code> resource. The request body must
+     * <code>2015-01-01/healthcheck</code> resource. The request body must
      * include an XML document with a <code>CreateHealthCheckRequest</code>
      * element. The response returns the <code>CreateHealthCheckResponse</code>
      * element that contains metadata about the health check.
@@ -587,7 +587,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To create a new hosted zone, send a <code>POST</code> request to the
-     * <code>2013-04-01/hostedzone</code> resource. The request body must
+     * <code>2015-01-01/hostedzone</code> resource. The request body must
      * include an XML document with a <code>CreateHostedZoneRequest</code>
      * element. The response returns the <code>CreateHostedZoneResponse</code>
      * element that contains metadata about the hosted zone.
@@ -691,7 +691,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To create a new reusable delegationSet, send a <code>POST</code> request
-     * to the <code>2013-04-01/delegationset</code> resource. The request body
+     * to the <code>2015-01-01/delegationset</code> resource. The request body
      * must include an XML document with a
      * <code>CreateReusableDelegationSetRequest</code> element. The response
      * returns the <code>CreateReusableDelegationSetResponse</code> element that
@@ -771,7 +771,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To create a traffic policy, send a <code>POST</code> request to the
-     * <code>2013-04-01/trafficpolicy</code> resource. The request body must
+     * <code>2015-01-01/trafficpolicy</code> resource. The request body must
      * include an XML document with a <code>CreateTrafficPolicyRequest</code>
      * element. The response includes the
      * <code>CreateTrafficPolicyResponse</code> element, which contains
@@ -846,7 +846,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To create a traffic policy instance, send a <code>POST</code> request to
-     * the <code>2013-04-01/trafficpolicyinstance</code> resource. The request
+     * the <code>2015-01-01/trafficpolicyinstance</code> resource. The request
      * body must include an XML document with a
      * <code>CreateTrafficPolicyRequest</code> element. The response returns the
      * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains
@@ -922,7 +922,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To create a new version, send a <code>POST</code> request to the
-     * <code>2013-04-01/trafficpolicy/</code> resource. The request body
+     * <code>2015-01-01/trafficpolicy/</code> resource. The request body
      * includes an XML document with a
      * <code>CreateTrafficPolicyVersionRequest</code> element. The response
      * returns the <code>CreateTrafficPolicyVersionResponse</code> element,
@@ -985,7 +985,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * This action deletes a health check. To delete a health check, send a
      * <code>DELETE</code> request to the
-     * <code>2013-04-01/healthcheck/<i>health check ID</i></code> resource.
+     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource.
      * </p>
      * <important> You can delete a health check only if there are no resource
      * record sets associated with this health check. If resource record sets
@@ -1050,7 +1050,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the
-     * <code>2013-04-01/hostedzone/<i>hosted zone ID</i></code> resource.
+     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code> resource.
      * </p>
      * <p>
      * For more information about deleting a hosted zone, see <a href=
@@ -1123,7 +1123,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * This action deletes a reusable delegation set. To delete a reusable
      * delegation set, send a <code>DELETE</code> request to the
-     * <code>2013-04-01/delegationset/<i>delegation set ID</i></code> resource.
+     * <code>2015-01-01/delegationset/<i>delegation set ID</i></code> resource.
      * </p>
      * <important> You can delete a reusable delegation set only if there are no
      * associated hosted zones. If your reusable delegation set contains
@@ -1186,7 +1186,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes a traffic policy. To delete a traffic policy, send a
-     * <code>DELETE</code> request to the <code>2013-04-01/trafficpolicy</code>
+     * <code>DELETE</code> request to the <code>2015-01-01/trafficpolicy</code>
      * resource.
      * </p>
      * 
@@ -1249,7 +1249,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To delete a traffic policy instance, send a <code>DELETE</code> request
      * to the
-     * <code>2013-04-01/trafficpolicy/<i>traffic policy instance ID</i></code>
+     * <code>2015-01-01/trafficpolicy/<i>traffic policy instance ID</i></code>
      * resource.
      * </p>
      * <important>When you delete a traffic policy instance, Amazon Route 53
@@ -1312,7 +1312,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To disassociate a VPC to a hosted zone, send a <code>POST</code> request
      * to the
-     * <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
+     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
      * resource. The request body must include an XML document with a
      * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
      * returns the <code>DisassociateVPCFromHostedZoneResponse</code> element
@@ -1487,7 +1487,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To retrieve a list of the IP ranges used by Amazon Route 53 health
      * checkers to check the health of your resources, send a <code>GET</code>
-     * request to the <code>2013-04-01/checkeripranges</code> resource. You can
+     * request to the <code>2015-01-01/checkeripranges</code> resource. You can
      * use these IP addresses to configure router and firewall rules to allow
      * health checkers to check the health of your resources.
      * </p>
@@ -1540,7 +1540,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a single geo location, send a <code>GET</code> request to the
-     * <code>2013-04-01/geolocation</code> resource with one of these options:
+     * <code>2015-01-01/geolocation</code> resource with one of these options:
      * continentcode | countrycode | countrycode and subdivisioncode.
      * </p>
      * 
@@ -1596,7 +1596,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve the health check, send a <code>GET</code> request to the
-     * <code>2013-04-01/healthcheck/<i>health check ID</i></code> resource.
+     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource.
      * </p>
      * 
      * @param getHealthCheckRequest
@@ -1650,13 +1650,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a count of all your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheckcount</code> resource.
+     * request to the <code>2015-01-01/healthcheckcount</code> resource.
      * </p>
      * 
      * @param getHealthCheckCountRequest
      *        To retrieve a count of all your health checks, send a
      *        <code>GET</code> request to the
-     *        <code>2013-04-01/healthcheckcount</code> resource.
+     *        <code>2015-01-01/healthcheckcount</code> resource.
      * @return Result of the GetHealthCheckCount operation returned by the
      *         service.
      * @sample AmazonRoute53.GetHealthCheckCount
@@ -1705,7 +1705,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * If you want to learn why a health check is currently failing or why it
      * failed most recently (if at all), you can get the failure reason for the
      * most recent failure. Send a <code>GET</code> request to the
-     * <code>2013-04-01/healthcheck/<i>health check ID</i>/lastfailurereason</code>
+     * <code>2015-01-01/healthcheck/<i>health check ID</i>/lastfailurereason</code>
      * resource.
      * </p>
      * 
@@ -1758,7 +1758,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve the health check status, send a <code>GET</code> request to
-     * the <code>2013-04-01/healthcheck/<i>health check ID</i>/status</code>
+     * the <code>2015-01-01/healthcheck/<i>health check ID</i>/status</code>
      * resource. You can use this call to get a health check's current status.
      * </p>
      * 
@@ -1811,7 +1811,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve the delegation set for a hosted zone, send a <code>GET</code>
-     * request to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i></code>
+     * request to the <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code>
      * resource. The delegation set is the four Amazon Route 53 name servers
      * that were assigned to the hosted zone when you created it.
      * </p>
@@ -1861,13 +1861,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a count of all your hosted zones, send a <code>GET</code>
-     * request to the <code>2013-04-01/hostedzonecount</code> resource.
+     * request to the <code>2015-01-01/hostedzonecount</code> resource.
      * </p>
      * 
      * @param getHostedZoneCountRequest
      *        To retrieve a count of all your hosted zones, send a
      *        <code>GET</code> request to the
-     *        <code>2013-04-01/hostedzonecount</code> resource.
+     *        <code>2015-01-01/hostedzonecount</code> resource.
      * @return Result of the GetHostedZoneCount operation returned by the
      *         service.
      * @throws InvalidInputException
@@ -1917,7 +1917,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve the reusable delegation set, send a <code>GET</code> request
-     * to the <code>2013-04-01/delegationset/<i>delegation set ID</i></code>
+     * to the <code>2015-01-01/delegationset/<i>delegation set ID</i></code>
      * resource.
      * </p>
      * 
@@ -1972,13 +1972,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * Gets information about a specific traffic policy version. To get the
      * information, send a <code>GET</code> request to the
-     * <code>2013-04-01/trafficpolicy</code> resource.
+     * <code>2015-01-01/trafficpolicy</code> resource.
      * </p>
      * 
      * @param getTrafficPolicyRequest
      *        Gets information about a specific traffic policy version. To get
      *        the information, send a GET request to the
-     *        2013-04-01/trafficpolicy resource, and specify the ID and the
+     *        2015-01-01/trafficpolicy resource, and specify the ID and the
      *        version of the traffic policy.
      * @return Result of the GetTrafficPolicy operation returned by the service.
      * @throws NoSuchTrafficPolicyException
@@ -2029,7 +2029,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To get information about the traffic policy instance, send a
      * <code>GET</code> request to the
-     * <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * <code>2015-01-01/trafficpolicyinstance</code> resource.
      * </p>
      * <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an
      * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay
@@ -2042,7 +2042,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      *        <p>
      *        To get information about a traffic policy instance, send a
      *        <code>GET</code> request to the
-     *        <code>2013-04-01/trafficpolicyinstance/<i>Id</i></code> resource.
+     *        <code>2015-01-01/trafficpolicyinstance/<i>Id</i></code> resource.
      * @return Result of the GetTrafficPolicyInstance operation returned by the
      *         service.
      * @throws NoSuchTrafficPolicyInstanceException
@@ -2093,14 +2093,14 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To get the number of traffic policy instances, send a <code>GET</code>
-     * request to the <code>2013-04-01/trafficpolicyinstancecount</code>
+     * request to the <code>2015-01-01/trafficpolicyinstancecount</code>
      * resource.
      * </p>
      * 
      * @param getTrafficPolicyInstanceCountRequest
      *        To retrieve a count of all your traffic policy instances, send a
      *        <code>GET</code> request to the
-     *        <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+     *        <code>2015-01-01/trafficpolicyinstancecount</code> resource.
      * @return Result of the GetTrafficPolicyInstanceCount operation returned by
      *         the service.
      * @sample AmazonRoute53.GetTrafficPolicyInstanceCount
@@ -2247,7 +2247,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a list of supported geo locations, send a <code>GET</code>
-     * request to the <code>2013-04-01/geolocations</code> resource. The
+     * request to the <code>2015-01-01/geolocations</code> resource. The
      * response to this request includes a <code>GeoLocationDetailsList</code>
      * element with zero, one, or multiple <code>GeoLocationDetails</code> child
      * elements. The list is sorted by country code, and then subdivision code,
@@ -2314,7 +2314,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a list of your health checks, send a <code>GET</code> request
-     * to the <code>2013-04-01/healthcheck</code> resource. The response to this
+     * to the <code>2015-01-01/healthcheck</code> resource. The response to this
      * request includes a <code>HealthChecks</code> element with zero, one, or
      * multiple <code>HealthCheck</code> child elements. By default, the list of
      * health checks is displayed on a single page. You can control the length
@@ -2328,7 +2328,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * 
      * @param listHealthChecksRequest
      *        To retrieve a list of your health checks, send a <code>GET</code>
-     *        request to the <code>2013-04-01/healthcheck</code> resource. The
+     *        request to the <code>2015-01-01/healthcheck</code> resource. The
      *        response to this request includes a <code>HealthChecks</code>
      *        element with zero or more <code>HealthCheck</code> child elements.
      *        By default, the list of health checks is displayed on a single
@@ -2390,7 +2390,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a list of your hosted zones, send a <code>GET</code> request
-     * to the <code>2013-04-01/hostedzone</code> resource. The response to this
+     * to the <code>2015-01-01/hostedzone</code> resource. The response to this
      * request includes a <code>HostedZones</code> element with zero, one, or
      * multiple <code>HostedZone</code> child elements. By default, the list of
      * hosted zones is displayed on a single page. You can control the length of
@@ -2404,7 +2404,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * 
      * @param listHostedZonesRequest
      *        To retrieve a list of your hosted zones, send a <code>GET</code>
-     *        request to the <code>2013-04-01/hostedzone</code> resource. The
+     *        request to the <code>2015-01-01/hostedzone</code> resource. The
      *        response to this request includes a <code>HostedZones</code>
      *        element with zero or more <code>HostedZone</code> child elements.
      *        By default, the list of hosted zones is displayed on a single
@@ -2469,7 +2469,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a list of your hosted zones in lexicographic order, send a
-     * <code>GET</code> request to the <code>2013-04-01/hostedzonesbyname</code>
+     * <code>GET</code> request to the <code>2015-01-01/hostedzonesbyname</code>
      * resource. The response to this request includes a
      * <code>HostedZones</code> element with zero or more
      * <code>HostedZone</code> child elements lexicographically ordered by DNS
@@ -2486,7 +2486,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * @param listHostedZonesByNameRequest
      *        To retrieve a list of your hosted zones in lexicographic order,
      *        send a <code>GET</code> request to the
-     *        <code>2013-04-01/hostedzonesbyname</code> resource. The response
+     *        <code>2015-01-01/hostedzonesbyname</code> resource. The response
      *        to this request includes a <code>HostedZones</code> element with
      *        zero or more <code>HostedZone</code> child elements
      *        lexicographically ordered by DNS name. By default, the list of
@@ -2647,7 +2647,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To retrieve a list of your reusable delegation sets, send a
-     * <code>GET</code> request to the <code>2013-04-01/delegationset</code>
+     * <code>GET</code> request to the <code>2015-01-01/delegationset</code>
      * resource. The response to this request includes a
      * <code>DelegationSets</code> element with zero, one, or multiple
      * <code>DelegationSet</code> child elements. By default, the list of
@@ -2663,7 +2663,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * @param listReusableDelegationSetsRequest
      *        To retrieve a list of your reusable delegation sets, send a
      *        <code>GET</code> request to the
-     *        <code>2013-04-01/delegationset</code> resource. The response to
+     *        <code>2015-01-01/delegationset</code> resource. The response to
      *        this request includes a <code>DelegationSets</code> element with
      *        zero or more <code>DelegationSet</code> child elements. By
      *        default, the list of reusable delegation sets is displayed on a
@@ -2828,7 +2828,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * Gets information about the latest version for every traffic policy that
      * is associated with the current AWS account. To get the information, send
-     * a <code>GET</code> request to the <code>2013-04-01/trafficpolicy</code>
+     * a <code>GET</code> request to the <code>2015-01-01/trafficpolicy</code>
      * resource.
      * </p>
      * <p>
@@ -2934,7 +2934,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To get information about the traffic policy instances that are associated
      * with the current AWS account, send a <code>GET</code> request to the
-     * <code>2013-04-01/trafficpolicyinstance</code> resource.
+     * <code>2015-01-01/trafficpolicyinstance</code> resource.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -3041,7 +3041,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To get information about the traffic policy instances that you created in
      * a specified hosted zone, send a <code>GET</code> request to the
-     * <code>2013-04-01/trafficpolicyinstance</code> resource and include the ID
+     * <code>2015-01-01/trafficpolicyinstance</code> resource and include the ID
      * of the hosted zone.
      * </p>
      * <p>
@@ -3146,7 +3146,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To get information about the traffic policy instances that you created by
      * using a specify traffic policy version, send a <code>GET</code> request
-     * to the <code>2013-04-01/trafficpolicyinstance</code> resource and include
+     * to the <code>2015-01-01/trafficpolicyinstance</code> resource and include
      * the ID and version of the traffic policy.
      * </p>
      * <p>
@@ -3340,7 +3340,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To update a health check, send a <code>POST</code> request to the
-     * <code>2013-04-01/healthcheck/<i>health check ID</i></code> resource. The
+     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource. The
      * request body must include an XML document with an
      * <code>UpdateHealthCheckRequest</code> element. The response returns an
      * <code>UpdateHealthCheckResponse</code> element, which contains metadata
@@ -3397,7 +3397,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
     /**
      * <p>
      * To update the hosted zone comment, send a <code>POST</code> request to
-     * the <code>2013-04-01/hostedzone/<i>hosted zone ID</i></code> resource.
+     * the <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code> resource.
      * The request body must include an XML document with a
      * <code>UpdateHostedZoneCommentRequest</code> element. The response to this
      * request includes the modified <code>HostedZone</code> element.
@@ -3455,7 +3455,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To update the comment, send a <code>POST</code> request to the
-     * <code>/2013-04-01/trafficpolicy/</code> resource.
+     * <code>/2015-01-01/trafficpolicy/</code> resource.
      * </p>
      * <p>
      * The request body must include an XML document with an
@@ -3540,7 +3540,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * <p>
      * To update a traffic policy instance, send a <code>POST</code> request to
      * the
-     * <code>/2013-04-01/trafficpolicyinstance/<i>traffic policy ID</i></code>
+     * <code>/2015-01-01/trafficpolicyinstance/<i>traffic policy ID</i></code>
      * resource. The request body must include an XML document with an
      * <code>UpdateTrafficPolicyInstanceRequest</code> element.
      * </p>

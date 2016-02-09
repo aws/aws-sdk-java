@@ -17,7 +17,7 @@
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
 /**
- * The type of the data set to publish.
+ * 
  */
 public enum DataSetType {
 
@@ -45,7 +45,8 @@ public enum DataSetType {
     Disbursed_amount_by_age_of_disbursed_funds(
             "disbursed_amount_by_age_of_disbursed_funds"),
     Customer_profile_by_industry("customer_profile_by_industry"),
-    Customer_profile_by_revenue("customer_profile_by_revenue");
+    Customer_profile_by_revenue("customer_profile_by_revenue"),
+    Customer_profile_by_geography("customer_profile_by_geography");
 
     private String value;
 
@@ -101,6 +102,8 @@ public enum DataSetType {
             return Customer_profile_by_industry;
         } else if ("customer_profile_by_revenue".equals(value)) {
             return Customer_profile_by_revenue;
+        } else if ("customer_profile_by_geography".equals(value)) {
+            return Customer_profile_by_geography;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

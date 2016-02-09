@@ -100,8 +100,8 @@ public interface AWSMarketplaceCommerceAnalytics {
      * exists (e.g. if the same data set is requested twice), the original file
      * will be overwritten by the new file. Requires a Role with an attached
      * permissions policy providing Allow permissions for the following actions:
-     * s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics,
-     * sns:Publish, iam:GetRolePolicy.
+     * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
+     * iam:GetRolePolicy.
      * 
      * @param generateDataSetRequest
      *        Container for the parameters to the GenerateDataSet operation.

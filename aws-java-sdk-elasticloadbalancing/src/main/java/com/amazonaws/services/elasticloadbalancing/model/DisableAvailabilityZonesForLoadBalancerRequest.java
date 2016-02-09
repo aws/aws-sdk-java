@@ -1,179 +1,180 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest) DisableAvailabilityZonesForLoadBalancer operation}.
- * <p>
- * Removes the specified Availability Zones from the set of Availability
- * Zones for the specified load balancer.
- * </p>
- * <p>
- * There must be at least one Availability Zone registered with a load
- * balancer at all times. After an Availability Zone is removed, all
- * instances registered with the load balancer that are in the removed
- * Availability Zone go into the <code>OutOfService</code> state. Then,
- * the load balancer attempts to equally balance the traffic among its
- * remaining Availability Zones.
- * </p>
- * <p>
- * For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a Load-Balanced Application </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest)
+ * 
  */
-public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DisableAvailabilityZonesForLoadBalancerRequest extends
+        AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the load balancer.
+     * </p>
      */
     private String loadBalancerName;
-
     /**
+     * <p>
      * The Availability Zones.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
+    private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
 
     /**
-     * Default constructor for a new DisableAvailabilityZonesForLoadBalancerRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for DisableAvailabilityZonesForLoadBalancerRequest
+     * object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize the object after creating it.
      */
-    public DisableAvailabilityZonesForLoadBalancerRequest() {}
-    
+    public DisableAvailabilityZonesForLoadBalancerRequest() {
+    }
+
     /**
      * Constructs a new DisableAvailabilityZonesForLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name of the load balancer.
-     * @param availabilityZones The Availability Zones.
+     * @param loadBalancerName
+     *        The name of the load balancer.
+     * @param availabilityZones
+     *        The Availability Zones.
      */
-    public DisableAvailabilityZonesForLoadBalancerRequest(String loadBalancerName, java.util.List<String> availabilityZones) {
+    public DisableAvailabilityZonesForLoadBalancerRequest(
+            String loadBalancerName, java.util.List<String> availabilityZones) {
         setLoadBalancerName(loadBalancerName);
         setAvailabilityZones(availabilityZones);
     }
 
     /**
+     * <p>
      * The name of the load balancer.
-     *
-     * @return The name of the load balancer.
-     */
-    public String getLoadBalancerName() {
-        return loadBalancerName;
-    }
-    
-    /**
-     * The name of the load balancer.
-     *
-     * @param loadBalancerName The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
-    
+
     /**
-     * The name of the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadBalancerName The name of the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @return The name of the load balancer.
      */
-    public DisableAvailabilityZonesForLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
-        this.loadBalancerName = loadBalancerName;
+    public String getLoadBalancerName() {
+        return this.loadBalancerName;
+    }
+
+    /**
+     * <p>
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DisableAvailabilityZonesForLoadBalancerRequest withLoadBalancerName(
+            String loadBalancerName) {
+        setLoadBalancerName(loadBalancerName);
         return this;
     }
 
     /**
+     * <p>
      * The Availability Zones.
-     *
+     * </p>
+     * 
      * @return The Availability Zones.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
-              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              availabilityZones.setAutoConstruct(true);
+            availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return availabilityZones;
     }
-    
+
     /**
+     * <p>
      * The Availability Zones.
-     *
-     * @param availabilityZones The Availability Zones.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The Availability Zones.
      */
-    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
+    public void setAvailabilityZones(
+            java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
-        availabilityZonesCopy.addAll(availabilityZones);
-        this.availabilityZones = availabilityZonesCopy;
+
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(
+                availabilityZones);
     }
-    
+
     /**
+     * <p>
      * The Availability Zones.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
      * {@link #withAvailabilityZones(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param availabilityZones The Availability Zones.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The Availability Zones.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DisableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
-        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
-        for (String value : availabilityZones) {
-            getAvailabilityZones().add(value);
+    public DisableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(
+            String... availabilityZones) {
+        if (this.availabilityZones == null) {
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(
+                    availabilityZones.length));
+        }
+        for (String ele : availabilityZones) {
+            this.availabilityZones.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The Availability Zones.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param availabilityZones The Availability Zones.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DisableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        if (availabilityZones == null) {
-            this.availabilityZones = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
-            availabilityZonesCopy.addAll(availabilityZones);
-            this.availabilityZones = availabilityZonesCopy;
-        }
 
+    /**
+     * <p>
+     * The Availability Zones.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The Availability Zones.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DisableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(
+            java.util.Collection<String> availabilityZones) {
+        setAvailabilityZones(availabilityZones);
         return this;
     }
 
@@ -189,42 +190,59 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() );
+        if (getLoadBalancerName() != null)
+            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getAvailabilityZones() != null)
+            sb.append("AvailabilityZones: " + getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DisableAvailabilityZonesForLoadBalancerRequest == false)
+            return false;
+        DisableAvailabilityZonesForLoadBalancerRequest other = (DisableAvailabilityZonesForLoadBalancerRequest) obj;
+        if (other.getLoadBalancerName() == null
+                ^ this.getLoadBalancerName() == null)
+            return false;
+        if (other.getLoadBalancerName() != null
+                && other.getLoadBalancerName().equals(
+                        this.getLoadBalancerName()) == false)
+            return false;
+        if (other.getAvailabilityZones() == null
+                ^ this.getAvailabilityZones() == null)
+            return false;
+        if (other.getAvailabilityZones() != null
+                && other.getAvailabilityZones().equals(
+                        this.getAvailabilityZones()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
-        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAvailabilityZones() == null) ? 0
+                        : getAvailabilityZones().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DisableAvailabilityZonesForLoadBalancerRequest == false) return false;
-        DisableAvailabilityZonesForLoadBalancerRequest other = (DisableAvailabilityZonesForLoadBalancerRequest)obj;
-        
-        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
-        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
-        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
-        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DisableAvailabilityZonesForLoadBalancerRequest clone() {
-        
-            return (DisableAvailabilityZonesForLoadBalancerRequest) super.clone();
+        return (DisableAvailabilityZonesForLoadBalancerRequest) super.clone();
     }
-
 }
-    

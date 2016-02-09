@@ -44,6 +44,7 @@ import com.amazonaws.internal.SdkSSLSocket;
 import com.amazonaws.internal.SdkSocket;
 import com.amazonaws.internal.SdkMetricsSocket;
 import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.util.JavaVersionParser;
 
 /**
  * Used to enforce the preferred TLS protocol during SSL handshake.
@@ -54,6 +55,7 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
     private static final Log LOG = LogFactory.getLog(SdkTLSSocketFactory.class);
     private final SSLContext sslContext;
     private final MasterSecretValidators.MasterSecretValidator masterSecretValidator;
+    private final ShouldClearSslSessionPredicate shouldClearSslSessionsPredicate;
 
     public SdkTLSSocketFactory(final SSLContext sslContext, final X509HostnameVerifier hostnameVerifier) {
         super(sslContext, hostnameVerifier);
@@ -63,6 +65,7 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
         }
         this.sslContext = sslContext;
         this.masterSecretValidator = MasterSecretValidators.getMasterSecretValidator();
+        this.shouldClearSslSessionsPredicate = new ShouldClearSslSessionPredicate(JavaVersionParser.getCurrentJavaVersion());
     }
 
     /**
@@ -133,11 +136,13 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
                 throw log(new IllegalStateException("Invalid SSL master secret"));
             }
         } catch (final SSLException sslEx) {
-            // clear any related sessions from our cache
-            if (LOG.isDebugEnabled()) {
-                LOG.debug("connection failed due to SSL error, clearing TLS session cache", sslEx);
+            if (shouldClearSslSessionsPredicate.test(sslEx)) {
+                // clear any related sessions from our cache
+                if (LOG.isDebugEnabled()) {
+                    LOG.debug("connection failed due to SSL error, clearing TLS session cache", sslEx);
+                }
+                clearSessionCache(sslContext.getClientSessionContext(), remoteAddress);
             }
-            clearSessionCache(sslContext.getClientSessionContext(), remoteAddress);
             throw sslEx;
         }
         if (socket instanceof SSLSocket) {

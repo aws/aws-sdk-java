@@ -17,9 +17,12 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import java.math.BigInteger;
 import java.util.UUID;
 
+import com.amazonaws.annotation.SdkInternalApi;
+
 /**
  * Helper for auto-generating attribute values.
  */
+@SdkInternalApi
 final class DynamoDBAutoGeneratorRegistry {
 
     /**

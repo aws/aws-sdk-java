@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,32 +28,43 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Instance Capacity StAX Unmarshaller
+ * InstanceCapacity StAX Unmarshaller
  */
-public class InstanceCapacityStaxUnmarshaller implements Unmarshaller<InstanceCapacity, StaxUnmarshallerContext> {
+public class InstanceCapacityStaxUnmarshaller implements
+        Unmarshaller<InstanceCapacity, StaxUnmarshallerContext> {
 
-    public InstanceCapacity unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public InstanceCapacity unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         InstanceCapacity instanceCapacity = new InstanceCapacity();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return instanceCapacity;
+            if (xmlEvent.isEndDocument())
+                return instanceCapacity;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("instanceType", targetDepth)) {
-                    instanceCapacity.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceCapacity.setInstanceType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("availableCapacity", targetDepth)) {
-                    instanceCapacity.setAvailableCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceCapacity
+                            .setAvailableCapacity(IntegerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("totalCapacity", targetDepth)) {
-                    instanceCapacity.setTotalCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceCapacity.setTotalCapacity(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +76,10 @@ public class InstanceCapacityStaxUnmarshaller implements Unmarshaller<InstanceCa
     }
 
     private static InstanceCapacityStaxUnmarshaller instance;
+
     public static InstanceCapacityStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new InstanceCapacityStaxUnmarshaller();
+        if (instance == null)
+            instance = new InstanceCapacityStaxUnmarshaller();
         return instance;
     }
 }
-    

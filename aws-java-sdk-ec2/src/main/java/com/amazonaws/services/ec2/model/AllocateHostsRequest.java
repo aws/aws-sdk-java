@@ -1,346 +1,397 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.AllocateHostsRequestMarshaller;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#allocateHosts(AllocateHostsRequest) AllocateHosts operation}.
- * <p>
- * Allocates a Dedicated host to your account. At minimum you need to
- * specify the instance size type, Availability Zone, and quantity of
- * hosts you want to allocate.
- * </p>
- *
- * @see com.amazonaws.services.ec2.AmazonEC2#allocateHosts(AllocateHostsRequest)
+ * 
  */
-public class AllocateHostsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class AllocateHostsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable, DryRunSupportedRequest<AllocateHostsRequest> {
 
     /**
+     * <p>
      * This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated hosts, when you are
-     * launching instances without specifying a host ID. <p>Default: Enabled
+     * launching instances without specifying a host ID.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>on, off
+     * Default: Enabled
+     * </p>
      */
     private String autoPlacement;
-
     /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * the request. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
      */
     private String clientToken;
-
     /**
+     * <p>
      * Specify the instance type that you want your Dedicated hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
+     * </p>
      */
     private String instanceType;
-
     /**
-     * The number of Dedicated hosts you want to allocate to your account
-     * with these parameters.
+     * <p>
+     * The number of Dedicated hosts you want to allocate to your account with
+     * these parameters.
+     * </p>
      */
     private Integer quantity;
-
     /**
+     * <p>
      * The Availability Zone for the Dedicated hosts.
+     * </p>
      */
     private String availabilityZone;
 
     /**
+     * <p>
      * This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated hosts, when you are
-     * launching instances without specifying a host ID. <p>Default: Enabled
+     * launching instances without specifying a host ID.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>on, off
-     *
-     * @return This is enabled by default. This property allows instances to be
-     *         automatically placed onto available Dedicated hosts, when you are
-     *         launching instances without specifying a host ID. <p>Default: Enabled
-     *
-     * @see AutoPlacement
-     */
-    public String getAutoPlacement() {
-        return autoPlacement;
-    }
-    
-    /**
-     * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
-     * launching instances without specifying a host ID. <p>Default: Enabled
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>on, off
-     *
-     * @param autoPlacement This is enabled by default. This property allows instances to be
-     *         automatically placed onto available Dedicated hosts, when you are
-     *         launching instances without specifying a host ID. <p>Default: Enabled
-     *
+     * Default: Enabled
+     * </p>
+     * 
+     * @param autoPlacement
+     *        This is enabled by default. This property allows instances to be
+     *        automatically placed onto available Dedicated hosts, when you are
+     *        launching instances without specifying a host ID.</p>
+     *        <p>
+     *        Default: Enabled
      * @see AutoPlacement
      */
     public void setAutoPlacement(String autoPlacement) {
         this.autoPlacement = autoPlacement;
     }
-    
+
     /**
+     * <p>
      * This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated hosts, when you are
-     * launching instances without specifying a host ID. <p>Default: Enabled
+     * launching instances without specifying a host ID.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>on, off
-     *
-     * @param autoPlacement This is enabled by default. This property allows instances to be
+     * Default: Enabled
+     * </p>
+     * 
+     * @return This is enabled by default. This property allows instances to be
      *         automatically placed onto available Dedicated hosts, when you are
-     *         launching instances without specifying a host ID. <p>Default: Enabled
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     *         launching instances without specifying a host ID.</p>
+     *         <p>
+     *         Default: Enabled
+     * @see AutoPlacement
+     */
+    public String getAutoPlacement() {
+        return this.autoPlacement;
+    }
+
+    /**
+     * <p>
+     * This is enabled by default. This property allows instances to be
+     * automatically placed onto available Dedicated hosts, when you are
+     * launching instances without specifying a host ID.
+     * </p>
+     * <p>
+     * Default: Enabled
+     * </p>
+     * 
+     * @param autoPlacement
+     *        This is enabled by default. This property allows instances to be
+     *        automatically placed onto available Dedicated hosts, when you are
+     *        launching instances without specifying a host ID.</p>
+     *        <p>
+     *        Default: Enabled
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AutoPlacement
      */
     public AllocateHostsRequest withAutoPlacement(String autoPlacement) {
-        this.autoPlacement = autoPlacement;
+        setAutoPlacement(autoPlacement);
         return this;
     }
 
     /**
+     * <p>
      * This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated hosts, when you are
-     * launching instances without specifying a host ID. <p>Default: Enabled
+     * launching instances without specifying a host ID.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>on, off
-     *
-     * @param autoPlacement This is enabled by default. This property allows instances to be
-     *         automatically placed onto available Dedicated hosts, when you are
-     *         launching instances without specifying a host ID. <p>Default: Enabled
-     *
+     * Default: Enabled
+     * </p>
+     * 
+     * @param autoPlacement
+     *        This is enabled by default. This property allows instances to be
+     *        automatically placed onto available Dedicated hosts, when you are
+     *        launching instances without specifying a host ID.</p>
+     *        <p>
+     *        Default: Enabled
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AutoPlacement
      */
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         this.autoPlacement = autoPlacement.toString();
     }
-    
+
     /**
+     * <p>
      * This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated hosts, when you are
-     * launching instances without specifying a host ID. <p>Default: Enabled
+     * launching instances without specifying a host ID.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>on, off
-     *
-     * @param autoPlacement This is enabled by default. This property allows instances to be
-     *         automatically placed onto available Dedicated hosts, when you are
-     *         launching instances without specifying a host ID. <p>Default: Enabled
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * Default: Enabled
+     * </p>
+     * 
+     * @param autoPlacement
+     *        This is enabled by default. This property allows instances to be
+     *        automatically placed onto available Dedicated hosts, when you are
+     *        launching instances without specifying a host ID.</p>
+     *        <p>
+     *        Default: Enabled
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AutoPlacement
      */
     public AllocateHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
-        this.autoPlacement = autoPlacement.toString();
+        setAutoPlacement(autoPlacement);
         return this;
     }
 
     /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
-     *
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of
-     *         the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
-     */
-    public String getClientToken() {
-        return clientToken;
-    }
-    
-    /**
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
-     *
-     * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
-     *         the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     * the request. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure
+     *        idempotency of the request. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
+     *        Cloud User Guide</i>.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
-    
+
     /**
-     * Unique, case-sensitive identifier you provide to ensure idempotency of
-     * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
-     *         the request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * the request. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     * 
+     * @return Unique, case-sensitive identifier you provide to ensure
+     *         idempotency of the request. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
+     *         Cloud User Guide</i>.
+     */
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * the request. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     * >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure
+     *        idempotency of the request. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
+     *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
+     *        Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AllocateHostsRequest withClientToken(String clientToken) {
-        this.clientToken = clientToken;
+        setClientToken(clientToken);
         return this;
     }
 
     /**
+     * <p>
      * Specify the instance type that you want your Dedicated hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
-     *
-     * @return Specify the instance type that you want your Dedicated hosts to be
-     *         configured for. When you specify the instance type, that is the only
-     *         instance type that you can launch onto that host.
-     */
-    public String getInstanceType() {
-        return instanceType;
-    }
-    
-    /**
-     * Specify the instance type that you want your Dedicated hosts to be
-     * configured for. When you specify the instance type, that is the only
-     * instance type that you can launch onto that host.
-     *
-     * @param instanceType Specify the instance type that you want your Dedicated hosts to be
-     *         configured for. When you specify the instance type, that is the only
-     *         instance type that you can launch onto that host.
+     * </p>
+     * 
+     * @param instanceType
+     *        Specify the instance type that you want your Dedicated hosts to be
+     *        configured for. When you specify the instance type, that is the
+     *        only instance type that you can launch onto that host.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
-    
+
     /**
+     * <p>
      * Specify the instance type that you want your Dedicated hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
+     * </p>
+     * 
+     * @return Specify the instance type that you want your Dedicated hosts to
+     *         be configured for. When you specify the instance type, that is
+     *         the only instance type that you can launch onto that host.
+     */
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceType Specify the instance type that you want your Dedicated hosts to be
-     *         configured for. When you specify the instance type, that is the only
-     *         instance type that you can launch onto that host.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Specify the instance type that you want your Dedicated hosts to be
+     * configured for. When you specify the instance type, that is the only
+     * instance type that you can launch onto that host.
+     * </p>
+     * 
+     * @param instanceType
+     *        Specify the instance type that you want your Dedicated hosts to be
+     *        configured for. When you specify the instance type, that is the
+     *        only instance type that you can launch onto that host.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AllocateHostsRequest withInstanceType(String instanceType) {
-        this.instanceType = instanceType;
+        setInstanceType(instanceType);
         return this;
     }
 
     /**
-     * The number of Dedicated hosts you want to allocate to your account
-     * with these parameters.
-     *
-     * @return The number of Dedicated hosts you want to allocate to your account
-     *         with these parameters.
-     */
-    public Integer getQuantity() {
-        return quantity;
-    }
-    
-    /**
-     * The number of Dedicated hosts you want to allocate to your account
-     * with these parameters.
-     *
-     * @param quantity The number of Dedicated hosts you want to allocate to your account
-     *         with these parameters.
+     * <p>
+     * The number of Dedicated hosts you want to allocate to your account with
+     * these parameters.
+     * </p>
+     * 
+     * @param quantity
+     *        The number of Dedicated hosts you want to allocate to your account
+     *        with these parameters.
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-    
+
     /**
-     * The number of Dedicated hosts you want to allocate to your account
-     * with these parameters.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param quantity The number of Dedicated hosts you want to allocate to your account
-     *         with these parameters.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The number of Dedicated hosts you want to allocate to your account with
+     * these parameters.
+     * </p>
+     * 
+     * @return The number of Dedicated hosts you want to allocate to your
+     *         account with these parameters.
+     */
+    public Integer getQuantity() {
+        return this.quantity;
+    }
+
+    /**
+     * <p>
+     * The number of Dedicated hosts you want to allocate to your account with
+     * these parameters.
+     * </p>
+     * 
+     * @param quantity
+     *        The number of Dedicated hosts you want to allocate to your account
+     *        with these parameters.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AllocateHostsRequest withQuantity(Integer quantity) {
-        this.quantity = quantity;
+        setQuantity(quantity);
         return this;
     }
 
     /**
+     * <p>
      * The Availability Zone for the Dedicated hosts.
-     *
-     * @return The Availability Zone for the Dedicated hosts.
-     */
-    public String getAvailabilityZone() {
-        return availabilityZone;
-    }
-    
-    /**
-     * The Availability Zone for the Dedicated hosts.
-     *
-     * @param availabilityZone The Availability Zone for the Dedicated hosts.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone for the Dedicated hosts.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
-    
+
     /**
-     * The Availability Zone for the Dedicated hosts.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param availabilityZone The Availability Zone for the Dedicated hosts.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Availability Zone for the Dedicated hosts.
+     * </p>
+     * 
+     * @return The Availability Zone for the Dedicated hosts.
+     */
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the Dedicated hosts.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone for the Dedicated hosts.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public AllocateHostsRequest withAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
+        setAvailabilityZone(availabilityZone);
         return this;
+    }
+
+    /**
+     * This method is intended for internal use only. Returns the marshaled
+     * request configured with additional parameters to enable operation
+     * dry-run.
+     */
+    @Override
+    public Request<AllocateHostsRequest> getDryRunRequest() {
+        Request<AllocateHostsRequest> request = new AllocateHostsRequestMarshaller()
+                .marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
 
     /**
@@ -355,54 +406,87 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAutoPlacement() != null) sb.append("AutoPlacement: " + getAutoPlacement() + ",");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ",");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
+        if (getAutoPlacement() != null)
+            sb.append("AutoPlacement: " + getAutoPlacement() + ",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: " + getClientToken() + ",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getQuantity() != null)
+            sb.append("Quantity: " + getQuantity() + ",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: " + getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AllocateHostsRequest == false)
+            return false;
+        AllocateHostsRequest other = (AllocateHostsRequest) obj;
+        if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
+            return false;
+        if (other.getAutoPlacement() != null
+                && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null
+                && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null
+                && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getQuantity() == null ^ this.getQuantity() == null)
+            return false;
+        if (other.getQuantity() != null
+                && other.getQuantity().equals(this.getQuantity()) == false)
+            return false;
+        if (other.getAvailabilityZone() == null
+                ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null
+                && other.getAvailabilityZone().equals(
+                        this.getAvailabilityZone()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode()); 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
-        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode()); 
-        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getAutoPlacement() == null) ? 0 : getAutoPlacement()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceType() == null) ? 0 : getInstanceType()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof AllocateHostsRequest == false) return false;
-        AllocateHostsRequest other = (AllocateHostsRequest)obj;
-        
-        if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null) return false;
-        if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false) return false; 
-        if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
-        if (other.getQuantity() == null ^ this.getQuantity() == null) return false;
-        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false) return false; 
-        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
-        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public AllocateHostsRequest clone() {
-        
-            return (AllocateHostsRequest) super.clone();
+        return (AllocateHostsRequest) super.clone();
     }
-
 }
-    

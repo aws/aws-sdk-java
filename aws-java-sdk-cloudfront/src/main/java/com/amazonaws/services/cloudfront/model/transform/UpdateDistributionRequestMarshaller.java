@@ -896,16 +896,24 @@ public class UpdateDistributionRequestMarshaller
                 if (viewerCertificate != null) {
                     xmlWriter.startElement("ViewerCertificate");
 
-                    if (viewerCertificate.getCertificate() != null) {
-                        xmlWriter.startElement("Certificate")
-                                .value(viewerCertificate.getCertificate())
+                    if (viewerCertificate.getCloudFrontDefaultCertificate() != null) {
+                        xmlWriter
+                                .startElement("CloudFrontDefaultCertificate")
+                                .value(viewerCertificate
+                                        .getCloudFrontDefaultCertificate())
                                 .endElement();
                     }
 
-                    if (viewerCertificate.getCertificateSource() != null) {
+                    if (viewerCertificate.getIAMCertificateId() != null) {
+                        xmlWriter.startElement("IAMCertificateId")
+                                .value(viewerCertificate.getIAMCertificateId())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getACMCertificateArn() != null) {
                         xmlWriter
-                                .startElement("CertificateSource")
-                                .value(viewerCertificate.getCertificateSource())
+                                .startElement("ACMCertificateArn")
+                                .value(viewerCertificate.getACMCertificateArn())
                                 .endElement();
                     }
 
@@ -923,17 +931,16 @@ public class UpdateDistributionRequestMarshaller
                                 .endElement();
                     }
 
-                    if (viewerCertificate.getIAMCertificateId() != null) {
-                        xmlWriter.startElement("IAMCertificateId")
-                                .value(viewerCertificate.getIAMCertificateId())
+                    if (viewerCertificate.getCertificate() != null) {
+                        xmlWriter.startElement("Certificate")
+                                .value(viewerCertificate.getCertificate())
                                 .endElement();
                     }
 
-                    if (viewerCertificate.getCloudFrontDefaultCertificate() != null) {
+                    if (viewerCertificate.getCertificateSource() != null) {
                         xmlWriter
-                                .startElement("CloudFrontDefaultCertificate")
-                                .value(viewerCertificate
-                                        .getCloudFrontDefaultCertificate())
+                                .startElement("CertificateSource")
+                                .value(viewerCertificate.getCertificateSource())
                                 .endElement();
                     }
                     xmlWriter.endElement();

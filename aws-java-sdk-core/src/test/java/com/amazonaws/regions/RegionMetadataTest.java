@@ -18,6 +18,7 @@
  */
 package com.amazonaws.regions;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,19 +32,18 @@ public class RegionMetadataTest {
 
     @BeforeClass
     public static void setUp() {
-        List<Region> regions = new LinkedList<Region>();
+        Region us_east_1_region = new Region(new InMemoryRegionImpl
+                ("us-east-1",
+                null).addEndpoint("s3", "s3.amazonaws.com"));
 
-        Region region = new Region("us-east-1", null);
-        region.getServiceEndpoints().put("s3", "s3.amazonaws.com");
-        regions.add(region);
+        Region us_west_1_region = new Region(new InMemoryRegionImpl
+                ("us-west-1", null).addEndpoint("s3", "s3-us-west-1.amazonaws.com"));
 
-        region = new Region("us-west-1", null);
-        region.getServiceEndpoints().put("s3", "s3-us-west-1.amazonaws.com");
-        regions.add(region);
+        Region cn_north_1_region = new Region(new InMemoryRegionImpl("cn-north-1",
+                "amazonaws.com.cn"));
 
-        regions.add(new Region("cn-north-1", "amazonaws.com.cn"));
-
-        metadata = new RegionMetadata(regions);
+        metadata = new RegionMetadata(new InMemoryRegionsProvider(Arrays
+                .asList(us_east_1_region, us_west_1_region,cn_north_1_region)));
     }
 
     @Test

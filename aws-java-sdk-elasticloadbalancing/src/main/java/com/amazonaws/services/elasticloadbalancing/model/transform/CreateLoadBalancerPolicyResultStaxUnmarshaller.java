@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,22 +28,27 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Create Load Balancer Policy Result StAX Unmarshaller
+ * CreateLoadBalancerPolicyResult StAX Unmarshaller
  */
-public class CreateLoadBalancerPolicyResultStaxUnmarshaller implements Unmarshaller<CreateLoadBalancerPolicyResult, StaxUnmarshallerContext> {
+public class CreateLoadBalancerPolicyResultStaxUnmarshaller implements
+        Unmarshaller<CreateLoadBalancerPolicyResult, StaxUnmarshallerContext> {
 
-    public CreateLoadBalancerPolicyResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CreateLoadBalancerPolicyResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         CreateLoadBalancerPolicyResult createLoadBalancerPolicyResult = new CreateLoadBalancerPolicyResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return createLoadBalancerPolicyResult;
+            if (xmlEvent.isEndDocument())
+                return createLoadBalancerPolicyResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createLoadBalancerPolicyResult;
@@ -52,9 +58,10 @@ public class CreateLoadBalancerPolicyResultStaxUnmarshaller implements Unmarshal
     }
 
     private static CreateLoadBalancerPolicyResultStaxUnmarshaller instance;
+
     public static CreateLoadBalancerPolicyResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateLoadBalancerPolicyResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new CreateLoadBalancerPolicyResultStaxUnmarshaller();
         return instance;
     }
 }
-    

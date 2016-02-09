@@ -23,7 +23,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * To retrieve a count of all your traffic policy instances, send a
  * <code>GET</code> request to the
- * <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+ * <code>2015-01-01/trafficpolicyinstancecount</code> resource.
  * </p>
  */
 public class GetTrafficPolicyInstanceCountRequest extends

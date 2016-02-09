@@ -49,6 +49,9 @@ public class DefaultRequest<T> implements Request<T> {
      * Note that a LinkedHashMap is used, since we want to preserve the
      * insertion order so that members of a list parameter will still be ordered
      * by their indices when they are marshalled into the query string.
+     *
+     * Lists values in this Map must use an implementation that allows
+     * null values to be present.
      */
     private Map<String, List<String>> parameters = new LinkedHashMap<String, List<String>>();
 

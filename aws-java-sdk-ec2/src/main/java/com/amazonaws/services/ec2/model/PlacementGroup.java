@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -24,237 +26,223 @@ import java.io.Serializable;
 public class PlacementGroup implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the placement group.
+     * </p>
      */
     private String groupName;
-
     /**
-     * The placement strategy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster
+     * The placement strategy.
+     * </p>
      */
     private String strategy;
-
     /**
-     * The state of the placement group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, deleting, deleted
+     * The state of the placement group.
+     * </p>
      */
     private String state;
 
     /**
-     * Default constructor for a new PlacementGroup object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for PlacementGroup object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public PlacementGroup() {}
-    
+    public PlacementGroup() {
+    }
+
     /**
-     * Constructs a new PlacementGroup object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new PlacementGroup object. Callers should use the setter or
+     * fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param groupName The name of the placement group.
+     * @param groupName
+     *        The name of the placement group.
      */
     public PlacementGroup(String groupName) {
         setGroupName(groupName);
     }
 
     /**
+     * <p>
      * The name of the placement group.
-     *
-     * @return The name of the placement group.
-     */
-    public String getGroupName() {
-        return groupName;
-    }
-    
-    /**
-     * The name of the placement group.
-     *
-     * @param groupName The name of the placement group.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the placement group.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-    
+
     /**
-     * The name of the placement group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param groupName The name of the placement group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the placement group.
+     * </p>
+     * 
+     * @return The name of the placement group.
+     */
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the placement group.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the placement group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public PlacementGroup withGroupName(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
         return this;
     }
 
     /**
-     * The placement strategy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster
-     *
-     * @return The placement strategy.
-     *
-     * @see PlacementStrategy
-     */
-    public String getStrategy() {
-        return strategy;
-    }
-    
-    /**
      * The placement strategy.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster
-     *
-     * @param strategy The placement strategy.
-     *
+     * </p>
+     * 
+     * @param strategy
+     *        The placement strategy.
      * @see PlacementStrategy
      */
     public void setStrategy(String strategy) {
         this.strategy = strategy;
     }
-    
+
     /**
+     * <p>
      * The placement strategy.
+     * </p>
+     * 
+     * @return The placement strategy.
+     * @see PlacementStrategy
+     */
+    public String getStrategy() {
+        return this.strategy;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster
-     *
-     * @param strategy The placement strategy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The placement strategy.
+     * </p>
+     * 
+     * @param strategy
+     *        The placement strategy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlacementStrategy
      */
     public PlacementGroup withStrategy(String strategy) {
-        this.strategy = strategy;
+        setStrategy(strategy);
         return this;
     }
 
     /**
-     * The placement strategy.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster
-     *
-     * @param strategy The placement strategy.
-     *
+     * The placement strategy.
+     * </p>
+     * 
+     * @param strategy
+     *        The placement strategy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlacementStrategy
      */
     public void setStrategy(PlacementStrategy strategy) {
         this.strategy = strategy.toString();
     }
-    
+
     /**
+     * <p>
      * The placement strategy.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster
-     *
-     * @param strategy The placement strategy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param strategy
+     *        The placement strategy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlacementStrategy
      */
     public PlacementGroup withStrategy(PlacementStrategy strategy) {
-        this.strategy = strategy.toString();
+        setStrategy(strategy);
         return this;
     }
 
     /**
-     * The state of the placement group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, deleting, deleted
-     *
-     * @return The state of the placement group.
-     *
-     * @see PlacementGroupState
-     */
-    public String getState() {
-        return state;
-    }
-    
-    /**
      * The state of the placement group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, deleting, deleted
-     *
-     * @param state The state of the placement group.
-     *
+     * </p>
+     * 
+     * @param state
+     *        The state of the placement group.
      * @see PlacementGroupState
      */
     public void setState(String state) {
         this.state = state;
     }
-    
+
     /**
+     * <p>
      * The state of the placement group.
+     * </p>
+     * 
+     * @return The state of the placement group.
+     * @see PlacementGroupState
+     */
+    public String getState() {
+        return this.state;
+    }
+
+    /**
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, deleting, deleted
-     *
-     * @param state The state of the placement group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * The state of the placement group.
+     * </p>
+     * 
+     * @param state
+     *        The state of the placement group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlacementGroupState
      */
     public PlacementGroup withState(String state) {
-        this.state = state;
+        setState(state);
         return this;
     }
 
     /**
-     * The state of the placement group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, deleting, deleted
-     *
-     * @param state The state of the placement group.
-     *
+     * The state of the placement group.
+     * </p>
+     * 
+     * @param state
+     *        The state of the placement group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlacementGroupState
      */
     public void setState(PlacementGroupState state) {
         this.state = state.toString();
     }
-    
+
     /**
+     * <p>
      * The state of the placement group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, available, deleting, deleted
-     *
-     * @param state The state of the placement group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param state
+     *        The state of the placement group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlacementGroupState
      */
     public PlacementGroup withState(PlacementGroupState state) {
-        this.state = state.toString();
+        setState(state);
         return this;
     }
 
@@ -270,54 +258,66 @@ public class PlacementGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
-        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ",");
-        if (getState() != null) sb.append("State: " + getState() );
+        if (getGroupName() != null)
+            sb.append("GroupName: " + getGroupName() + ",");
+        if (getStrategy() != null)
+            sb.append("Strategy: " + getStrategy() + ",");
+        if (getState() != null)
+            sb.append("State: " + getState());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PlacementGroup == false)
+            return false;
+        PlacementGroup other = (PlacementGroup) obj;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null
+                && other.getGroupName().equals(this.getGroupName()) == false)
+            return false;
+        if (other.getStrategy() == null ^ this.getStrategy() == null)
+            return false;
+        if (other.getStrategy() != null
+                && other.getStrategy().equals(this.getStrategy()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null
+                && other.getState().equals(this.getState()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getStrategy() == null) ? 0 : getStrategy().hashCode()); 
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode
+                + ((getStrategy() == null) ? 0 : getStrategy().hashCode());
+        hashCode = prime * hashCode
+                + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof PlacementGroup == false) return false;
-        PlacementGroup other = (PlacementGroup)obj;
-        
-        if (other.getGroupName() == null ^ this.getGroupName() == null) return false;
-        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false) return false; 
-        if (other.getStrategy() == null ^ this.getStrategy() == null) return false;
-        if (other.getStrategy() != null && other.getStrategy().equals(this.getStrategy()) == false) return false; 
-        if (other.getState() == null ^ this.getState() == null) return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public PlacementGroup clone() {
         try {
             return (PlacementGroup) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

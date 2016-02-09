@@ -1,66 +1,65 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetImageAttributeRequestMarshaller;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest) ResetImageAttribute operation}.
- * <p>
- * Resets an attribute of an AMI to its default value.
- * </p>
- * <p>
- * <b>NOTE:</b> The productCodes attribute can't be reset.
- * </p>
- *
- * @see com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest)
+ * 
  */
-public class ResetImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ResetImageAttributeRequest> {
+public class ResetImageAttributeRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable,
+        DryRunSupportedRequest<ResetImageAttributeRequest> {
 
     /**
+     * <p>
      * The ID of the AMI.
+     * </p>
      */
     private String imageId;
-
     /**
+     * <p>
      * The attribute to reset (currently you can only reset the launch
      * permission attribute).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>launchPermission
+     * </p>
      */
     private String attribute;
 
     /**
-     * Default constructor for a new ResetImageAttributeRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for ResetImageAttributeRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize the
+     * object after creating it.
      */
-    public ResetImageAttributeRequest() {}
-    
+    public ResetImageAttributeRequest() {
+    }
+
     /**
-     * Constructs a new ResetImageAttributeRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ResetImageAttributeRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param imageId The ID of the AMI.
-     * @param attribute The attribute to reset (currently you can only reset
-     * the launch permission attribute).
+     * @param imageId
+     *        The ID of the AMI.
+     * @param attribute
+     *        The attribute to reset (currently you can only reset the launch
+     *        permission attribute).
      */
     public ResetImageAttributeRequest(String imageId, String attribute) {
         setImageId(imageId);
@@ -68,156 +67,156 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Constructs a new ResetImageAttributeRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ResetImageAttributeRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param imageId The ID of the AMI.
-     * @param attribute The attribute to reset (currently you can only reset
-     * the launch permission attribute).
+     * @param imageId
+     *        The ID of the AMI.
+     * @param attribute
+     *        The attribute to reset (currently you can only reset the launch
+     *        permission attribute).
      */
-    public ResetImageAttributeRequest(String imageId, ResetImageAttributeName attribute) {
-        this.imageId = imageId;
-        this.attribute = attribute.toString();
+    public ResetImageAttributeRequest(String imageId,
+            ResetImageAttributeName attribute) {
+        setImageId(imageId);
+        setAttribute(attribute.toString());
     }
 
     /**
+     * <p>
      * The ID of the AMI.
-     *
-     * @return The ID of the AMI.
-     */
-    public String getImageId() {
-        return imageId;
-    }
-    
-    /**
-     * The ID of the AMI.
-     *
-     * @param imageId The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
-    
+
     /**
-     * The ID of the AMI.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param imageId The ID of the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @return The ID of the AMI.
+     */
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
     public ResetImageAttributeRequest withImageId(String imageId) {
-        this.imageId = imageId;
+        setImageId(imageId);
         return this;
     }
 
     /**
+     * <p>
      * The attribute to reset (currently you can only reset the launch
      * permission attribute).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>launchPermission
-     *
-     * @return The attribute to reset (currently you can only reset the launch
-     *         permission attribute).
-     *
-     * @see ResetImageAttributeName
-     */
-    public String getAttribute() {
-        return attribute;
-    }
-    
-    /**
-     * The attribute to reset (currently you can only reset the launch
-     * permission attribute).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>launchPermission
-     *
-     * @param attribute The attribute to reset (currently you can only reset the launch
-     *         permission attribute).
-     *
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset (currently you can only reset the launch
+     *        permission attribute).
      * @see ResetImageAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
-    
+
     /**
+     * <p>
      * The attribute to reset (currently you can only reset the launch
      * permission attribute).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>launchPermission
-     *
-     * @param attribute The attribute to reset (currently you can only reset the launch
+     * </p>
+     * 
+     * @return The attribute to reset (currently you can only reset the launch
      *         permission attribute).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * @see ResetImageAttributeName
+     */
+    public String getAttribute() {
+        return this.attribute;
+    }
+
+    /**
+     * <p>
+     * The attribute to reset (currently you can only reset the launch
+     * permission attribute).
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset (currently you can only reset the launch
+     *        permission attribute).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ResetImageAttributeName
      */
     public ResetImageAttributeRequest withAttribute(String attribute) {
-        this.attribute = attribute;
+        setAttribute(attribute);
         return this;
     }
 
     /**
+     * <p>
      * The attribute to reset (currently you can only reset the launch
      * permission attribute).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>launchPermission
-     *
-     * @param attribute The attribute to reset (currently you can only reset the launch
-     *         permission attribute).
-     *
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset (currently you can only reset the launch
+     *        permission attribute).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ResetImageAttributeName
      */
     public void setAttribute(ResetImageAttributeName attribute) {
         this.attribute = attribute.toString();
     }
-    
+
     /**
+     * <p>
      * The attribute to reset (currently you can only reset the launch
      * permission attribute).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>launchPermission
-     *
-     * @param attribute The attribute to reset (currently you can only reset the launch
-     *         permission attribute).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param attribute
+     *        The attribute to reset (currently you can only reset the launch
+     *        permission attribute).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ResetImageAttributeName
      */
-    public ResetImageAttributeRequest withAttribute(ResetImageAttributeName attribute) {
-        this.attribute = attribute.toString();
+    public ResetImageAttributeRequest withAttribute(
+            ResetImageAttributeName attribute) {
+        setAttribute(attribute);
         return this;
     }
 
     /**
-     * This method is intended for internal use only.
-     * Returns the marshaled request configured with additional parameters to
-     * enable operation dry-run.
+     * This method is intended for internal use only. Returns the marshaled
+     * request configured with additional parameters to enable operation
+     * dry-run.
      */
     @Override
     public Request<ResetImageAttributeRequest> getDryRunRequest() {
-        Request<ResetImageAttributeRequest> request = new ResetImageAttributeRequestMarshaller().marshall(this);
+        Request<ResetImageAttributeRequest> request = new ResetImageAttributeRequestMarshaller()
+                .marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -230,42 +229,51 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
+        if (getImageId() != null)
+            sb.append("ImageId: " + getImageId() + ",");
+        if (getAttribute() != null)
+            sb.append("Attribute: " + getAttribute());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ResetImageAttributeRequest == false)
+            return false;
+        ResetImageAttributeRequest other = (ResetImageAttributeRequest) obj;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null
+                && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getAttribute() == null ^ this.getAttribute() == null)
+            return false;
+        if (other.getAttribute() != null
+                && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
-        hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode
+                + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ResetImageAttributeRequest == false) return false;
-        ResetImageAttributeRequest other = (ResetImageAttributeRequest)obj;
-        
-        if (other.getImageId() == null ^ this.getImageId() == null) return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
-        if (other.getAttribute() == null ^ this.getAttribute() == null) return false;
-        if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ResetImageAttributeRequest clone() {
-        
-            return (ResetImageAttributeRequest) super.clone();
+        return (ResetImageAttributeRequest) super.clone();
     }
-
 }
-    

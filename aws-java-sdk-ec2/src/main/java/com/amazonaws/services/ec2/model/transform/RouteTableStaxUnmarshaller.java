@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,46 +28,68 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Route Table StAX Unmarshaller
+ * RouteTable StAX Unmarshaller
  */
-public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, StaxUnmarshallerContext> {
+public class RouteTableStaxUnmarshaller implements
+        Unmarshaller<RouteTable, StaxUnmarshallerContext> {
 
-    public RouteTable unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public RouteTable unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         RouteTable routeTable = new RouteTable();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return routeTable;
+            if (xmlEvent.isEndDocument())
+                return routeTable;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("routeTableId", targetDepth)) {
-                    routeTable.setRouteTableId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    routeTable.setRouteTableId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("vpcId", targetDepth)) {
-                    routeTable.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    routeTable.setVpcId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("routeSet/item", targetDepth)) {
-                    routeTable.getRoutes().add(RouteStaxUnmarshaller.getInstance().unmarshall(context));
+                    routeTable.getRoutes().add(
+                            RouteStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
+
                 if (context.testExpression("associationSet/item", targetDepth)) {
-                    routeTable.getAssociations().add(RouteTableAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    routeTable.getAssociations().add(
+                            RouteTableAssociationStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    routeTable.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    routeTable.getTags().add(
+                            TagStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
                     continue;
                 }
-                if (context.testExpression("propagatingVgwSet/item", targetDepth)) {
-                    routeTable.getPropagatingVgws().add(PropagatingVgwStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("propagatingVgwSet/item",
+                        targetDepth)) {
+                    routeTable.getPropagatingVgws().add(
+                            PropagatingVgwStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return routeTable;
@@ -76,9 +99,10 @@ public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, Stax
     }
 
     private static RouteTableStaxUnmarshaller instance;
+
     public static RouteTableStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new RouteTableStaxUnmarshaller();
+        if (instance == null)
+            instance = new RouteTableStaxUnmarshaller();
         return instance;
     }
 }
-    

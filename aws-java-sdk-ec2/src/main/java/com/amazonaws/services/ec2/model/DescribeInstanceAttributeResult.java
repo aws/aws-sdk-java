@@ -1,61 +1,72 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
 /**
- * 
+ * A simple result wrapper around the InstanceAttribute object that was sent
+ * over the wire.
  */
 public class DescribeInstanceAttributeResult implements Serializable, Cloneable {
 
     /**
-     * Information about the instance attribute.
+     * <p>
+     * Describes an instance attribute.
+     * </p>
      */
     private InstanceAttribute instanceAttribute;
 
     /**
-     * Information about the instance attribute.
-     *
-     * @return Information about the instance attribute.
-     */
-    public InstanceAttribute getInstanceAttribute() {
-        return instanceAttribute;
-    }
-    
-    /**
-     * Information about the instance attribute.
-     *
-     * @param instanceAttribute Information about the instance attribute.
+     * <p>
+     * Describes an instance attribute.
+     * </p>
+     * 
+     * @param instanceAttribute
+     *        Describes an instance attribute.
      */
     public void setInstanceAttribute(InstanceAttribute instanceAttribute) {
         this.instanceAttribute = instanceAttribute;
     }
-    
+
     /**
-     * Information about the instance attribute.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceAttribute Information about the instance attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Describes an instance attribute.
+     * </p>
+     * 
+     * @return Describes an instance attribute.
      */
-    public DescribeInstanceAttributeResult withInstanceAttribute(InstanceAttribute instanceAttribute) {
-        this.instanceAttribute = instanceAttribute;
+    public InstanceAttribute getInstanceAttribute() {
+        return this.instanceAttribute;
+    }
+
+    /**
+     * <p>
+     * Describes an instance attribute.
+     * </p>
+     * 
+     * @param instanceAttribute
+     *        Describes an instance attribute.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DescribeInstanceAttributeResult withInstanceAttribute(
+            InstanceAttribute instanceAttribute) {
+        setInstanceAttribute(instanceAttribute);
         return this;
     }
 
@@ -71,46 +82,52 @@ public class DescribeInstanceAttributeResult implements Serializable, Cloneable 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceAttribute() != null) sb.append("InstanceAttribute: " + getInstanceAttribute() );
+        if (getInstanceAttribute() != null)
+            sb.append("InstanceAttribute: " + getInstanceAttribute());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeInstanceAttributeResult == false)
+            return false;
+        DescribeInstanceAttributeResult other = (DescribeInstanceAttributeResult) obj;
+        if (other.getInstanceAttribute() == null
+                ^ this.getInstanceAttribute() == null)
+            return false;
+        if (other.getInstanceAttribute() != null
+                && other.getInstanceAttribute().equals(
+                        this.getInstanceAttribute()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getInstanceAttribute() == null) ? 0 : getInstanceAttribute().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getInstanceAttribute() == null) ? 0
+                        : getInstanceAttribute().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeInstanceAttributeResult == false) return false;
-        DescribeInstanceAttributeResult other = (DescribeInstanceAttributeResult)obj;
-        
-        if (other.getInstanceAttribute() == null ^ this.getInstanceAttribute() == null) return false;
-        if (other.getInstanceAttribute() != null && other.getInstanceAttribute().equals(this.getInstanceAttribute()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeInstanceAttributeResult clone() {
         try {
             return (DescribeInstanceAttributeResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    
