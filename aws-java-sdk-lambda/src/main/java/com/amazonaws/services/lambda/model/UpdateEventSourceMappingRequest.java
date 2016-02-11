@@ -28,6 +28,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * mapping.
  * </p>
  * <p>
+ * If you are using the versioning feature, you can update the event
+ * source mapping to map to a specific Lambda function version or alias
+ * as described in the <code>FunctionName</code> parameter. For
+ * information about the versioning feature, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
+ * </p>
+ * <p>
+ * If you disable the event source mapping, AWS Lambda stops polling. If
+ * you enable again, it will resume polling from the time it had stopped
+ * polling, so you don't lose processing of any records. However, if you
+ * delete event source mapping and create it again, it will reset.
+ * </p>
+ * <p>
  * This operation requires permission for the
  * <code>lambda:UpdateEventSourceMapping</code> action.
  * </p>
@@ -43,13 +57,19 @@ public class UpdateEventSourceMappingRequest extends AmazonWebServiceRequest imp
 
     /**
      * The Lambda function to which you want the stream records sent. <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or
+     * can specify a function name (for example, <code>Thumbnail</code>) or
      * you can specify Amazon Resource Name (ARN) of the function (for
-     * example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     * AWS Lambda also allows you to specify only the account ID qualifier
-     * (for example, "account-id:Thumbnail"). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 character in length.
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     * you can also provide a qualified function ARN (ARN that is qualified
+     * with function version or alias name as suffix). For more information
+     * about versioning, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a> <p>Note that the length
+     * constraint applies only to the ARN. If you specify only the function
+     * name, it is limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -107,26 +127,38 @@ public class UpdateEventSourceMappingRequest extends AmazonWebServiceRequest imp
 
     /**
      * The Lambda function to which you want the stream records sent. <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or
+     * can specify a function name (for example, <code>Thumbnail</code>) or
      * you can specify Amazon Resource Name (ARN) of the function (for
-     * example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     * AWS Lambda also allows you to specify only the account ID qualifier
-     * (for example, "account-id:Thumbnail"). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 character in length.
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     * you can also provide a qualified function ARN (ARN that is qualified
+     * with function version or alias name as suffix). For more information
+     * about versioning, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a> <p>Note that the length
+     * constraint applies only to the ARN. If you specify only the function
+     * name, it is limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return The Lambda function to which you want the stream records sent. <p> You
-     *         can specify an unqualified function name (for example, "Thumbnail") or
+     *         can specify a function name (for example, <code>Thumbnail</code>) or
      *         you can specify Amazon Resource Name (ARN) of the function (for
-     *         example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     *         AWS Lambda also allows you to specify only the account ID qualifier
-     *         (for example, "account-id:Thumbnail"). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is
-     *         limited to 64 character in length.
+     *         example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     *         you can also provide a qualified function ARN (ARN that is qualified
+     *         with function version or alias name as suffix). For more information
+     *         about versioning, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     *         Lambda Function Versioning and Aliases</a> <p>Note that the length
+     *         constraint applies only to the ARN. If you specify only the function
+     *         name, it is limited to 64 character in length.
      */
     public String getFunctionName() {
         return functionName;
@@ -134,26 +166,38 @@ public class UpdateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     
     /**
      * The Lambda function to which you want the stream records sent. <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or
+     * can specify a function name (for example, <code>Thumbnail</code>) or
      * you can specify Amazon Resource Name (ARN) of the function (for
-     * example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     * AWS Lambda also allows you to specify only the account ID qualifier
-     * (for example, "account-id:Thumbnail"). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 character in length.
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     * you can also provide a qualified function ARN (ARN that is qualified
+     * with function version or alias name as suffix). For more information
+     * about versioning, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a> <p>Note that the length
+     * constraint applies only to the ARN. If you specify only the function
+     * name, it is limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function to which you want the stream records sent. <p> You
-     *         can specify an unqualified function name (for example, "Thumbnail") or
+     *         can specify a function name (for example, <code>Thumbnail</code>) or
      *         you can specify Amazon Resource Name (ARN) of the function (for
-     *         example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     *         AWS Lambda also allows you to specify only the account ID qualifier
-     *         (for example, "account-id:Thumbnail"). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is
-     *         limited to 64 character in length.
+     *         example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     *         you can also provide a qualified function ARN (ARN that is qualified
+     *         with function version or alias name as suffix). For more information
+     *         about versioning, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     *         Lambda Function Versioning and Aliases</a> <p>Note that the length
+     *         constraint applies only to the ARN. If you specify only the function
+     *         name, it is limited to 64 character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
@@ -161,13 +205,19 @@ public class UpdateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     
     /**
      * The Lambda function to which you want the stream records sent. <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or
+     * can specify a function name (for example, <code>Thumbnail</code>) or
      * you can specify Amazon Resource Name (ARN) of the function (for
-     * example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     * AWS Lambda also allows you to specify only the account ID qualifier
-     * (for example, "account-id:Thumbnail"). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 character in length.
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     * you can also provide a qualified function ARN (ARN that is qualified
+     * with function version or alias name as suffix). For more information
+     * about versioning, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a> <p>Note that the length
+     * constraint applies only to the ARN. If you specify only the function
+     * name, it is limited to 64 character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -176,13 +226,19 @@ public class UpdateEventSourceMappingRequest extends AmazonWebServiceRequest imp
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName The Lambda function to which you want the stream records sent. <p> You
-     *         can specify an unqualified function name (for example, "Thumbnail") or
+     *         can specify a function name (for example, <code>Thumbnail</code>) or
      *         you can specify Amazon Resource Name (ARN) of the function (for
-     *         example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-     *         AWS Lambda also allows you to specify only the account ID qualifier
-     *         (for example, "account-id:Thumbnail"). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is
-     *         limited to 64 character in length.
+     *         example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). <p>If you are using versioning,
+     *         you can also provide a qualified function ARN (ARN that is qualified
+     *         with function version or alias name as suffix). For more information
+     *         about versioning, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     *         Lambda Function Versioning and Aliases</a> <p>Note that the length
+     *         constraint applies only to the ARN. If you specify only the function
+     *         name, it is limited to 64 character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

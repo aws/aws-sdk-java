@@ -44,13 +44,13 @@ public class Integration implements Serializable, Cloneable {
      * according to the <a target="_blank"
      * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
      * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      */
     private String uri;
@@ -221,13 +221,13 @@ public class Integration implements Serializable, Cloneable {
      * according to the <a target="_blank"
      * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
      * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      * 
      * @param uri
@@ -237,15 +237,15 @@ public class Integration implements Serializable, Cloneable {
      *        href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986
      *        specification</a>. For AWS integrations, the URI should be of the
      *        form
-     *        <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>
-     *        . <code>Region</code> and <code>service</code> are used to
-     *        determine the right endpoint. For AWS services that use the
-     *        <code>Action=</code> query string parameter,
-     *        <code>service_api</code> should be a valid action for the desired
-     *        service. For RESTful AWS service APIs, <code>path</code> is used
-     *        to indicate that the remaining substring in the URI should be
-     *        treated as the path to the resource, including the initial
-     *        <code>/</code>.
+     *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>
+     *        . <code>Region</code>, <code>subdomain</code> and
+     *        <code>service</code> are used to determine the right endpoint. For
+     *        AWS services that use the <code>Action=</code> query string
+     *        parameter, <code>service_api</code> should be a valid action for
+     *        the desired service. For RESTful AWS service APIs,
+     *        <code>path</code> is used to indicate that the remaining substring
+     *        in the URI should be treated as the path to the resource,
+     *        including the initial <code>/</code>.
      */
     public void setUri(String uri) {
         this.uri = uri;
@@ -258,13 +258,13 @@ public class Integration implements Serializable, Cloneable {
      * according to the <a target="_blank"
      * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
      * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      * 
      * @return Specifies the integration's Uniform Resource Identifier (URI).
@@ -273,15 +273,15 @@ public class Integration implements Serializable, Cloneable {
      *         href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986
      *         specification</a>. For AWS integrations, the URI should be of the
      *         form
-     *         <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>
-     *         . <code>Region</code> and <code>service</code> are used to
-     *         determine the right endpoint. For AWS services that use the
-     *         <code>Action=</code> query string parameter,
-     *         <code>service_api</code> should be a valid action for the desired
-     *         service. For RESTful AWS service APIs, <code>path</code> is used
-     *         to indicate that the remaining substring in the URI should be
-     *         treated as the path to the resource, including the initial
-     *         <code>/</code>.
+     *         <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>
+     *         . <code>Region</code>, <code>subdomain</code> and
+     *         <code>service</code> are used to determine the right endpoint.
+     *         For AWS services that use the <code>Action=</code> query string
+     *         parameter, <code>service_api</code> should be a valid action for
+     *         the desired service. For RESTful AWS service APIs,
+     *         <code>path</code> is used to indicate that the remaining
+     *         substring in the URI should be treated as the path to the
+     *         resource, including the initial <code>/</code>.
      */
     public String getUri() {
         return this.uri;
@@ -294,13 +294,13 @@ public class Integration implements Serializable, Cloneable {
      * according to the <a target="_blank"
      * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
      * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      * 
      * @param uri
@@ -310,15 +310,15 @@ public class Integration implements Serializable, Cloneable {
      *        href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986
      *        specification</a>. For AWS integrations, the URI should be of the
      *        form
-     *        <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>
-     *        . <code>Region</code> and <code>service</code> are used to
-     *        determine the right endpoint. For AWS services that use the
-     *        <code>Action=</code> query string parameter,
-     *        <code>service_api</code> should be a valid action for the desired
-     *        service. For RESTful AWS service APIs, <code>path</code> is used
-     *        to indicate that the remaining substring in the URI should be
-     *        treated as the path to the resource, including the initial
-     *        <code>/</code>.
+     *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>
+     *        . <code>Region</code>, <code>subdomain</code> and
+     *        <code>service</code> are used to determine the right endpoint. For
+     *        AWS services that use the <code>Action=</code> query string
+     *        parameter, <code>service_api</code> should be a valid action for
+     *        the desired service. For RESTful AWS service APIs,
+     *        <code>path</code> is used to indicate that the remaining substring
+     *        in the URI should be treated as the path to the resource,
+     *        including the initial <code>/</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

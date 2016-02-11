@@ -24,6 +24,11 @@ import java.io.Serializable;
  * metric. If you call <a>ListMetrics</a>, Amazon CloudWatch returns information
  * contained by this data type.
  * </p>
+ * <p>
+ * The example in the Examples section publishes two metrics named buffers and
+ * latency. Both metrics are in the examples namespace. Both metrics have two
+ * dimensions, InstanceID and InstanceType.
+ * </p>
  */
 public class Metric implements Serializable, Cloneable {
 

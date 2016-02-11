@@ -87,6 +87,11 @@ public class PutMethodRequestMarshaller implements
                         putMethodRequest.getAuthorizationType());
             }
 
+            if (putMethodRequest.getAuthorizerId() != null) {
+                jsonWriter.key("authorizerId").value(
+                        putMethodRequest.getAuthorizerId());
+            }
+
             if (putMethodRequest.getApiKeyRequired() != null) {
                 jsonWriter.key("apiKeyRequired").value(
                         putMethodRequest.getApiKeyRequired());

@@ -332,7 +332,8 @@
         {"shape":"NoSuchChange"},
         {"shape":"InvalidInput"}
       ],
-      "documentation":"<p>This action returns the status and changes of a change batch request.</p>"
+      "documentation":"<p>This action returns the status and changes of a change batch request.</p>",
+      "deprecated":true
     },
     "GetCheckerIpRanges":{
       "name":"GetCheckerIpRanges",
@@ -503,7 +504,8 @@
         {"shape":"NoSuchHostedZone"},
         {"shape":"InvalidInput"}
       ],
-      "documentation":"<p>This action gets the list of ChangeBatches in a given time period for a given hosted zone.</p>"
+      "documentation":"<p>This action gets the list of ChangeBatches in a given time period for a given hosted zone.</p>",
+      "deprecated":true
     },
     "ListChangeBatchesByRRSet":{
       "name":"ListChangeBatchesByRRSet",
@@ -517,7 +519,8 @@
         {"shape":"NoSuchHostedZone"},
         {"shape":"InvalidInput"}
       ],
-      "documentation":"<p>This action gets the list of ChangeBatches in a given time period for a given hosted zone and RRSet.</p>"
+      "documentation":"<p>This action gets the list of ChangeBatches in a given time period for a given hosted zone and RRSet.</p>",
+      "deprecated":true
     },
     "ListGeoLocations":{
       "name":"ListGeoLocations",
@@ -922,7 +925,8 @@
           "documentation":"<p>A list of changes made in the ChangeBatch.</p>"
         }
       },
-      "documentation":"<p>A complex type that lists the changes and information for a ChangeBatch.</p>"
+      "documentation":"<p>A complex type that lists the changes and information for a ChangeBatch.</p>",
+      "deprecated":true
     },
     "ChangeBatchRecords":{
       "type":"list",
@@ -930,6 +934,7 @@
         "shape":"ChangeBatchRecord",
         "locationName":"ChangeBatchRecord"
       },
+      "deprecated":true,
       "min":1
     },
     "ChangeInfo":{
@@ -1359,6 +1364,7 @@
     },
     "Date":{
       "type":"string",
+      "deprecated":true,
       "max":256
     },
     "DelegationSet":{
@@ -1702,7 +1708,8 @@
           "locationName":"Id"
         }
       },
-      "documentation":"<p>The input for a GetChangeDetails request.</p>"
+      "documentation":"<p>The input for a GetChangeDetails request.</p>",
+      "deprecated":true
     },
     "GetChangeDetailsResponse":{
       "type":"structure",
@@ -1713,7 +1720,8 @@
           "documentation":"<p>A complex type that contains information about the specified change batch, including the change batch ID, the status of the change, and the contained changes.</p>"
         }
       },
-      "documentation":"<p>A complex type that contains the <code>ChangeBatchRecord</code> element.</p>"
+      "documentation":"<p>A complex type that contains the <code>ChangeBatchRecord</code> element.</p>",
+      "deprecated":true
     },
     "GetChangeRequest":{
       "type":"structure",
@@ -2435,7 +2443,8 @@
           "locationName":"marker"
         }
       },
-      "documentation":"<p>The input for a ListChangeBatchesByHostedZone request.</p>"
+      "documentation":"<p>The input for a ListChangeBatchesByHostedZone request.</p>",
+      "deprecated":true
     },
     "ListChangeBatchesByHostedZoneResponse":{
       "type":"structure",
@@ -2466,7 +2475,8 @@
           "documentation":"<p>The next page marker.</p>"
         }
       },
-      "documentation":"<p>The input for a ListChangeBatchesByHostedZone request.</p>"
+      "documentation":"<p>The input for a ListChangeBatchesByHostedZone request.</p>",
+      "deprecated":true
     },
     "ListChangeBatchesByRRSetRequest":{
       "type":"structure",
@@ -2527,7 +2537,8 @@
           "locationName":"marker"
         }
       },
-      "documentation":"<p>The input for a ListChangeBatchesByRRSet request.</p>"
+      "documentation":"<p>The input for a ListChangeBatchesByRRSet request.</p>",
+      "deprecated":true
     },
     "ListChangeBatchesByRRSetResponse":{
       "type":"structure",
@@ -2558,7 +2569,8 @@
           "documentation":"<p>The next page marker.</p>"
         }
       },
-      "documentation":"<p>The input for a ListChangeBatchesByRRSet request.</p>"
+      "documentation":"<p>The input for a ListChangeBatchesByRRSet request.</p>",
+      "deprecated":true
     },
     "ListGeoLocationsRequest":{
       "type":"structure",
@@ -3528,6 +3540,7 @@
         "ap-southeast-1",
         "ap-southeast-2",
         "ap-northeast-1",
+        "ap-northeast-2",
         "sa-east-1",
         "cn-north-1"
       ],

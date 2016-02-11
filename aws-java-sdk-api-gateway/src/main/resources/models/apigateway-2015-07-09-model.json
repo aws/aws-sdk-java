@@ -49,6 +49,46 @@
         }
       ]
     },
+    "CreateAuthorizer":{
+      "name":"CreateAuthorizer",
+      "http":{
+        "method":"POST",
+        "requestUri":"/restapis/{restapi_id}/authorizers",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateAuthorizerRequest"},
+      "output":{
+        "shape":"Authorizer",
+        "documentation":"<p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>"
+      },
+      "errors":[
+        {
+          "shape":"BadRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true
+        },
+        {
+          "shape":"LimitExceededException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        },
+        {
+          "shape":"TooManyRequestsException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        }
+      ]
+    },
     "CreateBasePathMapping":{
       "name":"CreateBasePathMapping",
       "http":{
@@ -366,7 +406,7 @@
           "exception":true
         }
       ],
-      "documentation":"<p>Creates a <a>Stage</a> resource.</p>"
+      "documentation":"<p>Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a> for the API. </p>"
     },
     "DeleteApiKey":{
       "name":"DeleteApiKey",
@@ -397,6 +437,46 @@
         }
       ],
       "documentation":"<p>Deletes the <a>ApiKey</a> resource.</p>"
+    },
+    "DeleteAuthorizer":{
+      "name":"DeleteAuthorizer",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/restapis/{restapi_id}/authorizers/{authorizer_id}",
+        "responseCode":202
+      },
+      "input":{
+        "shape":"DeleteAuthorizerRequest",
+        "documentation":"<p>Request to delete an existing <a>Authorizer</a> resource.</p>"
+      },
+      "errors":[
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true
+        },
+        {
+          "shape":"TooManyRequestsException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        },
+        {
+          "shape":"BadRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"ConflictException",
+          "error":{"httpStatusCode":409},
+          "exception":true
+        }
+      ],
+      "documentation":"<p>Deletes an existing <a>Authorizer</a> resource.</p>"
     },
     "DeleteBasePathMapping":{
       "name":"DeleteBasePathMapping",
@@ -935,6 +1015,77 @@
       ],
       "documentation":"<p>Gets information about the current <a>ApiKeys</a> resource.</p>"
     },
+    "GetAuthorizer":{
+      "name":"GetAuthorizer",
+      "http":{
+        "method":"GET",
+        "requestUri":"/restapis/{restapi_id}/authorizers/{authorizer_id}"
+      },
+      "input":{
+        "shape":"GetAuthorizerRequest",
+        "documentation":"<p>Request to describe an existing <a>Authorizer</a> resource.</p>"
+      },
+      "output":{
+        "shape":"Authorizer",
+        "documentation":"<p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>"
+      },
+      "errors":[
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true
+        },
+        {
+          "shape":"TooManyRequestsException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        }
+      ],
+      "documentation":"<p>Describe an existing <a>Authorizer</a> resource.</p>"
+    },
+    "GetAuthorizers":{
+      "name":"GetAuthorizers",
+      "http":{
+        "method":"GET",
+        "requestUri":"/restapis/{restapi_id}/authorizers"
+      },
+      "input":{
+        "shape":"GetAuthorizersRequest",
+        "documentation":"<p>Request to describe an existing <a>Authorizers</a> resource.</p>"
+      },
+      "output":{
+        "shape":"Authorizers",
+        "documentation":"<p>Represents a collection of <a>Authorizer</a> resources.</p>"
+      },
+      "errors":[
+        {
+          "shape":"BadRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true
+        },
+        {
+          "shape":"TooManyRequestsException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        }
+      ],
+      "documentation":"<p>Describe an existing <a>Authorizers</a> resource.</p>"
+    },
     "GetBasePathMapping":{
       "name":"GetBasePathMapping",
       "http":{
@@ -1187,6 +1338,38 @@
         }
       ],
       "documentation":"<p>Represents a collection of <a>DomainName</a> resources.</p>"
+    },
+    "GetExport":{
+      "name":"GetExport",
+      "http":{
+        "method":"GET",
+        "requestUri":"/restapis/{restapi_id}/stages/{stage_name}/exports/{export_type}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetExportRequest"},
+      "output":{"shape":"ExportResponse"},
+      "errors":[
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true
+        },
+        {
+          "shape":"BadRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"TooManyRequestsException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        }
+      ]
     },
     "GetIntegration":{
       "name":"GetIntegration",
@@ -1940,6 +2123,44 @@
       ],
       "documentation":"<p>Changes information about an <a>ApiKey</a> resource.</p>"
     },
+    "UpdateAuthorizer":{
+      "name":"UpdateAuthorizer",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/restapis/{restapi_id}/authorizers/{authorizer_id}"
+      },
+      "input":{
+        "shape":"UpdateAuthorizerRequest",
+        "documentation":"<p>Request to update an existing <a>Authorizer</a> resource.</p>"
+      },
+      "output":{
+        "shape":"Authorizer",
+        "documentation":"<p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>"
+      },
+      "errors":[
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true
+        },
+        {
+          "shape":"BadRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"TooManyRequestsException",
+          "error":{"httpStatusCode":429},
+          "exception":true
+        }
+      ],
+      "documentation":"<p>Updates an existing <a>Authorizer</a> resource.</p>"
+    },
     "UpdateBasePathMapping":{
       "name":"UpdateBasePathMapping",
       "http":{
@@ -2488,6 +2709,60 @@
       },
       "documentation":"<p>Represents a collection of <a>ApiKey</a> resources.</p>"
     },
+    "Authorizer":{
+      "type":"structure",
+      "members":{
+        "id":{
+          "shape":"String",
+          "documentation":"<p>The identifier for the authorizer resource.</p>"
+        },
+        "name":{
+          "shape":"String",
+          "documentation":"<p>[Required] The name of the authorizer.</p>"
+        },
+        "type":{
+          "shape":"AuthorizerType",
+          "documentation":"<p>[Required] The type of the authorizer. Currently, the only valid type is TOKEN.</p>"
+        },
+        "authorizerUri":{
+          "shape":"String",
+          "documentation":"<p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI). For TOKEN authorizers, this must be a well-formed Lambda function URI. The URI should be of the form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>. <code>Region</code> is used to determine the right endpoint. In this case, <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations</p>"
+        },
+        "authorizerCredentials":{
+          "shape":"String",
+          "documentation":"<p>Specifies the credentials required for the authorizer, if any. Two options are available. To specify an IAM Role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>"
+        },
+        "identitySource":{
+          "shape":"String",
+          "documentation":"<p>[Required] The source of the identity in an incoming request. For TOKEN authorizers, this value is a mapping expression with the same syntax as integration parameter mappings. The only valid source for tokens is 'header', so the expression should match 'method.request.header.[headerName]'. The value of the header '[headerName]' will be interpreted as the incoming token.</p>"
+        },
+        "identityValidationExpression":{
+          "shape":"String",
+          "documentation":"<p>A validation expression for the incoming identity. For TOKEN authorizers, this value should be a regular expression. The incoming token from the client is matched against this expression, and will proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.</p>"
+        },
+        "authorizerResultTtlInSeconds":{
+          "shape":"NullableInteger",
+          "documentation":"<p>The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>"
+        }
+      },
+      "documentation":"<p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>"
+    },
+    "AuthorizerType":{
+      "type":"string",
+      "enum":["TOKEN"]
+    },
+    "Authorizers":{
+      "type":"structure",
+      "members":{
+        "position":{"shape":"String"},
+        "items":{
+          "shape":"ListOfAuthorizer",
+          "documentation":"<p>Gets the current list of <a>Authorizer</a> resources in the collection.</p>",
+          "locationName":"item"
+        }
+      },
+      "documentation":"<p>Represents a collection of <a>Authorizer</a> resources.</p>"
+    },
     "BadRequestException":{
       "type":"structure",
       "members":{
@@ -2602,6 +2877,51 @@
         }
       }
     },
+    "CreateAuthorizerRequest":{
+      "type":"structure",
+      "required":[
+        "restApiId",
+        "name",
+        "type",
+        "authorizerUri",
+        "identitySource"
+      ],
+      "members":{
+        "restApiId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"restapi_id"
+        },
+        "name":{
+          "shape":"String",
+          "documentation":"<p>[Required] The name of the authorizer.</p>"
+        },
+        "type":{
+          "shape":"AuthorizerType",
+          "documentation":"<p>[Required] The type of the authorizer.</p>"
+        },
+        "authorizerUri":{
+          "shape":"String",
+          "documentation":"<p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>"
+        },
+        "authorizerCredentials":{
+          "shape":"String",
+          "documentation":"<p>Specifies the credentials required for the authorizer, if any.</p>"
+        },
+        "identitySource":{
+          "shape":"String",
+          "documentation":"<p>[Required] The source of the identity in an incoming request.</p>"
+        },
+        "identityValidationExpression":{
+          "shape":"String",
+          "documentation":"<p>A validation expression for the incoming identity.</p>"
+        },
+        "authorizerResultTtlInSeconds":{
+          "shape":"NullableInteger",
+          "documentation":"<p>The TTL of cached authorizer results.</p>"
+        }
+      }
+    },
     "CreateBasePathMappingRequest":{
       "type":"structure",
       "required":[
@@ -2665,7 +2985,7 @@
         },
         "variables":{
           "shape":"MapOfStringToString",
-          "documentation":"<p>A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new deployment. Variable names can have alphabetic characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+</p>"
+          "documentation":"<p>A map that defines the stage variables for the <a>Stage</a> resource that is associated with the new deployment. Variable names can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>"
         }
       },
       "documentation":"<p>Requests Amazon API Gateway to create a <a>Deployment</a> resource.</p>"
@@ -2777,7 +3097,7 @@
         },
         "cloneFrom":{
           "shape":"String",
-          "documentation":"<p>The name of the <a>RestApi</a> that you want to clone from.</p>"
+          "documentation":"<p>The Id of the <a>RestApi</a> that you want to clone from.</p>"
         }
       },
       "documentation":"<p>Request to add a new <a>RestApi</a> resource to your collection.</p>"
@@ -2818,7 +3138,7 @@
         },
         "variables":{
           "shape":"MapOfStringToString",
-          "documentation":"<p>A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have alphabetic characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+</p>"
+          "documentation":"<p>A map that defines the stage variables for the new <a>Stage</a> resource. Variable names can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>"
         }
       },
       "documentation":"<p>Requests Amazon API Gateway to create a <a>Stage</a> resource.</p>"
@@ -2835,6 +3155,28 @@
         }
       },
       "documentation":"<p>A request to delete the <a>ApiKey</a> resource.</p>"
+    },
+    "DeleteAuthorizerRequest":{
+      "type":"structure",
+      "required":[
+        "restApiId",
+        "authorizerId"
+      ],
+      "members":{
+        "restApiId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"restapi_id",
+          "documentation":"<p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>"
+        },
+        "authorizerId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"authorizer_id",
+          "documentation":"<p>The identifier of the <a>Authorizer</a> resource.</p>"
+        }
+      },
+      "documentation":"<p>Request to delete an existing <a>Authorizer</a> resource.</p>"
     },
     "DeleteBasePathMappingRequest":{
       "type":"structure",
@@ -3182,6 +3524,23 @@
       "documentation":"<p>Represents a collection of <a>DomainName</a> resources.</p>"
     },
     "Double":{"type":"double"},
+    "ExportResponse":{
+      "type":"structure",
+      "members":{
+        "contentType":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"Content-Type"
+        },
+        "contentDisposition":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"Content-Disposition"
+        },
+        "body":{"shape":"Blob"}
+      },
+      "payload":"body"
+    },
     "FlushStageCacheRequest":{
       "type":"structure",
       "members":{
@@ -3246,6 +3605,51 @@
         }
       },
       "documentation":"<p>A request to get information about the current <a>ApiKeys</a> resource.</p>"
+    },
+    "GetAuthorizerRequest":{
+      "type":"structure",
+      "required":[
+        "restApiId",
+        "authorizerId"
+      ],
+      "members":{
+        "restApiId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"restapi_id",
+          "documentation":"<p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>"
+        },
+        "authorizerId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"authorizer_id",
+          "documentation":"<p>The identifier of the <a>Authorizer</a> resource.</p>"
+        }
+      },
+      "documentation":"<p>Request to describe an existing <a>Authorizer</a> resource.</p>"
+    },
+    "GetAuthorizersRequest":{
+      "type":"structure",
+      "required":["restApiId"],
+      "members":{
+        "restApiId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"restapi_id",
+          "documentation":"<p>The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.</p>"
+        },
+        "position":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"position"
+        },
+        "limit":{
+          "shape":"NullableInteger",
+          "location":"querystring",
+          "locationName":"limit"
+        }
+      },
+      "documentation":"<p>Request to describe an existing <a>Authorizers</a> resource.</p>"
     },
     "GetBasePathMappingRequest":{
       "type":"structure",
@@ -3397,6 +3801,40 @@
         }
       },
       "documentation":"<p>Request to describe a collection of <a>DomainName</a> resources.</p>"
+    },
+    "GetExportRequest":{
+      "type":"structure",
+      "required":[
+        "restApiId",
+        "stageName",
+        "exportType"
+      ],
+      "members":{
+        "restApiId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"restapi_id"
+        },
+        "stageName":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"stage_name"
+        },
+        "exportType":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"export_type"
+        },
+        "parameters":{
+          "shape":"MapOfStringToString",
+          "location":"querystring"
+        },
+        "accepts":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"Accept"
+        }
+      }
     },
     "GetIntegrationRequest":{
       "type":"structure",
@@ -3765,7 +4203,7 @@
         },
         "uri":{
           "shape":"String",
-          "documentation":"<p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target=\"_blank\" href=\"https://www.ietf.org/rfc/rfc3986.txt\">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the right endpoint. For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>.</p>"
+          "documentation":"<p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target=\"_blank\" href=\"https://www.ietf.org/rfc/rfc3986.txt\">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint. For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>.</p>"
         },
         "credentials":{
           "shape":"String",
@@ -3807,7 +4245,7 @@
         },
         "responseParameters":{
           "shape":"MapOfStringToString",
-          "documentation":"<p>Represents response parameters that can be read from the backend response. Response parameters are represented as a key/value map, with a destination as the key and a source as the value. A destination must match an existing response parameter in the <a>Method</a>. The source can be a header from the backend response, or a static value. Static values are specified using enclosing single quotes, and backend response headers can be read using the pattern <code>integration.response.header.{name}</code>.</p>"
+          "documentation":"<p>Represents response parameters that can be read from the backend response. Response parameters are represented as a key/value map, with a destination as the key and a source as the value. A destination must match an existing response parameter in the <a>MethodResponse</a>. The source can be a header from the backend response, or a static value. Static values are specified using enclosing single quotes, and backend response headers can be read using the pattern <code>integration.response.header.{name}</code>.</p>"
         },
         "responseTemplates":{
           "shape":"MapOfStringToString",
@@ -3841,6 +4279,10 @@
     "ListOfApiKey":{
       "type":"list",
       "member":{"shape":"ApiKey"}
+    },
+    "ListOfAuthorizer":{
+      "type":"list",
+      "member":{"shape":"Authorizer"}
     },
     "ListOfBasePathMapping":{
       "type":"list",
@@ -3938,6 +4380,10 @@
         "authorizationType":{
           "shape":"String",
           "documentation":"<p>The method's authorization type.</p>"
+        },
+        "authorizerId":{
+          "shape":"String",
+          "documentation":"<p>Specifies the identifier of an <a>Authorizer</a> to use on this Method. The authorizationType must be CUSTOM.</p>"
         },
         "apiKeyRequired":{
           "shape":"NullableBoolean",
@@ -4260,6 +4706,10 @@
           "shape":"String",
           "documentation":"<p>Specifies the type of authorization used for the method.</p>"
         },
+        "authorizerId":{
+          "shape":"String",
+          "documentation":"<p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM.</p>"
+        },
         "apiKeyRequired":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the method required a valid <a>ApiKey</a>.</p>"
@@ -4456,7 +4906,7 @@
         },
         "variables":{
           "shape":"MapOfStringToString",
-          "documentation":"<p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphabetic characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+</p>"
+          "documentation":"<p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>"
         },
         "createdDate":{
           "shape":"Timestamp",
@@ -4627,6 +5077,32 @@
         }
       },
       "documentation":"<p>A request to change information about an <a>ApiKey</a> resource.</p>"
+    },
+    "UpdateAuthorizerRequest":{
+      "type":"structure",
+      "required":[
+        "restApiId",
+        "authorizerId"
+      ],
+      "members":{
+        "restApiId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"restapi_id",
+          "documentation":"<p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>"
+        },
+        "authorizerId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"authorizer_id",
+          "documentation":"<p>The identifier of the <a>Authorizer</a> resource.</p>"
+        },
+        "patchOperations":{
+          "shape":"ListOfPatchOperation",
+          "documentation":"<p>A list of operations describing the updates to apply to the specified resource. The patches are applied in the order specified in the list.</p>"
+        }
+      },
+      "documentation":"<p>Request to update an existing <a>Authorizer</a> resource.</p>"
     },
     "UpdateBasePathMappingRequest":{
       "type":"structure",

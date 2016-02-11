@@ -101,7 +101,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
     private Integer memorySize;
 
     /**
-     * The timestamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function.
      */
     private String lastModified;
 
@@ -118,6 +118,11 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      */
     private String version;
+
+    /**
+     * VPC configuration associated with your Lambda function.
+     */
+    private VpcConfigResponse vpcConfig;
 
     /**
      * The name of the function.
@@ -571,29 +576,29 @@ public class CreateFunctionResult implements Serializable, Cloneable {
     }
 
     /**
-     * The timestamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function.
      *
-     * @return The timestamp of the last time you updated the function.
+     * @return The time stamp of the last time you updated the function.
      */
     public String getLastModified() {
         return lastModified;
     }
     
     /**
-     * The timestamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function.
      *
-     * @param lastModified The timestamp of the last time you updated the function.
+     * @param lastModified The time stamp of the last time you updated the function.
      */
     public void setLastModified(String lastModified) {
         this.lastModified = lastModified;
     }
     
     /**
-     * The timestamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastModified The timestamp of the last time you updated the function.
+     * @param lastModified The time stamp of the last time you updated the function.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -682,6 +687,39 @@ public class CreateFunctionResult implements Serializable, Cloneable {
     }
 
     /**
+     * VPC configuration associated with your Lambda function.
+     *
+     * @return VPC configuration associated with your Lambda function.
+     */
+    public VpcConfigResponse getVpcConfig() {
+        return vpcConfig;
+    }
+    
+    /**
+     * VPC configuration associated with your Lambda function.
+     *
+     * @param vpcConfig VPC configuration associated with your Lambda function.
+     */
+    public void setVpcConfig(VpcConfigResponse vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+    
+    /**
+     * VPC configuration associated with your Lambda function.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcConfig VPC configuration associated with your Lambda function.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateFunctionResult withVpcConfig(VpcConfigResponse vpcConfig) {
+        this.vpcConfig = vpcConfig;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -704,7 +742,8 @@ public class CreateFunctionResult implements Serializable, Cloneable {
         if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() + ",");
         if (getLastModified() != null) sb.append("LastModified: " + getLastModified() + ",");
         if (getCodeSha256() != null) sb.append("CodeSha256: " + getCodeSha256() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() );
+        if (getVersion() != null) sb.append("Version: " + getVersion() + ",");
+        if (getVpcConfig() != null) sb.append("VpcConfig: " + getVpcConfig() );
         sb.append("}");
         return sb.toString();
     }
@@ -726,6 +765,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode()); 
         hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode()); 
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode()); 
         return hashCode;
     }
     
@@ -761,6 +801,8 @@ public class CreateFunctionResult implements Serializable, Cloneable {
         if (other.getCodeSha256() != null && other.getCodeSha256().equals(this.getCodeSha256()) == false) return false; 
         if (other.getVersion() == null ^ this.getVersion() == null) return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null) return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false) return false; 
         return true;
     }
     

@@ -1450,6 +1450,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * @sample AmazonRoute53.GetChangeDetails
      */
     @Override
+    @Deprecated
     public GetChangeDetailsResult getChangeDetails(
             GetChangeDetailsRequest getChangeDetailsRequest) {
         ExecutionContext executionContext = createExecutionContext(getChangeDetailsRequest);
@@ -2161,6 +2162,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * @sample AmazonRoute53.ListChangeBatchesByHostedZone
      */
     @Override
+    @Deprecated
     public ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(
             ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest) {
         ExecutionContext executionContext = createExecutionContext(listChangeBatchesByHostedZoneRequest);
@@ -2211,6 +2213,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
      * @sample AmazonRoute53.ListChangeBatchesByRRSet
      */
     @Override
+    @Deprecated
     public ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(
             ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest) {
         ExecutionContext executionContext = createExecutionContext(listChangeBatchesByRRSetRequest);

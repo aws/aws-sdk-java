@@ -736,6 +736,7 @@ public interface AmazonRoute53 {
      *         document is malformed.
      * @sample AmazonRoute53.GetChangeDetails
      */
+    @Deprecated
     GetChangeDetailsResult getChangeDetails(
             GetChangeDetailsRequest getChangeDetailsRequest);
 
@@ -1057,6 +1058,7 @@ public interface AmazonRoute53 {
      *         document is malformed.
      * @sample AmazonRoute53.ListChangeBatchesByHostedZone
      */
+    @Deprecated
     ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(
             ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest);
 
@@ -1076,6 +1078,7 @@ public interface AmazonRoute53 {
      *         document is malformed.
      * @sample AmazonRoute53.ListChangeBatchesByRRSet
      */
+    @Deprecated
     ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(
             ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest);
 

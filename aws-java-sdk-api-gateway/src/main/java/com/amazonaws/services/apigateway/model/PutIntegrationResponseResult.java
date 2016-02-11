@@ -49,10 +49,10 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * Represents response parameters that can be read from the backend
      * response. Response parameters are represented as a key/value map, with a
      * destination as the key and a source as the value. A destination must
-     * match an existing response parameter in the <a>Method</a>. The source can
-     * be a header from the backend response, or a static value. Static values
-     * are specified using enclosing single quotes, and backend response headers
-     * can be read using the pattern
+     * match an existing response parameter in the <a>MethodResponse</a>. The
+     * source can be a header from the backend response, or a static value.
+     * Static values are specified using enclosing single quotes, and backend
+     * response headers can be read using the pattern
      * <code>integration.response.header.{name}</code>.
      * </p>
      */
@@ -178,10 +178,10 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * Represents response parameters that can be read from the backend
      * response. Response parameters are represented as a key/value map, with a
      * destination as the key and a source as the value. A destination must
-     * match an existing response parameter in the <a>Method</a>. The source can
-     * be a header from the backend response, or a static value. Static values
-     * are specified using enclosing single quotes, and backend response headers
-     * can be read using the pattern
+     * match an existing response parameter in the <a>MethodResponse</a>. The
+     * source can be a header from the backend response, or a static value.
+     * Static values are specified using enclosing single quotes, and backend
+     * response headers can be read using the pattern
      * <code>integration.response.header.{name}</code>.
      * </p>
      * 
@@ -189,11 +189,11 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *         response. Response parameters are represented as a key/value map,
      *         with a destination as the key and a source as the value. A
      *         destination must match an existing response parameter in the
-     *         <a>Method</a>. The source can be a header from the backend
-     *         response, or a static value. Static values are specified using
-     *         enclosing single quotes, and backend response headers can be read
-     *         using the pattern <code>integration.response.header.{name}</code>
-     *         .
+     *         <a>MethodResponse</a>. The source can be a header from the
+     *         backend response, or a static value. Static values are specified
+     *         using enclosing single quotes, and backend response headers can
+     *         be read using the pattern
+     *         <code>integration.response.header.{name}</code>.
      */
     public java.util.Map<String, String> getResponseParameters() {
         return responseParameters;
@@ -204,10 +204,10 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * Represents response parameters that can be read from the backend
      * response. Response parameters are represented as a key/value map, with a
      * destination as the key and a source as the value. A destination must
-     * match an existing response parameter in the <a>Method</a>. The source can
-     * be a header from the backend response, or a static value. Static values
-     * are specified using enclosing single quotes, and backend response headers
-     * can be read using the pattern
+     * match an existing response parameter in the <a>MethodResponse</a>. The
+     * source can be a header from the backend response, or a static value.
+     * Static values are specified using enclosing single quotes, and backend
+     * response headers can be read using the pattern
      * <code>integration.response.header.{name}</code>.
      * </p>
      * 
@@ -216,7 +216,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *        response. Response parameters are represented as a key/value map,
      *        with a destination as the key and a source as the value. A
      *        destination must match an existing response parameter in the
-     *        <a>Method</a>. The source can be a header from the backend
+     *        <a>MethodResponse</a>. The source can be a header from the backend
      *        response, or a static value. Static values are specified using
      *        enclosing single quotes, and backend response headers can be read
      *        using the pattern <code>integration.response.header.{name}</code>.
@@ -231,10 +231,10 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * Represents response parameters that can be read from the backend
      * response. Response parameters are represented as a key/value map, with a
      * destination as the key and a source as the value. A destination must
-     * match an existing response parameter in the <a>Method</a>. The source can
-     * be a header from the backend response, or a static value. Static values
-     * are specified using enclosing single quotes, and backend response headers
-     * can be read using the pattern
+     * match an existing response parameter in the <a>MethodResponse</a>. The
+     * source can be a header from the backend response, or a static value.
+     * Static values are specified using enclosing single quotes, and backend
+     * response headers can be read using the pattern
      * <code>integration.response.header.{name}</code>.
      * </p>
      * 
@@ -243,7 +243,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *        response. Response parameters are represented as a key/value map,
      *        with a destination as the key and a source as the value. A
      *        destination must match an existing response parameter in the
-     *        <a>Method</a>. The source can be a header from the backend
+     *        <a>MethodResponse</a>. The source can be a header from the backend
      *        response, or a static value. Static values are specified using
      *        enclosing single quotes, and backend response headers can be read
      *        using the pattern <code>integration.response.header.{name}</code>.

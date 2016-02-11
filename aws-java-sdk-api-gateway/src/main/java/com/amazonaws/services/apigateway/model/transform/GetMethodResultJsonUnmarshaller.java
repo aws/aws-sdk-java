@@ -61,6 +61,11 @@ public class GetMethodResultJsonUnmarshaller implements
                     getMethodResult.setAuthorizationType(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("authorizerId", targetDepth)) {
+                    context.nextToken();
+                    getMethodResult.setAuthorizerId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
                     getMethodResult.setApiKeyRequired(BooleanJsonUnmarshaller

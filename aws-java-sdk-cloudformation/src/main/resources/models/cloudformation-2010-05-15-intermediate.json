@@ -19,11 +19,11 @@
     "jsonContentVersion" : null,
     "endpointPrefix" : "cloudformation",
     "signingName" : "cloudformation",
-    "serviceName" : "AWS CloudFormation",
-    "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
+    "serviceName" : "AWS CloudFormation",
+    "jsonProtocol" : false
   },
   "operations" : {
     "CancelUpdateStack" : {

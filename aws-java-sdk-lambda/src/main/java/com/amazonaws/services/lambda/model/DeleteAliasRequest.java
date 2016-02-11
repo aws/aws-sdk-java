@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#deleteAlias(DeleteAliasRequest) DeleteAlias operation}.
  * <p>
- * Deletes specified Lambda function alias. For more information, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
- * 
+ * Deletes the specified Lambda function alias. For more information, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+ * .
  * </p>
  * <p>
  * This requires permission for the lambda:DeleteAlias action.
@@ -34,7 +34,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteAliasRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The Lambda function name for which the alias is created.
+     * The Lambda function name for which the alias is created. Deleting an
+     * alias does not delete the function version to which it is pointing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -52,33 +53,38 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements Seria
     private String name;
 
     /**
-     * The Lambda function name for which the alias is created.
+     * The Lambda function name for which the alias is created. Deleting an
+     * alias does not delete the function version to which it is pointing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return The Lambda function name for which the alias is created.
+     * @return The Lambda function name for which the alias is created. Deleting an
+     *         alias does not delete the function version to which it is pointing.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The Lambda function name for which the alias is created.
+     * The Lambda function name for which the alias is created. Deleting an
+     * alias does not delete the function version to which it is pointing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function name for which the alias is created.
+     * @param functionName The Lambda function name for which the alias is created. Deleting an
+     *         alias does not delete the function version to which it is pointing.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The Lambda function name for which the alias is created.
+     * The Lambda function name for which the alias is created. Deleting an
+     * alias does not delete the function version to which it is pointing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -86,7 +92,8 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function name for which the alias is created.
+     * @param functionName The Lambda function name for which the alias is created. Deleting an
+     *         alias does not delete the function version to which it is pointing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

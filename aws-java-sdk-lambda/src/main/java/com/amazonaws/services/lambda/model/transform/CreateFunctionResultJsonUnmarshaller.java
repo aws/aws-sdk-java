@@ -93,6 +93,10 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createFunctionResult.setVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

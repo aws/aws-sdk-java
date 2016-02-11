@@ -128,6 +128,41 @@ public class UpdateFunctionConfigurationRequestMarshaller implements Marshaller<
             if (updateFunctionConfigurationRequest.getMemorySize() != null) {
                 jsonWriter.key("MemorySize").value(updateFunctionConfigurationRequest.getMemorySize());
             }
+            VpcConfig vpcConfig = updateFunctionConfigurationRequest.getVpcConfig();
+            if (vpcConfig != null) {
+
+                jsonWriter.key("VpcConfig");
+                jsonWriter.object();
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(vpcConfig.getSubnetIds());
+                if (subnetIdsList != null && !(subnetIdsList.isAutoConstruct() && subnetIdsList.isEmpty())) {
+
+                    jsonWriter.key("SubnetIds");
+                    jsonWriter.array();
+
+                    for (String subnetIdsListValue : subnetIdsList) {
+                        if (subnetIdsListValue != null) {
+                            jsonWriter.value(subnetIdsListValue);
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(vpcConfig.getSecurityGroupIds());
+                if (securityGroupIdsList != null && !(securityGroupIdsList.isAutoConstruct() && securityGroupIdsList.isEmpty())) {
+
+                    jsonWriter.key("SecurityGroupIds");
+                    jsonWriter.array();
+
+                    for (String securityGroupIdsListValue : securityGroupIdsList) {
+                        if (securityGroupIdsListValue != null) {
+                            jsonWriter.value(securityGroupIdsListValue);
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
+                jsonWriter.endObject();
+            }
 
           jsonWriter.endObject();
 

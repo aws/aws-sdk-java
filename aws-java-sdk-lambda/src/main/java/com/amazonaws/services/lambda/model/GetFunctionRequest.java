@@ -31,9 +31,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Using the optional <code>Qualifier</code> parameter, you can specify a
  * specific function version for which you want this information. If you
  * don't specify this parameter, the API uses unqualified function ARN
- * which return information about the $LATEST version of the Lambda
- * function. For more information, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+ * which return information about the <code>$LATEST</code> version of the
+ * Lambda function. For more information, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
  * .
  * </p>
  * <p>
@@ -46,14 +46,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetFunctionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The Lambda function name. <p> You can specify an unqualified function
-     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * The Lambda function name. <p> You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -62,84 +62,85 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
     private String functionName;
 
     /**
-     * Using this optional parameter to specify a function version or alias
-     * name. If you specify function version, the API uses qualified function
-     * ARN for the request and returns information about the specific Lambda
-     * function version. If you specify alias name, the API uses alias ARN
-     * and returns information about the function version to which the alias
-     * points. If you don't provide this parameter, the API uses unqualified
-     * function ARN and returns information about the $LATEST version of the
-     * Lambda function.
+     * Using this optional parameter to specify a function version or an
+     * alias name. If you specify function version, the API uses qualified
+     * function ARN for the request and returns information about the
+     * specific Lambda function version. If you specify an alias name, the
+     * API uses the alias ARN and returns information about the function
+     * version to which the alias points. If you don't provide this
+     * parameter, the API uses unqualified function ARN and returns
+     * information about the <code>$LATEST</code> version of the Lambda
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      */
     private String qualifier;
 
     /**
-     * The Lambda function name. <p> You can specify an unqualified function
-     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * The Lambda function name. <p> You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return The Lambda function name. <p> You can specify an unqualified function
-     *         name (for example, "Thumbnail") or you can specify Amazon Resource
+     * @return The Lambda function name. <p> You can specify a function name (for
+     *         example, <code>Thumbnail</code>) or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The Lambda function name. <p> You can specify an unqualified function
-     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * The Lambda function name. <p> You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function name. <p> You can specify an unqualified function
-     *         name (for example, "Thumbnail") or you can specify Amazon Resource
+     * @param functionName The Lambda function name. <p> You can specify a function name (for
+     *         example, <code>Thumbnail</code>) or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The Lambda function name. <p> You can specify an unqualified function
-     * name (for example, "Thumbnail") or you can specify Amazon Resource
+     * The Lambda function name. <p> You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
      * Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -147,14 +148,14 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function name. <p> You can specify an unqualified function
-     *         name (for example, "Thumbnail") or you can specify Amazon Resource
+     * @param functionName The Lambda function name. <p> You can specify a function name (for
+     *         example, <code>Thumbnail</code>) or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -165,83 +166,89 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Using this optional parameter to specify a function version or alias
-     * name. If you specify function version, the API uses qualified function
-     * ARN for the request and returns information about the specific Lambda
-     * function version. If you specify alias name, the API uses alias ARN
-     * and returns information about the function version to which the alias
-     * points. If you don't provide this parameter, the API uses unqualified
-     * function ARN and returns information about the $LATEST version of the
-     * Lambda function.
+     * Using this optional parameter to specify a function version or an
+     * alias name. If you specify function version, the API uses qualified
+     * function ARN for the request and returns information about the
+     * specific Lambda function version. If you specify an alias name, the
+     * API uses the alias ARN and returns information about the function
+     * version to which the alias points. If you don't provide this
+     * parameter, the API uses unqualified function ARN and returns
+     * information about the <code>$LATEST</code> version of the Lambda
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
-     * @return Using this optional parameter to specify a function version or alias
-     *         name. If you specify function version, the API uses qualified function
-     *         ARN for the request and returns information about the specific Lambda
-     *         function version. If you specify alias name, the API uses alias ARN
-     *         and returns information about the function version to which the alias
-     *         points. If you don't provide this parameter, the API uses unqualified
-     *         function ARN and returns information about the $LATEST version of the
-     *         Lambda function.
+     * @return Using this optional parameter to specify a function version or an
+     *         alias name. If you specify function version, the API uses qualified
+     *         function ARN for the request and returns information about the
+     *         specific Lambda function version. If you specify an alias name, the
+     *         API uses the alias ARN and returns information about the function
+     *         version to which the alias points. If you don't provide this
+     *         parameter, the API uses unqualified function ARN and returns
+     *         information about the <code>$LATEST</code> version of the Lambda
+     *         function.
      */
     public String getQualifier() {
         return qualifier;
     }
     
     /**
-     * Using this optional parameter to specify a function version or alias
-     * name. If you specify function version, the API uses qualified function
-     * ARN for the request and returns information about the specific Lambda
-     * function version. If you specify alias name, the API uses alias ARN
-     * and returns information about the function version to which the alias
-     * points. If you don't provide this parameter, the API uses unqualified
-     * function ARN and returns information about the $LATEST version of the
-     * Lambda function.
+     * Using this optional parameter to specify a function version or an
+     * alias name. If you specify function version, the API uses qualified
+     * function ARN for the request and returns information about the
+     * specific Lambda function version. If you specify an alias name, the
+     * API uses the alias ARN and returns information about the function
+     * version to which the alias points. If you don't provide this
+     * parameter, the API uses unqualified function ARN and returns
+     * information about the <code>$LATEST</code> version of the Lambda
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
-     * @param qualifier Using this optional parameter to specify a function version or alias
-     *         name. If you specify function version, the API uses qualified function
-     *         ARN for the request and returns information about the specific Lambda
-     *         function version. If you specify alias name, the API uses alias ARN
-     *         and returns information about the function version to which the alias
-     *         points. If you don't provide this parameter, the API uses unqualified
-     *         function ARN and returns information about the $LATEST version of the
-     *         Lambda function.
+     * @param qualifier Using this optional parameter to specify a function version or an
+     *         alias name. If you specify function version, the API uses qualified
+     *         function ARN for the request and returns information about the
+     *         specific Lambda function version. If you specify an alias name, the
+     *         API uses the alias ARN and returns information about the function
+     *         version to which the alias points. If you don't provide this
+     *         parameter, the API uses unqualified function ARN and returns
+     *         information about the <code>$LATEST</code> version of the Lambda
+     *         function.
      */
     public void setQualifier(String qualifier) {
         this.qualifier = qualifier;
     }
     
     /**
-     * Using this optional parameter to specify a function version or alias
-     * name. If you specify function version, the API uses qualified function
-     * ARN for the request and returns information about the specific Lambda
-     * function version. If you specify alias name, the API uses alias ARN
-     * and returns information about the function version to which the alias
-     * points. If you don't provide this parameter, the API uses unqualified
-     * function ARN and returns information about the $LATEST version of the
-     * Lambda function.
+     * Using this optional parameter to specify a function version or an
+     * alias name. If you specify function version, the API uses qualified
+     * function ARN for the request and returns information about the
+     * specific Lambda function version. If you specify an alias name, the
+     * API uses the alias ARN and returns information about the function
+     * version to which the alias points. If you don't provide this
+     * parameter, the API uses unqualified function ARN and returns
+     * information about the <code>$LATEST</code> version of the Lambda
+     * function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
-     * @param qualifier Using this optional parameter to specify a function version or alias
-     *         name. If you specify function version, the API uses qualified function
-     *         ARN for the request and returns information about the specific Lambda
-     *         function version. If you specify alias name, the API uses alias ARN
-     *         and returns information about the function version to which the alias
-     *         points. If you don't provide this parameter, the API uses unqualified
-     *         function ARN and returns information about the $LATEST version of the
-     *         Lambda function.
+     * @param qualifier Using this optional parameter to specify a function version or an
+     *         alias name. If you specify function version, the API uses qualified
+     *         function ARN for the request and returns information about the
+     *         specific Lambda function version. If you specify an alias name, the
+     *         API uses the alias ARN and returns information about the function
+     *         version to which the alias points. If you don't provide this
+     *         parameter, the API uses unqualified function ARN and returns
+     *         information about the <code>$LATEST</code> version of the Lambda
+     *         function.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

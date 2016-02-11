@@ -21,10 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#updateAlias(UpdateAliasRequest) UpdateAlias operation}.
  * <p>
- * Using this API you can update function version to which the alias
- * points to and alias description. For more information, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
- * 
+ * Using this API you can update the function version to which the alias
+ * points and the alias description. For more information, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+ * .
  * </p>
  * <p>
  * This requires permission for the lambda:UpdateAlias action.
@@ -53,8 +53,8 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String name;
 
     /**
-     * Using this parameter you can optionally change the Lambda function
-     * version to which the alias to points to.
+     * Using this parameter you can change the Lambda function version to
+     * which the alias points.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -63,8 +63,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String functionVersion;
 
     /**
-     * You can optionally change the description of the alias using this
-     * parameter.
+     * You can change the description of the alias using this parameter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -162,38 +161,38 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Using this parameter you can optionally change the Lambda function
-     * version to which the alias to points to.
+     * Using this parameter you can change the Lambda function version to
+     * which the alias points.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      *
-     * @return Using this parameter you can optionally change the Lambda function
-     *         version to which the alias to points to.
+     * @return Using this parameter you can change the Lambda function version to
+     *         which the alias points.
      */
     public String getFunctionVersion() {
         return functionVersion;
     }
     
     /**
-     * Using this parameter you can optionally change the Lambda function
-     * version to which the alias to points to.
+     * Using this parameter you can change the Lambda function version to
+     * which the alias points.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      *
-     * @param functionVersion Using this parameter you can optionally change the Lambda function
-     *         version to which the alias to points to.
+     * @param functionVersion Using this parameter you can change the Lambda function version to
+     *         which the alias points.
      */
     public void setFunctionVersion(String functionVersion) {
         this.functionVersion = functionVersion;
     }
     
     /**
-     * Using this parameter you can optionally change the Lambda function
-     * version to which the alias to points to.
+     * Using this parameter you can change the Lambda function version to
+     * which the alias points.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -201,8 +200,8 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      *
-     * @param functionVersion Using this parameter you can optionally change the Lambda function
-     *         version to which the alias to points to.
+     * @param functionVersion Using this parameter you can change the Lambda function version to
+     *         which the alias points.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -213,44 +212,38 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * You can optionally change the description of the alias using this
-     * parameter.
+     * You can change the description of the alias using this parameter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @return You can optionally change the description of the alias using this
-     *         parameter.
+     * @return You can change the description of the alias using this parameter.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * You can optionally change the description of the alias using this
-     * parameter.
+     * You can change the description of the alias using this parameter.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @param description You can optionally change the description of the alias using this
-     *         parameter.
+     * @param description You can change the description of the alias using this parameter.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * You can optionally change the description of the alias using this
-     * parameter.
+     * You can change the description of the alias using this parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
-     * @param description You can optionally change the description of the alias using this
-     *         parameter.
+     * @param description You can change the description of the alias using this parameter.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

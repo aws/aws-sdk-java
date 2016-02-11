@@ -109,6 +109,7 @@ abstract class DecisionStateMachineBase implements DecisionStateMachine {
     public void handleInitiationFailedEvent(HistoryEvent event) {
         stateHistory.add("handleInitiationFailedEvent");
         switch (state) {
+        case INITIATED:
         case DECISION_SENT:
         case CANCELED_BEFORE_INITIATED:
             state = DecisionState.COMPLETED;

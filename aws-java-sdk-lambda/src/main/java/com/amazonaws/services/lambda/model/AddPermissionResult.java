@@ -23,19 +23,19 @@ public class AddPermissionResult implements Serializable, Cloneable {
 
     /**
      * The permission statement you specified in the request. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * returns the same as a string using a backslash ("\") as an escape
+     * character in the JSON.
      */
     private String statement;
 
     /**
      * The permission statement you specified in the request. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * returns the same as a string using a backslash ("\") as an escape
+     * character in the JSON.
      *
      * @return The permission statement you specified in the request. The response
-     *         returns the same as a string using "\" as an escape character in the
-     *         JSON.
+     *         returns the same as a string using a backslash ("\") as an escape
+     *         character in the JSON.
      */
     public String getStatement() {
         return statement;
@@ -43,12 +43,12 @@ public class AddPermissionResult implements Serializable, Cloneable {
     
     /**
      * The permission statement you specified in the request. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * returns the same as a string using a backslash ("\") as an escape
+     * character in the JSON.
      *
      * @param statement The permission statement you specified in the request. The response
-     *         returns the same as a string using "\" as an escape character in the
-     *         JSON.
+     *         returns the same as a string using a backslash ("\") as an escape
+     *         character in the JSON.
      */
     public void setStatement(String statement) {
         this.statement = statement;
@@ -56,14 +56,14 @@ public class AddPermissionResult implements Serializable, Cloneable {
     
     /**
      * The permission statement you specified in the request. The response
-     * returns the same as a string using "\" as an escape character in the
-     * JSON.
+     * returns the same as a string using a backslash ("\") as an escape
+     * character in the JSON.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statement The permission statement you specified in the request. The response
-     *         returns the same as a string using "\" as an escape character in the
-     *         JSON.
+     *         returns the same as a string using a backslash ("\") as an escape
+     *         character in the JSON.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

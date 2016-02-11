@@ -27,7 +27,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
     private String nextMarker;
 
     /**
-     * An list of alises.
+     * A list of aliases.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<AliasConfiguration> aliases;
 
@@ -65,9 +65,9 @@ public class ListAliasesResult implements Serializable, Cloneable {
     }
 
     /**
-     * An list of alises.
+     * A list of aliases.
      *
-     * @return An list of alises.
+     * @return A list of aliases.
      */
     public java.util.List<AliasConfiguration> getAliases() {
         if (aliases == null) {
@@ -78,9 +78,9 @@ public class ListAliasesResult implements Serializable, Cloneable {
     }
     
     /**
-     * An list of alises.
+     * A list of aliases.
      *
-     * @param aliases An list of alises.
+     * @param aliases A list of aliases.
      */
     public void setAliases(java.util.Collection<AliasConfiguration> aliases) {
         if (aliases == null) {
@@ -93,7 +93,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
     }
     
     /**
-     * An list of alises.
+     * A list of aliases.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAliases(java.util.Collection)} or {@link
@@ -102,7 +102,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aliases An list of alises.
+     * @param aliases A list of aliases.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -116,11 +116,11 @@ public class ListAliasesResult implements Serializable, Cloneable {
     }
     
     /**
-     * An list of alises.
+     * A list of aliases.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aliases An list of alises.
+     * @param aliases A list of aliases.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

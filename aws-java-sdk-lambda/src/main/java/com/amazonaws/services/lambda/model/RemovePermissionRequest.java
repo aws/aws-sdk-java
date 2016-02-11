@@ -23,9 +23,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * You can remove individual permissions from an resource policy
  * associated with a Lambda function by providing a statement ID that you
- * provided when you addded the permission. The API removes corresponding
- * permission that is associated with the specific ARN identified by the
- * <code>Qualifier</code> parameter.
+ * provided when you added the permission.
+ * </p>
+ * <p>
+ * If you are using versioning, the permissions you remove are specific
+ * to the Lambda function version or alias you specify in the
+ * <code>AddPermission</code> request via the <code>Qualifier</code>
+ * parameter. For more information about versioning, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
  * </p>
  * <p>
  * Note that removal of a permission will cause an active event source to
@@ -42,14 +48,14 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Lambda function whose resource policy you want to remove a permission
-     * from. <p> You can specify an unqualified function name (for example,
-     * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * from. <p> You can specify a function name (for example,
+     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     * of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -68,41 +74,40 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
 
     /**
      * You can specify this optional parameter to remove permission
-     * associated with a specific function version or function alias. The
-     * value of this paramter is the function version or alias name. If you
+     * associated with a specific function version or function alias. If you
      * don't specify this parameter, the API removes permission associated
      * with the unqualified function ARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      */
     private String qualifier;
 
     /**
      * Lambda function whose resource policy you want to remove a permission
-     * from. <p> You can specify an unqualified function name (for example,
-     * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * from. <p> You can specify a function name (for example,
+     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     * of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @return Lambda function whose resource policy you want to remove a permission
-     *         from. <p> You can specify an unqualified function name (for example,
-     *         "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     *         function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         from. <p> You can specify a function name (for example,
+     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     *         of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public String getFunctionName() {
         return functionName;
@@ -110,28 +115,28 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Lambda function whose resource policy you want to remove a permission
-     * from. <p> You can specify an unqualified function name (for example,
-     * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * from. <p> You can specify a function name (for example,
+     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     * of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName Lambda function whose resource policy you want to remove a permission
-     *         from. <p> You can specify an unqualified function name (for example,
-     *         "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     *         function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         from. <p> You can specify a function name (for example,
+     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     *         of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
@@ -139,14 +144,14 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Lambda function whose resource policy you want to remove a permission
-     * from. <p> You can specify an unqualified function name (for example,
-     * "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * from. <p> You can specify a function name (for example,
+     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     * of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -155,14 +160,14 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
      * @param functionName Lambda function whose resource policy you want to remove a permission
-     *         from. <p> You can specify an unqualified function name (for example,
-     *         "Thumbnail") or you can specify Amazon Resource Name (ARN) of the
-     *         function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         from. <p> You can specify a function name (for example,
+     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
+     *         of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -219,18 +224,16 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
 
     /**
      * You can specify this optional parameter to remove permission
-     * associated with a specific function version or function alias. The
-     * value of this paramter is the function version or alias name. If you
+     * associated with a specific function version or function alias. If you
      * don't specify this parameter, the API removes permission associated
      * with the unqualified function ARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
      * @return You can specify this optional parameter to remove permission
-     *         associated with a specific function version or function alias. The
-     *         value of this paramter is the function version or alias name. If you
+     *         associated with a specific function version or function alias. If you
      *         don't specify this parameter, the API removes permission associated
      *         with the unqualified function ARN.
      */
@@ -240,18 +243,16 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     
     /**
      * You can specify this optional parameter to remove permission
-     * associated with a specific function version or function alias. The
-     * value of this paramter is the function version or alias name. If you
+     * associated with a specific function version or function alias. If you
      * don't specify this parameter, the API removes permission associated
      * with the unqualified function ARN.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
      * @param qualifier You can specify this optional parameter to remove permission
-     *         associated with a specific function version or function alias. The
-     *         value of this paramter is the function version or alias name. If you
+     *         associated with a specific function version or function alias. If you
      *         don't specify this parameter, the API removes permission associated
      *         with the unqualified function ARN.
      */
@@ -261,8 +262,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
     
     /**
      * You can specify this optional parameter to remove permission
-     * associated with a specific function version or function alias. The
-     * value of this paramter is the function version or alias name. If you
+     * associated with a specific function version or function alias. If you
      * don't specify this parameter, the API removes permission associated
      * with the unqualified function ARN.
      * <p>
@@ -270,11 +270,10 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
      * @param qualifier You can specify this optional parameter to remove permission
-     *         associated with a specific function version or function alias. The
-     *         value of this paramter is the function version or alias name. If you
+     *         associated with a specific function version or function alias. If you
      *         don't specify this parameter, the API removes permission associated
      *         with the unqualified function ARN.
      *

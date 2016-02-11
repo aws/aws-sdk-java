@@ -93,6 +93,10 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                     context.nextToken();
                     publishVersionResult.setVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

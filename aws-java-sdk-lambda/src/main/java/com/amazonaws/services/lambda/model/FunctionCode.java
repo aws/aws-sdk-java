@@ -24,8 +24,10 @@ import java.io.Serializable;
 public class FunctionCode implements Serializable, Cloneable {
 
     /**
-     * A base64-encoded .zip file containing your deployment package. For
-     * more information about creating a .zip file, go to <a
+     * A zip file containing your deployment package. If you are using the
+     * API directly, the zip file must be base64-encoded (if you are using
+     * the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     * you). For more information about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      */
@@ -61,13 +63,17 @@ public class FunctionCode implements Serializable, Cloneable {
     private String s3ObjectVersion;
 
     /**
-     * A base64-encoded .zip file containing your deployment package. For
-     * more information about creating a .zip file, go to <a
+     * A zip file containing your deployment package. If you are using the
+     * API directly, the zip file must be base64-encoded (if you are using
+     * the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     * you). For more information about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      *
-     * @return A base64-encoded .zip file containing your deployment package. For
-     *         more information about creating a .zip file, go to <a
+     * @return A zip file containing your deployment package. If you are using the
+     *         API directly, the zip file must be base64-encoded (if you are using
+     *         the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     *         you). For more information about creating a .zip file, go to <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      *         Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      */
@@ -76,13 +82,17 @@ public class FunctionCode implements Serializable, Cloneable {
     }
     
     /**
-     * A base64-encoded .zip file containing your deployment package. For
-     * more information about creating a .zip file, go to <a
+     * A zip file containing your deployment package. If you are using the
+     * API directly, the zip file must be base64-encoded (if you are using
+     * the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     * you). For more information about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      *
-     * @param zipFile A base64-encoded .zip file containing your deployment package. For
-     *         more information about creating a .zip file, go to <a
+     * @param zipFile A zip file containing your deployment package. If you are using the
+     *         API directly, the zip file must be base64-encoded (if you are using
+     *         the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     *         you). For more information about creating a .zip file, go to <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      *         Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      */
@@ -91,15 +101,19 @@ public class FunctionCode implements Serializable, Cloneable {
     }
     
     /**
-     * A base64-encoded .zip file containing your deployment package. For
-     * more information about creating a .zip file, go to <a
+     * A zip file containing your deployment package. If you are using the
+     * API directly, the zip file must be base64-encoded (if you are using
+     * the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     * you). For more information about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param zipFile A base64-encoded .zip file containing your deployment package. For
-     *         more information about creating a .zip file, go to <a
+     * @param zipFile A zip file containing your deployment package. If you are using the
+     *         API directly, the zip file must be base64-encoded (if you are using
+     *         the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for
+     *         you). For more information about creating a .zip file, go to <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      *         Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      *
