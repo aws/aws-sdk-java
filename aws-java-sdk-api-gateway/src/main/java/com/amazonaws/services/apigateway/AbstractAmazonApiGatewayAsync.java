@@ -45,6 +45,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(
+            CreateAuthorizerRequest request) {
+
+        return createAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(
+            CreateAuthorizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAuthorizerRequest, CreateAuthorizerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBasePathMappingResult> createBasePathMappingAsync(
             CreateBasePathMappingRequest request) {
 
@@ -160,6 +175,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<Void> deleteApiKeyAsync(
             DeleteApiKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+            DeleteAuthorizerRequest request) {
+
+        return deleteAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+            DeleteAuthorizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, Void> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -420,6 +450,36 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
+    public java.util.concurrent.Future<GetAuthorizerResult> getAuthorizerAsync(
+            GetAuthorizerRequest request) {
+
+        return getAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAuthorizerResult> getAuthorizerAsync(
+            GetAuthorizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAuthorizerRequest, GetAuthorizerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAuthorizersResult> getAuthorizersAsync(
+            GetAuthorizersRequest request) {
+
+        return getAuthorizersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAuthorizersResult> getAuthorizersAsync(
+            GetAuthorizersRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAuthorizersRequest, GetAuthorizersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBasePathMappingResult> getBasePathMappingAsync(
             GetBasePathMappingRequest request) {
 
@@ -535,6 +595,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<GetDomainNamesResult> getDomainNamesAsync(
             GetDomainNamesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainNamesRequest, GetDomainNamesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(
+            GetExportRequest request) {
+
+        return getExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(
+            GetExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -850,6 +925,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(
             UpdateApiKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(
+            UpdateAuthorizerRequest request) {
+
+        return updateAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(
+            UpdateAuthorizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAuthorizerRequest, UpdateAuthorizerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

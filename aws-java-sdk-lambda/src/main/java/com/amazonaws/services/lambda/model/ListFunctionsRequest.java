@@ -29,6 +29,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation requires permission for the
  * <code>lambda:ListFunctions</code> action.
  * </p>
+ * <p>
+ * If you are using versioning feature, the response returns list of
+ * $LATEST versions of your functions. For information about the
+ * versioning feature, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
+ * </p>
  *
  * @see com.amazonaws.services.lambda.AWSLambda#listFunctions(ListFunctionsRequest)
  */

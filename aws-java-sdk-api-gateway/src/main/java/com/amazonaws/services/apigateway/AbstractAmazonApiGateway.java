@@ -44,6 +44,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateAuthorizerResult createAuthorizer(
+            CreateAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBasePathMappingResult createBasePathMapping(
             CreateBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -83,6 +89,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public void deleteApiKey(DeleteApiKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteAuthorizer(DeleteAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +185,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetAuthorizerResult getAuthorizer(GetAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAuthorizersResult getAuthorizers(GetAuthorizersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetBasePathMappingResult getBasePathMapping(
             GetBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -214,6 +235,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public GetDomainNamesResult getDomainNames(GetDomainNamesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExportResult getExport(GetExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -325,6 +351,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAuthorizerResult updateAuthorizer(
+            UpdateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -992,6 +992,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         operation returned by the service.
      * @sample AmazonRoute53Async.GetChangeDetails
      */
+    @Deprecated
     java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest getChangeDetailsRequest);
 
@@ -1011,6 +1012,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetChangeDetails
      */
+    @Deprecated
     java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest getChangeDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult> asyncHandler);
@@ -1633,6 +1635,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByHostedZone operation returned by the service.
      * @sample AmazonRoute53Async.ListChangeBatchesByHostedZone
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest);
 
@@ -1653,6 +1656,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByHostedZone operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListChangeBatchesByHostedZone
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult> asyncHandler);
@@ -1669,6 +1673,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByRRSet operation returned by the service.
      * @sample AmazonRoute53Async.ListChangeBatchesByRRSet
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest);
 
@@ -1689,6 +1694,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByRRSet operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListChangeBatchesByRRSet
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest,
             com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult> asyncHandler);

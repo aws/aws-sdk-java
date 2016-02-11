@@ -279,10 +279,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
             
     /**
      * <p>
-     * Using this API you can update function version to which the alias
-     * points to and alias description. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Using this API you can update the function version to which the alias
+     * points and the alias description. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
      * This requires permission for the lambda:UpdateAlias action.
@@ -314,10 +314,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Using this API you can update function version to which the alias
-     * points to and alias description. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Using this API you can update the function version to which the alias
+     * points and the alias description. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
      * This requires permission for the lambda:UpdateAlias action.
@@ -366,18 +366,19 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Deletes the specified Lambda function code and configuration.
      * </p>
      * <p>
-     * If you don't specify a function version, AWS Lambda will delete the
-     * function, including all its versions, and any aliases pointing to the
-     * function versions.
+     * If you are using the versioning feature and you don't specify a
+     * function version in your <code>DeleteFunction</code> request, AWS
+     * Lambda will delete the function, including all its versions, and any
+     * aliases pointing to the function versions. To delete a specific
+     * function version, you must provide the function version via the
+     * <code>Qualifier</code> parameter. For information about function
+     * versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * When you delete a function the associated resource policy is also
      * deleted. You will need to delete the event source mappings explicitly.
-     * </p>
-     * <p>
-     * For information about function versioning, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -414,18 +415,19 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Deletes the specified Lambda function code and configuration.
      * </p>
      * <p>
-     * If you don't specify a function version, AWS Lambda will delete the
-     * function, including all its versions, and any aliases pointing to the
-     * function versions.
+     * If you are using the versioning feature and you don't specify a
+     * function version in your <code>DeleteFunction</code> request, AWS
+     * Lambda will delete the function, including all its versions, and any
+     * aliases pointing to the function versions. To delete a specific
+     * function version, you must provide the function version via the
+     * <code>Qualifier</code> parameter. For information about function
+     * versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * When you delete a function the associated resource policy is also
      * deleted. You will need to delete the event source mappings explicitly.
-     * </p>
-     * <p>
-     * For information about function versioning, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -473,10 +475,11 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * <p>
      * Adds a permission to the resource policy associated with the
      * specified AWS Lambda function. You use resource policies to grant
-     * permissions to event sources that use "push" model. In "push" model,
-     * event sources (such as Amazon S3 and custom applications) invoke your
-     * Lambda function. Each permission you add to the resource policy allows
-     * an event source, permission to invoke the Lambda function.
+     * permissions to event sources that use <i>push</i> model. In a
+     * <i>push</i> model, event sources (such as Amazon S3 and custom
+     * applications) invoke your Lambda function. Each permission you add to
+     * the resource policy allows an event source, permission to invoke the
+     * Lambda function.
      * </p>
      * <p>
      * For information about the push model, see
@@ -484,12 +487,12 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * .
      * </p>
      * <p>
-     * If you are using versioning feature (see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * ), a Lambda function can have multiple ARNs that can be used to
-     * invoke the function. Note that, each permission you add to resource
-     * policy using this API is specific to an ARN, specified using the
-     * <code>Qualifier</code> parameter
+     * If you are using versioning, the permissions you add are specific to
+     * the Lambda function version or alias you specify in the
+     * <code>AddPermission</code> request via the <code>Qualifier</code>
+     * parameter. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -524,10 +527,11 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * <p>
      * Adds a permission to the resource policy associated with the
      * specified AWS Lambda function. You use resource policies to grant
-     * permissions to event sources that use "push" model. In "push" model,
-     * event sources (such as Amazon S3 and custom applications) invoke your
-     * Lambda function. Each permission you add to the resource policy allows
-     * an event source, permission to invoke the Lambda function.
+     * permissions to event sources that use <i>push</i> model. In a
+     * <i>push</i> model, event sources (such as Amazon S3 and custom
+     * applications) invoke your Lambda function. Each permission you add to
+     * the resource policy allows an event source, permission to invoke the
+     * Lambda function.
      * </p>
      * <p>
      * For information about the push model, see
@@ -535,12 +539,12 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * .
      * </p>
      * <p>
-     * If you are using versioning feature (see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * ), a Lambda function can have multiple ARNs that can be used to
-     * invoke the function. Note that, each permission you add to resource
-     * policy using this API is specific to an ARN, specified using the
-     * <code>Qualifier</code> parameter
+     * If you are using versioning, the permissions you add are specific to
+     * the Lambda function version or alias you specify in the
+     * <code>AddPermission</code> request via the <code>Qualifier</code>
+     * parameter. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -595,6 +599,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * This operation requires permission for the
      * <code>lambda:ListFunctions</code> action.
      * </p>
+     * <p>
+     * If you are using versioning feature, the response returns list of
+     * $LATEST versions of your functions. For information about the
+     * versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
      *
      * @param listFunctionsRequest Container for the necessary parameters to
      *           execute the ListFunctions operation on AWSLambda.
@@ -629,6 +640,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * <p>
      * This operation requires permission for the
      * <code>lambda:ListFunctions</code> action.
+     * </p>
+     * <p>
+     * If you are using versioning feature, the response returns list of
+     * $LATEST versions of your functions. For information about the
+     * versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      *
      * @param listFunctionsRequest Container for the necessary parameters to
@@ -674,11 +692,11 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Returns the specified alias information such as the alias ARN,
      * description, and function version it is pointing to. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
-     * This requires permission for the lambda:GetAlias action.
+     * This requires permission for the <code>lambda:GetAlias</code> action.
      * </p>
      *
      * @param getAliasRequest Container for the necessary parameters to
@@ -710,11 +728,11 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Returns the specified alias information such as the alias ARN,
      * description, and function version it is pointing to. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
-     * This requires permission for the lambda:GetAlias action.
+     * This requires permission for the <code>lambda:GetAlias</code> action.
      * </p>
      *
      * @param getAliasRequest Container for the necessary parameters to
@@ -759,9 +777,15 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * <p>
      * You can remove individual permissions from an resource policy
      * associated with a Lambda function by providing a statement ID that you
-     * provided when you addded the permission. The API removes corresponding
-     * permission that is associated with the specific ARN identified by the
-     * <code>Qualifier</code> parameter.
+     * provided when you added the permission.
+     * </p>
+     * <p>
+     * If you are using versioning, the permissions you remove are specific
+     * to the Lambda function version or alias you specify in the
+     * <code>AddPermission</code> request via the <code>Qualifier</code>
+     * parameter. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * Note that removal of a permission will cause an active event source
@@ -801,9 +825,15 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * <p>
      * You can remove individual permissions from an resource policy
      * associated with a Lambda function by providing a statement ID that you
-     * provided when you addded the permission. The API removes corresponding
-     * permission that is associated with the specific ARN identified by the
-     * <code>Qualifier</code> parameter.
+     * provided when you added the permission.
+     * </p>
+     * <p>
+     * If you are using versioning, the permissions you remove are specific
+     * to the Lambda function version or alias you specify in the
+     * <code>AddPermission</code> request via the <code>Qualifier</code>
+     * parameter. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * Note that removal of a permission will cause an active event source
@@ -860,6 +890,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * case-sensitive.
      * </p>
      * <p>
+     * If you are using versioning, you can also publish a version of the
+     * Lambda function you are creating using the <code>Publish</code>
+     * parameter. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
      * This operation requires permission for the
      * <code>lambda:CreateFunction</code> action.
      * </p>
@@ -895,6 +932,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * .zip file in the request body. If the function name already exists,
      * the operation will fail. Note that the function name is
      * case-sensitive.
+     * </p>
+     * <p>
+     * If you are using versioning, you can also publish a version of the
+     * Lambda function you are creating using the <code>Publish</code>
+     * parameter. For more information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -948,6 +992,20 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * mapping.
      * </p>
      * <p>
+     * If you are using the versioning feature, you can update the event
+     * source mapping to map to a specific Lambda function version or alias
+     * as described in the <code>FunctionName</code> parameter. For
+     * information about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
+     * If you disable the event source mapping, AWS Lambda stops polling. If
+     * you enable again, it will resume polling from the time it had stopped
+     * polling, so you don't lose processing of any records. However, if you
+     * delete event source mapping and create it again, it will reset.
+     * </p>
+     * <p>
      * This operation requires permission for the
      * <code>lambda:UpdateEventSourceMapping</code> action.
      * </p>
@@ -984,6 +1042,20 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * position in the stream. You can change which function will receive the
      * stream records, but to change the stream itself, you must create a new
      * mapping.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, you can update the event
+     * source mapping to map to a specific Lambda function version or alias
+     * as described in the <code>FunctionName</code> parameter. For
+     * information about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
+     * If you disable the event source mapping, AWS Lambda stops polling. If
+     * you enable again, it will resume polling from the time it had stopped
+     * polling, so you don't lose processing of any records. However, if you
+     * delete event source mapping and create it again, it will reset.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1032,11 +1104,12 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     /**
      * <p>
      * Publishes a version of your function from the current snapshot of
-     * HEAD. That is, AWS Lambda takes a snapshot of the function code and
-     * configuration information from HEAD and publishes a new version. The
-     * code and <code>handler</code> of this specific Lambda function version
-     * cannot be modified after publication, but you can modify the
-     * configuration information.
+     * $LATEST. That is, AWS Lambda takes a snapshot of the function code and
+     * configuration information from $LATEST and publishes a new version.
+     * The code and configuration cannot be modified after publication. For
+     * information about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      *
      * @param publishVersionRequest Container for the necessary parameters to
@@ -1066,11 +1139,12 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     /**
      * <p>
      * Publishes a version of your function from the current snapshot of
-     * HEAD. That is, AWS Lambda takes a snapshot of the function code and
-     * configuration information from HEAD and publishes a new version. The
-     * code and <code>handler</code> of this specific Lambda function version
-     * cannot be modified after publication, but you can modify the
-     * configuration information.
+     * $LATEST. That is, AWS Lambda takes a snapshot of the function code and
+     * configuration information from $LATEST and publishes a new version.
+     * The code and configuration cannot be modified after publication. For
+     * information about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      *
      * @param publishVersionRequest Container for the necessary parameters to
@@ -1120,7 +1194,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Submits an invocation request to AWS Lambda. Upon receiving the
      * request, Lambda executes the specified function asynchronously. To see
      * the logs generated by the Lambda function execution, see the
-     * CloudWatch logs console.
+     * CloudWatch Logs console.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1161,7 +1235,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Submits an invocation request to AWS Lambda. Upon receiving the
      * request, Lambda executes the specified function asynchronously. To see
      * the logs generated by the Lambda function execution, see the
-     * CloudWatch logs console.
+     * CloudWatch Logs console.
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1215,6 +1289,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * function's code.
      * </p>
      * <p>
+     * If you are using the versioning feature, note this API will always
+     * update the $LATEST version of your Lambda function. For information
+     * about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
      * This operation requires permission for the
      * <code>lambda:UpdateFunctionConfiguration</code> action.
      * </p>
@@ -1251,6 +1332,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * the parameters you want to change. This operation must only be used on
      * an existing Lambda function and cannot be used to update the
      * function's code.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, note this API will always
+     * update the $LATEST version of your Lambda function. For information
+     * about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1298,24 +1386,18 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Invokes a specific Lambda function version.
+     * Invokes a specific Lambda function.
      * </p>
      * <p>
-     * If you don't provide the <code>Qualifier</code> parameter, it uses
-     * the unqualified function ARN which results in invocation of the
-     * $LATEST version of the Lambda function (when you create a Lambda
-     * function, the $LATEST is the version). The AWS Lambda versioning and
-     * aliases feature allows you to publish multiple versions of a Lambda
-     * function and also create aliases for each function version. So each
-     * your Lambda function version can be invoked using multiple ARNs. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * . Using the <code>Qualifier</code> parameter, you can specify a
-     * function version or alias name to invoke specific function version. If
-     * you specify function version, the API uses the qualified function ARN
-     * to invoke a specific function version. If you specify alias name, the
-     * API uses the alias ARN to invoke the function version to which the
-     * alias points.
+     * If you are using the versioning feature, you can invoke the specific
+     * function version by providing function version or alias name that is
+     * pointing to the function version using the <code>Qualifier</code>
+     * parameter in the request. If you don't provide the
+     * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of
+     * the Lambda function is invoked. For information about the versioning
+     * feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1348,24 +1430,18 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Invokes a specific Lambda function version.
+     * Invokes a specific Lambda function.
      * </p>
      * <p>
-     * If you don't provide the <code>Qualifier</code> parameter, it uses
-     * the unqualified function ARN which results in invocation of the
-     * $LATEST version of the Lambda function (when you create a Lambda
-     * function, the $LATEST is the version). The AWS Lambda versioning and
-     * aliases feature allows you to publish multiple versions of a Lambda
-     * function and also create aliases for each function version. So each
-     * your Lambda function version can be invoked using multiple ARNs. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * . Using the <code>Qualifier</code> parameter, you can specify a
-     * function version or alias name to invoke specific function version. If
-     * you specify function version, the API uses the qualified function ARN
-     * to invoke a specific function version. If you specify alias name, the
-     * API uses the alias ARN to invoke the function version to which the
-     * alias points.
+     * If you are using the versioning feature, you can invoke the specific
+     * function version by providing function version or alias name that is
+     * pointing to the function version using the <code>Qualifier</code>
+     * parameter in the request. If you don't provide the
+     * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of
+     * the Lambda function is invoked. For information about the versioning
+     * feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1412,12 +1488,20 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Returns the resource policy, containing a list of permissions that
-     * apply to a specific to an ARN that you specify via the
-     * <code>Qualifier</code> paramter.
+     * Returns the resource policy associated with the specified Lambda
+     * function.
      * </p>
      * <p>
-     * For informration about adding permissions, see AddPermission.
+     * If you are using the versioning feature, you can get the resource
+     * policy associated with the specific Lambda function version or alias
+     * by specifying the version or alias name using the
+     * <code>Qualifier</code> parameter. For more information about
+     * versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
+     * For information about adding permissions, see AddPermission.
      * </p>
      * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
@@ -1449,12 +1533,20 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Returns the resource policy, containing a list of permissions that
-     * apply to a specific to an ARN that you specify via the
-     * <code>Qualifier</code> paramter.
+     * Returns the resource policy associated with the specified Lambda
+     * function.
      * </p>
      * <p>
-     * For informration about adding permissions, see AddPermission.
+     * If you are using the versioning feature, you can get the resource
+     * policy associated with the specific Lambda function version or alias
+     * by specifying the version or alias name using the
+     * <code>Qualifier</code> parameter. For more information about
+     * versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
+     * For information about adding permissions, see AddPermission.
      * </p>
      * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
@@ -1585,13 +1677,19 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     /**
      * <p>
      * Returns a list of event source mappings you created using the
-     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping),
-     * where you identify a stream as an event source. This list does not
-     * include Amazon S3 event sources.
+     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping).
      * </p>
      * <p>
      * For each mapping, the API returns configuration information. You can
      * optionally specify filters to retrieve specific event source mappings.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, you can get list of event
+     * source mappings for a specific Lambda function version or an alias as
+     * described in the <code>FunctionName</code> parameter. For information
+     * about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1626,13 +1724,19 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     /**
      * <p>
      * Returns a list of event source mappings you created using the
-     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping),
-     * where you identify a stream as an event source. This list does not
-     * include Amazon S3 event sources.
+     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping).
      * </p>
      * <p>
      * For each mapping, the API returns configuration information. You can
      * optionally specify filters to retrieve specific event source mappings.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, you can get list of event
+     * source mappings for a specific Lambda function version or an alias as
+     * described in the <code>FunctionName</code> parameter. For information
+     * about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1680,9 +1784,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Deletes specified Lambda function alias. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Deletes the specified Lambda function alias. For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
      * This requires permission for the lambda:DeleteAlias action.
@@ -1715,9 +1820,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Deletes specified Lambda function alias. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Deletes the specified Lambda function alias. For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
      * This requires permission for the lambda:DeleteAlias action.
@@ -1767,11 +1873,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * function by using CreateFunction.
      * </p>
      * <p>
-     * You can use the optional <code>Qualifier</code> parameter to retrieve
-     * configuration information for a specific Lambda function version. If
-     * you don't provide it, the API returns information about the $LATEST
-     * version of the function. For more information about versioning, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * If you are using the versioning feature, you can retrieve this
+     * information for a specific function version by using the optional
+     * <code>Qualifier</code> parameter and specifying the function version
+     * or alias that points to it. If you don't provide it, the API returns
+     * information about the $LATEST version of the function. For more
+     * information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
      * .
      * </p>
      * <p>
@@ -1811,11 +1919,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * function by using CreateFunction.
      * </p>
      * <p>
-     * You can use the optional <code>Qualifier</code> parameter to retrieve
-     * configuration information for a specific Lambda function version. If
-     * you don't provide it, the API returns information about the $LATEST
-     * version of the function. For more information about versioning, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * If you are using the versioning feature, you can retrieve this
+     * information for a specific function version by using the optional
+     * <code>Qualifier</code> parameter and specifying the function version
+     * or alias that points to it. If you don't provide it, the API returns
+     * information about the $LATEST version of the function. For more
+     * information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
      * .
      * </p>
      * <p>
@@ -1954,22 +2064,33 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * stream.
      * </p>
      * <p>
-     * This is the pull model, where AWS Lambda invokes the function. For
-     * more information, go to
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * in the <i>AWS Lambda Developer Guide</i> .
+     * This association between a stream source and a Lambda function is
+     * called the event source mapping.
      * </p>
      * <p>
-     * This association between an Amazon Kinesis stream and a Lambda
-     * function is called the event source mapping. You provide the
-     * configuration information (for example, which stream to read from and
-     * which Lambda function to invoke) for the event source mapping in the
-     * request body.
+     * <b>IMPORTANT:</b>This event source mapping is relevant only in the
+     * AWS Lambda pull model, where AWS Lambda invokes the function. For more
+     * information, go to AWS Lambda: How it Works in the AWS Lambda
+     * Developer Guide.
+     * </p>
+     * <p>
+     * You provide mapping information (for example, which stream to read
+     * from and which Lambda function to invoke) in the request body.
      * </p>
      * <p>
      * Each event source, such as an Amazon Kinesis or a DynamoDB stream,
      * can be associated with multiple AWS Lambda function. A given Lambda
      * function can be associated with multiple AWS event sources.
+     * </p>
+     * <p>
+     * <p>
+     * If you are using versioning, you can specify a specific function
+     * version or an alias via the function name parameter. For more
+     * information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * 
      * </p>
      * <p>
      * This operation requires permission for the
@@ -2009,22 +2130,33 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * stream.
      * </p>
      * <p>
-     * This is the pull model, where AWS Lambda invokes the function. For
-     * more information, go to
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * in the <i>AWS Lambda Developer Guide</i> .
+     * This association between a stream source and a Lambda function is
+     * called the event source mapping.
      * </p>
      * <p>
-     * This association between an Amazon Kinesis stream and a Lambda
-     * function is called the event source mapping. You provide the
-     * configuration information (for example, which stream to read from and
-     * which Lambda function to invoke) for the event source mapping in the
-     * request body.
+     * <b>IMPORTANT:</b>This event source mapping is relevant only in the
+     * AWS Lambda pull model, where AWS Lambda invokes the function. For more
+     * information, go to AWS Lambda: How it Works in the AWS Lambda
+     * Developer Guide.
+     * </p>
+     * <p>
+     * You provide mapping information (for example, which stream to read
+     * from and which Lambda function to invoke) in the request body.
      * </p>
      * <p>
      * Each event source, such as an Amazon Kinesis or a DynamoDB stream,
      * can be associated with multiple AWS Lambda function. A given Lambda
      * function can be associated with multiple AWS event sources.
+     * </p>
+     * <p>
+     * <p>
+     * If you are using versioning, you can specify a specific function
+     * version or an alias via the function name parameter. For more
+     * information about versioning, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * 
      * </p>
      * <p>
      * This operation requires permission for the
@@ -2077,6 +2209,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * update the function configuration.
      * </p>
      * <p>
+     * If you are using the versioning feature, note this API will always
+     * update the $LATEST version of your Lambda function. For information
+     * about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
+     * </p>
+     * <p>
      * This operation requires permission for the
      * <code>lambda:UpdateFunctionCode</code> action.
      * </p>
@@ -2110,6 +2249,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Updates the code for the specified Lambda function. This operation
      * must only be used on an existing Lambda function and cannot be used to
      * update the function configuration.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, note this API will always
+     * update the $LATEST version of your Lambda function. For information
+     * about the versioning feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      * <p>
      * This operation requires permission for the
@@ -2160,8 +2306,8 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * alias, the response includes information such as the alias ARN,
      * description, alias name, and the function version to which it points.
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
      * This requires permission for the lambda:ListAliases action.
@@ -2197,8 +2343,8 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * alias, the response includes information such as the alias ARN,
      * description, alias name, and the function version to which it points.
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
      * </p>
      * <p>
      * This requires permission for the lambda:ListAliases action.
@@ -2244,7 +2390,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * List all versions of a function.
+     * List all versions of a function. For information about the versioning
+     * feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      *
      * @param listVersionsByFunctionRequest Container for the necessary
@@ -2274,7 +2423,10 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * List all versions of a function.
+     * List all versions of a function. For information about the versioning
+     * feature, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+     * .
      * </p>
      *
      * @param listVersionsByFunctionRequest Container for the necessary
@@ -2328,9 +2480,9 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Using the optional <code>Qualifier</code> parameter, you can specify
      * a specific function version for which you want this information. If
      * you don't specify this parameter, the API uses unqualified function
-     * ARN which return information about the $LATEST version of the Lambda
-     * function. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * ARN which return information about the <code>$LATEST</code> version of
+     * the Lambda function. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
      * .
      * </p>
      * <p>
@@ -2374,9 +2526,9 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
      * Using the optional <code>Qualifier</code> parameter, you can specify
      * a specific function version for which you want this information. If
      * you don't specify this parameter, the API uses unqualified function
-     * ARN which return information about the $LATEST version of the Lambda
-     * function. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
+     * ARN which return information about the <code>$LATEST</code> version of
+     * the Lambda function. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
      * .
      * </p>
      * <p>
@@ -2424,10 +2576,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
     
     /**
      * <p>
-     * Creates an alias to the specified Lambda function version. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Creates an alias that points to the specified Lambda function
+     * version. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
+     * </p>
+     * <p>
+     * Alias names are unique for a given function.
      * </p>
      * <p>
      * This requires permission for the lambda:CreateAlias action.
@@ -2459,10 +2614,13 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient
 
     /**
      * <p>
-     * Creates an alias to the specified Lambda function version. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Creates an alias that points to the specified Lambda function
+     * version. For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+     * .
+     * </p>
+     * <p>
+     * Alias names are unique for a given function.
      * </p>
      * <p>
      * This requires permission for the lambda:CreateAlias action.

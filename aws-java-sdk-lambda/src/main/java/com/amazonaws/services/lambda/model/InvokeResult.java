@@ -26,9 +26,10 @@ public class InvokeResult implements Serializable, Cloneable {
 
     /**
      * The HTTP status code will be in the 200 range for successful request.
-     * For the "RequestResonse" invocation type this status code will be 200.
-     * For the "Event" invocation type this status code will be 202. For the
-     * "DryRun" invocation type the status code will be 204.
+     * For the <code>RequestResonse</code> invocation type this status code
+     * will be 200. For the <code>Event</code> invocation type this status
+     * code will be 202. For the <code>DryRun</code> invocation type the
+     * status code will be 204.
      */
     private Integer statusCode;
 
@@ -48,31 +49,34 @@ public class InvokeResult implements Serializable, Cloneable {
 
     /**
      * It is the base64-encoded logs for the Lambda function invocation. This
-     * is present only if the invocation type is "RequestResponse" and the
-     * logs were requested.
+     * is present only if the invocation type is <code>RequestResponse</code>
+     * and the logs were requested.
      */
     private String logResult;
 
     /**
      * It is the JSON representation of the object returned by the Lambda
      * function. In This is present only if the invocation type is
-     * "RequestResponse". <p>In the event of a function error this field
-     * contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For
-     * <code>Unhandled</code> errors AWS Lambda reports the message.
+     * <code>RequestResponse</code>. <p>In the event of a function error this
+     * field contains a message describing the error. For the
+     * <code>Handled</code> errors the Lambda function will report this
+     * message. For <code>Unhandled</code> errors AWS Lambda reports the
+     * message.
      */
     private java.nio.ByteBuffer payload;
 
     /**
      * The HTTP status code will be in the 200 range for successful request.
-     * For the "RequestResonse" invocation type this status code will be 200.
-     * For the "Event" invocation type this status code will be 202. For the
-     * "DryRun" invocation type the status code will be 204.
+     * For the <code>RequestResonse</code> invocation type this status code
+     * will be 200. For the <code>Event</code> invocation type this status
+     * code will be 202. For the <code>DryRun</code> invocation type the
+     * status code will be 204.
      *
      * @return The HTTP status code will be in the 200 range for successful request.
-     *         For the "RequestResonse" invocation type this status code will be 200.
-     *         For the "Event" invocation type this status code will be 202. For the
-     *         "DryRun" invocation type the status code will be 204.
+     *         For the <code>RequestResonse</code> invocation type this status code
+     *         will be 200. For the <code>Event</code> invocation type this status
+     *         code will be 202. For the <code>DryRun</code> invocation type the
+     *         status code will be 204.
      */
     public Integer getStatusCode() {
         return statusCode;
@@ -80,14 +84,16 @@ public class InvokeResult implements Serializable, Cloneable {
     
     /**
      * The HTTP status code will be in the 200 range for successful request.
-     * For the "RequestResonse" invocation type this status code will be 200.
-     * For the "Event" invocation type this status code will be 202. For the
-     * "DryRun" invocation type the status code will be 204.
+     * For the <code>RequestResonse</code> invocation type this status code
+     * will be 200. For the <code>Event</code> invocation type this status
+     * code will be 202. For the <code>DryRun</code> invocation type the
+     * status code will be 204.
      *
      * @param statusCode The HTTP status code will be in the 200 range for successful request.
-     *         For the "RequestResonse" invocation type this status code will be 200.
-     *         For the "Event" invocation type this status code will be 202. For the
-     *         "DryRun" invocation type the status code will be 204.
+     *         For the <code>RequestResonse</code> invocation type this status code
+     *         will be 200. For the <code>Event</code> invocation type this status
+     *         code will be 202. For the <code>DryRun</code> invocation type the
+     *         status code will be 204.
      */
     public void setStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
@@ -95,16 +101,18 @@ public class InvokeResult implements Serializable, Cloneable {
     
     /**
      * The HTTP status code will be in the 200 range for successful request.
-     * For the "RequestResonse" invocation type this status code will be 200.
-     * For the "Event" invocation type this status code will be 202. For the
-     * "DryRun" invocation type the status code will be 204.
+     * For the <code>RequestResonse</code> invocation type this status code
+     * will be 200. For the <code>Event</code> invocation type this status
+     * code will be 202. For the <code>DryRun</code> invocation type the
+     * status code will be 204.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusCode The HTTP status code will be in the 200 range for successful request.
-     *         For the "RequestResonse" invocation type this status code will be 200.
-     *         For the "Event" invocation type this status code will be 202. For the
-     *         "DryRun" invocation type the status code will be 204.
+     *         For the <code>RequestResonse</code> invocation type this status code
+     *         will be 200. For the <code>Event</code> invocation type this status
+     *         code will be 202. For the <code>DryRun</code> invocation type the
+     *         status code will be 204.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -203,12 +211,12 @@ public class InvokeResult implements Serializable, Cloneable {
 
     /**
      * It is the base64-encoded logs for the Lambda function invocation. This
-     * is present only if the invocation type is "RequestResponse" and the
-     * logs were requested.
+     * is present only if the invocation type is <code>RequestResponse</code>
+     * and the logs were requested.
      *
      * @return It is the base64-encoded logs for the Lambda function invocation. This
-     *         is present only if the invocation type is "RequestResponse" and the
-     *         logs were requested.
+     *         is present only if the invocation type is <code>RequestResponse</code>
+     *         and the logs were requested.
      */
     public String getLogResult() {
         return logResult;
@@ -216,12 +224,12 @@ public class InvokeResult implements Serializable, Cloneable {
     
     /**
      * It is the base64-encoded logs for the Lambda function invocation. This
-     * is present only if the invocation type is "RequestResponse" and the
-     * logs were requested.
+     * is present only if the invocation type is <code>RequestResponse</code>
+     * and the logs were requested.
      *
      * @param logResult It is the base64-encoded logs for the Lambda function invocation. This
-     *         is present only if the invocation type is "RequestResponse" and the
-     *         logs were requested.
+     *         is present only if the invocation type is <code>RequestResponse</code>
+     *         and the logs were requested.
      */
     public void setLogResult(String logResult) {
         this.logResult = logResult;
@@ -229,14 +237,14 @@ public class InvokeResult implements Serializable, Cloneable {
     
     /**
      * It is the base64-encoded logs for the Lambda function invocation. This
-     * is present only if the invocation type is "RequestResponse" and the
-     * logs were requested.
+     * is present only if the invocation type is <code>RequestResponse</code>
+     * and the logs were requested.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logResult It is the base64-encoded logs for the Lambda function invocation. This
-     *         is present only if the invocation type is "RequestResponse" and the
-     *         logs were requested.
+     *         is present only if the invocation type is <code>RequestResponse</code>
+     *         and the logs were requested.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -249,17 +257,19 @@ public class InvokeResult implements Serializable, Cloneable {
     /**
      * It is the JSON representation of the object returned by the Lambda
      * function. In This is present only if the invocation type is
-     * "RequestResponse". <p>In the event of a function error this field
-     * contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For
-     * <code>Unhandled</code> errors AWS Lambda reports the message.
+     * <code>RequestResponse</code>. <p>In the event of a function error this
+     * field contains a message describing the error. For the
+     * <code>Handled</code> errors the Lambda function will report this
+     * message. For <code>Unhandled</code> errors AWS Lambda reports the
+     * message.
      *
      * @return It is the JSON representation of the object returned by the Lambda
      *         function. In This is present only if the invocation type is
-     *         "RequestResponse". <p>In the event of a function error this field
-     *         contains a message describing the error. For the <code>Handled</code>
-     *         errors the Lambda function will report this message. For
-     *         <code>Unhandled</code> errors AWS Lambda reports the message.
+     *         <code>RequestResponse</code>. <p>In the event of a function error this
+     *         field contains a message describing the error. For the
+     *         <code>Handled</code> errors the Lambda function will report this
+     *         message. For <code>Unhandled</code> errors AWS Lambda reports the
+     *         message.
      */
     public java.nio.ByteBuffer getPayload() {
         return payload;
@@ -268,17 +278,19 @@ public class InvokeResult implements Serializable, Cloneable {
     /**
      * It is the JSON representation of the object returned by the Lambda
      * function. In This is present only if the invocation type is
-     * "RequestResponse". <p>In the event of a function error this field
-     * contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For
-     * <code>Unhandled</code> errors AWS Lambda reports the message.
+     * <code>RequestResponse</code>. <p>In the event of a function error this
+     * field contains a message describing the error. For the
+     * <code>Handled</code> errors the Lambda function will report this
+     * message. For <code>Unhandled</code> errors AWS Lambda reports the
+     * message.
      *
      * @param payload It is the JSON representation of the object returned by the Lambda
      *         function. In This is present only if the invocation type is
-     *         "RequestResponse". <p>In the event of a function error this field
-     *         contains a message describing the error. For the <code>Handled</code>
-     *         errors the Lambda function will report this message. For
-     *         <code>Unhandled</code> errors AWS Lambda reports the message.
+     *         <code>RequestResponse</code>. <p>In the event of a function error this
+     *         field contains a message describing the error. For the
+     *         <code>Handled</code> errors the Lambda function will report this
+     *         message. For <code>Unhandled</code> errors AWS Lambda reports the
+     *         message.
      */
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
@@ -287,19 +299,21 @@ public class InvokeResult implements Serializable, Cloneable {
     /**
      * It is the JSON representation of the object returned by the Lambda
      * function. In This is present only if the invocation type is
-     * "RequestResponse". <p>In the event of a function error this field
-     * contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For
-     * <code>Unhandled</code> errors AWS Lambda reports the message.
+     * <code>RequestResponse</code>. <p>In the event of a function error this
+     * field contains a message describing the error. For the
+     * <code>Handled</code> errors the Lambda function will report this
+     * message. For <code>Unhandled</code> errors AWS Lambda reports the
+     * message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param payload It is the JSON representation of the object returned by the Lambda
      *         function. In This is present only if the invocation type is
-     *         "RequestResponse". <p>In the event of a function error this field
-     *         contains a message describing the error. For the <code>Handled</code>
-     *         errors the Lambda function will report this message. For
-     *         <code>Unhandled</code> errors AWS Lambda reports the message.
+     *         <code>RequestResponse</code>. <p>In the event of a function error this
+     *         field contains a message describing the error. For the
+     *         <code>Handled</code> errors the Lambda function will report this
+     *         message. For <code>Unhandled</code> errors AWS Lambda reports the
+     *         message.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -53,6 +53,13 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
     private String authorizationType;
     /**
      * <p>
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
+     * if the type is CUSTOM.
+     * </p>
+     */
+    private String authorizerId;
+    /**
+     * <p>
      * Specifies whether the method required a valid <a>ApiKey</a>.
      * </p>
      */
@@ -230,6 +237,50 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      */
     public PutMethodRequest withAuthorizationType(String authorizationType) {
         setAuthorizationType(authorizationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
+     * if the type is CUSTOM.
+     * </p>
+     * 
+     * @param authorizerId
+     *        Specifies the identifier of an <a>Authorizer</a> to use on this
+     *        Method, if the type is CUSTOM.
+     */
+    public void setAuthorizerId(String authorizerId) {
+        this.authorizerId = authorizerId;
+    }
+
+    /**
+     * <p>
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
+     * if the type is CUSTOM.
+     * </p>
+     * 
+     * @return Specifies the identifier of an <a>Authorizer</a> to use on this
+     *         Method, if the type is CUSTOM.
+     */
+    public String getAuthorizerId() {
+        return this.authorizerId;
+    }
+
+    /**
+     * <p>
+     * Specifies the identifier of an <a>Authorizer</a> to use on this Method,
+     * if the type is CUSTOM.
+     * </p>
+     * 
+     * @param authorizerId
+     *        Specifies the identifier of an <a>Authorizer</a> to use on this
+     *        Method, if the type is CUSTOM.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public PutMethodRequest withAuthorizerId(String authorizerId) {
+        setAuthorizerId(authorizerId);
         return this;
     }
 
@@ -487,6 +538,8 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
             sb.append("HttpMethod: " + getHttpMethod() + ",");
         if (getAuthorizationType() != null)
             sb.append("AuthorizationType: " + getAuthorizationType() + ",");
+        if (getAuthorizerId() != null)
+            sb.append("AuthorizerId: " + getAuthorizerId() + ",");
         if (getApiKeyRequired() != null)
             sb.append("ApiKeyRequired: " + getApiKeyRequired() + ",");
         if (getRequestParameters() != null)
@@ -529,6 +582,11 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
                 && other.getAuthorizationType().equals(
                         this.getAuthorizationType()) == false)
             return false;
+        if (other.getAuthorizerId() == null ^ this.getAuthorizerId() == null)
+            return false;
+        if (other.getAuthorizerId() != null
+                && other.getAuthorizerId().equals(this.getAuthorizerId()) == false)
+            return false;
         if (other.getApiKeyRequired() == null
                 ^ this.getApiKeyRequired() == null)
             return false;
@@ -565,6 +623,10 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getAuthorizationType() == null) ? 0
                         : getAuthorizationType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAuthorizerId() == null) ? 0 : getAuthorizerId()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getApiKeyRequired() == null) ? 0 : getApiKeyRequired()

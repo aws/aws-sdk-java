@@ -60,6 +60,11 @@ public class MethodJsonUnmarshaller implements
                     method.setAuthorizationType(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("authorizerId", targetDepth)) {
+                    context.nextToken();
+                    method.setAuthorizerId(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
                     method.setApiKeyRequired(BooleanJsonUnmarshaller

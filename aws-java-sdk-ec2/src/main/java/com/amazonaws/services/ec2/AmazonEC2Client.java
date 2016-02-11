@@ -11020,7 +11020,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
         Request<X> dryRunRequest = request.getDryRunRequest();
         ExecutionContext executionContext = createExecutionContext(dryRunRequest);
         try {
-            invoke(dryRunRequest, null, executionContext);
+            invoke(dryRunRequest, new StaxResponseHandler<Void>(
+                    new VoidStaxUnmarshaller<Void>()), executionContext);
             throw new AmazonClientException(
                     "Unrecognized service response for the dry-run request.");
         } catch (AmazonServiceException ase) {

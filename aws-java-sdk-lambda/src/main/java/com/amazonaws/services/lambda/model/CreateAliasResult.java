@@ -25,9 +25,9 @@ import java.io.Serializable;
 public class CreateAliasResult implements Serializable, Cloneable {
 
     /**
-     * Lambda function ARN that is qualified using alias name as the suffix.
-     * For example, if you create an alias "BETA" pointing to a helloworld
-     * function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the
+     * suffix. For example, if you create an alias called <code>BETA</code>
+     * that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -62,17 +62,17 @@ public class CreateAliasResult implements Serializable, Cloneable {
     private String description;
 
     /**
-     * Lambda function ARN that is qualified using alias name as the suffix.
-     * For example, if you create an alias "BETA" pointing to a helloworld
-     * function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the
+     * suffix. For example, if you create an alias called <code>BETA</code>
+     * that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return Lambda function ARN that is qualified using alias name as the suffix.
-     *         For example, if you create an alias "BETA" pointing to a helloworld
-     *         function version, the ARN is
+     * @return Lambda function ARN that is qualified using the alias name as the
+     *         suffix. For example, if you create an alias called <code>BETA</code>
+     *         that points to a helloworld function version, the ARN is
      *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      */
     public String getAliasArn() {
@@ -80,17 +80,17 @@ public class CreateAliasResult implements Serializable, Cloneable {
     }
     
     /**
-     * Lambda function ARN that is qualified using alias name as the suffix.
-     * For example, if you create an alias "BETA" pointing to a helloworld
-     * function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the
+     * suffix. For example, if you create an alias called <code>BETA</code>
+     * that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param aliasArn Lambda function ARN that is qualified using alias name as the suffix.
-     *         For example, if you create an alias "BETA" pointing to a helloworld
-     *         function version, the ARN is
+     * @param aliasArn Lambda function ARN that is qualified using the alias name as the
+     *         suffix. For example, if you create an alias called <code>BETA</code>
+     *         that points to a helloworld function version, the ARN is
      *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      */
     public void setAliasArn(String aliasArn) {
@@ -98,9 +98,9 @@ public class CreateAliasResult implements Serializable, Cloneable {
     }
     
     /**
-     * Lambda function ARN that is qualified using alias name as the suffix.
-     * For example, if you create an alias "BETA" pointing to a helloworld
-     * function version, the ARN is
+     * Lambda function ARN that is qualified using the alias name as the
+     * suffix. For example, if you create an alias called <code>BETA</code>
+     * that points to a helloworld function version, the ARN is
      * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -108,9 +108,9 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param aliasArn Lambda function ARN that is qualified using alias name as the suffix.
-     *         For example, if you create an alias "BETA" pointing to a helloworld
-     *         function version, the ARN is
+     * @param aliasArn Lambda function ARN that is qualified using the alias name as the
+     *         suffix. For example, if you create an alias called <code>BETA</code>
+     *         that points to a helloworld function version, the ARN is
      *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
      *
      * @return A reference to this updated object so that method calls can be chained

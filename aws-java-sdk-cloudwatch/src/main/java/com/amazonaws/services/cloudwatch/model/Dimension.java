@@ -23,6 +23,9 @@ import java.io.Serializable;
  * The <code>Dimension</code> data type further expands on the identity of a
  * metric using a Name, Value pair.
  * </p>
+ * <p>
+ * For examples that use one or more dimensions, see <a>PutMetricData</a>.
+ * </p>
  */
 public class Dimension implements Serializable, Cloneable {
 

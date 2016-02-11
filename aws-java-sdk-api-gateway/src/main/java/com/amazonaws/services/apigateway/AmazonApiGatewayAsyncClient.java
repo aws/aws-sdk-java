@@ -300,6 +300,41 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(
+            CreateAuthorizerRequest request) {
+
+        return createAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(
+            final CreateAuthorizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAuthorizerRequest, CreateAuthorizerResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateAuthorizerResult>() {
+                    @Override
+                    public CreateAuthorizerResult call() throws Exception {
+                        CreateAuthorizerResult result;
+
+                        try {
+                            result = createAuthorizer(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBasePathMappingResult> createBasePathMappingAsync(
             CreateBasePathMappingRequest request) {
 
@@ -564,6 +599,42 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
                         try {
                             deleteApiKey(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+            DeleteAuthorizerRequest request) {
+
+        return deleteAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+            final DeleteAuthorizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            deleteAuthorizer(request);
                             result = null;
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
@@ -1190,6 +1261,76 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetAuthorizerResult> getAuthorizerAsync(
+            GetAuthorizerRequest request) {
+
+        return getAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAuthorizerResult> getAuthorizerAsync(
+            final GetAuthorizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAuthorizerRequest, GetAuthorizerResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetAuthorizerResult>() {
+                    @Override
+                    public GetAuthorizerResult call() throws Exception {
+                        GetAuthorizerResult result;
+
+                        try {
+                            result = getAuthorizer(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAuthorizersResult> getAuthorizersAsync(
+            GetAuthorizersRequest request) {
+
+        return getAuthorizersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAuthorizersResult> getAuthorizersAsync(
+            final GetAuthorizersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAuthorizersRequest, GetAuthorizersResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetAuthorizersResult>() {
+                    @Override
+                    public GetAuthorizersResult call() throws Exception {
+                        GetAuthorizersResult result;
+
+                        try {
+                            result = getAuthorizers(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBasePathMappingResult> getBasePathMappingAsync(
             GetBasePathMappingRequest request) {
 
@@ -1454,6 +1595,41 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
                         try {
                             result = getDomainNames(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(
+            GetExportRequest request) {
+
+        return getExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(
+            final GetExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetExportResult>() {
+                    @Override
+                    public GetExportResult call() throws Exception {
+                        GetExportResult result;
+
+                        try {
+                            result = getExport(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2189,6 +2365,41 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
                         try {
                             result = updateApiKey(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(
+            UpdateAuthorizerRequest request) {
+
+        return updateAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(
+            final UpdateAuthorizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAuthorizerRequest, UpdateAuthorizerResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateAuthorizerResult>() {
+                    @Override
+                    public UpdateAuthorizerResult call() throws Exception {
+                        UpdateAuthorizerResult result;
+
+                        try {
+                            result = updateAuthorizer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

@@ -59,6 +59,30 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
             com.amazonaws.handlers.AsyncHandler<CreateApiKeyRequest, CreateApiKeyResult> asyncHandler);
 
     /**
+     * @param createAuthorizerRequest
+     * @return A Java Future containing the result of the CreateAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateAuthorizer
+     */
+    java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(
+            CreateAuthorizerRequest createAuthorizerRequest);
+
+    /**
+     * @param createAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateAuthorizer
+     */
+    java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(
+            CreateAuthorizerRequest createAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAuthorizerRequest, CreateAuthorizerResult> asyncHandler);
+
+    /**
      * <p>
      * Creates a new <a>BasePathMapping</a> resource.
      * </p>
@@ -272,7 +296,8 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Creates a <a>Stage</a> resource.
+     * Creates a new <a>Stage</a> resource that references a pre-existing
+     * <a>Deployment</a> for the API.
      * </p>
      * 
      * @param createStageRequest
@@ -286,7 +311,8 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Creates a <a>Stage</a> resource.
+     * Creates a new <a>Stage</a> resource that references a pre-existing
+     * <a>Deployment</a> for the API.
      * </p>
      * 
      * @param createStageRequest
@@ -333,6 +359,36 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
     java.util.concurrent.Future<Void> deleteApiKeyAsync(
             DeleteApiKeyRequest deleteApiKeyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     *        Request to delete an existing <a>Authorizer</a> resource.
+     * @sample AmazonApiGatewayAsync.DeleteAuthorizer
+     */
+    java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+            DeleteAuthorizerRequest deleteAuthorizerRequest);
+
+    /**
+     * <p>
+     * Deletes an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     *        Request to delete an existing <a>Authorizer</a> resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteAuthorizer
+     */
+    java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+            DeleteAuthorizerRequest deleteAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, Void> asyncHandler);
 
     /**
      * <p>
@@ -854,6 +910,74 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Describe an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizerRequest
+     *        Request to describe an existing <a>Authorizer</a> resource.
+     * @return A Java Future containing the result of the GetAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetAuthorizer
+     */
+    java.util.concurrent.Future<GetAuthorizerResult> getAuthorizerAsync(
+            GetAuthorizerRequest getAuthorizerRequest);
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizerRequest
+     *        Request to describe an existing <a>Authorizer</a> resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetAuthorizer
+     */
+    java.util.concurrent.Future<GetAuthorizerResult> getAuthorizerAsync(
+            GetAuthorizerRequest getAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAuthorizerRequest, GetAuthorizerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizers</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizersRequest
+     *        Request to describe an existing <a>Authorizers</a> resource.
+     * @return A Java Future containing the result of the GetAuthorizers
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetAuthorizers
+     */
+    java.util.concurrent.Future<GetAuthorizersResult> getAuthorizersAsync(
+            GetAuthorizersRequest getAuthorizersRequest);
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizers</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizersRequest
+     *        Request to describe an existing <a>Authorizers</a> resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAuthorizers
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetAuthorizers
+     */
+    java.util.concurrent.Future<GetAuthorizersResult> getAuthorizersAsync(
+            GetAuthorizersRequest getAuthorizersRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAuthorizersRequest, GetAuthorizersResult> asyncHandler);
+
+    /**
+     * <p>
      * Describe a <a>BasePathMapping</a> resource.
      * </p>
      * 
@@ -1111,6 +1235,30 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
     java.util.concurrent.Future<GetDomainNamesResult> getDomainNamesAsync(
             GetDomainNamesRequest getDomainNamesRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainNamesRequest, GetDomainNamesResult> asyncHandler);
+
+    /**
+     * @param getExportRequest
+     * @return A Java Future containing the result of the GetExport operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetExport
+     */
+    java.util.concurrent.Future<GetExportResult> getExportAsync(
+            GetExportRequest getExportRequest);
+
+    /**
+     * @param getExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExport operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetExport
+     */
+    java.util.concurrent.Future<GetExportResult> getExportAsync(
+            GetExportRequest getExportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler);
 
     /**
      * <p>
@@ -1825,6 +1973,40 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
     java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(
             UpdateApiKeyRequest updateApiKeyRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     *        Request to update an existing <a>Authorizer</a> resource.
+     * @return A Java Future containing the result of the UpdateAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateAuthorizer
+     */
+    java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(
+            UpdateAuthorizerRequest updateAuthorizerRequest);
+
+    /**
+     * <p>
+     * Updates an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     *        Request to update an existing <a>Authorizer</a> resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateAuthorizer
+     */
+    java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(
+            UpdateAuthorizerRequest updateAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAuthorizerRequest, UpdateAuthorizerResult> asyncHandler);
 
     /**
      * <p>

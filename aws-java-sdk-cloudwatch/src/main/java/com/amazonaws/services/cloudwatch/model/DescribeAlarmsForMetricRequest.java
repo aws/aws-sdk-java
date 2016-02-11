@@ -45,7 +45,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
     private String statistic;
     /**
      * <p>
-     * The list of dimensions associated with the metric.
+     * The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
@@ -212,10 +214,14 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of dimensions associated with the metric.
+     * The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed.
      * </p>
      * 
-     * @return The list of dimensions associated with the metric.
+     * @return The list of dimensions associated with the metric. If the metric
+     *         has any associated dimensions, you must specify them in order for
+     *         the DescribeAlarmsForMetric to succeed.
      */
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
@@ -226,11 +232,15 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of dimensions associated with the metric.
+     * The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric.
+     *        The list of dimensions associated with the metric. If the metric
+     *        has any associated dimensions, you must specify them in order for
+     *        the DescribeAlarmsForMetric to succeed.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
@@ -244,7 +254,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of dimensions associated with the metric.
+     * The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -254,7 +266,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric.
+     *        The list of dimensions associated with the metric. If the metric
+     *        has any associated dimensions, you must specify them in order for
+     *        the DescribeAlarmsForMetric to succeed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -272,11 +286,15 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of dimensions associated with the metric.
+     * The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric.
+     *        The list of dimensions associated with the metric. If the metric
+     *        has any associated dimensions, you must specify them in order for
+     *        the DescribeAlarmsForMetric to succeed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

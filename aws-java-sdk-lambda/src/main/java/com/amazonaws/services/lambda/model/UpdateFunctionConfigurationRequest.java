@@ -28,6 +28,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * code.
  * </p>
  * <p>
+ * If you are using the versioning feature, note this API will always
+ * update the $LATEST version of your Lambda function. For information
+ * about the versioning feature, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
+ * </p>
+ * <p>
  * This operation requires permission for the
  * <code>lambda:UpdateFunctionConfiguration</code> action.
  * </p>
@@ -37,14 +44,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the Lambda function. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The name of the Lambda function. <p> You can specify a function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -63,7 +70,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
 
     /**
      * The function that Lambda calls to begin executing your function. For
-     * Node.js, it is the <i>module-name.export</i> value in your function.
+     * Node.js, it is the <code>module-name.export</code> value in your
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
@@ -105,68 +113,76 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     private Integer memorySize;
 
     /**
-     * The name of the Lambda function. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     */
+    private VpcConfig vpcConfig;
+
+    /**
+     * The name of the Lambda function. <p> You can specify a function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return The name of the Lambda function. <p> You can specify an unqualified
-     *         function name (for example, "Thumbnail") or you can specify Amazon
+     * @return The name of the Lambda function. <p> You can specify a function name
+     *         (for example, <code>Thumbnail</code>) or you can specify Amazon
      *         Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The name of the Lambda function. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The name of the Lambda function. <p> You can specify a function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The name of the Lambda function. <p> You can specify an unqualified
-     *         function name (for example, "Thumbnail") or you can specify Amazon
+     * @param functionName The name of the Lambda function. <p> You can specify a function name
+     *         (for example, <code>Thumbnail</code>) or you can specify Amazon
      *         Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The name of the Lambda function. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The name of the Lambda function. <p> You can specify a function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -174,14 +190,14 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The name of the Lambda function. <p> You can specify an unqualified
-     *         function name (for example, "Thumbnail") or you can specify Amazon
+     * @param functionName The name of the Lambda function. <p> You can specify a function name
+     *         (for example, <code>Thumbnail</code>) or you can specify Amazon
      *         Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -241,14 +257,16 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
 
     /**
      * The function that Lambda calls to begin executing your function. For
-     * Node.js, it is the <i>module-name.export</i> value in your function.
+     * Node.js, it is the <code>module-name.export</code> value in your
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[^\s]+<br/>
      *
      * @return The function that Lambda calls to begin executing your function. For
-     *         Node.js, it is the <i>module-name.export</i> value in your function.
+     *         Node.js, it is the <code>module-name.export</code> value in your
+     *         function.
      */
     public String getHandler() {
         return handler;
@@ -256,14 +274,16 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     
     /**
      * The function that Lambda calls to begin executing your function. For
-     * Node.js, it is the <i>module-name.export</i> value in your function.
+     * Node.js, it is the <code>module-name.export</code> value in your
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 128<br/>
      * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function that Lambda calls to begin executing your function. For
-     *         Node.js, it is the <i>module-name.export</i> value in your function.
+     *         Node.js, it is the <code>module-name.export</code> value in your
+     *         function.
      */
     public void setHandler(String handler) {
         this.handler = handler;
@@ -271,7 +291,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     
     /**
      * The function that Lambda calls to begin executing your function. For
-     * Node.js, it is the <i>module-name.export</i> value in your function.
+     * Node.js, it is the <code>module-name.export</code> value in your
+     * function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -280,7 +301,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      * <b>Pattern: </b>[^\s]+<br/>
      *
      * @param handler The function that Lambda calls to begin executing your function. For
-     *         Node.js, it is the <i>module-name.export</i> value in your function.
+     *         Node.js, it is the <code>module-name.export</code> value in your
+     *         function.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -471,6 +493,57 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     *
+     * @return If your Lambda function accesses resources in a VPC, you provide this
+     *         parameter identifying the list of security group IDs and subnet IDs.
+     *         These must belong to the same VPC. You must provide at least one
+     *         security group and one subnet ID.
+     */
+    public VpcConfig getVpcConfig() {
+        return vpcConfig;
+    }
+    
+    /**
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     *
+     * @param vpcConfig If your Lambda function accesses resources in a VPC, you provide this
+     *         parameter identifying the list of security group IDs and subnet IDs.
+     *         These must belong to the same VPC. You must provide at least one
+     *         security group and one subnet ID.
+     */
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+    
+    /**
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcConfig If your Lambda function accesses resources in a VPC, you provide this
+     *         parameter identifying the list of security group IDs and subnet IDs.
+     *         These must belong to the same VPC. You must provide at least one
+     *         security group and one subnet ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateFunctionConfigurationRequest withVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -487,7 +560,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         if (getHandler() != null) sb.append("Handler: " + getHandler() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
-        if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() );
+        if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() + ",");
+        if (getVpcConfig() != null) sb.append("VpcConfig: " + getVpcConfig() );
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +577,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode()); 
         return hashCode;
     }
     
@@ -526,6 +601,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false) return false; 
         if (other.getMemorySize() == null ^ this.getMemorySize() == null) return false;
         if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false) return false; 
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null) return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false) return false; 
         return true;
     }
     

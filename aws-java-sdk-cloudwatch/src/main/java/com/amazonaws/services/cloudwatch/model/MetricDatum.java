@@ -35,14 +35,17 @@ public class MetricDatum implements Serializable, Cloneable {
     private String metricName;
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * A list of dimensions associated with the metric. Note, when using the
+     * Dimensions value in a query, you need to append .member.N to it (e.g.,
+     * Dimensions.member.N).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
     /**
      * <p>
-     * The time stamp used for the metric. If not specified, the default value
-     * is set to the time the metric data was received.
+     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the
+     * metric data was received.
      * </p>
      */
     private java.util.Date timestamp;
@@ -51,10 +54,11 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch truncates values with very
-     * large exponents. Values with base-10 exponents greater than 126 (1 x
-     * 10^126) are truncated. Likewise, values with base-10 exponents less than
-     * -130 (1 x 10^-130) are also truncated. </important>
+     * type <code>Double</code>, Amazon CloudWatch rejects values that are
+     * either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+     * supported. </important>
      */
     private Double value;
     /**
@@ -110,10 +114,14 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * A list of dimensions associated with the metric. Note, when using the
+     * Dimensions value in a query, you need to append .member.N to it (e.g.,
+     * Dimensions.member.N).
      * </p>
      * 
-     * @return A list of dimensions associated with the metric.
+     * @return A list of dimensions associated with the metric. Note, when using
+     *         the Dimensions value in a query, you need to append .member.N to
+     *         it (e.g., Dimensions.member.N).
      */
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
@@ -124,11 +132,15 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * A list of dimensions associated with the metric. Note, when using the
+     * Dimensions value in a query, you need to append .member.N to it (e.g.,
+     * Dimensions.member.N).
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric.
+     *        A list of dimensions associated with the metric. Note, when using
+     *        the Dimensions value in a query, you need to append .member.N to
+     *        it (e.g., Dimensions.member.N).
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
@@ -142,7 +154,9 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * A list of dimensions associated with the metric. Note, when using the
+     * Dimensions value in a query, you need to append .member.N to it (e.g.,
+     * Dimensions.member.N).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -152,7 +166,9 @@ public class MetricDatum implements Serializable, Cloneable {
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric.
+     *        A list of dimensions associated with the metric. Note, when using
+     *        the Dimensions value in a query, you need to append .member.N to
+     *        it (e.g., Dimensions.member.N).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -169,11 +185,15 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * A list of dimensions associated with the metric. Note, when using the
+     * Dimensions value in a query, you need to append .member.N to it (e.g.,
+     * Dimensions.member.N).
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric.
+     *        A list of dimensions associated with the metric. Note, when using
+     *        the Dimensions value in a query, you need to append .member.N to
+     *        it (e.g., Dimensions.member.N).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -184,13 +204,15 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the metric. If not specified, the default value
-     * is set to the time the metric data was received.
+     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the
+     * metric data was received.
      * </p>
      * 
      * @param timestamp
-     *        The time stamp used for the metric. If not specified, the default
-     *        value is set to the time the metric data was received.
+     *        The time stamp used for the metric in ISO 8601 Universal
+     *        Coordinated Time (UTC) format. If not specified, the default value
+     *        is set to the time the metric data was received.
      */
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -198,11 +220,13 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the metric. If not specified, the default value
-     * is set to the time the metric data was received.
+     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the
+     * metric data was received.
      * </p>
      * 
-     * @return The time stamp used for the metric. If not specified, the default
+     * @return The time stamp used for the metric in ISO 8601 Universal
+     *         Coordinated Time (UTC) format. If not specified, the default
      *         value is set to the time the metric data was received.
      */
     public java.util.Date getTimestamp() {
@@ -211,13 +235,15 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the metric. If not specified, the default value
-     * is set to the time the metric data was received.
+     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the
+     * metric data was received.
      * </p>
      * 
      * @param timestamp
-     *        The time stamp used for the metric. If not specified, the default
-     *        value is set to the time the metric data was received.
+     *        The time stamp used for the metric in ISO 8601 Universal
+     *        Coordinated Time (UTC) format. If not specified, the default value
+     *        is set to the time the metric data was received.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -231,18 +257,20 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch truncates values with very
-     * large exponents. Values with base-10 exponents greater than 126 (1 x
-     * 10^126) are truncated. Likewise, values with base-10 exponents less than
-     * -130 (1 x 10^-130) are also truncated. </important>
+     * type <code>Double</code>, Amazon CloudWatch rejects values that are
+     * either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+     * supported. </important>
      * 
      * @param value
      *        The value for the metric. </p> <important>Although the
      *        <code>Value</code> parameter accepts numbers of type
-     *        <code>Double</code>, Amazon CloudWatch truncates values with very
-     *        large exponents. Values with base-10 exponents greater than 126 (1
-     *        x 10^126) are truncated. Likewise, values with base-10 exponents
-     *        less than -130 (1 x 10^-130) are also truncated.
+     *        <code>Double</code>, Amazon CloudWatch rejects values that are
+     *        either too small or too large. Values must be in the range of
+     *        8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     *        2). In addition, special values (e.g., NaN, +Infinity, -Infinity)
+     *        are not supported.
      */
     public void setValue(Double value) {
         this.value = value;
@@ -253,17 +281,19 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch truncates values with very
-     * large exponents. Values with base-10 exponents greater than 126 (1 x
-     * 10^126) are truncated. Likewise, values with base-10 exponents less than
-     * -130 (1 x 10^-130) are also truncated. </important>
+     * type <code>Double</code>, Amazon CloudWatch rejects values that are
+     * either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+     * supported. </important>
      * 
      * @return The value for the metric. </p> <important>Although the
      *         <code>Value</code> parameter accepts numbers of type
-     *         <code>Double</code>, Amazon CloudWatch truncates values with very
-     *         large exponents. Values with base-10 exponents greater than 126
-     *         (1 x 10^126) are truncated. Likewise, values with base-10
-     *         exponents less than -130 (1 x 10^-130) are also truncated.
+     *         <code>Double</code>, Amazon CloudWatch rejects values that are
+     *         either too small or too large. Values must be in the range of
+     *         8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     *         2). In addition, special values (e.g., NaN, +Infinity, -Infinity)
+     *         are not supported.
      */
     public Double getValue() {
         return this.value;
@@ -274,18 +304,20 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch truncates values with very
-     * large exponents. Values with base-10 exponents greater than 126 (1 x
-     * 10^126) are truncated. Likewise, values with base-10 exponents less than
-     * -130 (1 x 10^-130) are also truncated. </important>
+     * type <code>Double</code>, Amazon CloudWatch rejects values that are
+     * either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+     * supported. </important>
      * 
      * @param value
      *        The value for the metric. </p> <important>Although the
      *        <code>Value</code> parameter accepts numbers of type
-     *        <code>Double</code>, Amazon CloudWatch truncates values with very
-     *        large exponents. Values with base-10 exponents greater than 126 (1
-     *        x 10^126) are truncated. Likewise, values with base-10 exponents
-     *        less than -130 (1 x 10^-130) are also truncated.
+     *        <code>Double</code>, Amazon CloudWatch rejects values that are
+     *        either too small or too large. Values must be in the range of
+     *        8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     *        2). In addition, special values (e.g., NaN, +Infinity, -Infinity)
+     *        are not supported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

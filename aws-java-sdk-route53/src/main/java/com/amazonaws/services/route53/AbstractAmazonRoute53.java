@@ -134,6 +134,7 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    @Deprecated
     public GetChangeDetailsResult getChangeDetails(
             GetChangeDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -234,12 +235,14 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    @Deprecated
     public ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(
             ListChangeBatchesByHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    @Deprecated
     public ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(
             ListChangeBatchesByRRSetRequest request) {
         throw new java.lang.UnsupportedOperationException();

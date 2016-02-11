@@ -21,10 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#createAlias(CreateAliasRequest) CreateAlias operation}.
  * <p>
- * Creates an alias to the specified Lambda function version. For more
- * information, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
- * 
+ * Creates an alias that points to the specified Lambda function version.
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+ * .
+ * </p>
+ * <p>
+ * Alias names are unique for a given function.
  * </p>
  * <p>
  * This requires permission for the lambda:CreateAlias action.
@@ -44,7 +47,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     private String functionName;
 
     /**
-     * Name for the alias your creating.
+     * Name for the alias you are creating.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -115,33 +118,33 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Name for the alias your creating.
+     * Name for the alias you are creating.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>(?!^[0-9]+$)([a-zA-Z0-9-_]+)<br/>
      *
-     * @return Name for the alias your creating.
+     * @return Name for the alias you are creating.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Name for the alias your creating.
+     * Name for the alias you are creating.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>(?!^[0-9]+$)([a-zA-Z0-9-_]+)<br/>
      *
-     * @param name Name for the alias your creating.
+     * @param name Name for the alias you are creating.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Name for the alias your creating.
+     * Name for the alias you are creating.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -149,7 +152,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>(?!^[0-9]+$)([a-zA-Z0-9-_]+)<br/>
      *
-     * @param name Name for the alias your creating.
+     * @param name Name for the alias you are creating.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

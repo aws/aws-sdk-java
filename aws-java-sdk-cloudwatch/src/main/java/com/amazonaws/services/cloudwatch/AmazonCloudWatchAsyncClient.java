@@ -24,44 +24,25 @@ import com.amazonaws.services.cloudwatch.model.*;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * This is the <i>Amazon CloudWatch API Reference</i>. This guide provides
- * detailed information about Amazon CloudWatch actions, data types, parameters,
- * and errors. For detailed information about Amazon CloudWatch features and
- * their associated API calls, go to the <a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide"
- * >Amazon CloudWatch Developer Guide</a>.
+ * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
+ * applications you run on AWS in real-time. You can use CloudWatch to collect
+ * and track metrics, which are the variables you want to measure for your
+ * resources and applications.
  * </p>
  * <p>
- * Amazon CloudWatch is a web service that enables you to publish, monitor, and
- * manage various metrics, as well as configure alarm actions based on data from
- * metrics. For more information about this product go to <a
- * href="http://aws.amazon.com/cloudwatch">http://aws.amazon.com/cloudwatch</a>.
+ * CloudWatch alarms send notifications or automatically make changes to the
+ * resources you are monitoring based on rules that you define. For example, you
+ * can monitor the CPU usage and disk reads and writes of your Amazon Elastic
+ * Compute Cloud (Amazon EC2) instances and then use this data to determine
+ * whether you should launch additional instances to handle increased load. You
+ * can also use this data to stop under-used instances to save money.
  * </p>
  * <p>
- * Use the following links to get started using the <i>Amazon CloudWatch API
- * Reference</i>:
+ * In addition to monitoring the built-in metrics that come with AWS, you can
+ * monitor your own custom metrics. With CloudWatch, you gain system-wide
+ * visibility into resource utilization, application performance, and
+ * operational health.
  * </p>
- * <ul>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/API_Operations.html"
- * >Actions</a>: An alphabetical list of all Amazon CloudWatch actions.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/API_Types.html"
- * >Data Types</a>: An alphabetical list of all Amazon CloudWatch data types.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/CommonParameters.html"
- * >Common Parameters</a>: Parameters that all Query actions can use.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/CommonErrors.html"
- * >Common Errors</a>: Client and server errors that all actions can return.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"
- * >Regions and Endpoints</a>: Itemized regions and endpoints for all AWS
- * products.</li>
- * <li><a
- * href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl">WSDL
- * Location</a>: http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
- * </ul>
  */
 public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         implements AmazonCloudWatchAsync {

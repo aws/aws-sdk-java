@@ -61,8 +61,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> oKActions;
@@ -70,9 +69,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Name (ARN).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmActions;
@@ -80,10 +77,10 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Name (ARN).
      * </p>
+     * <important>The current WSDL lists this attribute as
+     * <code>UnknownActions</code>.</important>
      */
     private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
     /**
@@ -383,15 +380,12 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
      * </p>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>OK</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         actions supported are publishing to an Amazon SNS topic and
-     *         triggering an Auto Scaling policy.
+     *         specified as an Amazon Resource Name (ARN).
      */
     public java.util.List<String> getOKActions() {
         if (oKActions == null) {
@@ -404,16 +398,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
      * </p>
      * 
      * @param oKActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>OK</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        actions supported are publishing to an Amazon SNS topic and
-     *        triggering an Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN).
      */
     public void setOKActions(java.util.Collection<String> oKActions) {
         if (oKActions == null) {
@@ -429,8 +420,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -442,9 +432,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param oKActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>OK</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        actions supported are publishing to an Amazon SNS topic and
-     *        triggering an Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -463,16 +451,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
      * </p>
      * 
      * @param oKActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>OK</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        actions supported are publishing to an Amazon SNS topic and
-     *        triggering an Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -485,16 +470,12 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Name (ARN).
      * </p>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         actions supported are publishing to an Amazon SNS topic and
-     *         triggering an Auto Scaling policy.
+     *         specified as an Amazon Resource Name (ARN).
      */
     public java.util.List<String> getAlarmActions() {
         if (alarmActions == null) {
@@ -507,17 +488,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Name (ARN).
      * </p>
      * 
      * @param alarmActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>ALARM</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        actions supported are publishing to an Amazon SNS topic and
-     *        triggering an Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN).
      */
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
         if (alarmActions == null) {
@@ -533,9 +510,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Name (ARN).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -547,9 +522,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param alarmActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>ALARM</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        actions supported are publishing to an Amazon SNS topic and
-     *        triggering an Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -568,17 +541,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Name (ARN).
      * </p>
      * 
      * @param alarmActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>ALARM</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        actions supported are publishing to an Amazon SNS topic and
-     *        triggering an Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -592,16 +561,16 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Name (ARN).
      * </p>
+     * <important>The current WSDL lists this attribute as
+     * <code>UnknownActions</code>.</important>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>INSUFFICIENT_DATA</code> state from any other state.
-     *         Each action is specified as an Amazon Resource Number (ARN).
-     *         Currently the only actions supported are publishing to an Amazon
-     *         SNS topic or triggering an Auto Scaling policy.
+     *         Each action is specified as an Amazon Resource Name (ARN). </p>
+     *         <important>The current WSDL lists this attribute as
+     *         <code>UnknownActions</code>.
      */
     public java.util.List<String> getInsufficientDataActions() {
         if (insufficientDataActions == null) {
@@ -614,17 +583,17 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Name (ARN).
      * </p>
+     * <important>The current WSDL lists this attribute as
+     * <code>UnknownActions</code>.</important>
      * 
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Number (ARN). Currently
-     *        the only actions supported are publishing to an Amazon SNS topic
-     *        or triggering an Auto Scaling policy.
+     *        action is specified as an Amazon Resource Name (ARN). </p>
+     *        <important>The current WSDL lists this attribute as
+     *        <code>UnknownActions</code>.
      */
     public void setInsufficientDataActions(
             java.util.Collection<String> insufficientDataActions) {
@@ -641,10 +610,10 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Name (ARN).
      * </p>
+     * <important>The current WSDL lists this attribute as
+     * <code>UnknownActions</code>.</important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInsufficientDataActions(java.util.Collection)} or
@@ -655,9 +624,9 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Number (ARN). Currently
-     *        the only actions supported are publishing to an Amazon SNS topic
-     *        or triggering an Auto Scaling policy.
+     *        action is specified as an Amazon Resource Name (ARN). </p>
+     *        <important>The current WSDL lists this attribute as
+     *        <code>UnknownActions</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -677,17 +646,17 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Name (ARN).
      * </p>
+     * <important>The current WSDL lists this attribute as
+     * <code>UnknownActions</code>.</important>
      * 
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Number (ARN). Currently
-     *        the only actions supported are publishing to an Amazon SNS topic
-     *        or triggering an Auto Scaling policy.
+     *        action is specified as an Amazon Resource Name (ARN). </p>
+     *        <important>The current WSDL lists this attribute as
+     *        <code>UnknownActions</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

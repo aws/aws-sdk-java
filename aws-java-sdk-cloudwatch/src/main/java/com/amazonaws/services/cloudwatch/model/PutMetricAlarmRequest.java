@@ -49,8 +49,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only action supported is
-     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> oKActions;
@@ -58,8 +79,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action supported
-     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmActions;
@@ -67,9 +109,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
-     * policy.
+     * specified as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
@@ -105,7 +167,17 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
     private Integer period;
     /**
      * <p>
-     * The unit for the alarm's associated metric.
+     * The statistic's unit of measure. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of
+     * bytes that an instance receives on all network interfaces. You can also
+     * specify a unit when you create a custom metric. Units help provide
+     * conceptual meaning to your data. Metric data points that specify a unit
+     * of measure, such as Percent, are aggregated separately.
+     * </p>
+     * <p>
+     * <b>Note:</b> If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, this can cause an Amazon
+     * CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * </p>
      */
     private String unit;
@@ -274,15 +346,56 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only action supported is
-     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>OK</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an
-     *         Amazon Auto Scaling policy.
+     *         specified as an Amazon Resource Name (ARN). </p>
+     *         <p>
+     *         Valid Values: arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:recover
+     *         </p>
+     *         <p>
+     *         Valid Values (for use with IAM roles):
+     *         arn:aws:swf:us-east-1:{<i>customer
+     *         -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *         arn:aws
+     *         :swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *         .InstanceId.Terminate/1.0 |
+     *         arn:aws:swf:us-east-1:{<i>customer-account
+     *         </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *         </p>
+     *         <p>
+     *         <b>Note:</b> You must create at least one stop, terminate, or
+     *         reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *         the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *         this IAM role is created, you can create stop, terminate, or
+     *         reboot alarms using the CLI.
      */
     public java.util.List<String> getOKActions() {
         if (oKActions == null) {
@@ -295,16 +408,57 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only action supported is
-     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @param oKActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>OK</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        action supported is publishing to an Amazon SNS topic or an Amazon
-     *        Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      */
     public void setOKActions(java.util.Collection<String> oKActions) {
         if (oKActions == null) {
@@ -320,8 +474,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only action supported is
-     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -333,9 +508,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param oKActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>OK</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        action supported is publishing to an Amazon SNS topic or an Amazon
-     *        Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -354,16 +549,57 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as
-     * an Amazon Resource Number (ARN). Currently the only action supported is
-     * publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @param oKActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>OK</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        action supported is publishing to an Amazon SNS topic or an Amazon
-     *        Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -377,15 +613,56 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action supported
-     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Number (ARN). Currently the only
-     *         action supported is publishing to an Amazon SNS topic or an
-     *         Amazon Auto Scaling policy.
+     *         specified as an Amazon Resource Name (ARN). </p>
+     *         <p>
+     *         Valid Values: arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:recover
+     *         </p>
+     *         <p>
+     *         Valid Values (for use with IAM roles):
+     *         arn:aws:swf:us-east-1:{<i>customer
+     *         -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *         arn:aws
+     *         :swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *         .InstanceId.Terminate/1.0 |
+     *         arn:aws:swf:us-east-1:{<i>customer-account
+     *         </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *         </p>
+     *         <p>
+     *         <b>Note:</b> You must create at least one stop, terminate, or
+     *         reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *         the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *         this IAM role is created, you can create stop, terminate, or
+     *         reboot alarms using the CLI.
      */
     public java.util.List<String> getAlarmActions() {
         if (alarmActions == null) {
@@ -398,16 +675,57 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action supported
-     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @param alarmActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>ALARM</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        action supported is publishing to an Amazon SNS topic or an Amazon
-     *        Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      */
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
         if (alarmActions == null) {
@@ -423,8 +741,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action supported
-     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -436,9 +775,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param alarmActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>ALARM</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        action supported is publishing to an Amazon SNS topic or an Amazon
-     *        Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -457,16 +816,57 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified
-     * as an Amazon Resource Number (ARN). Currently the only action supported
-     * is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+     * as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @param alarmActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>ALARM</code> state from any other state. Each action is
-     *        specified as an Amazon Resource Number (ARN). Currently the only
-     *        action supported is publishing to an Amazon SNS topic or an Amazon
-     *        Auto Scaling policy.
+     *        specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -480,16 +880,56 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
-     * policy.
+     * specified as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>INSUFFICIENT_DATA</code> state from any other state.
-     *         Each action is specified as an Amazon Resource Number (ARN).
-     *         Currently the only action supported is publishing to an Amazon
-     *         SNS topic or an Amazon Auto Scaling policy.
+     *         Each action is specified as an Amazon Resource Name (ARN). </p>
+     *         <p>
+     *         Valid Values: arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *         us-east-1)</i>:ec2:recover
+     *         </p>
+     *         <p>
+     *         Valid Values (for use with IAM roles):
+     *         arn:aws:swf:us-east-1:{<i>customer
+     *         -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *         arn:aws
+     *         :swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *         .InstanceId.Terminate/1.0 |
+     *         arn:aws:swf:us-east-1:{<i>customer-account
+     *         </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *         </p>
+     *         <p>
+     *         <b>Note:</b> You must create at least one stop, terminate, or
+     *         reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *         the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *         this IAM role is created, you can create stop, terminate, or
+     *         reboot alarms using the CLI.
      */
     public java.util.List<String> getInsufficientDataActions() {
         if (insufficientDataActions == null) {
@@ -502,17 +942,57 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
-     * policy.
+     * specified as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Number (ARN). Currently
-     *        the only action supported is publishing to an Amazon SNS topic or
-     *        an Amazon Auto Scaling policy.
+     *        action is specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      */
     public void setInsufficientDataActions(
             java.util.Collection<String> insufficientDataActions) {
@@ -529,9 +1009,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
-     * policy.
+     * specified as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -543,9 +1043,29 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Number (ARN). Currently
-     *        the only action supported is publishing to an Amazon SNS topic or
-     *        an Amazon Auto Scaling policy.
+     *        action is specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -565,17 +1085,57 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * <p>
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only action
-     * supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling
-     * policy.
+     * specified as an Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * Valid Values: arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:stop |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:terminate |
+     * arn:aws:automate:<i>region (e.g., us-east-1)</i>:ec2:recover
+     * </p>
+     * <p>
+     * Valid Values (for use with IAM roles):
+     * arn:aws:swf:us-east-1:{<i>customer-
+     * account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:us-east
+     * -1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId
+     * .Terminate/1.0 |
+     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions
+     * /AWS_EC2.InstanceId.Reboot/1.0
+     * </p>
+     * <p>
+     * <b>Note:</b> You must create at least one stop, terminate, or reboot
+     * alarm using the Amazon EC2 or CloudWatch console to create the
+     * <b>EC2ActionsAccess</b> IAM role for the first time. After this IAM role
+     * is created, you can create stop, terminate, or reboot alarms using the
+     * CLI.
      * </p>
      * 
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Number (ARN). Currently
-     *        the only action supported is publishing to an Amazon SNS topic or
-     *        an Amazon Auto Scaling policy.
+     *        action is specified as an Amazon Resource Name (ARN). </p>
+     *        <p>
+     *        Valid Values: arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:stop | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:terminate | arn:aws:automate:<i>region (e.g.,
+     *        us-east-1)</i>:ec2:recover
+     *        </p>
+     *        <p>
+     *        Valid Values (for use with IAM roles):
+     *        arn:aws:swf:us-east-1:{<i>customer
+     *        -account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:
+     *        swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2
+     *        .InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:us-east-1:{<i>customer-account
+     *        </i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> You must create at least one stop, terminate, or
+     *        reboot alarm using the Amazon EC2 or CloudWatch console to create
+     *        the <b>EC2ActionsAccess</b> IAM role for the first time. After
+     *        this IAM role is created, you can create stop, terminate, or
+     *        reboot alarms using the CLI.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -851,11 +1411,31 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unit for the alarm's associated metric.
+     * The statistic's unit of measure. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of
+     * bytes that an instance receives on all network interfaces. You can also
+     * specify a unit when you create a custom metric. Units help provide
+     * conceptual meaning to your data. Metric data points that specify a unit
+     * of measure, such as Percent, are aggregated separately.
+     * </p>
+     * <p>
+     * <b>Note:</b> If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, this can cause an Amazon
+     * CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * </p>
      * 
      * @param unit
-     *        The unit for the alarm's associated metric.
+     *        The statistic's unit of measure. For example, the units for the
+     *        Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the
+     *        number of bytes that an instance receives on all network
+     *        interfaces. You can also specify a unit when you create a custom
+     *        metric. Units help provide conceptual meaning to your data. Metric
+     *        data points that specify a unit of measure, such as Percent, are
+     *        aggregated separately. </p>
+     *        <p>
+     *        <b>Note:</b> If you specify a unit, you must use a unit that is
+     *        appropriate for the metric. Otherwise, this can cause an Amazon
+     *        CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @see StandardUnit
      */
     public void setUnit(String unit) {
@@ -864,10 +1444,30 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unit for the alarm's associated metric.
+     * The statistic's unit of measure. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of
+     * bytes that an instance receives on all network interfaces. You can also
+     * specify a unit when you create a custom metric. Units help provide
+     * conceptual meaning to your data. Metric data points that specify a unit
+     * of measure, such as Percent, are aggregated separately.
+     * </p>
+     * <p>
+     * <b>Note:</b> If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, this can cause an Amazon
+     * CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * </p>
      * 
-     * @return The unit for the alarm's associated metric.
+     * @return The statistic's unit of measure. For example, the units for the
+     *         Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks
+     *         the number of bytes that an instance receives on all network
+     *         interfaces. You can also specify a unit when you create a custom
+     *         metric. Units help provide conceptual meaning to your data.
+     *         Metric data points that specify a unit of measure, such as
+     *         Percent, are aggregated separately. </p>
+     *         <p>
+     *         <b>Note:</b> If you specify a unit, you must use a unit that is
+     *         appropriate for the metric. Otherwise, this can cause an Amazon
+     *         CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @see StandardUnit
      */
     public String getUnit() {
@@ -876,11 +1476,31 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unit for the alarm's associated metric.
+     * The statistic's unit of measure. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of
+     * bytes that an instance receives on all network interfaces. You can also
+     * specify a unit when you create a custom metric. Units help provide
+     * conceptual meaning to your data. Metric data points that specify a unit
+     * of measure, such as Percent, are aggregated separately.
+     * </p>
+     * <p>
+     * <b>Note:</b> If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, this can cause an Amazon
+     * CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * </p>
      * 
      * @param unit
-     *        The unit for the alarm's associated metric.
+     *        The statistic's unit of measure. For example, the units for the
+     *        Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the
+     *        number of bytes that an instance receives on all network
+     *        interfaces. You can also specify a unit when you create a custom
+     *        metric. Units help provide conceptual meaning to your data. Metric
+     *        data points that specify a unit of measure, such as Percent, are
+     *        aggregated separately. </p>
+     *        <p>
+     *        <b>Note:</b> If you specify a unit, you must use a unit that is
+     *        appropriate for the metric. Otherwise, this can cause an Amazon
+     *        CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StandardUnit
@@ -892,11 +1512,31 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unit for the alarm's associated metric.
+     * The statistic's unit of measure. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of
+     * bytes that an instance receives on all network interfaces. You can also
+     * specify a unit when you create a custom metric. Units help provide
+     * conceptual meaning to your data. Metric data points that specify a unit
+     * of measure, such as Percent, are aggregated separately.
+     * </p>
+     * <p>
+     * <b>Note:</b> If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, this can cause an Amazon
+     * CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * </p>
      * 
      * @param unit
-     *        The unit for the alarm's associated metric.
+     *        The statistic's unit of measure. For example, the units for the
+     *        Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the
+     *        number of bytes that an instance receives on all network
+     *        interfaces. You can also specify a unit when you create a custom
+     *        metric. Units help provide conceptual meaning to your data. Metric
+     *        data points that specify a unit of measure, such as Percent, are
+     *        aggregated separately. </p>
+     *        <p>
+     *        <b>Note:</b> If you specify a unit, you must use a unit that is
+     *        appropriate for the metric. Otherwise, this can cause an Amazon
+     *        CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StandardUnit
@@ -907,11 +1547,31 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unit for the alarm's associated metric.
+     * The statistic's unit of measure. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of
+     * bytes that an instance receives on all network interfaces. You can also
+     * specify a unit when you create a custom metric. Units help provide
+     * conceptual meaning to your data. Metric data points that specify a unit
+     * of measure, such as Percent, are aggregated separately.
+     * </p>
+     * <p>
+     * <b>Note:</b> If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, this can cause an Amazon
+     * CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * </p>
      * 
      * @param unit
-     *        The unit for the alarm's associated metric.
+     *        The statistic's unit of measure. For example, the units for the
+     *        Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the
+     *        number of bytes that an instance receives on all network
+     *        interfaces. You can also specify a unit when you create a custom
+     *        metric. Units help provide conceptual meaning to your data. Metric
+     *        data points that specify a unit of measure, such as Percent, are
+     *        aggregated separately. </p>
+     *        <p>
+     *        <b>Note:</b> If you specify a unit, you must use a unit that is
+     *        appropriate for the metric. Otherwise, this can cause an Amazon
+     *        CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StandardUnit

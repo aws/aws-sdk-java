@@ -77,8 +77,8 @@ public class Stage implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
     private java.util.Map<String, String> variables;
@@ -487,13 +487,13 @@ public class Stage implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @return A map that defines the stage variables for a <a>Stage</a>
-     *         resource. Variable names can have alphabetic characters, and the
-     *         values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     *         resource. Variable names can have alphanumeric characters, and
+     *         the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
     public java.util.Map<String, String> getVariables() {
         return variables;
@@ -502,14 +502,14 @@ public class Stage implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphabetic characters, and the
-     *        values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     *        resource. Variable names can have alphanumeric characters, and the
+     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
     public void setVariables(java.util.Map<String, String> variables) {
         this.variables = variables;
@@ -518,14 +518,14 @@ public class Stage implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphabetic characters, and the
-     *        values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     *        resource. Variable names can have alphanumeric characters, and the
+     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -61,6 +61,11 @@ public class PutMethodResultJsonUnmarshaller implements
                     putMethodResult.setAuthorizationType(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("authorizerId", targetDepth)) {
+                    context.nextToken();
+                    putMethodResult.setAuthorizerId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
                     putMethodResult.setApiKeyRequired(BooleanJsonUnmarshaller

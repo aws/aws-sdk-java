@@ -28,6 +28,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * case-sensitive.
  * </p>
  * <p>
+ * If you are using versioning, you can also publish a version of the
+ * Lambda function you are creating using the <code>Publish</code>
+ * parameter. For more information about versioning, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
+ * </p>
+ * <p>
  * This operation requires permission for the
  * <code>lambda:CreateFunction</code> action.
  * </p>
@@ -37,16 +44,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateFunctionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you
-     * can specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to
-     * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * The name you want to assign to the function you are uploading. The
+     * function names appear in the console and are returned in the
+     * <a>ListFunctions</a> API. Function names are used to specify functions
+     * to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -56,7 +57,6 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>nodejs, java8, python2.7
@@ -68,7 +68,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * when it executes your function to access any other Amazon Web Services
      * (AWS) resources. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a>
+     * Lambda: How it Works</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
@@ -134,78 +134,56 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     private Boolean publish;
 
     /**
-     * The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you
-     * can specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to
-     * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     */
+    private VpcConfig vpcConfig;
+
+    /**
+     * The name you want to assign to the function you are uploading. The
+     * function names appear in the console and are returned in the
+     * <a>ListFunctions</a> API. Function names are used to specify functions
+     * to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return The name you want to assign to the function you are uploading. You can
-     *         specify an unqualified function name (for example, "Thumbnail") or you
-     *         can specify Amazon Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length. The function names appear in the console and are
-     *         returned in the <a>ListFunctions</a> API. Function names are used to
-     *         specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * @return The name you want to assign to the function you are uploading. The
+     *         function names appear in the console and are returned in the
+     *         <a>ListFunctions</a> API. Function names are used to specify functions
+     *         to other AWS Lambda APIs, such as <a>Invoke</a>.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you
-     * can specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to
-     * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * The name you want to assign to the function you are uploading. The
+     * function names appear in the console and are returned in the
+     * <a>ListFunctions</a> API. Function names are used to specify functions
+     * to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The name you want to assign to the function you are uploading. You can
-     *         specify an unqualified function name (for example, "Thumbnail") or you
-     *         can specify Amazon Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length. The function names appear in the console and are
-     *         returned in the <a>ListFunctions</a> API. Function names are used to
-     *         specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * @param functionName The name you want to assign to the function you are uploading. The
+     *         function names appear in the console and are returned in the
+     *         <a>ListFunctions</a> API. Function names are used to specify functions
+     *         to other AWS Lambda APIs, such as <a>Invoke</a>.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you
-     * can specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length. The function names appear in the console and are
-     * returned in the <a>ListFunctions</a> API. Function names are used to
-     * specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * The name you want to assign to the function you are uploading. The
+     * function names appear in the console and are returned in the
+     * <a>ListFunctions</a> API. Function names are used to specify functions
+     * to other AWS Lambda APIs, such as <a>Invoke</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -213,16 +191,10 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The name you want to assign to the function you are uploading. You can
-     *         specify an unqualified function name (for example, "Thumbnail") or you
-     *         can specify Amazon Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length. The function names appear in the console and are
-     *         returned in the <a>ListFunctions</a> API. Function names are used to
-     *         specify functions to other AWS Lambda APIs, such as <a>Invoke</a>.
+     * @param functionName The name you want to assign to the function you are uploading. The
+     *         function names appear in the console and are returned in the
+     *         <a>ListFunctions</a> API. Function names are used to specify functions
+     *         to other AWS Lambda APIs, such as <a>Invoke</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -234,13 +206,11 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @return The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @see Runtime
      */
@@ -250,13 +220,11 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @see Runtime
      */
@@ -266,7 +234,6 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -274,7 +241,6 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -288,13 +254,11 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @see Runtime
      */
@@ -304,7 +268,6 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The runtime environment for the Lambda function you are uploading.
-     * Currently, Lambda supports "java" and "nodejs" as the runtime.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -312,7 +275,6 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * <b>Allowed Values: </b>nodejs, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function you are uploading.
-     *         Currently, Lambda supports "java" and "nodejs" as the runtime.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -329,7 +291,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * when it executes your function to access any other Amazon Web Services
      * (AWS) resources. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a>
+     * Lambda: How it Works</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
@@ -338,7 +300,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      *         when it executes your function to access any other Amazon Web Services
      *         (AWS) resources. For more information, see <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     *         Lambda: How it Works</a>
+     *         Lambda: How it Works</a>.
      */
     public String getRole() {
         return role;
@@ -349,7 +311,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * when it executes your function to access any other Amazon Web Services
      * (AWS) resources. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a>
+     * Lambda: How it Works</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+<br/>
@@ -358,7 +320,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      *         when it executes your function to access any other Amazon Web Services
      *         (AWS) resources. For more information, see <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     *         Lambda: How it Works</a>
+     *         Lambda: How it Works</a>.
      */
     public void setRole(String role) {
         this.role = role;
@@ -369,7 +331,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      * when it executes your function to access any other Amazon Web Services
      * (AWS) resources. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a>
+     * Lambda: How it Works</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -380,7 +342,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
      *         when it executes your function to access any other Amazon Web Services
      *         (AWS) resources. For more information, see <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     *         Lambda: How it Works</a>
+     *         Lambda: How it Works</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -729,6 +691,57 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     *
+     * @return If your Lambda function accesses resources in a VPC, you provide this
+     *         parameter identifying the list of security group IDs and subnet IDs.
+     *         These must belong to the same VPC. You must provide at least one
+     *         security group and one subnet ID.
+     */
+    public VpcConfig getVpcConfig() {
+        return vpcConfig;
+    }
+    
+    /**
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     *
+     * @param vpcConfig If your Lambda function accesses resources in a VPC, you provide this
+     *         parameter identifying the list of security group IDs and subnet IDs.
+     *         These must belong to the same VPC. You must provide at least one
+     *         security group and one subnet ID.
+     */
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+    
+    /**
+     * If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs.
+     * These must belong to the same VPC. You must provide at least one
+     * security group and one subnet ID.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcConfig If your Lambda function accesses resources in a VPC, you provide this
+     *         parameter identifying the list of security group IDs and subnet IDs.
+     *         These must belong to the same VPC. You must provide at least one
+     *         security group and one subnet ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateFunctionRequest withVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -748,7 +761,8 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
         if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() + ",");
-        if (isPublish() != null) sb.append("Publish: " + isPublish() );
+        if (isPublish() != null) sb.append("Publish: " + isPublish() + ",");
+        if (getVpcConfig() != null) sb.append("VpcConfig: " + getVpcConfig() );
         sb.append("}");
         return sb.toString();
     }
@@ -767,6 +781,7 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode()); 
         hashCode = prime * hashCode + ((isPublish() == null) ? 0 : isPublish().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode()); 
         return hashCode;
     }
     
@@ -796,6 +811,8 @@ public class CreateFunctionRequest extends AmazonWebServiceRequest implements Se
         if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false) return false; 
         if (other.isPublish() == null ^ this.isPublish() == null) return false;
         if (other.isPublish() != null && other.isPublish().equals(this.isPublish()) == false) return false; 
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null) return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false) return false; 
         return true;
     }
     

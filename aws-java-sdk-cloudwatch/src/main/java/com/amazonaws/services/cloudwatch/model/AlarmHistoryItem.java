@@ -23,7 +23,7 @@ import java.io.Serializable;
  * The <code>AlarmHistoryItem</code> data type contains descriptive information
  * about the history of a specific alarm. If you call
  * <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part
- * of the <a>DescribeAlarmHistoryResult</a> data type.
+ * of the DescribeAlarmHistoryResult data type.
  * </p>
  */
 public class AlarmHistoryItem implements Serializable, Cloneable {

@@ -316,6 +316,51 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * @param createAuthorizerRequest
+     * @return Result of the CreateAuthorizer operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateAuthorizer
+     */
+    @Override
+    public CreateAuthorizerResult createAuthorizer(
+            CreateAuthorizerRequest createAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAuthorizerRequest> request = null;
+        Response<CreateAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAuthorizerRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(createAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateAuthorizerResult> responseHandler = new JsonResponseHandler<CreateAuthorizerResult>(
+                    new CreateAuthorizerResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Creates a new <a>BasePathMapping</a> resource.
      * </p>
@@ -619,7 +664,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a <a>Stage</a> resource.
+     * Creates a new <a>Stage</a> resource that references a pre-existing
+     * <a>Deployment</a> for the API.
      * </p>
      * 
      * @param createStageRequest
@@ -692,6 +738,52 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
             try {
                 request = new DeleteApiKeyRequestMarshaller().marshall(super
                         .beforeMarshalling(deleteApiKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     *        Request to delete an existing <a>Authorizer</a> resource.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteAuthorizer
+     */
+    @Override
+    public void deleteAuthorizer(DeleteAuthorizerRequest deleteAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAuthorizerRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAuthorizerRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteAuthorizerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1470,6 +1562,101 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Describe an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizerRequest
+     *        Request to describe an existing <a>Authorizer</a> resource.
+     * @return Result of the GetAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAuthorizer
+     */
+    @Override
+    public GetAuthorizerResult getAuthorizer(
+            GetAuthorizerRequest getAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAuthorizerRequest> request = null;
+        Response<GetAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAuthorizerRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetAuthorizerResult> responseHandler = new JsonResponseHandler<GetAuthorizerResult>(
+                    new GetAuthorizerResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizers</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizersRequest
+     *        Request to describe an existing <a>Authorizers</a> resource.
+     * @return Result of the GetAuthorizers operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAuthorizers
+     */
+    @Override
+    public GetAuthorizersResult getAuthorizers(
+            GetAuthorizersRequest getAuthorizersRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAuthorizersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAuthorizersRequest> request = null;
+        Response<GetAuthorizersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAuthorizersRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAuthorizersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetAuthorizersResult> responseHandler = new JsonResponseHandler<GetAuthorizersResult>(
+                    new GetAuthorizersResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describe a <a>BasePathMapping</a> resource.
      * </p>
      * 
@@ -1836,6 +2023,48 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
             JsonResponseHandler<GetDomainNamesResult> responseHandler = new JsonResponseHandler<GetDomainNamesResult>(
                     new GetDomainNamesResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getExportRequest
+     * @return Result of the GetExport operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetExport
+     */
+    @Override
+    public GetExportResult getExport(GetExportRequest getExportRequest) {
+        ExecutionContext executionContext = createExecutionContext(getExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExportRequest> request = null;
+        Response<GetExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExportRequestMarshaller().marshall(super
+                        .beforeMarshalling(getExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetExportResult> responseHandler = new JsonResponseHandler<GetExportResult>(
+                    new GetExportResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(false);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2835,6 +3064,55 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<UpdateApiKeyResult> responseHandler = new JsonResponseHandler<UpdateApiKeyResult>(
                     new UpdateApiKeyResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     *        Request to update an existing <a>Authorizer</a> resource.
+     * @return Result of the UpdateAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateAuthorizer
+     */
+    @Override
+    public UpdateAuthorizerResult updateAuthorizer(
+            UpdateAuthorizerRequest updateAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAuthorizerRequest> request = null;
+        Response<UpdateAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAuthorizerRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(updateAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<UpdateAuthorizerResult> responseHandler = new JsonResponseHandler<UpdateAuthorizerResult>(
+                    new UpdateAuthorizerResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

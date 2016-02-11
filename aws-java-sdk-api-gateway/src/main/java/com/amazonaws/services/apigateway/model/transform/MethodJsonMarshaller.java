@@ -59,6 +59,10 @@ public class MethodJsonMarshaller {
                         method.getAuthorizationType());
             }
 
+            if (method.getAuthorizerId() != null) {
+                jsonWriter.key("authorizerId").value(method.getAuthorizerId());
+            }
+
             if (method.getApiKeyRequired() != null) {
                 jsonWriter.key("apiKeyRequired").value(
                         method.getApiKeyRequired());

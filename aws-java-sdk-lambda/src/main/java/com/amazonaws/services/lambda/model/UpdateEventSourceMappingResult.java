@@ -69,9 +69,10 @@ public class UpdateEventSourceMappingResult implements Serializable, Cloneable {
     private String lastProcessingResult;
 
     /**
-     * The state of the event source mapping. It can be "Creating",
-     * "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     * "Deleting".
+     * The state of the event source mapping. It can be
+     * <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     * <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     * or <code>Deleting</code>.
      */
     private String state;
 
@@ -337,41 +338,47 @@ public class UpdateEventSourceMappingResult implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the event source mapping. It can be "Creating",
-     * "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     * "Deleting".
+     * The state of the event source mapping. It can be
+     * <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     * <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     * or <code>Deleting</code>.
      *
-     * @return The state of the event source mapping. It can be "Creating",
-     *         "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     *         "Deleting".
+     * @return The state of the event source mapping. It can be
+     *         <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     *         <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     *         or <code>Deleting</code>.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * The state of the event source mapping. It can be "Creating",
-     * "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     * "Deleting".
+     * The state of the event source mapping. It can be
+     * <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     * <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     * or <code>Deleting</code>.
      *
-     * @param state The state of the event source mapping. It can be "Creating",
-     *         "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     *         "Deleting".
+     * @param state The state of the event source mapping. It can be
+     *         <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     *         <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     *         or <code>Deleting</code>.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * The state of the event source mapping. It can be "Creating",
-     * "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     * "Deleting".
+     * The state of the event source mapping. It can be
+     * <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     * <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     * or <code>Deleting</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The state of the event source mapping. It can be "Creating",
-     *         "Enabled", "Disabled", "Enabling", "Disabling", "Updating", or
-     *         "Deleting".
+     * @param state The state of the event source mapping. It can be
+     *         <code>Creating</code>, <code>Enabled</code>, <code>Disabled</code>,
+     *         <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+     *         or <code>Deleting</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

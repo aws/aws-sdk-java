@@ -105,6 +105,19 @@ public interface AmazonApiGateway {
     CreateApiKeyResult createApiKey(CreateApiKeyRequest createApiKeyRequest);
 
     /**
+     * @param createAuthorizerRequest
+     * @return Result of the CreateAuthorizer operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateAuthorizer
+     */
+    CreateAuthorizerResult createAuthorizer(
+            CreateAuthorizerRequest createAuthorizerRequest);
+
+    /**
      * <p>
      * Creates a new <a>BasePathMapping</a> resource.
      * </p>
@@ -218,7 +231,8 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
-     * Creates a <a>Stage</a> resource.
+     * Creates a new <a>Stage</a> resource that references a pre-existing
+     * <a>Deployment</a> for the API.
      * </p>
      * 
      * @param createStageRequest
@@ -247,6 +261,22 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.DeleteApiKey
      */
     void deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest);
+
+    /**
+     * <p>
+     * Deletes an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     *        Request to delete an existing <a>Authorizer</a> resource.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteAuthorizer
+     */
+    void deleteAuthorizer(DeleteAuthorizerRequest deleteAuthorizerRequest);
 
     /**
      * <p>
@@ -499,6 +529,38 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Describe an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizerRequest
+     *        Request to describe an existing <a>Authorizer</a> resource.
+     * @return Result of the GetAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAuthorizer
+     */
+    GetAuthorizerResult getAuthorizer(GetAuthorizerRequest getAuthorizerRequest);
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizers</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizersRequest
+     *        Request to describe an existing <a>Authorizers</a> resource.
+     * @return Result of the GetAuthorizers operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAuthorizers
+     */
+    GetAuthorizersResult getAuthorizers(
+            GetAuthorizersRequest getAuthorizersRequest);
+
+    /**
+     * <p>
      * Describe a <a>BasePathMapping</a> resource.
      * </p>
      * 
@@ -620,6 +682,17 @@ public interface AmazonApiGateway {
      */
     GetDomainNamesResult getDomainNames(
             GetDomainNamesRequest getDomainNamesRequest);
+
+    /**
+     * @param getExportRequest
+     * @return Result of the GetExport operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetExport
+     */
+    GetExportResult getExport(GetExportRequest getExportRequest);
 
     /**
      * <p>
@@ -960,6 +1033,23 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.UpdateApiKey
      */
     UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest updateApiKeyRequest);
+
+    /**
+     * <p>
+     * Updates an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     *        Request to update an existing <a>Authorizer</a> resource.
+     * @return Result of the UpdateAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateAuthorizer
+     */
+    UpdateAuthorizerResult updateAuthorizer(
+            UpdateAuthorizerRequest updateAuthorizerRequest);
 
     /**
      * <p>

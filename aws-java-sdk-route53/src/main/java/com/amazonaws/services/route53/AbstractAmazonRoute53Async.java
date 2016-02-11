@@ -270,6 +270,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest request) {
 
@@ -277,6 +278,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult> asyncHandler) {
@@ -590,6 +592,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest request) {
 
@@ -597,6 +600,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult> asyncHandler) {
@@ -605,6 +609,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest request) {
 
@@ -612,6 +617,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest request,
             com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult> asyncHandler) {

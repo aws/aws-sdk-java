@@ -27,13 +27,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace of the metric.
+     * The namespace of the metric, with or without spaces.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric, with or without spaces.
      * </p>
      */
     private String metricName;
@@ -47,19 +47,27 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time
-     * stamp specified.
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z).
      * </p>
      * <note> The specified start time is rounded down to the nearest value.
      * Datapoints are returned for start times up to two weeks in the past.
      * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks. </note>
+     * return datapoints for metrics that are older than two weeks.
+     * <p>
+     * Data that is timestamped 24 hours or more in the past may take in excess
+     * of 48 hours to become available from submission time using
+     * <code>GetMetricStatistics</code>.
+     * </p>
+     * </note>
      */
     private java.util.Date startTime;
     /**
      * <p>
      * The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the
-     * time stamp specified.
+     * time stamp specified. The time stamp must be in ISO 8601 UTC format
+     * (e.g., 2014-09-03T23:00:00Z).
      * </p>
      */
     private java.util.Date endTime;
@@ -73,7 +81,10 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
     private Integer period;
     /**
      * <p>
-     * The metric statistics to return.
+     * The metric statistics to return. For information about specific
+     * statistics returned by GetMetricStatistics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> statistics;
@@ -86,11 +97,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace of the metric.
+     * The namespace of the metric, with or without spaces.
      * </p>
      * 
      * @param namespace
-     *        The namespace of the metric.
+     *        The namespace of the metric, with or without spaces.
      */
     public void setNamespace(String namespace) {
         this.namespace = namespace;
@@ -98,10 +109,10 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace of the metric.
+     * The namespace of the metric, with or without spaces.
      * </p>
      * 
-     * @return The namespace of the metric.
+     * @return The namespace of the metric, with or without spaces.
      */
     public String getNamespace() {
         return this.namespace;
@@ -109,11 +120,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace of the metric.
+     * The namespace of the metric, with or without spaces.
      * </p>
      * 
      * @param namespace
-     *        The namespace of the metric.
+     *        The namespace of the metric, with or without spaces.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -124,11 +135,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric, with or without spaces.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric, with or without spaces.
      */
     public void setMetricName(String metricName) {
         this.metricName = metricName;
@@ -136,10 +147,10 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric, with or without spaces.
      * </p>
      * 
-     * @return The name of the metric.
+     * @return The name of the metric, with or without spaces.
      */
     public String getMetricName() {
         return this.metricName;
@@ -147,11 +158,11 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric, with or without spaces.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric, with or without spaces.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -239,22 +250,35 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time
-     * stamp specified.
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z).
      * </p>
      * <note> The specified start time is rounded down to the nearest value.
      * Datapoints are returned for start times up to two weeks in the past.
      * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks. </note>
+     * return datapoints for metrics that are older than two weeks.
+     * <p>
+     * Data that is timestamped 24 hours or more in the past may take in excess
+     * of 48 hours to become available from submission time using
+     * <code>GetMetricStatistics</code>.
+     * </p>
+     * </note>
      * 
      * @param startTime
      *        The time stamp to use for determining the first datapoint to
      *        return. The value specified is inclusive; results include
-     *        datapoints with the time stamp specified. </p> <note> The
-     *        specified start time is rounded down to the nearest value.
+     *        datapoints with the time stamp specified. The time stamp must be
+     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). </p> <note>
+     *        The specified start time is rounded down to the nearest value.
      *        Datapoints are returned for start times up to two weeks in the
      *        past. Specified start times that are more than two weeks in the
      *        past will not return datapoints for metrics that are older than
      *        two weeks.
+     *        <p>
+     *        Data that is timestamped 24 hours or more in the past may take in
+     *        excess of 48 hours to become available from submission time using
+     *        <code>GetMetricStatistics</code>.
+     *        </p>
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -264,21 +288,34 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time
-     * stamp specified.
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z).
      * </p>
      * <note> The specified start time is rounded down to the nearest value.
      * Datapoints are returned for start times up to two weeks in the past.
      * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks. </note>
+     * return datapoints for metrics that are older than two weeks.
+     * <p>
+     * Data that is timestamped 24 hours or more in the past may take in excess
+     * of 48 hours to become available from submission time using
+     * <code>GetMetricStatistics</code>.
+     * </p>
+     * </note>
      * 
      * @return The time stamp to use for determining the first datapoint to
      *         return. The value specified is inclusive; results include
-     *         datapoints with the time stamp specified. </p> <note> The
-     *         specified start time is rounded down to the nearest value.
+     *         datapoints with the time stamp specified. The time stamp must be
+     *         in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). </p> <note>
+     *         The specified start time is rounded down to the nearest value.
      *         Datapoints are returned for start times up to two weeks in the
      *         past. Specified start times that are more than two weeks in the
      *         past will not return datapoints for metrics that are older than
      *         two weeks.
+     *         <p>
+     *         Data that is timestamped 24 hours or more in the past may take in
+     *         excess of 48 hours to become available from submission time using
+     *         <code>GetMetricStatistics</code>.
+     *         </p>
      */
     public java.util.Date getStartTime() {
         return this.startTime;
@@ -288,22 +325,35 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time
-     * stamp specified.
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z).
      * </p>
      * <note> The specified start time is rounded down to the nearest value.
      * Datapoints are returned for start times up to two weeks in the past.
      * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks. </note>
+     * return datapoints for metrics that are older than two weeks.
+     * <p>
+     * Data that is timestamped 24 hours or more in the past may take in excess
+     * of 48 hours to become available from submission time using
+     * <code>GetMetricStatistics</code>.
+     * </p>
+     * </note>
      * 
      * @param startTime
      *        The time stamp to use for determining the first datapoint to
      *        return. The value specified is inclusive; results include
-     *        datapoints with the time stamp specified. </p> <note> The
-     *        specified start time is rounded down to the nearest value.
+     *        datapoints with the time stamp specified. The time stamp must be
+     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). </p> <note>
+     *        The specified start time is rounded down to the nearest value.
      *        Datapoints are returned for start times up to two weeks in the
      *        past. Specified start times that are more than two weeks in the
      *        past will not return datapoints for metrics that are older than
      *        two weeks.
+     *        <p>
+     *        Data that is timestamped 24 hours or more in the past may take in
+     *        excess of 48 hours to become available from submission time using
+     *        <code>GetMetricStatistics</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -316,13 +366,15 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the
-     * time stamp specified.
+     * time stamp specified. The time stamp must be in ISO 8601 UTC format
+     * (e.g., 2014-09-03T23:00:00Z).
      * </p>
      * 
      * @param endTime
      *        The time stamp to use for determining the last datapoint to
      *        return. The value specified is exclusive; results will include
-     *        datapoints up to the time stamp specified.
+     *        datapoints up to the time stamp specified. The time stamp must be
+     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
      */
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -332,12 +384,14 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the
-     * time stamp specified.
+     * time stamp specified. The time stamp must be in ISO 8601 UTC format
+     * (e.g., 2014-09-03T23:00:00Z).
      * </p>
      * 
      * @return The time stamp to use for determining the last datapoint to
      *         return. The value specified is exclusive; results will include
-     *         datapoints up to the time stamp specified.
+     *         datapoints up to the time stamp specified. The time stamp must be
+     *         in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
      */
     public java.util.Date getEndTime() {
         return this.endTime;
@@ -347,13 +401,15 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * <p>
      * The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the
-     * time stamp specified.
+     * time stamp specified. The time stamp must be in ISO 8601 UTC format
+     * (e.g., 2014-09-03T23:00:00Z).
      * </p>
      * 
      * @param endTime
      *        The time stamp to use for determining the last datapoint to
      *        return. The value specified is exclusive; results will include
-     *        datapoints up to the time stamp specified.
+     *        datapoints up to the time stamp specified. The time stamp must be
+     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -414,10 +470,16 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric statistics to return.
+     * The metric statistics to return. For information about specific
+     * statistics returned by GetMetricStatistics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
-     * @return The metric statistics to return.
+     * @return The metric statistics to return. For information about specific
+     *         statistics returned by GetMetricStatistics, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     *         >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @see Statistic
      */
     public java.util.List<String> getStatistics() {
@@ -429,11 +491,17 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric statistics to return.
+     * The metric statistics to return. For information about specific
+     * statistics returned by GetMetricStatistics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param statistics
-     *        The metric statistics to return.
+     *        The metric statistics to return. For information about specific
+     *        statistics returned by GetMetricStatistics, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @see Statistic
      */
     public void setStatistics(java.util.Collection<String> statistics) {
@@ -448,7 +516,10 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric statistics to return.
+     * The metric statistics to return. For information about specific
+     * statistics returned by GetMetricStatistics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -458,7 +529,10 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param statistics
-     *        The metric statistics to return.
+     *        The metric statistics to return. For information about specific
+     *        statistics returned by GetMetricStatistics, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Statistic
@@ -476,11 +550,17 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric statistics to return.
+     * The metric statistics to return. For information about specific
+     * statistics returned by GetMetricStatistics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param statistics
-     *        The metric statistics to return.
+     *        The metric statistics to return. For information about specific
+     *        statistics returned by GetMetricStatistics, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Statistic
@@ -493,11 +573,17 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The metric statistics to return.
+     * The metric statistics to return. For information about specific
+     * statistics returned by GetMetricStatistics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     * >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param statistics
-     *        The metric statistics to return.
+     *        The metric statistics to return. For information about specific
+     *        statistics returned by GetMetricStatistics, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic"
+     *        >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Statistic

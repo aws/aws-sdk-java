@@ -25,8 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the response includes information such as the alias ARN, description,
  * alias name, and the function version to which it points. For more
  * information, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
- * 
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+ * .
  * </p>
  * <p>
  * This requires permission for the lambda:ListAliases action.
@@ -47,8 +47,9 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * If you specify this optional parameter, the API returns only the
-     * aliases pointing to the specific Lambda function version, otherwise
-     * returns all aliases created for the Lambda function.
+     * aliases that are pointing to the specific Lambda function version,
+     * otherwise the API returns all of the aliases created for the Lambda
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -58,8 +59,8 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Optional string. An opaque pagination token returned from a previous
-     * ListAliases operation. If present, indicates where to continue the
-     * listing.
+     * <code>ListAliases</code> operation. If present, indicates where to
+     * continue the listing.
      */
     private String marker;
 
@@ -119,16 +120,18 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * If you specify this optional parameter, the API returns only the
-     * aliases pointing to the specific Lambda function version, otherwise
-     * returns all aliases created for the Lambda function.
+     * aliases that are pointing to the specific Lambda function version,
+     * otherwise the API returns all of the aliases created for the Lambda
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      *
      * @return If you specify this optional parameter, the API returns only the
-     *         aliases pointing to the specific Lambda function version, otherwise
-     *         returns all aliases created for the Lambda function.
+     *         aliases that are pointing to the specific Lambda function version,
+     *         otherwise the API returns all of the aliases created for the Lambda
+     *         function.
      */
     public String getFunctionVersion() {
         return functionVersion;
@@ -136,16 +139,18 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * If you specify this optional parameter, the API returns only the
-     * aliases pointing to the specific Lambda function version, otherwise
-     * returns all aliases created for the Lambda function.
+     * aliases that are pointing to the specific Lambda function version,
+     * otherwise the API returns all of the aliases created for the Lambda
+     * function.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      *
      * @param functionVersion If you specify this optional parameter, the API returns only the
-     *         aliases pointing to the specific Lambda function version, otherwise
-     *         returns all aliases created for the Lambda function.
+     *         aliases that are pointing to the specific Lambda function version,
+     *         otherwise the API returns all of the aliases created for the Lambda
+     *         function.
      */
     public void setFunctionVersion(String functionVersion) {
         this.functionVersion = functionVersion;
@@ -153,8 +158,9 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * If you specify this optional parameter, the API returns only the
-     * aliases pointing to the specific Lambda function version, otherwise
-     * returns all aliases created for the Lambda function.
+     * aliases that are pointing to the specific Lambda function version,
+     * otherwise the API returns all of the aliases created for the Lambda
+     * function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -163,8 +169,9 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
      * <b>Pattern: </b>(\$LATEST|[0-9]+)<br/>
      *
      * @param functionVersion If you specify this optional parameter, the API returns only the
-     *         aliases pointing to the specific Lambda function version, otherwise
-     *         returns all aliases created for the Lambda function.
+     *         aliases that are pointing to the specific Lambda function version,
+     *         otherwise the API returns all of the aliases created for the Lambda
+     *         function.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -176,12 +183,12 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Optional string. An opaque pagination token returned from a previous
-     * ListAliases operation. If present, indicates where to continue the
-     * listing.
+     * <code>ListAliases</code> operation. If present, indicates where to
+     * continue the listing.
      *
      * @return Optional string. An opaque pagination token returned from a previous
-     *         ListAliases operation. If present, indicates where to continue the
-     *         listing.
+     *         <code>ListAliases</code> operation. If present, indicates where to
+     *         continue the listing.
      */
     public String getMarker() {
         return marker;
@@ -189,12 +196,12 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Optional string. An opaque pagination token returned from a previous
-     * ListAliases operation. If present, indicates where to continue the
-     * listing.
+     * <code>ListAliases</code> operation. If present, indicates where to
+     * continue the listing.
      *
      * @param marker Optional string. An opaque pagination token returned from a previous
-     *         ListAliases operation. If present, indicates where to continue the
-     *         listing.
+     *         <code>ListAliases</code> operation. If present, indicates where to
+     *         continue the listing.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -202,14 +209,14 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Optional string. An opaque pagination token returned from a previous
-     * ListAliases operation. If present, indicates where to continue the
-     * listing.
+     * <code>ListAliases</code> operation. If present, indicates where to
+     * continue the listing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker Optional string. An opaque pagination token returned from a previous
-     *         ListAliases operation. If present, indicates where to continue the
-     *         listing.
+     *         <code>ListAliases</code> operation. If present, indicates where to
+     *         continue the listing.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

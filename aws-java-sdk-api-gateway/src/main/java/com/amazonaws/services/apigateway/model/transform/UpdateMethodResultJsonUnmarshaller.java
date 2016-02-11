@@ -62,6 +62,11 @@ public class UpdateMethodResultJsonUnmarshaller implements
                             .setAuthorizationType(StringJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("authorizerId", targetDepth)) {
+                    context.nextToken();
+                    updateMethodResult.setAuthorizerId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
                     updateMethodResult

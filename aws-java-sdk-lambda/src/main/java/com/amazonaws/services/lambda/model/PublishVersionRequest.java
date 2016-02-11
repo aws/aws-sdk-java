@@ -22,11 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#publishVersion(PublishVersionRequest) PublishVersion operation}.
  * <p>
  * Publishes a version of your function from the current snapshot of
- * HEAD. That is, AWS Lambda takes a snapshot of the function code and
- * configuration information from HEAD and publishes a new version. The
- * code and <code>handler</code> of this specific Lambda function version
- * cannot be modified after publication, but you can modify the
- * configuration information.
+ * $LATEST. That is, AWS Lambda takes a snapshot of the function code and
+ * configuration information from $LATEST and publishes a new version.
+ * The code and configuration cannot be modified after publication. For
+ * information about the versioning feature, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.lambda.AWSLambda#publishVersion(PublishVersionRequest)
@@ -34,14 +35,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PublishVersionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The Lambda function name. You can specify an unqualified function name
-     * (for example, "Thumbnail") or you can specify Amazon Resource Name
-     * (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * The Lambda function name. You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -52,14 +53,14 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The SHA256 hash of the deployment package you want to publish. This
      * provides validation on the code you are publishing. If you provide
-     * this parameter value must match the SHA256 of the HEAD version for the
-     * publication to succeed.
+     * this parameter value must match the SHA256 of the $LATEST version for
+     * the publication to succeed.
      */
     private String codeSha256;
 
     /**
      * The description for the version you are publishing. If not provided,
-     * AWS Lambda copies the description from the HEAD version.
+     * AWS Lambda copies the description from the $LATEST version.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -67,68 +68,68 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     private String description;
 
     /**
-     * The Lambda function name. You can specify an unqualified function name
-     * (for example, "Thumbnail") or you can specify Amazon Resource Name
-     * (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * The Lambda function name. You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return The Lambda function name. You can specify an unqualified function name
-     *         (for example, "Thumbnail") or you can specify Amazon Resource Name
-     *         (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     * @return The Lambda function name. You can specify a function name (for
+     *         example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     *         Name (ARN) of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The Lambda function name. You can specify an unqualified function name
-     * (for example, "Thumbnail") or you can specify Amazon Resource Name
-     * (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * The Lambda function name. You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function name. You can specify an unqualified function name
-     *         (for example, "Thumbnail") or you can specify Amazon Resource Name
-     *         (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     * @param functionName The Lambda function name. You can specify a function name (for
+     *         example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     *         Name (ARN) of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The Lambda function name. You can specify an unqualified function name
-     * (for example, "Thumbnail") or you can specify Amazon Resource Name
-     * (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * The Lambda function name. You can specify a function name (for
+     * example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     * Name (ARN) of the function (for example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * AWS Lambda also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -136,14 +137,14 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function name. You can specify an unqualified function name
-     *         (for example, "Thumbnail") or you can specify Amazon Resource Name
-     *         (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     * @param functionName The Lambda function name. You can specify a function name (for
+     *         example, <code>Thumbnail</code>) or you can specify Amazon Resource
+     *         Name (ARN) of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         AWS Lambda also allows you to specify a partial ARN (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -156,13 +157,13 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The SHA256 hash of the deployment package you want to publish. This
      * provides validation on the code you are publishing. If you provide
-     * this parameter value must match the SHA256 of the HEAD version for the
-     * publication to succeed.
+     * this parameter value must match the SHA256 of the $LATEST version for
+     * the publication to succeed.
      *
      * @return The SHA256 hash of the deployment package you want to publish. This
      *         provides validation on the code you are publishing. If you provide
-     *         this parameter value must match the SHA256 of the HEAD version for the
-     *         publication to succeed.
+     *         this parameter value must match the SHA256 of the $LATEST version for
+     *         the publication to succeed.
      */
     public String getCodeSha256() {
         return codeSha256;
@@ -171,13 +172,13 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The SHA256 hash of the deployment package you want to publish. This
      * provides validation on the code you are publishing. If you provide
-     * this parameter value must match the SHA256 of the HEAD version for the
-     * publication to succeed.
+     * this parameter value must match the SHA256 of the $LATEST version for
+     * the publication to succeed.
      *
      * @param codeSha256 The SHA256 hash of the deployment package you want to publish. This
      *         provides validation on the code you are publishing. If you provide
-     *         this parameter value must match the SHA256 of the HEAD version for the
-     *         publication to succeed.
+     *         this parameter value must match the SHA256 of the $LATEST version for
+     *         the publication to succeed.
      */
     public void setCodeSha256(String codeSha256) {
         this.codeSha256 = codeSha256;
@@ -186,15 +187,15 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     /**
      * The SHA256 hash of the deployment package you want to publish. This
      * provides validation on the code you are publishing. If you provide
-     * this parameter value must match the SHA256 of the HEAD version for the
-     * publication to succeed.
+     * this parameter value must match the SHA256 of the $LATEST version for
+     * the publication to succeed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param codeSha256 The SHA256 hash of the deployment package you want to publish. This
      *         provides validation on the code you are publishing. If you provide
-     *         this parameter value must match the SHA256 of the HEAD version for the
-     *         publication to succeed.
+     *         this parameter value must match the SHA256 of the $LATEST version for
+     *         the publication to succeed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -206,13 +207,13 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The description for the version you are publishing. If not provided,
-     * AWS Lambda copies the description from the HEAD version.
+     * AWS Lambda copies the description from the $LATEST version.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
      * @return The description for the version you are publishing. If not provided,
-     *         AWS Lambda copies the description from the HEAD version.
+     *         AWS Lambda copies the description from the $LATEST version.
      */
     public String getDescription() {
         return description;
@@ -220,13 +221,13 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The description for the version you are publishing. If not provided,
-     * AWS Lambda copies the description from the HEAD version.
+     * AWS Lambda copies the description from the $LATEST version.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      *
      * @param description The description for the version you are publishing. If not provided,
-     *         AWS Lambda copies the description from the HEAD version.
+     *         AWS Lambda copies the description from the $LATEST version.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -234,7 +235,7 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The description for the version you are publishing. If not provided,
-     * AWS Lambda copies the description from the HEAD version.
+     * AWS Lambda copies the description from the $LATEST version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -242,7 +243,7 @@ public class PublishVersionRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>0 - 256<br/>
      *
      * @param description The description for the version you are publishing. If not provided,
-     *         AWS Lambda copies the description from the HEAD version.
+     *         AWS Lambda copies the description from the $LATEST version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -24,11 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns the specified alias information such as the alias ARN,
  * description, and function version it is pointing to. For more
  * information, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
- * 
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"> Introduction to AWS Lambda Aliases </a>
+ * .
  * </p>
  * <p>
- * This requires permission for the lambda:GetAlias action.
+ * This requires permission for the <code>lambda:GetAlias</code> action.
  * </p>
  *
  * @see com.amazonaws.services.lambda.AWSLambda#getAlias(GetAliasRequest)
@@ -38,7 +38,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
     /**
      * Function name for which the alias is created. An alias is a
      * subresource that exists only in the context of an existing Lambda
-     * function. So you must specify the function name.
+     * function so you must specify the function name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -58,7 +58,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
     /**
      * Function name for which the alias is created. An alias is a
      * subresource that exists only in the context of an existing Lambda
-     * function. So you must specify the function name.
+     * function so you must specify the function name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -66,7 +66,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
      *
      * @return Function name for which the alias is created. An alias is a
      *         subresource that exists only in the context of an existing Lambda
-     *         function. So you must specify the function name.
+     *         function so you must specify the function name.
      */
     public String getFunctionName() {
         return functionName;
@@ -75,7 +75,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
     /**
      * Function name for which the alias is created. An alias is a
      * subresource that exists only in the context of an existing Lambda
-     * function. So you must specify the function name.
+     * function so you must specify the function name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -83,7 +83,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
      *
      * @param functionName Function name for which the alias is created. An alias is a
      *         subresource that exists only in the context of an existing Lambda
-     *         function. So you must specify the function name.
+     *         function so you must specify the function name.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
@@ -92,7 +92,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
     /**
      * Function name for which the alias is created. An alias is a
      * subresource that exists only in the context of an existing Lambda
-     * function. So you must specify the function name.
+     * function so you must specify the function name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -102,7 +102,7 @@ public class GetAliasRequest extends AmazonWebServiceRequest implements Serializ
      *
      * @param functionName Function name for which the alias is created. An alias is a
      *         subresource that exists only in the context of an existing Lambda
-     *         function. So you must specify the function name.
+     *         function so you must specify the function name.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

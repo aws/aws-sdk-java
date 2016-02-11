@@ -24,18 +24,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified Lambda function code and configuration.
  * </p>
  * <p>
- * If you don't specify a function version, AWS Lambda will delete the
- * function, including all its versions, and any aliases pointing to the
- * function versions.
+ * If you are using the versioning feature and you don't specify a
+ * function version in your <code>DeleteFunction</code> request, AWS
+ * Lambda will delete the function, including all its versions, and any
+ * aliases pointing to the function versions. To delete a specific
+ * function version, you must provide the function version via the
+ * <code>Qualifier</code> parameter. For information about function
+ * versioning, see
+ * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
+ * .
  * </p>
  * <p>
  * When you delete a function the associated resource policy is also
  * deleted. You will need to delete the event source mappings explicitly.
- * </p>
- * <p>
- * For information about function versioning, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
- * .
  * </p>
  * <p>
  * This operation requires permission for the
@@ -47,14 +48,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The Lambda function to delete. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The Lambda function to delete. <p> You can specify the function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). AWS Lambda also allows you to specify only the function name
+     * with the account ID qualifier (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
@@ -64,87 +68,103 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * Using this optional parameter you can specify a function version (but
-     * not the $LATEST version) to direct AWS Lambda to delete a specific
-     * function version. If the function version has one or more aliases
-     * pointing to it, you will get an error because you cannot have aliases
-     * pointing to it. You can delete any function version but not the
-     * $LATEST, that is, you cannot specify $LATEST as the value of this
-     * parameter. The $LATEST version can be deleted only when you want to
+     * not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     * specific function version. If the function version has one or more
+     * aliases pointing to it, you will get an error because you cannot have
+     * aliases pointing to it. You can delete any function version but not
+     * the <code>$LATEST</code>, that is, you cannot specify
+     * <code>$LATEST</code> as the value of this parameter. The
+     * <code>$LATEST</code> version can be deleted only when you want to
      * delete all the function versions and aliases. <p>You can only specify
-     * a function version and not alias name using this parameter. You cannot
-     * delete a function version using its alias. <p>If you don't specify
-     * this parameter, AWS Lambda will delete the function, including all its
-     * versions and aliases.
+     * a function version, not an alias name, using this parameter. You
+     * cannot delete a function version using its alias. <p>If you don't
+     * specify this parameter, AWS Lambda will delete the function, including
+     * all of its versions and aliases.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      */
     private String qualifier;
 
     /**
-     * The Lambda function to delete. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The Lambda function to delete. <p> You can specify the function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). AWS Lambda also allows you to specify only the function name
+     * with the account ID qualifier (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @return The Lambda function to delete. <p> You can specify an unqualified
-     *         function name (for example, "Thumbnail") or you can specify Amazon
+     * @return The Lambda function to delete. <p> You can specify the function name
+     *         (for example, <code>Thumbnail</code>) or you can specify Amazon
      *         Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         If you are using versioning, you can also provide a qualified function
+     *         ARN (ARN that is qualified with function version or alias name as
+     *         suffix). AWS Lambda also allows you to specify only the function name
+     *         with the account ID qualifier (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public String getFunctionName() {
         return functionName;
     }
     
     /**
-     * The Lambda function to delete. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The Lambda function to delete. <p> You can specify the function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). AWS Lambda also allows you to specify only the function name
+     * with the account ID qualifier (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function to delete. <p> You can specify an unqualified
-     *         function name (for example, "Thumbnail") or you can specify Amazon
+     * @param functionName The Lambda function to delete. <p> You can specify the function name
+     *         (for example, <code>Thumbnail</code>) or you can specify Amazon
      *         Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         If you are using versioning, you can also provide a qualified function
+     *         ARN (ARN that is qualified with function version or alias name as
+     *         suffix). AWS Lambda also allows you to specify only the function name
+     *         with the account ID qualifier (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      */
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
     
     /**
-     * The Lambda function to delete. <p> You can specify an unqualified
-     * function name (for example, "Thumbnail") or you can specify Amazon
+     * The Lambda function to delete. <p> You can specify the function name
+     * (for example, <code>Thumbnail</code>) or you can specify Amazon
      * Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     * also allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * character in length.
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). AWS Lambda also allows you to specify only the function name
+     * with the account ID qualifier (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint
+     * applies only to the ARN. If you specify only the function name, it is
+     * limited to 64 character in length.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -152,14 +172,17 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 140<br/>
      * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
      *
-     * @param functionName The Lambda function to delete. <p> You can specify an unqualified
-     *         function name (for example, "Thumbnail") or you can specify Amazon
+     * @param functionName The Lambda function to delete. <p> You can specify the function name
+     *         (for example, <code>Thumbnail</code>) or you can specify Amazon
      *         Resource Name (ARN) of the function (for example,
-     *         "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-     *         also allows you to specify only the account ID qualifier (for example,
-     *         "account-id:Thumbnail"). Note that the length constraint applies only
-     *         to the ARN. If you specify only the function name, it is limited to 64
-     *         character in length.
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     *         If you are using versioning, you can also provide a qualified function
+     *         ARN (ARN that is qualified with function version or alias name as
+     *         suffix). AWS Lambda also allows you to specify only the function name
+     *         with the account ID qualifier (for example,
+     *         <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is
+     *         limited to 64 character in length.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -171,34 +194,36 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * Using this optional parameter you can specify a function version (but
-     * not the $LATEST version) to direct AWS Lambda to delete a specific
-     * function version. If the function version has one or more aliases
-     * pointing to it, you will get an error because you cannot have aliases
-     * pointing to it. You can delete any function version but not the
-     * $LATEST, that is, you cannot specify $LATEST as the value of this
-     * parameter. The $LATEST version can be deleted only when you want to
+     * not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     * specific function version. If the function version has one or more
+     * aliases pointing to it, you will get an error because you cannot have
+     * aliases pointing to it. You can delete any function version but not
+     * the <code>$LATEST</code>, that is, you cannot specify
+     * <code>$LATEST</code> as the value of this parameter. The
+     * <code>$LATEST</code> version can be deleted only when you want to
      * delete all the function versions and aliases. <p>You can only specify
-     * a function version and not alias name using this parameter. You cannot
-     * delete a function version using its alias. <p>If you don't specify
-     * this parameter, AWS Lambda will delete the function, including all its
-     * versions and aliases.
+     * a function version, not an alias name, using this parameter. You
+     * cannot delete a function version using its alias. <p>If you don't
+     * specify this parameter, AWS Lambda will delete the function, including
+     * all of its versions and aliases.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
      * @return Using this optional parameter you can specify a function version (but
-     *         not the $LATEST version) to direct AWS Lambda to delete a specific
-     *         function version. If the function version has one or more aliases
-     *         pointing to it, you will get an error because you cannot have aliases
-     *         pointing to it. You can delete any function version but not the
-     *         $LATEST, that is, you cannot specify $LATEST as the value of this
-     *         parameter. The $LATEST version can be deleted only when you want to
+     *         not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     *         specific function version. If the function version has one or more
+     *         aliases pointing to it, you will get an error because you cannot have
+     *         aliases pointing to it. You can delete any function version but not
+     *         the <code>$LATEST</code>, that is, you cannot specify
+     *         <code>$LATEST</code> as the value of this parameter. The
+     *         <code>$LATEST</code> version can be deleted only when you want to
      *         delete all the function versions and aliases. <p>You can only specify
-     *         a function version and not alias name using this parameter. You cannot
-     *         delete a function version using its alias. <p>If you don't specify
-     *         this parameter, AWS Lambda will delete the function, including all its
-     *         versions and aliases.
+     *         a function version, not an alias name, using this parameter. You
+     *         cannot delete a function version using its alias. <p>If you don't
+     *         specify this parameter, AWS Lambda will delete the function, including
+     *         all of its versions and aliases.
      */
     public String getQualifier() {
         return qualifier;
@@ -206,34 +231,36 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Using this optional parameter you can specify a function version (but
-     * not the $LATEST version) to direct AWS Lambda to delete a specific
-     * function version. If the function version has one or more aliases
-     * pointing to it, you will get an error because you cannot have aliases
-     * pointing to it. You can delete any function version but not the
-     * $LATEST, that is, you cannot specify $LATEST as the value of this
-     * parameter. The $LATEST version can be deleted only when you want to
+     * not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     * specific function version. If the function version has one or more
+     * aliases pointing to it, you will get an error because you cannot have
+     * aliases pointing to it. You can delete any function version but not
+     * the <code>$LATEST</code>, that is, you cannot specify
+     * <code>$LATEST</code> as the value of this parameter. The
+     * <code>$LATEST</code> version can be deleted only when you want to
      * delete all the function versions and aliases. <p>You can only specify
-     * a function version and not alias name using this parameter. You cannot
-     * delete a function version using its alias. <p>If you don't specify
-     * this parameter, AWS Lambda will delete the function, including all its
-     * versions and aliases.
+     * a function version, not an alias name, using this parameter. You
+     * cannot delete a function version using its alias. <p>If you don't
+     * specify this parameter, AWS Lambda will delete the function, including
+     * all of its versions and aliases.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
      * @param qualifier Using this optional parameter you can specify a function version (but
-     *         not the $LATEST version) to direct AWS Lambda to delete a specific
-     *         function version. If the function version has one or more aliases
-     *         pointing to it, you will get an error because you cannot have aliases
-     *         pointing to it. You can delete any function version but not the
-     *         $LATEST, that is, you cannot specify $LATEST as the value of this
-     *         parameter. The $LATEST version can be deleted only when you want to
+     *         not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     *         specific function version. If the function version has one or more
+     *         aliases pointing to it, you will get an error because you cannot have
+     *         aliases pointing to it. You can delete any function version but not
+     *         the <code>$LATEST</code>, that is, you cannot specify
+     *         <code>$LATEST</code> as the value of this parameter. The
+     *         <code>$LATEST</code> version can be deleted only when you want to
      *         delete all the function versions and aliases. <p>You can only specify
-     *         a function version and not alias name using this parameter. You cannot
-     *         delete a function version using its alias. <p>If you don't specify
-     *         this parameter, AWS Lambda will delete the function, including all its
-     *         versions and aliases.
+     *         a function version, not an alias name, using this parameter. You
+     *         cannot delete a function version using its alias. <p>If you don't
+     *         specify this parameter, AWS Lambda will delete the function, including
+     *         all of its versions and aliases.
      */
     public void setQualifier(String qualifier) {
         this.qualifier = qualifier;
@@ -241,36 +268,38 @@ public class DeleteFunctionRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * Using this optional parameter you can specify a function version (but
-     * not the $LATEST version) to direct AWS Lambda to delete a specific
-     * function version. If the function version has one or more aliases
-     * pointing to it, you will get an error because you cannot have aliases
-     * pointing to it. You can delete any function version but not the
-     * $LATEST, that is, you cannot specify $LATEST as the value of this
-     * parameter. The $LATEST version can be deleted only when you want to
+     * not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     * specific function version. If the function version has one or more
+     * aliases pointing to it, you will get an error because you cannot have
+     * aliases pointing to it. You can delete any function version but not
+     * the <code>$LATEST</code>, that is, you cannot specify
+     * <code>$LATEST</code> as the value of this parameter. The
+     * <code>$LATEST</code> version can be deleted only when you want to
      * delete all the function versions and aliases. <p>You can only specify
-     * a function version and not alias name using this parameter. You cannot
-     * delete a function version using its alias. <p>If you don't specify
-     * this parameter, AWS Lambda will delete the function, including all its
-     * versions and aliases.
+     * a function version, not an alias name, using this parameter. You
+     * cannot delete a function version using its alias. <p>If you don't
+     * specify this parameter, AWS Lambda will delete the function, including
+     * all of its versions and aliases.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
-     * <b>Pattern: </b>(|[a-zA-Z0-9$_]+)<br/>
+     * <b>Pattern: </b>(|[a-zA-Z0-9$_-]+)<br/>
      *
      * @param qualifier Using this optional parameter you can specify a function version (but
-     *         not the $LATEST version) to direct AWS Lambda to delete a specific
-     *         function version. If the function version has one or more aliases
-     *         pointing to it, you will get an error because you cannot have aliases
-     *         pointing to it. You can delete any function version but not the
-     *         $LATEST, that is, you cannot specify $LATEST as the value of this
-     *         parameter. The $LATEST version can be deleted only when you want to
+     *         not the <code>$LATEST</code> version) to direct AWS Lambda to delete a
+     *         specific function version. If the function version has one or more
+     *         aliases pointing to it, you will get an error because you cannot have
+     *         aliases pointing to it. You can delete any function version but not
+     *         the <code>$LATEST</code>, that is, you cannot specify
+     *         <code>$LATEST</code> as the value of this parameter. The
+     *         <code>$LATEST</code> version can be deleted only when you want to
      *         delete all the function versions and aliases. <p>You can only specify
-     *         a function version and not alias name using this parameter. You cannot
-     *         delete a function version using its alias. <p>If you don't specify
-     *         this parameter, AWS Lambda will delete the function, including all its
-     *         versions and aliases.
+     *         a function version, not an alias name, using this parameter. You
+     *         cannot delete a function version using its alias. <p>If you don't
+     *         specify this parameter, AWS Lambda will delete the function, including
+     *         all of its versions and aliases.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
