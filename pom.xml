@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.10.52</version>
+  <version>1.10.53-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -31,7 +31,6 @@
       </roles>
     </developer>
   </developers>
-  <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
     <module>aws-java-sdk-support</module>
     <module>aws-java-sdk-simpledb</module>
@@ -99,21 +98,17 @@
     <module>aws-java-sdk-core</module>
     <module>aws-java-sdk-bom</module>
     <module>aws-java-sdk-test-utils</module>
-</modules>
+  </modules>
   <scm>
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
   <properties>
-      <jackson.version>2.5.3</jackson.version>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <!-- These properties are used by SWF for it's dependencies and also in the OSGI build to
-        generate the aggregate ZIP artifact -->
-      <spring.version>3.0.7.RELEASE</spring.version>
-      <freemarker.version>2.3.9</freemarker.version>
-      <aspectj.version>1.8.2</aspectj.version>
-      <!-- This property is used by SES for it's optional dependency and also in the OSGI build to generate
-        the aggregate ZIP artifact -->
-      <javax.mail.version>1.4.6</javax.mail.version>
+    <freemarker.version>2.3.9</freemarker.version>
+    <javax.mail.version>1.4.6</javax.mail.version>
+    <aspectj.version>1.8.2</aspectj.version>
+    <spring.version>3.0.7.RELEASE</spring.version>
+    <jackson.version>2.5.3</jackson.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -153,7 +148,6 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3</version>
           <configuration>
@@ -163,9 +157,7 @@
             <forceJavacCompilerUse>true</forceJavacCompilerUse>
           </configuration>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>2.9.1</version>
           <configuration>
@@ -183,7 +175,6 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
             <executions>
               <execution>
