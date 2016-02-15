@@ -14,9 +14,6 @@
  */
 package com.amazonaws.services.sns.util;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.policy.Policy;
@@ -27,12 +24,15 @@ import com.amazonaws.auth.policy.Statement.Effect;
 import com.amazonaws.auth.policy.actions.SQSActions;
 import com.amazonaws.auth.policy.conditions.ConditionFactory;
 import com.amazonaws.services.sns.AmazonSNS;
-import com.amazonaws.services.sns.model.SubscribeRequest;
 import com.amazonaws.services.sns.model.SubscribeResult;
 import com.amazonaws.services.sqs.AmazonSQS;
-import com.amazonaws.services.sqs.model.GetQueueAttributesRequest;
 import com.amazonaws.services.sqs.model.QueueAttributeName;
 import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Set of utility methods for working with Amazon SNS topics.
@@ -109,27 +109,24 @@ public class Topics {
      */
     public static String subscribeQueue(AmazonSNS sns, AmazonSQS sqs, String snsTopicArn, String sqsQueueUrl)
                 throws AmazonClientException, AmazonServiceException {
-        Map<String, String> queueAttributes = sqs.getQueueAttributes(new GetQueueAttributesRequest(sqsQueueUrl)
-                .withAttributeNames(QueueAttributeName.QueueArn.toString())).getAttributes();
-        String sqsQueueArn = queueAttributes.get(QueueAttributeName.QueueArn.toString());
+        List<String> sqsAttrNames = Arrays.asList(QueueAttributeName.QueueArn.toString(),
+                                                  QueueAttributeName.Policy.toString());
+        Map<String, String> sqsAttrs = sqs.getQueueAttributes(sqsQueueUrl, sqsAttrNames).getAttributes();
+        String sqsQueueArn = sqsAttrs.get(QueueAttributeName.QueueArn.toString());
 
-        Policy policy = new Policy().withStatements(
-                new Statement(Effect.Allow)
-                    .withId("topic-subscription-" + snsTopicArn)
-                    .withPrincipals(Principal.AllUsers)
-                    .withActions(SQSActions.SendMessage)
-                    .withResources(new Resource(sqsQueueArn))
-                    .withConditions(ConditionFactory.newSourceArnCondition(snsTopicArn)));
+        Policy policy = Policy.fromJson(sqsAttrs.get(QueueAttributeName.Policy.toString()));
+        policy.getStatements().add(new Statement(Effect.Allow)
+                                           .withId("topic-subscription-" + snsTopicArn)
+                                           .withPrincipals(Principal.AllUsers)
+                                           .withActions(SQSActions.SendMessage)
+                                           .withResources(new Resource(sqsQueueArn))
+                                           .withConditions(ConditionFactory.newSourceArnCondition(snsTopicArn)));
 
-        queueAttributes = new HashMap<String, String>();
-        queueAttributes.put(QueueAttributeName.Policy.toString(), policy.toJson());
-        sqs.setQueueAttributes(new SetQueueAttributesRequest(sqsQueueUrl, queueAttributes));
+        Map<String, String> newAttrs = new HashMap<String, String>();
+        newAttrs.put(QueueAttributeName.Policy.toString(), policy.toJson());
+        sqs.setQueueAttributes(new SetQueueAttributesRequest(sqsQueueUrl, newAttrs));
 
-        SubscribeResult subscribeResult =
-                sns.subscribe(new SubscribeRequest()
-                    .withEndpoint(sqsQueueArn)
-                    .withProtocol("sqs")
-                    .withTopicArn(snsTopicArn));
+        SubscribeResult subscribeResult = sns.subscribe(snsTopicArn, "sqs", sqsQueueArn);
         return subscribeResult.getSubscriptionArn();
     }
 }
