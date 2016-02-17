@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticloadbalancing;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Elastic Load Balancing asynchronously. Each
@@ -47,6 +48,7 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * a 200 OK response code.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticLoadBalancingAsyncClient extends
         AmazonElasticLoadBalancingClient implements
         AmazonElasticLoadBalancingAsync {

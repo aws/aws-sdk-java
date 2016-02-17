@@ -16,6 +16,7 @@
 package com.amazonaws.services.inspector;
 
 import com.amazonaws.services.inspector.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Inspector asynchronously. Each asynchronous
@@ -32,6 +33,7 @@ import com.amazonaws.services.inspector.model.*;
  * > Amazon Inspector User Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
         AmazonInspectorAsync {
 

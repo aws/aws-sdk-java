@@ -16,6 +16,7 @@
 package com.amazonaws.services.opsworks;
 
 import com.amazonaws.services.opsworks.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS OpsWorks asynchronously. Each asynchronous method
@@ -88,6 +89,7 @@ import com.amazonaws.services.opsworks.model.*;
  * recommend migrating your existing Linux stacks to Chef 12 as soon as
  * possible.</note>
  */
+@ThreadSafe
 public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
         AWSOpsWorksAsync {
 

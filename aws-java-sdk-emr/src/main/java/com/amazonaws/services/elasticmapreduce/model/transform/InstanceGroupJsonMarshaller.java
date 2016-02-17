@@ -108,6 +108,27 @@ public class InstanceGroupJsonMarshaller {
                 jsonWriter.endArray();
             }
 
+            com.amazonaws.internal.SdkInternalList<EbsBlockDevice> ebsBlockDevicesList = (com.amazonaws.internal.SdkInternalList<EbsBlockDevice>) instanceGroup
+                    .getEbsBlockDevices();
+            if (!ebsBlockDevicesList.isEmpty()
+                    || !ebsBlockDevicesList.isAutoConstruct()) {
+                jsonWriter.key("EbsBlockDevices");
+                jsonWriter.array();
+                for (EbsBlockDevice ebsBlockDevicesListValue : ebsBlockDevicesList) {
+                    if (ebsBlockDevicesListValue != null) {
+
+                        EbsBlockDeviceJsonMarshaller.getInstance().marshall(
+                                ebsBlockDevicesListValue, jsonWriter);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            if (instanceGroup.getEbsOptimized() != null) {
+                jsonWriter.key("EbsOptimized").value(
+                        instanceGroup.getEbsOptimized());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

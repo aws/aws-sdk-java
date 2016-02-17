@@ -16,6 +16,7 @@
 package com.amazonaws.services.gamelift;
 
 import com.amazonaws.services.gamelift.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon GameLift asynchronously. Each asynchronous
@@ -123,6 +124,7 @@ import com.amazonaws.services.gamelift.model.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
         AmazonGameLiftAsync {
 

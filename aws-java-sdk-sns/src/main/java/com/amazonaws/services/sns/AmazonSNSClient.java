@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.sns.model.*;
 import com.amazonaws.services.sns.model.transform.*;
@@ -62,6 +63,7 @@ import com.amazonaws.services.sns.model.transform.*;
  * Services</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonSNSClient extends AmazonWebServiceClient implements
         AmazonSNS {
     /** Provider for AWS credentials. */

@@ -60,6 +60,23 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     private String targetDBSnapshotIdentifier;
 
     /**
+     * The AWS Key Management Service (AWS KMS) key identifier for an
+     * encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     * Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     * copy an unencrypted DB snapshot and specify a value for the
+     * <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value
+     * for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     * encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     * then the copy of the DB snapshot is encrypted with the same KMS key as
+     * the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     * is shared from another AWS account, then you must specify a value for
+     * <code>KmsKeyId</code>.
+     */
+    private String kmsKeyId;
+
+    /**
      * A list of tags.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
@@ -227,6 +244,111 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * The AWS Key Management Service (AWS KMS) key identifier for an
+     * encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     * Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     * copy an unencrypted DB snapshot and specify a value for the
+     * <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value
+     * for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     * encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     * then the copy of the DB snapshot is encrypted with the same KMS key as
+     * the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     * is shared from another AWS account, then you must specify a value for
+     * <code>KmsKeyId</code>.
+     *
+     * @return The AWS Key Management Service (AWS KMS) key identifier for an
+     *         encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     *         Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     *         copy an unencrypted DB snapshot and specify a value for the
+     *         <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     *         snapshot using the specified KMS encryption key. <p>If you copy an
+     *         encrypted DB snapshot from your AWS account, you can specify a value
+     *         for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     *         encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     *         then the copy of the DB snapshot is encrypted with the same KMS key as
+     *         the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     *         is shared from another AWS account, then you must specify a value for
+     *         <code>KmsKeyId</code>.
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (AWS KMS) key identifier for an
+     * encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     * Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     * copy an unencrypted DB snapshot and specify a value for the
+     * <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value
+     * for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     * encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     * then the copy of the DB snapshot is encrypted with the same KMS key as
+     * the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     * is shared from another AWS account, then you must specify a value for
+     * <code>KmsKeyId</code>.
+     *
+     * @param kmsKeyId The AWS Key Management Service (AWS KMS) key identifier for an
+     *         encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     *         Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     *         copy an unencrypted DB snapshot and specify a value for the
+     *         <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     *         snapshot using the specified KMS encryption key. <p>If you copy an
+     *         encrypted DB snapshot from your AWS account, you can specify a value
+     *         for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     *         encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     *         then the copy of the DB snapshot is encrypted with the same KMS key as
+     *         the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     *         is shared from another AWS account, then you must specify a value for
+     *         <code>KmsKeyId</code>.
+     */
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+    
+    /**
+     * The AWS Key Management Service (AWS KMS) key identifier for an
+     * encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     * Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     * copy an unencrypted DB snapshot and specify a value for the
+     * <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value
+     * for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     * encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     * then the copy of the DB snapshot is encrypted with the same KMS key as
+     * the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     * is shared from another AWS account, then you must specify a value for
+     * <code>KmsKeyId</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kmsKeyId The AWS Key Management Service (AWS KMS) key identifier for an
+     *         encrypted DB snapshot. The KMS key identifier is the Amazon Resource
+     *         Name (ARN) or the KMS key alias for the KMS encryption key. <p>If you
+     *         copy an unencrypted DB snapshot and specify a value for the
+     *         <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     *         snapshot using the specified KMS encryption key. <p>If you copy an
+     *         encrypted DB snapshot from your AWS account, you can specify a value
+     *         for <code>KmsKeyId</code> to encrypt the copy with a new KMS
+     *         encryption key. If you don't specify a value for <code>KmsKeyId</code>
+     *         then the copy of the DB snapshot is encrypted with the same KMS key as
+     *         the source DB snapshot. <p>If you copy an encrypted DB snapshot that
+     *         is shared from another AWS account, then you must specify a value for
+     *         <code>KmsKeyId</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopyDBSnapshotRequest withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
      * A list of tags.
      *
      * @return A list of tags.
@@ -363,6 +485,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         sb.append("{");
         if (getSourceDBSnapshotIdentifier() != null) sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");
         if (getTargetDBSnapshotIdentifier() != null) sb.append("TargetDBSnapshotIdentifier: " + getTargetDBSnapshotIdentifier() + ",");
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (isCopyTags() != null) sb.append("CopyTags: " + isCopyTags() );
         sb.append("}");
@@ -376,6 +499,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         
         hashCode = prime * hashCode + ((getSourceDBSnapshotIdentifier() == null) ? 0 : getSourceDBSnapshotIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getTargetDBSnapshotIdentifier() == null) ? 0 : getTargetDBSnapshotIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTags() == null) ? 0 : isCopyTags().hashCode()); 
         return hashCode;
@@ -393,6 +517,8 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         if (other.getSourceDBSnapshotIdentifier() != null && other.getSourceDBSnapshotIdentifier().equals(this.getSourceDBSnapshotIdentifier()) == false) return false; 
         if (other.getTargetDBSnapshotIdentifier() == null ^ this.getTargetDBSnapshotIdentifier() == null) return false;
         if (other.getTargetDBSnapshotIdentifier() != null && other.getTargetDBSnapshotIdentifier().equals(this.getTargetDBSnapshotIdentifier()) == false) return false; 
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.isCopyTags() == null ^ this.isCopyTags() == null) return false;

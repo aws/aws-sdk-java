@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.services.directconnect.model.transform.*;
@@ -70,6 +71,7 @@ import com.amazonaws.services.directconnect.model.transform.*;
  * >Common Errors</a>: Client and server errors that all actions can return.</li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AmazonDirectConnect {
     /** Provider for AWS credentials. */

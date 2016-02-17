@@ -95,6 +95,12 @@ public class InstanceGroupConfigJsonMarshaller {
                 jsonWriter.endArray();
             }
 
+            if (instanceGroupConfig.getEbsConfiguration() != null) {
+                jsonWriter.key("EbsConfiguration");
+                EbsConfigurationJsonMarshaller.getInstance().marshall(
+                        instanceGroupConfig.getEbsConfiguration(), jsonWriter);
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

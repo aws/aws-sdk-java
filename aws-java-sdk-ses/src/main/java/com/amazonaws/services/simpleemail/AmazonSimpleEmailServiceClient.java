@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.services.simpleemail.model.transform.*;
@@ -53,6 +54,7 @@ import com.amazonaws.services.simpleemail.model.transform.*;
  * ="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
  * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
  */
+@ThreadSafe
 public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
         implements AmazonSimpleEmailService {
     /** Provider for AWS credentials. */

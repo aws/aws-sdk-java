@@ -47,6 +47,9 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
         if (copyDBSnapshotRequest.getTargetDBSnapshotIdentifier() != null) {
             request.addParameter("TargetDBSnapshotIdentifier", StringUtils.fromString(copyDBSnapshotRequest.getTargetDBSnapshotIdentifier()));
         }
+        if (copyDBSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(copyDBSnapshotRequest.getKmsKeyId()));
+        }
 
         java.util.List<Tag> tagsList = copyDBSnapshotRequest.getTags();
         int tagsListIndex = 1;

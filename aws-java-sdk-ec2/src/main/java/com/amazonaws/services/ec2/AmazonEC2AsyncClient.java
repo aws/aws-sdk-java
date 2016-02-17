@@ -16,6 +16,7 @@
 package com.amazonaws.services.ec2;
 
 import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon EC2 asynchronously. Each asynchronous method
@@ -31,6 +32,7 @@ import com.amazonaws.services.ec2.model.*;
  * applications faster.
  * </p>
  */
+@ThreadSafe
 public class AmazonEC2AsyncClient extends AmazonEC2Client implements
         AmazonEC2Async {
 

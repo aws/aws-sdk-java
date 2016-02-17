@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudsearchdomain;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon CloudSearch Domain asynchronously. Each
@@ -41,6 +42,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
  * CloudSearch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudSearchDomainAsyncClient extends
         AmazonCloudSearchDomainClient implements AmazonCloudSearchDomainAsync {
 

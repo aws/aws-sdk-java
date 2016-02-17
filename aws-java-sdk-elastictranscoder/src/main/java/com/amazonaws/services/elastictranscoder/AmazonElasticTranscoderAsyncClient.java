@@ -16,6 +16,7 @@
 package com.amazonaws.services.elastictranscoder;
 
 import com.amazonaws.services.elastictranscoder.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Elastic Transcoder asynchronously. Each
@@ -28,6 +29,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
  * The AWS Elastic Transcoder Service.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticTranscoderAsyncClient extends
         AmazonElasticTranscoderClient implements AmazonElasticTranscoderAsync {
 

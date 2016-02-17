@@ -16,6 +16,7 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon DynamoDB Streams asynchronously. Each
@@ -80,6 +81,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonDynamoDBStreamsAsyncClient extends
         AmazonDynamoDBStreamsClient implements AmazonDynamoDBStreamsAsync {
 

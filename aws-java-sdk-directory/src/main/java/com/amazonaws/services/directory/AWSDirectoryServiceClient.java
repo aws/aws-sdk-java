@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.services.directory.model.transform.*;
@@ -48,6 +49,7 @@ import com.amazonaws.services.directory.model.transform.*;
  * parameters, and errors.
  * </p>
  */
+@ThreadSafe
 public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         AWSDirectoryService {
     /** Provider for AWS credentials. */

@@ -16,6 +16,7 @@
 package com.amazonaws.services.machinelearning;
 
 import com.amazonaws.services.machinelearning.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Machine Learning asynchronously. Each
@@ -25,6 +26,7 @@ import com.amazonaws.services.machinelearning.model.*;
  * <p>
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
+@ThreadSafe
 public class AmazonMachineLearningAsyncClient extends
         AmazonMachineLearningClient implements AmazonMachineLearningAsync {
 

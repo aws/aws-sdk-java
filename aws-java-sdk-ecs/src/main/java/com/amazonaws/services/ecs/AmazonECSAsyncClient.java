@@ -16,6 +16,7 @@
 package com.amazonaws.services.ecs;
 
 import com.amazonaws.services.ecs.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon ECS asynchronously. Each asynchronous method
@@ -40,6 +41,7 @@ import com.amazonaws.services.ecs.model.*;
  * worry about scaling your management infrastructure.
  * </p>
  */
+@ThreadSafe
 public class AmazonECSAsyncClient extends AmazonECSClient implements
         AmazonECSAsync {
 

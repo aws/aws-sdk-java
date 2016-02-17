@@ -16,6 +16,7 @@
 package com.amazonaws.services.ecr;
 
 import com.amazonaws.services.ecr.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon ECR asynchronously. Each asynchronous method
@@ -33,6 +34,7 @@ import com.amazonaws.services.ecr.model.*;
  * manage images.
  * </p>
  */
+@ThreadSafe
 public class AmazonECRAsyncClient extends AmazonECRClient implements
         AmazonECRAsync {
 

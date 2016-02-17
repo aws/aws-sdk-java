@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.services.machinelearning.model.transform.*;
@@ -44,6 +45,7 @@ import com.amazonaws.services.machinelearning.model.transform.*;
  * <p>
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
+@ThreadSafe
 public class AmazonMachineLearningClient extends AmazonWebServiceClient
         implements AmazonMachineLearning {
     /** Provider for AWS credentials. */

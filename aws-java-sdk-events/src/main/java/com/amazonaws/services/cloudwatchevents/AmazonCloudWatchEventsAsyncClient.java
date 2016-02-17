@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudwatchevents;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon CloudWatch Events asynchronously. Each
@@ -46,6 +47,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
  * CloudWatch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudWatchEventsAsyncClient extends
         AmazonCloudWatchEventsClient implements AmazonCloudWatchEventsAsync {
 

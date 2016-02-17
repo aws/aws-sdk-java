@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.importexport.model.*;
 import com.amazonaws.services.importexport.model.transform.*;
@@ -49,6 +50,7 @@ import com.amazonaws.services.importexport.model.transform.*;
  * faster than Internet transfer and more cost effective than upgrading your
  * connectivity.
  */
+@ThreadSafe
 public class AmazonImportExportClient extends AmazonWebServiceClient implements
         AmazonImportExport {
     /** Provider for AWS credentials. */

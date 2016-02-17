@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudfront;
 
 import com.amazonaws.services.cloudfront.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CloudFront asynchronously. Each asynchronous method
@@ -23,6 +24,7 @@ import com.amazonaws.services.cloudfront.model.*;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  */
+@ThreadSafe
 public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
         implements AmazonCloudFrontAsync {
 

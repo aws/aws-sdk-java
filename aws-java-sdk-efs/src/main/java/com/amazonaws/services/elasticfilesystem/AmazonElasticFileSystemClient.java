@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.services.elasticfilesystem.model.transform.*;
@@ -43,6 +44,7 @@ import com.amazonaws.services.elasticfilesystem.model.transform.*;
  * <p>
  * <fullname>Amazon Elastic File System</fullname>
  */
+@ThreadSafe
 public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         implements AmazonElasticFileSystem {
     /** Provider for AWS credentials. */

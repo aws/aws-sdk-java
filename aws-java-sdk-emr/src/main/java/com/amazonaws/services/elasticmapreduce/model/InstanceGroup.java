@@ -95,6 +95,20 @@ public class InstanceGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
+    /**
+     * <p>
+     * The EBS block devices that are mapped to this instance group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EbsBlockDevice> ebsBlockDevices;
+    /**
+     * <p>
+     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * uses an optimized configuration stack and provides additional, dedicated
+     * capacity for Amazon EBS I/O.
+     * </p>
+     */
+    private Boolean ebsOptimized;
 
     /**
      * <p>
@@ -634,6 +648,147 @@ public class InstanceGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The EBS block devices that are mapped to this instance group.
+     * </p>
+     * 
+     * @return The EBS block devices that are mapped to this instance group.
+     */
+    public java.util.List<EbsBlockDevice> getEbsBlockDevices() {
+        if (ebsBlockDevices == null) {
+            ebsBlockDevices = new com.amazonaws.internal.SdkInternalList<EbsBlockDevice>();
+        }
+        return ebsBlockDevices;
+    }
+
+    /**
+     * <p>
+     * The EBS block devices that are mapped to this instance group.
+     * </p>
+     * 
+     * @param ebsBlockDevices
+     *        The EBS block devices that are mapped to this instance group.
+     */
+    public void setEbsBlockDevices(
+            java.util.Collection<EbsBlockDevice> ebsBlockDevices) {
+        if (ebsBlockDevices == null) {
+            this.ebsBlockDevices = null;
+            return;
+        }
+
+        this.ebsBlockDevices = new com.amazonaws.internal.SdkInternalList<EbsBlockDevice>(
+                ebsBlockDevices);
+    }
+
+    /**
+     * <p>
+     * The EBS block devices that are mapped to this instance group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEbsBlockDevices(java.util.Collection)} or
+     * {@link #withEbsBlockDevices(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ebsBlockDevices
+     *        The EBS block devices that are mapped to this instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public InstanceGroup withEbsBlockDevices(EbsBlockDevice... ebsBlockDevices) {
+        if (this.ebsBlockDevices == null) {
+            setEbsBlockDevices(new com.amazonaws.internal.SdkInternalList<EbsBlockDevice>(
+                    ebsBlockDevices.length));
+        }
+        for (EbsBlockDevice ele : ebsBlockDevices) {
+            this.ebsBlockDevices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EBS block devices that are mapped to this instance group.
+     * </p>
+     * 
+     * @param ebsBlockDevices
+     *        The EBS block devices that are mapped to this instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public InstanceGroup withEbsBlockDevices(
+            java.util.Collection<EbsBlockDevice> ebsBlockDevices) {
+        setEbsBlockDevices(ebsBlockDevices);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * uses an optimized configuration stack and provides additional, dedicated
+     * capacity for Amazon EBS I/O.
+     * </p>
+     * 
+     * @param ebsOptimized
+     *        If the instance group is EBS-optimized. An Amazon EBS–optimized
+     *        instance uses an optimized configuration stack and provides
+     *        additional, dedicated capacity for Amazon EBS I/O.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+
+    /**
+     * <p>
+     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * uses an optimized configuration stack and provides additional, dedicated
+     * capacity for Amazon EBS I/O.
+     * </p>
+     * 
+     * @return If the instance group is EBS-optimized. An Amazon EBS–optimized
+     *         instance uses an optimized configuration stack and provides
+     *         additional, dedicated capacity for Amazon EBS I/O.
+     */
+    public Boolean getEbsOptimized() {
+        return this.ebsOptimized;
+    }
+
+    /**
+     * <p>
+     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * uses an optimized configuration stack and provides additional, dedicated
+     * capacity for Amazon EBS I/O.
+     * </p>
+     * 
+     * @param ebsOptimized
+     *        If the instance group is EBS-optimized. An Amazon EBS–optimized
+     *        instance uses an optimized configuration stack and provides
+     *        additional, dedicated capacity for Amazon EBS I/O.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public InstanceGroup withEbsOptimized(Boolean ebsOptimized) {
+        setEbsOptimized(ebsOptimized);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * uses an optimized configuration stack and provides additional, dedicated
+     * capacity for Amazon EBS I/O.
+     * </p>
+     * 
+     * @return If the instance group is EBS-optimized. An Amazon EBS–optimized
+     *         instance uses an optimized configuration stack and provides
+     *         additional, dedicated capacity for Amazon EBS I/O.
+     */
+    public Boolean isEbsOptimized() {
+        return this.ebsOptimized;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -666,7 +821,11 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations());
+            sb.append("Configurations: " + getConfigurations() + ",");
+        if (getEbsBlockDevices() != null)
+            sb.append("EbsBlockDevices: " + getEbsBlockDevices() + ",");
+        if (getEbsOptimized() != null)
+            sb.append("EbsOptimized: " + getEbsOptimized());
         sb.append("}");
         return sb.toString();
     }
@@ -738,6 +897,17 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (other.getConfigurations() != null
                 && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
+        if (other.getEbsBlockDevices() == null
+                ^ this.getEbsBlockDevices() == null)
+            return false;
+        if (other.getEbsBlockDevices() != null
+                && other.getEbsBlockDevices().equals(this.getEbsBlockDevices()) == false)
+            return false;
+        if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
+            return false;
+        if (other.getEbsOptimized() != null
+                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+            return false;
         return true;
     }
 
@@ -775,6 +945,14 @@ public class InstanceGroup implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getConfigurations() == null) ? 0 : getConfigurations()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEbsBlockDevices() == null) ? 0 : getEbsBlockDevices()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
                         .hashCode());
         return hashCode;
     }

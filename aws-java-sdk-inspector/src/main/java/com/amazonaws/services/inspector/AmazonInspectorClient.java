@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.services.inspector.model.transform.*;
@@ -50,6 +51,7 @@ import com.amazonaws.services.inspector.model.transform.*;
  * > Amazon Inspector User Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonInspectorClient extends AmazonWebServiceClient implements
         AmazonInspector {
     /** Provider for AWS credentials. */

@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudhsm;
 
 import com.amazonaws.services.cloudhsm.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CloudHSM asynchronously. Each asynchronous method
@@ -25,6 +26,7 @@ import com.amazonaws.services.cloudhsm.model.*;
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
  */
+@ThreadSafe
 public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements
         AWSCloudHSMAsync {
 

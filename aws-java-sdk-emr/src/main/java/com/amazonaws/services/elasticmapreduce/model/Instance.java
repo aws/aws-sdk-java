@@ -67,6 +67,18 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private InstanceStatus status;
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     */
+    private String instanceGroupId;
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EbsVolume> ebsVolumes;
 
     /**
      * <p>
@@ -335,6 +347,121 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     * 
+     * @param instanceGroupId
+     *        The identifier of the instance group to which this instance
+     *        belongs.
+     */
+    public void setInstanceGroupId(String instanceGroupId) {
+        this.instanceGroupId = instanceGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     * 
+     * @return The identifier of the instance group to which this instance
+     *         belongs.
+     */
+    public String getInstanceGroupId() {
+        return this.instanceGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     * 
+     * @param instanceGroupId
+     *        The identifier of the instance group to which this instance
+     *        belongs.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Instance withInstanceGroupId(String instanceGroupId) {
+        setInstanceGroupId(instanceGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * 
+     * @return The list of EBS volumes that are attached to this instance.
+     */
+    public java.util.List<EbsVolume> getEbsVolumes() {
+        if (ebsVolumes == null) {
+            ebsVolumes = new com.amazonaws.internal.SdkInternalList<EbsVolume>();
+        }
+        return ebsVolumes;
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * 
+     * @param ebsVolumes
+     *        The list of EBS volumes that are attached to this instance.
+     */
+    public void setEbsVolumes(java.util.Collection<EbsVolume> ebsVolumes) {
+        if (ebsVolumes == null) {
+            this.ebsVolumes = null;
+            return;
+        }
+
+        this.ebsVolumes = new com.amazonaws.internal.SdkInternalList<EbsVolume>(
+                ebsVolumes);
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEbsVolumes(java.util.Collection)} or
+     * {@link #withEbsVolumes(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param ebsVolumes
+     *        The list of EBS volumes that are attached to this instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Instance withEbsVolumes(EbsVolume... ebsVolumes) {
+        if (this.ebsVolumes == null) {
+            setEbsVolumes(new com.amazonaws.internal.SdkInternalList<EbsVolume>(
+                    ebsVolumes.length));
+        }
+        for (EbsVolume ele : ebsVolumes) {
+            this.ebsVolumes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * 
+     * @param ebsVolumes
+     *        The list of EBS volumes that are attached to this instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public Instance withEbsVolumes(java.util.Collection<EbsVolume> ebsVolumes) {
+        setEbsVolumes(ebsVolumes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -359,7 +486,11 @@ public class Instance implements Serializable, Cloneable {
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: " + getStatus() + ",");
+        if (getInstanceGroupId() != null)
+            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+        if (getEbsVolumes() != null)
+            sb.append("EbsVolumes: " + getEbsVolumes());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +544,17 @@ public class Instance implements Serializable, Cloneable {
         if (other.getStatus() != null
                 && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getInstanceGroupId() == null
+                ^ this.getInstanceGroupId() == null)
+            return false;
+        if (other.getInstanceGroupId() != null
+                && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
+            return false;
+        if (other.getEbsVolumes() == null ^ this.getEbsVolumes() == null)
+            return false;
+        if (other.getEbsVolumes() != null
+                && other.getEbsVolumes().equals(this.getEbsVolumes()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +587,12 @@ public class Instance implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getEbsVolumes() == null) ? 0 : getEbsVolumes().hashCode());
         return hashCode;
     }
 

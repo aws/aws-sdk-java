@@ -30,8 +30,11 @@ public class OptionGroupMembership implements Serializable, Cloneable {
     private String optionGroupName;
 
     /**
-     * The status of the DB instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying).
+     * The status of the DB instance's option group membership. Valid values
+     * are: <code>in-sync</code>, <code>pending-apply</code>,
+     * <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>.
      */
     private String status;
 
@@ -69,35 +72,53 @@ public class OptionGroupMembership implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the DB instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying).
+     * The status of the DB instance's option group membership. Valid values
+     * are: <code>in-sync</code>, <code>pending-apply</code>,
+     * <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>.
      *
-     * @return The status of the DB instance's option group membership (e.g. in-sync,
-     *         pending, pending-maintenance, applying).
+     * @return The status of the DB instance's option group membership. Valid values
+     *         are: <code>in-sync</code>, <code>pending-apply</code>,
+     *         <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     *         <code>pending-maintenance-removal</code>, <code>applying</code>,
+     *         <code>removing</code>, and <code>failed</code>.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The status of the DB instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying).
+     * The status of the DB instance's option group membership. Valid values
+     * are: <code>in-sync</code>, <code>pending-apply</code>,
+     * <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>.
      *
-     * @param status The status of the DB instance's option group membership (e.g. in-sync,
-     *         pending, pending-maintenance, applying).
+     * @param status The status of the DB instance's option group membership. Valid values
+     *         are: <code>in-sync</code>, <code>pending-apply</code>,
+     *         <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     *         <code>pending-maintenance-removal</code>, <code>applying</code>,
+     *         <code>removing</code>, and <code>failed</code>.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The status of the DB instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying).
+     * The status of the DB instance's option group membership. Valid values
+     * are: <code>in-sync</code>, <code>pending-apply</code>,
+     * <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the DB instance's option group membership (e.g. in-sync,
-     *         pending, pending-maintenance, applying).
+     * @param status The status of the DB instance's option group membership. Valid values
+     *         are: <code>in-sync</code>, <code>pending-apply</code>,
+     *         <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
+     *         <code>pending-maintenance-removal</code>, <code>applying</code>,
+     *         <code>removing</code>, and <code>failed</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

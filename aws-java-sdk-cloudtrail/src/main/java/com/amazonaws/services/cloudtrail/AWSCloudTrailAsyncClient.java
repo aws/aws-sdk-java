@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudtrail;
 
 import com.amazonaws.services.cloudtrail.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CloudTrail asynchronously. Each asynchronous method
@@ -49,6 +50,7 @@ import com.amazonaws.services.cloudtrail.model.*;
  * with each AWS API call listed in the log files.
  * </p>
  */
+@ThreadSafe
 public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements
         AWSCloudTrailAsync {
 

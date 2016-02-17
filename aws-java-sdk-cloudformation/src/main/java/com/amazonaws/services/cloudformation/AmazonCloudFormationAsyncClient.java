@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudformation;
 
 import com.amazonaws.services.cloudformation.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS CloudFormation asynchronously. Each asynchronous
@@ -50,6 +51,7 @@ import com.amazonaws.services.cloudformation.model.*;
  * >http://docs.aws.amazon.com/documentation/</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         implements AmazonCloudFormationAsync {
 

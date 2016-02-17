@@ -16,6 +16,7 @@
 package com.amazonaws.services.route53;
 
 import com.amazonaws.services.route53.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Route 53 asynchronously. Each asynchronous method
@@ -23,6 +24,7 @@ import com.amazonaws.services.route53.model.*;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  */
+@ThreadSafe
 public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
         AmazonRoute53Async {
 

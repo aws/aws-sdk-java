@@ -16,6 +16,7 @@
 package com.amazonaws.services.marketplacecommerceanalytics;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Marketplace Commerce Analytics asynchronously.
@@ -25,6 +26,7 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.*;
  * <p>
  * Provides AWS Marketplace business intelligence data on-demand.
  */
+@ThreadSafe
 public class AWSMarketplaceCommerceAnalyticsAsyncClient extends
         AWSMarketplaceCommerceAnalyticsClient implements
         AWSMarketplaceCommerceAnalyticsAsync {

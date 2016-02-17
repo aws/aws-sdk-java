@@ -16,6 +16,7 @@
 package com.amazonaws.services.kinesisfirehose;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Firehose asynchronously. Each asynchronous method
@@ -29,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
  * streaming data to destinations such as Amazon S3 and Amazon Redshift.
  * </p>
  */
+@ThreadSafe
 public class AmazonKinesisFirehoseAsyncClient extends
         AmazonKinesisFirehoseClient implements AmazonKinesisFirehoseAsync {
 

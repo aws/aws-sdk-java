@@ -16,6 +16,7 @@
 package com.amazonaws.services.kinesis;
 
 import com.amazonaws.services.kinesis.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Kinesis asynchronously. Each asynchronous method will
@@ -29,6 +30,7 @@ import com.amazonaws.services.kinesis.model.*;
  * processing of streaming big data.
  * </p>
  */
+@ThreadSafe
 public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
         AmazonKinesisAsync {
 

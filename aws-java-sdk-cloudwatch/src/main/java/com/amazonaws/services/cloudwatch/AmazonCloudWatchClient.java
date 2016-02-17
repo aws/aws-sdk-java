@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.services.cloudwatch.model.transform.*;
@@ -62,6 +63,7 @@ import com.amazonaws.services.cloudwatch.model.transform.*;
  * operational health.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         AmazonCloudWatch {
     /** Provider for AWS credentials. */

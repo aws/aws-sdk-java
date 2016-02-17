@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your reusable delegation sets, send a <code>GET</code>
- * request to the <code>2015-01-01/delegationset</code> resource. The response
+ * request to the <code>2013-04-01/delegationset</code> resource. The response
  * to this request includes a <code>DelegationSets</code> element with zero or
  * more <code>DelegationSet</code> child elements. By default, the list of
  * reusable delegation sets is displayed on a single page. You can control the

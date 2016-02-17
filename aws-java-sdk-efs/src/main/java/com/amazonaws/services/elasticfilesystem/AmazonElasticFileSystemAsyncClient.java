@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticfilesystem;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing EFS asynchronously. Each asynchronous method will
@@ -25,6 +26,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
  * <p>
  * <fullname>Amazon Elastic File System</fullname>
  */
+@ThreadSafe
 public class AmazonElasticFileSystemAsyncClient extends
         AmazonElasticFileSystemClient implements AmazonElasticFileSystemAsync {
 

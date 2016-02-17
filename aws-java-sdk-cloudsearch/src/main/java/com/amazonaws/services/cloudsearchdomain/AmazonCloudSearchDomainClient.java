@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.services.cloudsearchdomain.model.transform.*;
@@ -60,6 +61,7 @@ import com.amazonaws.services.cloudsearchdomain.model.transform.*;
  * CloudSearch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         implements AmazonCloudSearchDomain {
     /** Provider for AWS credentials. */

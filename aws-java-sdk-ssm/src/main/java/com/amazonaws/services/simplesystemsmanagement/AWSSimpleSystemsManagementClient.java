@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
@@ -232,6 +233,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * specific tasks and delegate access to non-administrators.</simpara>
  * </important>
  */
+@ThreadSafe
 public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         implements AWSSimpleSystemsManagement {
     /** Provider for AWS credentials. */

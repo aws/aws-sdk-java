@@ -16,6 +16,7 @@
 package com.amazonaws.services.config;
 
 import com.amazonaws.services.config.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Config Service asynchronously. Each asynchronous
@@ -59,6 +60,7 @@ import com.amazonaws.services.config.model.*;
  * >What Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AmazonConfigAsyncClient extends AmazonConfigClient implements
         AmazonConfigAsync {
 

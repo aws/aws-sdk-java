@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.services.elasticloadbalancing.model.transform.*;
@@ -66,6 +67,7 @@ import com.amazonaws.services.elasticloadbalancing.model.transform.*;
  * a 200 OK response code.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
         implements AmazonElasticLoadBalancing {
     /** Provider for AWS credentials. */

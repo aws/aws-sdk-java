@@ -16,6 +16,7 @@
 package com.amazonaws.services.autoscaling;
 
 import com.amazonaws.services.autoscaling.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Auto Scaling asynchronously. Each asynchronous method
@@ -31,6 +32,7 @@ import com.amazonaws.services.autoscaling.model.*;
  * services.
  * </p>
  */
+@ThreadSafe
 public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         implements AmazonAutoScalingAsync {
 

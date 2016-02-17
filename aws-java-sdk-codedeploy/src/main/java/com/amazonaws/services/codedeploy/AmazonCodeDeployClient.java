@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.services.codedeploy.model.transform.*;
@@ -124,6 +125,7 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
         AmazonCodeDeploy {
     /** Provider for AWS credentials. */

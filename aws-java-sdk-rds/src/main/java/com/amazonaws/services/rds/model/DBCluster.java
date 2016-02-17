@@ -181,10 +181,9 @@ public class DBCluster implements Serializable, Cloneable {
     private String kmsKeyId;
 
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB cluster. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     * accessed.
+     * The region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB cluster is accessed.
      */
     private String dbClusterResourceId;
 
@@ -1294,47 +1293,41 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB cluster. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     * accessed.
+     * The region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB cluster is accessed.
      *
-     * @return If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     *         identifier for the encrypted DB cluster. This identifier is found in
-     *         AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     *         accessed.
+     * @return The region-unique, immutable identifier for the DB cluster. This
+     *         identifier is found in AWS CloudTrail log entries whenever the KMS key
+     *         for the DB cluster is accessed.
      */
     public String getDbClusterResourceId() {
         return dbClusterResourceId;
     }
     
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB cluster. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     * accessed.
+     * The region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB cluster is accessed.
      *
-     * @param dbClusterResourceId If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     *         identifier for the encrypted DB cluster. This identifier is found in
-     *         AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     *         accessed.
+     * @param dbClusterResourceId The region-unique, immutable identifier for the DB cluster. This
+     *         identifier is found in AWS CloudTrail log entries whenever the KMS key
+     *         for the DB cluster is accessed.
      */
     public void setDbClusterResourceId(String dbClusterResourceId) {
         this.dbClusterResourceId = dbClusterResourceId;
     }
     
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB cluster. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     * accessed.
+     * The region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB cluster is accessed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dbClusterResourceId If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     *         identifier for the encrypted DB cluster. This identifier is found in
-     *         AWS CloudTrail log entries whenever the KMS key for the DB cluster is
-     *         accessed.
+     * @param dbClusterResourceId The region-unique, immutable identifier for the DB cluster. This
+     *         identifier is found in AWS CloudTrail log entries whenever the KMS key
+     *         for the DB cluster is accessed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

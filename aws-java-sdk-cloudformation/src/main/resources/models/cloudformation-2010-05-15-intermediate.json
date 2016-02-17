@@ -19,11 +19,11 @@
     "jsonContentVersion" : null,
     "endpointPrefix" : "cloudformation",
     "signingName" : "cloudformation",
+    "serviceName" : "AWS CloudFormation",
+    "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "serviceName" : "AWS CloudFormation",
-    "jsonProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "CancelUpdateStack" : {
@@ -42,12 +42,12 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "cancelUpdateStack",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void>",
+      "methodName" : "cancelUpdateStack"
     },
     "ContinueUpdateRollback" : {
       "documentation" : "<p>For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the cause of the failure, you can manually <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed\"> fix the error</a> and continue the rollback. By continuing the rollback, you can return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), return the stack to its original settings, and then try to update the stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation cannot roll back all changes after a failed stack update. For example, you might have a stack that is rolling back to an old database instance that was deleted outside of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was deleted, it assumes that the database instance still exists and attempts to roll back to it, causing the update rollback to fail.</p>",
@@ -68,12 +68,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "continueUpdateRollback",
       "syncReturnType" : "ContinueUpdateRollbackResult",
       "asyncReturnType" : "ContinueUpdateRollbackResult",
       "asyncFutureType" : "java.util.concurrent.Future<ContinueUpdateRollbackResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ContinueUpdateRollbackResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult>",
+      "methodName" : "continueUpdateRollback"
     },
     "CreateStack" : {
       "documentation" : "<p>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p>",
@@ -103,12 +103,12 @@
         "documentation" : "<p>The template contains resources with capabilities that were not specified in the Capabilities parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createStack",
       "syncReturnType" : "CreateStackResult",
       "asyncReturnType" : "CreateStackResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStackResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStackResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult>",
+      "methodName" : "createStack"
     },
     "DeleteStack" : {
       "documentation" : "<p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has been completed successfully.</p>",
@@ -126,12 +126,12 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteStack",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void>",
+      "methodName" : "deleteStack"
     },
     "DescribeAccountLimits" : {
       "documentation" : "<p>Retrieves your account's AWS CloudFormation limits, such as the maximum number of stacks that you can create in your account.</p>",
@@ -152,12 +152,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAccountLimits",
       "syncReturnType" : "DescribeAccountLimitsResult",
       "asyncReturnType" : "DescribeAccountLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountLimitsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult>",
+      "methodName" : "describeAccountLimits"
     },
     "DescribeStackEvents" : {
       "documentation" : "<p>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html\">Stacks</a> in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</note>",
@@ -178,12 +178,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeStackEvents",
       "syncReturnType" : "DescribeStackEventsResult",
       "asyncReturnType" : "DescribeStackEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStackEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStackEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackEventsRequest, DescribeStackEventsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackEventsRequest, DescribeStackEventsResult>",
+      "methodName" : "describeStackEvents"
     },
     "DescribeStackResource" : {
       "documentation" : "<p>Returns a description of the specified resource in the specified stack.</p> <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p>",
@@ -204,12 +204,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeStackResource",
       "syncReturnType" : "DescribeStackResourceResult",
       "asyncReturnType" : "DescribeStackResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStackResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStackResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourceRequest, DescribeStackResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourceRequest, DescribeStackResourceResult>",
+      "methodName" : "describeStackResource"
     },
     "DescribeStackResources" : {
       "documentation" : "<p>Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p> <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/\">AWS CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</note>",
@@ -230,12 +230,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeStackResources",
       "syncReturnType" : "DescribeStackResourcesResult",
       "asyncReturnType" : "DescribeStackResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStackResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStackResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourcesRequest, DescribeStackResourcesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourcesRequest, DescribeStackResourcesResult>",
+      "methodName" : "describeStackResources"
     },
     "DescribeStacks" : {
       "documentation" : "<p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>",
@@ -256,12 +256,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeStacks",
       "syncReturnType" : "DescribeStacksResult",
       "asyncReturnType" : "DescribeStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStacksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult>",
+      "methodName" : "describeStacks"
     },
     "EstimateTemplateCost" : {
       "documentation" : "<p>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>",
@@ -282,12 +282,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "estimateTemplateCost",
       "syncReturnType" : "EstimateTemplateCostResult",
       "asyncReturnType" : "EstimateTemplateCostResult",
       "asyncFutureType" : "java.util.concurrent.Future<EstimateTemplateCostResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EstimateTemplateCostResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult>",
+      "methodName" : "estimateTemplateCost"
     },
     "GetStackPolicy" : {
       "documentation" : "<p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p>",
@@ -308,12 +308,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getStackPolicy",
       "syncReturnType" : "GetStackPolicyResult",
       "asyncReturnType" : "GetStackPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStackPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStackPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult>",
+      "methodName" : "getStackPolicy"
     },
     "GetTemplate" : {
       "documentation" : "<p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> If the template does not exist, a <code>ValidationError</code> is returned. </note>",
@@ -334,12 +334,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getTemplate",
       "syncReturnType" : "GetTemplateResult",
       "asyncReturnType" : "GetTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateRequest, GetTemplateResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateRequest, GetTemplateResult>",
+      "methodName" : "getTemplate"
     },
     "GetTemplateSummary" : {
       "documentation" : "<p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a running or deleted stack.</p> <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a <code>ValidationError</code> is returned.</p>",
@@ -360,12 +360,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getTemplateSummary",
       "syncReturnType" : "GetTemplateSummaryResult",
       "asyncReturnType" : "GetTemplateSummaryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTemplateSummaryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTemplateSummaryResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult>",
+      "methodName" : "getTemplateSummary"
     },
     "ListStackResources" : {
       "documentation" : "<p>Returns descriptions of all resources of the specified stack.</p> <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>",
@@ -386,12 +386,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listStackResources",
       "syncReturnType" : "ListStackResourcesResult",
       "asyncReturnType" : "ListStackResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStackResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStackResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult>",
+      "methodName" : "listStackResources"
     },
     "ListStacks" : {
       "documentation" : "<p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>",
@@ -412,12 +412,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listStacks",
       "syncReturnType" : "ListStacksResult",
       "asyncReturnType" : "ListStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStacksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult>",
+      "methodName" : "listStacks"
     },
     "SetStackPolicy" : {
       "documentation" : "<p>Sets a stack policy for a specified stack.</p>",
@@ -435,12 +435,12 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setStackPolicy",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void>",
+      "methodName" : "setStackPolicy"
     },
     "SignalResource" : {
       "documentation" : "<p>Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p>",
@@ -458,12 +458,12 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "signalResource",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void>",
+      "methodName" : "signalResource"
     },
     "UpdateStack" : {
       "documentation" : "<p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.</p> <p>For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html\">Updating a Stack</a>.</p>",
@@ -487,12 +487,12 @@
         "documentation" : "<p>The template contains resources with capabilities that were not specified in the Capabilities parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateStack",
       "syncReturnType" : "UpdateStackResult",
       "asyncReturnType" : "UpdateStackResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateStackResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateStackResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult>",
+      "methodName" : "updateStack"
     },
     "ValidateTemplate" : {
       "documentation" : "<p>Validates a specified template.</p>",
@@ -513,12 +513,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "validateTemplate",
       "syncReturnType" : "ValidateTemplateResult",
       "asyncReturnType" : "ValidateTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidateTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidateTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult>",
+      "methodName" : "validateTemplate"
     }
   },
   "shapes" : {

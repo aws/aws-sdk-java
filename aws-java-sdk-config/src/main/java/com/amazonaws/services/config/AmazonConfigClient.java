@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.services.config.model.transform.*;
@@ -77,6 +78,7 @@ import com.amazonaws.services.config.model.transform.*;
  * >What Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AmazonConfigClient extends AmazonWebServiceClient implements
         AmazonConfig {
     /** Provider for AWS credentials. */

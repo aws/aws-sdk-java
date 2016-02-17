@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.services.codecommit.model.transform.*;
@@ -59,6 +60,7 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * User Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         AWSCodeCommit {
     /** Provider for AWS credentials. */

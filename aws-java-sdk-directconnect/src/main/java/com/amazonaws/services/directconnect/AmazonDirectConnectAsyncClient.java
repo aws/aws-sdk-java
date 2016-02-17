@@ -16,6 +16,7 @@
 package com.amazonaws.services.directconnect;
 
 import com.amazonaws.services.directconnect.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Direct Connect asynchronously. Each asynchronous
@@ -52,6 +53,7 @@ import com.amazonaws.services.directconnect.model.*;
  * >Common Errors</a>: Client and server errors that all actions can return.</li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
         implements AmazonDirectConnectAsync {
 

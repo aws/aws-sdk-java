@@ -16,6 +16,7 @@
 package com.amazonaws.services.certificatemanager;
 
 import com.amazonaws.services.certificatemanager.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing ACM asynchronously. Each asynchronous method will
@@ -37,6 +38,7 @@ import com.amazonaws.services.certificatemanager.model.*;
  * Certificate Manager API Reference</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSCertificateManagerAsyncClient extends
         AWSCertificateManagerClient implements AWSCertificateManagerAsync {
 

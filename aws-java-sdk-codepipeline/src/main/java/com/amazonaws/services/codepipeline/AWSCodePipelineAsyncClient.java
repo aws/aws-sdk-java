@@ -16,6 +16,7 @@
 package com.amazonaws.services.codepipeline;
 
 import com.amazonaws.services.codepipeline.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CodePipeline asynchronously. Each asynchronous method
@@ -135,6 +136,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
         AWSCodePipelineAsync {
 

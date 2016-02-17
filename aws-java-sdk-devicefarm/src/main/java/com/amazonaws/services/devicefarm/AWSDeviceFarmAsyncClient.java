@@ -16,6 +16,7 @@
 package com.amazonaws.services.devicefarm;
 
 import com.amazonaws.services.devicefarm.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Device Farm asynchronously. Each asynchronous
@@ -29,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
  * in the cloud.
  * </p>
  */
+@ThreadSafe
 public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
         AWSDeviceFarmAsync {
 

@@ -106,6 +106,18 @@ public class InstanceGroupJsonUnmarshaller implements
                                     ConfigurationJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("EbsBlockDevices", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup
+                            .setEbsBlockDevices(new ListUnmarshaller<EbsBlockDevice>(
+                                    EbsBlockDeviceJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("EbsOptimized", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setEbsOptimized(BooleanJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

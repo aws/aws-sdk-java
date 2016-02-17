@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.services.kms.model.transform.*;
@@ -136,6 +137,7 @@ import com.amazonaws.services.kms.model.transform.*;
  * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
  * </ul>
  */
+@ThreadSafe
 public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;

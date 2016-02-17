@@ -16,6 +16,7 @@
 package com.amazonaws.services.cognitosync;
 
 import com.amazonaws.services.cognitosync.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Cognito Sync asynchronously. Each asynchronous
@@ -52,6 +53,7 @@ import com.amazonaws.services.cognitosync.model.*;
  * >Developer Guide for iOS</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
         implements AmazonCognitoSyncAsync {
 

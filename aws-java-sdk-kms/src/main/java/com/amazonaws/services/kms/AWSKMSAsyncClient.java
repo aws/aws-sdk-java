@@ -16,6 +16,7 @@
 package com.amazonaws.services.kms;
 
 import com.amazonaws.services.kms.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing KMS asynchronously. Each asynchronous method will
@@ -118,6 +119,7 @@ import com.amazonaws.services.kms.model.*;
  * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
  * </ul>
  */
+@ThreadSafe
 public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

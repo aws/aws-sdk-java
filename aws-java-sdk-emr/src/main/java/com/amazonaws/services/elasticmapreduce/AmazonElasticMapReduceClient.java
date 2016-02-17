@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.services.elasticmapreduce.model.transform.*;
@@ -49,6 +50,7 @@ import com.amazonaws.services.elasticmapreduce.model.transform.*;
  * warehousing.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         implements AmazonElasticMapReduce {
     /** Provider for AWS credentials. */

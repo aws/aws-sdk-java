@@ -16,6 +16,7 @@
 package com.amazonaws.services.codedeploy;
 
 import com.amazonaws.services.codedeploy.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CodeDeploy asynchronously. Each asynchronous method
@@ -106,6 +107,7 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
         implements AmazonCodeDeployAsync {
 

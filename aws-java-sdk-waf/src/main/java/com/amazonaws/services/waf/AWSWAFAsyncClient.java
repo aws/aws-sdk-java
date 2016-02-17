@@ -16,6 +16,7 @@
 package com.amazonaws.services.waf;
 
 import com.amazonaws.services.waf.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing WAF asynchronously. Each asynchronous method will
@@ -32,6 +33,7 @@ import com.amazonaws.services.waf.model.*;
  * Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

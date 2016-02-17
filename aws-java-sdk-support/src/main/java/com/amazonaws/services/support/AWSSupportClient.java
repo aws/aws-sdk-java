@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.services.support.model.transform.*;
@@ -103,6 +104,7 @@ import com.amazonaws.services.support.model.transform.*;
  * how to call Trusted Advisor for results of checks on your resources.
  * </p>
  */
+@ThreadSafe
 public class AWSSupportClient extends AmazonWebServiceClient implements
         AWSSupport {
     /** Provider for AWS credentials. */

@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticmapreduce;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon EMR asynchronously. Each asynchronous method
@@ -31,6 +32,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * warehousing.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticMapReduceAsyncClient extends
         AmazonElasticMapReduceClient implements AmazonElasticMapReduceAsync {
 

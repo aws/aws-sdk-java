@@ -16,6 +16,7 @@
 package com.amazonaws.services.directory;
 
 import com.amazonaws.services.directory.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Directory Service asynchronously. Each asynchronous
@@ -30,6 +31,7 @@ import com.amazonaws.services.directory.model.*;
  * parameters, and errors.
  * </p>
  */
+@ThreadSafe
 public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
         implements AWSDirectoryServiceAsync {
 

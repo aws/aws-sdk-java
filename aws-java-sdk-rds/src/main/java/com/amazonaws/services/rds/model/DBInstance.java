@@ -269,10 +269,9 @@ public class DBInstance implements Serializable, Cloneable {
     private String kmsKeyId;
 
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB instance. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     * accessed.
+     * The region-unique, immutable identifier for the DB instance. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB instance is accessed.
      */
     private String dbiResourceId;
 
@@ -2127,47 +2126,41 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB instance. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     * accessed.
+     * The region-unique, immutable identifier for the DB instance. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB instance is accessed.
      *
-     * @return If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     *         identifier for the encrypted DB instance. This identifier is found in
-     *         AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     *         accessed.
+     * @return The region-unique, immutable identifier for the DB instance. This
+     *         identifier is found in AWS CloudTrail log entries whenever the KMS key
+     *         for the DB instance is accessed.
      */
     public String getDbiResourceId() {
         return dbiResourceId;
     }
     
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB instance. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     * accessed.
+     * The region-unique, immutable identifier for the DB instance. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB instance is accessed.
      *
-     * @param dbiResourceId If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     *         identifier for the encrypted DB instance. This identifier is found in
-     *         AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     *         accessed.
+     * @param dbiResourceId The region-unique, immutable identifier for the DB instance. This
+     *         identifier is found in AWS CloudTrail log entries whenever the KMS key
+     *         for the DB instance is accessed.
      */
     public void setDbiResourceId(String dbiResourceId) {
         this.dbiResourceId = dbiResourceId;
     }
     
     /**
-     * If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     * identifier for the encrypted DB instance. This identifier is found in
-     * AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     * accessed.
+     * The region-unique, immutable identifier for the DB instance. This
+     * identifier is found in AWS CloudTrail log entries whenever the KMS key
+     * for the DB instance is accessed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dbiResourceId If <code>StorageEncrypted</code> is true, the region-unique, immutable
-     *         identifier for the encrypted DB instance. This identifier is found in
-     *         AWS CloudTrail log entries whenever the KMS key for the DB instance is
-     *         accessed.
+     * @param dbiResourceId The region-unique, immutable identifier for the DB instance. This
+     *         identifier is found in AWS CloudTrail log entries whenever the KMS key
+     *         for the DB instance is accessed.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

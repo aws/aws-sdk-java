@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.services.waf.model.transform.*;
@@ -50,6 +51,7 @@ import com.amazonaws.services.waf.model.transform.*;
  * Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;

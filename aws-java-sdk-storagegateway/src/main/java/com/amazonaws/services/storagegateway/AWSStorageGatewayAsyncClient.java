@@ -16,6 +16,7 @@
 package com.amazonaws.services.storagegateway;
 
 import com.amazonaws.services.storagegateway.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Storage Gateway asynchronously. Each asynchronous
@@ -59,6 +60,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * regions and endpoints available for use with AWS Storage Gateway.</li>
  * </ul>
  */
+@ThreadSafe
 public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         implements AWSStorageGatewayAsync {
 

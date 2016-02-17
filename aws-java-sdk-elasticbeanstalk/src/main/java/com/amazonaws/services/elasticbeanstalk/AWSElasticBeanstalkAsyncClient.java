@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticbeanstalk;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Elastic Beanstalk asynchronously. Each asynchronous
@@ -56,6 +57,7 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
+@ThreadSafe
 public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
         implements AWSElasticBeanstalkAsync {
 

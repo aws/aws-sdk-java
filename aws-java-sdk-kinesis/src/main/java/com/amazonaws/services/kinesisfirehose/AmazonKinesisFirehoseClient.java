@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.services.kinesisfirehose.model.transform.*;
@@ -47,6 +48,7 @@ import com.amazonaws.services.kinesisfirehose.model.transform.*;
  * streaming data to destinations such as Amazon S3 and Amazon Redshift.
  * </p>
  */
+@ThreadSafe
 public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
         implements AmazonKinesisFirehose {
     /** Provider for AWS credentials. */

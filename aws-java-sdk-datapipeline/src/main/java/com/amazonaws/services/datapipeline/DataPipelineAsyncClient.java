@@ -16,6 +16,7 @@
 package com.amazonaws.services.datapipeline;
 
 import com.amazonaws.services.datapipeline.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Data Pipeline asynchronously. Each asynchronous
@@ -50,6 +51,7 @@ import com.amazonaws.services.datapipeline.model.*;
  * task to the web service.
  * </p>
  */
+@ThreadSafe
 public class DataPipelineAsyncClient extends DataPipelineClient implements
         DataPipelineAsync {
 

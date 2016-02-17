@@ -86,6 +86,17 @@ public class InstanceJsonUnmarshaller implements
                     instance.setStatus(InstanceStatusJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InstanceGroupId", targetDepth)) {
+                    context.nextToken();
+                    instance.setInstanceGroupId(StringJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EbsVolumes", targetDepth)) {
+                    context.nextToken();
+                    instance.setEbsVolumes(new ListUnmarshaller<EbsVolume>(
+                            EbsVolumeJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

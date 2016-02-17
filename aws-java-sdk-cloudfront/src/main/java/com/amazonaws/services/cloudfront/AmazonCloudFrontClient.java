@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.services.cloudfront.model.transform.*;
@@ -43,6 +44,7 @@ import com.amazonaws.services.cloudfront.model.transform.*;
  * <p>
  * 
  */
+@ThreadSafe
 public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
         AmazonCloudFront {
     /** Provider for AWS credentials. */

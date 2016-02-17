@@ -16,6 +16,7 @@
 package com.amazonaws.services.logs;
 
 import com.amazonaws.services.logs.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon CloudWatch Logs asynchronously. Each
@@ -85,6 +86,7 @@ import com.amazonaws.services.logs.model.*;
  * Center</a></li>
  * </ul>
  */
+@ThreadSafe
 public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

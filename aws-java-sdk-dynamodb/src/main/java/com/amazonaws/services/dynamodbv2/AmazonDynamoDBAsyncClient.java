@@ -16,6 +16,7 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing DynamoDB asynchronously. Each asynchronous method
@@ -193,6 +194,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * >Query and Scan Operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
         AmazonDynamoDBAsync {
 

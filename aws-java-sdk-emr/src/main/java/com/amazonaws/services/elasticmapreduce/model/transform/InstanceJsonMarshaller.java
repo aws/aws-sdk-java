@@ -85,6 +85,26 @@ public class InstanceJsonMarshaller {
                         instance.getStatus(), jsonWriter);
             }
 
+            if (instance.getInstanceGroupId() != null) {
+                jsonWriter.key("InstanceGroupId").value(
+                        instance.getInstanceGroupId());
+            }
+
+            com.amazonaws.internal.SdkInternalList<EbsVolume> ebsVolumesList = (com.amazonaws.internal.SdkInternalList<EbsVolume>) instance
+                    .getEbsVolumes();
+            if (!ebsVolumesList.isEmpty() || !ebsVolumesList.isAutoConstruct()) {
+                jsonWriter.key("EbsVolumes");
+                jsonWriter.array();
+                for (EbsVolume ebsVolumesListValue : ebsVolumesList) {
+                    if (ebsVolumesListValue != null) {
+
+                        EbsVolumeJsonMarshaller.getInstance().marshall(
+                                ebsVolumesListValue, jsonWriter);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

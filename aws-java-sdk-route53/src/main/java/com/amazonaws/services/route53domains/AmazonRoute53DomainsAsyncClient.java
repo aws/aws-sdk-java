@@ -16,6 +16,7 @@
 package com.amazonaws.services.route53domains;
 
 import com.amazonaws.services.route53domains.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Route 53 Domains asynchronously. Each
@@ -23,6 +24,7 @@ import com.amazonaws.services.route53domains.model.*;
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
  * used to receive notification when an asynchronous operation completes.
  */
+@ThreadSafe
 public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
         implements AmazonRoute53DomainsAsync {
 

@@ -16,6 +16,7 @@
 package com.amazonaws.services.cognitoidentity;
 
 import com.amazonaws.services.cognitoidentity.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Cognito Identity asynchronously. Each
@@ -68,6 +69,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
  * Mobile SDK Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCognitoIdentityAsyncClient extends
         AmazonCognitoIdentityClient implements AmazonCognitoIdentityAsync {
 

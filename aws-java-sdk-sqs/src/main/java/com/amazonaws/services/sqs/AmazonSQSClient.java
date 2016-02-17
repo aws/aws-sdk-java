@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.services.sqs.model.transform.*;
@@ -90,6 +91,7 @@ import com.amazonaws.services.sqs.model.transform.*;
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonSQSClient extends AmazonWebServiceClient implements
         AmazonSQS {
     /** Provider for AWS credentials. */

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.services.cognitoidentity.model.transform.*;
@@ -87,6 +88,7 @@ import com.amazonaws.services.cognitoidentity.model.transform.*;
  * Mobile SDK Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
         implements AmazonCognitoIdentity {
     /** Provider for AWS credentials. */

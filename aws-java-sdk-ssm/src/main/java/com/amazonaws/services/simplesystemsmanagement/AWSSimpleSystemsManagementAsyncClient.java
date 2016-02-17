@@ -16,6 +16,7 @@
 package com.amazonaws.services.simplesystemsmanagement;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon SSM asynchronously. Each asynchronous method
@@ -214,6 +215,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * specific tasks and delegate access to non-administrators.</simpara>
  * </important>
  */
+@ThreadSafe
 public class AWSSimpleSystemsManagementAsyncClient extends
         AWSSimpleSystemsManagementClient implements
         AWSSimpleSystemsManagementAsync {

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.model.transform.*;
@@ -211,6 +212,7 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * >Query and Scan Operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         AmazonDynamoDB {
     // register the service specific set of predefined metrics

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.services.workspaces.model.transform.*;
@@ -48,6 +49,7 @@ import com.amazonaws.services.workspaces.model.transform.*;
  * parameters, and errors.
  * </p>
  */
+@ThreadSafe
 public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
         AmazonWorkspaces {
     /** Provider for AWS credentials. */

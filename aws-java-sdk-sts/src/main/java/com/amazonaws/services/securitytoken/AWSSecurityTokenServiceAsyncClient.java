@@ -16,6 +16,7 @@
 package com.amazonaws.services.securitytoken;
 
 import com.amazonaws.services.securitytoken.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS STS asynchronously. Each asynchronous method will
@@ -92,6 +93,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * >AWS CloudTrail User Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSSecurityTokenServiceAsyncClient extends
         AWSSecurityTokenServiceClient implements AWSSecurityTokenServiceAsync {
 

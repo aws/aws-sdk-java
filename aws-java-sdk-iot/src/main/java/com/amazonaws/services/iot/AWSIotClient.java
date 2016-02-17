@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.services.iot.model.transform.*;
@@ -57,6 +58,7 @@ import com.amazonaws.services.iot.model.transform.*;
  * >Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.services.ec2.model.transform.*;
@@ -49,6 +50,7 @@ import com.amazonaws.services.ec2.model.transform.*;
  * applications faster.
  * </p>
  */
+@ThreadSafe
 public class AmazonEC2Client extends AmazonWebServiceClient implements
         AmazonEC2 {
     /** Provider for AWS credentials. */

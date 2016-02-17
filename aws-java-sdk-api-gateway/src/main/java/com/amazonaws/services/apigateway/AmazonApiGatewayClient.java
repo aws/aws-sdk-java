@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.services.apigateway.model.transform.*;
@@ -50,6 +51,7 @@ import com.amazonaws.services.apigateway.model.transform.*;
  * outside of AWS.
  * </p>
  */
+@ThreadSafe
 public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         AmazonApiGateway {
     /** Provider for AWS credentials. */

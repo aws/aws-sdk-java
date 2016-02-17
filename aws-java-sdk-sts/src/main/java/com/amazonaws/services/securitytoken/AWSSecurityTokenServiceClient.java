@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.securitytoken.model.*;
 import com.amazonaws.services.securitytoken.model.transform.*;
@@ -110,6 +111,7 @@ import com.amazonaws.services.securitytoken.model.transform.*;
  * >AWS CloudTrail User Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
         implements AWSSecurityTokenService {
     /** Provider for AWS credentials. */

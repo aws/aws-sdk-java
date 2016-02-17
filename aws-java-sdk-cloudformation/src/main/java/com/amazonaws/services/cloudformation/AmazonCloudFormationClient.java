@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.services.cloudformation.model.transform.*;
@@ -68,6 +69,7 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * >http://docs.aws.amazon.com/documentation/</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudFormationClient extends AmazonWebServiceClient
         implements AmazonCloudFormation {
     /** Provider for AWS credentials. */

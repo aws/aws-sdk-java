@@ -16,6 +16,7 @@
 package com.amazonaws.services.iot;
 
 import com.amazonaws.services.iot.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS IoT asynchronously. Each asynchronous method will
@@ -39,6 +40,7 @@ import com.amazonaws.services.iot.model.*;
  * >Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.services.cloudtrail.model.transform.*;
@@ -67,6 +68,7 @@ import com.amazonaws.services.cloudtrail.model.transform.*;
  * with each AWS API call listed in the log files.
  * </p>
  */
+@ThreadSafe
 public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         AWSCloudTrail {
     /** Provider for AWS credentials. */

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.services.elasticbeanstalk.model.transform.*;
@@ -74,6 +75,7 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
+@ThreadSafe
 public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         AWSElasticBeanstalk {
     /** Provider for AWS credentials. */

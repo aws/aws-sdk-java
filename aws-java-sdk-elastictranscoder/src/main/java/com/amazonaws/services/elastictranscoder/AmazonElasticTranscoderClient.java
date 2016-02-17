@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.services.elastictranscoder.model.transform.*;
@@ -47,6 +48,7 @@ import com.amazonaws.services.elastictranscoder.model.transform.*;
  * The AWS Elastic Transcoder Service.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
         implements AmazonElasticTranscoder {
     /** Provider for AWS credentials. */

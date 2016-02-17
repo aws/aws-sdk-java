@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.services.opsworks.model.transform.*;
@@ -106,6 +107,7 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * recommend migrating your existing Linux stacks to Chef 12 as soon as
  * possible.</note>
  */
+@ThreadSafe
 public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         AWSOpsWorks {
     /** Provider for AWS credentials. */

@@ -16,6 +16,7 @@
 package com.amazonaws.services.workspaces;
 
 import com.amazonaws.services.workspaces.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon WorkSpaces asynchronously. Each asynchronous
@@ -30,6 +31,7 @@ import com.amazonaws.services.workspaces.model.*;
  * parameters, and errors.
  * </p>
  */
+@ThreadSafe
 public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient
         implements AmazonWorkspacesAsync {
 

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.services.route53domains.model.transform.*;
@@ -44,6 +45,7 @@ import com.amazonaws.services.route53domains.model.transform.*;
  * <p>
  * 
  */
+@ThreadSafe
 public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         implements AmazonRoute53Domains {
     /** Provider for AWS credentials. */

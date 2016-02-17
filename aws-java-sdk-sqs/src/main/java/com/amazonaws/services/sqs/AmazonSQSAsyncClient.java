@@ -16,6 +16,7 @@
 package com.amazonaws.services.sqs;
 
 import com.amazonaws.services.sqs.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon SQS asynchronously. Each asynchronous method
@@ -72,6 +73,7 @@ import com.amazonaws.services.sqs.model.*;
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonSQSAsyncClient extends AmazonSQSClient implements
         AmazonSQSAsync {
 

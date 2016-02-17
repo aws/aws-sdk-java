@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.model.transform.*;
@@ -99,6 +100,7 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         implements AmazonDynamoDBStreams {
     /** Provider for AWS credentials. */

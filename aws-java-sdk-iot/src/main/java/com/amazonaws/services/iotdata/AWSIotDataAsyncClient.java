@@ -16,6 +16,7 @@
 package com.amazonaws.services.iotdata;
 
 import com.amazonaws.services.iotdata.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS IoT Data Plane asynchronously. Each asynchronous
@@ -36,6 +37,7 @@ import com.amazonaws.services.iotdata.model.*;
  * things and their state in the AWS cloud.
  * </p>
  */
+@ThreadSafe
 public class AWSIotDataAsyncClient extends AWSIotDataClient implements
         AWSIotDataAsync {
 

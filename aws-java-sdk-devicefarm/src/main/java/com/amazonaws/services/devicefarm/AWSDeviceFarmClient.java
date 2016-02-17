@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.services.devicefarm.model.transform.*;
@@ -47,6 +48,7 @@ import com.amazonaws.services.devicefarm.model.transform.*;
  * in the cloud.
  * </p>
  */
+@ThreadSafe
 public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         AWSDeviceFarm {
     /** Provider for AWS credentials. */

@@ -75,6 +75,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
+    /**
+     * <p>
+     * EBS configurations that will be attached to each Amazon EC2 instance in
+     * the instance group.
+     * </p>
+     */
+    private EbsConfiguration ebsConfiguration;
 
     /**
      * Default constructor for InstanceGroupConfig object. Callers should use
@@ -540,6 +547,51 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * EBS configurations that will be attached to each Amazon EC2 instance in
+     * the instance group.
+     * </p>
+     * 
+     * @param ebsConfiguration
+     *        EBS configurations that will be attached to each Amazon EC2
+     *        instance in the instance group.
+     */
+    public void setEbsConfiguration(EbsConfiguration ebsConfiguration) {
+        this.ebsConfiguration = ebsConfiguration;
+    }
+
+    /**
+     * <p>
+     * EBS configurations that will be attached to each Amazon EC2 instance in
+     * the instance group.
+     * </p>
+     * 
+     * @return EBS configurations that will be attached to each Amazon EC2
+     *         instance in the instance group.
+     */
+    public EbsConfiguration getEbsConfiguration() {
+        return this.ebsConfiguration;
+    }
+
+    /**
+     * <p>
+     * EBS configurations that will be attached to each Amazon EC2 instance in
+     * the instance group.
+     * </p>
+     * 
+     * @param ebsConfiguration
+     *        EBS configurations that will be attached to each Amazon EC2
+     *        instance in the instance group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public InstanceGroupConfig withEbsConfiguration(
+            EbsConfiguration ebsConfiguration) {
+        setEbsConfiguration(ebsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -564,7 +616,9 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         if (getInstanceCount() != null)
             sb.append("InstanceCount: " + getInstanceCount() + ",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations());
+            sb.append("Configurations: " + getConfigurations() + ",");
+        if (getEbsConfiguration() != null)
+            sb.append("EbsConfiguration: " + getEbsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -615,6 +669,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         if (other.getConfigurations() != null
                 && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
+        if (other.getEbsConfiguration() == null
+                ^ this.getEbsConfiguration() == null)
+            return false;
+        if (other.getEbsConfiguration() != null
+                && other.getEbsConfiguration().equals(
+                        this.getEbsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -644,6 +705,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getConfigurations() == null) ? 0 : getConfigurations()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEbsConfiguration() == null) ? 0 : getEbsConfiguration()
                         .hashCode());
         return hashCode;
     }

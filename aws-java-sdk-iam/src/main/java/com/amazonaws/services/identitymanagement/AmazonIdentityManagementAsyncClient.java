@@ -16,6 +16,7 @@
 package com.amazonaws.services.identitymanagement;
 
 import com.amazonaws.services.identitymanagement.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing IAM asynchronously. Each asynchronous method will
@@ -91,6 +92,7 @@ import com.amazonaws.services.identitymanagement.model.*;
  * process of signing a request using an access key ID and secret access key.</li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonIdentityManagementAsyncClient extends
         AmazonIdentityManagementClient implements AmazonIdentityManagementAsync {
 

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
 import com.amazonaws.services.marketplacecommerceanalytics.model.transform.*;
@@ -44,6 +45,7 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.transform.*;
  * <p>
  * Provides AWS Marketplace business intelligence data on-demand.
  */
+@ThreadSafe
 public class AWSMarketplaceCommerceAnalyticsClient extends
         AmazonWebServiceClient implements AWSMarketplaceCommerceAnalytics {
     /** Provider for AWS credentials. */

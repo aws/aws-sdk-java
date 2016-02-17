@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticsearch;
 
 import com.amazonaws.services.elasticsearch.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Elasticsearch Service asynchronously. Each
@@ -36,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
  * target="_blank">Regions and Endpoints</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
         implements AWSElasticsearchAsync {
 

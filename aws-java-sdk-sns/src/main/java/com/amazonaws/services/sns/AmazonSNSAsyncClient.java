@@ -16,6 +16,7 @@
 package com.amazonaws.services.sns;
 
 import com.amazonaws.services.sns.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon SNS asynchronously. Each asynchronous method
@@ -44,6 +45,7 @@ import com.amazonaws.services.sns.model.*;
  * Services</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonSNSAsyncClient extends AmazonSNSClient implements
         AmazonSNSAsync {
 

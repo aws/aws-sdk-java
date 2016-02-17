@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.services.autoscaling.model.transform.*;
@@ -49,6 +50,7 @@ import com.amazonaws.services.autoscaling.model.transform.*;
  * services.
  * </p>
  */
+@ThreadSafe
 public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         AmazonAutoScaling {
     /** Provider for AWS credentials. */

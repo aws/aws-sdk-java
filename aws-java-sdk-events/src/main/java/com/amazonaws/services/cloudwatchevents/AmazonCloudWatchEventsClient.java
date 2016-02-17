@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.services.cloudwatchevents.model.transform.*;
@@ -65,6 +66,7 @@ import com.amazonaws.services.cloudwatchevents.model.transform.*;
  * CloudWatch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         implements AmazonCloudWatchEvents {
     /** Provider for AWS credentials. */

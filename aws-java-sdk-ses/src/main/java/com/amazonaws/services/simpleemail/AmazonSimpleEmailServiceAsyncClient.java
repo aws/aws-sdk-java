@@ -16,6 +16,7 @@
 package com.amazonaws.services.simpleemail;
 
 import com.amazonaws.services.simpleemail.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon SES asynchronously. Each asynchronous method
@@ -35,6 +36,7 @@ import com.amazonaws.services.simpleemail.model.*;
  * ="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
  * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
  */
+@ThreadSafe
 public class AmazonSimpleEmailServiceAsyncClient extends
         AmazonSimpleEmailServiceClient implements AmazonSimpleEmailServiceAsync {
 

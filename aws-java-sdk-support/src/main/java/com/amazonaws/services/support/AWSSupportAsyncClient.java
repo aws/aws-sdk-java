@@ -16,6 +16,7 @@
 package com.amazonaws.services.support;
 
 import com.amazonaws.services.support.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Support asynchronously. Each asynchronous method
@@ -85,6 +86,7 @@ import com.amazonaws.services.support.model.*;
  * how to call Trusted Advisor for results of checks on your resources.
  * </p>
  */
+@ThreadSafe
 public class AWSSupportAsyncClient extends AWSSupportClient implements
         AWSSupportAsync {
 

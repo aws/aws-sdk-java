@@ -16,6 +16,7 @@
 package com.amazonaws.services.importexport;
 
 import com.amazonaws.services.importexport.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Import/Export asynchronously. Each asynchronous
@@ -31,6 +32,7 @@ import com.amazonaws.services.importexport.model.*;
  * faster than Internet transfer and more cost effective than upgrading your
  * connectivity.
  */
+@ThreadSafe
 public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         implements AmazonImportExportAsync {
 

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.services.ecr.model.transform.*;
@@ -51,6 +52,7 @@ import com.amazonaws.services.ecr.model.transform.*;
  * manage images.
  * </p>
  */
+@ThreadSafe
 public class AmazonECRClient extends AmazonWebServiceClient implements
         AmazonECR {
     /** Provider for AWS credentials. */

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.services.identitymanagement.model.transform.*;
@@ -109,6 +110,7 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * process of signing a request using an access key ID and secret access key.</li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonIdentityManagementClient extends AmazonWebServiceClient
         implements AmazonIdentityManagement {
     /** Provider for AWS credentials. */

@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudwatch;
 
 import com.amazonaws.services.cloudwatch.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CloudWatch asynchronously. Each asynchronous method
@@ -44,6 +45,7 @@ import com.amazonaws.services.cloudwatch.model.*;
  * operational health.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         implements AmazonCloudWatchAsync {
 

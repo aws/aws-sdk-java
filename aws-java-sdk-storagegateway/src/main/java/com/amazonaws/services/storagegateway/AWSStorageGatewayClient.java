@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.services.storagegateway.model.transform.*;
@@ -77,6 +78,7 @@ import com.amazonaws.services.storagegateway.model.transform.*;
  * regions and endpoints available for use with AWS Storage Gateway.</li>
  * </ul>
  */
+@ThreadSafe
 public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         AWSStorageGateway {
     /** Provider for AWS credentials. */

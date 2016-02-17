@@ -16,6 +16,7 @@
 package com.amazonaws.services.codecommit;
 
 import com.amazonaws.services.codecommit.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CodeCommit asynchronously. Each asynchronous method
@@ -41,6 +42,7 @@ import com.amazonaws.services.codecommit.model.*;
  * User Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
         AWSCodeCommitAsync {
 

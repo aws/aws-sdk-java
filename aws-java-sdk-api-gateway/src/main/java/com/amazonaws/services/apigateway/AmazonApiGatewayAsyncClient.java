@@ -16,6 +16,7 @@
 package com.amazonaws.services.apigateway;
 
 import com.amazonaws.services.apigateway.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon API Gateway asynchronously. Each asynchronous
@@ -32,6 +33,7 @@ import com.amazonaws.services.apigateway.model.*;
  * outside of AWS.
  * </p>
  */
+@ThreadSafe
 public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
         implements AmazonApiGatewayAsync {
 

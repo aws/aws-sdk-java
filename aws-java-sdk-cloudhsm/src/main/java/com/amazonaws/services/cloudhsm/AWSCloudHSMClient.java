@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.services.cloudhsm.model.transform.*;
@@ -43,6 +44,7 @@ import com.amazonaws.services.cloudhsm.model.transform.*;
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
  */
+@ThreadSafe
 public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         AWSCloudHSM {
     /** Provider for AWS credentials. */

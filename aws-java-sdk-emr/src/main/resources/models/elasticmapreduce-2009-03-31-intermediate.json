@@ -48,12 +48,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addInstanceGroups",
       "syncReturnType" : "AddInstanceGroupsResult",
       "asyncReturnType" : "AddInstanceGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddInstanceGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddInstanceGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddInstanceGroupsRequest, AddInstanceGroupsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddInstanceGroupsRequest, AddInstanceGroupsResult>",
+      "methodName" : "addInstanceGroups"
     },
     "AddJobFlowSteps" : {
       "documentation" : "<p> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </p> <p>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html\">Add More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.</p> <p> A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </p> <p> Elastic MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully. </p> <p> You can only add steps to a job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p>",
@@ -77,12 +77,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addJobFlowSteps",
       "syncReturnType" : "AddJobFlowStepsResult",
       "asyncReturnType" : "AddJobFlowStepsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddJobFlowStepsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddJobFlowStepsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddJobFlowStepsRequest, AddJobFlowStepsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddJobFlowStepsRequest, AddJobFlowStepsResult>",
+      "methodName" : "addJobFlowSteps"
     },
     "AddTags" : {
       "documentation" : "<p>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html\">Tagging Amazon EMR Resources</a>. </p>",
@@ -109,12 +109,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addTags",
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
+      "methodName" : "addTags"
     },
     "DescribeCluster" : {
       "documentation" : "<p>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.</p>",
@@ -141,12 +141,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeCluster",
       "syncReturnType" : "DescribeClusterResult",
       "asyncReturnType" : "DescribeClusterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeClusterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeClusterResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult>",
+      "methodName" : "describeCluster"
     },
     "DescribeJobFlows" : {
       "documentation" : "<p> This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.</p> <p> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.</p> <p> Regardless of supplied parameters, only job flows created within the last two months are returned.</p> <p> If no parameters are supplied, then job flows matching either of the following criteria are returned:</p> <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul> <p> Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. </p>",
@@ -170,12 +170,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeJobFlows",
       "syncReturnType" : "DescribeJobFlowsResult",
       "asyncReturnType" : "DescribeJobFlowsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeJobFlowsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeJobFlowsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult>",
+      "methodName" : "describeJobFlows"
     },
     "DescribeStep" : {
       "documentation" : "<p>Provides more detail about the cluster step.</p>",
@@ -202,12 +202,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeStep",
       "syncReturnType" : "DescribeStepResult",
       "asyncReturnType" : "DescribeStepResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStepResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStepResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStepRequest, DescribeStepResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStepRequest, DescribeStepResult>",
+      "methodName" : "describeStep"
     },
     "ListBootstrapActions" : {
       "documentation" : "<p>Provides information about the bootstrap actions associated with a cluster.</p>",
@@ -234,12 +234,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listBootstrapActions",
       "syncReturnType" : "ListBootstrapActionsResult",
       "asyncReturnType" : "ListBootstrapActionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListBootstrapActionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListBootstrapActionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListBootstrapActionsRequest, ListBootstrapActionsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListBootstrapActionsRequest, ListBootstrapActionsResult>",
+      "methodName" : "listBootstrapActions"
     },
     "ListClusters" : {
       "documentation" : "<p>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls. </p>",
@@ -266,12 +266,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listClusters",
       "syncReturnType" : "ListClustersResult",
       "asyncReturnType" : "ListClustersResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListClustersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListClustersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult>",
+      "methodName" : "listClusters"
     },
     "ListInstanceGroups" : {
       "documentation" : "<p>Provides all available details about the instance groups in a cluster.</p>",
@@ -298,12 +298,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listInstanceGroups",
       "syncReturnType" : "ListInstanceGroupsResult",
       "asyncReturnType" : "ListInstanceGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListInstanceGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListInstanceGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInstanceGroupsRequest, ListInstanceGroupsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInstanceGroupsRequest, ListInstanceGroupsResult>",
+      "methodName" : "listInstanceGroups"
     },
     "ListInstances" : {
       "documentation" : "<p>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for jobs, and the IP addresses for cluster instances, etc. </p>",
@@ -330,12 +330,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listInstances",
       "syncReturnType" : "ListInstancesResult",
       "asyncReturnType" : "ListInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListInstancesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult>",
+      "methodName" : "listInstances"
     },
     "ListSteps" : {
       "documentation" : "<p>Provides a list of steps for the cluster. </p>",
@@ -362,12 +362,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listSteps",
       "syncReturnType" : "ListStepsResult",
       "asyncReturnType" : "ListStepsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStepsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStepsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStepsRequest, ListStepsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStepsRequest, ListStepsResult>",
+      "methodName" : "listSteps"
     },
     "ModifyInstanceGroups" : {
       "documentation" : "<p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>",
@@ -388,12 +388,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "modifyInstanceGroups",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, Void>",
+      "methodName" : "modifyInstanceGroups"
     },
     "RemoveTags" : {
       "documentation" : "<p>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html\">Tagging Amazon EMR Resources</a>. </p> <p>The following example removes the stack tag with value Prod from a cluster:</p>",
@@ -420,12 +420,12 @@
         "documentation" : "<p>This exception occurs when there is something wrong with user input.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "removeTags",
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
+      "methodName" : "removeTags"
     },
     "RunJobFlow" : {
       "documentation" : "<p> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING state rather than shutting down once the steps have completed. </p> <p>For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p> <p>A maximum of 256 steps are allowed in each job flow.</p> <p>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html\">Add More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.</p> <p>For long running job flows, we recommend that you periodically store your results.</p>",
@@ -449,12 +449,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "runJobFlow",
       "syncReturnType" : "RunJobFlowResult",
       "asyncReturnType" : "RunJobFlowResult",
       "asyncFutureType" : "java.util.concurrent.Future<RunJobFlowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RunJobFlowResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RunJobFlowRequest, RunJobFlowResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RunJobFlowRequest, RunJobFlowResult>",
+      "methodName" : "runJobFlow"
     },
     "SetTerminationProtection" : {
       "documentation" : "<p> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a cluster.</p> <p> SetTerminationProtection is used to prevent accidental termination of a job flow and to ensure that in the event of an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</p> <p> To terminate a job flow that has been locked by setting SetTerminationProtection to <code>true</code>, you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <code>false</code>. </p> <p> For more information, go to <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html\">Protecting a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i></p>",
@@ -475,12 +475,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setTerminationProtection",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, Void>",
+      "methodName" : "setTerminationProtection"
     },
     "SetVisibleToAllUsers" : {
       "documentation" : "<p>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action works on running job flows. You can also set the visibility of a job flow when you launch it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job flow.</p>",
@@ -501,12 +501,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setVisibleToAllUsers",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, Void>",
+      "methodName" : "setVisibleToAllUsers"
     },
     "TerminateJobFlows" : {
       "documentation" : "<p> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the job flow was created. </p> <p> The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow, it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances. </p>",
@@ -527,12 +527,12 @@
         "documentation" : "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "terminateJobFlows",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, Void>",
+      "methodName" : "terminateJobFlows"
     }
   },
   "shapes" : {
@@ -928,6 +928,247 @@
           "getterDocumentation" : "/**<p>Instance groups to change.</p>\n@return Instance groups to change.*/",
           "fluentSetterDocumentation" : "/**<p>Instance groups to change.</p>\n@param instanceGroups Instance groups to change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Instance groups to change.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInstanceGroups(java.util.Collection)} or {@link #withInstanceGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param instanceGroups Instance groups to change.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "EbsBlockDeviceConfig" : {
+      "c2jName" : "EbsBlockDeviceConfig",
+      "documentation" : "<p>Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.</p>",
+      "shapeName" : "EbsBlockDeviceConfig",
+      "deprecated" : false,
+      "required" : [ "VolumeSpecification" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+        "name" : "VolumeSpecification",
+        "c2jName" : "VolumeSpecification",
+        "c2jShape" : "VolumeSpecification",
+        "variable" : {
+          "variableName" : "volumeSpecification",
+          "variableType" : "VolumeSpecification",
+          "variableDeclarationType" : "VolumeSpecification",
+          "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+          "simpleType" : "VolumeSpecification",
+          "variableSetterType" : "VolumeSpecification"
+        },
+        "setterModel" : {
+          "variableName" : "volumeSpecification",
+          "variableType" : "VolumeSpecification",
+          "variableDeclarationType" : "VolumeSpecification",
+          "documentation" : "",
+          "simpleType" : "VolumeSpecification",
+          "variableSetterType" : "VolumeSpecification"
+        },
+        "getterModel" : {
+          "returnType" : "VolumeSpecification",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "VolumeSpecification",
+          "marshallLocationName" : "VolumeSpecification",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+        "getterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@return EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+        "fluentSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>",
+        "name" : "VolumesPerInstance",
+        "c2jName" : "VolumesPerInstance",
+        "c2jShape" : "Integer",
+        "variable" : {
+          "variableName" : "volumesPerInstance",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "setterModel" : {
+          "variableName" : "volumesPerInstance",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "VolumesPerInstance",
+          "marshallLocationName" : "VolumesPerInstance",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@param volumesPerInstance Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group*/",
+        "getterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@return Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group*/",
+        "fluentSetterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@param volumesPerInstance Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@param volumesPerInstance Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "ebsBlockDeviceConfig",
+        "variableType" : "EbsBlockDeviceConfig",
+        "variableDeclarationType" : "EbsBlockDeviceConfig",
+        "documentation" : null,
+        "simpleType" : "EbsBlockDeviceConfig",
+        "variableSetterType" : "EbsBlockDeviceConfig"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "VolumeSpecification" : {
+          "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+          "name" : "VolumeSpecification",
+          "c2jName" : "VolumeSpecification",
+          "c2jShape" : "VolumeSpecification",
+          "variable" : {
+            "variableName" : "volumeSpecification",
+            "variableType" : "VolumeSpecification",
+            "variableDeclarationType" : "VolumeSpecification",
+            "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+            "simpleType" : "VolumeSpecification",
+            "variableSetterType" : "VolumeSpecification"
+          },
+          "setterModel" : {
+            "variableName" : "volumeSpecification",
+            "variableType" : "VolumeSpecification",
+            "variableDeclarationType" : "VolumeSpecification",
+            "documentation" : "",
+            "simpleType" : "VolumeSpecification",
+            "variableSetterType" : "VolumeSpecification"
+          },
+          "getterModel" : {
+            "returnType" : "VolumeSpecification",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "VolumeSpecification",
+            "marshallLocationName" : "VolumeSpecification",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+          "getterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@return EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+          "fluentSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "VolumesPerInstance" : {
+          "documentation" : "<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>",
+          "name" : "VolumesPerInstance",
+          "c2jName" : "VolumesPerInstance",
+          "c2jShape" : "Integer",
+          "variable" : {
+            "variableName" : "volumesPerInstance",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "setterModel" : {
+            "variableName" : "volumesPerInstance",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "VolumesPerInstance",
+            "marshallLocationName" : "VolumesPerInstance",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@param volumesPerInstance Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group*/",
+          "getterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@return Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group*/",
+          "fluentSetterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@param volumesPerInstance Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group </p>\n@param volumesPerInstance Number of EBS volumes with specific volume configuration, that will be associated with every instance in the instance group\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7965,6 +8206,247 @@
       },
       "membersAsMap" : { }
     },
+    "EbsVolume" : {
+      "c2jName" : "EbsVolume",
+      "documentation" : "<p>EBS block device that's attached to an EC2 instance.</p>",
+      "shapeName" : "EbsVolume",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+        "name" : "Device",
+        "c2jName" : "Device",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "device",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "device",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Device",
+          "marshallLocationName" : "Device",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.*/",
+        "getterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@return The device name that is exposed to the instance, such as /dev/sdh.*/",
+        "fluentSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The volume identifier of the EBS volume.</p>",
+        "name" : "VolumeId",
+        "c2jName" : "VolumeId",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "volumeId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The volume identifier of the EBS volume.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "volumeId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "VolumeId",
+          "marshallLocationName" : "VolumeId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@param volumeId The volume identifier of the EBS volume.*/",
+        "getterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@return The volume identifier of the EBS volume.*/",
+        "fluentSetterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@param volumeId The volume identifier of the EBS volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@param volumeId The volume identifier of the EBS volume.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "ebsVolume",
+        "variableType" : "EbsVolume",
+        "variableDeclarationType" : "EbsVolume",
+        "documentation" : null,
+        "simpleType" : "EbsVolume",
+        "variableSetterType" : "EbsVolume"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Device" : {
+          "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+          "name" : "Device",
+          "c2jName" : "Device",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "device",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "device",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Device",
+            "marshallLocationName" : "Device",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.*/",
+          "getterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@return The device name that is exposed to the instance, such as /dev/sdh.*/",
+          "fluentSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "VolumeId" : {
+          "documentation" : "<p>The volume identifier of the EBS volume.</p>",
+          "name" : "VolumeId",
+          "c2jName" : "VolumeId",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "volumeId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The volume identifier of the EBS volume.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "volumeId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "VolumeId",
+            "marshallLocationName" : "VolumeId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@param volumeId The volume identifier of the EBS volume.*/",
+          "getterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@return The volume identifier of the EBS volume.*/",
+          "fluentSetterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@param volumeId The volume identifier of the EBS volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The volume identifier of the EBS volume.</p>\n@param volumeId The volume identifier of the EBS volume.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "InstanceTimeline" : {
       "c2jName" : "InstanceTimeline",
       "documentation" : "<p>The timeline of the instance lifecycle.</p>",
@@ -8306,6 +8788,350 @@
           "getterDocumentation" : "/**<p>The date and time when the instance was terminated.</p>\n@return The date and time when the instance was terminated.*/",
           "fluentSetterDocumentation" : "/**<p>The date and time when the instance was terminated.</p>\n@param endDateTime The date and time when the instance was terminated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The date and time when the instance was terminated.</p>\n@param endDateTime The date and time when the instance was terminated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "VolumeSpecification" : {
+      "c2jName" : "VolumeSpecification",
+      "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster. </p>",
+      "shapeName" : "VolumeSpecification",
+      "deprecated" : false,
+      "required" : [ "VolumeType", "SizeInGB" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The volume type. Volume types supported are gp2, io1, standard. </p>",
+        "name" : "VolumeType",
+        "c2jName" : "VolumeType",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "volumeType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The volume type. Volume types supported are gp2, io1, standard. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "volumeType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "VolumeType",
+          "marshallLocationName" : "VolumeType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@param volumeType The volume type. Volume types supported are gp2, io1, standard.*/",
+        "getterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@return The volume type. Volume types supported are gp2, io1, standard.*/",
+        "fluentSetterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@param volumeType The volume type. Volume types supported are gp2, io1, standard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@param volumeType The volume type. Volume types supported are gp2, io1, standard.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The number of I/O operations per second (IOPS) that the volume supports. </p>",
+        "name" : "Iops",
+        "c2jName" : "Iops",
+        "c2jShape" : "Integer",
+        "variable" : {
+          "variableName" : "iops",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "<p>The number of I/O operations per second (IOPS) that the volume supports. </p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "setterModel" : {
+          "variableName" : "iops",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Iops",
+          "marshallLocationName" : "Iops",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@param iops The number of I/O operations per second (IOPS) that the volume supports.*/",
+        "getterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@return The number of I/O operations per second (IOPS) that the volume supports.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@param iops The number of I/O operations per second (IOPS) that the volume supports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@param iops The number of I/O operations per second (IOPS) that the volume supports.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>",
+        "name" : "SizeInGB",
+        "c2jName" : "SizeInGB",
+        "c2jShape" : "Integer",
+        "variable" : {
+          "variableName" : "sizeInGB",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "setterModel" : {
+          "variableName" : "sizeInGB",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "SizeInGB",
+          "marshallLocationName" : "SizeInGB",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@param sizeInGB The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.*/",
+        "getterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@return The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.*/",
+        "fluentSetterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@param sizeInGB The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@param sizeInGB The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "volumeSpecification",
+        "variableType" : "VolumeSpecification",
+        "variableDeclarationType" : "VolumeSpecification",
+        "documentation" : null,
+        "simpleType" : "VolumeSpecification",
+        "variableSetterType" : "VolumeSpecification"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "SizeInGB" : {
+          "documentation" : "<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>",
+          "name" : "SizeInGB",
+          "c2jName" : "SizeInGB",
+          "c2jShape" : "Integer",
+          "variable" : {
+            "variableName" : "sizeInGB",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "setterModel" : {
+            "variableName" : "sizeInGB",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "SizeInGB",
+            "marshallLocationName" : "SizeInGB",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@param sizeInGB The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.*/",
+          "getterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@return The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.*/",
+          "fluentSetterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@param sizeInGB The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10. </p>\n@param sizeInGB The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume type is EBS-optimized, the minimum value is 10.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "VolumeType" : {
+          "documentation" : "<p>The volume type. Volume types supported are gp2, io1, standard. </p>",
+          "name" : "VolumeType",
+          "c2jName" : "VolumeType",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "volumeType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The volume type. Volume types supported are gp2, io1, standard. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "volumeType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "VolumeType",
+            "marshallLocationName" : "VolumeType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@param volumeType The volume type. Volume types supported are gp2, io1, standard.*/",
+          "getterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@return The volume type. Volume types supported are gp2, io1, standard.*/",
+          "fluentSetterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@param volumeType The volume type. Volume types supported are gp2, io1, standard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The volume type. Volume types supported are gp2, io1, standard. </p>\n@param volumeType The volume type. Volume types supported are gp2, io1, standard.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Iops" : {
+          "documentation" : "<p>The number of I/O operations per second (IOPS) that the volume supports. </p>",
+          "name" : "Iops",
+          "c2jName" : "Iops",
+          "c2jShape" : "Integer",
+          "variable" : {
+            "variableName" : "iops",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "<p>The number of I/O operations per second (IOPS) that the volume supports. </p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "setterModel" : {
+            "variableName" : "iops",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Iops",
+            "marshallLocationName" : "Iops",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@param iops The number of I/O operations per second (IOPS) that the volume supports.*/",
+          "getterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@return The number of I/O operations per second (IOPS) that the volume supports.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@param iops The number of I/O operations per second (IOPS) that the volume supports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of I/O operations per second (IOPS) that the volume supports. </p>\n@param iops The number of I/O operations per second (IOPS) that the volume supports.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -14062,11 +14888,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "keySimple" : true,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -14268,11 +15094,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "keySimple" : true,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -14736,6 +15562,247 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
+    },
+    "EbsBlockDevice" : {
+      "c2jName" : "EbsBlockDevice",
+      "documentation" : "<p>Configuration of requested EBS block device associated with the instance group.</p>",
+      "shapeName" : "EbsBlockDevice",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+        "name" : "VolumeSpecification",
+        "c2jName" : "VolumeSpecification",
+        "c2jShape" : "VolumeSpecification",
+        "variable" : {
+          "variableName" : "volumeSpecification",
+          "variableType" : "VolumeSpecification",
+          "variableDeclarationType" : "VolumeSpecification",
+          "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+          "simpleType" : "VolumeSpecification",
+          "variableSetterType" : "VolumeSpecification"
+        },
+        "setterModel" : {
+          "variableName" : "volumeSpecification",
+          "variableType" : "VolumeSpecification",
+          "variableDeclarationType" : "VolumeSpecification",
+          "documentation" : "",
+          "simpleType" : "VolumeSpecification",
+          "variableSetterType" : "VolumeSpecification"
+        },
+        "getterModel" : {
+          "returnType" : "VolumeSpecification",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "VolumeSpecification",
+          "marshallLocationName" : "VolumeSpecification",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+        "getterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@return EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+        "fluentSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+        "name" : "Device",
+        "c2jName" : "Device",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "device",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "device",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Device",
+          "marshallLocationName" : "Device",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.*/",
+        "getterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@return The device name that is exposed to the instance, such as /dev/sdh.*/",
+        "fluentSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "ebsBlockDevice",
+        "variableType" : "EbsBlockDevice",
+        "variableDeclarationType" : "EbsBlockDevice",
+        "documentation" : null,
+        "simpleType" : "EbsBlockDevice",
+        "variableSetterType" : "EbsBlockDevice"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "VolumeSpecification" : {
+          "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+          "name" : "VolumeSpecification",
+          "c2jName" : "VolumeSpecification",
+          "c2jShape" : "VolumeSpecification",
+          "variable" : {
+            "variableName" : "volumeSpecification",
+            "variableType" : "VolumeSpecification",
+            "variableDeclarationType" : "VolumeSpecification",
+            "documentation" : "<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>",
+            "simpleType" : "VolumeSpecification",
+            "variableSetterType" : "VolumeSpecification"
+          },
+          "setterModel" : {
+            "variableName" : "volumeSpecification",
+            "variableType" : "VolumeSpecification",
+            "variableDeclarationType" : "VolumeSpecification",
+            "documentation" : "",
+            "simpleType" : "VolumeSpecification",
+            "variableSetterType" : "VolumeSpecification"
+          },
+          "getterModel" : {
+            "returnType" : "VolumeSpecification",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "VolumeSpecification",
+            "marshallLocationName" : "VolumeSpecification",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+          "getterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@return EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.*/",
+          "fluentSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>\n@param volumeSpecification EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Device" : {
+          "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+          "name" : "Device",
+          "c2jName" : "Device",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "device",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The device name that is exposed to the instance, such as /dev/sdh.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "device",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Device",
+            "marshallLocationName" : "Device",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.*/",
+          "getterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@return The device name that is exposed to the instance, such as /dev/sdh.*/",
+          "fluentSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The device name that is exposed to the instance, such as /dev/sdh.</p>\n@param device The device name that is exposed to the instance, such as /dev/sdh.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
     },
     "Ec2InstanceAttributes" : {
       "c2jName" : "Ec2InstanceAttributes",
@@ -20440,6 +21507,173 @@
         "getterDocumentation" : "/**<p>The current status of the instance.</p>\n@return The current status of the instance.*/",
         "fluentSetterDocumentation" : "/**<p>The current status of the instance.</p>\n@param status The current status of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The current status of the instance.</p>\n@param status The current status of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The identifier of the instance group to which this instance belongs.</p>",
+        "name" : "InstanceGroupId",
+        "c2jName" : "InstanceGroupId",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "instanceGroupId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The identifier of the instance group to which this instance belongs.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "instanceGroupId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "InstanceGroupId",
+          "marshallLocationName" : "InstanceGroupId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@param instanceGroupId The identifier of the instance group to which this instance belongs.*/",
+        "getterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@return The identifier of the instance group to which this instance belongs.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@param instanceGroupId The identifier of the instance group to which this instance belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@param instanceGroupId The identifier of the instance group to which this instance belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The list of EBS volumes that are attached to this instance.</p>",
+        "name" : "EbsVolumes",
+        "c2jName" : "EbsVolumes",
+        "c2jShape" : "EbsVolumeList",
+        "variable" : {
+          "variableName" : "ebsVolumes",
+          "variableType" : "java.util.List<EbsVolume>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsVolume>",
+          "documentation" : "<p>The list of EBS volumes that are attached to this instance.</p>",
+          "simpleType" : "List<EbsVolume>",
+          "variableSetterType" : "java.util.Collection<EbsVolume>"
+        },
+        "setterModel" : {
+          "variableName" : "ebsVolumes",
+          "variableType" : "java.util.List<EbsVolume>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsVolume>",
+          "documentation" : "",
+          "simpleType" : "List<EbsVolume>",
+          "variableSetterType" : "java.util.Collection<EbsVolume>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<EbsVolume>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EbsVolumes",
+          "marshallLocationName" : "EbsVolumes",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "EbsVolume",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "EbsVolume",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "EbsVolume",
+              "variableDeclarationType" : "EbsVolume",
+              "documentation" : "",
+              "simpleType" : "EbsVolume",
+              "variableSetterType" : "EbsVolume"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "EbsVolume",
+              "variableDeclarationType" : "EbsVolume",
+              "documentation" : "",
+              "simpleType" : "EbsVolume",
+              "variableSetterType" : "EbsVolume"
+            },
+            "getterModel" : {
+              "returnType" : "EbsVolume",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simpleType" : "EbsVolume",
+          "simple" : false,
+          "map" : false,
+          "templateType" : "java.util.List<EbsVolume>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EbsVolume>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n@param ebsVolumes The list of EBS volumes that are attached to this instance.*/",
+        "getterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n@return The list of EBS volumes that are attached to this instance.*/",
+        "fluentSetterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n@param ebsVolumes The list of EBS volumes that are attached to this instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEbsVolumes(java.util.Collection)} or {@link #withEbsVolumes(java.util.Collection)} if you want to override the existing values.</p>\n@param ebsVolumes The list of EBS volumes that are attached to this instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -20514,6 +21748,123 @@
           "getterDocumentation" : "/**<p>The current status of the instance.</p>\n@return The current status of the instance.*/",
           "fluentSetterDocumentation" : "/**<p>The current status of the instance.</p>\n@param status The current status of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The current status of the instance.</p>\n@param status The current status of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "EbsVolumes" : {
+          "documentation" : "<p>The list of EBS volumes that are attached to this instance.</p>",
+          "name" : "EbsVolumes",
+          "c2jName" : "EbsVolumes",
+          "c2jShape" : "EbsVolumeList",
+          "variable" : {
+            "variableName" : "ebsVolumes",
+            "variableType" : "java.util.List<EbsVolume>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsVolume>",
+            "documentation" : "<p>The list of EBS volumes that are attached to this instance.</p>",
+            "simpleType" : "List<EbsVolume>",
+            "variableSetterType" : "java.util.Collection<EbsVolume>"
+          },
+          "setterModel" : {
+            "variableName" : "ebsVolumes",
+            "variableType" : "java.util.List<EbsVolume>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsVolume>",
+            "documentation" : "",
+            "simpleType" : "List<EbsVolume>",
+            "variableSetterType" : "java.util.Collection<EbsVolume>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<EbsVolume>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EbsVolumes",
+            "marshallLocationName" : "EbsVolumes",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "EbsVolume",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "EbsVolume",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "EbsVolume",
+                "variableDeclarationType" : "EbsVolume",
+                "documentation" : "",
+                "simpleType" : "EbsVolume",
+                "variableSetterType" : "EbsVolume"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "EbsVolume",
+                "variableDeclarationType" : "EbsVolume",
+                "documentation" : "",
+                "simpleType" : "EbsVolume",
+                "variableSetterType" : "EbsVolume"
+              },
+              "getterModel" : {
+                "returnType" : "EbsVolume",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simpleType" : "EbsVolume",
+            "simple" : false,
+            "map" : false,
+            "templateType" : "java.util.List<EbsVolume>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EbsVolume>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n@param ebsVolumes The list of EBS volumes that are attached to this instance.*/",
+          "getterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n@return The list of EBS volumes that are attached to this instance.*/",
+          "fluentSetterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n@param ebsVolumes The list of EBS volumes that are attached to this instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The list of EBS volumes that are attached to this instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEbsVolumes(java.util.Collection)} or {@link #withEbsVolumes(java.util.Collection)} if you want to override the existing values.</p>\n@param ebsVolumes The list of EBS volumes that are attached to this instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "PrivateDnsName" : {
           "documentation" : "<p>The private DNS name of the instance.</p>",
@@ -20774,6 +22125,58 @@
           "getterDocumentation" : "/**<p>The public DNS name of the instance.</p>\n@return The public DNS name of the instance.*/",
           "fluentSetterDocumentation" : "/**<p>The public DNS name of the instance.</p>\n@param publicDnsName The public DNS name of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The public DNS name of the instance.</p>\n@param publicDnsName The public DNS name of the instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "InstanceGroupId" : {
+          "documentation" : "<p>The identifier of the instance group to which this instance belongs.</p>",
+          "name" : "InstanceGroupId",
+          "c2jName" : "InstanceGroupId",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "instanceGroupId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The identifier of the instance group to which this instance belongs.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "instanceGroupId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "InstanceGroupId",
+            "marshallLocationName" : "InstanceGroupId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@param instanceGroupId The identifier of the instance group to which this instance belongs.*/",
+          "getterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@return The identifier of the instance group to which this instance belongs.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@param instanceGroupId The identifier of the instance group to which this instance belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier of the instance group to which this instance belongs.</p>\n@param instanceGroupId The identifier of the instance group to which this instance belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Ec2InstanceId" : {
           "documentation" : "<p>The unique identifier of the instance in Amazon EC2.</p>",
@@ -22725,6 +24128,377 @@
           "getterDocumentation" : "/**<p>The list of user-supplied arguments.</p>\n@return The list of user-supplied arguments.*/",
           "fluentSetterDocumentation" : "/**<p>The list of user-supplied arguments.</p>\n@param args The list of user-supplied arguments.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The list of user-supplied arguments.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArgs(java.util.Collection)} or {@link #withArgs(java.util.Collection)} if you want to override the existing values.</p>\n@param args The list of user-supplied arguments.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "EbsConfiguration" : {
+      "c2jName" : "EbsConfiguration",
+      "documentation" : "",
+      "shapeName" : "EbsConfiguration",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "EbsBlockDeviceConfigs",
+        "c2jName" : "EbsBlockDeviceConfigs",
+        "c2jShape" : "EbsBlockDeviceConfigList",
+        "variable" : {
+          "variableName" : "ebsBlockDeviceConfigs",
+          "variableType" : "java.util.List<EbsBlockDeviceConfig>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>",
+          "documentation" : "",
+          "simpleType" : "List<EbsBlockDeviceConfig>",
+          "variableSetterType" : "java.util.Collection<EbsBlockDeviceConfig>"
+        },
+        "setterModel" : {
+          "variableName" : "ebsBlockDeviceConfigs",
+          "variableType" : "java.util.List<EbsBlockDeviceConfig>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>",
+          "documentation" : "",
+          "simpleType" : "List<EbsBlockDeviceConfig>",
+          "variableSetterType" : "java.util.Collection<EbsBlockDeviceConfig>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<EbsBlockDeviceConfig>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EbsBlockDeviceConfigs",
+          "marshallLocationName" : "EbsBlockDeviceConfigs",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "EbsBlockDeviceConfig",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "EbsBlockDeviceConfig",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "EbsBlockDeviceConfig",
+              "variableDeclarationType" : "EbsBlockDeviceConfig",
+              "documentation" : "",
+              "simpleType" : "EbsBlockDeviceConfig",
+              "variableSetterType" : "EbsBlockDeviceConfig"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "EbsBlockDeviceConfig",
+              "variableDeclarationType" : "EbsBlockDeviceConfig",
+              "documentation" : "",
+              "simpleType" : "EbsBlockDeviceConfig",
+              "variableSetterType" : "EbsBlockDeviceConfig"
+            },
+            "getterModel" : {
+              "returnType" : "EbsBlockDeviceConfig",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simpleType" : "EbsBlockDeviceConfig",
+          "simple" : false,
+          "map" : false,
+          "templateType" : "java.util.List<EbsBlockDeviceConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param ebsBlockDeviceConfigs */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param ebsBlockDeviceConfigs \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEbsBlockDeviceConfigs(java.util.Collection)} or {@link #withEbsBlockDeviceConfigs(java.util.Collection)} if you want to override the existing values.</p>\n@param ebsBlockDeviceConfigs \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "EbsOptimized",
+        "c2jName" : "EbsOptimized",
+        "c2jShape" : "BooleanObject",
+        "variable" : {
+          "variableName" : "ebsOptimized",
+          "variableType" : "Boolean",
+          "variableDeclarationType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "setterModel" : {
+          "variableName" : "ebsOptimized",
+          "variableType" : "Boolean",
+          "variableDeclarationType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EbsOptimized",
+          "marshallLocationName" : "EbsOptimized",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param ebsOptimized */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param ebsOptimized \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param ebsOptimized \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "ebsConfiguration",
+        "variableType" : "EbsConfiguration",
+        "variableDeclarationType" : "EbsConfiguration",
+        "documentation" : null,
+        "simpleType" : "EbsConfiguration",
+        "variableSetterType" : "EbsConfiguration"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "EbsBlockDeviceConfigs" : {
+          "documentation" : "",
+          "name" : "EbsBlockDeviceConfigs",
+          "c2jName" : "EbsBlockDeviceConfigs",
+          "c2jShape" : "EbsBlockDeviceConfigList",
+          "variable" : {
+            "variableName" : "ebsBlockDeviceConfigs",
+            "variableType" : "java.util.List<EbsBlockDeviceConfig>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>",
+            "documentation" : "",
+            "simpleType" : "List<EbsBlockDeviceConfig>",
+            "variableSetterType" : "java.util.Collection<EbsBlockDeviceConfig>"
+          },
+          "setterModel" : {
+            "variableName" : "ebsBlockDeviceConfigs",
+            "variableType" : "java.util.List<EbsBlockDeviceConfig>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>",
+            "documentation" : "",
+            "simpleType" : "List<EbsBlockDeviceConfig>",
+            "variableSetterType" : "java.util.Collection<EbsBlockDeviceConfig>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<EbsBlockDeviceConfig>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EbsBlockDeviceConfigs",
+            "marshallLocationName" : "EbsBlockDeviceConfigs",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "EbsBlockDeviceConfig",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "EbsBlockDeviceConfig",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "EbsBlockDeviceConfig",
+                "variableDeclarationType" : "EbsBlockDeviceConfig",
+                "documentation" : "",
+                "simpleType" : "EbsBlockDeviceConfig",
+                "variableSetterType" : "EbsBlockDeviceConfig"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "EbsBlockDeviceConfig",
+                "variableDeclarationType" : "EbsBlockDeviceConfig",
+                "documentation" : "",
+                "simpleType" : "EbsBlockDeviceConfig",
+                "variableSetterType" : "EbsBlockDeviceConfig"
+              },
+              "getterModel" : {
+                "returnType" : "EbsBlockDeviceConfig",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simpleType" : "EbsBlockDeviceConfig",
+            "simple" : false,
+            "map" : false,
+            "templateType" : "java.util.List<EbsBlockDeviceConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param ebsBlockDeviceConfigs */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param ebsBlockDeviceConfigs \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEbsBlockDeviceConfigs(java.util.Collection)} or {@link #withEbsBlockDeviceConfigs(java.util.Collection)} if you want to override the existing values.</p>\n@param ebsBlockDeviceConfigs \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "EbsOptimized" : {
+          "documentation" : "",
+          "name" : "EbsOptimized",
+          "c2jName" : "EbsOptimized",
+          "c2jShape" : "BooleanObject",
+          "variable" : {
+            "variableName" : "ebsOptimized",
+            "variableType" : "Boolean",
+            "variableDeclarationType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "setterModel" : {
+            "variableName" : "ebsOptimized",
+            "variableType" : "Boolean",
+            "variableDeclarationType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EbsOptimized",
+            "marshallLocationName" : "EbsOptimized",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param ebsOptimized */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param ebsOptimized \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param ebsOptimized \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -25211,144 +26985,6 @@
         }
       }
     },
-    "DescribeStepResult" : {
-      "c2jName" : "DescribeStepOutput",
-      "documentation" : "<p>This output contains the description of the cluster step.</p>",
-      "shapeName" : "DescribeStepResult",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>The step details for the requested step identifier.</p>",
-        "name" : "Step",
-        "c2jName" : "Step",
-        "c2jShape" : "Step",
-        "variable" : {
-          "variableName" : "step",
-          "variableType" : "Step",
-          "variableDeclarationType" : "Step",
-          "documentation" : "<p>The step details for the requested step identifier.</p>",
-          "simpleType" : "Step",
-          "variableSetterType" : "Step"
-        },
-        "setterModel" : {
-          "variableName" : "step",
-          "variableType" : "Step",
-          "variableDeclarationType" : "Step",
-          "documentation" : "",
-          "simpleType" : "Step",
-          "variableSetterType" : "Step"
-        },
-        "getterModel" : {
-          "returnType" : "Step",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "Step",
-          "marshallLocationName" : "Step",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "list" : false,
-        "simple" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.*/",
-        "getterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@return The step details for the requested step identifier.*/",
-        "fluentSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "describeStepResult",
-        "variableType" : "DescribeStepResult",
-        "variableDeclarationType" : "DescribeStepResult",
-        "documentation" : null,
-        "simpleType" : "DescribeStepResult",
-        "variableSetterType" : "DescribeStepResult"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Step" : {
-          "documentation" : "<p>The step details for the requested step identifier.</p>",
-          "name" : "Step",
-          "c2jName" : "Step",
-          "c2jShape" : "Step",
-          "variable" : {
-            "variableName" : "step",
-            "variableType" : "Step",
-            "variableDeclarationType" : "Step",
-            "documentation" : "<p>The step details for the requested step identifier.</p>",
-            "simpleType" : "Step",
-            "variableSetterType" : "Step"
-          },
-          "setterModel" : {
-            "variableName" : "step",
-            "variableType" : "Step",
-            "variableDeclarationType" : "Step",
-            "documentation" : "",
-            "simpleType" : "Step",
-            "variableSetterType" : "Step"
-          },
-          "getterModel" : {
-            "returnType" : "Step",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "Step",
-            "marshallLocationName" : "Step",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "list" : false,
-          "simple" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.*/",
-          "getterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@return The step details for the requested step identifier.*/",
-          "fluentSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
     "StepStatus" : {
       "c2jName" : "StepStatus",
       "documentation" : "<p>The execution status details of the cluster step. </p>",
@@ -25693,6 +27329,144 @@
         }
       }
     },
+    "DescribeStepResult" : {
+      "c2jName" : "DescribeStepOutput",
+      "documentation" : "<p>This output contains the description of the cluster step.</p>",
+      "shapeName" : "DescribeStepResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The step details for the requested step identifier.</p>",
+        "name" : "Step",
+        "c2jName" : "Step",
+        "c2jShape" : "Step",
+        "variable" : {
+          "variableName" : "step",
+          "variableType" : "Step",
+          "variableDeclarationType" : "Step",
+          "documentation" : "<p>The step details for the requested step identifier.</p>",
+          "simpleType" : "Step",
+          "variableSetterType" : "Step"
+        },
+        "setterModel" : {
+          "variableName" : "step",
+          "variableType" : "Step",
+          "variableDeclarationType" : "Step",
+          "documentation" : "",
+          "simpleType" : "Step",
+          "variableSetterType" : "Step"
+        },
+        "getterModel" : {
+          "returnType" : "Step",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Step",
+          "marshallLocationName" : "Step",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.*/",
+        "getterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@return The step details for the requested step identifier.*/",
+        "fluentSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeStepResult",
+        "variableType" : "DescribeStepResult",
+        "variableDeclarationType" : "DescribeStepResult",
+        "documentation" : null,
+        "simpleType" : "DescribeStepResult",
+        "variableSetterType" : "DescribeStepResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Step" : {
+          "documentation" : "<p>The step details for the requested step identifier.</p>",
+          "name" : "Step",
+          "c2jName" : "Step",
+          "c2jShape" : "Step",
+          "variable" : {
+            "variableName" : "step",
+            "variableType" : "Step",
+            "variableDeclarationType" : "Step",
+            "documentation" : "<p>The step details for the requested step identifier.</p>",
+            "simpleType" : "Step",
+            "variableSetterType" : "Step"
+          },
+          "setterModel" : {
+            "variableName" : "step",
+            "variableType" : "Step",
+            "variableDeclarationType" : "Step",
+            "documentation" : "",
+            "simpleType" : "Step",
+            "variableSetterType" : "Step"
+          },
+          "getterModel" : {
+            "returnType" : "Step",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Step",
+            "marshallLocationName" : "Step",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.*/",
+          "getterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@return The step details for the requested step identifier.*/",
+          "fluentSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The step details for the requested step identifier.</p>\n@param step The step details for the requested step identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "HadoopStepConfig" : {
       "c2jName" : "HadoopStepConfig",
       "documentation" : "<p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>",
@@ -25804,11 +27578,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "keySimple" : true,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -26178,11 +27952,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "keySimple" : true,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -28446,6 +30220,57 @@
         "getterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n@return Amazon EMR releases 4.x or later.</p></note>*/",
         "fluentSetterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n@param configurations Amazon EMR releases 4.x or later.</p></note>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want to override the existing values.</p>\n@param configurations Amazon EMR releases 4.x or later.</p></note>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>",
+        "name" : "EbsConfiguration",
+        "c2jName" : "EbsConfiguration",
+        "c2jShape" : "EbsConfiguration",
+        "variable" : {
+          "variableName" : "ebsConfiguration",
+          "variableType" : "EbsConfiguration",
+          "variableDeclarationType" : "EbsConfiguration",
+          "documentation" : "<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>",
+          "simpleType" : "EbsConfiguration",
+          "variableSetterType" : "EbsConfiguration"
+        },
+        "setterModel" : {
+          "variableName" : "ebsConfiguration",
+          "variableType" : "EbsConfiguration",
+          "variableDeclarationType" : "EbsConfiguration",
+          "documentation" : "",
+          "simpleType" : "EbsConfiguration",
+          "variableSetterType" : "EbsConfiguration"
+        },
+        "getterModel" : {
+          "returnType" : "EbsConfiguration",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EbsConfiguration",
+          "marshallLocationName" : "EbsConfiguration",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@param ebsConfiguration EBS configurations that will be attached to each Amazon EC2 instance in the instance group.*/",
+        "getterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@return EBS configurations that will be attached to each Amazon EC2 instance in the instance group.*/",
+        "fluentSetterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@param ebsConfiguration EBS configurations that will be attached to each Amazon EC2 instance in the instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@param ebsConfiguration EBS configurations that will be attached to each Amazon EC2 instance in the instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -28689,6 +30514,58 @@
           "getterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n@return Amazon EMR releases 4.x or later.</p></note>*/",
           "fluentSetterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n@param configurations Amazon EMR releases 4.x or later.</p></note>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want to override the existing values.</p>\n@param configurations Amazon EMR releases 4.x or later.</p></note>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "EbsConfiguration" : {
+          "documentation" : "<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>",
+          "name" : "EbsConfiguration",
+          "c2jName" : "EbsConfiguration",
+          "c2jShape" : "EbsConfiguration",
+          "variable" : {
+            "variableName" : "ebsConfiguration",
+            "variableType" : "EbsConfiguration",
+            "variableDeclarationType" : "EbsConfiguration",
+            "documentation" : "<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>",
+            "simpleType" : "EbsConfiguration",
+            "variableSetterType" : "EbsConfiguration"
+          },
+          "setterModel" : {
+            "variableName" : "ebsConfiguration",
+            "variableType" : "EbsConfiguration",
+            "variableDeclarationType" : "EbsConfiguration",
+            "documentation" : "",
+            "simpleType" : "EbsConfiguration",
+            "variableSetterType" : "EbsConfiguration"
+          },
+          "getterModel" : {
+            "returnType" : "EbsConfiguration",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EbsConfiguration",
+            "marshallLocationName" : "EbsConfiguration",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@param ebsConfiguration EBS configurations that will be attached to each Amazon EC2 instance in the instance group.*/",
+          "getterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@return EBS configurations that will be attached to each Amazon EC2 instance in the instance group.*/",
+          "fluentSetterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@param ebsConfiguration EBS configurations that will be attached to each Amazon EC2 instance in the instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group. </p>\n@param ebsConfiguration EBS configurations that will be attached to each Amazon EC2 instance in the instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "BidPrice" : {
           "documentation" : "<p>Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.</p>",
@@ -32309,11 +34186,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "keySimple" : true,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -32566,11 +34443,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "keySimple" : true,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -35775,6 +37652,173 @@
         "getterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n@return Amazon EMR releases 4.x or later.</p></note>*/",
         "fluentSetterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n@param configurations Amazon EMR releases 4.x or later.</p></note>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want to override the existing values.</p>\n@param configurations Amazon EMR releases 4.x or later.</p></note>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The EBS block devices that are mapped to this instance group.</p>",
+        "name" : "EbsBlockDevices",
+        "c2jName" : "EbsBlockDevices",
+        "c2jShape" : "EbsBlockDeviceList",
+        "variable" : {
+          "variableName" : "ebsBlockDevices",
+          "variableType" : "java.util.List<EbsBlockDevice>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDevice>",
+          "documentation" : "<p>The EBS block devices that are mapped to this instance group.</p>",
+          "simpleType" : "List<EbsBlockDevice>",
+          "variableSetterType" : "java.util.Collection<EbsBlockDevice>"
+        },
+        "setterModel" : {
+          "variableName" : "ebsBlockDevices",
+          "variableType" : "java.util.List<EbsBlockDevice>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDevice>",
+          "documentation" : "",
+          "simpleType" : "List<EbsBlockDevice>",
+          "variableSetterType" : "java.util.Collection<EbsBlockDevice>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<EbsBlockDevice>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EbsBlockDevices",
+          "marshallLocationName" : "EbsBlockDevices",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "EbsBlockDevice",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "EbsBlockDevice",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "EbsBlockDevice",
+              "variableDeclarationType" : "EbsBlockDevice",
+              "documentation" : "",
+              "simpleType" : "EbsBlockDevice",
+              "variableSetterType" : "EbsBlockDevice"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "EbsBlockDevice",
+              "variableDeclarationType" : "EbsBlockDevice",
+              "documentation" : "",
+              "simpleType" : "EbsBlockDevice",
+              "variableSetterType" : "EbsBlockDevice"
+            },
+            "getterModel" : {
+              "returnType" : "EbsBlockDevice",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simpleType" : "EbsBlockDevice",
+          "simple" : false,
+          "map" : false,
+          "templateType" : "java.util.List<EbsBlockDevice>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDevice>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n@param ebsBlockDevices The EBS block devices that are mapped to this instance group.*/",
+        "getterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n@return The EBS block devices that are mapped to this instance group.*/",
+        "fluentSetterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n@param ebsBlockDevices The EBS block devices that are mapped to this instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEbsBlockDevices(java.util.Collection)} or {@link #withEbsBlockDevices(java.util.Collection)} if you want to override the existing values.</p>\n@param ebsBlockDevices The EBS block devices that are mapped to this instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>",
+        "name" : "EbsOptimized",
+        "c2jName" : "EbsOptimized",
+        "c2jShape" : "BooleanObject",
+        "variable" : {
+          "variableName" : "ebsOptimized",
+          "variableType" : "Boolean",
+          "variableDeclarationType" : "Boolean",
+          "documentation" : "<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "setterModel" : {
+          "variableName" : "ebsOptimized",
+          "variableType" : "Boolean",
+          "variableDeclarationType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EbsOptimized",
+          "marshallLocationName" : "EbsOptimized",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@param ebsOptimized If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.*/",
+        "getterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@return If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.*/",
+        "fluentSetterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@param ebsOptimized If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@param ebsOptimized If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -36330,6 +38374,175 @@
           "getterDocumentation" : "/**<p>The identifier of the instance group.</p>\n@return The identifier of the instance group.*/",
           "fluentSetterDocumentation" : "/**<p>The identifier of the instance group.</p>\n@param id The identifier of the instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The identifier of the instance group.</p>\n@param id The identifier of the instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "EbsBlockDevices" : {
+          "documentation" : "<p>The EBS block devices that are mapped to this instance group.</p>",
+          "name" : "EbsBlockDevices",
+          "c2jName" : "EbsBlockDevices",
+          "c2jShape" : "EbsBlockDeviceList",
+          "variable" : {
+            "variableName" : "ebsBlockDevices",
+            "variableType" : "java.util.List<EbsBlockDevice>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDevice>",
+            "documentation" : "<p>The EBS block devices that are mapped to this instance group.</p>",
+            "simpleType" : "List<EbsBlockDevice>",
+            "variableSetterType" : "java.util.Collection<EbsBlockDevice>"
+          },
+          "setterModel" : {
+            "variableName" : "ebsBlockDevices",
+            "variableType" : "java.util.List<EbsBlockDevice>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDevice>",
+            "documentation" : "",
+            "simpleType" : "List<EbsBlockDevice>",
+            "variableSetterType" : "java.util.Collection<EbsBlockDevice>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<EbsBlockDevice>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EbsBlockDevices",
+            "marshallLocationName" : "EbsBlockDevices",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "EbsBlockDevice",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "EbsBlockDevice",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "EbsBlockDevice",
+                "variableDeclarationType" : "EbsBlockDevice",
+                "documentation" : "",
+                "simpleType" : "EbsBlockDevice",
+                "variableSetterType" : "EbsBlockDevice"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "EbsBlockDevice",
+                "variableDeclarationType" : "EbsBlockDevice",
+                "documentation" : "",
+                "simpleType" : "EbsBlockDevice",
+                "variableSetterType" : "EbsBlockDevice"
+              },
+              "getterModel" : {
+                "returnType" : "EbsBlockDevice",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simpleType" : "EbsBlockDevice",
+            "simple" : false,
+            "map" : false,
+            "templateType" : "java.util.List<EbsBlockDevice>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EbsBlockDevice>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n@param ebsBlockDevices The EBS block devices that are mapped to this instance group.*/",
+          "getterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n@return The EBS block devices that are mapped to this instance group.*/",
+          "fluentSetterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n@param ebsBlockDevices The EBS block devices that are mapped to this instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The EBS block devices that are mapped to this instance group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEbsBlockDevices(java.util.Collection)} or {@link #withEbsBlockDevices(java.util.Collection)} if you want to override the existing values.</p>\n@param ebsBlockDevices The EBS block devices that are mapped to this instance group.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "EbsOptimized" : {
+          "documentation" : "<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>",
+          "name" : "EbsOptimized",
+          "c2jName" : "EbsOptimized",
+          "c2jShape" : "BooleanObject",
+          "variable" : {
+            "variableName" : "ebsOptimized",
+            "variableType" : "Boolean",
+            "variableDeclarationType" : "Boolean",
+            "documentation" : "<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "setterModel" : {
+            "variableName" : "ebsOptimized",
+            "variableType" : "Boolean",
+            "variableDeclarationType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EbsOptimized",
+            "marshallLocationName" : "EbsOptimized",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@param ebsOptimized If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.*/",
+          "getterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@return If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.*/",
+          "fluentSetterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@param ebsOptimized If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. </p>\n@param ebsOptimized If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "InstanceType" : {
           "documentation" : "<p>The EC2 instance type for all instances in the instance group. </p>",

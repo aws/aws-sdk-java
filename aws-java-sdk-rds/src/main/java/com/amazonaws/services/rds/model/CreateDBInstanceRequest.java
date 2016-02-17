@@ -347,8 +347,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: To use
-     * PIOPS, this value must be an integer greater than 1000.
+     * be initially allocated for the DB instance. <p>Constraints: Must be a
+     * multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of
+     * your DB instance is 500 GB, then your <code>Iops</code> value can be
+     * 2000, 3000, 4000, or 5000.
      */
     private Integer iops;
 
@@ -2623,12 +2626,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: To use
-     * PIOPS, this value must be an integer greater than 1000.
+     * be initially allocated for the DB instance. <p>Constraints: Must be a
+     * multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of
+     * your DB instance is 500 GB, then your <code>Iops</code> value can be
+     * 2000, 3000, 4000, or 5000.
      *
      * @return The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB instance. <p> Constraints: To use
-     *         PIOPS, this value must be an integer greater than 1000.
+     *         be initially allocated for the DB instance. <p>Constraints: Must be a
+     *         multiple between 3 and 10 of the storage amount for the DB instance.
+     *         Must also be an integer multiple of 1000. For example, if the size of
+     *         your DB instance is 500 GB, then your <code>Iops</code> value can be
+     *         2000, 3000, 4000, or 5000.
      */
     public Integer getIops() {
         return iops;
@@ -2636,12 +2645,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: To use
-     * PIOPS, this value must be an integer greater than 1000.
+     * be initially allocated for the DB instance. <p>Constraints: Must be a
+     * multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of
+     * your DB instance is 500 GB, then your <code>Iops</code> value can be
+     * 2000, 3000, 4000, or 5000.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB instance. <p> Constraints: To use
-     *         PIOPS, this value must be an integer greater than 1000.
+     *         be initially allocated for the DB instance. <p>Constraints: Must be a
+     *         multiple between 3 and 10 of the storage amount for the DB instance.
+     *         Must also be an integer multiple of 1000. For example, if the size of
+     *         your DB instance is 500 GB, then your <code>Iops</code> value can be
+     *         2000, 3000, 4000, or 5000.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -2649,14 +2664,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: To use
-     * PIOPS, this value must be an integer greater than 1000.
+     * be initially allocated for the DB instance. <p>Constraints: Must be a
+     * multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of
+     * your DB instance is 500 GB, then your <code>Iops</code> value can be
+     * 2000, 3000, 4000, or 5000.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB instance. <p> Constraints: To use
-     *         PIOPS, this value must be an integer greater than 1000.
+     *         be initially allocated for the DB instance. <p>Constraints: Must be a
+     *         multiple between 3 and 10 of the storage amount for the DB instance.
+     *         Must also be an integer multiple of 1000. For example, if the size of
+     *         your DB instance is 500 GB, then your <code>Iops</code> value can be
+     *         2000, 3000, 4000, or 5000.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.services.kinesis.model.transform.*;
@@ -47,6 +48,7 @@ import com.amazonaws.services.kinesis.model.transform.*;
  * processing of streaming big data.
  * </p>
  */
+@ThreadSafe
 public class AmazonKinesisClient extends AmazonWebServiceClient implements
         AmazonKinesis {
     /** Provider for AWS credentials. */

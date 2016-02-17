@@ -33,6 +33,7 @@ import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.services.logs.model.transform.*;
@@ -104,6 +105,7 @@ import com.amazonaws.services.logs.model.transform.*;
  * Center</a></li>
  * </ul>
  */
+@ThreadSafe
 public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
