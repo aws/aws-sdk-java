@@ -29,26 +29,27 @@ public class DescribeGatewayInformationResult implements Serializable,
     private String gatewayARN;
     /**
      * <p>
-     * The gateway ID.
+     * The unique identifier assigned to your gateway during activation. This id
+     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * input for other operations.
      * </p>
      */
     private String gatewayId;
     /**
      * <p>
-     * The gateway name.
+     * The name you configured for your gateway.
      * </p>
      */
     private String gatewayName;
     /**
      * <p>
-     * One of the values that indicates the time zone configured for the
-     * gateway.
+     * A value that indicates the time zone configured for the gateway.
      * </p>
      */
     private String gatewayTimezone;
     /**
      * <p>
-     * One of the values that indicates the operating state of the gateway.
+     * A value that indicates the operating state of the gateway.
      * </p>
      */
     private String gatewayState;
@@ -108,11 +109,15 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The gateway ID.
+     * The unique identifier assigned to your gateway during activation. This id
+     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * input for other operations.
      * </p>
      * 
      * @param gatewayId
-     *        The gateway ID.
+     *        The unique identifier assigned to your gateway during activation.
+     *        This id becomes part of the gateway Amazon Resources Name (ARN)
+     *        which you use as input for other operations.
      */
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -120,10 +125,14 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The gateway ID.
+     * The unique identifier assigned to your gateway during activation. This id
+     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * input for other operations.
      * </p>
      * 
-     * @return The gateway ID.
+     * @return The unique identifier assigned to your gateway during activation.
+     *         This id becomes part of the gateway Amazon Resources Name (ARN)
+     *         which you use as input for other operations.
      */
     public String getGatewayId() {
         return this.gatewayId;
@@ -131,11 +140,15 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The gateway ID.
+     * The unique identifier assigned to your gateway during activation. This id
+     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * input for other operations.
      * </p>
      * 
      * @param gatewayId
-     *        The gateway ID.
+     *        The unique identifier assigned to your gateway during activation.
+     *        This id becomes part of the gateway Amazon Resources Name (ARN)
+     *        which you use as input for other operations.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -146,11 +159,11 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The gateway name.
+     * The name you configured for your gateway.
      * </p>
      * 
      * @param gatewayName
-     *        The gateway name.
+     *        The name you configured for your gateway.
      */
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
@@ -158,10 +171,10 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The gateway name.
+     * The name you configured for your gateway.
      * </p>
      * 
-     * @return The gateway name.
+     * @return The name you configured for your gateway.
      */
     public String getGatewayName() {
         return this.gatewayName;
@@ -169,11 +182,11 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The gateway name.
+     * The name you configured for your gateway.
      * </p>
      * 
      * @param gatewayName
-     *        The gateway name.
+     *        The name you configured for your gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -184,13 +197,11 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * One of the values that indicates the time zone configured for the
-     * gateway.
+     * A value that indicates the time zone configured for the gateway.
      * </p>
      * 
      * @param gatewayTimezone
-     *        One of the values that indicates the time zone configured for the
-     *        gateway.
+     *        A value that indicates the time zone configured for the gateway.
      */
     public void setGatewayTimezone(String gatewayTimezone) {
         this.gatewayTimezone = gatewayTimezone;
@@ -198,12 +209,10 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * One of the values that indicates the time zone configured for the
-     * gateway.
+     * A value that indicates the time zone configured for the gateway.
      * </p>
      * 
-     * @return One of the values that indicates the time zone configured for the
-     *         gateway.
+     * @return A value that indicates the time zone configured for the gateway.
      */
     public String getGatewayTimezone() {
         return this.gatewayTimezone;
@@ -211,13 +220,11 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * One of the values that indicates the time zone configured for the
-     * gateway.
+     * A value that indicates the time zone configured for the gateway.
      * </p>
      * 
      * @param gatewayTimezone
-     *        One of the values that indicates the time zone configured for the
-     *        gateway.
+     *        A value that indicates the time zone configured for the gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -229,12 +236,11 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * One of the values that indicates the operating state of the gateway.
+     * A value that indicates the operating state of the gateway.
      * </p>
      * 
      * @param gatewayState
-     *        One of the values that indicates the operating state of the
-     *        gateway.
+     *        A value that indicates the operating state of the gateway.
      */
     public void setGatewayState(String gatewayState) {
         this.gatewayState = gatewayState;
@@ -242,11 +248,10 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * One of the values that indicates the operating state of the gateway.
+     * A value that indicates the operating state of the gateway.
      * </p>
      * 
-     * @return One of the values that indicates the operating state of the
-     *         gateway.
+     * @return A value that indicates the operating state of the gateway.
      */
     public String getGatewayState() {
         return this.gatewayState;
@@ -254,12 +259,11 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * One of the values that indicates the operating state of the gateway.
+     * A value that indicates the operating state of the gateway.
      * </p>
      * 
      * @param gatewayState
-     *        One of the values that indicates the operating state of the
-     *        gateway.
+     *        A value that indicates the operating state of the gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

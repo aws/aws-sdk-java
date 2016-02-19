@@ -110,11 +110,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Adds a tag to an on-premises instance.
+     * Adds tags to on-premises instances.
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of an adds tags to on-premises instance
+     *        Represents the input of and adds tags to on-premises instance
      *        operation.
      * @sample AmazonCodeDeployAsync.AddTagsToOnPremisesInstances
      */
@@ -123,11 +123,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Adds a tag to an on-premises instance.
+     * Adds tags to on-premises instances.
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of an adds tags to on-premises instance
+     *        Represents the input of and adds tags to on-premises instance
      *        operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
@@ -139,6 +139,42 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
     java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about one or more application revisions.
+     * </p>
+     * 
+     * @param batchGetApplicationRevisionsRequest
+     *        Represents the input of a batch get application revisions
+     *        operation.
+     * @return A Java Future containing the result of the
+     *         BatchGetApplicationRevisions operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetApplicationRevisions
+     */
+    java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
+            BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more application revisions.
+     * </p>
+     * 
+     * @param batchGetApplicationRevisionsRequest
+     *        Represents the input of a batch get application revisions
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         BatchGetApplicationRevisions operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetApplicationRevisions
+     */
+    java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
+            BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetApplicationRevisionsRequest, BatchGetApplicationRevisionsResult> asyncHandler);
 
     /**
      * <p>
@@ -190,6 +226,44 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      */
     java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about one or more instances that are part of a
+     * deployment group.
+     * </p>
+     * 
+     * @param batchGetDeploymentInstancesRequest
+     *        Represents the input of a batch get deployment instances
+     *        operation.
+     * @return A Java Future containing the result of the
+     *         BatchGetDeploymentInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetDeploymentInstances
+     */
+    java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
+            BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more instances that are part of a
+     * deployment group.
+     * </p>
+     * 
+     * @param batchGetDeploymentInstancesRequest
+     *        Represents the input of a batch get deployment instances
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         BatchGetDeploymentInstances operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetDeploymentInstances
+     */
+    java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
+            BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler);
 
     /**
      * <p>

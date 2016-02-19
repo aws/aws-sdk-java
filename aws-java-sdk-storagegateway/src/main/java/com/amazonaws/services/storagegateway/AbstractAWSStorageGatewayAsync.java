@@ -195,6 +195,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest request) {
+
+        return createTapeWithBarcodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTapesResult> createTapesAsync(
             CreateTapesRequest request) {
 

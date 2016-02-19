@@ -39,6 +39,8 @@ public enum DataSetType {
             "monthly_revenue_billing_and_revenue_data"),
     Monthly_revenue_annual_subscriptions("monthly_revenue_annual_subscriptions"),
     Disbursed_amount_by_product("disbursed_amount_by_product"),
+    Disbursed_amount_by_product_with_uncollected_funds(
+            "disbursed_amount_by_product_with_uncollected_funds"),
     Disbursed_amount_by_customer_geo("disbursed_amount_by_customer_geo"),
     Disbursed_amount_by_age_of_uncollected_funds(
             "disbursed_amount_by_age_of_uncollected_funds"),
@@ -92,6 +94,9 @@ public enum DataSetType {
             return Monthly_revenue_annual_subscriptions;
         } else if ("disbursed_amount_by_product".equals(value)) {
             return Disbursed_amount_by_product;
+        } else if ("disbursed_amount_by_product_with_uncollected_funds"
+                .equals(value)) {
+            return Disbursed_amount_by_product_with_uncollected_funds;
         } else if ("disbursed_amount_by_customer_geo".equals(value)) {
             return Disbursed_amount_by_customer_geo;
         } else if ("disbursed_amount_by_age_of_uncollected_funds".equals(value)) {

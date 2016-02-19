@@ -72,9 +72,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      */
     private String targetName;
@@ -333,9 +333,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      * 
      * @param targetName
@@ -343,9 +343,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        target and as a suffix for the target ARN. For example, specifying
      *        <code>TargetName</code> as <i>myvolume</i> results in the target
      *        ARN of
-     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway
-     *        /target/iqn.1997-05.com.amazon:myvolume. The target name must be
-     *        unique across all volumes of a gateway.
+     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12
+     *        A3456B/target/iqn.1997-05.com.amazon:myvolume. The target name
+     *        must be unique across all volumes of a gateway.
      */
     public void setTargetName(String targetName) {
         this.targetName = targetName;
@@ -357,9 +357,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      * 
      * @return The name of the iSCSI target used by initiators to connect to the
@@ -367,7 +367,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         specifying <code>TargetName</code> as <i>myvolume</i> results in
      *         the target ARN of
      *         arn:aws:storagegateway:us-east-1:111122223333:gateway
-     *         /mygateway/target/iqn.1997-05.com.amazon:myvolume. The target
+     *         /sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The target
      *         name must be unique across all volumes of a gateway.
      */
     public String getTargetName() {
@@ -380,9 +380,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      * 
      * @param targetName
@@ -390,9 +390,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        target and as a suffix for the target ARN. For example, specifying
      *        <code>TargetName</code> as <i>myvolume</i> results in the target
      *        ARN of
-     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway
-     *        /target/iqn.1997-05.com.amazon:myvolume. The target name must be
-     *        unique across all volumes of a gateway.
+     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12
+     *        A3456B/target/iqn.1997-05.com.amazon:myvolume. The target name
+     *        must be unique across all volumes of a gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

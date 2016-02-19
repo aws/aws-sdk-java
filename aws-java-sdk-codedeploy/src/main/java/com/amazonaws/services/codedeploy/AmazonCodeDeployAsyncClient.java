@@ -376,6 +376,42 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
+            BatchGetApplicationRevisionsRequest request) {
+
+        return batchGetApplicationRevisionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
+            final BatchGetApplicationRevisionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetApplicationRevisionsRequest, BatchGetApplicationRevisionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<BatchGetApplicationRevisionsResult>() {
+                    @Override
+                    public BatchGetApplicationRevisionsResult call()
+                            throws Exception {
+                        BatchGetApplicationRevisionsResult result;
+
+                        try {
+                            result = batchGetApplicationRevisions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             BatchGetApplicationsRequest request) {
 
@@ -433,6 +469,42 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
         return batchGetApplicationsAsync(new BatchGetApplicationsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
+            BatchGetDeploymentInstancesRequest request) {
+
+        return batchGetDeploymentInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
+            final BatchGetDeploymentInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<BatchGetDeploymentInstancesResult>() {
+                    @Override
+                    public BatchGetDeploymentInstancesResult call()
+                            throws Exception {
+                        BatchGetDeploymentInstancesResult result;
+
+                        try {
+                            result = batchGetDeploymentInstances(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override

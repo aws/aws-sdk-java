@@ -58,7 +58,7 @@ public class InstanceInfo implements Serializable, Cloneable {
     private java.util.Date deregisterTime;
     /**
      * <p>
-     * Information about the tags for the on-premises instance.
+     * The tags that are currently associated with the on-premises instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -261,10 +261,11 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the tags for the on-premises instance.
+     * The tags that are currently associated with the on-premises instance.
      * </p>
      * 
-     * @return Information about the tags for the on-premises instance.
+     * @return The tags that are currently associated with the on-premises
+     *         instance.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -275,11 +276,12 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the tags for the on-premises instance.
+     * The tags that are currently associated with the on-premises instance.
      * </p>
      * 
      * @param tags
-     *        Information about the tags for the on-premises instance.
+     *        The tags that are currently associated with the on-premises
+     *        instance.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -292,7 +294,7 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the tags for the on-premises instance.
+     * The tags that are currently associated with the on-premises instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -302,7 +304,8 @@ public class InstanceInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Information about the tags for the on-premises instance.
+     *        The tags that are currently associated with the on-premises
+     *        instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -318,11 +321,12 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the tags for the on-premises instance.
+     * The tags that are currently associated with the on-premises instance.
      * </p>
      * 
      * @param tags
-     *        Information about the tags for the on-premises instance.
+     *        The tags that are currently associated with the on-premises
+     *        instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

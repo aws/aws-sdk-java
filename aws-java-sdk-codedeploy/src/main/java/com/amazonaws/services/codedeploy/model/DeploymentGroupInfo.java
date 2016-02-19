@@ -80,6 +80,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * </p>
      */
     private RevisionLocation targetRevision;
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
 
     /**
      * <p>
@@ -549,6 +555,83 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * 
+     * @return A list of associated triggers.
+     */
+    public java.util.List<TriggerConfig> getTriggerConfigurations() {
+        if (triggerConfigurations == null) {
+            triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>();
+        }
+        return triggerConfigurations;
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        A list of associated triggers.
+     */
+    public void setTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        if (triggerConfigurations == null) {
+            this.triggerConfigurations = null;
+            return;
+        }
+
+        this.triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                triggerConfigurations);
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTriggerConfigurations(java.util.Collection)} or
+     * {@link #withTriggerConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        A list of associated triggers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DeploymentGroupInfo withTriggerConfigurations(
+            TriggerConfig... triggerConfigurations) {
+        if (this.triggerConfigurations == null) {
+            setTriggerConfigurations(new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                    triggerConfigurations.length));
+        }
+        for (TriggerConfig ele : triggerConfigurations) {
+            this.triggerConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        A list of associated triggers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public DeploymentGroupInfo withTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        setTriggerConfigurations(triggerConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -579,7 +662,9 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getTargetRevision() != null)
-            sb.append("TargetRevision: " + getTargetRevision());
+            sb.append("TargetRevision: " + getTargetRevision() + ",");
+        if (getTriggerConfigurations() != null)
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +737,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (other.getTargetRevision() != null
                 && other.getTargetRevision().equals(this.getTargetRevision()) == false)
             return false;
+        if (other.getTriggerConfigurations() == null
+                ^ this.getTriggerConfigurations() == null)
+            return false;
+        if (other.getTriggerConfigurations() != null
+                && other.getTriggerConfigurations().equals(
+                        this.getTriggerConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -696,6 +788,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
                 * hashCode
                 + ((getTargetRevision() == null) ? 0 : getTargetRevision()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTriggerConfigurations() == null) ? 0
+                        : getTriggerConfigurations().hashCode());
         return hashCode;
     }
 

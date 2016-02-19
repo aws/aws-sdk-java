@@ -324,6 +324,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                         "InstanceLimitExceededException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.BatchLimitExceededException.class,
+                        "BatchLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException.class,
                         "DeploymentConfigInUseException"));
         jsonErrorUnmarshallers
@@ -366,6 +370,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.codedeploy.model.ApplicationLimitExceededException.class,
                         "ApplicationLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException.class,
+                        "InvalidTriggerConfigException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException.class,
@@ -432,6 +440,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                         "InvalidInstanceNameException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException.class,
+                        "LifecycleHookLimitExceededException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class,
                         "InvalidBucketNameFilterException"));
         jsonErrorUnmarshallers
@@ -450,6 +462,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.codedeploy.model.TagRequiredException.class,
                         "TagRequiredException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException.class,
+                        "TriggerTargetsLimitExceededException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.codedeploy.model.InvalidRoleException.class,
@@ -544,11 +560,11 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Adds a tag to an on-premises instance.
+     * Adds tags to on-premises instances.
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of an adds tags to on-premises instance
+     *        Represents the input of and adds tags to on-premises instance
      *        operation.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -559,7 +575,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws TagLimitExceededException
      *         The maximum allowed number of tags was exceeded.
      * @throws InstanceLimitExceededException
-     *         The maximum number of allowed on-premises instances was exceeded.
+     *         The maximum number of allowed on-premises instances in a single
+     *         call was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
@@ -599,6 +616,68 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Gets information about one or more application revisions.
+     * </p>
+     * 
+     * @param batchGetApplicationRevisionsRequest
+     *        Represents the input of a batch get application revisions
+     *        operation.
+     * @return Result of the BatchGetApplicationRevisions operation returned by
+     *         the service.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
+     * @sample AmazonCodeDeploy.BatchGetApplicationRevisions
+     */
+    @Override
+    public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(
+            BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(batchGetApplicationRevisionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetApplicationRevisionsRequest> request = null;
+        Response<BatchGetApplicationRevisionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetApplicationRevisionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(batchGetApplicationRevisionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<BatchGetApplicationRevisionsResult> responseHandler = new JsonResponseHandler<BatchGetApplicationRevisionsResult>(
+                    new BatchGetApplicationRevisionsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about one or more applications.
      * </p>
      * 
@@ -614,6 +693,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplications
      */
     @Override
@@ -658,6 +740,70 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Gets information about one or more instances that are part of a
+     * deployment group.
+     * </p>
+     * 
+     * @param batchGetDeploymentInstancesRequest
+     *        Represents the input of a batch get deployment instances
+     *        operation.
+     * @return Result of the BatchGetDeploymentInstances operation returned by
+     *         the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws InstanceIdRequiredException
+     *         The instance ID was not specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
+     * @sample AmazonCodeDeploy.BatchGetDeploymentInstances
+     */
+    @Override
+    public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(
+            BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(batchGetDeploymentInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetDeploymentInstancesRequest> request = null;
+        Response<BatchGetDeploymentInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetDeploymentInstancesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(batchGetDeploymentInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<BatchGetDeploymentInstancesResult> responseHandler = new JsonResponseHandler<BatchGetDeploymentInstancesResult>(
+                    new BatchGetDeploymentInstancesResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about one or more deployments.
      * </p>
      * 
@@ -670,6 +816,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeployments
      */
     @Override
@@ -727,6 +876,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
      * @sample AmazonCodeDeploy.BatchGetOnPremisesInstances
      */
     @Override
@@ -1005,6 +1157,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         does not grant the appropriate permissions to Auto Scaling.
      * @throws DeploymentGroupLimitExceededException
      *         The deployment groups limit was exceeded.
+     * @throws LifecycleHookLimitExceededException
+     *         The limit for lifecycle hooks was exceeded.
+     * @throws InvalidTriggerConfigException
+     *         The trigger was specified in an invalid format.
+     * @throws TriggerTargetsLimitExceededException
+     *         The maximum allowed number of triggers was exceeded.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      */
     @Override
@@ -1551,6 +1709,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         format.
      * @throws InstanceDoesNotExistException
      *         The specified instance does not exist in the deployment group.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
      * @sample AmazonCodeDeploy.GetDeploymentInstance
      */
     @Override
@@ -2201,7 +2362,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @throws TagLimitExceededException
      *         The maximum allowed number of tags was exceeded.
      * @throws InstanceLimitExceededException
-     *         The maximum number of allowed on-premises instances was exceeded.
+     *         The maximum number of allowed on-premises instances in a single
+     *         call was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
@@ -2395,6 +2557,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The service role ARN was specified in an invalid format. Or, if
      *         an Auto Scaling group was specified, the specified service role
      *         does not grant the appropriate permissions to Auto Scaling.
+     * @throws LifecycleHookLimitExceededException
+     *         The limit for lifecycle hooks was exceeded.
+     * @throws InvalidTriggerConfigException
+     *         The trigger was specified in an invalid format.
+     * @throws TriggerTargetsLimitExceededException
+     *         The maximum allowed number of triggers was exceeded.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      */
     @Override

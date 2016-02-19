@@ -20,7 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The maximum number of allowed on-premises instances was exceeded.
+ * The maximum number of allowed on-premises instances in a single call was
+ * exceeded.
  * </p>
  */
 public class InstanceLimitExceededException extends AmazonServiceException {

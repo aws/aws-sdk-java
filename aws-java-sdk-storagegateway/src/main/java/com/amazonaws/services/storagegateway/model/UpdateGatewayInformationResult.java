@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the of the gateway that was updated.
+ * A JSON object containing the ARN of the gateway that was updated.
  * </p>
  */
 public class UpdateGatewayInformationResult implements Serializable, Cloneable {

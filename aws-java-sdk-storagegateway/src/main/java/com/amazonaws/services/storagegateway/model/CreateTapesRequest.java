@@ -29,7 +29,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unique Amazon Resource Name(ARN) that represents the gateway to
+     * The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation
      * to return a list of gateways for your account and region.
      * </p>
@@ -37,9 +37,9 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
     private String gatewayARN;
     /**
      * <p>
-     * The size, in bytes, of the virtual tapes you want to create.
+     * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
+     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
      */
     private Long tapeSizeInBytes;
     /**
@@ -54,29 +54,29 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
     private String clientToken;
     /**
      * <p>
-     * The number of virtual tapes you want to create.
+     * The number of virtual tapes that you want to create.
      * </p>
      */
     private Integer numTapesToCreate;
     /**
      * <p>
-     * A prefix you append to the barcode of the virtual tape you are creating.
-     * This makes a barcode unique.
+     * A prefix that you append to the barcode of the virtual tape you are
+     * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be
-     * upper-case letters A-Z.</note>
+     * <note>The prefix must be 1 to 4 characters in length and must be one of
+     * the uppercase letters from A to Z.</note>
      */
     private String tapeBarcodePrefix;
 
     /**
      * <p>
-     * The unique Amazon Resource Name(ARN) that represents the gateway to
+     * The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation
      * to return a list of gateways for your account and region.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name(ARN) that represents the gateway
+     *        The unique Amazon Resource Name (ARN) that represents the gateway
      *        to associate the virtual tapes with. Use the <a>ListGateways</a>
      *        operation to return a list of gateways for your account and
      *        region.
@@ -87,12 +87,12 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unique Amazon Resource Name(ARN) that represents the gateway to
+     * The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation
      * to return a list of gateways for your account and region.
      * </p>
      * 
-     * @return The unique Amazon Resource Name(ARN) that represents the gateway
+     * @return The unique Amazon Resource Name (ARN) that represents the gateway
      *         to associate the virtual tapes with. Use the <a>ListGateways</a>
      *         operation to return a list of gateways for your account and
      *         region.
@@ -103,13 +103,13 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The unique Amazon Resource Name(ARN) that represents the gateway to
+     * The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation
      * to return a list of gateways for your account and region.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name(ARN) that represents the gateway
+     *        The unique Amazon Resource Name (ARN) that represents the gateway
      *        to associate the virtual tapes with. Use the <a>ListGateways</a>
      *        operation to return a list of gateways for your account and
      *        region.
@@ -123,13 +123,14 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tapes you want to create.
+     * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
+     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tapes you want to create.</p>
-     *        <note>The size must be gigabyte (1024*1024*1024 byte) aligned.
+     *        The size, in bytes, of the virtual tapes that you want to
+     *        create.</p> <note>The size must be aligned by gigabyte
+     *        (1024*1024*1024 byte).
      */
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
@@ -137,12 +138,13 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tapes you want to create.
+     * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
+     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
      * 
-     * @return The size, in bytes, of the virtual tapes you want to create.</p>
-     *         <note>The size must be gigabyte (1024*1024*1024 byte) aligned.
+     * @return The size, in bytes, of the virtual tapes that you want to
+     *         create.</p> <note>The size must be aligned by gigabyte
+     *         (1024*1024*1024 byte).
      */
     public Long getTapeSizeInBytes() {
         return this.tapeSizeInBytes;
@@ -150,13 +152,14 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tapes you want to create.
+     * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
+     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tapes you want to create.</p>
-     *        <note>The size must be gigabyte (1024*1024*1024 byte) aligned.
+     *        The size, in bytes, of the virtual tapes that you want to
+     *        create.</p> <note>The size must be aligned by gigabyte
+     *        (1024*1024*1024 byte).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -229,11 +232,11 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of virtual tapes you want to create.
+     * The number of virtual tapes that you want to create.
      * </p>
      * 
      * @param numTapesToCreate
-     *        The number of virtual tapes you want to create.
+     *        The number of virtual tapes that you want to create.
      */
     public void setNumTapesToCreate(Integer numTapesToCreate) {
         this.numTapesToCreate = numTapesToCreate;
@@ -241,10 +244,10 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of virtual tapes you want to create.
+     * The number of virtual tapes that you want to create.
      * </p>
      * 
-     * @return The number of virtual tapes you want to create.
+     * @return The number of virtual tapes that you want to create.
      */
     public Integer getNumTapesToCreate() {
         return this.numTapesToCreate;
@@ -252,11 +255,11 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of virtual tapes you want to create.
+     * The number of virtual tapes that you want to create.
      * </p>
      * 
      * @param numTapesToCreate
-     *        The number of virtual tapes you want to create.
+     *        The number of virtual tapes that you want to create.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -267,16 +270,17 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A prefix you append to the barcode of the virtual tape you are creating.
-     * This makes a barcode unique.
+     * A prefix that you append to the barcode of the virtual tape you are
+     * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be
-     * upper-case letters A-Z.</note>
+     * <note>The prefix must be 1 to 4 characters in length and must be one of
+     * the uppercase letters from A to Z.</note>
      * 
      * @param tapeBarcodePrefix
-     *        A prefix you append to the barcode of the virtual tape you are
-     *        creating. This makes a barcode unique.</p> <note>The prefix must
-     *        be 1 to 4 characters in length and must be upper-case letters A-Z.
+     *        A prefix that you append to the barcode of the virtual tape you
+     *        are creating. This prefix makes the barcode unique.</p> <note>The
+     *        prefix must be 1 to 4 characters in length and must be one of the
+     *        uppercase letters from A to Z.
      */
     public void setTapeBarcodePrefix(String tapeBarcodePrefix) {
         this.tapeBarcodePrefix = tapeBarcodePrefix;
@@ -284,16 +288,16 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A prefix you append to the barcode of the virtual tape you are creating.
-     * This makes a barcode unique.
+     * A prefix that you append to the barcode of the virtual tape you are
+     * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be
-     * upper-case letters A-Z.</note>
+     * <note>The prefix must be 1 to 4 characters in length and must be one of
+     * the uppercase letters from A to Z.</note>
      * 
-     * @return A prefix you append to the barcode of the virtual tape you are
-     *         creating. This makes a barcode unique.</p> <note>The prefix must
-     *         be 1 to 4 characters in length and must be upper-case letters
-     *         A-Z.
+     * @return A prefix that you append to the barcode of the virtual tape you
+     *         are creating. This prefix makes the barcode unique.</p> <note>The
+     *         prefix must be 1 to 4 characters in length and must be one of the
+     *         uppercase letters from A to Z.
      */
     public String getTapeBarcodePrefix() {
         return this.tapeBarcodePrefix;
@@ -301,16 +305,17 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A prefix you append to the barcode of the virtual tape you are creating.
-     * This makes a barcode unique.
+     * A prefix that you append to the barcode of the virtual tape you are
+     * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be
-     * upper-case letters A-Z.</note>
+     * <note>The prefix must be 1 to 4 characters in length and must be one of
+     * the uppercase letters from A to Z.</note>
      * 
      * @param tapeBarcodePrefix
-     *        A prefix you append to the barcode of the virtual tape you are
-     *        creating. This makes a barcode unique.</p> <note>The prefix must
-     *        be 1 to 4 characters in length and must be upper-case letters A-Z.
+     *        A prefix that you append to the barcode of the virtual tape you
+     *        are creating. This prefix makes the barcode unique.</p> <note>The
+     *        prefix must be 1 to 4 characters in length and must be one of the
+     *        uppercase letters from A to Z.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

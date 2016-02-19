@@ -1,0 +1,170 @@
+{
+  "syncClient" : {
+    "mainTemplate" : "/templates/common/SyncClientClassBase.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/syncclientclass/json/ExceptionUnmarshallerListVariableDeclaration.ftl",
+        "importAsNamespace" : "ExceptionUnmarshallerListVariableDeclarationMacro"
+      }, {
+        "location" : "/macros/syncclientclass/json/ClientInitMethod.ftl",
+        "importAsNamespace" : "ClientInitMethodMacro"
+      }, {
+        "location" : "/macros/syncclientclass/common/ClientMethodForOperation.ftl",
+        "importAsNamespace" : "ClientMethodForOperation"
+      }, {
+        "location" : "/macros/syncclientclass/json/ClientInvokeMethodErrorResponseHandlerCreation.ftl",
+        "importAsNamespace" : "ClientInvokeMethodErrorResponseHandlerCreation"
+      }, {
+        "location" : "/macros/syncclientclass/json/ResponseHandlerCreation.ftl",
+        "importAsNamespace" : "ResponseHandlerCreation"
+      }, {
+        "location" : "/macros/syncclientclass/common/ClientMethodForOperationWithSimpleForm.ftl",
+        "importAsNamespace" : "ClientMethodForOperationWithSimpleForm"
+      }
+    ]
+  },
+  "asyncClient": {
+    "mainTemplate" : "/templates/common/AsyncClientClass.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/asyncclientclass/ClientMethodForOperation.ftl",
+        "importAsNamespace" : "AsyncClientMethodForOperation"
+      }, {
+        "location": "/macros/asyncclientclass/ClientMethodForOperationWithSimpleForm.ftl",
+        "importAsNamespace": "AsyncClientMethodForOperationWithSimpleForm"
+      }
+    ]
+  },
+  "syncAbstractClass": {
+    "mainTemplate": "/templates/common/SyncClientAbstractClass.ftl",
+    "childTemplates": [
+      {
+        "location": "/macros/syncclientclass/common/ClientMethodForUnsupportedOperation.ftl",
+        "importAsNamespace": "ClientMethodForUnsupportedOperation"
+      }, {
+        "location": "/macros/syncclientclass/common/ClientMethodForOperationWithSimpleForm.ftl",
+        "importAsNamespace": "ClientMethodForOperationWithSimpleForm"
+      }
+    ]
+  },
+  "asyncAbstractClass": {
+    "mainTemplate": "/templates/common/AsyncClientAbstractClass.ftl",
+    "childTemplates": [
+      {
+        "location": "/macros/asyncclientclass/ClientMethodForUnsupportedOperation.ftl",
+        "importAsNamespace": "AsyncClientMethodForUnsupportedOperation"
+      }, {
+        "location": "/macros/asyncclientclass/ClientMethodForOperationWithSimpleForm.ftl",
+        "importAsNamespace": "AsyncClientMethodForOperationWithSimpleForm"
+      }
+    ]
+  },
+  "syncInterface": {
+    "mainTemplate" : "/templates/common/SyncClientInterface.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/syncclientinterface/InterfaceMethodForOperation.ftl",
+        "importAsNamespace" : "InterfaceMethodForOperationMacro"
+      }
+    ]
+  },
+  "asyncInterface": {
+    "mainTemplate" : "/templates/common/AsyncClientInterface.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/asyncclientinterface/InterfaceMethodForOperation.ftl",
+        "importAsNamespace" : "AsyncInterfaceMethodForOperationMacro"
+      }
+    ]
+  },
+  "requestClass": {
+    "mainTemplate" : "/templates/common/model-request-class.ftl"
+  },
+  "responseClass": {
+    "mainTemplate" : "/templates/common/model-class.ftl"
+  },
+  "modelClass": {
+    "mainTemplate" : "/templates/common/model-class.ftl"
+  },
+  "modelEnum": {
+    "mainTemplate" : "/templates/common/enum-class.ftl"
+  },
+  "modelUnmarshaller": {
+    "mainTemplate" : "/templates/json/ModelJsonUnmarshaller.ftl",
+    "childTemplates" : [
+        {
+          "location" : "/macros/unmarshaller/json/MemberUnmarshallerDeclaration.ftl",
+          "importAsNamespace" : "MemberUnmarshallerDeclarationMacro"
+        }, {
+          "location" : "/macros/unmarshaller/json/MemberUnmarshallerInvocation.ftl",
+          "importAsNamespace" : "MemberUnmarshallerInvocationMacro"
+        }, {
+          "location" : "/macros/unmarshaller/json/PayloadUnmarshaller.ftl",
+          "importAsNamespace" : "PayloadUnmarshallerMacro"
+        }
+    ]
+  },
+  "modelMarshaller": {
+     "mainTemplate" : "/templates/json/ShapeJsonMarshaller.ftl",
+     "childTemplates" : [
+        {
+          "location" : "/macros/marshaller/rest/MarshalHeaderMembersMacro.ftl",
+          "importAsNamespace" : "MarshalHeaderMembersMacro"
+        }, {
+          "location" : "/macros/marshaller/json/ModelMarshallerMacro.ftl",
+          "importAsNamespace" : "ModelMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/rest-json/RequestMarshallerMacro.ftl",
+          "importAsNamespace" : "RequestMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/json/MemberMarshallerMacro.ftl",
+          "importAsNamespace" : "MemberMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/rest/UriMemberMarshallerMacro.ftl",
+          "importAsNamespace" : "UriMemberMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/rest/QueryStringMemberMarshallerMacro.ftl",
+          "importAsNamespace" : "QueryStringMemberMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/json/ListMemberMacro.ftl",
+          "importAsNamespace" : "ListMemberMacro"
+        }, {
+          "location" : "/macros/marshaller/json/MapMemberMacro.ftl",
+          "importAsNamespace" : "MapMemberMacro"
+        }
+    ]
+  },
+  "exceptionClass": {
+    "mainTemplate" : "/templates/common/model-exception-class.ftl"
+  },
+  "policyActionClass" : {
+    "mainTemplate" : "/templates/common/auth-policy-action-class.ftl"
+  },
+  "commonChildTemplates" : [
+    {
+      "location" : "/macros/common/LicenseCommentBlock.ftl",
+      "importAsNamespace" : "LicenseCommentBlockMacro"
+    }, {
+      "location" : "/macros/common/VariableDeclarationMacro.ftl",
+      "importAsNamespace" : "VariableDeclarationMacro"
+    }, {
+      "location" : "/macros/model/json/AdditionalAnnotationsForField.ftl",
+      "importAsNamespace" : "AdditionalAnnotationsForField"
+    }, {
+      "location" : "/macros/common/OverrideMethodsMacro.ftl",
+      "importAsNamespace" : "OverrideMethodsMacro"
+    }, {
+      "location" : "/macros/common/MethodDefinitionMacro.ftl",
+      "importAsNamespace" : "MethodDefinitionMacro"
+    }, {
+      "location" : "/macros/common/ConstructorDefinitionMacro.ftl",
+      "importAsNamespace" : "ConstructorDefinitionMacro"
+    }, {
+      "location" : "/macros/marshaller/common/RequiredParameterValidationFunctionMacro.ftl",
+      "importAsNamespace" : "RequiredParameterValidationFunctionMacro"
+    }, {
+      "location" : "/macros/marshaller/common/RequiredParameterValidationInvocationMacro.ftl",
+      "importAsNamespace" : "RequiredParameterValidationInvocationMacro"
+    }
+  ]
+}

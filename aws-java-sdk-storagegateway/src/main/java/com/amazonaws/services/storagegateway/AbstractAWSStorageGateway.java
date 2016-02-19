@@ -99,6 +99,12 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public CreateTapeWithBarcodeResult createTapeWithBarcode(
+            CreateTapeWithBarcodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTapesResult createTapes(CreateTapesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -14,7 +14,9 @@
  */
 package com.amazonaws.services.s3;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,7 +41,7 @@ public class AmazonS3URI {
      * @param str the URI to parse.
      */
     public AmazonS3URI(final String str) {
-        this(URI.create(str));
+        this(URI.create(encode(str)));
     }
 
     /**
@@ -51,7 +53,6 @@ public class AmazonS3URI {
         if (uri == null) {
             throw new IllegalArgumentException("uri cannot be null");
         }
-
         this.uri = uri;
 
         // s3://*
@@ -96,9 +97,7 @@ public class AmazonS3URI {
             // No bucket name in the authority; parse it from the path.
             this.isPathStyle = true;
 
-            // Grab the encoded path so we don't run afoul of '/'s in the
-            // bucket name.
-            String path = uri.getRawPath();
+            String path = uri.getPath();
 
             if ("/".equals(path)) {
                 this.bucket = null;
@@ -192,6 +191,28 @@ public class AmazonS3URI {
     @Override
     public String toString() {
         return uri.toString();
+    }
+
+    /**
+     * URL encodes the given string.  This allows us to pass special characters
+     * that would otherwise be rejected when building a URI instance.  Because we
+     * need to retain the URI's path structure we subsequently need to replace
+     * percent encoded path delimiters back to their decoded counterparts.
+     *
+     * @param str the string to encode
+     * @return the encoded string
+     */
+    private static String encode(final String str) {
+        try {
+            return (URLEncoder.encode(str, "UTF-8")
+                    .replace("%3A", ":")
+                    .replace("%2F", "/")
+                    .replace("+", "%20"));
+        } catch (UnsupportedEncodingException e) {
+            // This should never happen unless there is something
+            // fundamentally broken with the running JVM.
+            throw new RuntimeException(e);
+        }
     }
 
     /**
