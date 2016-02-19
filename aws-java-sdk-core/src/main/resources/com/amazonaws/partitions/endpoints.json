@@ -48,6 +48,9 @@
         },
         "eu-central-1": {
           "description": "EU (Frankfurt)"
+        },
+        "s3-external-1": {
+          "description": "S3 external 1 region"
         }
       },
       "services": {
@@ -164,7 +167,6 @@
             "us-west-1": {},
             "us-west-2": {},
             "ap-northeast-1": {},
-            "ap-northeast-2": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "eu-west-1": {},

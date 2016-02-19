@@ -58,6 +58,12 @@ import com.amazonaws.services.storagegateway.model.*;
  * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
  * regions and endpoints available for use with AWS Storage Gateway.</li>
  * </ul>
+ * <note>AWS Storage Gateway resource IDs are in uppercase. When you use these
+ * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase.
+ * You must change your resource ID to lowercase to use it with the EC2 API. For
+ * example, in Storage Gateway the ID for a volume might be vol-1122AABB. When
+ * you use this ID with the EC2 API, you must change it to vol-1122aabb.
+ * Otherwise, the EC2 API might not behave as expected.</note>
  */
 public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
@@ -80,7 +86,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
      *        <li><a>ActivateGatewayInput$ActivationKey</a></li>
-     *        <li><a>GatewayName</a></li>
+     *        <li><a>ActivateGatewayInput$GatewayName</a></li>
      *        <li><a>ActivateGatewayInput$GatewayRegion</a></li>
      *        <li><a>ActivateGatewayInput$GatewayTimezone</a></li>
      *        <li><a>ActivateGatewayInput$GatewayType</a></li>
@@ -112,7 +118,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
      *        <li><a>ActivateGatewayInput$ActivationKey</a></li>
-     *        <li><a>GatewayName</a></li>
+     *        <li><a>ActivateGatewayInput$GatewayName</a></li>
      *        <li><a>ActivateGatewayInput$GatewayRegion</a></li>
      *        <li><a>ActivateGatewayInput$GatewayTimezone</a></li>
      *        <li><a>ActivateGatewayInput$GatewayType</a></li>
@@ -761,6 +767,48 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     java.util.concurrent.Future<CreateStorediSCSIVolumeResult> createStorediSCSIVolumeAsync(
             CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a virtual tape by using your own barcode. You write data to the
+     * virtual tape and then archive the tape.
+     * </p>
+     * <note>Cache storage must be allocated to the gateway before you can
+     * create a virtual tape. Use the <a>AddCache</a> operation to add cache
+     * storage to a gateway.</note>
+     * 
+     * @param createTapeWithBarcodeRequest
+     *        CreateTapeWithBarcodeInput
+     * @return A Java Future containing the result of the CreateTapeWithBarcode
+     *         operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateTapeWithBarcode
+     */
+    java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest);
+
+    /**
+     * <p>
+     * Creates a virtual tape by using your own barcode. You write data to the
+     * virtual tape and then archive the tape.
+     * </p>
+     * <note>Cache storage must be allocated to the gateway before you can
+     * create a virtual tape. Use the <a>AddCache</a> operation to add cache
+     * storage to a gateway.</note>
+     * 
+     * @param createTapeWithBarcodeRequest
+     *        CreateTapeWithBarcodeInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTapeWithBarcode
+     *         operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateTapeWithBarcode
+     */
+    java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult> asyncHandler);
 
     /**
      * <p>
@@ -2694,6 +2742,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * name and time zone. To specify which gateway to update, use the Amazon
      * Resource Name (ARN) of the gateway in your request.
      * </p>
+     * <note>For Gateways activated after September 02, 2015, the gateway's ARN
+     * contains the gateway id rather than the gateway name. However changing
+     * the name of the gateway has no effect on the gateway's ARN.</note>
      * 
      * @param updateGatewayInformationRequest
      * @return A Java Future containing the result of the
@@ -2709,6 +2760,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * name and time zone. To specify which gateway to update, use the Amazon
      * Resource Name (ARN) of the gateway in your request.
      * </p>
+     * <note>For Gateways activated after September 02, 2015, the gateway's ARN
+     * contains the gateway id rather than the gateway name. However changing
+     * the name of the gateway has no effect on the gateway's ARN.</note>
      * 
      * @param updateGatewayInformationRequest
      * @param asyncHandler

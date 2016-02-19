@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of an adds tags to on-premises instance operation.
+ * Represents the input of and adds tags to on-premises instance operation.
  * </p>
  */
 public class AddTagsToOnPremisesInstancesRequest extends
@@ -30,6 +30,10 @@ public class AddTagsToOnPremisesInstancesRequest extends
     /**
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
+     * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Value-only tags are not allowed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -44,8 +48,15 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      * 
-     * @return The tag key-value pairs to add to the on-premises instances.
+     * @return The tag key-value pairs to add to the on-premises instances.</p>
+     *         <p>
+     *         Keys and values are both required. Keys cannot be nulls or empty
+     *         strings. Value-only tags are not allowed.
      */
     public java.util.List<Tag> getTags() {
         if (tags == null) {
@@ -58,9 +69,16 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      * 
      * @param tags
-     *        The tag key-value pairs to add to the on-premises instances.
+     *        The tag key-value pairs to add to the on-premises instances.</p>
+     *        <p>
+     *        Keys and values are both required. Keys cannot be nulls or empty
+     *        strings. Value-only tags are not allowed.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -76,6 +94,10 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
+     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or
      * {@link #withTags(java.util.Collection)} if you want to override the
@@ -83,7 +105,10 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs to add to the on-premises instances.
+     *        The tag key-value pairs to add to the on-premises instances.</p>
+     *        <p>
+     *        Keys and values are both required. Keys cannot be nulls or empty
+     *        strings. Value-only tags are not allowed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,9 +126,16 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      * 
      * @param tags
-     *        The tag key-value pairs to add to the on-premises instances.
+     *        The tag key-value pairs to add to the on-premises instances.</p>
+     *        <p>
+     *        Keys and values are both required. Keys cannot be nulls or empty
+     *        strings. Value-only tags are not allowed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

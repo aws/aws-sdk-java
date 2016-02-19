@@ -45,6 +45,21 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
+            BatchGetApplicationRevisionsRequest request) {
+
+        return batchGetApplicationRevisionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetApplicationRevisionsResult> batchGetApplicationRevisionsAsync(
+            BatchGetApplicationRevisionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetApplicationRevisionsRequest, BatchGetApplicationRevisionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             BatchGetApplicationsRequest request) {
 
@@ -82,6 +97,21 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
 
         return batchGetApplicationsAsync(new BatchGetApplicationsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
+            BatchGetDeploymentInstancesRequest request) {
+
+        return batchGetDeploymentInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
+            BatchGetDeploymentInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

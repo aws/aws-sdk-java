@@ -59,6 +59,12 @@ import com.amazonaws.annotation.ThreadSafe;
  * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
  * regions and endpoints available for use with AWS Storage Gateway.</li>
  * </ul>
+ * <note>AWS Storage Gateway resource IDs are in uppercase. When you use these
+ * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase.
+ * You must change your resource ID to lowercase to use it with the EC2 API. For
+ * example, in Storage Gateway the ID for a volume might be vol-1122AABB. When
+ * you use this ID with the EC2 API, you must change it to vol-1122aabb.
+ * Otherwise, the EC2 API might not behave as expected.</note>
  */
 @ThreadSafe
 public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
@@ -666,6 +672,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
                         try {
                             result = createStorediSCSIVolume(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest request) {
+
+        return createTapeWithBarcodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            final CreateTapeWithBarcodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateTapeWithBarcodeResult>() {
+                    @Override
+                    public CreateTapeWithBarcodeResult call() throws Exception {
+                        CreateTapeWithBarcodeResult result;
+
+                        try {
+                            result = createTapeWithBarcode(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

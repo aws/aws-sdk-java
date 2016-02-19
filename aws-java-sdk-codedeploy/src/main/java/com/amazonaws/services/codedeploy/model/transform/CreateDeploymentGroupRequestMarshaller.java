@@ -137,6 +137,22 @@ public class CreateDeploymentGroupRequestMarshaller
                         createDeploymentGroupRequest.getServiceRoleArn());
             }
 
+            com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurationsList = (com.amazonaws.internal.SdkInternalList<TriggerConfig>) createDeploymentGroupRequest
+                    .getTriggerConfigurations();
+            if (!triggerConfigurationsList.isEmpty()
+                    || !triggerConfigurationsList.isAutoConstruct()) {
+                jsonWriter.key("triggerConfigurations");
+                jsonWriter.array();
+                for (TriggerConfig triggerConfigurationsListValue : triggerConfigurationsList) {
+                    if (triggerConfigurationsListValue != null) {
+
+                        TriggerConfigJsonMarshaller.getInstance().marshall(
+                                triggerConfigurationsListValue, jsonWriter);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

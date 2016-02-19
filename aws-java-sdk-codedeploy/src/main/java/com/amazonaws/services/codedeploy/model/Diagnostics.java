@@ -60,6 +60,10 @@ public class Diagnostics implements Serializable, Cloneable {
      * <p>
      * The last portion of the associated diagnostic log.
      * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * associated diagnostic log.
+     * </p>
      */
     private String logTail;
 
@@ -331,9 +335,16 @@ public class Diagnostics implements Serializable, Cloneable {
      * <p>
      * The last portion of the associated diagnostic log.
      * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * associated diagnostic log.
+     * </p>
      * 
      * @param logTail
-     *        The last portion of the associated diagnostic log.
+     *        The last portion of the associated diagnostic log.</p>
+     *        <p>
+     *        If available, AWS CodeDeploy returns up to the last 4 KB of the
+     *        associated diagnostic log.
      */
     public void setLogTail(String logTail) {
         this.logTail = logTail;
@@ -343,8 +354,15 @@ public class Diagnostics implements Serializable, Cloneable {
      * <p>
      * The last portion of the associated diagnostic log.
      * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * associated diagnostic log.
+     * </p>
      * 
-     * @return The last portion of the associated diagnostic log.
+     * @return The last portion of the associated diagnostic log.</p>
+     *         <p>
+     *         If available, AWS CodeDeploy returns up to the last 4 KB of the
+     *         associated diagnostic log.
      */
     public String getLogTail() {
         return this.logTail;
@@ -354,9 +372,16 @@ public class Diagnostics implements Serializable, Cloneable {
      * <p>
      * The last portion of the associated diagnostic log.
      * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * associated diagnostic log.
+     * </p>
      * 
      * @param logTail
-     *        The last portion of the associated diagnostic log.
+     *        The last portion of the associated diagnostic log.</p>
+     *        <p>
+     *        If available, AWS CodeDeploy returns up to the last 4 KB of the
+     *        associated diagnostic log.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

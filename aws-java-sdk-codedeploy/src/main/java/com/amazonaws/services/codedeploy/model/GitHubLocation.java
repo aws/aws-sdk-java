@@ -39,8 +39,8 @@ public class GitHubLocation implements Serializable, Cloneable {
     private String repository;
     /**
      * <p>
-     * The SHA1 commit ID of the GitHub commit that references the that
-     * represents the bundled artifacts for the application revision.
+     * The SHA1 commit ID of the GitHub commit that represents the bundled
+     * artifacts for the application revision.
      * </p>
      */
     private String commitId;
@@ -58,7 +58,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      * @param repository
      *        The GitHub account and repository pair that stores a reference to
      *        the commit that represents the bundled artifacts for the
-     *        application revision.</p>
+     *        application revision. </p>
      *        <p>
      *        Specified as account/repository.
      */
@@ -78,7 +78,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      * 
      * @return The GitHub account and repository pair that stores a reference to
      *         the commit that represents the bundled artifacts for the
-     *         application revision.</p>
+     *         application revision. </p>
      *         <p>
      *         Specified as account/repository.
      */
@@ -99,7 +99,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      * @param repository
      *        The GitHub account and repository pair that stores a reference to
      *        the commit that represents the bundled artifacts for the
-     *        application revision.</p>
+     *        application revision. </p>
      *        <p>
      *        Specified as account/repository.
      * @return Returns a reference to this object so that method calls can be
@@ -112,13 +112,13 @@ public class GitHubLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA1 commit ID of the GitHub commit that references the that
-     * represents the bundled artifacts for the application revision.
+     * The SHA1 commit ID of the GitHub commit that represents the bundled
+     * artifacts for the application revision.
      * </p>
      * 
      * @param commitId
-     *        The SHA1 commit ID of the GitHub commit that references the that
-     *        represents the bundled artifacts for the application revision.
+     *        The SHA1 commit ID of the GitHub commit that represents the
+     *        bundled artifacts for the application revision.
      */
     public void setCommitId(String commitId) {
         this.commitId = commitId;
@@ -126,12 +126,12 @@ public class GitHubLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA1 commit ID of the GitHub commit that references the that
-     * represents the bundled artifacts for the application revision.
+     * The SHA1 commit ID of the GitHub commit that represents the bundled
+     * artifacts for the application revision.
      * </p>
      * 
-     * @return The SHA1 commit ID of the GitHub commit that references the that
-     *         represents the bundled artifacts for the application revision.
+     * @return The SHA1 commit ID of the GitHub commit that represents the
+     *         bundled artifacts for the application revision.
      */
     public String getCommitId() {
         return this.commitId;
@@ -139,13 +139,13 @@ public class GitHubLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA1 commit ID of the GitHub commit that references the that
-     * represents the bundled artifacts for the application revision.
+     * The SHA1 commit ID of the GitHub commit that represents the bundled
+     * artifacts for the application revision.
      * </p>
      * 
      * @param commitId
-     *        The SHA1 commit ID of the GitHub commit that references the that
-     *        represents the bundled artifacts for the application revision.
+     *        The SHA1 commit ID of the GitHub commit that represents the
+     *        bundled artifacts for the application revision.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

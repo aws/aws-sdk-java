@@ -1349,12 +1349,12 @@ public class AmazonHttpClient {
                 exception.setStatusCode(statusCode);
                 exception.setErrorType(ErrorType.Client);
                 exception.setErrorCode("Request entity too large");
-            } else if (statusCode == 503 && "Service Unavailable".equalsIgnoreCase(reasonPhrase)) {
-                exception = new AmazonServiceException("Service unavailable");
+            } else if (statusCode >= 500 && statusCode < 600) {
+                exception = new AmazonServiceException(reasonPhrase);
                 exception.setServiceName(request.getServiceName());
                 exception.setStatusCode(statusCode);
                 exception.setErrorType(ErrorType.Service);
-                exception.setErrorCode("Service unavailable");
+                exception.setErrorCode(reasonPhrase);
             } else if (e instanceof IOException) {
                 throw (IOException) e;
             } else {

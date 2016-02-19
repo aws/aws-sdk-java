@@ -168,11 +168,11 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Adds a tag to an on-premises instance.
+     * Adds tags to on-premises instances.
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of an adds tags to on-premises instance
+     *        Represents the input of and adds tags to on-premises instance
      *        operation.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -183,13 +183,44 @@ public interface AmazonCodeDeploy {
      * @throws TagLimitExceededException
      *         The maximum allowed number of tags was exceeded.
      * @throws InstanceLimitExceededException
-     *         The maximum number of allowed on-premises instances was exceeded.
+     *         The maximum number of allowed on-premises instances in a single
+     *         call was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
      */
     void addTagsToOnPremisesInstances(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more application revisions.
+     * </p>
+     * 
+     * @param batchGetApplicationRevisionsRequest
+     *        Represents the input of a batch get application revisions
+     *        operation.
+     * @return Result of the BatchGetApplicationRevisions operation returned by
+     *         the service.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws RevisionRequiredException
+     *         The revision ID was not specified.
+     * @throws InvalidRevisionException
+     *         The revision was specified in an invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
+     * @sample AmazonCodeDeploy.BatchGetApplicationRevisions
+     */
+    BatchGetApplicationRevisionsResult batchGetApplicationRevisions(
+            BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest);
 
     /**
      * <p>
@@ -208,6 +239,9 @@ public interface AmazonCodeDeploy {
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
      * @sample AmazonCodeDeploy.BatchGetApplications
      */
     BatchGetApplicationsResult batchGetApplications(
@@ -219,6 +253,38 @@ public interface AmazonCodeDeploy {
      * @see #batchGetApplications(BatchGetApplicationsRequest)
      */
     BatchGetApplicationsResult batchGetApplications();
+
+    /**
+     * <p>
+     * Gets information about one or more instances that are part of a
+     * deployment group.
+     * </p>
+     * 
+     * @param batchGetDeploymentInstancesRequest
+     *        Represents the input of a batch get deployment instances
+     *        operation.
+     * @return Result of the BatchGetDeploymentInstances operation returned by
+     *         the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS
+     *         account.
+     * @throws InstanceIdRequiredException
+     *         The instance ID was not specified.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid
+     *         format.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
+     * @sample AmazonCodeDeploy.BatchGetDeploymentInstances
+     */
+    BatchGetDeploymentInstancesResult batchGetDeploymentInstances(
+            BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest);
 
     /**
      * <p>
@@ -234,6 +300,9 @@ public interface AmazonCodeDeploy {
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
      * @sample AmazonCodeDeploy.BatchGetDeployments
      */
     BatchGetDeploymentsResult batchGetDeployments(
@@ -261,6 +330,9 @@ public interface AmazonCodeDeploy {
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an
      *         invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
      * @sample AmazonCodeDeploy.BatchGetOnPremisesInstances
      */
     BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(
@@ -414,6 +486,12 @@ public interface AmazonCodeDeploy {
      *         does not grant the appropriate permissions to Auto Scaling.
      * @throws DeploymentGroupLimitExceededException
      *         The deployment groups limit was exceeded.
+     * @throws LifecycleHookLimitExceededException
+     *         The limit for lifecycle hooks was exceeded.
+     * @throws InvalidTriggerConfigException
+     *         The trigger was specified in an invalid format.
+     * @throws TriggerTargetsLimitExceededException
+     *         The maximum allowed number of triggers was exceeded.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      */
     CreateDeploymentGroupResult createDeploymentGroup(
@@ -646,6 +724,9 @@ public interface AmazonCodeDeploy {
      *         format.
      * @throws InstanceDoesNotExistException
      *         The specified instance does not exist in the deployment group.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an
+     *         invalid format.
      * @sample AmazonCodeDeploy.GetDeploymentInstance
      */
     GetDeploymentInstanceResult getDeploymentInstance(
@@ -958,7 +1039,8 @@ public interface AmazonCodeDeploy {
      * @throws TagLimitExceededException
      *         The maximum allowed number of tags was exceeded.
      * @throws InstanceLimitExceededException
-     *         The maximum number of allowed on-premises instances was exceeded.
+     *         The maximum number of allowed on-premises instances in a single
+     *         call was exceeded.
      * @throws InstanceNotRegisteredException
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
@@ -1062,6 +1144,12 @@ public interface AmazonCodeDeploy {
      *         The service role ARN was specified in an invalid format. Or, if
      *         an Auto Scaling group was specified, the specified service role
      *         does not grant the appropriate permissions to Auto Scaling.
+     * @throws LifecycleHookLimitExceededException
+     *         The limit for lifecycle hooks was exceeded.
+     * @throws InvalidTriggerConfigException
+     *         The trigger was specified in an invalid format.
+     * @throws TriggerTargetsLimitExceededException
+     *         The maximum allowed number of triggers was exceeded.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      */
     UpdateDeploymentGroupResult updateDeploymentGroup(

@@ -45,6 +45,12 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(
+            BatchGetApplicationRevisionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetApplicationsResult batchGetApplications(
             BatchGetApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -53,6 +59,12 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     @Override
     public BatchGetApplicationsResult batchGetApplications() {
         return batchGetApplications(new BatchGetApplicationsRequest());
+    }
+
+    @Override
+    public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(
+            BatchGetDeploymentInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

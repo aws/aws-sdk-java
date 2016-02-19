@@ -52,8 +52,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * <note>In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instances type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
-     * instances at a time. (You cannot set the type to MOST_CONCURRENCY, only
-     * to HOST_COUNT or FLEET_PERCENT.)</note>
+     * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
+     * HOST_COUNT or FLEET_PERCENT.) In addition, with
+     * CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all
+     * but one instance are kept in healthy states during the deployment
+     * operation. While this allows one instance at a time to be taken offline
+     * for a new deployment, it also means that if the deployment to the last
+     * instance fails, the overall deployment still succeeds.</note>
      */
     private String type;
 
@@ -116,8 +121,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * <note>In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instances type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
-     * instances at a time. (You cannot set the type to MOST_CONCURRENCY, only
-     * to HOST_COUNT or FLEET_PERCENT.)</note>
+     * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
+     * HOST_COUNT or FLEET_PERCENT.) In addition, with
+     * CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all
+     * but one instance are kept in healthy states during the deployment
+     * operation. While this allows one instance at a time to be taken offline
+     * for a new deployment, it also means that if the deployment to the last
+     * instance fails, the overall deployment still succeeds.</note>
      * 
      * @param type
      *        The minimum healthy instances type:</p>
@@ -139,8 +149,14 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        <note>In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instances type of MOST_CONCURRENCY and a value of 1. This means a
-     *        deployment to only one instances at a time. (You cannot set the
-     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)
+     *        deployment to only one instance at a time. (You cannot set the
+     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In
+     *        addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy will
+     *        try to ensure that all but one instance are kept in healthy states
+     *        during the deployment operation. While this allows one instance at
+     *        a time to be taken offline for a new deployment, it also means
+     *        that if the deployment to the last instance fails, the overall
+     *        deployment still succeeds.
      * @see MinimumHealthyHostsType
      */
     public void setType(String type) {
@@ -168,8 +184,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * <note>In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instances type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
-     * instances at a time. (You cannot set the type to MOST_CONCURRENCY, only
-     * to HOST_COUNT or FLEET_PERCENT.)</note>
+     * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
+     * HOST_COUNT or FLEET_PERCENT.) In addition, with
+     * CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all
+     * but one instance are kept in healthy states during the deployment
+     * operation. While this allows one instance at a time to be taken offline
+     * for a new deployment, it also means that if the deployment to the last
+     * instance fails, the overall deployment still succeeds.</note>
      * 
      * @return The minimum healthy instances type:</p>
      *         <ul>
@@ -190,8 +211,14 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         <note>In a call to the get deployment configuration operation,
      *         CodeDeployDefault.OneAtATime will return a minimum healthy
      *         instances type of MOST_CONCURRENCY and a value of 1. This means a
-     *         deployment to only one instances at a time. (You cannot set the
+     *         deployment to only one instance at a time. (You cannot set the
      *         type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)
+     *         In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy
+     *         will try to ensure that all but one instance are kept in healthy
+     *         states during the deployment operation. While this allows one
+     *         instance at a time to be taken offline for a new deployment, it
+     *         also means that if the deployment to the last instance fails, the
+     *         overall deployment still succeeds.
      * @see MinimumHealthyHostsType
      */
     public String getType() {
@@ -219,8 +246,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * <note>In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instances type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
-     * instances at a time. (You cannot set the type to MOST_CONCURRENCY, only
-     * to HOST_COUNT or FLEET_PERCENT.)</note>
+     * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
+     * HOST_COUNT or FLEET_PERCENT.) In addition, with
+     * CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all
+     * but one instance are kept in healthy states during the deployment
+     * operation. While this allows one instance at a time to be taken offline
+     * for a new deployment, it also means that if the deployment to the last
+     * instance fails, the overall deployment still succeeds.</note>
      * 
      * @param type
      *        The minimum healthy instances type:</p>
@@ -242,8 +274,14 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        <note>In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instances type of MOST_CONCURRENCY and a value of 1. This means a
-     *        deployment to only one instances at a time. (You cannot set the
-     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)
+     *        deployment to only one instance at a time. (You cannot set the
+     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In
+     *        addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy will
+     *        try to ensure that all but one instance are kept in healthy states
+     *        during the deployment operation. While this allows one instance at
+     *        a time to be taken offline for a new deployment, it also means
+     *        that if the deployment to the last instance fails, the overall
+     *        deployment still succeeds.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumHealthyHostsType
@@ -274,8 +312,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * <note>In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instances type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
-     * instances at a time. (You cannot set the type to MOST_CONCURRENCY, only
-     * to HOST_COUNT or FLEET_PERCENT.)</note>
+     * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
+     * HOST_COUNT or FLEET_PERCENT.) In addition, with
+     * CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all
+     * but one instance are kept in healthy states during the deployment
+     * operation. While this allows one instance at a time to be taken offline
+     * for a new deployment, it also means that if the deployment to the last
+     * instance fails, the overall deployment still succeeds.</note>
      * 
      * @param type
      *        The minimum healthy instances type:</p>
@@ -297,8 +340,14 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        <note>In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instances type of MOST_CONCURRENCY and a value of 1. This means a
-     *        deployment to only one instances at a time. (You cannot set the
-     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)
+     *        deployment to only one instance at a time. (You cannot set the
+     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In
+     *        addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy will
+     *        try to ensure that all but one instance are kept in healthy states
+     *        during the deployment operation. While this allows one instance at
+     *        a time to be taken offline for a new deployment, it also means
+     *        that if the deployment to the last instance fails, the overall
+     *        deployment still succeeds.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumHealthyHostsType
@@ -328,8 +377,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * <note>In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instances type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
-     * instances at a time. (You cannot set the type to MOST_CONCURRENCY, only
-     * to HOST_COUNT or FLEET_PERCENT.)</note>
+     * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
+     * HOST_COUNT or FLEET_PERCENT.) In addition, with
+     * CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all
+     * but one instance are kept in healthy states during the deployment
+     * operation. While this allows one instance at a time to be taken offline
+     * for a new deployment, it also means that if the deployment to the last
+     * instance fails, the overall deployment still succeeds.</note>
      * 
      * @param type
      *        The minimum healthy instances type:</p>
@@ -351,8 +405,14 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        <note>In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instances type of MOST_CONCURRENCY and a value of 1. This means a
-     *        deployment to only one instances at a time. (You cannot set the
-     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.)
+     *        deployment to only one instance at a time. (You cannot set the
+     *        type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In
+     *        addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy will
+     *        try to ensure that all but one instance are kept in healthy states
+     *        during the deployment operation. While this allows one instance at
+     *        a time to be taken offline for a new deployment, it also means
+     *        that if the deployment to the last instance fails, the overall
+     *        deployment still succeeds.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumHealthyHostsType
