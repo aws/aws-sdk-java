@@ -192,4 +192,18 @@ public class TransferManagerConfiguration {
     public void setMultipartCopyThreshold(long multipartCopyThreshold) {
         this.multipartCopyThreshold = multipartCopyThreshold;
     }
+
+    /**
+     * Sets the size threshold in bytes for when to use multi-part copy
+     * requests. Copy requests for objects over this size will automatically use
+     * a multi-part copy strategy, while copy requests for objects smaller than
+     * this threshold will use a single connection to copy the whole object.
+     * This accepts an int parameter for backward compatibility.
+     *
+     * @param multipartCopyThreshold
+     *            The size threshold in bytes for when to use multi part copy.
+     */
+    public void setMultipartCopyThreshold(int multipartCopyThreshold) {
+        setMultipartCopyThreshold((long) multipartCopyThreshold);
+    }
 }
