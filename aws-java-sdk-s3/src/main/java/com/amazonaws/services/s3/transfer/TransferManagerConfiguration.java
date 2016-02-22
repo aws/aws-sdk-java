@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer;
 
+import java.lang.Deprecated;
+
 import static com.amazonaws.services.s3.internal.Constants.*;
 
 /**
@@ -191,5 +193,26 @@ public class TransferManagerConfiguration {
      */
     public void setMultipartCopyThreshold(long multipartCopyThreshold) {
         this.multipartCopyThreshold = multipartCopyThreshold;
+    }
+
+    /**
+     * Sets the size threshold in bytes for when to use multi-part copy
+     * requests. Copy requests for objects over this size will automatically use
+     * a multi-part copy strategy, while copy requests for objects smaller than
+     * this threshold will use a single connection to copy the whole object.
+     *
+     * This accepts an int parameter for backward compatibility for Hadoop 2.7 and S3A filesystem
+     * See details (on introduced incompatibility and fix targeted for 2.8) here:
+     * - https://issues.apache.org/jira/browse/HADOOP-12420
+     * - https://issues.apache.org/jira/browse/HADOOP-12496
+     * - https://issues.apache.org/jira/browse/HADOOP-12269
+     * Once Hadoop 2.8 (which uses aws-sdk 1.10.6 or later) is used commonly, this may be removed
+     *
+     * @param multipartCopyThreshold
+     *            The size threshold in bytes for when to use multi part copy.
+     */
+    @Deprecated // can be removed when Hadoop v2.8 is the common version
+    public void setMultipartCopyThreshold(int multipartCopyThreshold) {
+        setMultipartCopyThreshold((long) multipartCopyThreshold);
     }
 }
