@@ -61,9 +61,9 @@ public class CreateApiKeyResult implements Serializable, Cloneable {
     private java.util.List<String> stageKeys;
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date createdDate;
@@ -317,15 +317,15 @@ public class CreateApiKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        The date when the API Key was created, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
@@ -333,14 +333,14 @@ public class CreateApiKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date when the API Key was created, in <a target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     * @return The date when the API Key was created, in <a
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
     public java.util.Date getCreatedDate() {
         return this.createdDate;
@@ -348,15 +348,15 @@ public class CreateApiKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        The date when the API Key was created, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -64,10 +64,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "cancelJob",
+      "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
       "syncReturnType" : "CancelJobResult",
       "asyncReturnType" : "CancelJobResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>"
     },
     "CreateJob" : {
@@ -108,10 +108,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createJob",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
       "syncReturnType" : "CreateJobResult",
       "asyncReturnType" : "CreateJobResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>"
     },
     "CreatePipeline" : {
@@ -152,10 +152,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createPipeline",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "syncReturnType" : "CreatePipelineResult",
       "asyncReturnType" : "CreatePipelineResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>"
     },
     "CreatePreset" : {
@@ -193,10 +193,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createPreset",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreatePresetResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<CreatePresetResult>",
       "syncReturnType" : "CreatePresetResult",
       "asyncReturnType" : "CreatePresetResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CreatePresetResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<CreatePresetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>"
     },
     "DeletePipeline" : {
@@ -237,10 +237,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deletePipeline",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
       "syncReturnType" : "DeletePipelineResult",
       "asyncReturnType" : "DeletePipelineResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>"
     },
     "DeletePreset" : {
@@ -278,10 +278,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deletePreset",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeletePresetResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeletePresetResult>",
       "syncReturnType" : "DeletePresetResult",
       "asyncReturnType" : "DeletePresetResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DeletePresetResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeletePresetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>"
     },
     "ListJobsByPipeline" : {
@@ -319,10 +319,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listJobsByPipeline",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByPipelineResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListJobsByPipelineResult>",
       "syncReturnType" : "ListJobsByPipelineResult",
       "asyncReturnType" : "ListJobsByPipelineResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListJobsByPipelineResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByPipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>"
     },
     "ListJobsByStatus" : {
@@ -360,10 +360,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listJobsByStatus",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByStatusResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListJobsByStatusResult>",
       "syncReturnType" : "ListJobsByStatusResult",
       "asyncReturnType" : "ListJobsByStatusResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListJobsByStatusResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>"
     },
     "ListPipelines" : {
@@ -398,10 +398,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listPipelines",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "syncReturnType" : "ListPipelinesResult",
       "asyncReturnType" : "ListPipelinesResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>"
     },
     "ListPresets" : {
@@ -436,10 +436,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listPresets",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListPresetsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListPresetsResult>",
       "syncReturnType" : "ListPresetsResult",
       "asyncReturnType" : "ListPresetsResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListPresetsResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListPresetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>"
     },
     "ReadJob" : {
@@ -477,10 +477,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "readJob",
+      "asyncCallableType" : "java.util.concurrent.Callable<ReadJobResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ReadJobResult>",
       "syncReturnType" : "ReadJobResult",
       "asyncReturnType" : "ReadJobResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ReadJobResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ReadJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>"
     },
     "ReadPipeline" : {
@@ -518,10 +518,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "readPipeline",
+      "asyncCallableType" : "java.util.concurrent.Callable<ReadPipelineResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ReadPipelineResult>",
       "syncReturnType" : "ReadPipelineResult",
       "asyncReturnType" : "ReadPipelineResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ReadPipelineResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ReadPipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>"
     },
     "ReadPreset" : {
@@ -559,10 +559,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "readPreset",
+      "asyncCallableType" : "java.util.concurrent.Callable<ReadPresetResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ReadPresetResult>",
       "syncReturnType" : "ReadPresetResult",
       "asyncReturnType" : "ReadPresetResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ReadPresetResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<ReadPresetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>"
     },
     "TestRole" : {
@@ -600,10 +600,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "testRole",
+      "asyncCallableType" : "java.util.concurrent.Callable<TestRoleResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<TestRoleResult>",
       "syncReturnType" : "TestRoleResult",
       "asyncReturnType" : "TestRoleResult",
-      "asyncFutureType" : "java.util.concurrent.Future<TestRoleResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<TestRoleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>"
     },
     "UpdatePipeline" : {
@@ -644,10 +644,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updatePipeline",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineResult>",
       "syncReturnType" : "UpdatePipelineResult",
       "asyncReturnType" : "UpdatePipelineResult",
-      "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>"
     },
     "UpdatePipelineNotifications" : {
@@ -688,10 +688,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updatePipelineNotifications",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineNotificationsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineNotificationsResult>",
       "syncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncReturnType" : "UpdatePipelineNotificationsResult",
-      "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineNotificationsResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineNotificationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>"
     },
     "UpdatePipelineStatus" : {
@@ -732,10 +732,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updatePipelineStatus",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineStatusResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineStatusResult>",
       "syncReturnType" : "UpdatePipelineStatusResult",
       "asyncReturnType" : "UpdatePipelineStatusResult",
-      "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineStatusResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>"
     }
   },

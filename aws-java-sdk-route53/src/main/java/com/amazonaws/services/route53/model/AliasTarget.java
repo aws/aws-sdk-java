@@ -102,6 +102,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one
      * value from the console and the other value from the API or the CLI,
      * creating the resource record set will fail.</li>
+     * <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME attribute
+     * for the environment. (The environment must have a regionalized domain
+     * name.)</li>
      * <li><b>An Amazon S3 bucket that is configured as a static website:</b>
      * Specify the domain name of the Amazon S3 website endpoint in which you
      * created the bucket; for example,
@@ -114,7 +117,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      * >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</li>
-     * <li/>
+     * <li><b>Another Amazon Route 53 resource record set:</b> Specify the value
+     * of the <code>Name</code> element for a resource record set in the current
+     * hosted zone.</li>
      * </ul>
      * <p>
      * For more information and an example, see <a href=
@@ -162,8 +167,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Note the following:
      * </p>
      * <ul>
-     * <li>You cannot set EvaluateTargetHealth to true when the alias target is
-     * a CloudFront distribution.</li>
+     * <li>You cannot set <code>EvaluateTargetHealth</code> to true when the
+     * alias target is a CloudFront distribution.</li>
      * <li>If the AWS resource that you specify in <code>AliasTarget</code> is a
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
@@ -270,6 +275,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <code>DNSName</code>. If you get one value from the console and
      *        the other value from the API or the CLI, creating the resource
      *        record set will fail.</li>
+     *        <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME
+     *        attribute for the environment. (The environment must have a
+     *        regionalized domain name.)</li>
      *        <li><b>An Amazon S3 bucket that is configured as a static
      *        website:</b> Specify the domain name of the Amazon S3 website
      *        endpoint in which you created the bucket; for example,
@@ -282,7 +290,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      *        >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      *        Storage Service Developer Guide</i>.</li>
-     *        <li/>
+     *        <li><b>Another Amazon Route 53 resource record set:</b> Specify
+     *        the value of the <code>Name</code> element for a resource record
+     *        set in the current hosted zone.</li>
      *        </ul>
      *        <p>
      *        For more information and an example, see <a href=
@@ -524,6 +534,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one
      * value from the console and the other value from the API or the CLI,
      * creating the resource record set will fail.</li>
+     * <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME attribute
+     * for the environment. (The environment must have a regionalized domain
+     * name.)</li>
      * <li><b>An Amazon S3 bucket that is configured as a static website:</b>
      * Specify the domain name of the Amazon S3 website endpoint in which you
      * created the bucket; for example,
@@ -536,7 +549,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      * >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</li>
-     * <li/>
+     * <li><b>Another Amazon Route 53 resource record set:</b> Specify the value
+     * of the <code>Name</code> element for a resource record set in the current
+     * hosted zone.</li>
      * </ul>
      * <p>
      * For more information and an example, see <a href=
@@ -568,6 +583,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <code>DNSName</code>. If you get one value from the console and
      *        the other value from the API or the CLI, creating the resource
      *        record set will fail.</li>
+     *        <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME
+     *        attribute for the environment. (The environment must have a
+     *        regionalized domain name.)</li>
      *        <li><b>An Amazon S3 bucket that is configured as a static
      *        website:</b> Specify the domain name of the Amazon S3 website
      *        endpoint in which you created the bucket; for example,
@@ -580,7 +598,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      *        >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      *        Storage Service Developer Guide</i>.</li>
-     *        <li/>
+     *        <li><b>Another Amazon Route 53 resource record set:</b> Specify
+     *        the value of the <code>Name</code> element for a resource record
+     *        set in the current hosted zone.</li>
      *        </ul>
      *        <p>
      *        For more information and an example, see <a href=
@@ -615,6 +635,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one
      * value from the console and the other value from the API or the CLI,
      * creating the resource record set will fail.</li>
+     * <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME attribute
+     * for the environment. (The environment must have a regionalized domain
+     * name.)</li>
      * <li><b>An Amazon S3 bucket that is configured as a static website:</b>
      * Specify the domain name of the Amazon S3 website endpoint in which you
      * created the bucket; for example,
@@ -627,7 +650,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      * >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</li>
-     * <li/>
+     * <li><b>Another Amazon Route 53 resource record set:</b> Specify the value
+     * of the <code>Name</code> element for a resource record set in the current
+     * hosted zone.</li>
      * </ul>
      * <p>
      * For more information and an example, see <a href=
@@ -658,6 +683,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <code>DNSName</code>. If you get one value from the console and
      *         the other value from the API or the CLI, creating the resource
      *         record set will fail.</li>
+     *         <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME
+     *         attribute for the environment. (The environment must have a
+     *         regionalized domain name.)</li>
      *         <li><b>An Amazon S3 bucket that is configured as a static
      *         website:</b> Specify the domain name of the Amazon S3 website
      *         endpoint in which you created the bucket; for example,
@@ -671,7 +699,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      *         >Hosting a Static Website on Amazon S3</a> in the <i>Amazon
      *         Simple Storage Service Developer Guide</i>.</li>
-     *         <li/>
+     *         <li><b>Another Amazon Route 53 resource record set:</b> Specify
+     *         the value of the <code>Name</code> element for a resource record
+     *         set in the current hosted zone.</li>
      *         </ul>
      *         <p>
      *         For more information and an example, see <a href=
@@ -706,6 +736,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one
      * value from the console and the other value from the API or the CLI,
      * creating the resource record set will fail.</li>
+     * <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME attribute
+     * for the environment. (The environment must have a regionalized domain
+     * name.)</li>
      * <li><b>An Amazon S3 bucket that is configured as a static website:</b>
      * Specify the domain name of the Amazon S3 website endpoint in which you
      * created the bucket; for example,
@@ -718,7 +751,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      * >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</li>
-     * <li/>
+     * <li><b>Another Amazon Route 53 resource record set:</b> Specify the value
+     * of the <code>Name</code> element for a resource record set in the current
+     * hosted zone.</li>
      * </ul>
      * <p>
      * For more information and an example, see <a href=
@@ -750,6 +785,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <code>DNSName</code>. If you get one value from the console and
      *        the other value from the API or the CLI, creating the resource
      *        record set will fail.</li>
+     *        <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME
+     *        attribute for the environment. (The environment must have a
+     *        regionalized domain name.)</li>
      *        <li><b>An Amazon S3 bucket that is configured as a static
      *        website:</b> Specify the domain name of the Amazon S3 website
      *        endpoint in which you created the bucket; for example,
@@ -762,7 +800,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      *        >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
      *        Storage Service Developer Guide</i>.</li>
-     *        <li/>
+     *        <li><b>Another Amazon Route 53 resource record set:</b> Specify
+     *        the value of the <code>Name</code> element for a resource record
+     *        set in the current hosted zone.</li>
      *        </ul>
      *        <p>
      *        For more information and an example, see <a href=
@@ -815,8 +855,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Note the following:
      * </p>
      * <ul>
-     * <li>You cannot set EvaluateTargetHealth to true when the alias target is
-     * a CloudFront distribution.</li>
+     * <li>You cannot set <code>EvaluateTargetHealth</code> to true when the
+     * alias target is a CloudFront distribution.</li>
      * <li>If the AWS resource that you specify in <code>AliasTarget</code> is a
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
@@ -892,8 +932,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Note the following:
      *        </p>
      *        <ul>
-     *        <li>You cannot set EvaluateTargetHealth to true when the alias
-     *        target is a CloudFront distribution.</li>
+     *        <li>You cannot set <code>EvaluateTargetHealth</code> to true when
+     *        the alias target is a CloudFront distribution.</li>
      *        <li>If the AWS resource that you specify in
      *        <code>AliasTarget</code> is a resource record set or a group of
      *        resource record sets (for example, a group of weighted resource
@@ -975,8 +1015,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Note the following:
      * </p>
      * <ul>
-     * <li>You cannot set EvaluateTargetHealth to true when the alias target is
-     * a CloudFront distribution.</li>
+     * <li>You cannot set <code>EvaluateTargetHealth</code> to true when the
+     * alias target is a CloudFront distribution.</li>
      * <li>If the AWS resource that you specify in <code>AliasTarget</code> is a
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
@@ -1051,8 +1091,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         Note the following:
      *         </p>
      *         <ul>
-     *         <li>You cannot set EvaluateTargetHealth to true when the alias
-     *         target is a CloudFront distribution.</li>
+     *         <li>You cannot set <code>EvaluateTargetHealth</code> to true when
+     *         the alias target is a CloudFront distribution.</li>
      *         <li>If the AWS resource that you specify in
      *         <code>AliasTarget</code> is a resource record set or a group of
      *         resource record sets (for example, a group of weighted resource
@@ -1135,8 +1175,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Note the following:
      * </p>
      * <ul>
-     * <li>You cannot set EvaluateTargetHealth to true when the alias target is
-     * a CloudFront distribution.</li>
+     * <li>You cannot set <code>EvaluateTargetHealth</code> to true when the
+     * alias target is a CloudFront distribution.</li>
      * <li>If the AWS resource that you specify in <code>AliasTarget</code> is a
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
@@ -1212,8 +1252,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Note the following:
      *        </p>
      *        <ul>
-     *        <li>You cannot set EvaluateTargetHealth to true when the alias
-     *        target is a CloudFront distribution.</li>
+     *        <li>You cannot set <code>EvaluateTargetHealth</code> to true when
+     *        the alias target is a CloudFront distribution.</li>
      *        <li>If the AWS resource that you specify in
      *        <code>AliasTarget</code> is a resource record set or a group of
      *        resource record sets (for example, a group of weighted resource
@@ -1298,8 +1338,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Note the following:
      * </p>
      * <ul>
-     * <li>You cannot set EvaluateTargetHealth to true when the alias target is
-     * a CloudFront distribution.</li>
+     * <li>You cannot set <code>EvaluateTargetHealth</code> to true when the
+     * alias target is a CloudFront distribution.</li>
      * <li>If the AWS resource that you specify in <code>AliasTarget</code> is a
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
@@ -1374,8 +1414,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         Note the following:
      *         </p>
      *         <ul>
-     *         <li>You cannot set EvaluateTargetHealth to true when the alias
-     *         target is a CloudFront distribution.</li>
+     *         <li>You cannot set <code>EvaluateTargetHealth</code> to true when
+     *         the alias target is a CloudFront distribution.</li>
      *         <li>If the AWS resource that you specify in
      *         <code>AliasTarget</code> is a resource record set or a group of
      *         resource record sets (for example, a group of weighted resource

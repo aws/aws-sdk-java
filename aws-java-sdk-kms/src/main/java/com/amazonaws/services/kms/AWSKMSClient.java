@@ -308,58 +308,58 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.DependencyTimeoutException.class,
-                        "DependencyTimeout"));
+                        "DependencyTimeoutException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.InvalidGrantIdException.class,
-                "InvalidGrantId"));
+                "InvalidGrantIdException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.LimitExceededException.class,
-                "LimitExceeded"));
+                "LimitExceededException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.InvalidAliasNameException.class,
-                        "InvalidAliasName"));
+                        "InvalidAliasNameException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class,
-                        "MalformedPolicyDocument"));
+                        "MalformedPolicyDocumentException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.UnsupportedOperationException.class,
-                        "UnsupportedOperation"));
+                        "UnsupportedOperationException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.InvalidGrantTokenException.class,
-                        "InvalidGrantToken"));
+                        "InvalidGrantTokenException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.InvalidMarkerException.class,
-                "InvalidMarker"));
+                "InvalidMarkerException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.InvalidArnException.class,
-                "InvalidArn"));
+                "InvalidArnException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.DisabledException.class,
-                "Disabled"));
+                "DisabledException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.InvalidCiphertextException.class,
-                        "InvalidCiphertext"));
+                        "InvalidCiphertextException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.AlreadyExistsException.class,
-                "AlreadyExists"));
+                "AlreadyExistsException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.KMSInternalException.class,
-                "KMSInternal"));
+                "KMSInternalException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.NotFoundException.class,
-                "NotFound"));
+                "NotFoundException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.InvalidKeyUsageException.class,
-                        "InvalidKeyUsage"));
+                        "InvalidKeyUsageException"));
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
                 com.amazonaws.services.kms.model.KeyUnavailableException.class,
-                "KeyUnavailable"));
+                "KeyUnavailableException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.kms.model.KMSInvalidStateException.class,

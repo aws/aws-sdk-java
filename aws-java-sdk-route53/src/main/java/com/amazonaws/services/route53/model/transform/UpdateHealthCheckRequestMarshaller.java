@@ -145,6 +145,12 @@ public class UpdateHealthCheckRequestMarshaller implements
                     }
                     xmlWriter.endElement();
                 }
+
+                if (updateHealthCheckRequest.getEnableSNI() != null) {
+                    xmlWriter.startElement("EnableSNI")
+                            .value(updateHealthCheckRequest.getEnableSNI())
+                            .endElement();
+                }
             }
             xmlWriter.endElement();
 

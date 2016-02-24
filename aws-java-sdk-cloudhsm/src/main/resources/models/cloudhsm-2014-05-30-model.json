@@ -4,13 +4,12 @@
     "apiVersion":"2014-05-30",
     "endpointPrefix":"cloudhsm",
     "jsonVersion":"1.1",
+    "protocol":"json",
     "serviceAbbreviation":"CloudHSM",
     "serviceFullName":"Amazon CloudHSM",
     "signatureVersion":"v4",
-    "targetPrefix":"CloudHsmFrontendService",
-    "protocol":"json"
+    "targetPrefix":"CloudHsmFrontendService"
   },
-  "documentation":"<fullname>AWS CloudHSM Service</fullname>",
   "operations":{
     "CreateHapg":{
       "name":"CreateHapg",
@@ -18,31 +17,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"CreateHapgRequest",
-        "documentation":"<p>Contains the inputs for the <a>CreateHapgRequest</a> action.</p>"
-      },
-      "output":{
-        "shape":"CreateHapgResponse",
-        "documentation":"<p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>"
-      },
+      "input":{"shape":"CreateHapgRequest"},
+      "output":{"shape":"CreateHapgResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>"
     },
@@ -52,32 +32,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"CreateHsmRequest",
-        "documentation":"<p>Contains the inputs for the <a>CreateHsm</a> action. </p>",
-        "locationName":"CreateHsmRequest"
-      },
-      "output":{
-        "shape":"CreateHsmResponse",
-        "documentation":"<p>Contains the output of the <a>CreateHsm</a> action.</p>"
-      },
+      "input":{"shape":"CreateHsmRequest"},
+      "output":{"shape":"CreateHsmResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Creates an uninitialized HSM instance. Running this command provisions an HSM appliance and will result in charges to your AWS account for the HSM.</p>"
     },
@@ -87,31 +47,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"CreateLunaClientRequest",
-        "documentation":"<p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>"
-      },
-      "output":{
-        "shape":"CreateLunaClientResponse",
-        "documentation":"<p>Contains the output of the <a>CreateLunaClient</a> action.</p>"
-      },
+      "input":{"shape":"CreateLunaClientRequest"},
+      "output":{"shape":"CreateLunaClientResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Creates an HSM client.</p>"
     },
@@ -121,31 +62,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DeleteHapgRequest",
-        "documentation":"<p>Contains the inputs for the <a>DeleteHapg</a> action.</p>"
-      },
-      "output":{
-        "shape":"DeleteHapgResponse",
-        "documentation":"<p>Contains the output of the <a>DeleteHapg</a> action.</p>"
-      },
+      "input":{"shape":"DeleteHapgRequest"},
+      "output":{"shape":"DeleteHapgResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Deletes a high-availability partition group.</p>"
     },
@@ -155,32 +77,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DeleteHsmRequest",
-        "documentation":"<p>Contains the inputs for the <a>DeleteHsm</a> action. </p>",
-        "locationName":"DeleteHsmRequest"
-      },
-      "output":{
-        "shape":"DeleteHsmResponse",
-        "documentation":"<p>Contains the output of the <a>DeleteHsm</a> action.</p>"
-      },
+      "input":{"shape":"DeleteHsmRequest"},
+      "output":{"shape":"DeleteHsmResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Deletes an HSM. Once complete, this operation cannot be undone and your key material cannot be recovered.</p>"
     },
@@ -193,22 +95,9 @@
       "input":{"shape":"DeleteLunaClientRequest"},
       "output":{"shape":"DeleteLunaClientResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Deletes a client.</p>"
     },
@@ -218,31 +107,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DescribeHapgRequest",
-        "documentation":"<p>Contains the inputs for the <a>DescribeHapg</a> action.</p>"
-      },
-      "output":{
-        "shape":"DescribeHapgResponse",
-        "documentation":"<p>Contains the output of the <a>DescribeHapg</a> action.</p>"
-      },
+      "input":{"shape":"DescribeHapgRequest"},
+      "output":{"shape":"DescribeHapgResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Retrieves information about a high-availability partition group.</p>"
     },
@@ -252,31 +122,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DescribeHsmRequest",
-        "documentation":"<p>Contains the inputs for the <a>DescribeHsm</a> action. </p>"
-      },
-      "output":{
-        "shape":"DescribeHsmResponse",
-        "documentation":"<p>Contains the output of the <a>DescribeHsm</a> action.</p>"
-      },
+      "input":{"shape":"DescribeHsmRequest"},
+      "output":{"shape":"DescribeHsmResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>"
     },
@@ -289,22 +140,9 @@
       "input":{"shape":"DescribeLunaClientRequest"},
       "output":{"shape":"DescribeLunaClientResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Retrieves information about an HSM client.</p>"
     },
@@ -317,22 +155,9 @@
       "input":{"shape":"GetConfigRequest"},
       "output":{"shape":"GetConfigResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>"
     },
@@ -342,28 +167,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"ListAvailableZonesRequest",
-        "documentation":"<p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>"
-      },
+      "input":{"shape":"ListAvailableZonesRequest"},
       "output":{"shape":"ListAvailableZonesResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>"
     },
@@ -376,22 +185,9 @@
       "input":{"shape":"ListHapgsRequest"},
       "output":{"shape":"ListHapgsResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Lists the high-availability partition groups for the account.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next set of items.</p>"
     },
@@ -402,27 +198,11 @@
         "requestUri":"/"
       },
       "input":{"shape":"ListHsmsRequest"},
-      "output":{
-        "shape":"ListHsmsResponse",
-        "documentation":"<p>Contains the output of the <a>ListHsms</a> action.</p>"
-      },
+      "output":{"shape":"ListHsmsResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of items.</p>"
     },
@@ -435,22 +215,9 @@
       "input":{"shape":"ListLunaClientsRequest"},
       "output":{"shape":"ListLunaClientsResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>"
     },
@@ -463,22 +230,9 @@
       "input":{"shape":"ModifyHapgRequest"},
       "output":{"shape":"ModifyHapgResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Modifies an existing high-availability partition group.</p>"
     },
@@ -488,32 +242,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"ModifyHsmRequest",
-        "documentation":"<p>Contains the inputs for the <a>ModifyHsm</a> action. </p>",
-        "locationName":"ModifyHsmRequest"
-      },
-      "output":{
-        "shape":"ModifyHsmResponse",
-        "documentation":"<p>Contains the output of the <a>ModifyHsm</a> action.</p>"
-      },
+      "input":{"shape":"ModifyHsmRequest"},
+      "output":{"shape":"ModifyHsmResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        },
-        {
-          "shape":"CloudHsmInternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>Indicates that an internal error occurred.</p>"
-        },
-        {
-          "shape":"InvalidRequestException",
-          "exception":true,
-          "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
-        }
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Modifies an HSM.</p>"
     },
@@ -526,11 +260,7 @@
       "input":{"shape":"ModifyLunaClientRequest"},
       "output":{"shape":"ModifyLunaClientResponse"},
       "errors":[
-        {
-          "shape":"CloudHsmServiceException",
-          "exception":true,
-          "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
-        }
+        {"shape":"CloudHsmServiceException"}
       ],
       "documentation":"<p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>"
     }
@@ -547,8 +277,8 @@
     "Boolean":{"type":"boolean"},
     "Certificate":{
       "type":"string",
-      "min":600,
       "max":2400,
+      "min":600,
       "pattern":"[\\w :+=./\\n-]*"
     },
     "CertificateFingerprint":{
@@ -582,9 +312,9 @@
       "type":"structure",
       "members":{
       },
+      "documentation":"<p>Indicates that an internal error occurred.</p>",
       "exception":true,
-      "fault":true,
-      "documentation":"<p>Indicates that an internal error occurred.</p>"
+      "fault":true
     },
     "CloudHsmObjectState":{
       "type":"string",
@@ -606,8 +336,8 @@
           "documentation":"<p>Indicates if the action can be retried.</p>"
         }
       },
-      "exception":true,
-      "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
+      "documentation":"<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>",
+      "exception":true
     },
     "CreateHapgRequest":{
       "type":"structure",
@@ -1027,8 +757,8 @@
     },
     "HsmArn":{
       "type":"string",
-      "pattern":"arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\\-]*:[0-9]{12}:hsm-[0-9a-f]{8}",
-      "documentation":"<p>An ARN that identifies an HSM.</p>"
+      "documentation":"<p>An ARN that identifies an HSM.</p>",
+      "pattern":"arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\\-]*:[0-9]{12}:hsm-[0-9a-f]{8}"
     },
     "HsmList":{
       "type":"list",
@@ -1059,8 +789,8 @@
       "type":"structure",
       "members":{
       },
-      "exception":true,
-      "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>"
+      "documentation":"<p>Indicates that one or more of the request parameters are not valid.</p>",
+      "exception":true
     },
     "IpAddress":{
       "type":"string",
@@ -1300,6 +1030,5 @@
       "pattern":"vpc-[0-9a-f]{8}"
     }
   },
-  "examples":{
-  }
+  "documentation":"<fullname>AWS CloudHSM Service</fullname>"
 }

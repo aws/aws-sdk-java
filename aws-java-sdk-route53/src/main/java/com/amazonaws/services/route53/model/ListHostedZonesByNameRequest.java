@@ -22,14 +22,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your hosted zones in lexicographic order, send a
- * <code>GET</code> request to the <code>2013-04-01/hostedzonesbyname</code>
- * resource. The response to this request includes a <code>HostedZones</code>
- * element with zero or more <code>HostedZone</code> child elements
- * lexicographically ordered by DNS name. By default, the list of hosted zones
- * is displayed on a single page. You can control the length of the page that is
- * displayed by using the <code>MaxItems</code> parameter. You can use the
- * <code>DNSName</code> and <code>HostedZoneId</code> parameters to control the
- * hosted zone that the list begins with.
+ * <code>GET</code> request to the
+ * <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource. The
+ * response to this request includes a <code>HostedZones</code> element with
+ * zero or more <code>HostedZone</code> child elements lexicographically ordered
+ * by DNS name. By default, the list of hosted zones is displayed on a single
+ * page. You can control the length of the page that is displayed by using the
+ * <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and
+ * <code>HostedZoneId</code> parameters to control the hosted zone that the list
+ * begins with.
  * </p>
  * <p>
  * For more information about listing hosted zones, see <a href=

@@ -22,7 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a count of all your health checks, send a <code>GET</code>
- * request to the <code>2013-04-01/healthcheckcount</code> resource.
+ * request to the <code>/<i>Route 53 API version</i>/healthcheckcount</code>
+ * resource.
  * </p>
  */
 public class GetHealthCheckCountRequest extends AmazonWebServiceRequest

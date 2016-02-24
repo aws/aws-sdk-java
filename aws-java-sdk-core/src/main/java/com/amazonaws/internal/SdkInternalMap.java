@@ -127,4 +127,9 @@ public class SdkInternalMap<K,V> implements Map<K,V>, Serializable {
     public int hashCode() {
         return map == null ? 0 : map.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return map == null ? null : map.toString();
+    }
 }

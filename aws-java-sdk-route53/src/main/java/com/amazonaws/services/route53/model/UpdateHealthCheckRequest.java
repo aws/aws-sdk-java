@@ -90,7 +90,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy.
+     * resource healthy. Amazon Route 53 considers case when searching for
+     * <code>SearchString</code> in the response body.
      * </p>
      * <p>
      * Specify this value only if you want to change it.
@@ -146,6 +147,21 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> childHealthChecks;
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     */
+    private Boolean enableSNI;
 
     /**
      * <p>
@@ -497,7 +513,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy.
+     * resource healthy. Amazon Route 53 considers case when searching for
+     * <code>SearchString</code> in the response body.
      * </p>
      * <p>
      * Specify this value only if you want to change it.
@@ -508,7 +525,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        or <code>HTTP_STR_MATCH</code>, the string that you want Amazon
      *        Route 53 to search for in the response body from the specified
      *        resource. If the string appears in the response body, Amazon Route
-     *        53 considers the resource healthy. </p>
+     *        53 considers the resource healthy. Amazon Route 53 considers case
+     *        when searching for <code>SearchString</code> in the response
+     *        body.</p>
      *        <p>
      *        Specify this value only if you want to change it.
      */
@@ -522,7 +541,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy.
+     * resource healthy. Amazon Route 53 considers case when searching for
+     * <code>SearchString</code> in the response body.
      * </p>
      * <p>
      * Specify this value only if you want to change it.
@@ -532,7 +552,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         or <code>HTTP_STR_MATCH</code>, the string that you want Amazon
      *         Route 53 to search for in the response body from the specified
      *         resource. If the string appears in the response body, Amazon
-     *         Route 53 considers the resource healthy. </p>
+     *         Route 53 considers the resource healthy. Amazon Route 53
+     *         considers case when searching for <code>SearchString</code> in
+     *         the response body.</p>
      *         <p>
      *         Specify this value only if you want to change it.
      */
@@ -546,7 +568,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy.
+     * resource healthy. Amazon Route 53 considers case when searching for
+     * <code>SearchString</code> in the response body.
      * </p>
      * <p>
      * Specify this value only if you want to change it.
@@ -557,7 +580,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        or <code>HTTP_STR_MATCH</code>, the string that you want Amazon
      *        Route 53 to search for in the response body from the specified
      *        resource. If the string appears in the response body, Amazon Route
-     *        53 considers the resource healthy. </p>
+     *        53 considers the resource healthy. Amazon Route 53 considers case
+     *        when searching for <code>SearchString</code> in the response
+     *        body.</p>
      *        <p>
      *        Specify this value only if you want to change it.
      * @return Returns a reference to this object so that method calls can be
@@ -936,6 +961,125 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @param enableSNI
+     *        Specify whether you want Amazon Route 53 to send the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *        <code>client_hello</code> message during TLS negotiation. If you
+     *        don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *        defaults to <code>true</code> when <code>Type</code> is
+     *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
+     *        <code>false</code> when <code>Type</code> is any other value.</p>
+     *        <p>
+     *        Specify this value only if you want to change it.
+     */
+    public void setEnableSNI(Boolean enableSNI) {
+        this.enableSNI = enableSNI;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @return Specify whether you want Amazon Route 53 to send the value of
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *         <code>client_hello</code> message during TLS negotiation. If you
+     *         don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *         defaults to <code>true</code> when <code>Type</code> is
+     *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
+     *         to <code>false</code> when <code>Type</code> is any other
+     *         value.</p>
+     *         <p>
+     *         Specify this value only if you want to change it.
+     */
+    public Boolean getEnableSNI() {
+        return this.enableSNI;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @param enableSNI
+     *        Specify whether you want Amazon Route 53 to send the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *        <code>client_hello</code> message during TLS negotiation. If you
+     *        don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *        defaults to <code>true</code> when <code>Type</code> is
+     *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
+     *        <code>false</code> when <code>Type</code> is any other value.</p>
+     *        <p>
+     *        Specify this value only if you want to change it.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateHealthCheckRequest withEnableSNI(Boolean enableSNI) {
+        setEnableSNI(enableSNI);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @return Specify whether you want Amazon Route 53 to send the value of
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *         <code>client_hello</code> message during TLS negotiation. If you
+     *         don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *         defaults to <code>true</code> when <code>Type</code> is
+     *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
+     *         to <code>false</code> when <code>Type</code> is any other
+     *         value.</p>
+     *         <p>
+     *         Specify this value only if you want to change it.
+     */
+    public Boolean isEnableSNI() {
+        return this.enableSNI;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -969,7 +1113,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
         if (getHealthThreshold() != null)
             sb.append("HealthThreshold: " + getHealthThreshold() + ",");
         if (getChildHealthChecks() != null)
-            sb.append("ChildHealthChecks: " + getChildHealthChecks());
+            sb.append("ChildHealthChecks: " + getChildHealthChecks() + ",");
+        if (getEnableSNI() != null)
+            sb.append("EnableSNI: " + getEnableSNI());
         sb.append("}");
         return sb.toString();
     }
@@ -1048,6 +1194,11 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
                 && other.getChildHealthChecks().equals(
                         this.getChildHealthChecks()) == false)
             return false;
+        if (other.getEnableSNI() == null ^ this.getEnableSNI() == null)
+            return false;
+        if (other.getEnableSNI() != null
+                && other.getEnableSNI().equals(this.getEnableSNI()) == false)
+            return false;
         return true;
     }
 
@@ -1094,6 +1245,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getChildHealthChecks() == null) ? 0
                         : getChildHealthChecks().hashCode());
+        hashCode = prime * hashCode
+                + ((getEnableSNI() == null) ? 0 : getEnableSNI().hashCode());
         return hashCode;
     }
 

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for a ListGeoLocations request.
+ * The input for a <code>ListGeoLocations</code> request.
  * </p>
  */
 public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements

@@ -4,13 +4,12 @@
     "apiVersion":"2012-08-10",
     "endpointPrefix":"streams.dynamodb",
     "jsonVersion":"1.0",
+    "protocol":"json",
     "serviceFullName":"Amazon DynamoDB Streams",
     "signatureVersion":"v4",
     "signingName":"dynamodb",
-    "targetPrefix":"DynamoDBStreams_20120810",
-    "protocol":"json"
+    "targetPrefix":"DynamoDBStreams_20120810"
   },
-  "documentation":"<fullname>Amazon DynamoDB Streams</fullname> <p>This is the Amazon DynamoDB Streams API Reference. This guide describes the low-level API actions for accessing streams and processing stream records. For information about application development with DynamoDB Streams, see the <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide//Streams.html\">Amazon DynamoDB Developer Guide</a>.</p> <p>Note that this document is intended for use with the following DynamoDB documentation:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/\">Amazon DynamoDB Developer Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/\">Amazon DynamoDB API Reference</a> </p> </li> </ul> <p>The following are short descriptions of each low-level DynamoDB Streams API action, organized by function.</p> <ul> <li><p><i>DescribeStream</i> - Returns detailed information about a particular stream.</p></li> <li> <p><i>GetRecords</i> - Retrieves the stream records from within a shard.</p> </li> <li> <p><i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard ID.</p> </li> <li> <p><i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.</p> </li> </ul>",
   "operations":{
     "DescribeStream":{
       "name":"DescribeStream",
@@ -18,26 +17,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DescribeStreamInput",
-        "documentation":"<p>Represents the input of a <i>DescribeStream</i> operation.</p>"
-      },
-      "output":{
-        "shape":"DescribeStreamOutput",
-        "documentation":"<p>Represents the output of a <i>DescribeStream</i> operation.</p>"
-      },
+      "input":{"shape":"DescribeStreamInput"},
+      "output":{"shape":"DescribeStreamOutput"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The operation tried to access a nonexistent stream. </p>"
-        },
-        {
-          "shape":"InternalServerError",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>An error occurred on the server side.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerError"}
       ],
       "documentation":"<p>Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p> <note><p>You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.</p></note> <p>Each shard in the stream has a <code>SequenceNumberRange</code> associated with it. If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are present, the that shared is closed and can no longer receive more data.</p>"
     },
@@ -47,41 +31,14 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"GetRecordsInput",
-        "documentation":"<p>Represents the input of a <i>GetRecords</i> operation.</p>"
-      },
-      "output":{
-        "shape":"GetRecordsOutput",
-        "documentation":"<p>Represents the output of a <i>GetRecords</i> operation.</p>"
-      },
+      "input":{"shape":"GetRecordsInput"},
+      "output":{"shape":"GetRecordsOutput"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The operation tried to access a nonexistent stream. </p>"
-        },
-        {
-          "shape":"LimitExceededException",
-          "exception":true,
-          "documentation":"<p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries\">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>"
-        },
-        {
-          "shape":"InternalServerError",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>An error occurred on the server side.</p>"
-        },
-        {
-          "shape":"ExpiredIteratorException",
-          "exception":true,
-          "documentation":"<p>The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i> action.</p>"
-        },
-        {
-          "shape":"TrimmedDataAccessException",
-          "exception":true,
-          "documentation":"<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalServerError"},
+        {"shape":"ExpiredIteratorException"},
+        {"shape":"TrimmedDataAccessException"}
       ],
       "documentation":"<p>Retrieves the stream records from a given shard.</p> <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the position in the shard from which you want to start reading stream records sequentially. If there are no stream records available in the portion of the shard that the iterator points to, <code>GetRecords</code> returns an empty list. Note that it might take multiple calls to get to a portion of the shard that contains stream records.</p> <note><p><function>GetRecords</function> can retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes first.</p></note>"
     },
@@ -91,31 +48,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"GetShardIteratorInput",
-        "documentation":"<p>Represents the input of a <i>GetShardIterator</i> operation.</p>"
-      },
-      "output":{
-        "shape":"GetShardIteratorOutput",
-        "documentation":"<p>Represents the output of a <i>GetShardIterator</i> operation.</p>"
-      },
+      "input":{"shape":"GetShardIteratorInput"},
+      "output":{"shape":"GetShardIteratorOutput"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The operation tried to access a nonexistent stream. </p>"
-        },
-        {
-          "shape":"InternalServerError",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>An error occurred on the server side.</p>"
-        },
-        {
-          "shape":"TrimmedDataAccessException",
-          "exception":true,
-          "documentation":"<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerError"},
+        {"shape":"TrimmedDataAccessException"}
       ],
       "documentation":"<p>Returns a shard iterator. A shard iterator provides information about how to retrieve the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code> request to read the stream records from the shard.</p> <note><p>A shard iterator expires 15 minutes after it is returned to the requester.</p></note>"
     },
@@ -125,26 +63,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"ListStreamsInput",
-        "documentation":"<p>Represents the input of a <i>ListStreams</i> operation.</p>"
-      },
-      "output":{
-        "shape":"ListStreamsOutput",
-        "documentation":"<p>Represents the output of a <i>ListStreams</i> operation.</p>"
-      },
+      "input":{"shape":"ListStreamsInput"},
+      "output":{"shape":"ListStreamsOutput"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The operation tried to access a nonexistent stream. </p>"
-        },
-        {
-          "shape":"InternalServerError",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>An error occurred on the server side.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerError"}
       ],
       "documentation":"<p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return only the streams ARNs for that table.</p> <note><p>You can call <i>ListStreams</i> at a maximum rate of 5 times per second.</p></note>"
     }
@@ -250,8 +173,8 @@
           "documentation":"<p>The provided iterator exceeds the maximum age allowed.</p>"
         }
       },
-      "exception":true,
-      "documentation":"<p>The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i> action.</p>"
+      "documentation":"<p>The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i> action.</p>",
+      "exception":true
     },
     "GetRecordsInput":{
       "type":"structure",
@@ -300,7 +223,7 @@
         },
         "ShardIteratorType":{
           "shape":"ShardIteratorType",
-          "documentation":"<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>"
+          "documentation":"<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p></li> <li> <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p></li> <li> <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li> <li> <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li> </ul>"
         },
         "SequenceNumber":{
           "shape":"SequenceNumber",
@@ -327,20 +250,20 @@
           "documentation":"<p>The server encountered an internal error trying to fulfill the request.</p>"
         }
       },
+      "documentation":"<p>An error occurred on the server side.</p>",
       "exception":true,
-      "fault":true,
-      "documentation":"<p>An error occurred on the server side.</p>"
+      "fault":true
     },
     "KeySchema":{
       "type":"list",
       "member":{"shape":"KeySchemaElement"},
-      "min":1,
-      "max":2
+      "max":2,
+      "min":1
     },
     "KeySchemaAttributeName":{
       "type":"string",
-      "min":1,
-      "max":255
+      "max":255,
+      "min":1
     },
     "KeySchemaElement":{
       "type":"structure",
@@ -375,8 +298,8 @@
           "documentation":"<p>Too many operations for a given subscriber.</p>"
         }
       },
-      "exception":true,
-      "documentation":"<p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries\">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>"
+      "documentation":"<p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries\">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>",
+      "exception":true
     },
     "ListAttributeValue":{
       "type":"list",
@@ -483,13 +406,13 @@
           "documentation":"<p>The resource which is being requested does not exist.</p>"
         }
       },
-      "exception":true,
-      "documentation":"<p>The operation tried to access a nonexistent stream. </p>"
+      "documentation":"<p>The operation tried to access a nonexistent stream. </p>",
+      "exception":true
     },
     "SequenceNumber":{
       "type":"string",
-      "min":21,
-      "max":40
+      "max":40,
+      "min":21
     },
     "SequenceNumberRange":{
       "type":"structure",
@@ -529,13 +452,13 @@
     },
     "ShardId":{
       "type":"string",
-      "min":28,
-      "max":65
+      "max":65,
+      "min":28
     },
     "ShardIterator":{
       "type":"string",
-      "min":1,
-      "max":2048
+      "max":2048,
+      "min":1
     },
     "ShardIteratorType":{
       "type":"string",
@@ -566,8 +489,8 @@
     },
     "StreamArn":{
       "type":"string",
-      "min":37,
-      "max":1024
+      "max":1024,
+      "min":37
     },
     "StreamDescription":{
       "type":"structure",
@@ -671,8 +594,8 @@
     },
     "TableName":{
       "type":"string",
-      "min":3,
       "max":255,
+      "min":3,
       "pattern":"[a-zA-Z0-9_.-]+"
     },
     "TrimmedDataAccessException":{
@@ -683,10 +606,9 @@
           "documentation":"<p>\"The data you are trying to access has been trimmed.</p>"
         }
       },
-      "exception":true,
-      "documentation":"<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>"
+      "documentation":"<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>",
+      "exception":true
     }
   },
-  "examples":{
-  }
+  "documentation":"<fullname>Amazon DynamoDB Streams</fullname> <p>This is the Amazon DynamoDB Streams API Reference. This guide describes the low-level API actions for accessing streams and processing stream records. For information about application development with DynamoDB Streams, see the <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide//Streams.html\">Amazon DynamoDB Developer Guide</a>.</p> <p>Note that this document is intended for use with the following DynamoDB documentation:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/\">Amazon DynamoDB Developer Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/\">Amazon DynamoDB API Reference</a> </p> </li> </ul> <p>The following are short descriptions of each low-level DynamoDB Streams API action, organized by function.</p> <ul> <li><p><i>DescribeStream</i> - Returns detailed information about a particular stream.</p></li> <li> <p><i>GetRecords</i> - Retrieves the stream records from within a shard.</p></li> <li> <p><i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard ID.</p> </li> <li> <p><i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.</p> </li> </ul>"
 }

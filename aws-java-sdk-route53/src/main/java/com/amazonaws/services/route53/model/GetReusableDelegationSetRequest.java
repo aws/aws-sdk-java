@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for a GetReusableDelegationSet request.
+ * The input for a <code>GetReusableDelegationSet</code> request.
  * </p>
  */
 public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest

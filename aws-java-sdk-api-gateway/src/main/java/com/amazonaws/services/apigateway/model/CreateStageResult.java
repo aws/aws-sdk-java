@@ -84,18 +84,17 @@ public class CreateStageResult implements Serializable, Cloneable {
     private java.util.Map<String, String> variables;
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -559,16 +558,15 @@ public class CreateStageResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date and time that the stage was created, in <a
-     *        target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
@@ -576,15 +574,14 @@ public class CreateStageResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date and time that the stage was created, in <a
-     *         target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
     public java.util.Date getCreatedDate() {
         return this.createdDate;
@@ -592,16 +589,15 @@ public class CreateStageResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date and time that the stage was created, in <a
-     *        target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -613,16 +609,15 @@ public class CreateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param lastUpdatedDate
      *        The date and time that information about the stage was last
-     *        updated, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        updated, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
@@ -631,15 +626,14 @@ public class CreateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date and time that information about the stage was last
-     *         updated, in <a target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     *         updated, in <a
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
     public java.util.Date getLastUpdatedDate() {
         return this.lastUpdatedDate;
@@ -648,16 +642,15 @@ public class CreateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param lastUpdatedDate
      *        The date and time that information about the stage was last
-     *        updated, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        updated, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

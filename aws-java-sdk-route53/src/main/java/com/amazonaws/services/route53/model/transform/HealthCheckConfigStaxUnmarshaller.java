@@ -128,6 +128,11 @@ public class HealthCheckConfigStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("EnableSNI", targetDepth)) {
+                    healthCheckConfig.setEnableSNI(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheckConfig;

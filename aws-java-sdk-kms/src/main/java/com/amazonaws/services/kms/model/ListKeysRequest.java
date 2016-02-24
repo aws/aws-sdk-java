@@ -40,9 +40,8 @@ public class ListKeysRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      */
     private String marker;
@@ -127,14 +126,13 @@ public class ListKeysRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only in a
-     *        subsequent request after you've received a response with truncated
+     *        subsequent request after you receive a response with truncated
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      */
@@ -145,15 +143,14 @@ public class ListKeysRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @return Use this parameter only when paginating results and only in a
-     *         subsequent request after you've received a response with
-     *         truncated results. Set it to the value of <code>NextMarker</code>
-     *         from the response you just received.
+     *         subsequent request after you receive a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      */
     public String getMarker() {
         return this.marker;
@@ -162,14 +159,13 @@ public class ListKeysRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only in a
-     *        subsequent request after you've received a response with truncated
+     *        subsequent request after you receive a response with truncated
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      * @return Returns a reference to this object so that method calls can be

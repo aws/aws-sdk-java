@@ -14,6 +14,7 @@
  */
 package com.amazonaws.internal;
 
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -54,5 +55,15 @@ public class SdkInternalMapTest {
         Assert.assertTrue(map1.equals(map2));
         Assert.assertTrue(map2.equals(map1));
         Assert.assertEquals(map1.hashCode(), map2.hashCode());
+    }
+
+    @Test
+    public void internal_map_to_string_returns_value_instead_of_reference() {
+        Map<String, String> map1 = new SdkInternalMap<String, String>();
+        map1.put("foo", "bar");
+
+        Assert.assertNotNull(map1.toString());
+        Assert.assertThat(map1.toString(), Matchers.containsString("foo"));
+
     }
  }

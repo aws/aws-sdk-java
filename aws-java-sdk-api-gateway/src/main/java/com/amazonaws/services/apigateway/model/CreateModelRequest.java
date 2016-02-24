@@ -49,9 +49,8 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      */
     private String schema;
@@ -185,16 +184,15 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      * 
      * @param schema
      *        The schema for the model. For <code>application/json</code>
-     *        models, this should be <a target="_blank"
-     *        href="http://json-schema.org/documentation.html">JSON-schema draft
-     *        v4</a> model.
+     *        models, this should be <a
+     *        href="http://json-schema.org/documentation.html"
+     *        target="_blank">JSON-schema draft v4</a> model.
      */
     public void setSchema(String schema) {
         this.schema = schema;
@@ -203,15 +201,14 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      * 
      * @return The schema for the model. For <code>application/json</code>
-     *         models, this should be <a target="_blank"
-     *         href="http://json-schema.org/documentation.html">JSON-schema
-     *         draft v4</a> model.
+     *         models, this should be <a
+     *         href="http://json-schema.org/documentation.html"
+     *         target="_blank">JSON-schema draft v4</a> model.
      */
     public String getSchema() {
         return this.schema;
@@ -220,16 +217,15 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      * 
      * @param schema
      *        The schema for the model. For <code>application/json</code>
-     *        models, this should be <a target="_blank"
-     *        href="http://json-schema.org/documentation.html">JSON-schema draft
-     *        v4</a> model.
+     *        models, this should be <a
+     *        href="http://json-schema.org/documentation.html"
+     *        target="_blank">JSON-schema draft v4</a> model.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

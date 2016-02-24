@@ -40,18 +40,18 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
     private String certificateName;
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date certificateUploadDate;
     /**
      * <p>
      * The domain name of the Amazon CloudFront distribution. For more
-     * information, see the <a target="_blank"
-     * href="http://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront
-     * documentation</a>.
+     * information, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/"
+     * target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      */
     private String distributionDomainName;
@@ -134,15 +134,15 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param certificateUploadDate
-     *        The date when the certificate was uploaded, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        The date when the certificate was uploaded, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
     public void setCertificateUploadDate(java.util.Date certificateUploadDate) {
         this.certificateUploadDate = certificateUploadDate;
@@ -150,14 +150,14 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date when the certificate was uploaded, in <a target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     * @return The date when the certificate was uploaded, in <a
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
     public java.util.Date getCertificateUploadDate() {
         return this.certificateUploadDate;
@@ -165,15 +165,15 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param certificateUploadDate
-     *        The date when the certificate was uploaded, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        The date when the certificate was uploaded, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -186,16 +186,16 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
     /**
      * <p>
      * The domain name of the Amazon CloudFront distribution. For more
-     * information, see the <a target="_blank"
-     * href="http://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront
-     * documentation</a>.
+     * information, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/"
+     * target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @param distributionDomainName
      *        The domain name of the Amazon CloudFront distribution. For more
-     *        information, see the <a target="_blank"
-     *        href="http://aws.amazon.com/documentation/cloudfront/">Amazon
-     *        CloudFront documentation</a>.
+     *        information, see the <a
+     *        href="http://aws.amazon.com/documentation/cloudfront/"
+     *        target="_blank">Amazon CloudFront documentation</a>.
      */
     public void setDistributionDomainName(String distributionDomainName) {
         this.distributionDomainName = distributionDomainName;
@@ -204,15 +204,15 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
     /**
      * <p>
      * The domain name of the Amazon CloudFront distribution. For more
-     * information, see the <a target="_blank"
-     * href="http://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront
-     * documentation</a>.
+     * information, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/"
+     * target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @return The domain name of the Amazon CloudFront distribution. For more
-     *         information, see the <a target="_blank"
-     *         href="http://aws.amazon.com/documentation/cloudfront/">Amazon
-     *         CloudFront documentation</a>.
+     *         information, see the <a
+     *         href="http://aws.amazon.com/documentation/cloudfront/"
+     *         target="_blank">Amazon CloudFront documentation</a>.
      */
     public String getDistributionDomainName() {
         return this.distributionDomainName;
@@ -221,16 +221,16 @@ public class CreateDomainNameResult implements Serializable, Cloneable {
     /**
      * <p>
      * The domain name of the Amazon CloudFront distribution. For more
-     * information, see the <a target="_blank"
-     * href="http://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront
-     * documentation</a>.
+     * information, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/"
+     * target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @param distributionDomainName
      *        The domain name of the Amazon CloudFront distribution. For more
-     *        information, see the <a target="_blank"
-     *        href="http://aws.amazon.com/documentation/cloudfront/">Amazon
-     *        CloudFront documentation</a>.
+     *        information, see the <a
+     *        href="http://aws.amazon.com/documentation/cloudfront/"
+     *        target="_blank">Amazon CloudFront documentation</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

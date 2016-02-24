@@ -20,6 +20,7 @@ package com.amazonaws.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -27,7 +28,7 @@ public class VersionInfoUtilsTest {
 
     @Test
     public void getVersion() {
-        assertEquals("1.2.3", VersionInfoUtils.getVersion());
+        assertNotNull(VersionInfoUtils.getVersion());
     }
 
     @Test
@@ -38,8 +39,6 @@ public class VersionInfoUtilsTest {
     @Test
     public void userAgent() {
         String userAgent = VersionInfoUtils.userAgent();
-        System.out.println(userAgent);
-        System.out.println(userAgent.length());
         assertNotNull(userAgent);
     }
 }

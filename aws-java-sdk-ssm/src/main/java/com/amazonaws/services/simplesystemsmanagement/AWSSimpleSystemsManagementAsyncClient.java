@@ -30,8 +30,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * either EC2 Run Command or SSM Config. (SSM Config is currently available only
  * for Windows instances.)
  * </p>
- * <p>
- * </p>
+ * <p/>
  * <b>Run Command</b>
  * <p>
  * Run Command provides an on-demand experience for executing commands. You can
@@ -58,8 +57,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html"
  * >Windows</a>).
  * </p>
- * <p>
- * </p>
+ * <p/>
  * <b>SSM Config</b>
  * <p>
  * SSM Config is a lightweight instance configuration solution. SSM Config is
@@ -85,11 +83,10 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  * <table>
  * <title>Amazon Pre-defined SSM Documents</title> <tgroup cols="3"> <colspec
- * colnum="1" colname="col1" colwidth="1*"></colspec> <colspec colnum="2"
- * colname="col2" colwidth="1*"></colspec> <colspec colnum="3" colname="col3"
- * colwidth="1*"></colspec> <thead> <row> <entry>Name</entry>
- * <entry>Description</entry> <entry>Platform</entry> </row> </thead> <tbody>
- * <row> <entry>
+ * colname="col1" colnum="1" colwidth="1*"/> <colspec colname="col2" colnum="2"
+ * colwidth="1*"/> <colspec colname="col3" colnum="3" colwidth="1*"/> <thead>
+ * <row> <entry>Name</entry> <entry>Description</entry> <entry>Platform</entry>
+ * </row> </thead> <tbody> <row> <entry>
  * <p>
  * AWS-RunShellScript
  * </p>

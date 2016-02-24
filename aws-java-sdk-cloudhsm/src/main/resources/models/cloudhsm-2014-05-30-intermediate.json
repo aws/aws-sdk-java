@@ -1050,7 +1050,7 @@
         "verb" : "POST",
         "target" : "CloudHsmFrontendService.CreateHsm",
         "requestUri" : "/",
-        "locationName" : "CreateHsmRequest",
+        "locationName" : null,
         "xmlNameSpaceUri" : null
       },
       "unmarshaller" : null,
@@ -3017,7 +3017,7 @@
         "verb" : "POST",
         "target" : "CloudHsmFrontendService.DeleteHsm",
         "requestUri" : "/",
-        "locationName" : "DeleteHsmRequest",
+        "locationName" : null,
         "xmlNameSpaceUri" : null
       },
       "unmarshaller" : null,
@@ -3590,7 +3590,7 @@
         "verb" : "POST",
         "target" : "CloudHsmFrontendService.ModifyHsm",
         "requestUri" : "/",
-        "locationName" : "ModifyHsmRequest",
+        "locationName" : null,
         "xmlNameSpaceUri" : null
       },
       "unmarshaller" : null,
