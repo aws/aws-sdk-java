@@ -6,7 +6,7 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 
 * [SDK Homepage][sdk-website]
 * [API Docs][docs-api]
-* [Developer Guide][docs-guide]
+* [Developer Guide][docs-guide] ([source][docs-guide-source])
 * [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
@@ -112,6 +112,7 @@ mvn clean install -Dgpg.skip=true
 [blog]: https://java.awsblog.com
 [docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/welcome.html
+[docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
 [docs-java-env]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-java-env.html
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/getting-started-signup.html
 [docs-setup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-install-sdk.html
