@@ -20,7 +20,10 @@ import java.util.Map;
 import org.apache.http.annotation.Immutable;
 
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSSessionCredentials;
+import com.amazonaws.auth.profile.internal.securitytoken.RoleInfo;
+import com.amazonaws.internal.StaticCredentialsProvider;
 
 /**
  * Contains the information stored in an AWS profile, such as AWS security
@@ -38,14 +41,57 @@ public class Profile {
     /** Property name for specifying the Amazon AWS Session Token */
     static final String AWS_SESSION_TOKEN = "aws_session_token";
 
+    /** Property name for specifying the IAM role to assume */
+    static final String ROLE_ARN = "role_arn";
+
+    /** Property name for specifying the IAM role session name */
+    static final String ROLE_SESSION_NAME = "role_session_name";
+
+    /** Property name for specifying the IAM role external id */
+    static final String EXTERNAL_ID = "external_id";
+
+    /** Property name for specifying the profile credentials to use when assuming a role */
+    static final String SOURCE_PROFILE = "source_profile";
+
     /** The name of this profile */
     private final String profileName;
 
+    /** Profile properties */
+    private final Map<String, String> properties;
+
     /** Holds the AWS Credentials for the profile. */
-    private final AWSCredentials awsCredentials;
+    private final AWSCredentialsProvider awsCredentials;
 
     public Profile(String profileName, AWSCredentials awsCredentials) {
+        Map<String, String> properties = new LinkedHashMap<String, String>();
+        properties.put(AWS_ACCESS_KEY_ID, awsCredentials.getAWSAccessKeyId());
+        properties.put(AWS_SECRET_ACCESS_KEY, awsCredentials.getAWSSecretKey());
+
+        if (awsCredentials instanceof AWSSessionCredentials) {
+            AWSSessionCredentials sessionCred = (AWSSessionCredentials)awsCredentials;
+            properties.put(AWS_SESSION_TOKEN, sessionCred.getSessionToken());
+        }
+
         this.profileName = profileName;
+        this.properties = properties;
+        this.awsCredentials = new StaticCredentialsProvider(awsCredentials);
+    }
+
+    public Profile(String profileName, String sourceProfile, AWSCredentialsProvider awsCredentials, RoleInfo roleInfo) {
+        Map<String, String> properties = new LinkedHashMap<String, String>();
+        properties.put(SOURCE_PROFILE, sourceProfile);
+        properties.put(ROLE_ARN, roleInfo.getRoleArn());
+
+        if (roleInfo.getRoleSessionName() != null) {
+            properties.put(ROLE_SESSION_NAME, roleInfo.getRoleSessionName());
+        }
+
+        if (roleInfo.getExternalId() != null) {
+            properties.put(EXTERNAL_ID, roleInfo.getExternalId());
+        }
+
+        this.profileName = profileName;
+        this.properties = properties;
         this.awsCredentials = awsCredentials;
     }
 
@@ -54,7 +100,7 @@ public class Profile {
     }
 
     public AWSCredentials getCredentials() {
-        return awsCredentials;
+        return awsCredentials.getCredentials();
     }
 
     /**
@@ -66,16 +112,7 @@ public class Profile {
      * additional "aws_session_token" property.
      */
     public Map<String, String> getProperties() {
-        Map<String, String> properties = new LinkedHashMap<String, String>();
-        properties.put(AWS_ACCESS_KEY_ID, awsCredentials.getAWSAccessKeyId());
-        properties.put(AWS_SECRET_ACCESS_KEY, awsCredentials.getAWSSecretKey());
-
-        if (awsCredentials instanceof AWSSessionCredentials) {
-            AWSSessionCredentials sessionCred = (AWSSessionCredentials)awsCredentials;
-            properties.put(AWS_SESSION_TOKEN, sessionCred.getSessionToken());
-        }
-
-        return properties;
+        return new LinkedHashMap<String, String>(properties);
     }
 
     /**

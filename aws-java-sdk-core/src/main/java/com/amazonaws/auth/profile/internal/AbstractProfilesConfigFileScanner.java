@@ -164,6 +164,10 @@ public abstract class AbstractProfilesConfigFileScanner {
     private static boolean isSupportedProperty(String propertyName) {
         return Profile.AWS_ACCESS_KEY_ID.equals(propertyName)
                 || Profile.AWS_SECRET_ACCESS_KEY.equals(propertyName)
-                || Profile.AWS_SESSION_TOKEN.equals(propertyName);
+                || Profile.AWS_SESSION_TOKEN.equals(propertyName)
+                || Profile.EXTERNAL_ID.equals(propertyName)
+                || Profile.ROLE_ARN.equals(propertyName)
+                || Profile.ROLE_SESSION_NAME.equals(propertyName)
+                || Profile.SOURCE_PROFILE.equals(propertyName);
     }
 }
