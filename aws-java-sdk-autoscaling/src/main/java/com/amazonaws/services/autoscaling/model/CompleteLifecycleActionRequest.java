@@ -54,6 +54,8 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      */
     private String lifecycleActionResult;
 
+    private String instanceId;
+
     /**
      * <p>
      * The name of the lifecycle hook.
@@ -235,6 +237,30 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * @param instanceId
+     */
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * @return
+     */
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * @param instanceId
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public CompleteLifecycleActionRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -255,7 +281,10 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
             sb.append("LifecycleActionToken: " + getLifecycleActionToken()
                     + ",");
         if (getLifecycleActionResult() != null)
-            sb.append("LifecycleActionResult: " + getLifecycleActionResult());
+            sb.append("LifecycleActionResult: " + getLifecycleActionResult()
+                    + ",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: " + getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -298,6 +327,11 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
                 && other.getLifecycleActionResult().equals(
                         this.getLifecycleActionResult()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null
+                && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +356,8 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getLifecycleActionResult() == null) ? 0
                         : getLifecycleActionResult().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

@@ -1174,7 +1174,6 @@
       "required":[
         "LifecycleHookName",
         "AutoScalingGroupName",
-        "LifecycleActionToken",
         "LifecycleActionResult"
       ],
       "members":{
@@ -1193,7 +1192,8 @@
         "LifecycleActionResult":{
           "shape":"LifecycleActionResult",
           "documentation":"<p>The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.</p>"
-        }
+        },
+        "InstanceId":{"shape":"XmlStringMaxLen19"}
       }
     },
     "Cooldown":{"type":"integer"},
@@ -2332,6 +2332,12 @@
       "type":"list",
       "member":{"shape":"NotificationConfiguration"}
     },
+    "NotificationTargetResourceName":{
+      "type":"string",
+      "max":1600,
+      "min":0,
+      "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
+    },
     "NumberOfAutoScalingGroups":{"type":"integer"},
     "NumberOfLaunchConfigurations":{"type":"integer"},
     "PoliciesType":{
@@ -2425,7 +2431,7 @@
           "documentation":"<p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p> <p>This parameter is required for new lifecycle hooks, but optional when updating existing hooks.</p>"
         },
         "NotificationTargetARN":{
-          "shape":"ResourceName",
+          "shape":"NotificationTargetResourceName",
           "documentation":"<p>The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. </p> <p>This parameter is required for new lifecycle hooks, but optional when updating existing hooks.</p> <p>The notification message sent to the target will include:</p> <ul> <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li> <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li> <li><b>LifecycleTransition</b>. The lifecycle transition.</li> <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value pair format when sending notifications to an Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to the notification target. This test message contains an additional key/value pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>"
         },
         "NotificationMetadata":{
@@ -2572,8 +2578,7 @@
       "type":"structure",
       "required":[
         "LifecycleHookName",
-        "AutoScalingGroupName",
-        "LifecycleActionToken"
+        "AutoScalingGroupName"
       ],
       "members":{
         "LifecycleHookName":{
@@ -2587,7 +2592,8 @@
         "LifecycleActionToken":{
           "shape":"LifecycleActionToken",
           "documentation":"<p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>"
-        }
+        },
+        "InstanceId":{"shape":"XmlStringMaxLen19"}
       }
     },
     "ResourceContentionFault":{

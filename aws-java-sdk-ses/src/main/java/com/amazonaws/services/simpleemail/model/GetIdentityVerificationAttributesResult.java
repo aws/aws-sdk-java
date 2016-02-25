@@ -19,9 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents the verification attributes for a list of identities.
- * </p>
+ * 
  */
 public class GetIdentityVerificationAttributesResult implements Serializable,
         Cloneable {

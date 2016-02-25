@@ -19,10 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a map of policy names to policies returned from a successful
- * <code>GetIdentityPolicies</code> request.
- * </p>
+ * 
  */
 public class GetIdentityPoliciesResult implements Serializable, Cloneable {
 

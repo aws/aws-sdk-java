@@ -19,12 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Describes whether an identity has Amazon Simple Notification Service (Amazon
- * SNS) topics set for bounce, complaint, and/or delivery notifications, and
- * specifies whether feedback forwarding is enabled for bounce and complaint
- * notifications.
- * </p>
+ * 
  */
 public class GetIdentityNotificationAttributesResult implements Serializable,
         Cloneable {

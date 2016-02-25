@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to begin DKIM verification for a
- * domain.
- * </p>
+ * 
  */
 public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

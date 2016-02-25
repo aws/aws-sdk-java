@@ -65,7 +65,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      */
     private String destination;
@@ -312,14 +312,14 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
      * @param destination
      *        Name of Amazon S3 bucket to which the log data will be
      *        exported.</p>
      *        <p>
-     *        <b>NOTE: Only buckets in the same AWS region are supported</b>
+     *        <b>Note:</b> Only buckets in the same AWS region are supported.
      */
     public void setDestination(String destination) {
         this.destination = destination;
@@ -330,13 +330,13 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
      * @return Name of Amazon S3 bucket to which the log data will be
      *         exported.</p>
      *         <p>
-     *         <b>NOTE: Only buckets in the same AWS region are supported</b>
+     *         <b>Note:</b> Only buckets in the same AWS region are supported.
      */
     public String getDestination() {
         return this.destination;
@@ -347,14 +347,14 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
      * @param destination
      *        Name of Amazon S3 bucket to which the log data will be
      *        exported.</p>
      *        <p>
-     *        <b>NOTE: Only buckets in the same AWS region are supported</b>
+     *        <b>Note:</b> Only buckets in the same AWS region are supported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

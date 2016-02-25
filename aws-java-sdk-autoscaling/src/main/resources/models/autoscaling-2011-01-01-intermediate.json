@@ -20,8 +20,8 @@
     "endpointPrefix" : "autoscaling",
     "signingName" : "autoscaling",
     "serviceName" : "Auto Scaling",
-    "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
+    "jsonProtocol" : false,
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
@@ -3807,7 +3807,7 @@
       "documentation" : "",
       "shapeName" : "CompleteLifecycleActionRequest",
       "deprecated" : false,
-      "required" : [ "LifecycleHookName", "AutoScalingGroupName", "LifecycleActionToken", "LifecycleActionResult" ],
+      "required" : [ "LifecycleHookName", "AutoScalingGroupName", "LifecycleActionResult" ],
       "hasPayloadMember" : false,
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
@@ -4016,6 +4016,57 @@
         "getterDocumentation" : "/**<p>The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.</p>\n@return The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.*/",
         "fluentSetterDocumentation" : "/**<p>The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.</p>\n@param lifecycleActionResult The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.</p>\n@param lifecycleActionResult The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "InstanceId",
+        "c2jName" : "InstanceId",
+        "c2jShape" : "XmlStringMaxLen19",
+        "variable" : {
+          "variableName" : "instanceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "instanceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "InstanceId",
+          "marshallLocationName" : "InstanceId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "header" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param instanceId */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4094,6 +4145,58 @@
           "getterDocumentation" : "/**<p>The name of the group for the lifecycle hook.</p>\n@return The name of the group for the lifecycle hook.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the group for the lifecycle hook.</p>\n@param autoScalingGroupName The name of the group for the lifecycle hook.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The name of the group for the lifecycle hook.</p>\n@param autoScalingGroupName The name of the group for the lifecycle hook.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "InstanceId" : {
+          "documentation" : "",
+          "name" : "InstanceId",
+          "c2jName" : "InstanceId",
+          "c2jShape" : "XmlStringMaxLen19",
+          "variable" : {
+            "variableName" : "instanceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "instanceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "InstanceId",
+            "marshallLocationName" : "InstanceId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "header" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param instanceId */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LifecycleActionToken" : {
           "documentation" : "<p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>",
@@ -18872,7 +18975,7 @@
       "documentation" : "",
       "shapeName" : "RecordLifecycleActionHeartbeatRequest",
       "deprecated" : false,
-      "required" : [ "LifecycleHookName", "AutoScalingGroupName", "LifecycleActionToken" ],
+      "required" : [ "LifecycleHookName", "AutoScalingGroupName" ],
       "hasPayloadMember" : false,
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
@@ -19030,6 +19133,57 @@
         "getterDocumentation" : "/**<p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>\n@return A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.*/",
         "fluentSetterDocumentation" : "/**<p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>\n@param lifecycleActionToken A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>\n@param lifecycleActionToken A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "InstanceId",
+        "c2jName" : "InstanceId",
+        "c2jShape" : "XmlStringMaxLen19",
+        "variable" : {
+          "variableName" : "instanceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "instanceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "InstanceId",
+          "marshallLocationName" : "InstanceId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "header" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param instanceId */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -19108,6 +19262,58 @@
           "getterDocumentation" : "/**<p>The name of the Auto Scaling group for the hook.</p>\n@return The name of the Auto Scaling group for the hook.*/",
           "fluentSetterDocumentation" : "/**<p>The name of the Auto Scaling group for the hook.</p>\n@param autoScalingGroupName The name of the Auto Scaling group for the hook.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The name of the Auto Scaling group for the hook.</p>\n@param autoScalingGroupName The name of the Auto Scaling group for the hook.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "InstanceId" : {
+          "documentation" : "",
+          "name" : "InstanceId",
+          "c2jName" : "InstanceId",
+          "c2jShape" : "XmlStringMaxLen19",
+          "variable" : {
+            "variableName" : "instanceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "instanceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "InstanceId",
+            "marshallLocationName" : "InstanceId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "header" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param instanceId */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param instanceId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LifecycleActionToken" : {
           "documentation" : "<p>A token that uniquely identifies a specific lifecycle action associated with an instance. Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>",
@@ -43027,7 +43233,7 @@
         "documentation" : "<p>The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. </p> <p>This parameter is required for new lifecycle hooks, but optional when updating existing hooks.</p> <p>The notification message sent to the target will include:</p> <ul> <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li> <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li> <li><b>LifecycleTransition</b>. The lifecycle transition.</li> <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value pair format when sending notifications to an Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to the notification target. This test message contains an additional key/value pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>",
         "name" : "NotificationTargetARN",
         "c2jName" : "NotificationTargetARN",
-        "c2jShape" : "ResourceName",
+        "c2jShape" : "NotificationTargetResourceName",
         "variable" : {
           "variableName" : "notificationTargetARN",
           "variableType" : "String",
@@ -43258,7 +43464,7 @@
           "documentation" : "<p>The ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. </p> <p>This parameter is required for new lifecycle hooks, but optional when updating existing hooks.</p> <p>The notification message sent to the target will include:</p> <ul> <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li> <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li> <li><b>LifecycleTransition</b>. The lifecycle transition.</li> <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value pair format when sending notifications to an Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to the notification target. This test message contains an additional key/value pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>",
           "name" : "NotificationTargetARN",
           "c2jName" : "NotificationTargetARN",
-          "c2jShape" : "ResourceName",
+          "c2jShape" : "NotificationTargetResourceName",
           "variable" : {
             "variableName" : "notificationTargetARN",
             "variableType" : "String",

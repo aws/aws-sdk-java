@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to enable or disable DKIM
- * signing for an identity.
- * </p>
+ * 
  */
 public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

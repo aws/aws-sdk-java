@@ -250,8 +250,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param deleteIdentityRequest
-     *        Represents a request instructing the service to delete an identity
-     *        from the list of identities for the AWS Account.
      * @return Result of the DeleteIdentity operation returned by the service.
      * @sample AmazonSimpleEmailService.DeleteIdentity
      */
@@ -278,11 +276,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
-     *        Represents a request instructing the service to delete an
-     *        authorization policy applying to an identity.</p>
-     *        <p>
-     *        This request succeeds regardless of whether the specified policy
-     *        exists.
      * @return Result of the DeleteIdentityPolicy operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.DeleteIdentityPolicy
@@ -371,8 +364,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
-     *        Represents a request instructing the service to delete an address
-     *        from the list of verified email addresses.
      * @sample AmazonSimpleEmailService.DeleteVerifiedEmailAddress
      */
     void deleteVerifiedEmailAddress(
@@ -479,13 +470,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
-     *        Given a list of verified identities, describes their DKIM
-     *        attributes. The DKIM attributes of an email address identity
-     *        includes whether DKIM signing is individually enabled or disabled
-     *        for that address. The DKIM attributes of a domain name identity
-     *        includes whether DKIM signing is enabled, as well as the DNS
-     *        records (tokens) that must remain published in the domain name's
-     *        DNS.
      * @return Result of the GetIdentityDkimAttributes operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.GetIdentityDkimAttributes
@@ -538,8 +522,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param getIdentityPoliciesRequest
-     *        Represents a request instructing the service to retrieve the text
-     *        of a list of authorization policies applying to an identity.
      * @return Result of the GetIdentityPolicies operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.GetIdentityPolicies
@@ -559,8 +541,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param getIdentityVerificationAttributesRequest
-     *        Represents a request instructing the service to provide the
-     *        verification attributes for a list of identities.
      * @return Result of the GetIdentityVerificationAttributes operation
      *         returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityVerificationAttributes
@@ -626,8 +606,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param listIdentitiesRequest
-     *        Represents a request instructing the service to list all
-     *        identities for the AWS Account.
      * @return Result of the ListIdentities operation returned by the service.
      * @sample AmazonSimpleEmailService.ListIdentities
      */
@@ -662,8 +640,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param listIdentityPoliciesRequest
-     *        Represents a request instructing the service to list all
-     *        authorization policies, by name, applying to an identity.
      * @return Result of the ListIdentityPolicies operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.ListIdentityPolicies
@@ -763,8 +739,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param putIdentityPolicyRequest
-     *        Represents a request instructing the service to apply an
-     *        authorization policy to an identity.
      * @return Result of the PutIdentityPolicy operation returned by the
      *         service.
      * @throws InvalidPolicyException
@@ -781,7 +755,7 @@ public interface AmazonSimpleEmailService {
      * </p>
      * <note>All of the rules in the rule set must be represented in this
      * request. That is, this API will return an error if the reorder request
-     * doesn’t explicitly position all of the rules.</note>
+     * doesn't explicitly position all of the rules.</note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -822,9 +796,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param sendBounceRequest
-     *        Request object for sending a simple/complex bounce. It contains
-     *        all of the information needed to generate a basic DSN or a
-     *        fully-customized DSN.
      * @return Result of the SendBounce operation returned by the service.
      * @throws MessageRejectedException
      *         Indicates that the action failed, and the message could not be
@@ -866,13 +837,6 @@ public interface AmazonSimpleEmailService {
      * </ul>
      * 
      * @param sendEmailRequest
-     *        Represents a request instructing the service to send a single
-     *        email message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, message, reply-to, and
-     *        return-path parts. This object can then be sent using the
-     *        <code>SendEmail</code> action.
      * @return Result of the SendEmail operation returned by the service.
      * @throws MessageRejectedException
      *         Indicates that the action failed, and the message could not be
@@ -944,13 +908,6 @@ public interface AmazonSimpleEmailService {
      * </ul>
      * 
      * @param sendRawEmailRequest
-     *        Represents a request instructing the service to send a raw email
-     *        message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, and raw message text. This
-     *        object can then be sent using the <code>SendRawEmail</code>
-     *        action.
      * @return Result of the SendRawEmail operation returned by the service.
      * @throws MessageRejectedException
      *         Indicates that the action failed, and the message could not be
@@ -1013,8 +970,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
-     *        Represents a request instructing the service to enable or disable
-     *        DKIM signing for an identity.
      * @return Result of the SetIdentityDkimEnabled operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.SetIdentityDkimEnabled
@@ -1069,8 +1024,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
-     *        Represents a request to set or clear an identity's notification
-     *        topic.
      * @return Result of the SetIdentityNotificationTopic operation returned by
      *         the service.
      * @sample AmazonSimpleEmailService.SetIdentityNotificationTopic
@@ -1179,8 +1132,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param verifyDomainDkimRequest
-     *        Represents a request instructing the service to begin DKIM
-     *        verification for a domain.
      * @return Result of the VerifyDomainDkim operation returned by the service.
      * @sample AmazonSimpleEmailService.VerifyDomainDkim
      */
@@ -1196,8 +1147,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param verifyDomainIdentityRequest
-     *        Represents a request instructing the service to begin domain
-     *        verification.
      * @return Result of the VerifyDomainIdentity operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.VerifyDomainIdentity
@@ -1218,8 +1167,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param verifyEmailAddressRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
      * @sample AmazonSimpleEmailService.VerifyEmailAddress
      */
     void verifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest);
@@ -1234,8 +1181,6 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param verifyEmailIdentityRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
      * @return Result of the VerifyEmailIdentity operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.VerifyEmailIdentity

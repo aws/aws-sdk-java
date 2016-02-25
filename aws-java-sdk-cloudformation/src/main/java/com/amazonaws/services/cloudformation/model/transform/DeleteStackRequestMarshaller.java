@@ -54,6 +54,22 @@ public class DeleteStackRequestMarshaller implements
                     StringUtils.fromString(deleteStackRequest.getStackName()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> retainResourcesList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest
+                .getRetainResources();
+        if (!retainResourcesList.isEmpty()
+                || !retainResourcesList.isAutoConstruct()) {
+            int retainResourcesListIndex = 1;
+
+            for (String retainResourcesListValue : retainResourcesList) {
+                if (retainResourcesListValue != null) {
+                    request.addParameter("RetainResources.member."
+                            + retainResourcesListIndex,
+                            StringUtils.fromString(retainResourcesListValue));
+                }
+                retainResourcesListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -68,6 +68,12 @@ public class RecordLifecycleActionHeartbeatRequestMarshaller
                             .getLifecycleActionToken()));
         }
 
+        if (recordLifecycleActionHeartbeatRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils
+                    .fromString(recordLifecycleActionHeartbeatRequest
+                            .getInstanceId()));
+        }
+
         return request;
     }
 

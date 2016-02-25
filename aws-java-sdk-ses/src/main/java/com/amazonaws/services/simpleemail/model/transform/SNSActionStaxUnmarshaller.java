@@ -54,6 +54,12 @@ public class SNSActionStaxUnmarshaller implements
                             .unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Encoding", targetDepth)) {
+                    sNSAction.setEncoding(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return sNSAction;

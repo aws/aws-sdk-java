@@ -180,14 +180,14 @@
         "variableName" : "deleteIdentityRequest",
         "variableType" : "DeleteIdentityRequest",
         "variableDeclarationType" : "DeleteIdentityRequest",
-        "documentation" : "<p>Represents a request instructing the service to delete an identity from the list of identities for the AWS Account.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteIdentityRequest",
         "variableSetterType" : "DeleteIdentityRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "DeleteIdentityResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -206,14 +206,14 @@
         "variableName" : "deleteIdentityPolicyRequest",
         "variableType" : "DeleteIdentityPolicyRequest",
         "variableDeclarationType" : "DeleteIdentityPolicyRequest",
-        "documentation" : "<p>Represents a request instructing the service to delete an authorization policy applying to an identity.</p> <p>This request succeeds regardless of whether the specified policy exists.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteIdentityPolicyRequest",
         "variableSetterType" : "DeleteIdentityPolicyRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "DeleteIdentityPolicyResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -316,7 +316,7 @@
         "variableName" : "deleteVerifiedEmailAddressRequest",
         "variableType" : "DeleteVerifiedEmailAddressRequest",
         "variableDeclarationType" : "DeleteVerifiedEmailAddressRequest",
-        "documentation" : "<p>Represents a request instructing the service to delete an address from the list of verified email addresses.</p>",
+        "documentation" : "",
         "simpleType" : "DeleteVerifiedEmailAddressRequest",
         "variableSetterType" : "DeleteVerifiedEmailAddressRequest"
       },
@@ -426,14 +426,14 @@
         "variableName" : "getIdentityDkimAttributesRequest",
         "variableType" : "GetIdentityDkimAttributesRequest",
         "variableDeclarationType" : "GetIdentityDkimAttributesRequest",
-        "documentation" : "<p>Given a list of verified identities, describes their DKIM attributes. The DKIM attributes of an email address identity includes whether DKIM signing is individually enabled or disabled for that address. The DKIM attributes of a domain name identity includes whether DKIM signing is enabled, as well as the DNS records (tokens) that must remain published in the domain name's DNS.</p>",
+        "documentation" : "",
         "simpleType" : "GetIdentityDkimAttributesRequest",
         "variableSetterType" : "GetIdentityDkimAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetIdentityDkimAttributesResult",
-        "documentation" : "<p>Represents a list of all the DKIM attributes for the specified identity.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -459,7 +459,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetIdentityNotificationAttributesResult",
-        "documentation" : "<p>Describes whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and specifies whether feedback forwarding is enabled for bounce and complaint notifications.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -478,14 +478,14 @@
         "variableName" : "getIdentityPoliciesRequest",
         "variableType" : "GetIdentityPoliciesRequest",
         "variableDeclarationType" : "GetIdentityPoliciesRequest",
-        "documentation" : "<p>Represents a request instructing the service to retrieve the text of a list of authorization policies applying to an identity. </p>",
+        "documentation" : "",
         "simpleType" : "GetIdentityPoliciesRequest",
         "variableSetterType" : "GetIdentityPoliciesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetIdentityPoliciesResult",
-        "documentation" : "<p>Represents a map of policy names to policies returned from a successful <code>GetIdentityPolicies</code> request. </p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -504,14 +504,14 @@
         "variableName" : "getIdentityVerificationAttributesRequest",
         "variableType" : "GetIdentityVerificationAttributesRequest",
         "variableDeclarationType" : "GetIdentityVerificationAttributesRequest",
-        "documentation" : "<p>Represents a request instructing the service to provide the verification attributes for a list of identities.</p>",
+        "documentation" : "",
         "simpleType" : "GetIdentityVerificationAttributesRequest",
         "variableSetterType" : "GetIdentityVerificationAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetIdentityVerificationAttributesResult",
-        "documentation" : "<p>Represents the verification attributes for a list of identities.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -537,7 +537,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetSendQuotaResult",
-        "documentation" : "<p>Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request. </p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -563,7 +563,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "GetSendStatisticsResult",
-        "documentation" : "<p>Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code> request. This list contains aggregated data from the previous two weeks of sending activity. </p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -582,14 +582,14 @@
         "variableName" : "listIdentitiesRequest",
         "variableType" : "ListIdentitiesRequest",
         "variableDeclarationType" : "ListIdentitiesRequest",
-        "documentation" : "<p>Represents a request instructing the service to list all identities for the AWS Account.</p>",
+        "documentation" : "",
         "simpleType" : "ListIdentitiesRequest",
         "variableSetterType" : "ListIdentitiesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "ListIdentitiesResult",
-        "documentation" : "<p>Represents a list of all verified identities for the AWS Account.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -608,14 +608,14 @@
         "variableName" : "listIdentityPoliciesRequest",
         "variableType" : "ListIdentityPoliciesRequest",
         "variableDeclarationType" : "ListIdentityPoliciesRequest",
-        "documentation" : "<p>Represents a request instructing the service to list all authorization policies, by name, applying to an identity.</p>",
+        "documentation" : "",
         "simpleType" : "ListIdentityPoliciesRequest",
         "variableSetterType" : "ListIdentityPoliciesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "ListIdentityPoliciesResult",
-        "documentation" : "<p>Represents a list of policy names returned from a successful <code>ListIdentityPolicies</code> request. </p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -693,7 +693,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "ListVerifiedEmailAddressesResult",
-        "documentation" : "<p>Represents a list of all the email addresses verified for the current user.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -712,14 +712,14 @@
         "variableName" : "putIdentityPolicyRequest",
         "variableType" : "PutIdentityPolicyRequest",
         "variableDeclarationType" : "PutIdentityPolicyRequest",
-        "documentation" : "<p>Represents a request instructing the service to apply an authorization policy to an identity.</p>",
+        "documentation" : "",
         "simpleType" : "PutIdentityPolicyRequest",
         "variableSetterType" : "PutIdentityPolicyRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "PutIdentityPolicyResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidPolicyException",
@@ -734,7 +734,7 @@
       "methodName" : "putIdentityPolicy"
     },
     "ReorderReceiptRuleSet" : {
-      "documentation" : "<p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the rules in the rule set must be represented in this request. That is, this API will return an error if the reorder request doesn’t explicitly position all of the rules.</note> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
+      "documentation" : "<p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the rules in the rule set must be represented in this request. That is, this API will return an error if the reorder request doesn't explicitly position all of the rules.</note> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
       "operationName" : "ReorderReceiptRuleSet",
       "deprecated" : false,
       "input" : {
@@ -773,7 +773,7 @@
         "variableName" : "sendBounceRequest",
         "variableType" : "SendBounceRequest",
         "variableDeclarationType" : "SendBounceRequest",
-        "documentation" : "<p>Request object for sending a simple/complex bounce. It contains all of the information needed to generate a basic DSN or a fully-customized DSN.</p>",
+        "documentation" : "",
         "simpleType" : "SendBounceRequest",
         "variableSetterType" : "SendBounceRequest"
       },
@@ -802,14 +802,14 @@
         "variableName" : "sendEmailRequest",
         "variableType" : "SendEmailRequest",
         "variableDeclarationType" : "SendEmailRequest",
-        "documentation" : "<p>Represents a request instructing the service to send a single email message.</p> <p>This datatype can be used in application code to compose a message consisting of source, destination, message, reply-to, and return-path parts. This object can then be sent using the <code>SendEmail</code> action. </p>",
+        "documentation" : "",
         "simpleType" : "SendEmailRequest",
         "variableSetterType" : "SendEmailRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "SendEmailResult",
-        "documentation" : "<p>Represents a unique message ID returned from a successful <code>SendEmail</code> request. </p>"
+        "documentation" : null
       },
       "exceptions" : [ {
         "exceptionName" : "MessageRejectedException",
@@ -831,14 +831,14 @@
         "variableName" : "sendRawEmailRequest",
         "variableType" : "SendRawEmailRequest",
         "variableDeclarationType" : "SendRawEmailRequest",
-        "documentation" : "<p>Represents a request instructing the service to send a raw email message.</p> <p>This datatype can be used in application code to compose a message consisting of source, destination, and raw message text. This object can then be sent using the <code>SendRawEmail</code> action. </p>",
+        "documentation" : "",
         "simpleType" : "SendRawEmailRequest",
         "variableSetterType" : "SendRawEmailRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "SendRawEmailResult",
-        "documentation" : "<p>Represents a unique message ID returned from a successful <code>SendRawEmail</code> request. </p>"
+        "documentation" : null
       },
       "exceptions" : [ {
         "exceptionName" : "MessageRejectedException",
@@ -889,14 +889,14 @@
         "variableName" : "setIdentityDkimEnabledRequest",
         "variableType" : "SetIdentityDkimEnabledRequest",
         "variableDeclarationType" : "SetIdentityDkimEnabledRequest",
-        "documentation" : "<p>Represents a request instructing the service to enable or disable DKIM signing for an identity.</p>",
+        "documentation" : "",
         "simpleType" : "SetIdentityDkimEnabledRequest",
         "variableSetterType" : "SetIdentityDkimEnabledRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "SetIdentityDkimEnabledResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -922,7 +922,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "SetIdentityFeedbackForwardingEnabledResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -941,14 +941,14 @@
         "variableName" : "setIdentityNotificationTopicRequest",
         "variableType" : "SetIdentityNotificationTopicRequest",
         "variableDeclarationType" : "SetIdentityNotificationTopicRequest",
-        "documentation" : "<p>Represents a request to set or clear an identity's notification topic.</p>",
+        "documentation" : "",
         "simpleType" : "SetIdentityNotificationTopicRequest",
         "variableSetterType" : "SetIdentityNotificationTopicRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "SetIdentityNotificationTopicResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -1043,14 +1043,14 @@
         "variableName" : "verifyDomainDkimRequest",
         "variableType" : "VerifyDomainDkimRequest",
         "variableDeclarationType" : "VerifyDomainDkimRequest",
-        "documentation" : "<p>Represents a request instructing the service to begin DKIM verification for a domain.</p>",
+        "documentation" : "",
         "simpleType" : "VerifyDomainDkimRequest",
         "variableSetterType" : "VerifyDomainDkimRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "VerifyDomainDkimResult",
-        "documentation" : "<p>Represents the DNS records that must be published in the domain name's DNS to complete DKIM setup.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -1069,14 +1069,14 @@
         "variableName" : "verifyDomainIdentityRequest",
         "variableType" : "VerifyDomainIdentityRequest",
         "variableDeclarationType" : "VerifyDomainIdentityRequest",
-        "documentation" : "<p>Represents a request instructing the service to begin domain verification.</p>",
+        "documentation" : "",
         "simpleType" : "VerifyDomainIdentityRequest",
         "variableSetterType" : "VerifyDomainIdentityRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "VerifyDomainIdentityResult",
-        "documentation" : "<p>Represents a token used for domain ownership verification.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -1095,7 +1095,7 @@
         "variableName" : "verifyEmailAddressRequest",
         "variableType" : "VerifyEmailAddressRequest",
         "variableDeclarationType" : "VerifyEmailAddressRequest",
-        "documentation" : "<p>Represents a request instructing the service to begin email address verification.</p>",
+        "documentation" : "",
         "simpleType" : "VerifyEmailAddressRequest",
         "variableSetterType" : "VerifyEmailAddressRequest"
       },
@@ -1118,14 +1118,14 @@
         "variableName" : "verifyEmailIdentityRequest",
         "variableType" : "VerifyEmailIdentityRequest",
         "variableDeclarationType" : "VerifyEmailIdentityRequest",
-        "documentation" : "<p>Represents a request instructing the service to begin email address verification.</p>",
+        "documentation" : "",
         "simpleType" : "VerifyEmailIdentityRequest",
         "variableSetterType" : "VerifyEmailIdentityRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "VerifyEmailIdentityResult",
-        "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>"
+        "documentation" : null
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
@@ -2064,7 +2064,7 @@
     },
     "GetIdentityPoliciesRequest" : {
       "c2jName" : "GetIdentityPoliciesRequest",
-      "documentation" : "<p>Represents a request instructing the service to retrieve the text of a list of authorization policies applying to an identity. </p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityPoliciesRequest",
       "deprecated" : false,
       "required" : [ "Identity", "PolicyNames" ],
@@ -2337,7 +2337,7 @@
     },
     "SetIdentityFeedbackForwardingEnabledResult" : {
       "c2jName" : "SetIdentityFeedbackForwardingEnabledResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "SetIdentityFeedbackForwardingEnabledResult",
       "deprecated" : false,
       "required" : null,
@@ -2405,7 +2405,7 @@
     },
     "ListIdentityPoliciesResult" : {
       "c2jName" : "ListIdentityPoliciesResponse",
-      "documentation" : "<p>Represents a list of policy names returned from a successful <code>ListIdentityPolicies</code> request. </p>",
+      "documentation" : "",
       "shapeName" : "ListIdentityPoliciesResult",
       "deprecated" : false,
       "required" : [ "PolicyNames" ],
@@ -3013,7 +3013,7 @@
     },
     "GetIdentityDkimAttributesRequest" : {
       "c2jName" : "GetIdentityDkimAttributesRequest",
-      "documentation" : "<p>Given a list of verified identities, describes their DKIM attributes. The DKIM attributes of an email address identity includes whether DKIM signing is individually enabled or disabled for that address. The DKIM attributes of a domain name identity includes whether DKIM signing is enabled, as well as the DNS records (tokens) that must remain published in the domain name's DNS.</p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityDkimAttributesRequest",
       "deprecated" : false,
       "required" : [ "Identities" ],
@@ -3183,7 +3183,7 @@
     },
     "VerifyDomainDkimRequest" : {
       "c2jName" : "VerifyDomainDkimRequest",
-      "documentation" : "<p>Represents a request instructing the service to begin DKIM verification for a domain.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyDomainDkimRequest",
       "deprecated" : false,
       "required" : [ "Domain" ],
@@ -3396,7 +3396,7 @@
     },
     "VerifyDomainIdentityResult" : {
       "c2jName" : "VerifyDomainIdentityResponse",
-      "documentation" : "<p>Represents a token used for domain ownership verification.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyDomainIdentityResult",
       "deprecated" : false,
       "required" : [ "VerificationToken" ],
@@ -3676,7 +3676,7 @@
     },
     "SendRawEmailResult" : {
       "c2jName" : "SendRawEmailResponse",
-      "documentation" : "<p>Represents a unique message ID returned from a successful <code>SendRawEmail</code> request. </p>",
+      "documentation" : "",
       "shapeName" : "SendRawEmailResult",
       "deprecated" : false,
       "required" : [ "MessageId" ],
@@ -3814,7 +3814,7 @@
     },
     "GetSendStatisticsResult" : {
       "c2jName" : "GetSendStatisticsResponse",
-      "documentation" : "<p>Represents a list of <code>SendDataPoint</code> items returned from a successful <code>GetSendStatistics</code> request. This list contains aggregated data from the previous two weeks of sending activity. </p>",
+      "documentation" : "",
       "shapeName" : "GetSendStatisticsResult",
       "deprecated" : false,
       "required" : null,
@@ -4866,7 +4866,7 @@
     },
     "VerifyEmailIdentityRequest" : {
       "c2jName" : "VerifyEmailIdentityRequest",
-      "documentation" : "<p>Represents a request instructing the service to begin email address verification.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyEmailIdentityRequest",
       "deprecated" : false,
       "required" : [ "EmailAddress" ],
@@ -5146,7 +5146,7 @@
     },
     "DeleteIdentityResult" : {
       "c2jName" : "DeleteIdentityResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "DeleteIdentityResult",
       "deprecated" : false,
       "required" : null,
@@ -5180,7 +5180,7 @@
     },
     "GetIdentityPoliciesResult" : {
       "c2jName" : "GetIdentityPoliciesResponse",
-      "documentation" : "<p>Represents a map of policy names to policies returned from a successful <code>GetIdentityPolicies</code> request. </p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityPoliciesResult",
       "deprecated" : false,
       "required" : [ "Policies" ],
@@ -5238,11 +5238,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5326,11 +5326,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5619,7 +5619,7 @@
     },
     "SetIdentityDkimEnabledRequest" : {
       "c2jName" : "SetIdentityDkimEnabledRequest",
-      "documentation" : "<p>Represents a request instructing the service to enable or disable DKIM signing for an identity.</p>",
+      "documentation" : "",
       "shapeName" : "SetIdentityDkimEnabledRequest",
       "deprecated" : false,
       "required" : [ "Identity", "DkimEnabled" ],
@@ -5981,7 +5981,7 @@
     },
     "VerifyEmailAddressRequest" : {
       "c2jName" : "VerifyEmailAddressRequest",
-      "documentation" : "<p>Represents a request instructing the service to begin email address verification.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyEmailAddressRequest",
       "deprecated" : false,
       "required" : [ "EmailAddress" ],
@@ -6265,7 +6265,7 @@
     },
     "GetIdentityVerificationAttributesRequest" : {
       "c2jName" : "GetIdentityVerificationAttributesRequest",
-      "documentation" : "<p>Represents a request instructing the service to provide the verification attributes for a list of identities.</p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityVerificationAttributesRequest",
       "deprecated" : false,
       "required" : [ "Identities" ],
@@ -7504,7 +7504,7 @@
     },
     "SendBounceRequest" : {
       "c2jName" : "SendBounceRequest",
-      "documentation" : "<p>Request object for sending a simple/complex bounce. It contains all of the information needed to generate a basic DSN or a fully-customized DSN.</p>",
+      "documentation" : "",
       "shapeName" : "SendBounceRequest",
       "deprecated" : false,
       "required" : [ "OriginalMessageId", "BounceSender", "BouncedRecipientInfoList" ],
@@ -9392,6 +9392,57 @@
         "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.</p>\n@return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.*/",
         "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.</p>\n@param topicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.</p>\n@param topicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>",
+        "name" : "Encoding",
+        "c2jName" : "Encoding",
+        "c2jShape" : "SNSActionEncoding",
+        "variable" : {
+          "variableName" : "encoding",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "encoding",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Encoding",
+          "marshallLocationName" : "Encoding",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "SNSActionEncoding",
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@param encoding The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@see SNSActionEncoding*/",
+        "getterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@return The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@see SNSActionEncoding*/",
+        "fluentSetterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@param encoding The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SNSActionEncoding*/",
+        "varargSetterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@param encoding The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SNSActionEncoding*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -9415,6 +9466,58 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
+        "Encoding" : {
+          "documentation" : "<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>",
+          "name" : "Encoding",
+          "c2jName" : "Encoding",
+          "c2jShape" : "SNSActionEncoding",
+          "variable" : {
+            "variableName" : "encoding",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "encoding",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Encoding",
+            "marshallLocationName" : "Encoding",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "SNSActionEncoding",
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@param encoding The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@see SNSActionEncoding*/",
+          "getterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@return The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@see SNSActionEncoding*/",
+          "fluentSetterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@param encoding The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SNSActionEncoding*/",
+          "varargSetterDocumentation" : "/**<p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.</p>\n@param encoding The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is Base64.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SNSActionEncoding*/"
+        },
         "TopicArn" : {
           "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html\">Amazon SNS Developer Guide</a>.</p>",
           "name" : "TopicArn",
@@ -9505,7 +9608,7 @@
     },
     "VerifyDomainDkimResult" : {
       "c2jName" : "VerifyDomainDkimResponse",
-      "documentation" : "<p>Represents the DNS records that must be published in the domain name's DNS to complete DKIM setup.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyDomainDkimResult",
       "deprecated" : false,
       "required" : [ "DkimTokens" ],
@@ -10043,7 +10146,7 @@
     },
     "SetIdentityNotificationTopicResult" : {
       "c2jName" : "SetIdentityNotificationTopicResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "SetIdentityNotificationTopicResult",
       "deprecated" : false,
       "required" : null,
@@ -10930,7 +11033,7 @@
     },
     "DeleteIdentityPolicyRequest" : {
       "c2jName" : "DeleteIdentityPolicyRequest",
-      "documentation" : "<p>Represents a request instructing the service to delete an authorization policy applying to an identity.</p> <p>This request succeeds regardless of whether the specified policy exists.</p>",
+      "documentation" : "",
       "shapeName" : "DeleteIdentityPolicyRequest",
       "deprecated" : false,
       "required" : [ "Identity", "PolicyName" ],
@@ -11175,7 +11278,7 @@
     },
     "VerifyDomainIdentityRequest" : {
       "c2jName" : "VerifyDomainIdentityRequest",
-      "documentation" : "<p>Represents a request instructing the service to begin domain verification.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyDomainIdentityRequest",
       "deprecated" : false,
       "required" : [ "Domain" ],
@@ -11661,7 +11764,7 @@
     },
     "SendEmailRequest" : {
       "c2jName" : "SendEmailRequest",
-      "documentation" : "<p>Represents a request instructing the service to send a single email message.</p> <p>This datatype can be used in application code to compose a message consisting of source, destination, message, reply-to, and return-path parts. This object can then be sent using the <code>SendEmail</code> action. </p>",
+      "documentation" : "",
       "shapeName" : "SendEmailRequest",
       "deprecated" : false,
       "required" : [ "Source", "Destination", "Message" ],
@@ -12877,7 +12980,7 @@
     },
     "SetIdentityDkimEnabledResult" : {
       "c2jName" : "SetIdentityDkimEnabledResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "SetIdentityDkimEnabledResult",
       "deprecated" : false,
       "required" : null,
@@ -12911,7 +13014,7 @@
     },
     "GetSendQuotaResult" : {
       "c2jName" : "GetSendQuotaResponse",
-      "documentation" : "<p>Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request. </p>",
+      "documentation" : "",
       "shapeName" : "GetSendQuotaResult",
       "deprecated" : false,
       "required" : null,
@@ -13255,7 +13358,7 @@
     },
     "SetIdentityNotificationTopicRequest" : {
       "c2jName" : "SetIdentityNotificationTopicRequest",
-      "documentation" : "<p>Represents a request to set or clear an identity's notification topic.</p>",
+      "documentation" : "",
       "shapeName" : "SetIdentityNotificationTopicRequest",
       "deprecated" : false,
       "required" : [ "Identity", "NotificationType" ],
@@ -13603,7 +13706,7 @@
     },
     "ListVerifiedEmailAddressesResult" : {
       "c2jName" : "ListVerifiedEmailAddressesResponse",
-      "documentation" : "<p>Represents a list of all the email addresses verified for the current user.</p>",
+      "documentation" : "",
       "shapeName" : "ListVerifiedEmailAddressesResult",
       "deprecated" : false,
       "required" : null,
@@ -14243,6 +14346,46 @@
         "xmlNameSpaceUri" : null
       },
       "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "SNSActionEncoding" : {
+      "c2jName" : "SNSActionEncoding",
+      "documentation" : "",
+      "shapeName" : "SNSActionEncoding",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "UTF8",
+        "value" : "UTF-8"
+      }, {
+        "name" : "Base64",
+        "value" : "Base64"
+      } ],
+      "variable" : {
+        "variableName" : "sNSActionEncoding",
+        "variableType" : "SNSActionEncoding",
+        "variableDeclarationType" : "SNSActionEncoding",
+        "documentation" : null,
+        "simpleType" : "SNSActionEncoding",
+        "variableSetterType" : "SNSActionEncoding"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
       "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
@@ -16385,7 +16528,7 @@
     },
     "SendRawEmailRequest" : {
       "c2jName" : "SendRawEmailRequest",
-      "documentation" : "<p>Represents a request instructing the service to send a raw email message.</p> <p>This datatype can be used in application code to compose a message consisting of source, destination, and raw message text. This object can then be sent using the <code>SendRawEmail</code> action. </p>",
+      "documentation" : "",
       "shapeName" : "SendRawEmailRequest",
       "deprecated" : false,
       "required" : [ "RawMessage" ],
@@ -17403,7 +17546,7 @@
     },
     "ListIdentitiesRequest" : {
       "c2jName" : "ListIdentitiesRequest",
-      "documentation" : "<p>Represents a request instructing the service to list all identities for the AWS Account.</p>",
+      "documentation" : "",
       "shapeName" : "ListIdentitiesRequest",
       "deprecated" : false,
       "required" : null,
@@ -17751,7 +17894,7 @@
     },
     "VerifyEmailIdentityResult" : {
       "c2jName" : "VerifyEmailIdentityResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "VerifyEmailIdentityResult",
       "deprecated" : false,
       "required" : null,
@@ -17785,7 +17928,7 @@
     },
     "PutIdentityPolicyRequest" : {
       "c2jName" : "PutIdentityPolicyRequest",
-      "documentation" : "<p>Represents a request instructing the service to apply an authorization policy to an identity.</p>",
+      "documentation" : "",
       "shapeName" : "PutIdentityPolicyRequest",
       "deprecated" : false,
       "required" : [ "Identity", "PolicyName", "Policy" ],
@@ -18133,7 +18276,7 @@
     },
     "DeleteIdentityRequest" : {
       "c2jName" : "DeleteIdentityRequest",
-      "documentation" : "<p>Represents a request instructing the service to delete an identity from the list of identities for the AWS Account.</p>",
+      "documentation" : "",
       "shapeName" : "DeleteIdentityRequest",
       "deprecated" : false,
       "required" : [ "Identity" ],
@@ -19773,7 +19916,7 @@
     },
     "ListIdentitiesResult" : {
       "c2jName" : "ListIdentitiesResponse",
-      "documentation" : "<p>Represents a list of all verified identities for the AWS Account.</p>",
+      "documentation" : "",
       "shapeName" : "ListIdentitiesResult",
       "deprecated" : false,
       "required" : [ "Identities" ],
@@ -20184,7 +20327,7 @@
     },
     "GetIdentityVerificationAttributesResult" : {
       "c2jName" : "GetIdentityVerificationAttributesResponse",
-      "documentation" : "<p>Represents the verification attributes for a list of identities.</p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityVerificationAttributesResult",
       "deprecated" : false,
       "required" : [ "VerificationAttributes" ],
@@ -20293,11 +20436,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -20432,11 +20575,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -20594,7 +20737,7 @@
     },
     "SendEmailResult" : {
       "c2jName" : "SendEmailResponse",
-      "documentation" : "<p>Represents a unique message ID returned from a successful <code>SendEmail</code> request. </p>",
+      "documentation" : "",
       "shapeName" : "SendEmailResult",
       "deprecated" : false,
       "required" : [ "MessageId" ],
@@ -21344,7 +21487,7 @@
     },
     "DeleteVerifiedEmailAddressRequest" : {
       "c2jName" : "DeleteVerifiedEmailAddressRequest",
-      "documentation" : "<p>Represents a request instructing the service to delete an address from the list of verified email addresses.</p>",
+      "documentation" : "",
       "shapeName" : "DeleteVerifiedEmailAddressRequest",
       "deprecated" : false,
       "required" : [ "EmailAddress" ],
@@ -23195,7 +23338,7 @@
     },
     "ListIdentityPoliciesRequest" : {
       "c2jName" : "ListIdentityPoliciesRequest",
-      "documentation" : "<p>Represents a request instructing the service to list all authorization policies, by name, applying to an identity.</p>",
+      "documentation" : "",
       "shapeName" : "ListIdentityPoliciesRequest",
       "deprecated" : false,
       "required" : [ "Identity" ],
@@ -23858,7 +24001,7 @@
     },
     "GetIdentityNotificationAttributesResult" : {
       "c2jName" : "GetIdentityNotificationAttributesResponse",
-      "documentation" : "<p>Describes whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and specifies whether feedback forwarding is enabled for bounce and complaint notifications.</p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityNotificationAttributesResult",
       "deprecated" : false,
       "required" : [ "NotificationAttributes" ],
@@ -23967,11 +24110,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -24106,11 +24249,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -24857,7 +25000,7 @@
     },
     "PutIdentityPolicyResult" : {
       "c2jName" : "PutIdentityPolicyResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "PutIdentityPolicyResult",
       "deprecated" : false,
       "required" : null,
@@ -24891,7 +25034,7 @@
     },
     "GetIdentityDkimAttributesResult" : {
       "c2jName" : "GetIdentityDkimAttributesResponse",
-      "documentation" : "<p>Represents a list of all the DKIM attributes for the specified identity.</p>",
+      "documentation" : "",
       "shapeName" : "GetIdentityDkimAttributesResult",
       "deprecated" : false,
       "required" : [ "DkimAttributes" ],
@@ -25000,11 +25143,11 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -25139,11 +25282,11 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -25159,7 +25302,7 @@
     },
     "DeleteIdentityPolicyResult" : {
       "c2jName" : "DeleteIdentityPolicyResponse",
-      "documentation" : "<p>An empty element. Receiving this element indicates that the request completed successfully.</p>",
+      "documentation" : "",
       "shapeName" : "DeleteIdentityPolicyResult",
       "deprecated" : false,
       "required" : null,

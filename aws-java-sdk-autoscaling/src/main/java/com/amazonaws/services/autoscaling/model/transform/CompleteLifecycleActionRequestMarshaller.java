@@ -74,6 +74,11 @@ public class CompleteLifecycleActionRequestMarshaller
                             .getLifecycleActionResult()));
         }
 
+        if (completeLifecycleActionRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils
+                    .fromString(completeLifecycleActionRequest.getInstanceId()));
+        }
+
         return request;
     }
 

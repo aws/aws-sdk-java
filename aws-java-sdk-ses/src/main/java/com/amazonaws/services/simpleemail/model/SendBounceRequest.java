@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Request object for sending a simple/complex bounce. It contains all of the
- * information needed to generate a basic DSN or a fully-customized DSN.
- * </p>
+ * 
  */
 public class SendBounceRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

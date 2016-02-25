@@ -21,7 +21,7 @@ import java.io.Serializable;
 /**
  * <p>
  * A log event is a record of some activity that was recorded by the application
- * or resource being monitored. The log event record that Amazon CloudWatch Logs
+ * or resource being monitored. The log event record that CloudWatch Logs
  * understands contains two properties: the timestamp of when the event
  * occurred, and the raw event message.
  * </p>

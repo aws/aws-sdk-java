@@ -20,9 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request to set or clear an identity's notification topic.
- * </p>
+ * 
  */
 public class SetIdentityNotificationTopicRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

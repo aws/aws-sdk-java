@@ -20,14 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to send a single email message.
- * </p>
- * <p>
- * This datatype can be used in application code to compose a message consisting
- * of source, destination, message, reply-to, and return-path parts. This object
- * can then be sent using the <code>SendEmail</code> action.
- * </p>
+ * 
  */
 public class SendEmailRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

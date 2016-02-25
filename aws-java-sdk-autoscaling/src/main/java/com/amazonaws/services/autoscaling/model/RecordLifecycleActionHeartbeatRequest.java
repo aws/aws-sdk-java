@@ -46,6 +46,8 @@ public class RecordLifecycleActionHeartbeatRequest extends
      */
     private String lifecycleActionToken;
 
+    private String instanceId;
+
     /**
      * <p>
      * The name of the lifecycle hook.
@@ -179,6 +181,31 @@ public class RecordLifecycleActionHeartbeatRequest extends
     }
 
     /**
+     * @param instanceId
+     */
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * @return
+     */
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * @param instanceId
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public RecordLifecycleActionHeartbeatRequest withInstanceId(
+            String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -196,7 +223,10 @@ public class RecordLifecycleActionHeartbeatRequest extends
             sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
                     + ",");
         if (getLifecycleActionToken() != null)
-            sb.append("LifecycleActionToken: " + getLifecycleActionToken());
+            sb.append("LifecycleActionToken: " + getLifecycleActionToken()
+                    + ",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: " + getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +262,11 @@ public class RecordLifecycleActionHeartbeatRequest extends
                 && other.getLifecycleActionToken().equals(
                         this.getLifecycleActionToken()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null
+                && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -252,6 +287,8 @@ public class RecordLifecycleActionHeartbeatRequest extends
                 * hashCode
                 + ((getLifecycleActionToken() == null) ? 0
                         : getLifecycleActionToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

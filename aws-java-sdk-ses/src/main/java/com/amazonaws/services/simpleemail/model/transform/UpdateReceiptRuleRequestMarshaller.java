@@ -265,6 +265,13 @@ public class UpdateReceiptRuleRequestMarshaller implements
                                     StringUtils.fromString(sNSAction
                                             .getTopicArn()));
                         }
+
+                        if (sNSAction.getEncoding() != null) {
+                            request.addParameter("Rule.Actions.member."
+                                    + actionsListIndex + ".SNSAction.Encoding",
+                                    StringUtils.fromString(sNSAction
+                                            .getEncoding()));
+                        }
                     }
                     actionsListIndex++;
                 }

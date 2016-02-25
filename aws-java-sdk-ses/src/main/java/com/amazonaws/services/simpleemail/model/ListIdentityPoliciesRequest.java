@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to list all authorization
- * policies, by name, applying to an identity.
- * </p>
+ * 
  */
 public class ListIdentityPoliciesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

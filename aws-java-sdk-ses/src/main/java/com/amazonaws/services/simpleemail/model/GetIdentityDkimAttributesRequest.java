@@ -20,13 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Given a list of verified identities, describes their DKIM attributes. The
- * DKIM attributes of an email address identity includes whether DKIM signing is
- * individually enabled or disabled for that address. The DKIM attributes of a
- * domain name identity includes whether DKIM signing is enabled, as well as the
- * DNS records (tokens) that must remain published in the domain name's DNS.
- * </p>
+ * 
  */
 public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to list all identities for the
- * AWS Account.
- * </p>
+ * 
  */
 public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

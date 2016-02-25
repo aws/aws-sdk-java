@@ -189,6 +189,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationARNs;
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -1509,6 +1522,130 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * 
+     * @return Key-value pairs to associate with this stack. AWS CloudFormation
+     *         also propagates these tags to supported resources in the stack.
+     *         You can specify a maximum number of 10 tags.</p>
+     *         <p>
+     *         If you don't specify this parameter, AWS CloudFormation doesn't
+     *         modify the stack's tags. If you specify an empty value, AWS
+     *         CloudFormation removes all associated tags.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to supported resources in the stack.
+     *        You can specify a maximum number of 10 tags.</p>
+     *        <p>
+     *        If you don't specify this parameter, AWS CloudFormation doesn't
+     *        modify the stack's tags. If you specify an empty value, AWS
+     *        CloudFormation removes all associated tags.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to supported resources in the stack.
+     *        You can specify a maximum number of 10 tags.</p>
+     *        <p>
+     *        If you don't specify this parameter, AWS CloudFormation doesn't
+     *        modify the stack's tags. If you specify an empty value, AWS
+     *        CloudFormation removes all associated tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateStackRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to supported resources in the stack.
+     *        You can specify a maximum number of 10 tags.</p>
+     *        <p>
+     *        If you don't specify this parameter, AWS CloudFormation doesn't
+     *        modify the stack's tags. If you specify an empty value, AWS
+     *        CloudFormation removes all associated tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UpdateStackRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1545,7 +1682,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
         if (getStackPolicyURL() != null)
             sb.append("StackPolicyURL: " + getStackPolicyURL() + ",");
         if (getNotificationARNs() != null)
-            sb.append("NotificationARNs: " + getNotificationARNs());
+            sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1630,6 +1769,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
                 && other.getNotificationARNs().equals(
                         this.getNotificationARNs()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1681,6 +1825,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getNotificationARNs() == null) ? 0 : getNotificationARNs()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

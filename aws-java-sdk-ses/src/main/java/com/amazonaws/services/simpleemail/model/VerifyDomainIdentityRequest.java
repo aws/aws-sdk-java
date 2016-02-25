@@ -20,9 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to begin domain verification.
- * </p>
+ * 
  */
 public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

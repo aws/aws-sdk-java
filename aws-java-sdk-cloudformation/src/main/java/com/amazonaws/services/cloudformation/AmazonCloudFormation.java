@@ -134,8 +134,8 @@ public interface AmazonCloudFormation {
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > fix the error</a> and continue the rollback. By continuing the
      * rollback, you can return your stack to a working state (the
-     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), return the stack to its
-     * original settings, and then try to update the stack again.
+     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), and then try to update the
+     * stack again.
      * </p>
      * <p>
      * A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS
@@ -468,10 +468,6 @@ public interface AmazonCloudFormation {
      * <p>
      * To get a copy of the template for an existing stack, you can use the
      * <a>GetTemplate</a> action.
-     * </p>
-     * <p>
-     * Tags that were associated with this stack during creation time will still
-     * be associated with the stack after an <code>UpdateStack</code> operation.
      * </p>
      * <p>
      * For more information about creating an update template, updating a stack,

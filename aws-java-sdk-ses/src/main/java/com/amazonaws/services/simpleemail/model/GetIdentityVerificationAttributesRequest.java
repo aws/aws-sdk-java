@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to provide the verification
- * attributes for a list of identities.
- * </p>
+ * 
  */
 public class GetIdentityVerificationAttributesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
