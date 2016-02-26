@@ -17,6 +17,9 @@ package com.amazonaws.services.s3.internal;
 import java.io.InputStream;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.model.AmazonS3Exception;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -59,12 +62,37 @@ public class S3XmlResponseHandler<T> extends AbstractS3ResponseHandler<T> {
 
         if (responseUnmarshaller != null) {
             log.trace("Beginning to parse service response XML");
-            T result = responseUnmarshaller.unmarshall(response.getContent());
+
+            T result = null;
+            try {
+                result = responseUnmarshaller.unmarshall(response.getContent());
+            } catch(AmazonClientException ace) {
+                if (log.isDebugEnabled()) {
+                    log.debug("Received a successfull response. But failed to " +
+                            "parse the payload.");
+                }
+                throw newAmazonS3Exception(ace, response);
+            }
             log.trace("Done parsing service response XML");
             awsResponse.setResult(result);
         }
 
         return awsResponse;
+    }
+
+    private AmazonS3Exception newAmazonS3Exception(AmazonClientException ace,
+                                                   HttpResponse response) {
+        final AmazonS3Exception s3Exception = new AmazonS3Exception
+                ("Received a successfull response. But failed to " +
+                        "parse the payload.", ace);
+        s3Exception.setExtendedRequestId(getHeaderValue(Headers
+                .EXTENDED_REQUEST_ID));
+        s3Exception.setRequestId(getHeaderValue(Headers.REQUEST_ID));
+        s3Exception.setStatusCode(response.getStatusCode());
+        s3Exception.setErrorCode("Invalid Response");
+        s3Exception.setServiceName(response.getRequest()
+                .getServiceName());
+        return s3Exception;
     }
 
     /**
@@ -75,6 +103,10 @@ public class S3XmlResponseHandler<T> extends AbstractS3ResponseHandler<T> {
      */
     public Map<String, String> getResponseHeaders() {
         return responseHeaders;
+    }
+
+    private String getHeaderValue(String header) {
+        return responseHeaders.get(header);
     }
 
 }
