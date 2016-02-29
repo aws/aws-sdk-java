@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.SDKGlobalConfiguration.DISABLE_S3_SIGV4_UPGRADE_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.ENFORCE_S3_SIGV4_SYSTEM_PROPERTY;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
@@ -3091,6 +3092,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // explicitly setting the region.
         if (System.getProperty(ENFORCE_S3_SIGV4_SYSTEM_PROPERTY) != null) {
             return true;
+        }
+
+        // User has disabled signature version upgrades - SigV4 will only be
+        // used when otherwise specified.
+        if (System.getProperty(DISABLE_S3_SIGV4_UPGRADE_SYSTEM_PROPERTY) != null) {
+            return false;
         }
 
         // User can ask to enable SigV4 if it's safe - this will fall back

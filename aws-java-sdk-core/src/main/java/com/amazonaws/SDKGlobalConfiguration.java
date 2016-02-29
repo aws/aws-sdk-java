@@ -115,6 +115,16 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.services.s3.enforceV4";
 
     /**
+     * Like {@link #ENFORCE_S3_SIGV4_SYSTEM_PROPERTY}, but causes the client to
+     * never upgrade to Signature Version 4. This property is overridden by
+     * {@link #ENFORCE_S3_SIGV4_SYSTEM_PROPERTY} and Signature Version 4 will
+     * still be used when otherwise configured or overridden for a client
+     * instance.
+     */
+    public static final String DISABLE_S3_SIGV4_UPGRADE_SYSTEM_PROPERTY =
+        "com.amazonaws.services.s3.disableV4Upgrade";
+
+    /**
      * @deprecated with {@link AmazonWebServiceRequest#getRequestClientOptions()}
      * and {@link RequestClientOptions#setReadLimit(int)}.
      * <p>
