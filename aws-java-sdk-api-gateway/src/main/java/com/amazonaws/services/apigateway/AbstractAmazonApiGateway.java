@@ -159,6 +159,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public void flushStageAuthorizersCache(
+            FlushStageAuthorizersCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void flushStageCache(FlushStageCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -335,6 +341,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     @Override
     public PutMethodResponseResult putMethodResponse(
             PutMethodResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(
+            TestInvokeAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

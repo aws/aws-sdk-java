@@ -97,6 +97,26 @@ public class MethodSetting implements Serializable, Cloneable {
      * </p>
      */
     private Boolean cacheDataEncrypted;
+    /**
+     * <p>
+     * Specifies whether authorization is required for a cache invalidation
+     * request. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     * , and the value is a Boolean.
+     * </p>
+     */
+    private Boolean requireAuthorizationForCacheControl;
+    /**
+     * <p>
+     * Specifies the strategy on how to handle the unauthorized requests for
+     * cache invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     * , and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * </p>
+     */
+    private String unauthorizedCacheControlHeaderStrategy;
 
     /**
      * <p>
@@ -629,6 +649,208 @@ public class MethodSetting implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether authorization is required for a cache invalidation
+     * request. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     * , and the value is a Boolean.
+     * </p>
+     * 
+     * @param requireAuthorizationForCacheControl
+     *        Specifies whether authorization is required for a cache
+     *        invalidation request. The PATCH path for this setting is
+     *        <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     *        , and the value is a Boolean.
+     */
+    public void setRequireAuthorizationForCacheControl(
+            Boolean requireAuthorizationForCacheControl) {
+        this.requireAuthorizationForCacheControl = requireAuthorizationForCacheControl;
+    }
+
+    /**
+     * <p>
+     * Specifies whether authorization is required for a cache invalidation
+     * request. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     * , and the value is a Boolean.
+     * </p>
+     * 
+     * @return Specifies whether authorization is required for a cache
+     *         invalidation request. The PATCH path for this setting is
+     *         <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     *         , and the value is a Boolean.
+     */
+    public Boolean getRequireAuthorizationForCacheControl() {
+        return this.requireAuthorizationForCacheControl;
+    }
+
+    /**
+     * <p>
+     * Specifies whether authorization is required for a cache invalidation
+     * request. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     * , and the value is a Boolean.
+     * </p>
+     * 
+     * @param requireAuthorizationForCacheControl
+     *        Specifies whether authorization is required for a cache
+     *        invalidation request. The PATCH path for this setting is
+     *        <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     *        , and the value is a Boolean.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public MethodSetting withRequireAuthorizationForCacheControl(
+            Boolean requireAuthorizationForCacheControl) {
+        setRequireAuthorizationForCacheControl(requireAuthorizationForCacheControl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether authorization is required for a cache invalidation
+     * request. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     * , and the value is a Boolean.
+     * </p>
+     * 
+     * @return Specifies whether authorization is required for a cache
+     *         invalidation request. The PATCH path for this setting is
+     *         <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
+     *         , and the value is a Boolean.
+     */
+    public Boolean isRequireAuthorizationForCacheControl() {
+        return this.requireAuthorizationForCacheControl;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy on how to handle the unauthorized requests for
+     * cache invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     * , and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * </p>
+     * 
+     * @param unauthorizedCacheControlHeaderStrategy
+     *        Specifies the strategy on how to handle the unauthorized requests
+     *        for cache invalidation. The PATCH path for this setting is
+     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     *        , and the available values are <code>FAIL_WITH_403</code>,
+     *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * @see UnauthorizedCacheControlHeaderStrategy
+     */
+    public void setUnauthorizedCacheControlHeaderStrategy(
+            String unauthorizedCacheControlHeaderStrategy) {
+        this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy on how to handle the unauthorized requests for
+     * cache invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     * , and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * </p>
+     * 
+     * @return Specifies the strategy on how to handle the unauthorized requests
+     *         for cache invalidation. The PATCH path for this setting is
+     *         <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     *         , and the available values are <code>FAIL_WITH_403</code>,
+     *         <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     *         <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * @see UnauthorizedCacheControlHeaderStrategy
+     */
+    public String getUnauthorizedCacheControlHeaderStrategy() {
+        return this.unauthorizedCacheControlHeaderStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy on how to handle the unauthorized requests for
+     * cache invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     * , and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * </p>
+     * 
+     * @param unauthorizedCacheControlHeaderStrategy
+     *        Specifies the strategy on how to handle the unauthorized requests
+     *        for cache invalidation. The PATCH path for this setting is
+     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     *        , and the available values are <code>FAIL_WITH_403</code>,
+     *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see UnauthorizedCacheControlHeaderStrategy
+     */
+    public MethodSetting withUnauthorizedCacheControlHeaderStrategy(
+            String unauthorizedCacheControlHeaderStrategy) {
+        setUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy on how to handle the unauthorized requests for
+     * cache invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     * , and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * </p>
+     * 
+     * @param unauthorizedCacheControlHeaderStrategy
+     *        Specifies the strategy on how to handle the unauthorized requests
+     *        for cache invalidation. The PATCH path for this setting is
+     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     *        , and the available values are <code>FAIL_WITH_403</code>,
+     *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see UnauthorizedCacheControlHeaderStrategy
+     */
+    public void setUnauthorizedCacheControlHeaderStrategy(
+            UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
+        this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy
+                .toString();
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy on how to handle the unauthorized requests for
+     * cache invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     * , and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * </p>
+     * 
+     * @param unauthorizedCacheControlHeaderStrategy
+     *        Specifies the strategy on how to handle the unauthorized requests
+     *        for cache invalidation. The PATCH path for this setting is
+     *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
+     *        , and the available values are <code>FAIL_WITH_403</code>,
+     *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see UnauthorizedCacheControlHeaderStrategy
+     */
+    public MethodSetting withUnauthorizedCacheControlHeaderStrategy(
+            UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
+        setUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -656,7 +878,13 @@ public class MethodSetting implements Serializable, Cloneable {
         if (getCacheTtlInSeconds() != null)
             sb.append("CacheTtlInSeconds: " + getCacheTtlInSeconds() + ",");
         if (getCacheDataEncrypted() != null)
-            sb.append("CacheDataEncrypted: " + getCacheDataEncrypted());
+            sb.append("CacheDataEncrypted: " + getCacheDataEncrypted() + ",");
+        if (getRequireAuthorizationForCacheControl() != null)
+            sb.append("RequireAuthorizationForCacheControl: "
+                    + getRequireAuthorizationForCacheControl() + ",");
+        if (getUnauthorizedCacheControlHeaderStrategy() != null)
+            sb.append("UnauthorizedCacheControlHeaderStrategy: "
+                    + getUnauthorizedCacheControlHeaderStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -723,6 +951,20 @@ public class MethodSetting implements Serializable, Cloneable {
                 && other.getCacheDataEncrypted().equals(
                         this.getCacheDataEncrypted()) == false)
             return false;
+        if (other.getRequireAuthorizationForCacheControl() == null
+                ^ this.getRequireAuthorizationForCacheControl() == null)
+            return false;
+        if (other.getRequireAuthorizationForCacheControl() != null
+                && other.getRequireAuthorizationForCacheControl().equals(
+                        this.getRequireAuthorizationForCacheControl()) == false)
+            return false;
+        if (other.getUnauthorizedCacheControlHeaderStrategy() == null
+                ^ this.getUnauthorizedCacheControlHeaderStrategy() == null)
+            return false;
+        if (other.getUnauthorizedCacheControlHeaderStrategy() != null
+                && other.getUnauthorizedCacheControlHeaderStrategy().equals(
+                        this.getUnauthorizedCacheControlHeaderStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -763,6 +1005,15 @@ public class MethodSetting implements Serializable, Cloneable {
                 * hashCode
                 + ((getCacheDataEncrypted() == null) ? 0
                         : getCacheDataEncrypted().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequireAuthorizationForCacheControl() == null) ? 0
+                        : getRequireAuthorizationForCacheControl().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUnauthorizedCacheControlHeaderStrategy() == null) ? 0
+                        : getUnauthorizedCacheControlHeaderStrategy()
+                                .hashCode());
         return hashCode;
     }
 

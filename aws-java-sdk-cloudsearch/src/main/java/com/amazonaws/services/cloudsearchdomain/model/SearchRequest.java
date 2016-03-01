@@ -456,6 +456,18 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Long start;
+    /**
+     * <p>
+     * Specifies one or more fields for which to get statistics information.
+     * Each specified field must be facet-enabled in the domain configuration.
+     * The fields are specified in JSON using the form:
+     * </p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     * <p>
+     * There are currently no options supported for statistics.
+     * </p>
+     */
+    private String stats;
 
     /**
      * <p>
@@ -3375,6 +3387,77 @@ public class SearchRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specifies one or more fields for which to get statistics information.
+     * Each specified field must be facet-enabled in the domain configuration.
+     * The fields are specified in JSON using the form:
+     * </p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     * <p>
+     * There are currently no options supported for statistics.
+     * </p>
+     * 
+     * @param stats
+     *        Specifies one or more fields for which to get statistics
+     *        information. Each specified field must be facet-enabled in the
+     *        domain configuration. The fields are specified in JSON using the
+     *        form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     *        <p>
+     *        There are currently no options supported for statistics.
+     */
+    public void setStats(String stats) {
+        this.stats = stats;
+    }
+
+    /**
+     * <p>
+     * Specifies one or more fields for which to get statistics information.
+     * Each specified field must be facet-enabled in the domain configuration.
+     * The fields are specified in JSON using the form:
+     * </p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     * <p>
+     * There are currently no options supported for statistics.
+     * </p>
+     * 
+     * @return Specifies one or more fields for which to get statistics
+     *         information. Each specified field must be facet-enabled in the
+     *         domain configuration. The fields are specified in JSON using the
+     *         form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     *         <p>
+     *         There are currently no options supported for statistics.
+     */
+    public String getStats() {
+        return this.stats;
+    }
+
+    /**
+     * <p>
+     * Specifies one or more fields for which to get statistics information.
+     * Each specified field must be facet-enabled in the domain configuration.
+     * The fields are specified in JSON using the form:
+     * </p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     * <p>
+     * There are currently no options supported for statistics.
+     * </p>
+     * 
+     * @param stats
+     *        Specifies one or more fields for which to get statistics
+     *        information. Each specified field must be facet-enabled in the
+     *        domain configuration. The fields are specified in JSON using the
+     *        form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
+     *        <p>
+     *        There are currently no options supported for statistics.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public SearchRequest withStats(String stats) {
+        setStats(stats);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -3411,7 +3494,9 @@ public class SearchRequest extends AmazonWebServiceRequest implements
         if (getSort() != null)
             sb.append("Sort: " + getSort() + ",");
         if (getStart() != null)
-            sb.append("Start: " + getStart());
+            sb.append("Start: " + getStart() + ",");
+        if (getStats() != null)
+            sb.append("Stats: " + getStats());
         sb.append("}");
         return sb.toString();
     }
@@ -3491,6 +3576,11 @@ public class SearchRequest extends AmazonWebServiceRequest implements
         if (other.getStart() != null
                 && other.getStart().equals(this.getStart()) == false)
             return false;
+        if (other.getStats() == null ^ this.getStats() == null)
+            return false;
+        if (other.getStats() != null
+                && other.getStats().equals(this.getStats()) == false)
+            return false;
         return true;
     }
 
@@ -3529,6 +3619,8 @@ public class SearchRequest extends AmazonWebServiceRequest implements
                 + ((getSort() == null) ? 0 : getSort().hashCode());
         hashCode = prime * hashCode
                 + ((getStart() == null) ? 0 : getStart().hashCode());
+        hashCode = prime * hashCode
+                + ((getStats() == null) ? 0 : getStats().hashCode());
         return hashCode;
     }
 

@@ -30,8 +30,8 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash key value of the item collection. This value is the same as the
-     * hash key of the item.
+     * The partition key value of the item collection. This value is the same as
+     * the partition key value of the item.
      * </p>
      */
     private java.util.Map<String, AttributeValue> itemCollectionKey;
@@ -53,12 +53,12 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash key value of the item collection. This value is the same as the
-     * hash key of the item.
+     * The partition key value of the item collection. This value is the same as
+     * the partition key value of the item.
      * </p>
      * 
-     * @return The hash key value of the item collection. This value is the same
-     *         as the hash key of the item.
+     * @return The partition key value of the item collection. This value is the
+     *         same as the partition key value of the item.
      */
     public java.util.Map<String, AttributeValue> getItemCollectionKey() {
         return itemCollectionKey;
@@ -66,13 +66,13 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash key value of the item collection. This value is the same as the
-     * hash key of the item.
+     * The partition key value of the item collection. This value is the same as
+     * the partition key value of the item.
      * </p>
      * 
      * @param itemCollectionKey
-     *        The hash key value of the item collection. This value is the same
-     *        as the hash key of the item.
+     *        The partition key value of the item collection. This value is the
+     *        same as the partition key value of the item.
      */
     public void setItemCollectionKey(
             java.util.Map<String, AttributeValue> itemCollectionKey) {
@@ -81,13 +81,13 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hash key value of the item collection. This value is the same as the
-     * hash key of the item.
+     * The partition key value of the item collection. This value is the same as
+     * the partition key value of the item.
      * </p>
      * 
      * @param itemCollectionKey
-     *        The hash key value of the item collection. This value is the same
-     *        as the hash key of the item.
+     *        The partition key value of the item collection. This value is the
+     *        same as the partition key value of the item.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

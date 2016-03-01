@@ -455,6 +455,22 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Flushes all authorizer cache entries on a stage.
+     * </p>
+     * 
+     * @param flushStageAuthorizersCacheRequest
+     *        Request to flush authorizer cache entries on a specified stage.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.FlushStageAuthorizersCache
+     */
+    void flushStageAuthorizersCache(
+            FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest);
+
+    /**
+     * <p>
      * Flushes a stage's cache.
      * </p>
      * 
@@ -521,6 +537,7 @@ public interface AmazonApiGateway {
      *        A request to get information about the current <a>ApiKeys</a>
      *        resource.
      * @return Result of the GetApiKeys operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetApiKeys
@@ -610,6 +627,7 @@ public interface AmazonApiGateway {
      * @param getClientCertificatesRequest
      * @return Result of the GetClientCertificates operation returned by the
      *         service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetClientCertificates
@@ -643,6 +661,7 @@ public interface AmazonApiGateway {
      *        Requests Amazon API Gateway to get information about a
      *        <a>Deployments</a> collection.
      * @return Result of the GetDeployments operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
@@ -676,6 +695,7 @@ public interface AmazonApiGateway {
      * @param getDomainNamesRequest
      *        Request to describe a collection of <a>DomainName</a> resources.
      * @return Result of the GetDomainNames operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetDomainNames
@@ -803,6 +823,7 @@ public interface AmazonApiGateway {
      *        Request to list existing <a>Models</a> defined for a
      *        <a>RestApi</a> resource.
      * @return Result of the GetModels operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -833,6 +854,7 @@ public interface AmazonApiGateway {
      * @param getResourcesRequest
      *        Request to list information about a collection of resources.
      * @return Result of the GetResources operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -865,6 +887,7 @@ public interface AmazonApiGateway {
      *        Request to list existing <a>RestApis</a> defined for your
      *        collection.
      * @return Result of the GetRestApis operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetRestApis
@@ -988,6 +1011,19 @@ public interface AmazonApiGateway {
      */
     PutMethodResponseResult putMethodResponse(
             PutMethodResponseRequest putMethodResponseRequest);
+
+    /**
+     * @param testInvokeAuthorizerRequest
+     * @return Result of the TestInvokeAuthorizer operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.TestInvokeAuthorizer
+     */
+    TestInvokeAuthorizerResult testInvokeAuthorizer(
+            TestInvokeAuthorizerRequest testInvokeAuthorizerRequest);
 
     /**
      * @param testInvokeMethodRequest

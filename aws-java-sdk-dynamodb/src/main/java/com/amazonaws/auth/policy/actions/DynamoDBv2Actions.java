@@ -37,6 +37,8 @@ public enum DynamoDBv2Actions implements Action {
     DeleteItem("dynamodb:DeleteItem"),
     /** Action for the DeleteTable operation. */
     DeleteTable("dynamodb:DeleteTable"),
+    /** Action for the DescribeLimits operation. */
+    DescribeLimits("dynamodb:DescribeLimits"),
     /** Action for the DescribeTable operation. */
     DescribeTable("dynamodb:DescribeTable"),
     /** Action for the GetItem operation. */

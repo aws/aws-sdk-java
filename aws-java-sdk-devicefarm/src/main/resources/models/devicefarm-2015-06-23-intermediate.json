@@ -19,9 +19,9 @@
     "jsonContentVersion" : "application/x-amz-json-1.1",
     "endpointPrefix" : "devicefarm",
     "signingName" : "devicefarm",
-    "serviceName" : "AWS Device Farm",
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "serviceName" : "AWS Device Farm",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },

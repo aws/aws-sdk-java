@@ -33,9 +33,35 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
     private String indexName;
     /**
      * <p>
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * The complete key schema for the local secondary index, consisting of one
+     * or more pairs of attribute names and key types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note>
      */
     private java.util.List<KeySchemaElement> keySchema;
 
@@ -103,13 +129,64 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * The complete key schema for the local secondary index, consisting of one
+     * or more pairs of attribute names and key types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note>
      * 
-     * @return The complete index key schema, which consists of one or more
-     *         pairs of attribute names and key types (<code>HASH</code> or
-     *         <code>RANGE</code>).
+     * @return The complete key schema for the local secondary index, consisting
+     *         of one or more pairs of attribute names and key types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>HASH</code> - partition key
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RANGE</code> - sort key
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The partition key of an item is also known as its <i>hash
+     *         attribute</i>. The term "hash attribute" derives from
+     *         DynamoDB&#39; usage of an internal hash function to evenly
+     *         distribute data items across partitions, based on their partition
+     *         key values.
+     *         </p>
+     *         <p>
+     *         The sort key of an item is also known as its <i>range
+     *         attribute</i>. The term "range attribute" derives from the way
+     *         DynamoDB stores items with the same partition key physically
+     *         close together, in sorted order by the sort key value.
+     *         </p>
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
@@ -117,14 +194,65 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * The complete key schema for the local secondary index, consisting of one
+     * or more pairs of attribute names and key types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note>
      * 
      * @param keySchema
-     *        The complete index key schema, which consists of one or more pairs
-     *        of attribute names and key types (<code>HASH</code> or
-     *        <code>RANGE</code>).
+     *        The complete key schema for the local secondary index, consisting
+     *        of one or more pairs of attribute names and key types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HASH</code> - partition key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RANGE</code> - sort key
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The partition key of an item is also known as its <i>hash
+     *        attribute</i>. The term "hash attribute" derives from
+     *        DynamoDB&#39; usage of an internal hash function to evenly
+     *        distribute data items across partitions, based on their partition
+     *        key values.
+     *        </p>
+     *        <p>
+     *        The sort key of an item is also known as its <i>range
+     *        attribute</i>. The term "range attribute" derives from the way
+     *        DynamoDB stores items with the same partition key physically close
+     *        together, in sorted order by the sort key value.
+     *        </p>
      */
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -137,9 +265,35 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * The complete key schema for the local secondary index, consisting of one
+     * or more pairs of attribute names and key types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setKeySchema(java.util.Collection)} or
@@ -148,9 +302,34 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param keySchema
-     *        The complete index key schema, which consists of one or more pairs
-     *        of attribute names and key types (<code>HASH</code> or
-     *        <code>RANGE</code>).
+     *        The complete key schema for the local secondary index, consisting
+     *        of one or more pairs of attribute names and key types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HASH</code> - partition key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RANGE</code> - sort key
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The partition key of an item is also known as its <i>hash
+     *        attribute</i>. The term "hash attribute" derives from
+     *        DynamoDB&#39; usage of an internal hash function to evenly
+     *        distribute data items across partitions, based on their partition
+     *        key values.
+     *        </p>
+     *        <p>
+     *        The sort key of an item is also known as its <i>range
+     *        attribute</i>. The term "range attribute" derives from the way
+     *        DynamoDB stores items with the same partition key physically close
+     *        together, in sorted order by the sort key value.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -168,14 +347,65 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The complete index key schema, which consists of one or more pairs of
-     * attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+     * The complete key schema for the local secondary index, consisting of one
+     * or more pairs of attribute names and key types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note>
      * 
      * @param keySchema
-     *        The complete index key schema, which consists of one or more pairs
-     *        of attribute names and key types (<code>HASH</code> or
-     *        <code>RANGE</code>).
+     *        The complete key schema for the local secondary index, consisting
+     *        of one or more pairs of attribute names and key types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HASH</code> - partition key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RANGE</code> - sort key
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The partition key of an item is also known as its <i>hash
+     *        attribute</i>. The term "hash attribute" derives from
+     *        DynamoDB&#39; usage of an internal hash function to evenly
+     *        distribute data items across partitions, based on their partition
+     *        key values.
+     *        </p>
+     *        <p>
+     *        The sort key of an item is also known as its <i>range
+     *        attribute</i>. The term "range attribute" derives from the way
+     *        DynamoDB stores items with the same partition key physically close
+     *        together, in sorted order by the sort key value.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -90,6 +90,17 @@ public class MethodSettingJsonMarshaller {
                         methodSetting.getCacheDataEncrypted());
             }
 
+            if (methodSetting.getRequireAuthorizationForCacheControl() != null) {
+                jsonWriter.key("requireAuthorizationForCacheControl").value(
+                        methodSetting.getRequireAuthorizationForCacheControl());
+            }
+
+            if (methodSetting.getUnauthorizedCacheControlHeaderStrategy() != null) {
+                jsonWriter.key("unauthorizedCacheControlHeaderStrategy").value(
+                        methodSetting
+                                .getUnauthorizedCacheControlHeaderStrategy());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

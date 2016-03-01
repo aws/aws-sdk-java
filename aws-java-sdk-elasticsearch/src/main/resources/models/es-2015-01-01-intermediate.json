@@ -961,11 +961,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1053,11 +1053,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2021,11 +2021,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2164,11 +2164,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4736,11 +4736,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4824,11 +4824,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10143,11 +10143,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10334,11 +10334,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

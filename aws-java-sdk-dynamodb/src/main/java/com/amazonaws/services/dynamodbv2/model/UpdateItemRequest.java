@@ -40,9 +40,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      */
     private java.util.Map<String, AttributeValue> key;
@@ -65,7 +65,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -613,6 +613,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      */
     private String returnValues;
 
@@ -940,9 +948,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param attributeUpdates
      *        <p>
      *        This is a legacy parameter, for backward compatibility. New
@@ -962,7 +970,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -1119,9 +1127,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param attributeUpdates
      *        <p>
      *        This is a legacy parameter, for backward compatibility. New
@@ -1141,7 +1149,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -1314,6 +1322,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      */
     public UpdateItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key,
@@ -1337,9 +1353,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param attributeUpdates
      *        <p>
      *        This is a legacy parameter, for backward compatibility. New
@@ -1359,7 +1375,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -1532,6 +1548,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      */
     public UpdateItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key,
@@ -1588,18 +1612,18 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @return The primary key of the item to be updated. Each element consists
      *         of an attribute name and a value for that attribute.</p>
      *         <p>
      *         For the primary key, you must provide all of the attributes. For
-     *         example, with a hash type primary key, you only need to provide
-     *         the hash attribute. For a hash-and-range type primary key, you
-     *         must provide both the hash attribute and the range attribute.
+     *         example, with a simple primary key, you only need to provide a
+     *         value for the partition key. For a composite primary key, you
+     *         must provide values for both the partition key and the sort key.
      */
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
@@ -1612,9 +1636,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -1622,9 +1646,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
@@ -1637,9 +1661,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -1647,9 +1671,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1697,7 +1721,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -1849,7 +1873,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         attribute that is an index key attribute for any indexes on that
      *         table, the attribute type must match the index key type defined
      *         in the <i>AttributesDefinition</i> of the table description. You
-     *         can use <i>UpdateItem</i> to update any nonkey attributes.
+     *         can use <i>UpdateItem</i> to update any non-key attributes.
      *         </p>
      *         <p>
      *         Attribute values cannot be null. String and Binary type
@@ -2010,7 +2034,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -2163,7 +2187,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -2324,7 +2348,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -2477,7 +2501,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -5196,6 +5220,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5233,6 +5265,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @see ReturnValue
      */
     public void setReturnValues(String returnValues) {
@@ -5278,6 +5318,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as
      *         they appeared either before or after they were updated. For
@@ -5315,6 +5363,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         attributes are returned.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         There is no additional cost associated with requesting a return
+     *         value aside from the small network and processing overhead of
+     *         receiving a larger response. No Read Capacity Units are consumed.
+     *         </p>
+     *         <p>
+     *         Values returned are strongly consistent
      * @see ReturnValue
      */
     public String getReturnValues() {
@@ -5360,6 +5416,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5397,6 +5461,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
@@ -5445,6 +5517,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5482,6 +5562,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
@@ -5529,6 +5617,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5566,6 +5662,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue

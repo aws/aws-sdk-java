@@ -69,6 +69,14 @@ public class SearchResultJsonUnmarshaller implements
                                     BucketInfoJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("stats", targetDepth)) {
+                    context.nextToken();
+                    searchResult
+                            .setStats(new MapUnmarshaller<String, FieldStats>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    FieldStatsJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

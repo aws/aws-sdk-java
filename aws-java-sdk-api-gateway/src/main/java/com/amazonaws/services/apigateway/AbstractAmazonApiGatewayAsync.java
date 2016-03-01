@@ -375,6 +375,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
+    public java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+            FlushStageAuthorizersCacheRequest request) {
+
+        return flushStageAuthorizersCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+            FlushStageAuthorizersCacheRequest request,
+            com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> flushStageCacheAsync(
             FlushStageCacheRequest request) {
 
@@ -880,6 +895,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<PutMethodResponseResult> putMethodResponseAsync(
             PutMethodResponseRequest request,
             com.amazonaws.handlers.AsyncHandler<PutMethodResponseRequest, PutMethodResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(
+            TestInvokeAuthorizerRequest request) {
+
+        return testInvokeAuthorizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(
+            TestInvokeAuthorizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestInvokeAuthorizerRequest, TestInvokeAuthorizerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

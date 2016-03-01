@@ -40,9 +40,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      */
     private java.util.Map<String, AttributeValue> key;
@@ -627,9 +627,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
     public DeleteItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key) {
@@ -649,9 +649,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
      *        they appeared before they were deleted. For <i>DeleteItem</i>, the
@@ -690,9 +690,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
      *        they appeared before they were deleted. For <i>DeleteItem</i>, the
@@ -764,18 +764,18 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @return A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to delete.</p>
      *         <p>
      *         For the primary key, you must provide all of the attributes. For
-     *         example, with a hash type primary key, you only need to provide
-     *         the hash attribute. For a hash-and-range type primary key, you
-     *         must provide both the hash attribute and the range attribute.
+     *         example, with a simple primary key, you only need to provide a
+     *         value for the partition key. For a composite primary key, you
+     *         must provide values for both the partition key and the sort key.
      */
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
@@ -788,9 +788,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -798,9 +798,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
@@ -813,9 +813,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -823,9 +823,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

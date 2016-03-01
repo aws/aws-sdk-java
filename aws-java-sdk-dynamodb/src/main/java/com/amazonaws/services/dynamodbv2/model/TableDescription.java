@@ -66,10 +66,35 @@ public class TableDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <i>KeyType</i> - The key type for the attribute. Can be either
-     * <code>HASH</code> or <code>RANGE</code>.
+     * <i>KeyType</i> - The role of the attribute:
+     * </p>
+     * .
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * For more information about primary keys, see <a href=
@@ -145,7 +170,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Represents one or more local secondary indexes on the table. Each index
-     * is scoped to a given hash key value. Tables with one or more local
+     * is scoped to a given partition key value. Tables with one or more local
      * secondary indexes are subject to an item collection size limit, where the
      * amount of data within a given item collection cannot exceed 10 GB. Each
      * element is composed of:
@@ -160,7 +185,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -233,7 +258,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The global secondary indexes, if any, on the table. Each index is scoped
-     * to a given hash key value. Each element is composed of:
+     * to a given partition key value. Each element is composed of:
      * </p>
      * <ul>
      * <li>
@@ -296,7 +321,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -659,10 +684,35 @@ public class TableDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <i>KeyType</i> - The key type for the attribute. Can be either
-     * <code>HASH</code> or <code>RANGE</code>.
+     * <i>KeyType</i> - The role of the attribute:
+     * </p>
+     * .
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * For more information about primary keys, see <a href=
@@ -680,10 +730,36 @@ public class TableDescription implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <i>KeyType</i> - The key type for the attribute. Can be either
-     *         <code>HASH</code> or <code>RANGE</code>.
+     *         <i>KeyType</i> - The role of the attribute:
+     *         </p>
+     *         .
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>HASH</code> - partition key
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RANGE</code> - sort key
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The partition key of an item is also known as its <i>hash
+     *         attribute</i>. The term "hash attribute" derives from
+     *         DynamoDB&#39; usage of an internal hash function to evenly
+     *         distribute data items across partitions, based on their partition
+     *         key values.
+     *         </p>
+     *         <p>
+     *         The sort key of an item is also known as its <i>range
+     *         attribute</i>. The term "range attribute" derives from the way
+     *         DynamoDB stores items with the same partition key physically
+     *         close together, in sorted order by the sort key value.
+     *         </p>
+     *         </note></li>
      *         </ul>
      *         <p>
      *         For more information about primary keys, see <a href=
@@ -707,10 +783,35 @@ public class TableDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <i>KeyType</i> - The key type for the attribute. Can be either
-     * <code>HASH</code> or <code>RANGE</code>.
+     * <i>KeyType</i> - The role of the attribute:
+     * </p>
+     * .
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * For more information about primary keys, see <a href=
@@ -729,10 +830,36 @@ public class TableDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>KeyType</i> - The key type for the attribute. Can be either
-     *        <code>HASH</code> or <code>RANGE</code>.
+     *        <i>KeyType</i> - The role of the attribute:
+     *        </p>
+     *        .
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HASH</code> - partition key
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RANGE</code> - sort key
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The partition key of an item is also known as its <i>hash
+     *        attribute</i>. The term "hash attribute" derives from
+     *        DynamoDB&#39; usage of an internal hash function to evenly
+     *        distribute data items across partitions, based on their partition
+     *        key values.
+     *        </p>
+     *        <p>
+     *        The sort key of an item is also known as its <i>range
+     *        attribute</i>. The term "range attribute" derives from the way
+     *        DynamoDB stores items with the same partition key physically close
+     *        together, in sorted order by the sort key value.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        For more information about primary keys, see <a href=
@@ -761,10 +888,35 @@ public class TableDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <i>KeyType</i> - The key type for the attribute. Can be either
-     * <code>HASH</code> or <code>RANGE</code>.
+     * <i>KeyType</i> - The role of the attribute:
+     * </p>
+     * .
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * For more information about primary keys, see <a href=
@@ -789,10 +941,36 @@ public class TableDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>KeyType</i> - The key type for the attribute. Can be either
-     *        <code>HASH</code> or <code>RANGE</code>.
+     *        <i>KeyType</i> - The role of the attribute:
+     *        </p>
+     *        .
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HASH</code> - partition key
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RANGE</code> - sort key
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The partition key of an item is also known as its <i>hash
+     *        attribute</i>. The term "hash attribute" derives from
+     *        DynamoDB&#39; usage of an internal hash function to evenly
+     *        distribute data items across partitions, based on their partition
+     *        key values.
+     *        </p>
+     *        <p>
+     *        The sort key of an item is also known as its <i>range
+     *        attribute</i>. The term "range attribute" derives from the way
+     *        DynamoDB stores items with the same partition key physically close
+     *        together, in sorted order by the sort key value.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        For more information about primary keys, see <a href=
@@ -825,10 +1003,35 @@ public class TableDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <i>KeyType</i> - The key type for the attribute. Can be either
-     * <code>HASH</code> or <code>RANGE</code>.
+     * <i>KeyType</i> - The role of the attribute:
+     * </p>
+     * .
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HASH</code> - partition key
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RANGE</code> - sort key
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The partition key of an item is also known as its <i>hash attribute</i>.
+     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * hash function to evenly distribute data items across partitions, based on
+     * their partition key values.
+     * </p>
+     * <p>
+     * The sort key of an item is also known as its <i>range attribute</i>. The
+     * term "range attribute" derives from the way DynamoDB stores items with
+     * the same partition key physically close together, in sorted order by the
+     * sort key value.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * For more information about primary keys, see <a href=
@@ -847,10 +1050,36 @@ public class TableDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>KeyType</i> - The key type for the attribute. Can be either
-     *        <code>HASH</code> or <code>RANGE</code>.
+     *        <i>KeyType</i> - The role of the attribute:
+     *        </p>
+     *        .
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HASH</code> - partition key
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RANGE</code> - sort key
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The partition key of an item is also known as its <i>hash
+     *        attribute</i>. The term "hash attribute" derives from
+     *        DynamoDB&#39; usage of an internal hash function to evenly
+     *        distribute data items across partitions, based on their partition
+     *        key values.
+     *        </p>
+     *        <p>
+     *        The sort key of an item is also known as its <i>range
+     *        attribute</i>. The term "range attribute" derives from the way
+     *        DynamoDB stores items with the same partition key physically close
+     *        together, in sorted order by the sort key value.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        For more information about primary keys, see <a href=
@@ -1387,7 +1616,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Represents one or more local secondary indexes on the table. Each index
-     * is scoped to a given hash key value. Tables with one or more local
+     * is scoped to a given partition key value. Tables with one or more local
      * secondary indexes are subject to an item collection size limit, where the
      * amount of data within a given item collection cannot exceed 10 GB. Each
      * element is composed of:
@@ -1402,7 +1631,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -1472,8 +1701,8 @@ public class TableDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @return Represents one or more local secondary indexes on the table. Each
-     *         index is scoped to a given hash key value. Tables with one or
-     *         more local secondary indexes are subject to an item collection
+     *         index is scoped to a given partition key value. Tables with one
+     *         or more local secondary indexes are subject to an item collection
      *         size limit, where the amount of data within a given item
      *         collection cannot exceed 10 GB. Each element is composed of:</p>
      *         <ul>
@@ -1487,7 +1716,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         <i>KeySchema</i> - Specifies the complete index key schema. The
      *         attribute names in the key schema must be between 1 and 255
      *         characters (inclusive). The key schema must begin with the same
-     *         hash key attribute as the table.
+     *         partition key as the table.
      *         </p>
      *         </li>
      *         <li>
@@ -1563,7 +1792,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Represents one or more local secondary indexes on the table. Each index
-     * is scoped to a given hash key value. Tables with one or more local
+     * is scoped to a given partition key value. Tables with one or more local
      * secondary indexes are subject to an item collection size limit, where the
      * amount of data within a given item collection cannot exceed 10 GB. Each
      * element is composed of:
@@ -1578,7 +1807,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -1649,10 +1878,10 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @param localSecondaryIndexes
      *        Represents one or more local secondary indexes on the table. Each
-     *        index is scoped to a given hash key value. Tables with one or more
-     *        local secondary indexes are subject to an item collection size
-     *        limit, where the amount of data within a given item collection
-     *        cannot exceed 10 GB. Each element is composed of:</p>
+     *        index is scoped to a given partition key value. Tables with one or
+     *        more local secondary indexes are subject to an item collection
+     *        size limit, where the amount of data within a given item
+     *        collection cannot exceed 10 GB. Each element is composed of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1664,7 +1893,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>KeySchema</i> - Specifies the complete index key schema. The
      *        attribute names in the key schema must be between 1 and 255
      *        characters (inclusive). The key schema must begin with the same
-     *        hash key attribute as the table.
+     *        partition key as the table.
      *        </p>
      *        </li>
      *        <li>
@@ -1747,7 +1976,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Represents one or more local secondary indexes on the table. Each index
-     * is scoped to a given hash key value. Tables with one or more local
+     * is scoped to a given partition key value. Tables with one or more local
      * secondary indexes are subject to an item collection size limit, where the
      * amount of data within a given item collection cannot exceed 10 GB. Each
      * element is composed of:
@@ -1762,7 +1991,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -1839,10 +2068,10 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @param localSecondaryIndexes
      *        Represents one or more local secondary indexes on the table. Each
-     *        index is scoped to a given hash key value. Tables with one or more
-     *        local secondary indexes are subject to an item collection size
-     *        limit, where the amount of data within a given item collection
-     *        cannot exceed 10 GB. Each element is composed of:</p>
+     *        index is scoped to a given partition key value. Tables with one or
+     *        more local secondary indexes are subject to an item collection
+     *        size limit, where the amount of data within a given item
+     *        collection cannot exceed 10 GB. Each element is composed of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1854,7 +2083,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>KeySchema</i> - Specifies the complete index key schema. The
      *        attribute names in the key schema must be between 1 and 255
      *        characters (inclusive). The key schema must begin with the same
-     *        hash key attribute as the table.
+     *        partition key as the table.
      *        </p>
      *        </li>
      *        <li>
@@ -1940,7 +2169,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Represents one or more local secondary indexes on the table. Each index
-     * is scoped to a given hash key value. Tables with one or more local
+     * is scoped to a given partition key value. Tables with one or more local
      * secondary indexes are subject to an item collection size limit, where the
      * amount of data within a given item collection cannot exceed 10 GB. Each
      * element is composed of:
@@ -1955,7 +2184,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -2026,10 +2255,10 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @param localSecondaryIndexes
      *        Represents one or more local secondary indexes on the table. Each
-     *        index is scoped to a given hash key value. Tables with one or more
-     *        local secondary indexes are subject to an item collection size
-     *        limit, where the amount of data within a given item collection
-     *        cannot exceed 10 GB. Each element is composed of:</p>
+     *        index is scoped to a given partition key value. Tables with one or
+     *        more local secondary indexes are subject to an item collection
+     *        size limit, where the amount of data within a given item
+     *        collection cannot exceed 10 GB. Each element is composed of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2041,7 +2270,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>KeySchema</i> - Specifies the complete index key schema. The
      *        attribute names in the key schema must be between 1 and 255
      *        characters (inclusive). The key schema must begin with the same
-     *        hash key attribute as the table.
+     *        partition key as the table.
      *        </p>
      *        </li>
      *        <li>
@@ -2121,7 +2350,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The global secondary indexes, if any, on the table. Each index is scoped
-     * to a given hash key value. Each element is composed of:
+     * to a given partition key value. Each element is composed of:
      * </p>
      * <ul>
      * <li>
@@ -2184,7 +2413,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -2247,7 +2476,7 @@ public class TableDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @return The global secondary indexes, if any, on the table. Each index is
-     *         scoped to a given hash key value. Each element is composed
+     *         scoped to a given partition key value. Each element is composed
      *         of:</p>
      *         <ul>
      *         <li>
@@ -2312,7 +2541,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         <i>KeySchema</i> - Specifies the complete index key schema. The
      *         attribute names in the key schema must be between 1 and 255
      *         characters (inclusive). The key schema must begin with the same
-     *         hash key attribute as the table.
+     *         partition key as the table.
      *         </p>
      *         </li>
      *         <li>
@@ -2382,7 +2611,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The global secondary indexes, if any, on the table. Each index is scoped
-     * to a given hash key value. Each element is composed of:
+     * to a given partition key value. Each element is composed of:
      * </p>
      * <ul>
      * <li>
@@ -2445,7 +2674,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -2509,7 +2738,8 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @param globalSecondaryIndexes
      *        The global secondary indexes, if any, on the table. Each index is
-     *        scoped to a given hash key value. Each element is composed of:</p>
+     *        scoped to a given partition key value. Each element is composed
+     *        of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2573,7 +2803,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>KeySchema</i> - Specifies the complete index key schema. The
      *        attribute names in the key schema must be between 1 and 255
      *        characters (inclusive). The key schema must begin with the same
-     *        hash key attribute as the table.
+     *        partition key as the table.
      *        </p>
      *        </li>
      *        <li>
@@ -2649,7 +2879,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The global secondary indexes, if any, on the table. Each index is scoped
-     * to a given hash key value. Each element is composed of:
+     * to a given partition key value. Each element is composed of:
      * </p>
      * <ul>
      * <li>
@@ -2712,7 +2942,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -2782,7 +3012,8 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @param globalSecondaryIndexes
      *        The global secondary indexes, if any, on the table. Each index is
-     *        scoped to a given hash key value. Each element is composed of:</p>
+     *        scoped to a given partition key value. Each element is composed
+     *        of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2846,7 +3077,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>KeySchema</i> - Specifies the complete index key schema. The
      *        attribute names in the key schema must be between 1 and 255
      *        characters (inclusive). The key schema must begin with the same
-     *        hash key attribute as the table.
+     *        partition key as the table.
      *        </p>
      *        </li>
      *        <li>
@@ -2925,7 +3156,7 @@ public class TableDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The global secondary indexes, if any, on the table. Each index is scoped
-     * to a given hash key value. Each element is composed of:
+     * to a given partition key value. Each element is composed of:
      * </p>
      * <ul>
      * <li>
@@ -2988,7 +3219,7 @@ public class TableDescription implements Serializable, Cloneable {
      * <p>
      * <i>KeySchema</i> - Specifies the complete index key schema. The attribute
      * names in the key schema must be between 1 and 255 characters (inclusive).
-     * The key schema must begin with the same hash key attribute as the table.
+     * The key schema must begin with the same partition key as the table.
      * </p>
      * </li>
      * <li>
@@ -3052,7 +3283,8 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @param globalSecondaryIndexes
      *        The global secondary indexes, if any, on the table. Each index is
-     *        scoped to a given hash key value. Each element is composed of:</p>
+     *        scoped to a given partition key value. Each element is composed
+     *        of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -3116,7 +3348,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>KeySchema</i> - Specifies the complete index key schema. The
      *        attribute names in the key schema must be between 1 and 255
      *        characters (inclusive). The key schema must begin with the same
-     *        hash key attribute as the table.
+     *        partition key as the table.
      *        </p>
      *        </li>
      *        <li>

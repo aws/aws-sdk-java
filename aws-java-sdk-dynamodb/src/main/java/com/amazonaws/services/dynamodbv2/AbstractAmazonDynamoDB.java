@@ -117,6 +117,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTableResult describeTable(DescribeTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -40,8 +40,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -182,8 +182,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -195,7 +195,7 @@ public class QueryResult implements Serializable, Cloneable {
      *        <p>
      *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i>
      *        is the number of items returned after the filter was applied, and
-     *        <i>ScannedCount</i> is the number of matching items before> the
+     *        <i>ScannedCount</i> is the number of matching items before the
      *        filter was applied.
      *        </p>
      *        <p>
@@ -213,8 +213,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -226,7 +226,7 @@ public class QueryResult implements Serializable, Cloneable {
      *         If you used a <i>QueryFilter</i> in the request, then
      *         <i>Count</i> is the number of items returned after the filter was
      *         applied, and <i>ScannedCount</i> is the number of matching items
-     *         before> the filter was applied.
+     *         before the filter was applied.
      *         </p>
      *         <p>
      *         If you did not use a filter in the request, then <i>Count</i> and
@@ -243,8 +243,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -256,7 +256,7 @@ public class QueryResult implements Serializable, Cloneable {
      *        <p>
      *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i>
      *        is the number of items returned after the filter was applied, and
-     *        <i>ScannedCount</i> is the number of matching items before> the
+     *        <i>ScannedCount</i> is the number of matching items before the
      *        filter was applied.
      *        </p>
      *        <p>

@@ -20,8 +20,8 @@
     "endpointPrefix" : "autoscaling",
     "signingName" : "autoscaling",
     "serviceName" : "Auto Scaling",
-    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "jsonProtocol" : false,
+    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },

@@ -125,10 +125,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -297,10 +297,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -465,10 +465,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -636,10 +636,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -799,10 +799,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -954,9 +954,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         <i>Keys</i> - An array of primary key attribute values that
      *         define specific items in the table. For each primary key, you
      *         must provide <i>all</i> of the key attributes. For example, with
-     *         a hash type primary key, you only need to provide the hash
-     *         attribute. For a hash-and-range type primary key, you must
-     *         provide <i>both</i> the hash attribute and the range attribute.
+     *         a simple primary key, you only need to provide the partition key
+     *         value. For a composite key, you must provide <i>both</i> the
+     *         partition key value and the sort key value.
      *         </p>
      *         </li>
      *         <li>
@@ -1112,10 +1112,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -1267,10 +1267,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -1427,10 +1427,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -1582,10 +1582,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>

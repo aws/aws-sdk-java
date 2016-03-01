@@ -1282,7 +1282,7 @@
         },
         "Marker":{
           "shape":"MarkerType",
-          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
         }
       }
     },
@@ -1313,7 +1313,7 @@
         },
         "Marker":{
           "shape":"MarkerType",
-          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
         },
         "KeyId":{
           "shape":"KeyIdType",
@@ -1352,7 +1352,7 @@
         },
         "Marker":{
           "shape":"MarkerType",
-          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
         }
       }
     },
@@ -1382,7 +1382,7 @@
         },
         "Marker":{
           "shape":"MarkerType",
-          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
         }
       }
     },
@@ -1413,7 +1413,7 @@
         },
         "Marker":{
           "shape":"MarkerType",
-          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>"
         },
         "RetiringPrincipal":{
           "shape":"PrincipalIdType",

@@ -145,6 +145,12 @@ public class SearchRequestMarshaller implements
             request.addParameter("start", start);
         }
 
+        String stats = (searchRequest.getStats() == null) ? null : StringUtils
+                .fromString(searchRequest.getStats());
+        if (stats != null) {
+            request.addParameter("stats", stats);
+        }
+
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
             request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);

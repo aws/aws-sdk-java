@@ -44,15 +44,40 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * <p>
  * <fullname>Amazon DynamoDB</fullname>
  * <p>
- * <b>Overview</b>
+ * This is the Amazon DynamoDB API Reference. This guide provides descriptions
+ * of the low-level DynamoDB API.
  * </p>
  * <p>
- * This is the Amazon DynamoDB API Reference. This guide provides descriptions
- * and samples of the low-level DynamoDB API. For information about DynamoDB
- * application development, see the <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"
- * >Amazon DynamoDB Developer Guide</a>.
+ * This guide is intended for use with the following DynamoDB documentation:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/"
+ * >Amazon DynamoDB Getting Started Guide</a> - provides hands-on exercises that
+ * help you learn the basics of working with DynamoDB. <i>If you are new to
+ * DynamoDB, we recommend that you begin with the Getting Started Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">
+ * Amazon DynamoDB Developer Guide</a> - contains detailed information about
+ * DynamoDB concepts, usage, and best practices.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/dynamodbstreams/latest/APIReference/">
+ * Amazon DynamoDB Streams API Reference</a> - provides descriptions and samples
+ * of the DynamoDB Streams API. (For more information, see <a href=
+ * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html"
+ * >Capturing Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB
+ * Developer Guide.)
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * Instead of making the requests to the low-level DynamoDB API directly from
  * your application, we recommend that you use the AWS Software Development Kits
@@ -61,8 +86,7 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * care of request authentication, serialization, and connection management. For
  * more information, see <a href=
  * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"
- * >Using the AWS SDKs with DynamoDB</a> in the <i>Amazon DynamoDB Developer
- * Guide</i>.
+ * >Using the AWS SDKs with DynamoDB</a> in the Amazon DynamoDB Developer Guide.
  * </p>
  * <p>
  * If you decide to code against the low-level DynamoDB API directly, you will
@@ -82,11 +106,10 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * <li>
  * <p>
  * <i>CreateTable</i> - Creates a table with user-specified provisioned
- * throughput settings. You must designate one attribute as the hash primary key
- * for the table; you can optionally designate a second attribute as the range
- * primary key. DynamoDB creates indexes on these key attributes for fast data
- * access. Optionally, you can create one or more secondary indexes, which
- * provide fast data access using non-key attributes.
+ * throughput settings. You must define a primary key for the table - either a
+ * simple primary key (partition key), or a composite primary key (partition key
+ * and sort key). Optionally, you can create one or more secondary indexes,
+ * which provide fast data access using non-key attributes.
  * </p>
  * </li>
  * <li>
@@ -142,10 +165,10 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * <li>
  * <p>
  * <i>Query</i> - Returns one or more items from a table or a secondary index.
- * You must provide a specific hash key value. You can narrow the scope of the
- * query using comparison operators against a range key value, or on the index
- * key. <i>Query</i> supports either eventual or strong consistency. A single
- * response has a size limit of 1 MB.
+ * You must provide a specific value for the partition key. You can narrow the
+ * scope of the query using comparison operators against a sort key value, or on
+ * the index key. <i>Query</i> supports either eventual or strong consistency. A
+ * single response has a size limit of 1 MB.
  * </p>
  * </li>
  * <li>
@@ -1049,6 +1072,88 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns the current provisioned-capacity limits for your AWS account in a
+     * region, both for the region as a whole and for any one DynamoDB table you
+     * create there.
+     * </p>
+     * <p>
+     * When you establish an AWS account, the account has initial limits on the
+     * maximum Read- and Write-Capacity Units (RCUs and WCUs) that you can
+     * provision across all your DynamoDB tables in a given region, and also
+     * per-table limits that apply when you create a table there. Although you
+     * can increase these limits by filing a Case at <a
+     * href="https://console.aws.amazon.com/support">AWS Support Center</a>,
+     * obtaining the increase is not instantaneous. The <i>DescribeLimits</i>
+     * API lets you write code to compare the capacity you are currently using
+     * to those limits imposed by your account so you have enough time to apply
+     * for an increase before you hit a limit. For example, you could use one of
+     * the AWS SDKs to do the following:
+     * </p>
+     * <ol>
+     * <li>Call <i>DescribeLimits</i> to obtain the current account limits on
+     * provisioned capacity in a region.</li>
+     * <li>Call <i>ListTables</i> to obtain a list of all your DynamoDB tables
+     * there.</li>
+     * <li>Loop over the tables, calling <i>DescribeTable</i> on each. Sum the
+     * capacity provisioned for each table and all its global secondary indexes
+     * across all the tables, while also keeping track of the table or global
+     * secondary index with the largest provisioned read capacity, and the one
+     * with the largest provisioned write capacity.</li>
+     * <li>Report the account limits returned by <i>DescribeLimits</i> as
+     * compared to the current provisioned capacity levels for the account as a
+     * whole, and for the highest current per-table provisioning.</li>
+     * </ol>
+     * <p>
+     * This will let you see whether you are getting close to your account-level
+     * limits. See <a href=
+     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#d0e53086"
+     * >Limits in DynamoDB</a> for a code example written in Python.
+     * </p>
+     * 
+     * @param describeLimitsRequest
+     *        Represents the input of a <i>DescribeLimits</i> operation. Has no
+     *        content.
+     * @return Result of the DescribeLimits operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeLimits
+     */
+    @Override
+    public DescribeLimitsResult describeLimits(
+            DescribeLimitsRequest describeLimitsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLimitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLimitsRequest> request = null;
+        Response<DescribeLimitsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLimitsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeLimitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeLimitsResult> responseHandler = new JsonResponseHandler<DescribeLimitsResult>(
+                    new DescribeLimitsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the table, including the current status of the
      * table, when it was created, the primary key schema, and any indexes on
      * the table.
@@ -1294,8 +1399,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * <note>
      * <p>
      * To prevent a new item from replacing an existing item, use a conditional
-     * put operation with <i>ComparisonOperator</i> set to <code>NULL</code> for
-     * the primary key attribute, or attributes.
+     * expression that contains the <code>attribute_not_exists</code> function
+     * with the name of the attribute being used as the partition key for the
+     * table. Since every record must contain that attribute, the
+     * <code>attribute_not_exists</code> function will only succeed if no
+     * matching item exists.
      * </p>
      * </note>
      * <p>
@@ -1383,12 +1491,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * Use the <i>KeyConditionExpression</i> parameter to provide a specific
-     * hash key value. The <i>Query</i> operation will return all of the items
-     * from the table or index with that hash key value. You can optionally
-     * narrow the scope of the <i>Query</i> operation by specifying a range key
-     * value and a comparison operator in <i>KeyConditionExpression</i>. You can
-     * use the <i>ScanIndexForward</i> parameter to get results in forward or
-     * reverse order, by range key or by index key.
+     * value for the partition key. The <i>Query</i> operation will return all
+     * of the items from the table or index with that partition key value. You
+     * can optionally narrow the scope of the <i>Query</i> operation by
+     * specifying a sort key value and a comparison operator in
+     * <i>KeyConditionExpression</i>. You can use the <i>ScanIndexForward</i>
+     * parameter to get results in forward or reverse order, by sort key.
      * </p>
      * <p>
      * Queries that do not return results consume the minimum number of read
@@ -1488,10 +1596,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * >Parallel Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * By default, <i>Scan</i> uses eventually consistent reads when acessing
-     * the data in the table or local secondary index. However, you can use
-     * strongly consistent reads instead by setting the <i>ConsistentRead</i>
-     * parameter to <i>true</i>.
+     * By default, <i>Scan</i> uses eventually consistent reads when accessing
+     * the data in a table; therefore, the result set might not include the
+     * changes to data in the table immediately before the operation began. If
+     * you need a consistent copy of the data, as of the time that the Scan
+     * begins, you can set the <i>ConsistentRead</i> parameter to <i>true</i>.
      * </p>
      * 
      * @param scanRequest
@@ -1576,9 +1685,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * it does not already exist. You can put, delete, or add attribute values.
      * You can also perform a conditional update on an existing item (insert a
      * new attribute name-value pair if it doesn't exist, or replace an existing
-     * name-value pair if it has certain expected attribute values). If
-     * conditions are specified and the item does not exist, then the operation
-     * fails and a new item is not created.
+     * name-value pair if it has certain expected attribute values).
      * </p>
      * <p>
      * You can also return the item's attribute values in the same

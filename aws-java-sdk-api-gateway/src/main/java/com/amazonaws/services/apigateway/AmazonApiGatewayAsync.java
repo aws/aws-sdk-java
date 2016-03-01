@@ -748,6 +748,36 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Flushes all authorizer cache entries on a stage.
+     * </p>
+     * 
+     * @param flushStageAuthorizersCacheRequest
+     *        Request to flush authorizer cache entries on a specified stage.
+     * @sample AmazonApiGatewayAsync.FlushStageAuthorizersCache
+     */
+    java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+            FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest);
+
+    /**
+     * <p>
+     * Flushes all authorizer cache entries on a stage.
+     * </p>
+     * 
+     * @param flushStageAuthorizersCacheRequest
+     *        Request to flush authorizer cache entries on a specified stage.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AmazonApiGatewayAsyncHandler.FlushStageAuthorizersCache
+     */
+    java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+            FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, Void> asyncHandler);
+
+    /**
+     * <p>
      * Flushes a stage's cache.
      * </p>
      * 
@@ -1879,6 +1909,30 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
     java.util.concurrent.Future<PutMethodResponseResult> putMethodResponseAsync(
             PutMethodResponseRequest putMethodResponseRequest,
             com.amazonaws.handlers.AsyncHandler<PutMethodResponseRequest, PutMethodResponseResult> asyncHandler);
+
+    /**
+     * @param testInvokeAuthorizerRequest
+     * @return A Java Future containing the result of the TestInvokeAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.TestInvokeAuthorizer
+     */
+    java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(
+            TestInvokeAuthorizerRequest testInvokeAuthorizerRequest);
+
+    /**
+     * @param testInvokeAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestInvokeAuthorizer
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.TestInvokeAuthorizer
+     */
+    java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(
+            TestInvokeAuthorizerRequest testInvokeAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<TestInvokeAuthorizerRequest, TestInvokeAuthorizerResult> asyncHandler);
 
     /**
      * @param testInvokeMethodRequest

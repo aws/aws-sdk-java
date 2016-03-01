@@ -40,9 +40,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      */
     private java.util.Map<String, AttributeValue> key;
@@ -204,9 +204,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
     public GetItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key) {
@@ -226,9 +226,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param consistentRead
      *        Determines the read consistency model: If set to <code>true</code>
      *        , then the operation uses strongly consistent reads; otherwise,
@@ -286,18 +286,18 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @return A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve.</p>
      *         <p>
      *         For the primary key, you must provide all of the attributes. For
-     *         example, with a hash type primary key, you only need to provide
-     *         the hash attribute. For a hash-and-range type primary key, you
-     *         must provide both the hash attribute and the range attribute.
+     *         example, with a simple primary key, you only need to provide a
+     *         value for the partition key. For a composite primary key, you
+     *         must provide values for both the partition key and the sort key.
      */
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
@@ -310,9 +310,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -320,9 +320,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
@@ -335,9 +335,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -345,9 +345,9 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to retrieve.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -92,6 +92,20 @@ public class MethodSettingJsonUnmarshaller implements
                     methodSetting.setCacheDataEncrypted(BooleanJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression(
+                        "requireAuthorizationForCacheControl", targetDepth)) {
+                    context.nextToken();
+                    methodSetting
+                            .setRequireAuthorizationForCacheControl(BooleanJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression(
+                        "unauthorizedCacheControlHeaderStrategy", targetDepth)) {
+                    context.nextToken();
+                    methodSetting
+                            .setUnauthorizedCacheControlHeaderStrategy(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

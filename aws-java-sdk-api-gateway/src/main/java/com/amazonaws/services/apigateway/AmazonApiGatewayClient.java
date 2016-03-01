@@ -1336,6 +1336,52 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Flushes all authorizer cache entries on a stage.
+     * </p>
+     * 
+     * @param flushStageAuthorizersCacheRequest
+     *        Request to flush authorizer cache entries on a specified stage.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.FlushStageAuthorizersCache
+     */
+    @Override
+    public void flushStageAuthorizersCache(
+            FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
+        ExecutionContext executionContext = createExecutionContext(flushStageAuthorizersCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FlushStageAuthorizersCacheRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FlushStageAuthorizersCacheRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(flushStageAuthorizersCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Flushes a stage's cache.
      * </p>
      * 
@@ -1525,6 +1571,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        A request to get information about the current <a>ApiKeys</a>
      *        resource.
      * @return Result of the GetApiKeys operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetApiKeys
@@ -1804,6 +1851,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param getClientCertificatesRequest
      * @return Result of the GetClientCertificates operation returned by the
      *         service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetClientCertificates
@@ -1901,6 +1949,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        Requests Amazon API Gateway to get information about a
      *        <a>Deployments</a> collection.
      * @return Result of the GetDeployments operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
@@ -1997,6 +2046,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param getDomainNamesRequest
      *        Request to describe a collection of <a>DomainName</a> resources.
      * @return Result of the GetDomainNames operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetDomainNames
@@ -2375,6 +2425,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        Request to list existing <a>Models</a> defined for a
      *        <a>RestApi</a> resource.
      * @return Result of the GetModels operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -2467,6 +2518,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param getResourcesRequest
      *        Request to list information about a collection of resources.
      * @return Result of the GetResources operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -2562,6 +2614,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        Request to list existing <a>RestApis</a> defined for your
      *        collection.
      * @return Result of the GetRestApis operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetRestApis
@@ -2925,6 +2978,51 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<PutMethodResponseResult> responseHandler = new JsonResponseHandler<PutMethodResponseResult>(
                     new PutMethodResponseResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param testInvokeAuthorizerRequest
+     * @return Result of the TestInvokeAuthorizer operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.TestInvokeAuthorizer
+     */
+    @Override
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(
+            TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(testInvokeAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestInvokeAuthorizerRequest> request = null;
+        Response<TestInvokeAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestInvokeAuthorizerRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(testInvokeAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<TestInvokeAuthorizerResult> responseHandler = new JsonResponseHandler<TestInvokeAuthorizerResult>(
+                    new TestInvokeAuthorizerResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

@@ -25,9 +25,9 @@ import java.io.Serializable;
  * </p>
  * <p>
  * For each primary key, you must provide <i>all</i> of the key attributes. For
- * example, with a hash type primary key, you only need to provide the hash
- * attribute. For a hash-and-range type primary key, you must provide
- * <i>both</i> the hash attribute and the range attribute.
+ * example, with a simple primary key, you only need to provide the partition
+ * key. For a composite primary key, you must provide <i>both</i> the partition
+ * key and the sort key.
  * </p>
  */
 public class KeysAndAttributes implements Serializable, Cloneable {

@@ -198,23 +198,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute.
+     * provide the partition key name and value as an <code>EQ</code> condition.
+     * You can optionally provide a second condition, referring to the sort key.
      * </p>
      * <note>
      * <p>
-     * If you don't provide a range key condition, all of the items that match
-     * the hash key will be retrieved. If a <i>FilterExpression</i> or
+     * If you don't provide a sort key condition, all of the items that match
+     * the partition key will be retrieved. If a <i>FilterExpression</i> or
      * <i>QueryFilter</i> is present, it will be applied after the items are
      * retrieved.
      * </p>
      * </note>
      * <p>
      * For a query on an index, you can have conditions only on the index key
-     * attributes. You must provide the index hash attribute name and value as
-     * an <code>EQ</code> condition. You can optionally provide a second
-     * condition, referring to the index key range attribute.
+     * attributes. You must provide the index partition key name and value as an
+     * <code>EQ</code> condition. You can optionally provide a second condition,
+     * referring to the index sort key.
      * </p>
      * <p>
      * Each <i>KeyConditions</i> element consists of an attribute name to
@@ -402,7 +401,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Note that <i>QueryFilter</i> does not allow key attributes. You cannot
-     * define a filter condition on a hash key or range key.
+     * define a filter condition on a partition key or a sort key.
      * </p>
      * <p>
      * Each <i>QueryFilter</i> element consists of an attribute name to compare,
@@ -499,24 +498,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements
     private String conditionalOperator;
     /**
      * <p>
-     * Specifies the order in which to return the query results - either
-     * ascending (<code>true</code>) or descending (<code>false</code>).
+     * Specifies the order for index traversal: If <code>true</code> (default),
+     * the traversal is performed in ascending order; if <code>false</code>, the
+     * traversal is performed in descending order.
      * </p>
      * <p>
-     * Items with the same hash key are stored in sorted order by range key .If
-     * the range key data type is Number, the results are stored in numeric
-     * order. For type String, the results are returned in order of ASCII
+     * Items with the same partition key value are stored in sorted order by
+     * sort key. If the sort key data type is Number, the results are stored in
+     * numeric order. For type String, the results are stored in order of ASCII
      * character code values. For type Binary, DynamoDB treats each byte of the
      * binary data as unsigned.
      * </p>
      * <p>
      * If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns the
-     * results in order, by range key. This is the default behavior.
-     * </p>
-     * <p>
-     * If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts the
-     * results in descending order by range key, and then returns the results to
-     * the client.
+     * results in the order in which they are stored (by sort key value). This
+     * is the default behavior. If <i>ScanIndexForward</i> is <code>false</code>
+     * , DynamoDB reads the results in reverse order by sort key value, and then
+     * returns the results to the client.
      * </p>
      */
     private Boolean scanIndexForward;
@@ -592,93 +590,92 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * by the <i>Query</i> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single hash key value.
-     * The condition can also perform one of several comparison tests on a
-     * single range key value. <i>Query</i> can use
-     * <i>KeyConditionExpression</i> to retrieve one item with a given hash and
-     * range key value, or several items that have the same hash key value but
-     * different range key values.
+     * The condition must perform an equality test on a single partition key
+     * value. The condition can also perform one of several comparison tests on
+     * a single sort key value. <i>Query</i> can use
+     * <i>KeyConditionExpression</i> to retrieve one item with a given partition
+     * key value and sort key value, or several items that have the same
+     * partition key value but different sort key values.
      * </p>
      * <p>
-     * The hash key equality test is required, and must be specified in the
+     * The partition key equality test is required, and must be specified in the
      * following format:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
      * </p>
      * <p>
-     * If you also want to provide a range key condition, it must be combined
-     * using <i>AND</i> with the hash key condition. Following is an example,
-     * using the <b>=</b> comparison operator for the range key:
+     * If you also want to provide a condition for the sort key, it must be
+     * combined using <i>AND</i> with the condition for the sort key. Following
+     * is an example, using the <b>=</b> comparison operator for the sort key:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
+     * <i>AND</i> <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code>
      * </p>
      * <p>
-     * Valid comparisons for the range key condition are as follows:
+     * Valid comparisons for the sort key condition are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if
-     * the range key is equal to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:rangeval</code> - true if the range key is less than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:rangeval</code> - true if the range key is less than or equal to
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:rangeval</code> - true if the range key is greater than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:rangeval</code> - true if the range key is greater than or equal
-     * to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
-     * than or equal to <code>:rangeval1</code>, and less than or equal to
-     * <code>:rangeval2</code>.
+     * <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is
+     * greater than or equal to <code>:sortkeyval1</code>, and less than or
+     * equal to <code>:sortkeyval2</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>rangeAttributeName</code>,
-     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
-     * particular operand. (You cannot use this function with a range key that
-     * is of type Number.) Note that the function name <code>begins_with</code>
-     * is case-sensitive.
+     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>)</i> - true if the sort key value begins with a particular operand.
+     * (You cannot use this function with a sort key that is of type Number.)
+     * Note that the function name <code>begins_with</code> is case-sensitive.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Use the <i>ExpressionAttributeValues</i> parameter to replace tokens such
-     * as <code>:hashval</code> and <code>:rangeval</code> with actual values at
-     * runtime.
+     * as <code>:partitionval</code> and <code>:sortval</code> with actual
+     * values at runtime.
      * </p>
      * <p>
      * You can optionally use the <i>ExpressionAttributeNames</i> parameter to
-     * replace the names of the hash and range attributes with placeholder
+     * replace the names of the partition key and sort key with placeholder
      * tokens. This option might be necessary if an attribute name conflicts
      * with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because
@@ -2276,23 +2273,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute.
+     * provide the partition key name and value as an <code>EQ</code> condition.
+     * You can optionally provide a second condition, referring to the sort key.
      * </p>
      * <note>
      * <p>
-     * If you don't provide a range key condition, all of the items that match
-     * the hash key will be retrieved. If a <i>FilterExpression</i> or
+     * If you don't provide a sort key condition, all of the items that match
+     * the partition key will be retrieved. If a <i>FilterExpression</i> or
      * <i>QueryFilter</i> is present, it will be applied after the items are
      * retrieved.
      * </p>
      * </note>
      * <p>
      * For a query on an index, you can have conditions only on the index key
-     * attributes. You must provide the index hash attribute name and value as
-     * an <code>EQ</code> condition. You can optionally provide a second
-     * condition, referring to the index key range attribute.
+     * attributes. You must provide the index partition key name and value as an
+     * <code>EQ</code> condition. You can optionally provide a second condition,
+     * referring to the index sort key.
      * </p>
      * <p>
      * Each <i>KeyConditions</i> element consists of an attribute name to
@@ -2457,24 +2453,24 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         The selection criteria for the query. For a query on a table, you
      *         can have conditions only on the table primary key attributes. You
-     *         must provide the hash key attribute name and value as an
+     *         must provide the partition key name and value as an
      *         <code>EQ</code> condition. You can optionally provide a second
-     *         condition, referring to the range key attribute.
+     *         condition, referring to the sort key.
      *         </p>
      *         <note>
      *         <p>
-     *         If you don't provide a range key condition, all of the items that
-     *         match the hash key will be retrieved. If a
+     *         If you don't provide a sort key condition, all of the items that
+     *         match the partition key will be retrieved. If a
      *         <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
      *         be applied after the items are retrieved.
      *         </p>
      *         </note>
      *         <p>
      *         For a query on an index, you can have conditions only on the
-     *         index key attributes. You must provide the index hash attribute
+     *         index key attributes. You must provide the index partition key
      *         name and value as an <code>EQ</code> condition. You can
-     *         optionally provide a second condition, referring to the index key
-     *         range attribute.
+     *         optionally provide a second condition, referring to the index
+     *         sort key.
      *         </p>
      *         <p>
      *         Each <i>KeyConditions</i> element consists of an attribute name
@@ -2650,23 +2646,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute.
+     * provide the partition key name and value as an <code>EQ</code> condition.
+     * You can optionally provide a second condition, referring to the sort key.
      * </p>
      * <note>
      * <p>
-     * If you don't provide a range key condition, all of the items that match
-     * the hash key will be retrieved. If a <i>FilterExpression</i> or
+     * If you don't provide a sort key condition, all of the items that match
+     * the partition key will be retrieved. If a <i>FilterExpression</i> or
      * <i>QueryFilter</i> is present, it will be applied after the items are
      * retrieved.
      * </p>
      * </note>
      * <p>
      * For a query on an index, you can have conditions only on the index key
-     * attributes. You must provide the index hash attribute name and value as
-     * an <code>EQ</code> condition. You can optionally provide a second
-     * condition, referring to the index key range attribute.
+     * attributes. You must provide the index partition key name and value as an
+     * <code>EQ</code> condition. You can optionally provide a second condition,
+     * referring to the index sort key.
      * </p>
      * <p>
      * Each <i>KeyConditions</i> element consists of an attribute name to
@@ -2832,23 +2827,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The selection criteria for the query. For a query on a table, you
      *        can have conditions only on the table primary key attributes. You
-     *        must provide the hash key attribute name and value as an
+     *        must provide the partition key name and value as an
      *        <code>EQ</code> condition. You can optionally provide a second
-     *        condition, referring to the range key attribute.
+     *        condition, referring to the sort key.
      *        </p>
      *        <note>
      *        <p>
-     *        If you don't provide a range key condition, all of the items that
-     *        match the hash key will be retrieved. If a <i>FilterExpression</i>
-     *        or <i>QueryFilter</i> is present, it will be applied after the
-     *        items are retrieved.
+     *        If you don't provide a sort key condition, all of the items that
+     *        match the partition key will be retrieved. If a
+     *        <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
+     *        be applied after the items are retrieved.
      *        </p>
      *        </note>
      *        <p>
      *        For a query on an index, you can have conditions only on the index
-     *        key attributes. You must provide the index hash attribute name and
+     *        key attributes. You must provide the index partition key name and
      *        value as an <code>EQ</code> condition. You can optionally provide
-     *        a second condition, referring to the index key range attribute.
+     *        a second condition, referring to the index sort key.
      *        </p>
      *        <p>
      *        Each <i>KeyConditions</i> element consists of an attribute name to
@@ -3021,23 +3016,22 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The selection criteria for the query. For a query on a table, you can
      * have conditions only on the table primary key attributes. You must
-     * provide the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally provide a second condition, referring to
-     * the range key attribute.
+     * provide the partition key name and value as an <code>EQ</code> condition.
+     * You can optionally provide a second condition, referring to the sort key.
      * </p>
      * <note>
      * <p>
-     * If you don't provide a range key condition, all of the items that match
-     * the hash key will be retrieved. If a <i>FilterExpression</i> or
+     * If you don't provide a sort key condition, all of the items that match
+     * the partition key will be retrieved. If a <i>FilterExpression</i> or
      * <i>QueryFilter</i> is present, it will be applied after the items are
      * retrieved.
      * </p>
      * </note>
      * <p>
      * For a query on an index, you can have conditions only on the index key
-     * attributes. You must provide the index hash attribute name and value as
-     * an <code>EQ</code> condition. You can optionally provide a second
-     * condition, referring to the index key range attribute.
+     * attributes. You must provide the index partition key name and value as an
+     * <code>EQ</code> condition. You can optionally provide a second condition,
+     * referring to the index sort key.
      * </p>
      * <p>
      * Each <i>KeyConditions</i> element consists of an attribute name to
@@ -3203,23 +3197,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The selection criteria for the query. For a query on a table, you
      *        can have conditions only on the table primary key attributes. You
-     *        must provide the hash key attribute name and value as an
+     *        must provide the partition key name and value as an
      *        <code>EQ</code> condition. You can optionally provide a second
-     *        condition, referring to the range key attribute.
+     *        condition, referring to the sort key.
      *        </p>
      *        <note>
      *        <p>
-     *        If you don't provide a range key condition, all of the items that
-     *        match the hash key will be retrieved. If a <i>FilterExpression</i>
-     *        or <i>QueryFilter</i> is present, it will be applied after the
-     *        items are retrieved.
+     *        If you don't provide a sort key condition, all of the items that
+     *        match the partition key will be retrieved. If a
+     *        <i>FilterExpression</i> or <i>QueryFilter</i> is present, it will
+     *        be applied after the items are retrieved.
      *        </p>
      *        </note>
      *        <p>
      *        For a query on an index, you can have conditions only on the index
-     *        key attributes. You must provide the index hash attribute name and
+     *        key attributes. You must provide the index partition key name and
      *        value as an <code>EQ</code> condition. You can optionally provide
-     *        a second condition, referring to the index key range attribute.
+     *        a second condition, referring to the index sort key.
      *        </p>
      *        <p>
      *        Each <i>KeyConditions</i> element consists of an attribute name to
@@ -3437,7 +3431,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Note that <i>QueryFilter</i> does not allow key attributes. You cannot
-     * define a filter condition on a hash key or range key.
+     * define a filter condition on a partition key or a sort key.
      * </p>
      * <p>
      * Each <i>QueryFilter</i> element consists of an attribute name to compare,
@@ -3522,7 +3516,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         <p>
      *         Note that <i>QueryFilter</i> does not allow key attributes. You
-     *         cannot define a filter condition on a hash key or range key.
+     *         cannot define a filter condition on a partition key or a sort
+     *         key.
      *         </p>
      *         <p>
      *         Each <i>QueryFilter</i> element consists of an attribute name to
@@ -3615,7 +3610,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Note that <i>QueryFilter</i> does not allow key attributes. You cannot
-     * define a filter condition on a hash key or range key.
+     * define a filter condition on a partition key or a sort key.
      * </p>
      * <p>
      * Each <i>QueryFilter</i> element consists of an attribute name to compare,
@@ -3701,7 +3696,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        Note that <i>QueryFilter</i> does not allow key attributes. You
-     *        cannot define a filter condition on a hash key or range key.
+     *        cannot define a filter condition on a partition key or a sort key.
      *        </p>
      *        <p>
      *        Each <i>QueryFilter</i> element consists of an attribute name to
@@ -3794,7 +3789,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Note that <i>QueryFilter</i> does not allow key attributes. You cannot
-     * define a filter condition on a hash key or range key.
+     * define a filter condition on a partition key or a sort key.
      * </p>
      * <p>
      * Each <i>QueryFilter</i> element consists of an attribute name to compare,
@@ -3880,7 +3875,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        Note that <i>QueryFilter</i> does not allow key attributes. You
-     *        cannot define a filter condition on a hash key or range key.
+     *        cannot define a filter condition on a partition key or a sort key.
      *        </p>
      *        <p>
      *        Each <i>QueryFilter</i> element consists of an attribute name to
@@ -4399,45 +4394,43 @@ public class QueryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the order in which to return the query results - either
-     * ascending (<code>true</code>) or descending (<code>false</code>).
+     * Specifies the order for index traversal: If <code>true</code> (default),
+     * the traversal is performed in ascending order; if <code>false</code>, the
+     * traversal is performed in descending order.
      * </p>
      * <p>
-     * Items with the same hash key are stored in sorted order by range key .If
-     * the range key data type is Number, the results are stored in numeric
-     * order. For type String, the results are returned in order of ASCII
+     * Items with the same partition key value are stored in sorted order by
+     * sort key. If the sort key data type is Number, the results are stored in
+     * numeric order. For type String, the results are stored in order of ASCII
      * character code values. For type Binary, DynamoDB treats each byte of the
      * binary data as unsigned.
      * </p>
      * <p>
      * If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns the
-     * results in order, by range key. This is the default behavior.
-     * </p>
-     * <p>
-     * If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts the
-     * results in descending order by range key, and then returns the results to
-     * the client.
+     * results in the order in which they are stored (by sort key value). This
+     * is the default behavior. If <i>ScanIndexForward</i> is <code>false</code>
+     * , DynamoDB reads the results in reverse order by sort key value, and then
+     * returns the results to the client.
      * </p>
      * 
      * @param scanIndexForward
-     *        Specifies the order in which to return the query results - either
-     *        ascending (<code>true</code>) or descending (<code>false</code>
-     *        ).</p>
+     *        Specifies the order for index traversal: If <code>true</code>
+     *        (default), the traversal is performed in ascending order; if
+     *        <code>false</code>, the traversal is performed in descending
+     *        order. </p>
      *        <p>
-     *        Items with the same hash key are stored in sorted order by range
-     *        key .If the range key data type is Number, the results are stored
-     *        in numeric order. For type String, the results are returned in
-     *        order of ASCII character code values. For type Binary, DynamoDB
+     *        Items with the same partition key value are stored in sorted order
+     *        by sort key. If the sort key data type is Number, the results are
+     *        stored in numeric order. For type String, the results are stored
+     *        in order of ASCII character code values. For type Binary, DynamoDB
      *        treats each byte of the binary data as unsigned.
      *        </p>
      *        <p>
      *        If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns
-     *        the results in order, by range key. This is the default behavior.
-     *        </p>
-     *        <p>
-     *        If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts
-     *        the results in descending order by range key, and then returns the
-     *        results to the client.
+     *        the results in the order in which they are stored (by sort key
+     *        value). This is the default behavior. If <i>ScanIndexForward</i>
+     *        is <code>false</code>, DynamoDB reads the results in reverse order
+     *        by sort key value, and then returns the results to the client.
      */
     public void setScanIndexForward(Boolean scanIndexForward) {
         this.scanIndexForward = scanIndexForward;
@@ -4445,44 +4438,43 @@ public class QueryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the order in which to return the query results - either
-     * ascending (<code>true</code>) or descending (<code>false</code>).
+     * Specifies the order for index traversal: If <code>true</code> (default),
+     * the traversal is performed in ascending order; if <code>false</code>, the
+     * traversal is performed in descending order.
      * </p>
      * <p>
-     * Items with the same hash key are stored in sorted order by range key .If
-     * the range key data type is Number, the results are stored in numeric
-     * order. For type String, the results are returned in order of ASCII
+     * Items with the same partition key value are stored in sorted order by
+     * sort key. If the sort key data type is Number, the results are stored in
+     * numeric order. For type String, the results are stored in order of ASCII
      * character code values. For type Binary, DynamoDB treats each byte of the
      * binary data as unsigned.
      * </p>
      * <p>
      * If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns the
-     * results in order, by range key. This is the default behavior.
-     * </p>
-     * <p>
-     * If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts the
-     * results in descending order by range key, and then returns the results to
-     * the client.
+     * results in the order in which they are stored (by sort key value). This
+     * is the default behavior. If <i>ScanIndexForward</i> is <code>false</code>
+     * , DynamoDB reads the results in reverse order by sort key value, and then
+     * returns the results to the client.
      * </p>
      * 
-     * @return Specifies the order in which to return the query results - either
-     *         ascending (<code>true</code>) or descending (<code>false</code>
-     *         ).</p>
+     * @return Specifies the order for index traversal: If <code>true</code>
+     *         (default), the traversal is performed in ascending order; if
+     *         <code>false</code>, the traversal is performed in descending
+     *         order. </p>
      *         <p>
-     *         Items with the same hash key are stored in sorted order by range
-     *         key .If the range key data type is Number, the results are stored
-     *         in numeric order. For type String, the results are returned in
-     *         order of ASCII character code values. For type Binary, DynamoDB
-     *         treats each byte of the binary data as unsigned.
+     *         Items with the same partition key value are stored in sorted
+     *         order by sort key. If the sort key data type is Number, the
+     *         results are stored in numeric order. For type String, the results
+     *         are stored in order of ASCII character code values. For type
+     *         Binary, DynamoDB treats each byte of the binary data as unsigned.
      *         </p>
      *         <p>
      *         If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns
-     *         the results in order, by range key. This is the default behavior.
-     *         </p>
-     *         <p>
-     *         If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts
-     *         the results in descending order by range key, and then returns
-     *         the results to the client.
+     *         the results in the order in which they are stored (by sort key
+     *         value). This is the default behavior. If <i>ScanIndexForward</i>
+     *         is <code>false</code>, DynamoDB reads the results in reverse
+     *         order by sort key value, and then returns the results to the
+     *         client.
      */
     public Boolean getScanIndexForward() {
         return this.scanIndexForward;
@@ -4490,45 +4482,43 @@ public class QueryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the order in which to return the query results - either
-     * ascending (<code>true</code>) or descending (<code>false</code>).
+     * Specifies the order for index traversal: If <code>true</code> (default),
+     * the traversal is performed in ascending order; if <code>false</code>, the
+     * traversal is performed in descending order.
      * </p>
      * <p>
-     * Items with the same hash key are stored in sorted order by range key .If
-     * the range key data type is Number, the results are stored in numeric
-     * order. For type String, the results are returned in order of ASCII
+     * Items with the same partition key value are stored in sorted order by
+     * sort key. If the sort key data type is Number, the results are stored in
+     * numeric order. For type String, the results are stored in order of ASCII
      * character code values. For type Binary, DynamoDB treats each byte of the
      * binary data as unsigned.
      * </p>
      * <p>
      * If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns the
-     * results in order, by range key. This is the default behavior.
-     * </p>
-     * <p>
-     * If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts the
-     * results in descending order by range key, and then returns the results to
-     * the client.
+     * results in the order in which they are stored (by sort key value). This
+     * is the default behavior. If <i>ScanIndexForward</i> is <code>false</code>
+     * , DynamoDB reads the results in reverse order by sort key value, and then
+     * returns the results to the client.
      * </p>
      * 
      * @param scanIndexForward
-     *        Specifies the order in which to return the query results - either
-     *        ascending (<code>true</code>) or descending (<code>false</code>
-     *        ).</p>
+     *        Specifies the order for index traversal: If <code>true</code>
+     *        (default), the traversal is performed in ascending order; if
+     *        <code>false</code>, the traversal is performed in descending
+     *        order. </p>
      *        <p>
-     *        Items with the same hash key are stored in sorted order by range
-     *        key .If the range key data type is Number, the results are stored
-     *        in numeric order. For type String, the results are returned in
-     *        order of ASCII character code values. For type Binary, DynamoDB
+     *        Items with the same partition key value are stored in sorted order
+     *        by sort key. If the sort key data type is Number, the results are
+     *        stored in numeric order. For type String, the results are stored
+     *        in order of ASCII character code values. For type Binary, DynamoDB
      *        treats each byte of the binary data as unsigned.
      *        </p>
      *        <p>
      *        If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns
-     *        the results in order, by range key. This is the default behavior.
-     *        </p>
-     *        <p>
-     *        If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts
-     *        the results in descending order by range key, and then returns the
-     *        results to the client.
+     *        the results in the order in which they are stored (by sort key
+     *        value). This is the default behavior. If <i>ScanIndexForward</i>
+     *        is <code>false</code>, DynamoDB reads the results in reverse order
+     *        by sort key value, and then returns the results to the client.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -4539,44 +4529,43 @@ public class QueryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the order in which to return the query results - either
-     * ascending (<code>true</code>) or descending (<code>false</code>).
+     * Specifies the order for index traversal: If <code>true</code> (default),
+     * the traversal is performed in ascending order; if <code>false</code>, the
+     * traversal is performed in descending order.
      * </p>
      * <p>
-     * Items with the same hash key are stored in sorted order by range key .If
-     * the range key data type is Number, the results are stored in numeric
-     * order. For type String, the results are returned in order of ASCII
+     * Items with the same partition key value are stored in sorted order by
+     * sort key. If the sort key data type is Number, the results are stored in
+     * numeric order. For type String, the results are stored in order of ASCII
      * character code values. For type Binary, DynamoDB treats each byte of the
      * binary data as unsigned.
      * </p>
      * <p>
      * If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns the
-     * results in order, by range key. This is the default behavior.
-     * </p>
-     * <p>
-     * If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts the
-     * results in descending order by range key, and then returns the results to
-     * the client.
+     * results in the order in which they are stored (by sort key value). This
+     * is the default behavior. If <i>ScanIndexForward</i> is <code>false</code>
+     * , DynamoDB reads the results in reverse order by sort key value, and then
+     * returns the results to the client.
      * </p>
      * 
-     * @return Specifies the order in which to return the query results - either
-     *         ascending (<code>true</code>) or descending (<code>false</code>
-     *         ).</p>
+     * @return Specifies the order for index traversal: If <code>true</code>
+     *         (default), the traversal is performed in ascending order; if
+     *         <code>false</code>, the traversal is performed in descending
+     *         order. </p>
      *         <p>
-     *         Items with the same hash key are stored in sorted order by range
-     *         key .If the range key data type is Number, the results are stored
-     *         in numeric order. For type String, the results are returned in
-     *         order of ASCII character code values. For type Binary, DynamoDB
-     *         treats each byte of the binary data as unsigned.
+     *         Items with the same partition key value are stored in sorted
+     *         order by sort key. If the sort key data type is Number, the
+     *         results are stored in numeric order. For type String, the results
+     *         are stored in order of ASCII character code values. For type
+     *         Binary, DynamoDB treats each byte of the binary data as unsigned.
      *         </p>
      *         <p>
      *         If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns
-     *         the results in order, by range key. This is the default behavior.
-     *         </p>
-     *         <p>
-     *         If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts
-     *         the results in descending order by range key, and then returns
-     *         the results to the client.
+     *         the results in the order in which they are stored (by sort key
+     *         value). This is the default behavior. If <i>ScanIndexForward</i>
+     *         is <code>false</code>, DynamoDB reads the results in reverse
+     *         order by sort key value, and then returns the results to the
+     *         client.
      */
     public Boolean isScanIndexForward() {
         return this.scanIndexForward;
@@ -5045,93 +5034,92 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * by the <i>Query</i> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single hash key value.
-     * The condition can also perform one of several comparison tests on a
-     * single range key value. <i>Query</i> can use
-     * <i>KeyConditionExpression</i> to retrieve one item with a given hash and
-     * range key value, or several items that have the same hash key value but
-     * different range key values.
+     * The condition must perform an equality test on a single partition key
+     * value. The condition can also perform one of several comparison tests on
+     * a single sort key value. <i>Query</i> can use
+     * <i>KeyConditionExpression</i> to retrieve one item with a given partition
+     * key value and sort key value, or several items that have the same
+     * partition key value but different sort key values.
      * </p>
      * <p>
-     * The hash key equality test is required, and must be specified in the
+     * The partition key equality test is required, and must be specified in the
      * following format:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
      * </p>
      * <p>
-     * If you also want to provide a range key condition, it must be combined
-     * using <i>AND</i> with the hash key condition. Following is an example,
-     * using the <b>=</b> comparison operator for the range key:
+     * If you also want to provide a condition for the sort key, it must be
+     * combined using <i>AND</i> with the condition for the sort key. Following
+     * is an example, using the <b>=</b> comparison operator for the sort key:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
+     * <i>AND</i> <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code>
      * </p>
      * <p>
-     * Valid comparisons for the range key condition are as follows:
+     * Valid comparisons for the sort key condition are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if
-     * the range key is equal to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:rangeval</code> - true if the range key is less than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:rangeval</code> - true if the range key is less than or equal to
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:rangeval</code> - true if the range key is greater than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:rangeval</code> - true if the range key is greater than or equal
-     * to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
-     * than or equal to <code>:rangeval1</code>, and less than or equal to
-     * <code>:rangeval2</code>.
+     * <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is
+     * greater than or equal to <code>:sortkeyval1</code>, and less than or
+     * equal to <code>:sortkeyval2</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>rangeAttributeName</code>,
-     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
-     * particular operand. (You cannot use this function with a range key that
-     * is of type Number.) Note that the function name <code>begins_with</code>
-     * is case-sensitive.
+     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>)</i> - true if the sort key value begins with a particular operand.
+     * (You cannot use this function with a sort key that is of type Number.)
+     * Note that the function name <code>begins_with</code> is case-sensitive.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Use the <i>ExpressionAttributeValues</i> parameter to replace tokens such
-     * as <code>:hashval</code> and <code>:rangeval</code> with actual values at
-     * runtime.
+     * as <code>:partitionval</code> and <code>:sortval</code> with actual
+     * values at runtime.
      * </p>
      * <p>
      * You can optionally use the <i>ExpressionAttributeNames</i> parameter to
-     * replace the names of the hash and range attributes with placeholder
+     * replace the names of the partition key and sort key with placeholder
      * tokens. This option might be necessary if an attribute name conflicts
      * with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because
@@ -5171,96 +5159,96 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        The condition that specifies the key value(s) for items to be
      *        retrieved by the <i>Query</i> action.</p>
      *        <p>
-     *        The condition must perform an equality test on a single hash key
-     *        value. The condition can also perform one of several comparison
-     *        tests on a single range key value. <i>Query</i> can use
+     *        The condition must perform an equality test on a single partition
+     *        key value. The condition can also perform one of several
+     *        comparison tests on a single sort key value. <i>Query</i> can use
      *        <i>KeyConditionExpression</i> to retrieve one item with a given
-     *        hash and range key value, or several items that have the same hash
-     *        key value but different range key values.
+     *        partition key value and sort key value, or several items that have
+     *        the same partition key value but different sort key values.
      *        </p>
      *        <p>
-     *        The hash key equality test is required, and must be specified in
-     *        the following format:
+     *        The partition key equality test is required, and must be specified
+     *        in the following format:
      *        </p>
      *        <p>
-     *        <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     *        <code>partitionKeyName</code> <i>=</i>
+     *        <code>:partitionkeyval</code>
      *        </p>
      *        <p>
-     *        If you also want to provide a range key condition, it must be
-     *        combined using <i>AND</i> with the hash key condition. Following
-     *        is an example, using the <b>=</b> comparison operator for the
-     *        range key:
+     *        If you also want to provide a condition for the sort key, it must
+     *        be combined using <i>AND</i> with the condition for the sort key.
+     *        Following is an example, using the <b>=</b> comparison operator
+     *        for the sort key:
      *        </p>
      *        <p>
-     *        <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
-     *        <i>AND</i> <code>rangeAttributeName</code> <i>=</i>
-     *        <code>:rangeval</code>
+     *        <code>partitionKeyName</code> <i>=</i>
+     *        <code>:partitionkeyval</code> <i>AND</i> <code>sortKeyName</code>
+     *        <i>=</i> <code>:sortkeyval</code>
      *        </p>
      *        <p>
-     *        Valid comparisons for the range key condition are as follows:
+     *        Valid comparisons for the sort key condition are as follows:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> -
-     *        true if the range key is equal to <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true
+     *        if the sort key value is equal to <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     *        <code>:rangeval</code> - true if the range key is less than
-     *        <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     *        <code>:sortkeyval</code> - true if the sort key value is less than
+     *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     *        <code>:rangeval</code> - true if the range key is less than or
-     *        equal to <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     *        <code>:sortkeyval</code> - true if the sort key value is less than
+     *        or equal to <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     *        <code>:rangeval</code> - true if the range key is greater than
-     *        <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     *        <code>:sortkeyval</code> - true if the sort key value is greater
+     *        than <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     *        <code>:rangeval</code> - true if the range key is greater than or
-     *        equal to <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     *        <code>:sortkeyval</code> - true if the sort key value is greater
+     *        than or equal to <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>BETWEEN</i>
-     *        <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true
-     *        if the range key is greater than or equal to
-     *        <code>:rangeval1</code>, and less than or equal to
-     *        <code>:rangeval2</code>.
+     *        <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     *        <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value
+     *        is greater than or equal to <code>:sortkeyval1</code>, and less
+     *        than or equal to <code>:sortkeyval2</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>begins_with (</i><code>rangeAttributeName</code>,
-     *        <code>:rangeval</code><i>)</i> - true if the range key begins with
-     *        a particular operand. (You cannot use this function with a range
-     *        key that is of type Number.) Note that the function name
-     *        <code>begins_with</code> is case-sensitive.
+     *        <i>begins_with (</i><code>sortKeyName</code>,
+     *        <code>:sortkeyval</code><i>)</i> - true if the sort key value
+     *        begins with a particular operand. (You cannot use this function
+     *        with a sort key that is of type Number.) Note that the function
+     *        name <code>begins_with</code> is case-sensitive.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Use the <i>ExpressionAttributeValues</i> parameter to replace
-     *        tokens such as <code>:hashval</code> and <code>:rangeval</code>
-     *        with actual values at runtime.
+     *        tokens such as <code>:partitionval</code> and
+     *        <code>:sortval</code> with actual values at runtime.
      *        </p>
      *        <p>
      *        You can optionally use the <i>ExpressionAttributeNames</i>
-     *        parameter to replace the names of the hash and range attributes
+     *        parameter to replace the names of the partition key and sort key
      *        with placeholder tokens. This option might be necessary if an
      *        attribute name conflicts with a DynamoDB reserved word. For
      *        example, the following <i>KeyConditionExpression</i> parameter
@@ -5305,93 +5293,92 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * by the <i>Query</i> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single hash key value.
-     * The condition can also perform one of several comparison tests on a
-     * single range key value. <i>Query</i> can use
-     * <i>KeyConditionExpression</i> to retrieve one item with a given hash and
-     * range key value, or several items that have the same hash key value but
-     * different range key values.
+     * The condition must perform an equality test on a single partition key
+     * value. The condition can also perform one of several comparison tests on
+     * a single sort key value. <i>Query</i> can use
+     * <i>KeyConditionExpression</i> to retrieve one item with a given partition
+     * key value and sort key value, or several items that have the same
+     * partition key value but different sort key values.
      * </p>
      * <p>
-     * The hash key equality test is required, and must be specified in the
+     * The partition key equality test is required, and must be specified in the
      * following format:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
      * </p>
      * <p>
-     * If you also want to provide a range key condition, it must be combined
-     * using <i>AND</i> with the hash key condition. Following is an example,
-     * using the <b>=</b> comparison operator for the range key:
+     * If you also want to provide a condition for the sort key, it must be
+     * combined using <i>AND</i> with the condition for the sort key. Following
+     * is an example, using the <b>=</b> comparison operator for the sort key:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
+     * <i>AND</i> <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code>
      * </p>
      * <p>
-     * Valid comparisons for the range key condition are as follows:
+     * Valid comparisons for the sort key condition are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if
-     * the range key is equal to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:rangeval</code> - true if the range key is less than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:rangeval</code> - true if the range key is less than or equal to
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:rangeval</code> - true if the range key is greater than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:rangeval</code> - true if the range key is greater than or equal
-     * to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
-     * than or equal to <code>:rangeval1</code>, and less than or equal to
-     * <code>:rangeval2</code>.
+     * <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is
+     * greater than or equal to <code>:sortkeyval1</code>, and less than or
+     * equal to <code>:sortkeyval2</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>rangeAttributeName</code>,
-     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
-     * particular operand. (You cannot use this function with a range key that
-     * is of type Number.) Note that the function name <code>begins_with</code>
-     * is case-sensitive.
+     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>)</i> - true if the sort key value begins with a particular operand.
+     * (You cannot use this function with a sort key that is of type Number.)
+     * Note that the function name <code>begins_with</code> is case-sensitive.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Use the <i>ExpressionAttributeValues</i> parameter to replace tokens such
-     * as <code>:hashval</code> and <code>:rangeval</code> with actual values at
-     * runtime.
+     * as <code>:partitionval</code> and <code>:sortval</code> with actual
+     * values at runtime.
      * </p>
      * <p>
      * You can optionally use the <i>ExpressionAttributeNames</i> parameter to
-     * replace the names of the hash and range attributes with placeholder
+     * replace the names of the partition key and sort key with placeholder
      * tokens. This option might be necessary if an attribute name conflicts
      * with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because
@@ -5430,96 +5417,96 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return The condition that specifies the key value(s) for items to be
      *         retrieved by the <i>Query</i> action.</p>
      *         <p>
-     *         The condition must perform an equality test on a single hash key
-     *         value. The condition can also perform one of several comparison
-     *         tests on a single range key value. <i>Query</i> can use
+     *         The condition must perform an equality test on a single partition
+     *         key value. The condition can also perform one of several
+     *         comparison tests on a single sort key value. <i>Query</i> can use
      *         <i>KeyConditionExpression</i> to retrieve one item with a given
-     *         hash and range key value, or several items that have the same
-     *         hash key value but different range key values.
+     *         partition key value and sort key value, or several items that
+     *         have the same partition key value but different sort key values.
      *         </p>
      *         <p>
-     *         The hash key equality test is required, and must be specified in
-     *         the following format:
+     *         The partition key equality test is required, and must be
+     *         specified in the following format:
      *         </p>
      *         <p>
-     *         <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     *         <code>partitionKeyName</code> <i>=</i>
+     *         <code>:partitionkeyval</code>
      *         </p>
      *         <p>
-     *         If you also want to provide a range key condition, it must be
-     *         combined using <i>AND</i> with the hash key condition. Following
-     *         is an example, using the <b>=</b> comparison operator for the
-     *         range key:
+     *         If you also want to provide a condition for the sort key, it must
+     *         be combined using <i>AND</i> with the condition for the sort key.
+     *         Following is an example, using the <b>=</b> comparison operator
+     *         for the sort key:
      *         </p>
      *         <p>
-     *         <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
-     *         <i>AND</i> <code>rangeAttributeName</code> <i>=</i>
-     *         <code>:rangeval</code>
+     *         <code>partitionKeyName</code> <i>=</i>
+     *         <code>:partitionkeyval</code> <i>AND</i> <code>sortKeyName</code>
+     *         <i>=</i> <code>:sortkeyval</code>
      *         </p>
      *         <p>
-     *         Valid comparisons for the range key condition are as follows:
+     *         Valid comparisons for the sort key condition are as follows:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> -
-     *         true if the range key is equal to <code>:rangeval</code>.
+     *         <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true
+     *         if the sort key value is equal to <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     *         <code>:rangeval</code> - true if the range key is less than
-     *         <code>:rangeval</code>.
+     *         <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     *         <code>:sortkeyval</code> - true if the sort key value is less
+     *         than <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     *         <code>:rangeval</code> - true if the range key is less than or
-     *         equal to <code>:rangeval</code>.
+     *         <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     *         <code>:sortkeyval</code> - true if the sort key value is less
+     *         than or equal to <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     *         <code>:rangeval</code> - true if the range key is greater than
-     *         <code>:rangeval</code>.
+     *         <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     *         <code>:sortkeyval</code> - true if the sort key value is greater
+     *         than <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     *         <code>:rangeval</code> - true if the range key is greater than or
-     *         equal to <code>:rangeval</code>.
+     *         <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     *         <code>:sortkeyval</code> - true if the sort key value is greater
+     *         than or equal to <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rangeAttributeName</code> <i>BETWEEN</i>
-     *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true
-     *         if the range key is greater than or equal to
-     *         <code>:rangeval1</code>, and less than or equal to
-     *         <code>:rangeval2</code>.
+     *         <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     *         <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value
+     *         is greater than or equal to <code>:sortkeyval1</code>, and less
+     *         than or equal to <code>:sortkeyval2</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>begins_with (</i><code>rangeAttributeName</code>,
-     *         <code>:rangeval</code><i>)</i> - true if the range key begins
-     *         with a particular operand. (You cannot use this function with a
-     *         range key that is of type Number.) Note that the function name
-     *         <code>begins_with</code> is case-sensitive.
+     *         <i>begins_with (</i><code>sortKeyName</code>,
+     *         <code>:sortkeyval</code><i>)</i> - true if the sort key value
+     *         begins with a particular operand. (You cannot use this function
+     *         with a sort key that is of type Number.) Note that the function
+     *         name <code>begins_with</code> is case-sensitive.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         Use the <i>ExpressionAttributeValues</i> parameter to replace
-     *         tokens such as <code>:hashval</code> and <code>:rangeval</code>
-     *         with actual values at runtime.
+     *         tokens such as <code>:partitionval</code> and
+     *         <code>:sortval</code> with actual values at runtime.
      *         </p>
      *         <p>
      *         You can optionally use the <i>ExpressionAttributeNames</i>
-     *         parameter to replace the names of the hash and range attributes
+     *         parameter to replace the names of the partition key and sort key
      *         with placeholder tokens. This option might be necessary if an
      *         attribute name conflicts with a DynamoDB reserved word. For
      *         example, the following <i>KeyConditionExpression</i> parameter
@@ -5565,93 +5552,92 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * by the <i>Query</i> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single hash key value.
-     * The condition can also perform one of several comparison tests on a
-     * single range key value. <i>Query</i> can use
-     * <i>KeyConditionExpression</i> to retrieve one item with a given hash and
-     * range key value, or several items that have the same hash key value but
-     * different range key values.
+     * The condition must perform an equality test on a single partition key
+     * value. The condition can also perform one of several comparison tests on
+     * a single sort key value. <i>Query</i> can use
+     * <i>KeyConditionExpression</i> to retrieve one item with a given partition
+     * key value and sort key value, or several items that have the same
+     * partition key value but different sort key values.
      * </p>
      * <p>
-     * The hash key equality test is required, and must be specified in the
+     * The partition key equality test is required, and must be specified in the
      * following format:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
      * </p>
      * <p>
-     * If you also want to provide a range key condition, it must be combined
-     * using <i>AND</i> with the hash key condition. Following is an example,
-     * using the <b>=</b> comparison operator for the range key:
+     * If you also want to provide a condition for the sort key, it must be
+     * combined using <i>AND</i> with the condition for the sort key. Following
+     * is an example, using the <b>=</b> comparison operator for the sort key:
      * </p>
      * <p>
-     * <code>hashAttributeName</code> <i>=</i> <code>:hashval</code> <i>AND</i>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code>
+     * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code>
+     * <i>AND</i> <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code>
      * </p>
      * <p>
-     * Valid comparisons for the range key condition are as follows:
+     * Valid comparisons for the sort key condition are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> - true if
-     * the range key is equal to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:rangeval</code> - true if the range key is less than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:rangeval</code> - true if the range key is less than or equal to
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     * <code>:sortkeyval</code> - true if the sort key value is less than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:rangeval</code> - true if the range key is greater than
-     * <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than
+     * <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:rangeval</code> - true if the range key is greater than or equal
-     * to <code>:rangeval</code>.
+     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     * <code>:sortkeyval</code> - true if the sort key value is greater than or
+     * equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
-     * than or equal to <code>:rangeval1</code>, and less than or equal to
-     * <code>:rangeval2</code>.
+     * <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is
+     * greater than or equal to <code>:sortkeyval1</code>, and less than or
+     * equal to <code>:sortkeyval2</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>rangeAttributeName</code>,
-     * <code>:rangeval</code><i>)</i> - true if the range key begins with a
-     * particular operand. (You cannot use this function with a range key that
-     * is of type Number.) Note that the function name <code>begins_with</code>
-     * is case-sensitive.
+     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>)</i> - true if the sort key value begins with a particular operand.
+     * (You cannot use this function with a sort key that is of type Number.)
+     * Note that the function name <code>begins_with</code> is case-sensitive.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Use the <i>ExpressionAttributeValues</i> parameter to replace tokens such
-     * as <code>:hashval</code> and <code>:rangeval</code> with actual values at
-     * runtime.
+     * as <code>:partitionval</code> and <code>:sortval</code> with actual
+     * values at runtime.
      * </p>
      * <p>
      * You can optionally use the <i>ExpressionAttributeNames</i> parameter to
-     * replace the names of the hash and range attributes with placeholder
+     * replace the names of the partition key and sort key with placeholder
      * tokens. This option might be necessary if an attribute name conflicts
      * with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because
@@ -5691,96 +5677,96 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        The condition that specifies the key value(s) for items to be
      *        retrieved by the <i>Query</i> action.</p>
      *        <p>
-     *        The condition must perform an equality test on a single hash key
-     *        value. The condition can also perform one of several comparison
-     *        tests on a single range key value. <i>Query</i> can use
+     *        The condition must perform an equality test on a single partition
+     *        key value. The condition can also perform one of several
+     *        comparison tests on a single sort key value. <i>Query</i> can use
      *        <i>KeyConditionExpression</i> to retrieve one item with a given
-     *        hash and range key value, or several items that have the same hash
-     *        key value but different range key values.
+     *        partition key value and sort key value, or several items that have
+     *        the same partition key value but different sort key values.
      *        </p>
      *        <p>
-     *        The hash key equality test is required, and must be specified in
-     *        the following format:
+     *        The partition key equality test is required, and must be specified
+     *        in the following format:
      *        </p>
      *        <p>
-     *        <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
+     *        <code>partitionKeyName</code> <i>=</i>
+     *        <code>:partitionkeyval</code>
      *        </p>
      *        <p>
-     *        If you also want to provide a range key condition, it must be
-     *        combined using <i>AND</i> with the hash key condition. Following
-     *        is an example, using the <b>=</b> comparison operator for the
-     *        range key:
+     *        If you also want to provide a condition for the sort key, it must
+     *        be combined using <i>AND</i> with the condition for the sort key.
+     *        Following is an example, using the <b>=</b> comparison operator
+     *        for the sort key:
      *        </p>
      *        <p>
-     *        <code>hashAttributeName</code> <i>=</i> <code>:hashval</code>
-     *        <i>AND</i> <code>rangeAttributeName</code> <i>=</i>
-     *        <code>:rangeval</code>
+     *        <code>partitionKeyName</code> <i>=</i>
+     *        <code>:partitionkeyval</code> <i>AND</i> <code>sortKeyName</code>
+     *        <i>=</i> <code>:sortkeyval</code>
      *        </p>
      *        <p>
-     *        Valid comparisons for the range key condition are as follows:
+     *        Valid comparisons for the sort key condition are as follows:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>=</i> <code>:rangeval</code> -
-     *        true if the range key is equal to <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true
+     *        if the sort key value is equal to <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]></i>
-     *        <code>:rangeval</code> - true if the range key is less than
-     *        <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
+     *        <code>:sortkeyval</code> - true if the sort key value is less than
+     *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3C;]]>=</i>
-     *        <code>:rangeval</code> - true if the range key is less than or
-     *        equal to <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
+     *        <code>:sortkeyval</code> - true if the sort key value is less than
+     *        or equal to <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]></i>
-     *        <code>:rangeval</code> - true if the range key is greater than
-     *        <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
+     *        <code>:sortkeyval</code> - true if the sort key value is greater
+     *        than <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i><![CDATA[&#x3E;]]>= </i>
-     *        <code>:rangeval</code> - true if the range key is greater than or
-     *        equal to <code>:rangeval</code>.
+     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
+     *        <code>:sortkeyval</code> - true if the sort key value is greater
+     *        than or equal to <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rangeAttributeName</code> <i>BETWEEN</i>
-     *        <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true
-     *        if the range key is greater than or equal to
-     *        <code>:rangeval1</code>, and less than or equal to
-     *        <code>:rangeval2</code>.
+     *        <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     *        <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value
+     *        is greater than or equal to <code>:sortkeyval1</code>, and less
+     *        than or equal to <code>:sortkeyval2</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>begins_with (</i><code>rangeAttributeName</code>,
-     *        <code>:rangeval</code><i>)</i> - true if the range key begins with
-     *        a particular operand. (You cannot use this function with a range
-     *        key that is of type Number.) Note that the function name
-     *        <code>begins_with</code> is case-sensitive.
+     *        <i>begins_with (</i><code>sortKeyName</code>,
+     *        <code>:sortkeyval</code><i>)</i> - true if the sort key value
+     *        begins with a particular operand. (You cannot use this function
+     *        with a sort key that is of type Number.) Note that the function
+     *        name <code>begins_with</code> is case-sensitive.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Use the <i>ExpressionAttributeValues</i> parameter to replace
-     *        tokens such as <code>:hashval</code> and <code>:rangeval</code>
-     *        with actual values at runtime.
+     *        tokens such as <code>:partitionval</code> and
+     *        <code>:sortval</code> with actual values at runtime.
      *        </p>
      *        <p>
      *        You can optionally use the <i>ExpressionAttributeNames</i>
-     *        parameter to replace the names of the hash and range attributes
+     *        parameter to replace the names of the partition key and sort key
      *        with placeholder tokens. This option might be necessary if an
      *        attribute name conflicts with a DynamoDB reserved word. For
      *        example, the following <i>KeyConditionExpression</i> parameter

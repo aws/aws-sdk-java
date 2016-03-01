@@ -15,13 +15,6 @@
 
 package com.amazonaws.auth;
 
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.ThreadSafe;
@@ -30,6 +23,13 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.Credentials;
 import com.amazonaws.services.securitytoken.model.GetSessionTokenRequest;
 import com.amazonaws.services.securitytoken.model.GetSessionTokenResult;
+
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to create
@@ -268,18 +268,22 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
      */
     private void blockingNewSession() {
         try {
-            blockingNewSessionLock.tryLock(NEW_SESSION_MAX_WAIT_SECONDS, TimeUnit.SECONDS);
-            try {
-                // Return if successful refresh occurred while waiting for the lock
-                if (!needsNewSession()) {
-                    return;
-                } else {
-                    // Otherwise fetch a new session from STS
-                    newSession();
-                    return;
+            if (blockingNewSessionLock.tryLock(NEW_SESSION_MAX_WAIT_SECONDS,
+                    TimeUnit.SECONDS)) {
+                try {
+                    // Return if successful refresh occurred while waiting
+                    // for the lock
+
+                    if (!needsNewSession()) {
+                        return;
+                    } else {
+                        // Otherwise fetch a new session from STS
+                        newSession();
+                        return;
+                    }
+                } finally {
+                    blockingNewSessionLock.unlock();
                 }
-            } finally {
-                blockingNewSessionLock.unlock();
             }
         } catch (InterruptedException ex) {
             handleWaitError("Interrupted waiting for new session credentials.", ex);

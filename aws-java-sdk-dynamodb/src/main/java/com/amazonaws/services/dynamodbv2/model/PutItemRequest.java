@@ -41,9 +41,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * You must provide all of the attributes for the primary key. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide both values
+     * for both the partition key and the sort key.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the
@@ -415,11 +415,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * Other "Valid Values" are not relevant to PutItem.
-     * </p>
-     * </note>
      */
     private String returnValues;
 
@@ -648,9 +643,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        provide other attribute name-value pairs for the item.</p>
      *        <p>
      *        You must provide all of the attributes for the primary key. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide both values for both the partition key and the sort key.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then
@@ -685,9 +680,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        provide other attribute name-value pairs for the item.</p>
      *        <p>
      *        You must provide all of the attributes for the primary key. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide both values for both the partition key and the sort key.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then
@@ -721,11 +716,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        Other "Valid Values" are not relevant to PutItem.
-     *        </p>
      */
     public PutItemRequest(String tableName,
             java.util.Map<String, AttributeValue> item, String returnValues) {
@@ -747,9 +737,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        provide other attribute name-value pairs for the item.</p>
      *        <p>
      *        You must provide all of the attributes for the primary key. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide both values for both the partition key and the sort key.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then
@@ -783,11 +773,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        Other "Valid Values" are not relevant to PutItem.
-     *        </p>
      */
     public PutItemRequest(String tableName,
             java.util.Map<String, AttributeValue> item, ReturnValue returnValues) {
@@ -842,9 +827,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * You must provide all of the attributes for the primary key. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide both values
+     * for both the partition key and the sort key.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the
@@ -865,9 +850,10 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *         provide other attribute name-value pairs for the item.</p>
      *         <p>
      *         You must provide all of the attributes for the primary key. For
-     *         example, with a hash type primary key, you only need to provide
-     *         the hash attribute. For a hash-and-range type primary key, you
-     *         must provide both the hash attribute and the range attribute.
+     *         example, with a simple primary key, you only need to provide a
+     *         value for the partition key. For a composite primary key, you
+     *         must provide both values for both the partition key and the sort
+     *         key.
      *         </p>
      *         <p>
      *         If you specify any attributes that are part of an index key, then
@@ -895,9 +881,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * You must provide all of the attributes for the primary key. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide both values
+     * for both the partition key and the sort key.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the
@@ -919,9 +905,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        provide other attribute name-value pairs for the item.</p>
      *        <p>
      *        You must provide all of the attributes for the primary key. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide both values for both the partition key and the sort key.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then
@@ -949,9 +935,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * You must provide all of the attributes for the primary key. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide both values
+     * for both the partition key and the sort key.
      * </p>
      * <p>
      * If you specify any attributes that are part of an index key, then the
@@ -973,9 +959,9 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        provide other attribute name-value pairs for the item.</p>
      *        <p>
      *        You must provide all of the attributes for the primary key. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide both values for both the partition key and the sort key.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then
@@ -3125,11 +3111,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * Other "Valid Values" are not relevant to PutItem.
-     * </p>
-     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3149,11 +3130,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        Other "Valid Values" are not relevant to PutItem.
-     *        </p>
      * @see ReturnValue
      */
     public void setReturnValues(String returnValues) {
@@ -3181,11 +3157,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * Other "Valid Values" are not relevant to PutItem.
-     * </p>
-     * </note>
      * 
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as
      *         they appeared before they were updated with the <i>PutItem</i>
@@ -3204,11 +3175,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *         name-value pair, then the content of the old item is returned.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         Other "Valid Values" are not relevant to PutItem.
-     *         </p>
      * @see ReturnValue
      */
     public String getReturnValues() {
@@ -3236,11 +3202,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * Other "Valid Values" are not relevant to PutItem.
-     * </p>
-     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3260,11 +3221,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        Other "Valid Values" are not relevant to PutItem.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
@@ -3295,11 +3251,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * Other "Valid Values" are not relevant to PutItem.
-     * </p>
-     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3319,11 +3270,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        Other "Valid Values" are not relevant to PutItem.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
@@ -3353,11 +3299,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * Other "Valid Values" are not relevant to PutItem.
-     * </p>
-     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3377,11 +3318,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        Other "Valid Values" are not relevant to PutItem.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue

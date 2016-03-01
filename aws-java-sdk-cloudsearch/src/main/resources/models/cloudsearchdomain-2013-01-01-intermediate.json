@@ -2536,6 +2536,57 @@
         "getterDocumentation" : "/**<p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>\n@return Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.*/",
         "fluentSetterDocumentation" : "/**<p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>\n@param start Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>\n@param start Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>",
+        "name" : "Stats",
+        "c2jName" : "stats",
+        "c2jShape" : "Stat",
+        "variable" : {
+          "variableName" : "stats",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "stats",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "stats",
+          "marshallLocationName" : "stats",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : true
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@param stats Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.*/",
+        "getterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@return Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@param stats Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@param stats Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2978,6 +3029,58 @@
           "getterDocumentation" : "/**<p>Retrieves highlights for matches in the specified <code>text</code> or <code>text-array</code> fields. Each specified field must be highlight enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{\"FIELD\":{\"OPTION\":VALUE,\"OPTION:\"STRING\"},\"FIELD\":{\"OPTION\":VALUE,\"OPTION\":\"STRING\"}}</code>.</p> <p>You can specify the following highlight options:</p> <ul> <li> <code>format</code>: specifies the format of the data in the text field: <code>text</code> or <code>html</code>. When data is returned as HTML, all non-alphanumeric characters are encoded. The default is <code>html</code>. </li> <li> <code>max_phrases</code>: specifies the maximum number of occurrences of the search term(s) you want to highlight. By default, the first occurrence is highlighted. </li> <li> <code>pre_tag</code>: specifies the string to prepend to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> <li> <code>post_tag</code>: specifies the string to append to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;/em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> </ul> <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.</p> <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p> <p> <code>{ \"actors\": {}, \"title\": {\"format\": \"text\",\"max_phrases\": 2,\"pre_tag\": \"<b>\",\"post_tag\": \"</b>\"} }</code></p>\n@return Retrieves highlights for matches in the specified <code>text</code> or <code>text-array</code> fields. Each specified field must be highlight enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{\"FIELD\":{\"OPTION\":VALUE,\"OPTION:\"STRING\"},\"FIELD\":{\"OPTION\":VALUE,\"OPTION\":\"STRING\"}}</code>.</p> <p>You can specify the following highlight options:</p> <ul> <li> <code>format</code>: specifies the format of the data in the text field: <code>text</code> or <code>html</code>. When data is returned as HTML, all non-alphanumeric characters are encoded. The default is <code>html</code>. </li> <li> <code>max_phrases</code>: specifies the maximum number of occurrences of the search term(s) you want to highlight. By default, the first occurrence is highlighted. </li> <li> <code>pre_tag</code>: specifies the string to prepend to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> <li> <code>post_tag</code>: specifies the string to append to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;/em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> </ul> <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.</p> <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p> <p> <code>{ \"actors\": {}, \"title\": {\"format\": \"text\",\"max_phrases\": 2,\"pre_tag\": \"<b>\",\"post_tag\": \"</b>\"} }</code>*/",
           "fluentSetterDocumentation" : "/**<p>Retrieves highlights for matches in the specified <code>text</code> or <code>text-array</code> fields. Each specified field must be highlight enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{\"FIELD\":{\"OPTION\":VALUE,\"OPTION:\"STRING\"},\"FIELD\":{\"OPTION\":VALUE,\"OPTION\":\"STRING\"}}</code>.</p> <p>You can specify the following highlight options:</p> <ul> <li> <code>format</code>: specifies the format of the data in the text field: <code>text</code> or <code>html</code>. When data is returned as HTML, all non-alphanumeric characters are encoded. The default is <code>html</code>. </li> <li> <code>max_phrases</code>: specifies the maximum number of occurrences of the search term(s) you want to highlight. By default, the first occurrence is highlighted. </li> <li> <code>pre_tag</code>: specifies the string to prepend to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> <li> <code>post_tag</code>: specifies the string to append to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;/em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> </ul> <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.</p> <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p> <p> <code>{ \"actors\": {}, \"title\": {\"format\": \"text\",\"max_phrases\": 2,\"pre_tag\": \"<b>\",\"post_tag\": \"</b>\"} }</code></p>\n@param highlight Retrieves highlights for matches in the specified <code>text</code> or <code>text-array</code> fields. Each specified field must be highlight enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{\"FIELD\":{\"OPTION\":VALUE,\"OPTION:\"STRING\"},\"FIELD\":{\"OPTION\":VALUE,\"OPTION\":\"STRING\"}}</code>.</p> <p>You can specify the following highlight options:</p> <ul> <li> <code>format</code>: specifies the format of the data in the text field: <code>text</code> or <code>html</code>. When data is returned as HTML, all non-alphanumeric characters are encoded. The default is <code>html</code>. </li> <li> <code>max_phrases</code>: specifies the maximum number of occurrences of the search term(s) you want to highlight. By default, the first occurrence is highlighted. </li> <li> <code>pre_tag</code>: specifies the string to prepend to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> <li> <code>post_tag</code>: specifies the string to append to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;/em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> </ul> <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.</p> <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p> <p> <code>{ \"actors\": {}, \"title\": {\"format\": \"text\",\"max_phrases\": 2,\"pre_tag\": \"<b>\",\"post_tag\": \"</b>\"} }</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Retrieves highlights for matches in the specified <code>text</code> or <code>text-array</code> fields. Each specified field must be highlight enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{\"FIELD\":{\"OPTION\":VALUE,\"OPTION:\"STRING\"},\"FIELD\":{\"OPTION\":VALUE,\"OPTION\":\"STRING\"}}</code>.</p> <p>You can specify the following highlight options:</p> <ul> <li> <code>format</code>: specifies the format of the data in the text field: <code>text</code> or <code>html</code>. When data is returned as HTML, all non-alphanumeric characters are encoded. The default is <code>html</code>. </li> <li> <code>max_phrases</code>: specifies the maximum number of occurrences of the search term(s) you want to highlight. By default, the first occurrence is highlighted. </li> <li> <code>pre_tag</code>: specifies the string to prepend to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> <li> <code>post_tag</code>: specifies the string to append to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;/em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> </ul> <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.</p> <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p> <p> <code>{ \"actors\": {}, \"title\": {\"format\": \"text\",\"max_phrases\": 2,\"pre_tag\": \"<b>\",\"post_tag\": \"</b>\"} }</code></p>\n@param highlight Retrieves highlights for matches in the specified <code>text</code> or <code>text-array</code> fields. Each specified field must be highlight enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{\"FIELD\":{\"OPTION\":VALUE,\"OPTION:\"STRING\"},\"FIELD\":{\"OPTION\":VALUE,\"OPTION\":\"STRING\"}}</code>.</p> <p>You can specify the following highlight options:</p> <ul> <li> <code>format</code>: specifies the format of the data in the text field: <code>text</code> or <code>html</code>. When data is returned as HTML, all non-alphanumeric characters are encoded. The default is <code>html</code>. </li> <li> <code>max_phrases</code>: specifies the maximum number of occurrences of the search term(s) you want to highlight. By default, the first occurrence is highlighted. </li> <li> <code>pre_tag</code>: specifies the string to prepend to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> <li> <code>post_tag</code>: specifies the string to append to an occurrence of a search term. The default for HTML highlights is <code>&amp;lt;/em&amp;gt;</code>. The default for text highlights is <code>*</code>. </li> </ul> <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&amp;lt;em&gt;search-term&amp;lt;/em&amp;gt;</code>.</p> <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p> <p> <code>{ \"actors\": {}, \"title\": {\"format\": \"text\",\"max_phrases\": 2,\"pre_tag\": \"<b>\",\"post_tag\": \"</b>\"} }</code>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Stats" : {
+          "documentation" : "<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>",
+          "name" : "Stats",
+          "c2jName" : "stats",
+          "c2jShape" : "Stat",
+          "variable" : {
+            "variableName" : "stats",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "stats",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "stats",
+            "marshallLocationName" : "stats",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : true
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@param stats Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.*/",
+          "getterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@return Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@param stats Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>\n@param stats Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "FilterQuery" : {
           "documentation" : "<p>Specifies a structured query that filters the results of a search without affecting how the results are scored and sorted. You use <code>filterQuery</code> in conjunction with the <code>query</code> parameter to filter the documents that match the constraints specified in the <code>query</code> parameter. Specifying a filter controls only which matching documents are included in the results, it has no effect on how they are scored and sorted. The <code>filterQuery</code> parameter supports the full structured query syntax. </p> <p>For more information about using filters, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/filtering-results.html\">Filtering Matching Documents</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -5362,6 +5465,122 @@
         "getterDocumentation" : "/**<p>The requested facet information.</p>\n@return The requested facet information.*/",
         "fluentSetterDocumentation" : "/**<p>The requested facet information.</p>\n@param facets The requested facet information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The requested facet information.</p>\n@param facets The requested facet information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The requested field statistics information.</p>",
+        "name" : "Stats",
+        "c2jName" : "stats",
+        "c2jShape" : "Stats",
+        "variable" : {
+          "variableName" : "stats",
+          "variableType" : "java.util.Map<String,FieldStats>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>",
+          "documentation" : "<p>The requested field statistics information.</p>",
+          "simpleType" : "Map<String,FieldStats>",
+          "variableSetterType" : "java.util.Map<String,FieldStats>"
+        },
+        "setterModel" : {
+          "variableName" : "stats",
+          "variableType" : "java.util.Map<String,FieldStats>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>",
+          "documentation" : "",
+          "simpleType" : "Map<String,FieldStats>",
+          "variableSetterType" : "java.util.Map<String,FieldStats>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Map<String,FieldStats>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "stats",
+          "marshallLocationName" : "stats",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalMap",
+          "interfaceType" : "java.util.Map",
+          "keyType" : "String",
+          "keyLocationName" : "key",
+          "keyModel" : null,
+          "valueType" : "FieldStats",
+          "valueLocationName" : "value",
+          "valueModel" : {
+            "documentation" : "",
+            "name" : "Value",
+            "c2jName" : "value",
+            "c2jShape" : "FieldStats",
+            "variable" : {
+              "variableName" : "value",
+              "variableType" : "FieldStats",
+              "variableDeclarationType" : "FieldStats",
+              "documentation" : "",
+              "simpleType" : "FieldStats",
+              "variableSetterType" : "FieldStats"
+            },
+            "setterModel" : {
+              "variableName" : "value",
+              "variableType" : "FieldStats",
+              "variableDeclarationType" : "FieldStats",
+              "documentation" : "",
+              "simpleType" : "FieldStats",
+              "variableSetterType" : "FieldStats"
+            },
+            "getterModel" : {
+              "returnType" : "FieldStats",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "value",
+              "marshallLocationName" : "value",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "keySimple" : true,
+          "valueSimple" : false,
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,FieldStats>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>"
+        },
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : false,
+        "map" : true,
+        "setterDocumentation" : "/**<p>The requested field statistics information.</p>\n@param stats The requested field statistics information.*/",
+        "getterDocumentation" : "/**<p>The requested field statistics information.</p>\n@return The requested field statistics information.*/",
+        "fluentSetterDocumentation" : "/**<p>The requested field statistics information.</p>\n@param stats The requested field statistics information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The requested field statistics information.</p>\n@param stats The requested field statistics information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5488,6 +5707,123 @@
           "getterDocumentation" : "/**<p>The status information returned for the search request.</p>\n@return The status information returned for the search request.*/",
           "fluentSetterDocumentation" : "/**<p>The status information returned for the search request.</p>\n@param status The status information returned for the search request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The status information returned for the search request.</p>\n@param status The status information returned for the search request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Stats" : {
+          "documentation" : "<p>The requested field statistics information.</p>",
+          "name" : "Stats",
+          "c2jName" : "stats",
+          "c2jShape" : "Stats",
+          "variable" : {
+            "variableName" : "stats",
+            "variableType" : "java.util.Map<String,FieldStats>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>",
+            "documentation" : "<p>The requested field statistics information.</p>",
+            "simpleType" : "Map<String,FieldStats>",
+            "variableSetterType" : "java.util.Map<String,FieldStats>"
+          },
+          "setterModel" : {
+            "variableName" : "stats",
+            "variableType" : "java.util.Map<String,FieldStats>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>",
+            "documentation" : "",
+            "simpleType" : "Map<String,FieldStats>",
+            "variableSetterType" : "java.util.Map<String,FieldStats>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Map<String,FieldStats>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "stats",
+            "marshallLocationName" : "stats",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalMap",
+            "interfaceType" : "java.util.Map",
+            "keyType" : "String",
+            "keyLocationName" : "key",
+            "keyModel" : null,
+            "valueType" : "FieldStats",
+            "valueLocationName" : "value",
+            "valueModel" : {
+              "documentation" : "",
+              "name" : "Value",
+              "c2jName" : "value",
+              "c2jShape" : "FieldStats",
+              "variable" : {
+                "variableName" : "value",
+                "variableType" : "FieldStats",
+                "variableDeclarationType" : "FieldStats",
+                "documentation" : "",
+                "simpleType" : "FieldStats",
+                "variableSetterType" : "FieldStats"
+              },
+              "setterModel" : {
+                "variableName" : "value",
+                "variableType" : "FieldStats",
+                "variableDeclarationType" : "FieldStats",
+                "documentation" : "",
+                "simpleType" : "FieldStats",
+                "variableSetterType" : "FieldStats"
+              },
+              "getterModel" : {
+                "returnType" : "FieldStats",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "value",
+                "marshallLocationName" : "value",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "keySimple" : true,
+            "valueSimple" : false,
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,FieldStats>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>"
+          },
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : false,
+          "map" : true,
+          "setterDocumentation" : "/**<p>The requested field statistics information.</p>\n@param stats The requested field statistics information.*/",
+          "getterDocumentation" : "/**<p>The requested field statistics information.</p>\n@return The requested field statistics information.*/",
+          "fluentSetterDocumentation" : "/**<p>The requested field statistics information.</p>\n@param stats The requested field statistics information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The requested field statistics information.</p>\n@param stats The requested field statistics information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Facets" : {
           "documentation" : "<p>The requested facet information.</p>",
@@ -6366,6 +6702,865 @@
           "getterDocumentation" : "/**<p>The number of documents that were found to match the query string.</p>\n@return The number of documents that were found to match the query string.*/",
           "fluentSetterDocumentation" : "/**<p>The number of documents that were found to match the query string.</p>\n@param found The number of documents that were found to match the query string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The number of documents that were found to match the query string.</p>\n@param found The number of documents that were found to match the query string.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "FieldStats" : {
+      "c2jName" : "FieldStats",
+      "documentation" : "<p>The statistics for a field calculated in the request.</p>",
+      "shapeName" : "FieldStats",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+        "name" : "Min",
+        "c2jName" : "min",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "min",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "min",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "min",
+          "marshallLocationName" : "min",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param min The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+        "getterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@return The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+        "fluentSetterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param min The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param min The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+        "name" : "Max",
+        "c2jName" : "max",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "max",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "max",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "max",
+          "marshallLocationName" : "max",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param max The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+        "getterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@return The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param max The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param max The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The number of documents that contain a value in the specified field in the result set.</p>",
+        "name" : "Count",
+        "c2jName" : "count",
+        "c2jShape" : "Long",
+        "variable" : {
+          "variableName" : "count",
+          "variableType" : "Long",
+          "variableDeclarationType" : "Long",
+          "documentation" : "<p>The number of documents that contain a value in the specified field in the result set.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "setterModel" : {
+          "variableName" : "count",
+          "variableType" : "Long",
+          "variableDeclarationType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "count",
+          "marshallLocationName" : "count",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@param count The number of documents that contain a value in the specified field in the result set.*/",
+        "getterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@return The number of documents that contain a value in the specified field in the result set.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@param count The number of documents that contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@param count The number of documents that contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The number of documents that do not contain a value in the specified field in the result set.</p>",
+        "name" : "Missing",
+        "c2jName" : "missing",
+        "c2jShape" : "Long",
+        "variable" : {
+          "variableName" : "missing",
+          "variableType" : "Long",
+          "variableDeclarationType" : "Long",
+          "documentation" : "<p>The number of documents that do not contain a value in the specified field in the result set.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "setterModel" : {
+          "variableName" : "missing",
+          "variableType" : "Long",
+          "variableDeclarationType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "missing",
+          "marshallLocationName" : "missing",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@param missing The number of documents that do not contain a value in the specified field in the result set.*/",
+        "getterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@return The number of documents that do not contain a value in the specified field in the result set.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@param missing The number of documents that do not contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@param missing The number of documents that do not contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>",
+        "name" : "Sum",
+        "c2jName" : "sum",
+        "c2jShape" : "Double",
+        "variable" : {
+          "variableName" : "sum",
+          "variableType" : "Double",
+          "variableDeclarationType" : "Double",
+          "documentation" : "<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "setterModel" : {
+          "variableName" : "sum",
+          "variableType" : "Double",
+          "variableDeclarationType" : "Double",
+          "documentation" : "",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "getterModel" : {
+          "returnType" : "Double",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "sum",
+          "marshallLocationName" : "sum",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@param sum The sum of the field values across the documents in the result set. <code>null</code> for date fields.*/",
+        "getterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@return The sum of the field values across the documents in the result set. <code>null</code> for date fields.*/",
+        "fluentSetterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@param sum The sum of the field values across the documents in the result set. <code>null</code> for date fields.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@param sum The sum of the field values across the documents in the result set. <code>null</code> for date fields.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The sum of all field values in the result set squared.</p>",
+        "name" : "SumOfSquares",
+        "c2jName" : "sumOfSquares",
+        "c2jShape" : "Double",
+        "variable" : {
+          "variableName" : "sumOfSquares",
+          "variableType" : "Double",
+          "variableDeclarationType" : "Double",
+          "documentation" : "<p>The sum of all field values in the result set squared.</p>",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "setterModel" : {
+          "variableName" : "sumOfSquares",
+          "variableType" : "Double",
+          "variableDeclarationType" : "Double",
+          "documentation" : "",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "getterModel" : {
+          "returnType" : "Double",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "sumOfSquares",
+          "marshallLocationName" : "sumOfSquares",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@param sumOfSquares The sum of all field values in the result set squared.*/",
+        "getterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@return The sum of all field values in the result set squared.*/",
+        "fluentSetterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@param sumOfSquares The sum of all field values in the result set squared.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@param sumOfSquares The sum of all field values in the result set squared.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+        "name" : "Mean",
+        "c2jName" : "mean",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "mean",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "mean",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "mean",
+          "marshallLocationName" : "mean",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param mean The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+        "getterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@return The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+        "fluentSetterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param mean The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param mean The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The standard deviation of the values in the specified field in the result set.</p>",
+        "name" : "Stddev",
+        "c2jName" : "stddev",
+        "c2jShape" : "Double",
+        "variable" : {
+          "variableName" : "stddev",
+          "variableType" : "Double",
+          "variableDeclarationType" : "Double",
+          "documentation" : "<p>The standard deviation of the values in the specified field in the result set.</p>",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "setterModel" : {
+          "variableName" : "stddev",
+          "variableType" : "Double",
+          "variableDeclarationType" : "Double",
+          "documentation" : "",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "getterModel" : {
+          "returnType" : "Double",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "stddev",
+          "marshallLocationName" : "stddev",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@param stddev The standard deviation of the values in the specified field in the result set.*/",
+        "getterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@return The standard deviation of the values in the specified field in the result set.*/",
+        "fluentSetterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@param stddev The standard deviation of the values in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@param stddev The standard deviation of the values in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "fieldStats",
+        "variableType" : "FieldStats",
+        "variableDeclarationType" : "FieldStats",
+        "documentation" : null,
+        "simpleType" : "FieldStats",
+        "variableSetterType" : "FieldStats"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Sum" : {
+          "documentation" : "<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>",
+          "name" : "Sum",
+          "c2jName" : "sum",
+          "c2jShape" : "Double",
+          "variable" : {
+            "variableName" : "sum",
+            "variableType" : "Double",
+            "variableDeclarationType" : "Double",
+            "documentation" : "<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "setterModel" : {
+            "variableName" : "sum",
+            "variableType" : "Double",
+            "variableDeclarationType" : "Double",
+            "documentation" : "",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "getterModel" : {
+            "returnType" : "Double",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "sum",
+            "marshallLocationName" : "sum",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@param sum The sum of the field values across the documents in the result set. <code>null</code> for date fields.*/",
+          "getterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@return The sum of the field values across the documents in the result set. <code>null</code> for date fields.*/",
+          "fluentSetterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@param sum The sum of the field values across the documents in the result set. <code>null</code> for date fields.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>\n@param sum The sum of the field values across the documents in the result set. <code>null</code> for date fields.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Missing" : {
+          "documentation" : "<p>The number of documents that do not contain a value in the specified field in the result set.</p>",
+          "name" : "Missing",
+          "c2jName" : "missing",
+          "c2jShape" : "Long",
+          "variable" : {
+            "variableName" : "missing",
+            "variableType" : "Long",
+            "variableDeclarationType" : "Long",
+            "documentation" : "<p>The number of documents that do not contain a value in the specified field in the result set.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "setterModel" : {
+            "variableName" : "missing",
+            "variableType" : "Long",
+            "variableDeclarationType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "missing",
+            "marshallLocationName" : "missing",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@param missing The number of documents that do not contain a value in the specified field in the result set.*/",
+          "getterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@return The number of documents that do not contain a value in the specified field in the result set.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@param missing The number of documents that do not contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of documents that do not contain a value in the specified field in the result set.</p>\n@param missing The number of documents that do not contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Count" : {
+          "documentation" : "<p>The number of documents that contain a value in the specified field in the result set.</p>",
+          "name" : "Count",
+          "c2jName" : "count",
+          "c2jShape" : "Long",
+          "variable" : {
+            "variableName" : "count",
+            "variableType" : "Long",
+            "variableDeclarationType" : "Long",
+            "documentation" : "<p>The number of documents that contain a value in the specified field in the result set.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "setterModel" : {
+            "variableName" : "count",
+            "variableType" : "Long",
+            "variableDeclarationType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "count",
+            "marshallLocationName" : "count",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@param count The number of documents that contain a value in the specified field in the result set.*/",
+          "getterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@return The number of documents that contain a value in the specified field in the result set.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@param count The number of documents that contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of documents that contain a value in the specified field in the result set.</p>\n@param count The number of documents that contain a value in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Max" : {
+          "documentation" : "<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+          "name" : "Max",
+          "c2jName" : "max",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "max",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "max",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "max",
+            "marshallLocationName" : "max",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param max The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+          "getterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@return The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param max The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param max The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Stddev" : {
+          "documentation" : "<p>The standard deviation of the values in the specified field in the result set.</p>",
+          "name" : "Stddev",
+          "c2jName" : "stddev",
+          "c2jShape" : "Double",
+          "variable" : {
+            "variableName" : "stddev",
+            "variableType" : "Double",
+            "variableDeclarationType" : "Double",
+            "documentation" : "<p>The standard deviation of the values in the specified field in the result set.</p>",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "setterModel" : {
+            "variableName" : "stddev",
+            "variableType" : "Double",
+            "variableDeclarationType" : "Double",
+            "documentation" : "",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "getterModel" : {
+            "returnType" : "Double",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "stddev",
+            "marshallLocationName" : "stddev",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@param stddev The standard deviation of the values in the specified field in the result set.*/",
+          "getterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@return The standard deviation of the values in the specified field in the result set.*/",
+          "fluentSetterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@param stddev The standard deviation of the values in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The standard deviation of the values in the specified field in the result set.</p>\n@param stddev The standard deviation of the values in the specified field in the result set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "SumOfSquares" : {
+          "documentation" : "<p>The sum of all field values in the result set squared.</p>",
+          "name" : "SumOfSquares",
+          "c2jName" : "sumOfSquares",
+          "c2jShape" : "Double",
+          "variable" : {
+            "variableName" : "sumOfSquares",
+            "variableType" : "Double",
+            "variableDeclarationType" : "Double",
+            "documentation" : "<p>The sum of all field values in the result set squared.</p>",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "setterModel" : {
+            "variableName" : "sumOfSquares",
+            "variableType" : "Double",
+            "variableDeclarationType" : "Double",
+            "documentation" : "",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "getterModel" : {
+            "returnType" : "Double",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "sumOfSquares",
+            "marshallLocationName" : "sumOfSquares",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@param sumOfSquares The sum of all field values in the result set squared.*/",
+          "getterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@return The sum of all field values in the result set squared.*/",
+          "fluentSetterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@param sumOfSquares The sum of all field values in the result set squared.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The sum of all field values in the result set squared.</p>\n@param sumOfSquares The sum of all field values in the result set squared.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Mean" : {
+          "documentation" : "<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+          "name" : "Mean",
+          "c2jName" : "mean",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "mean",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "mean",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "mean",
+            "marshallLocationName" : "mean",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param mean The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+          "getterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@return The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+          "fluentSetterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param mean The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param mean The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Min" : {
+          "documentation" : "<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+          "name" : "Min",
+          "c2jName" : "min",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "min",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "min",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "min",
+            "marshallLocationName" : "min",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param min The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+          "getterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@return The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.*/",
+          "fluentSetterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param min The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>\n@param min The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },

@@ -97,8 +97,8 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item.
      * </p>
      * </li>
      * <li>
@@ -537,8 +537,8 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item.
      * </p>
      * </li>
      * <li>
@@ -567,8 +567,9 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>ItemCollectionKey</i> - The hash key value of the item
-     *         collection. This is the same as the hash key of the item.
+     *         <i>ItemCollectionKey</i> - The partition key value of the item
+     *         collection. This is the same as the partition key value of the
+     *         item.
      *         </p>
      *         </li>
      *         <li>
@@ -603,8 +604,8 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item.
      * </p>
      * </li>
      * <li>
@@ -634,8 +635,9 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ItemCollectionKey</i> - The hash key value of the item
-     *        collection. This is the same as the hash key of the item.
+     *        <i>ItemCollectionKey</i> - The partition key value of the item
+     *        collection. This is the same as the partition key value of the
+     *        item.
      *        </p>
      *        </li>
      *        <li>
@@ -671,8 +673,8 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item.
      * </p>
      * </li>
      * <li>
@@ -702,8 +704,9 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ItemCollectionKey</i> - The hash key value of the item
-     *        collection. This is the same as the hash key of the item.
+     *        <i>ItemCollectionKey</i> - The partition key value of the item
+     *        collection. This is the same as the partition key value of the
+     *        item.
      *        </p>
      *        </li>
      *        <li>

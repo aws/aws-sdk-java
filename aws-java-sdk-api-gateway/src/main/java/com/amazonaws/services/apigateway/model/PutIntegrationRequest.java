@@ -53,13 +53,15 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     private String type;
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      */
     private String integrationHttpMethod;
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required.
      * </p>
      */
     private String uri;
@@ -292,11 +294,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      * 
      * @param integrationHttpMethod
-     *        Specifies a put integration HTTP method.
+     *        Specifies a put integration HTTP method. When the integration type
+     *        is HTTP or AWS, this field is required.
      */
     public void setIntegrationHttpMethod(String integrationHttpMethod) {
         this.integrationHttpMethod = integrationHttpMethod;
@@ -304,10 +308,12 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      * 
-     * @return Specifies a put integration HTTP method.
+     * @return Specifies a put integration HTTP method. When the integration
+     *         type is HTTP or AWS, this field is required.
      */
     public String getIntegrationHttpMethod() {
         return this.integrationHttpMethod;
@@ -315,11 +321,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      * 
      * @param integrationHttpMethod
-     *        Specifies a put integration HTTP method.
+     *        Specifies a put integration HTTP method. When the integration type
+     *        is HTTP or AWS, this field is required.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -332,11 +340,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required.
      * </p>
      * 
      * @param uri
      *        Specifies a put integration input's Uniform Resource Identifier
-     *        (URI).
+     *        (URI). When the integration type is HTTP or AWS, this field is
+     *        required.
      */
     public void setUri(String uri) {
         this.uri = uri;
@@ -345,10 +355,12 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required.
      * </p>
      * 
      * @return Specifies a put integration input's Uniform Resource Identifier
-     *         (URI).
+     *         (URI). When the integration type is HTTP or AWS, this field is
+     *         required.
      */
     public String getUri() {
         return this.uri;
@@ -357,11 +369,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required.
      * </p>
      * 
      * @param uri
      *        Specifies a put integration input's Uniform Resource Identifier
-     *        (URI).
+     *        (URI). When the integration type is HTTP or AWS, this field is
+     *        required.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
