@@ -17,6 +17,7 @@ package com.amazonaws.metrics.internal.cloudwatch;
 import java.util.Comparator;
 
 import com.amazonaws.services.cloudwatch.model.Dimension;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Used to compare {@link Dimension}.
@@ -42,19 +43,19 @@ enum DimensionComparator implements Comparator<Dimension> {
 
     /**
      * Compares the two given strings for order, handling null as necessary.
-     * 
+     *
      * @return a negative integer, zero, or a positive integer as the first
      *         object is less than, equal to, or greater than the second object.
      */
     private int nullSafeCompare(String first, String second) {
         int result = nullCompare(first, second);
-        return result == NON_NULLS ? first.compareTo(second) : result;
+        return result == NON_NULLS ? StringUtils.compare(first, second) : result;
     }
 
     /**
      * Partially compares the two given objects for order, handling null as
      * necessary.
-     * 
+     *
      * @return a -1 if the first object is null but not the second, 0 if both
      *         objects are identical, 1 if the second object is null but not the
      *         first. Otherwise, {@link #NON_NULLS} is returned which means both

@@ -27,8 +27,11 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones. To specify multiple Availability Zones, separate
-     * them using commas; for example, "us-west-2a, us-west-2b".
+     * The Availability Zone.
+     * </p>
+     * <p>
+     * [Spot fleet only] To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".
      * </p>
      */
     private String availabilityZone;
@@ -53,8 +56,10 @@ public class SpotPlacement implements Serializable, Cloneable {
      * members.
      * 
      * @param availabilityZone
-     *        The Availability Zones. To specify multiple Availability Zones,
-     *        separate them using commas; for example, "us-west-2a, us-west-2b".
+     *        The Availability Zone.</p>
+     *        <p>
+     *        [Spot fleet only] To specify multiple Availability Zones, separate
+     *        them using commas; for example, "us-west-2a, us-west-2b".
      */
     public SpotPlacement(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -62,13 +67,18 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones. To specify multiple Availability Zones, separate
-     * them using commas; for example, "us-west-2a, us-west-2b".
+     * The Availability Zone.
+     * </p>
+     * <p>
+     * [Spot fleet only] To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zones. To specify multiple Availability Zones,
-     *        separate them using commas; for example, "us-west-2a, us-west-2b".
+     *        The Availability Zone.</p>
+     *        <p>
+     *        [Spot fleet only] To specify multiple Availability Zones, separate
+     *        them using commas; for example, "us-west-2a, us-west-2b".
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -76,11 +86,16 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones. To specify multiple Availability Zones, separate
-     * them using commas; for example, "us-west-2a, us-west-2b".
+     * The Availability Zone.
+     * </p>
+     * <p>
+     * [Spot fleet only] To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".
      * </p>
      * 
-     * @return The Availability Zones. To specify multiple Availability Zones,
+     * @return The Availability Zone.</p>
+     *         <p>
+     *         [Spot fleet only] To specify multiple Availability Zones,
      *         separate them using commas; for example,
      *         "us-west-2a, us-west-2b".
      */
@@ -90,13 +105,18 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones. To specify multiple Availability Zones, separate
-     * them using commas; for example, "us-west-2a, us-west-2b".
+     * The Availability Zone.
+     * </p>
+     * <p>
+     * [Spot fleet only] To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zones. To specify multiple Availability Zones,
-     *        separate them using commas; for example, "us-west-2a, us-west-2b".
+     *        The Availability Zone.</p>
+     *        <p>
+     *        [Spot fleet only] To specify multiple Availability Zones, separate
+     *        them using commas; for example, "us-west-2a, us-west-2b".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

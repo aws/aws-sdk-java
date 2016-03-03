@@ -144,7 +144,7 @@ public class VersionInfoUtils {
         }
 
         ua = ua
-            .replace("{platform}", getPlatform().toLowerCase())
+            .replace("{platform}",  StringUtils.lowerCase(getPlatform()))
             .replace("{version}", getVersion())
             .replace("{os.name}", replaceSpaces(System.getProperty("os.name")))
             .replace("{os.version}", replaceSpaces(System.getProperty("os.version")))

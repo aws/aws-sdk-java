@@ -46,7 +46,7 @@ public class Reservation implements Serializable, Cloneable {
     private String requesterId;
     /**
      * <p>
-     * One or more security groups.
+     * [EC2-Classic only] One or more security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
@@ -185,10 +185,10 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * [EC2-Classic only] One or more security groups.
      * </p>
      * 
-     * @return One or more security groups.
+     * @return [EC2-Classic only] One or more security groups.
      */
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
@@ -199,11 +199,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * [EC2-Classic only] One or more security groups.
      * </p>
      * 
      * @param groups
-     *        One or more security groups.
+     *        [EC2-Classic only] One or more security groups.
      */
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
@@ -217,7 +217,7 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * [EC2-Classic only] One or more security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -227,7 +227,7 @@ public class Reservation implements Serializable, Cloneable {
      * </p>
      * 
      * @param groups
-     *        One or more security groups.
+     *        [EC2-Classic only] One or more security groups.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -244,11 +244,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups.
+     * [EC2-Classic only] One or more security groups.
      * </p>
      * 
      * @param groups
-     *        One or more security groups.
+     *        [EC2-Classic only] One or more security groups.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

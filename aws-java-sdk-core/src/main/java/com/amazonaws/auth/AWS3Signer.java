@@ -32,6 +32,7 @@ import com.amazonaws.log.InternalLogApi;
 import com.amazonaws.log.InternalLogFactory;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Signer implementation that signs requests with the AWS3 signing protocol.
@@ -147,7 +148,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         List<String> headersToSign = new ArrayList<String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
             String key = entry.getKey();
-            String lowerCaseKey = key.toLowerCase();
+            String lowerCaseKey = StringUtils.lowerCase(key);
             if (lowerCaseKey.startsWith("x-amz")
                     || lowerCaseKey.equals("host")) {
                 headersToSign.add(key);
@@ -173,19 +174,19 @@ public class AWS3Signer extends AbstractAWSSigner {
         List<String> headersToSign = getHeadersForStringToSign(request);
 
         for (int i = 0; i < headersToSign.size(); i++) {
-            headersToSign.set(i, headersToSign.get(i).toLowerCase());
+            headersToSign.set(i, StringUtils.lowerCase(headersToSign.get(i)));
         }
 
         SortedMap<String, String> sortedHeaderMap = new TreeMap<String, String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
-            if (headersToSign.contains(entry.getKey().toLowerCase())) {
-                sortedHeaderMap.put(entry.getKey().toLowerCase(), entry.getValue());
+            if (headersToSign.contains(StringUtils.lowerCase(entry.getKey()))) {
+                sortedHeaderMap.put(StringUtils.lowerCase(entry.getKey()), entry.getValue());
             }
         }
 
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, String> entry : sortedHeaderMap.entrySet()) {
-            builder.append(entry.getKey().toLowerCase()).append(":")
+            builder.append(StringUtils.lowerCase(entry.getKey())).append(":")
             .append(entry.getValue()).append("\n");
         }
 
@@ -194,7 +195,7 @@ public class AWS3Signer extends AbstractAWSSigner {
 
     protected boolean shouldUseHttpsScheme(SignableRequest<?> request) throws AmazonClientException {
         try {
-            String protocol = request.getEndpoint().toURL().getProtocol().toLowerCase();
+            String protocol = StringUtils.lowerCase(request.getEndpoint().toURL().getProtocol());
             if (protocol.equals("http")) {
                 return false;
             } else if (protocol.equals("https")) {

@@ -2056,6 +2056,12 @@ public interface AmazonEC2 {
      * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
      * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      * 
      * @param describeConversionTasksRequest
      * @return Result of the DescribeConversionTasks operation returned by the
@@ -3817,6 +3823,12 @@ public interface AmazonEC2 {
      * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
      * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      * 
      * @param importInstanceRequest
      * @return Result of the ImportInstance operation returned by the service.
@@ -3875,6 +3887,12 @@ public interface AmazonEC2 {
      * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
      * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      * 
      * @param importVolumeRequest
      * @return Result of the ImportVolume operation returned by the service.
@@ -3910,11 +3928,19 @@ public interface AmazonEC2 {
      * <p>
      * This setting applies to the IAM user who makes the request; it does not
      * apply to the entire AWS account. By default, an IAM user defaults to the
-     * same settings as the root user, unless they explicitly override the
-     * settings by running this request. Resources created with longer IDs are
-     * visible to all IAM users, regardless of these settings and provided that
-     * they have permission to use the relevant <code>Describe</code> command
-     * for the resource type.
+     * same settings as the root user. If you're using this action as the root
+     * user or as an IAM role that has permission to use this action, then these
+     * settings apply to the entire account, unless an IAM user explicitly
+     * overrides these settings for themselves. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access"
+     * >Controlling Access to Longer ID Settings</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Resources created with longer IDs are visible to all IAM users,
+     * regardless of these settings and provided that they have permission to
+     * use the relevant <code>Describe</code> command for the resource type.
      * </p>
      * 
      * @param modifyIdFormatRequest
@@ -4700,6 +4726,11 @@ public interface AmazonEC2 {
      * <a>DescribeInstances</a>.
      * </p>
      * <p>
+     * To ensure faster instance launches, break up large requests into smaller
+     * batches. For example, create five separate launch requests for 100
+     * instances each instead of one launch request for 500 instances.
+     * </p>
+     * <p>
      * If you don't specify a security group when launching an instance, Amazon
      * EC2 uses the default security group. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"
@@ -4734,9 +4765,11 @@ public interface AmazonEC2 {
      * not subscribed, <code>RunInstances</code> fails.
      * </p>
      * <p>
-     * T2 instance types can only be launched into a VPC. If you do not have a
+     * Some instance types can only be launched into a VPC. If you do not have a
      * default VPC, or if you do not specify a subnet ID in the request,
-     * <code>RunInstances</code> fails.
+     * <code>RunInstances</code> fails. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types"
+     * >Instance Types Available Only in a VPC</a>.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a href=

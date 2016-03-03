@@ -37,6 +37,7 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Demonstrates how to upload data to Amazon S3, and track progress, using a
@@ -90,7 +91,7 @@ public class S3TransferProgressSample {
         s3.setRegion(usWest2);
         tx = new TransferManager(s3);
 
-        bucketName = "s3-upload-sdk-sample-" + credentials.getAWSAccessKeyId().toLowerCase();
+        bucketName = "s3-upload-sdk-sample-" + StringUtils.lowerCase(credentials.getAWSAccessKeyId());
 
         new S3TransferProgressSample();
     }

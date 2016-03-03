@@ -27,44 +27,45 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum total Read-Capacity Units (RCUs) that your account allows you
-     * to provision across all your tables in this region.
+     * The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      */
     private Long accountMaxReadCapacityUnits;
     /**
      * <p>
-     * The maximum total Write-Capacity Units (WCUs) that your account allows
-     * you to provision across all your tables in this region.
+     * The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      */
     private Long accountMaxWriteCapacityUnits;
     /**
      * <p>
-     * The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * RCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum read capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the read
+     * capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      */
     private Long tableMaxReadCapacityUnits;
     /**
      * <p>
-     * The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * WCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum write capacity units that your account allows you to
+     * provision for a new table that you are creating in this region, including
+     * the write capacity units provisioned for its global secondary indexes
+     * (GSIs).
      * </p>
      */
     private Long tableMaxWriteCapacityUnits;
 
     /**
      * <p>
-     * The maximum total Read-Capacity Units (RCUs) that your account allows you
-     * to provision across all your tables in this region.
+     * The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      * 
      * @param accountMaxReadCapacityUnits
-     *        The maximum total Read-Capacity Units (RCUs) that your account
-     *        allows you to provision across all your tables in this region.
+     *        The maximum total read capacity units that your account allows you
+     *        to provision across all of your tables in this region.
      */
     public void setAccountMaxReadCapacityUnits(Long accountMaxReadCapacityUnits) {
         this.accountMaxReadCapacityUnits = accountMaxReadCapacityUnits;
@@ -72,12 +73,12 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum total Read-Capacity Units (RCUs) that your account allows you
-     * to provision across all your tables in this region.
+     * The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      * 
-     * @return The maximum total Read-Capacity Units (RCUs) that your account
-     *         allows you to provision across all your tables in this region.
+     * @return The maximum total read capacity units that your account allows
+     *         you to provision across all of your tables in this region.
      */
     public Long getAccountMaxReadCapacityUnits() {
         return this.accountMaxReadCapacityUnits;
@@ -85,13 +86,13 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum total Read-Capacity Units (RCUs) that your account allows you
-     * to provision across all your tables in this region.
+     * The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      * 
      * @param accountMaxReadCapacityUnits
-     *        The maximum total Read-Capacity Units (RCUs) that your account
-     *        allows you to provision across all your tables in this region.
+     *        The maximum total read capacity units that your account allows you
+     *        to provision across all of your tables in this region.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -103,13 +104,13 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum total Write-Capacity Units (WCUs) that your account allows
-     * you to provision across all your tables in this region.
+     * The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      * 
      * @param accountMaxWriteCapacityUnits
-     *        The maximum total Write-Capacity Units (WCUs) that your account
-     *        allows you to provision across all your tables in this region.
+     *        The maximum total write capacity units that your account allows
+     *        you to provision across all of your tables in this region.
      */
     public void setAccountMaxWriteCapacityUnits(
             Long accountMaxWriteCapacityUnits) {
@@ -118,12 +119,12 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum total Write-Capacity Units (WCUs) that your account allows
-     * you to provision across all your tables in this region.
+     * The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      * 
-     * @return The maximum total Write-Capacity Units (WCUs) that your account
-     *         allows you to provision across all your tables in this region.
+     * @return The maximum total write capacity units that your account allows
+     *         you to provision across all of your tables in this region.
      */
     public Long getAccountMaxWriteCapacityUnits() {
         return this.accountMaxWriteCapacityUnits;
@@ -131,13 +132,13 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum total Write-Capacity Units (WCUs) that your account allows
-     * you to provision across all your tables in this region.
+     * The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.
      * </p>
      * 
      * @param accountMaxWriteCapacityUnits
-     *        The maximum total Write-Capacity Units (WCUs) that your account
-     *        allows you to provision across all your tables in this region.
+     *        The maximum total write capacity units that your account allows
+     *        you to provision across all of your tables in this region.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -149,16 +150,16 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * RCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum read capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the read
+     * capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @param tableMaxReadCapacityUnits
-     *        The maximum Read-Capacity Units (RCUs) that your account allows
-     *        you to provision for a new table you are creating in this region,
-     *        including the RCUs provisioned for its global secondary indexes
-     *        (GSIs).
+     *        The maximum read capacity units that your account allows you to
+     *        provision for a new table that you are creating in this region,
+     *        including the read capacity units provisioned for its global
+     *        secondary indexes (GSIs).
      */
     public void setTableMaxReadCapacityUnits(Long tableMaxReadCapacityUnits) {
         this.tableMaxReadCapacityUnits = tableMaxReadCapacityUnits;
@@ -166,15 +167,15 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * RCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum read capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the read
+     * capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
-     * @return The maximum Read-Capacity Units (RCUs) that your account allows
-     *         you to provision for a new table you are creating in this region,
-     *         including the RCUs provisioned for its global secondary indexes
-     *         (GSIs).
+     * @return The maximum read capacity units that your account allows you to
+     *         provision for a new table that you are creating in this region,
+     *         including the read capacity units provisioned for its global
+     *         secondary indexes (GSIs).
      */
     public Long getTableMaxReadCapacityUnits() {
         return this.tableMaxReadCapacityUnits;
@@ -182,16 +183,16 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * RCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum read capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the read
+     * capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @param tableMaxReadCapacityUnits
-     *        The maximum Read-Capacity Units (RCUs) that your account allows
-     *        you to provision for a new table you are creating in this region,
-     *        including the RCUs provisioned for its global secondary indexes
-     *        (GSIs).
+     *        The maximum read capacity units that your account allows you to
+     *        provision for a new table that you are creating in this region,
+     *        including the read capacity units provisioned for its global
+     *        secondary indexes (GSIs).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,16 +204,17 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * WCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum write capacity units that your account allows you to
+     * provision for a new table that you are creating in this region, including
+     * the write capacity units provisioned for its global secondary indexes
+     * (GSIs).
      * </p>
      * 
      * @param tableMaxWriteCapacityUnits
-     *        The maximum Write-Capacity Units (WCUs) that your account allows
-     *        you to provision for a new table you are creating in this region,
-     *        including the WCUs provisioned for its global secondary indexes
-     *        (GSIs).
+     *        The maximum write capacity units that your account allows you to
+     *        provision for a new table that you are creating in this region,
+     *        including the write capacity units provisioned for its global
+     *        secondary indexes (GSIs).
      */
     public void setTableMaxWriteCapacityUnits(Long tableMaxWriteCapacityUnits) {
         this.tableMaxWriteCapacityUnits = tableMaxWriteCapacityUnits;
@@ -220,15 +222,16 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * WCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum write capacity units that your account allows you to
+     * provision for a new table that you are creating in this region, including
+     * the write capacity units provisioned for its global secondary indexes
+     * (GSIs).
      * </p>
      * 
-     * @return The maximum Write-Capacity Units (WCUs) that your account allows
-     *         you to provision for a new table you are creating in this region,
-     *         including the WCUs provisioned for its global secondary indexes
-     *         (GSIs).
+     * @return The maximum write capacity units that your account allows you to
+     *         provision for a new table that you are creating in this region,
+     *         including the write capacity units provisioned for its global
+     *         secondary indexes (GSIs).
      */
     public Long getTableMaxWriteCapacityUnits() {
         return this.tableMaxWriteCapacityUnits;
@@ -236,16 +239,17 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the
-     * WCUs provisioned for its global secondary indexes (GSIs).
+     * The maximum write capacity units that your account allows you to
+     * provision for a new table that you are creating in this region, including
+     * the write capacity units provisioned for its global secondary indexes
+     * (GSIs).
      * </p>
      * 
      * @param tableMaxWriteCapacityUnits
-     *        The maximum Write-Capacity Units (WCUs) that your account allows
-     *        you to provision for a new table you are creating in this region,
-     *        including the WCUs provisioned for its global secondary indexes
-     *        (GSIs).
+     *        The maximum write capacity units that your account allows you to
+     *        provision for a new table that you are creating in this region,
+     *        including the write capacity units provisioned for its global
+     *        secondary indexes (GSIs).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -16,6 +16,7 @@ package com.amazonaws.transform;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
 
@@ -63,10 +64,10 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
         String firstLetterUppercaseKey;
         String firstLetterLowercaseKey;
 
-        firstLetterLowercaseKey = key.substring(0, 1).toLowerCase()
+        firstLetterLowercaseKey =  StringUtils.lowerCase(key.substring(0, 1))
                 + key.substring(1);
 
-        firstLetterUppercaseKey = key.substring(0, 1).toUpperCase()
+        firstLetterUppercaseKey = StringUtils.upperCase(key.substring(0, 1))
                 + key.substring(1);
 
          String value = "";
@@ -93,11 +94,11 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
      * Any subclass that is specific to a error type should only return true
      * when the response matches, either by matching the error type parsed from
      * header or from the JSON content.
-     * 
+     *
      * @param errorTypeFromHeader
      *            The error type parsed from the response headers, or null if
      *            such information is not available in the headers.
-     * 
+     *
      * @param json
      *            The JSON content of the response. Subclass should check for
      *            the error type information from this JSONObject if

@@ -433,6 +433,44 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrustRequest, DeleteTrustResult>",
       "methodName" : "deleteTrust"
     },
+    "DeregisterEventTopic" : {
+      "documentation" : "<p>Removes the specified directory as a publisher to the specified SNS topic.</p>",
+      "operationName" : "DeregisterEventTopic",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "deregisterEventTopicRequest",
+        "variableType" : "DeregisterEventTopicRequest",
+        "variableDeclarationType" : "DeregisterEventTopicRequest",
+        "documentation" : "<p>Removes the specified directory as a publisher to the specified SNS topic.</p>",
+        "simpleType" : "DeregisterEventTopicRequest",
+        "variableSetterType" : "DeregisterEventTopicRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DeregisterEventTopicResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "EntityDoesNotExistException",
+        "documentation" : "<p>The specified entity could not be found.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid.</p>"
+      }, {
+        "exceptionName" : "ClientException",
+        "documentation" : "<p>A client exception has occurred.</p>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DeregisterEventTopicResult",
+      "asyncReturnType" : "DeregisterEventTopicResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeregisterEventTopicResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeregisterEventTopicResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult>",
+      "methodName" : "deregisterEventTopic"
+    },
     "DescribeDirectories" : {
       "documentation" : "<p>Obtains information about the directories that belong to this account.</p> <p>You can retrieve information about specific directories by passing the directory identifiers in the <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the current account are returned.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> request and response parameters. If more results are available, the <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass in the next call to <a>DescribeDirectories</a> to retrieve the next set of items.</p> <p>You can also specify a maximum number of return results with the <i>Limit</i> parameter.</p>",
       "operationName" : "DescribeDirectories",
@@ -473,6 +511,44 @@
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDirectoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDirectoriesRequest, DescribeDirectoriesResult>",
       "methodName" : "describeDirectories"
+    },
+    "DescribeEventTopics" : {
+      "documentation" : "<p>Obtains information about which SNS topics receive status messages from the specified directory.</p> <p>If no input parameters are provided, such as DirectoryId or TopicName, this request describes all of the associations in the account.</p>",
+      "operationName" : "DescribeEventTopics",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "describeEventTopicsRequest",
+        "variableType" : "DescribeEventTopicsRequest",
+        "variableDeclarationType" : "DescribeEventTopicsRequest",
+        "documentation" : "",
+        "simpleType" : "DescribeEventTopicsRequest",
+        "variableSetterType" : "DescribeEventTopicsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DescribeEventTopicsResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "EntityDoesNotExistException",
+        "documentation" : "<p>The specified entity could not be found.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid.</p>"
+      }, {
+        "exceptionName" : "ClientException",
+        "documentation" : "<p>A client exception has occurred.</p>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DescribeEventTopicsResult",
+      "asyncReturnType" : "DescribeEventTopicsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeEventTopicsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventTopicsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventTopicsRequest, DescribeEventTopicsResult>",
+      "methodName" : "describeEventTopics"
     },
     "DescribeSnapshots" : {
       "documentation" : "<p>Obtains information about the directory snapshots that belong to this account.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> request and response parameters. If more results are available, the <i>DescribeSnapshots.NextToken</i> member contains a token that you pass in the next call to <a>DescribeSnapshots</a> to retrieve the next set of items.</p> <p>You can also specify a maximum number of return results with the <i>Limit</i> parameter.</p>",
@@ -786,6 +862,44 @@
       "asyncCallableType" : "java.util.concurrent.Callable<GetSnapshotLimitsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSnapshotLimitsRequest, GetSnapshotLimitsResult>",
       "methodName" : "getSnapshotLimits"
+    },
+    "RegisterEventTopic" : {
+      "documentation" : "<p>Associates a directory with an SNS topic. This establishes the directory as a publisher to the specified SNS topic. You can then receive email or text (SMS) messages when the status of your directory changes. You get notified if your directory goes from an Active status to an Impaired or Inoperable status. You also receive a notification when the directory returns to an Active status. </p>",
+      "operationName" : "RegisterEventTopic",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "registerEventTopicRequest",
+        "variableType" : "RegisterEventTopicRequest",
+        "variableDeclarationType" : "RegisterEventTopicRequest",
+        "documentation" : "",
+        "simpleType" : "RegisterEventTopicRequest",
+        "variableSetterType" : "RegisterEventTopicRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "RegisterEventTopicResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "EntityDoesNotExistException",
+        "documentation" : "<p>The specified entity could not be found.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid.</p>"
+      }, {
+        "exceptionName" : "ClientException",
+        "documentation" : "<p>A client exception has occurred.</p>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "RegisterEventTopicResult",
+      "asyncReturnType" : "RegisterEventTopicResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RegisterEventTopicResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RegisterEventTopicResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult>",
+      "methodName" : "registerEventTopic"
     },
     "RestoreFromSnapshot" : {
       "documentation" : "<p>Restores a directory using an existing directory snapshot.</p> <p>When you restore a directory from a snapshot, any changes made to the directory after the snapshot date are overwritten.</p> <p>This action returns as soon as the restore operation is initiated. You can monitor the progress of the restore operation by calling the <a>DescribeDirectories</a> operation with the directory identifier. When the <b>DirectoryDescription.Stage</b> value changes to <code>Active</code>, the restore operation is complete.</p>",
@@ -2318,49 +2432,6 @@
         }
       }
     },
-    "RadiusStatus" : {
-      "c2jName" : "RadiusStatus",
-      "documentation" : "",
-      "shapeName" : "RadiusStatus",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "Creating",
-        "value" : "Creating"
-      }, {
-        "name" : "Completed",
-        "value" : "Completed"
-      }, {
-        "name" : "Failed",
-        "value" : "Failed"
-      } ],
-      "variable" : {
-        "variableName" : "radiusStatus",
-        "variableType" : "RadiusStatus",
-        "variableDeclarationType" : "RadiusStatus",
-        "documentation" : null,
-        "simpleType" : "RadiusStatus",
-        "variableSetterType" : "RadiusStatus"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "InvalidNextTokenException" : {
       "c2jName" : "InvalidNextTokenException",
       "documentation" : "<p>The <i>NextToken</i> value is not valid.</p>",
@@ -2495,6 +2566,49 @@
           "varargSetterDocumentation" : "/**\n@param requestId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "RadiusStatus" : {
+      "c2jName" : "RadiusStatus",
+      "documentation" : "",
+      "shapeName" : "RadiusStatus",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "Creating",
+        "value" : "Creating"
+      }, {
+        "name" : "Completed",
+        "value" : "Completed"
+      }, {
+        "name" : "Failed",
+        "value" : "Failed"
+      } ],
+      "variable" : {
+        "variableName" : "radiusStatus",
+        "variableType" : "RadiusStatus",
+        "variableDeclarationType" : "RadiusStatus",
+        "documentation" : null,
+        "simpleType" : "RadiusStatus",
+        "variableSetterType" : "RadiusStatus"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "SnapshotLimits" : {
       "c2jName" : "SnapshotLimits",
@@ -5290,6 +5404,40 @@
         }
       }
     },
+    "DeregisterEventTopicResult" : {
+      "c2jName" : "DeregisterEventTopicResult",
+      "documentation" : "",
+      "shapeName" : "DeregisterEventTopicResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deregisterEventTopicResult",
+        "variableType" : "DeregisterEventTopicResult",
+        "variableDeclarationType" : "DeregisterEventTopicResult",
+        "documentation" : null,
+        "simpleType" : "DeregisterEventTopicResult",
+        "variableSetterType" : "DeregisterEventTopicResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DisableRadiusResult" : {
       "c2jName" : "DisableRadiusResult",
       "documentation" : "<p>Contains the results of the <a>DisableRadius</a> operation.</p>",
@@ -7451,6 +7599,274 @@
         }
       }
     },
+    "DescribeEventTopicsResult" : {
+      "c2jName" : "DescribeEventTopicsResult",
+      "documentation" : "",
+      "shapeName" : "DescribeEventTopicsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>",
+        "name" : "EventTopics",
+        "c2jName" : "EventTopics",
+        "c2jShape" : "EventTopics",
+        "variable" : {
+          "variableName" : "eventTopics",
+          "variableType" : "java.util.List<EventTopic>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EventTopic>",
+          "documentation" : "<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>",
+          "simpleType" : "List<EventTopic>",
+          "variableSetterType" : "java.util.Collection<EventTopic>"
+        },
+        "setterModel" : {
+          "variableName" : "eventTopics",
+          "variableType" : "java.util.List<EventTopic>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EventTopic>",
+          "documentation" : "",
+          "simpleType" : "List<EventTopic>",
+          "variableSetterType" : "java.util.Collection<EventTopic>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<EventTopic>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EventTopics",
+          "marshallLocationName" : "EventTopics",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "EventTopic",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "EventTopic",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "EventTopic",
+              "variableDeclarationType" : "EventTopic",
+              "documentation" : "",
+              "simpleType" : "EventTopic",
+              "variableSetterType" : "EventTopic"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "EventTopic",
+              "variableDeclarationType" : "EventTopic",
+              "documentation" : "",
+              "simpleType" : "EventTopic",
+              "variableSetterType" : "EventTopic"
+            },
+            "getterModel" : {
+              "returnType" : "EventTopic",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "EventTopic",
+          "map" : false,
+          "templateType" : "java.util.List<EventTopic>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventTopic>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n@param eventTopics A list of SNS topic names that receive status messages from the specified Directory ID.*/",
+        "getterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n@return A list of SNS topic names that receive status messages from the specified Directory ID.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n@param eventTopics A list of SNS topic names that receive status messages from the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTopics(java.util.Collection)} or {@link #withEventTopics(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTopics A list of SNS topic names that receive status messages from the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeEventTopicsResult",
+        "variableType" : "DescribeEventTopicsResult",
+        "variableDeclarationType" : "DescribeEventTopicsResult",
+        "documentation" : null,
+        "simpleType" : "DescribeEventTopicsResult",
+        "variableSetterType" : "DescribeEventTopicsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "EventTopics" : {
+          "documentation" : "<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>",
+          "name" : "EventTopics",
+          "c2jName" : "EventTopics",
+          "c2jShape" : "EventTopics",
+          "variable" : {
+            "variableName" : "eventTopics",
+            "variableType" : "java.util.List<EventTopic>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EventTopic>",
+            "documentation" : "<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>",
+            "simpleType" : "List<EventTopic>",
+            "variableSetterType" : "java.util.Collection<EventTopic>"
+          },
+          "setterModel" : {
+            "variableName" : "eventTopics",
+            "variableType" : "java.util.List<EventTopic>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<EventTopic>",
+            "documentation" : "",
+            "simpleType" : "List<EventTopic>",
+            "variableSetterType" : "java.util.Collection<EventTopic>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<EventTopic>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EventTopics",
+            "marshallLocationName" : "EventTopics",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "EventTopic",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "EventTopic",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "EventTopic",
+                "variableDeclarationType" : "EventTopic",
+                "documentation" : "",
+                "simpleType" : "EventTopic",
+                "variableSetterType" : "EventTopic"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "EventTopic",
+                "variableDeclarationType" : "EventTopic",
+                "documentation" : "",
+                "simpleType" : "EventTopic",
+                "variableSetterType" : "EventTopic"
+              },
+              "getterModel" : {
+                "returnType" : "EventTopic",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "EventTopic",
+            "map" : false,
+            "templateType" : "java.util.List<EventTopic>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventTopic>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n@param eventTopics A list of SNS topic names that receive status messages from the specified Directory ID.*/",
+          "getterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n@return A list of SNS topic names that receive status messages from the specified Directory ID.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n@param eventTopics A list of SNS topic names that receive status messages from the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTopics(java.util.Collection)} or {@link #withEventTopics(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTopics A list of SNS topic names that receive status messages from the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "SnapshotLimitExceededException" : {
       "c2jName" : "SnapshotLimitExceededException",
       "documentation" : "<p>The maximum number of manual snapshots for the directory has been reached. You can use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>",
@@ -8418,6 +8834,279 @@
         }
       }
     },
+    "DescribeEventTopicsRequest" : {
+      "c2jName" : "DescribeEventTopicsRequest",
+      "documentation" : "",
+      "shapeName" : "DescribeEventTopicsRequest",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>",
+        "name" : "DirectoryId",
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "variable" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "DirectoryId",
+          "marshallLocationName" : "DirectoryId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@param directoryId The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.*/",
+        "getterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@return The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.*/",
+        "fluentSetterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@param directoryId The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@param directoryId The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>",
+        "name" : "TopicNames",
+        "c2jName" : "TopicNames",
+        "c2jShape" : "TopicNames",
+        "variable" : {
+          "variableName" : "topicNames",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "documentation" : "<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "setterModel" : {
+          "variableName" : "topicNames",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TopicNames",
+          "marshallLocationName" : "TopicNames",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "String",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : null,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "map" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n@param topicNames A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.*/",
+        "getterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n@return A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n@param topicNames A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTopicNames(java.util.Collection)} or {@link #withTopicNames(java.util.Collection)} if you want to override the existing values.</p>\n@param topicNames A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeEventTopicsRequest",
+        "variableType" : "DescribeEventTopicsRequest",
+        "variableDeclarationType" : "DescribeEventTopicsRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeEventTopicsRequest",
+        "variableSetterType" : "DescribeEventTopicsRequest"
+      },
+      "marshaller" : {
+        "action" : "DescribeEventTopics",
+        "verb" : "POST",
+        "target" : "DirectoryService_20150416.DescribeEventTopics",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "DirectoryId" : {
+          "documentation" : "<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>",
+          "name" : "DirectoryId",
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "variable" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "DirectoryId",
+            "marshallLocationName" : "DirectoryId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@param directoryId The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.*/",
+          "getterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@return The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.*/",
+          "fluentSetterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@param directoryId The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>\n@param directoryId The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "TopicNames" : {
+          "documentation" : "<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>",
+          "name" : "TopicNames",
+          "c2jName" : "TopicNames",
+          "c2jShape" : "TopicNames",
+          "variable" : {
+            "variableName" : "topicNames",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "documentation" : "<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "setterModel" : {
+            "variableName" : "topicNames",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TopicNames",
+            "marshallLocationName" : "TopicNames",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "String",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : null,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "map" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n@param topicNames A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.*/",
+          "getterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n@return A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n@param topicNames A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTopicNames(java.util.Collection)} or {@link #withTopicNames(java.util.Collection)} if you want to override the existing values.</p>\n@param topicNames A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "UpdateRadiusRequest" : {
       "c2jName" : "UpdateRadiusRequest",
       "documentation" : "<p>Contains the inputs for the <a>UpdateRadius</a> operation.</p>",
@@ -9053,6 +9742,251 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
+    },
+    "DeregisterEventTopicRequest" : {
+      "c2jName" : "DeregisterEventTopicRequest",
+      "documentation" : "<p>Removes the specified directory as a publisher to the specified SNS topic.</p>",
+      "shapeName" : "DeregisterEventTopicRequest",
+      "deprecated" : false,
+      "required" : [ "DirectoryId", "TopicName" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>",
+        "name" : "DirectoryId",
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "variable" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "DirectoryId",
+          "marshallLocationName" : "DirectoryId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@param directoryId The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.*/",
+        "getterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@return The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.*/",
+        "fluentSetterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@param directoryId The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@param directoryId The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The name of the SNS topic from which to remove the directory as a publisher.</p>",
+        "name" : "TopicName",
+        "c2jName" : "TopicName",
+        "c2jShape" : "TopicName",
+        "variable" : {
+          "variableName" : "topicName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the SNS topic from which to remove the directory as a publisher.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "topicName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TopicName",
+          "marshallLocationName" : "TopicName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@param topicName The name of the SNS topic from which to remove the directory as a publisher.*/",
+        "getterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@return The name of the SNS topic from which to remove the directory as a publisher.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@param topicName The name of the SNS topic from which to remove the directory as a publisher.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@param topicName The name of the SNS topic from which to remove the directory as a publisher.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deregisterEventTopicRequest",
+        "variableType" : "DeregisterEventTopicRequest",
+        "variableDeclarationType" : "DeregisterEventTopicRequest",
+        "documentation" : null,
+        "simpleType" : "DeregisterEventTopicRequest",
+        "variableSetterType" : "DeregisterEventTopicRequest"
+      },
+      "marshaller" : {
+        "action" : "DeregisterEventTopic",
+        "verb" : "POST",
+        "target" : "DirectoryService_20150416.DeregisterEventTopic",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "DirectoryId" : {
+          "documentation" : "<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>",
+          "name" : "DirectoryId",
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "variable" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "DirectoryId",
+            "marshallLocationName" : "DirectoryId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@param directoryId The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.*/",
+          "getterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@return The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.*/",
+          "fluentSetterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@param directoryId The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>\n@param directoryId The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "TopicName" : {
+          "documentation" : "<p>The name of the SNS topic from which to remove the directory as a publisher.</p>",
+          "name" : "TopicName",
+          "c2jName" : "TopicName",
+          "c2jShape" : "TopicName",
+          "variable" : {
+            "variableName" : "topicName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the SNS topic from which to remove the directory as a publisher.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "topicName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TopicName",
+            "marshallLocationName" : "TopicName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@param topicName The name of the SNS topic from which to remove the directory as a publisher.*/",
+          "getterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@return The name of the SNS topic from which to remove the directory as a publisher.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@param topicName The name of the SNS topic from which to remove the directory as a publisher.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the SNS topic from which to remove the directory as a publisher.</p>\n@param topicName The name of the SNS topic from which to remove the directory as a publisher.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
     },
     "DirectorySize" : {
       "c2jName" : "DirectorySize",
@@ -11670,6 +12604,556 @@
         }
       }
     },
+    "EventTopic" : {
+      "c2jName" : "EventTopic",
+      "documentation" : "<p>Information about SNS topic and AWS Directory Service directory associations.</p>",
+      "shapeName" : "EventTopic",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>",
+        "name" : "DirectoryId",
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "variable" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "DirectoryId",
+          "marshallLocationName" : "DirectoryId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@param directoryId The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.*/",
+        "getterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@return The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.*/",
+        "fluentSetterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@param directoryId The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@param directoryId The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The name of an AWS SNS topic the receives status messages from the directory.</p>",
+        "name" : "TopicName",
+        "c2jName" : "TopicName",
+        "c2jShape" : "TopicName",
+        "variable" : {
+          "variableName" : "topicName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of an AWS SNS topic the receives status messages from the directory.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "topicName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TopicName",
+          "marshallLocationName" : "TopicName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@param topicName The name of an AWS SNS topic the receives status messages from the directory.*/",
+        "getterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@return The name of an AWS SNS topic the receives status messages from the directory.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@param topicName The name of an AWS SNS topic the receives status messages from the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@param topicName The name of an AWS SNS topic the receives status messages from the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The SNS topic ARN (Amazon Resource Name).</p>",
+        "name" : "TopicArn",
+        "c2jName" : "TopicArn",
+        "c2jShape" : "TopicArn",
+        "variable" : {
+          "variableName" : "topicArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The SNS topic ARN (Amazon Resource Name).</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "topicArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TopicArn",
+          "marshallLocationName" : "TopicArn",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@param topicArn The SNS topic ARN (Amazon Resource Name).*/",
+        "getterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@return The SNS topic ARN (Amazon Resource Name).*/",
+        "fluentSetterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@param topicArn The SNS topic ARN (Amazon Resource Name).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@param topicArn The SNS topic ARN (Amazon Resource Name).\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The date and time of when you associated your directory with the SNS topic.</p>",
+        "name" : "CreatedDateTime",
+        "c2jName" : "CreatedDateTime",
+        "c2jShape" : "CreatedDateTime",
+        "variable" : {
+          "variableName" : "createdDateTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The date and time of when you associated your directory with the SNS topic.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "createdDateTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "CreatedDateTime",
+          "marshallLocationName" : "CreatedDateTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@param createdDateTime The date and time of when you associated your directory with the SNS topic.*/",
+        "getterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@return The date and time of when you associated your directory with the SNS topic.*/",
+        "fluentSetterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@param createdDateTime The date and time of when you associated your directory with the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@param createdDateTime The date and time of when you associated your directory with the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The topic registration status.</p>",
+        "name" : "Status",
+        "c2jName" : "Status",
+        "c2jShape" : "TopicStatus",
+        "variable" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The topic registration status.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Status",
+          "marshallLocationName" : "Status",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "TopicStatus",
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The topic registration status.</p>\n@param status The topic registration status.\n@see TopicStatus*/",
+        "getterDocumentation" : "/**<p>The topic registration status.</p>\n@return The topic registration status.\n@see TopicStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The topic registration status.</p>\n@param status The topic registration status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TopicStatus*/",
+        "varargSetterDocumentation" : "/**<p>The topic registration status.</p>\n@param status The topic registration status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TopicStatus*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "eventTopic",
+        "variableType" : "EventTopic",
+        "variableDeclarationType" : "EventTopic",
+        "documentation" : null,
+        "simpleType" : "EventTopic",
+        "variableSetterType" : "EventTopic"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Status" : {
+          "documentation" : "<p>The topic registration status.</p>",
+          "name" : "Status",
+          "c2jName" : "Status",
+          "c2jShape" : "TopicStatus",
+          "variable" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The topic registration status.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Status",
+            "marshallLocationName" : "Status",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "TopicStatus",
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The topic registration status.</p>\n@param status The topic registration status.\n@see TopicStatus*/",
+          "getterDocumentation" : "/**<p>The topic registration status.</p>\n@return The topic registration status.\n@see TopicStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The topic registration status.</p>\n@param status The topic registration status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TopicStatus*/",
+          "varargSetterDocumentation" : "/**<p>The topic registration status.</p>\n@param status The topic registration status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TopicStatus*/"
+        },
+        "DirectoryId" : {
+          "documentation" : "<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>",
+          "name" : "DirectoryId",
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "variable" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "DirectoryId",
+            "marshallLocationName" : "DirectoryId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@param directoryId The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.*/",
+          "getterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@return The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.*/",
+          "fluentSetterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@param directoryId The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>\n@param directoryId The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "CreatedDateTime" : {
+          "documentation" : "<p>The date and time of when you associated your directory with the SNS topic.</p>",
+          "name" : "CreatedDateTime",
+          "c2jName" : "CreatedDateTime",
+          "c2jShape" : "CreatedDateTime",
+          "variable" : {
+            "variableName" : "createdDateTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The date and time of when you associated your directory with the SNS topic.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "createdDateTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "CreatedDateTime",
+            "marshallLocationName" : "CreatedDateTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@param createdDateTime The date and time of when you associated your directory with the SNS topic.*/",
+          "getterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@return The date and time of when you associated your directory with the SNS topic.*/",
+          "fluentSetterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@param createdDateTime The date and time of when you associated your directory with the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The date and time of when you associated your directory with the SNS topic.</p>\n@param createdDateTime The date and time of when you associated your directory with the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "TopicName" : {
+          "documentation" : "<p>The name of an AWS SNS topic the receives status messages from the directory.</p>",
+          "name" : "TopicName",
+          "c2jName" : "TopicName",
+          "c2jShape" : "TopicName",
+          "variable" : {
+            "variableName" : "topicName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of an AWS SNS topic the receives status messages from the directory.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "topicName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TopicName",
+            "marshallLocationName" : "TopicName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@param topicName The name of an AWS SNS topic the receives status messages from the directory.*/",
+          "getterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@return The name of an AWS SNS topic the receives status messages from the directory.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@param topicName The name of an AWS SNS topic the receives status messages from the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of an AWS SNS topic the receives status messages from the directory.</p>\n@param topicName The name of an AWS SNS topic the receives status messages from the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "TopicArn" : {
+          "documentation" : "<p>The SNS topic ARN (Amazon Resource Name).</p>",
+          "name" : "TopicArn",
+          "c2jName" : "TopicArn",
+          "c2jShape" : "TopicArn",
+          "variable" : {
+            "variableName" : "topicArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The SNS topic ARN (Amazon Resource Name).</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "topicArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TopicArn",
+            "marshallLocationName" : "TopicArn",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@param topicArn The SNS topic ARN (Amazon Resource Name).*/",
+          "getterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@return The SNS topic ARN (Amazon Resource Name).*/",
+          "fluentSetterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@param topicArn The SNS topic ARN (Amazon Resource Name).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The SNS topic ARN (Amazon Resource Name).</p>\n@param topicArn The SNS topic ARN (Amazon Resource Name).\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "CreateDirectoryRequest" : {
       "c2jName" : "CreateDirectoryRequest",
       "documentation" : "<p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>",
@@ -13772,6 +15256,251 @@
         }
       }
     },
+    "RegisterEventTopicRequest" : {
+      "c2jName" : "RegisterEventTopicRequest",
+      "documentation" : "",
+      "shapeName" : "RegisterEventTopicRequest",
+      "deprecated" : false,
+      "required" : [ "DirectoryId", "TopicName" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Directory ID that will publish status messages to the SNS topic.</p>",
+        "name" : "DirectoryId",
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "variable" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Directory ID that will publish status messages to the SNS topic.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "DirectoryId",
+          "marshallLocationName" : "DirectoryId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@param directoryId The Directory ID that will publish status messages to the SNS topic.*/",
+        "getterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@return The Directory ID that will publish status messages to the SNS topic.*/",
+        "fluentSetterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@param directoryId The Directory ID that will publish status messages to the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@param directoryId The Directory ID that will publish status messages to the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>",
+        "name" : "TopicName",
+        "c2jName" : "TopicName",
+        "c2jShape" : "TopicName",
+        "variable" : {
+          "variableName" : "topicName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "topicName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TopicName",
+          "marshallLocationName" : "TopicName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@param topicName The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.*/",
+        "getterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@return The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.*/",
+        "fluentSetterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@param topicName The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@param topicName The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "registerEventTopicRequest",
+        "variableType" : "RegisterEventTopicRequest",
+        "variableDeclarationType" : "RegisterEventTopicRequest",
+        "documentation" : null,
+        "simpleType" : "RegisterEventTopicRequest",
+        "variableSetterType" : "RegisterEventTopicRequest"
+      },
+      "marshaller" : {
+        "action" : "RegisterEventTopic",
+        "verb" : "POST",
+        "target" : "DirectoryService_20150416.RegisterEventTopic",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "DirectoryId" : {
+          "documentation" : "<p>The Directory ID that will publish status messages to the SNS topic.</p>",
+          "name" : "DirectoryId",
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "variable" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Directory ID that will publish status messages to the SNS topic.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "DirectoryId",
+            "marshallLocationName" : "DirectoryId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@param directoryId The Directory ID that will publish status messages to the SNS topic.*/",
+          "getterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@return The Directory ID that will publish status messages to the SNS topic.*/",
+          "fluentSetterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@param directoryId The Directory ID that will publish status messages to the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Directory ID that will publish status messages to the SNS topic.</p>\n@param directoryId The Directory ID that will publish status messages to the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "TopicName" : {
+          "documentation" : "<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>",
+          "name" : "TopicName",
+          "c2jName" : "TopicName",
+          "c2jShape" : "TopicName",
+          "variable" : {
+            "variableName" : "topicName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "topicName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TopicName",
+            "marshallLocationName" : "TopicName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@param topicName The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.*/",
+          "getterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@return The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.*/",
+          "fluentSetterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@param topicName The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>\n@param topicName The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "RestoreFromSnapshotResult" : {
       "c2jName" : "RestoreFromSnapshotResult",
       "documentation" : "<p>Contains the results of the <a>RestoreFromSnapshot</a> operation.</p>",
@@ -15767,6 +17496,40 @@
         }
       }
     },
+    "RegisterEventTopicResult" : {
+      "c2jName" : "RegisterEventTopicResult",
+      "documentation" : "",
+      "shapeName" : "RegisterEventTopicResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "registerEventTopicResult",
+        "variableType" : "RegisterEventTopicResult",
+        "variableDeclarationType" : "RegisterEventTopicResult",
+        "documentation" : null,
+        "simpleType" : "RegisterEventTopicResult",
+        "variableSetterType" : "RegisterEventTopicResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "RadiusAuthenticationProtocol" : {
       "c2jName" : "RadiusAuthenticationProtocol",
       "documentation" : "",
@@ -17110,6 +18873,52 @@
           "varargSetterDocumentation" : "/**<p>The maximum number of objects to return.</p>\n@param limit The maximum number of objects to return.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "TopicStatus" : {
+      "c2jName" : "TopicStatus",
+      "documentation" : "",
+      "shapeName" : "TopicStatus",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "Registered",
+        "value" : "Registered"
+      }, {
+        "name" : "TopicNotFound",
+        "value" : "Topic not found"
+      }, {
+        "name" : "Failed",
+        "value" : "Failed"
+      }, {
+        "name" : "Deleted",
+        "value" : "Deleted"
+      } ],
+      "variable" : {
+        "variableName" : "topicStatus",
+        "variableType" : "TopicStatus",
+        "variableDeclarationType" : "TopicStatus",
+        "documentation" : null,
+        "simpleType" : "TopicStatus",
+        "variableSetterType" : "TopicStatus"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "AuthenticationFailedException" : {
       "c2jName" : "AuthenticationFailedException",

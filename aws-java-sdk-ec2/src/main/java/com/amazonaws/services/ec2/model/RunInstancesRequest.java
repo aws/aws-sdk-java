@@ -61,8 +61,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * specified instance type. For more information about the default limits,
      * and how to request an increase, see <a href=
      * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      */
     private Integer maxCount;
@@ -109,7 +108,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. Command line tools perform encoding for you.
+     * base64-encoded. For command line tools, the encoding is performed for
+     * you, and you can load the text from a file.
      * </p>
      */
     private String userData;
@@ -305,7 +305,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        default limits, and how to request an increase, see <a href=
      *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
      *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        General FAQ.
+     *        FAQ.
      */
     public RunInstancesRequest(String imageId, Integer minCount,
             Integer maxCount) {
@@ -462,8 +462,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * specified instance type. For more information about the default limits,
      * and how to request an increase, see <a href=
      * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      * 
      * @param maxCount
@@ -477,7 +476,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        default limits, and how to request an increase, see <a href=
      *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
      *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        General FAQ.
+     *        FAQ.
      */
     public void setMaxCount(Integer maxCount) {
         this.maxCount = maxCount;
@@ -495,8 +494,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * specified instance type. For more information about the default limits,
      * and how to request an increase, see <a href=
      * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      * 
      * @return The maximum number of instances to launch. If you specify more
@@ -509,7 +507,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         default limits, and how to request an increase, see <a href=
      *         "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
      *         >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *         General FAQ.
+     *         FAQ.
      */
     public Integer getMaxCount() {
         return this.maxCount;
@@ -527,8 +525,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * specified instance type. For more information about the default limits,
      * and how to request an increase, see <a href=
      * "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
-     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 General
-     * FAQ.
+     * >How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
      * </p>
      * 
      * @param maxCount
@@ -542,7 +539,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        default limits, and how to request an increase, see <a href=
      *        "http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2"
      *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
-     *        General FAQ.
+     *        FAQ.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -847,7 +844,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. Command line tools perform encoding for you.
+     * base64-encoded. For command line tools, the encoding is performed for
+     * you, and you can load the text from a file.
      * </p>
      * 
      * @param userData
@@ -858,7 +856,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *        >Adding User Data</a> (Windows). For API calls, the text must be
-     *        base64-encoded. Command line tools perform encoding for you.
+     *        base64-encoded. For command line tools, the encoding is performed
+     *        for you, and you can load the text from a file.
      */
     public void setUserData(String userData) {
         this.userData = userData;
@@ -873,7 +872,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. Command line tools perform encoding for you.
+     * base64-encoded. For command line tools, the encoding is performed for
+     * you, and you can load the text from a file.
      * </p>
      * 
      * @return Data to configure the instance, or a script to run during
@@ -883,7 +883,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         and <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *         >Adding User Data</a> (Windows). For API calls, the text must be
-     *         base64-encoded. Command line tools perform encoding for you.
+     *         base64-encoded. For command line tools, the encoding is performed
+     *         for you, and you can load the text from a file.
      */
     public String getUserData() {
         return this.userData;
@@ -898,7 +899,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. Command line tools perform encoding for you.
+     * base64-encoded. For command line tools, the encoding is performed for
+     * you, and you can load the text from a file.
      * </p>
      * 
      * @param userData
@@ -909,7 +911,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *        >Adding User Data</a> (Windows). For API calls, the text must be
-     *        base64-encoded. Command line tools perform encoding for you.
+     *        base64-encoded. For command line tools, the encoding is performed
+     *        for you, and you can load the text from a file.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

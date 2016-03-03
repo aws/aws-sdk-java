@@ -26,6 +26,8 @@ import static com.amazonaws.codegen.internal.Utils.capitialize;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.amazonaws.util.StringUtils;
+
 public class NameUtils {
 
     private final static List<String> reservedKeywords = new ArrayList<String>();
@@ -98,10 +100,10 @@ public class NameUtils {
 
         for (String part : sanitizedEnumValue.split("[ -.:]")) {
             if (part.length() > 1) {
-                builder.append(part.substring(0, 1).toUpperCase())
+                builder.append(StringUtils.upperCase(part.substring(0, 1)))
                         .append(part.substring(1));
             } else {
-                builder.append(part.toUpperCase());
+                builder.append(StringUtils.upperCase(part));
             }
         }
 
@@ -114,6 +116,6 @@ public class NameUtils {
 
     public static boolean isJavaKeyword(String word) {
         return reservedKeywords.contains(word)
-                || reservedKeywords.contains(word.toLowerCase());
+                || reservedKeywords.contains(StringUtils.lowerCase(word));
     }
 }

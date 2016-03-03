@@ -47,6 +47,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      */
     private String importManifestUrl;
     /**
@@ -176,6 +182,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      * 
      * @param importManifestUrl
      *        A presigned URL for the import manifest stored in Amazon S3. For
@@ -184,7 +196,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      *        section of the <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
      *        >Authenticating REST Requests</a> topic in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.
+     *        Storage Service Developer Guide</i>.</p>
+     *        <p>
+     *        For information about the import manifest referenced by this API
+     *        action, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
+     *        >VM Import Manifest</a>.
      */
     public void setImportManifestUrl(String importManifestUrl) {
         this.importManifestUrl = importManifestUrl;
@@ -200,6 +217,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      * 
      * @return A presigned URL for the import manifest stored in Amazon S3. For
      *         information about creating a presigned URL for an Amazon S3
@@ -208,7 +231,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      *         <a href=
      *         "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
      *         >Authenticating REST Requests</a> topic in the <i>Amazon Simple
-     *         Storage Service Developer Guide</i>.
+     *         Storage Service Developer Guide</i>.</p>
+     *         <p>
+     *         For information about the import manifest referenced by this API
+     *         action, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
+     *         >VM Import Manifest</a>.
      */
     public String getImportManifestUrl() {
         return this.importManifestUrl;
@@ -224,6 +252,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      * >Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage
      * Service Developer Guide</i>.
      * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.
+     * </p>
      * 
      * @param importManifestUrl
      *        A presigned URL for the import manifest stored in Amazon S3. For
@@ -232,7 +266,12 @@ public class DiskImageDescription implements Serializable, Cloneable {
      *        section of the <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html"
      *        >Authenticating REST Requests</a> topic in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.
+     *        Storage Service Developer Guide</i>.</p>
+     *        <p>
+     *        For information about the import manifest referenced by this API
+     *        action, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
+     *        >VM Import Manifest</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

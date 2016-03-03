@@ -36,6 +36,7 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.transform.JsonErrorUnmarshallerV2;
 import com.amazonaws.util.StringInputStream;
+import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class JsonErrorResponseHandlerV2Test {
@@ -171,7 +172,7 @@ public class JsonErrorResponseHandlerV2Test {
     @Test
     public void handle_UnmarshallerReturnsException_WithCaseInsensitiveRequestId() throws Exception {
         httpResponse.setStatusCode(500);
-        httpResponse.addHeader(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER.toUpperCase(), "1234");
+        httpResponse.addHeader(StringUtils.upperCase(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER), "1234");
         expectUnmarshallerMatches();
         when(unmarshaller.unmarshall((JsonNode) anyObject())).thenReturn(new CustomException("error"));
 

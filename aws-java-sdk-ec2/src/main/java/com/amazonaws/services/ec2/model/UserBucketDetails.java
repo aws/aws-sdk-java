@@ -33,7 +33,7 @@ public class UserBucketDetails implements Serializable, Cloneable {
     private String s3Bucket;
     /**
      * <p>
-     * The key from which the disk image was created.
+     * The file name of the disk image.
      * </p>
      */
     private String s3Key;
@@ -78,11 +78,11 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key from which the disk image was created.
+     * The file name of the disk image.
      * </p>
      * 
      * @param s3Key
-     *        The key from which the disk image was created.
+     *        The file name of the disk image.
      */
     public void setS3Key(String s3Key) {
         this.s3Key = s3Key;
@@ -90,10 +90,10 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key from which the disk image was created.
+     * The file name of the disk image.
      * </p>
      * 
-     * @return The key from which the disk image was created.
+     * @return The file name of the disk image.
      */
     public String getS3Key() {
         return this.s3Key;
@@ -101,11 +101,11 @@ public class UserBucketDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key from which the disk image was created.
+     * The file name of the disk image.
      * </p>
      * 
      * @param s3Key
-     *        The key from which the disk image was created.
+     *        The file name of the disk image.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

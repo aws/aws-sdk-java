@@ -871,6 +871,62 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Removes the specified directory as a publisher to the specified SNS
+     * topic.
+     * </p>
+     * 
+     * @param deregisterEventTopicRequest
+     *        Removes the specified directory as a publisher to the specified
+     *        SNS topic.
+     * @return Result of the DeregisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeregisterEventTopic
+     */
+    @Override
+    public DeregisterEventTopicResult deregisterEventTopic(
+            DeregisterEventTopicRequest deregisterEventTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterEventTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterEventTopicRequest> request = null;
+        Response<DeregisterEventTopicResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterEventTopicRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deregisterEventTopicRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeregisterEventTopicResult> responseHandler = new JsonResponseHandler<DeregisterEventTopicResult>(
+                    new DeregisterEventTopicResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Obtains information about the directories that belong to this account.
      * </p>
      * <p>
@@ -944,6 +1000,64 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     @Override
     public DescribeDirectoriesResult describeDirectories() {
         return describeDirectories(new DescribeDirectoriesRequest());
+    }
+
+    /**
+     * <p>
+     * Obtains information about which SNS topics receive status messages from
+     * the specified directory.
+     * </p>
+     * <p>
+     * If no input parameters are provided, such as DirectoryId or TopicName,
+     * this request describes all of the associations in the account.
+     * </p>
+     * 
+     * @param describeEventTopicsRequest
+     * @return Result of the DescribeEventTopics operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeEventTopics
+     */
+    @Override
+    public DescribeEventTopicsResult describeEventTopics(
+            DescribeEventTopicsRequest describeEventTopicsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEventTopicsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventTopicsRequest> request = null;
+        Response<DescribeEventTopicsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventTopicsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeEventTopicsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeEventTopicsResult> responseHandler = new JsonResponseHandler<DescribeEventTopicsResult>(
+                    new DescribeEventTopicsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1395,6 +1509,64 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<GetSnapshotLimitsResult> responseHandler = new JsonResponseHandler<GetSnapshotLimitsResult>(
                     new GetSnapshotLimitsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a directory with an SNS topic. This establishes the directory
+     * as a publisher to the specified SNS topic. You can then receive email or
+     * text (SMS) messages when the status of your directory changes. You get
+     * notified if your directory goes from an Active status to an Impaired or
+     * Inoperable status. You also receive a notification when the directory
+     * returns to an Active status.
+     * </p>
+     * 
+     * @param registerEventTopicRequest
+     * @return Result of the RegisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RegisterEventTopic
+     */
+    @Override
+    public RegisterEventTopicResult registerEventTopic(
+            RegisterEventTopicRequest registerEventTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerEventTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterEventTopicRequest> request = null;
+        Response<RegisterEventTopicResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterEventTopicRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(registerEventTopicRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterEventTopicResult> responseHandler = new JsonResponseHandler<RegisterEventTopicResult>(
+                    new RegisterEventTopicResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

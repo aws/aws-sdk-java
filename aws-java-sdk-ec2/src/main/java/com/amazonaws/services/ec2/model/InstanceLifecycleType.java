@@ -21,7 +21,8 @@ package com.amazonaws.services.ec2.model;
  */
 public enum InstanceLifecycleType {
 
-    Spot("spot");
+    Spot("spot"),
+    Scheduled("scheduled");
 
     private String value;
 
@@ -46,6 +47,8 @@ public enum InstanceLifecycleType {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         } else if ("spot".equals(value)) {
             return Spot;
+        } else if ("scheduled".equals(value)) {
+            return Scheduled;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

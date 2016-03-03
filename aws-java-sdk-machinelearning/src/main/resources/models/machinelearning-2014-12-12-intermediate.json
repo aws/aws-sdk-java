@@ -2314,8 +2314,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Evaluation",
           "simple" : false,
+          "simpleType" : "Evaluation",
           "map" : false,
           "templateType" : "java.util.List<Evaluation>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -2556,8 +2556,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Evaluation",
             "simple" : false,
+            "simpleType" : "Evaluation",
             "map" : false,
             "templateType" : "java.util.List<Evaluation>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
@@ -5021,8 +5021,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "MLModel",
           "simple" : false,
+          "simpleType" : "MLModel",
           "map" : false,
           "templateType" : "java.util.List<MLModel>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<MLModel>"
@@ -5263,8 +5263,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "MLModel",
             "simple" : false,
+            "simpleType" : "MLModel",
             "map" : false,
             "templateType" : "java.util.List<MLModel>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<MLModel>"
@@ -16578,8 +16578,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "BatchPrediction",
           "simple" : false,
+          "simpleType" : "BatchPrediction",
           "map" : false,
           "templateType" : "java.util.List<BatchPrediction>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<BatchPrediction>"
@@ -16820,8 +16820,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "BatchPrediction",
             "simple" : false,
+            "simpleType" : "BatchPrediction",
             "map" : false,
             "templateType" : "java.util.List<BatchPrediction>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<BatchPrediction>"
@@ -17408,8 +17408,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17600,8 +17600,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -28793,8 +28793,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "DataSource",
           "simple" : false,
+          "simpleType" : "DataSource",
           "map" : false,
           "templateType" : "java.util.List<DataSource>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DataSource>"
@@ -29035,8 +29035,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "DataSource",
             "simple" : false,
+            "simpleType" : "DataSource",
             "map" : false,
             "templateType" : "java.util.List<DataSource>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DataSource>"

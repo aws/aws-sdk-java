@@ -180,6 +180,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
+            DeregisterEventTopicRequest request) {
+
+        return deregisterEventTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
+            DeregisterEventTopicRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDirectoriesResult> describeDirectoriesAsync(
             DescribeDirectoriesRequest request) {
 
@@ -217,6 +232,21 @@ public class AbstractAWSDirectoryServiceAsync extends
 
         return describeDirectoriesAsync(new DescribeDirectoriesRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(
+            DescribeEventTopicsRequest request) {
+
+        return describeEventTopicsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(
+            DescribeEventTopicsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventTopicsRequest, DescribeEventTopicsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -385,6 +415,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<GetSnapshotLimitsResult> getSnapshotLimitsAsync(
             GetSnapshotLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSnapshotLimitsRequest, GetSnapshotLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
+            RegisterEventTopicRequest request) {
+
+        return registerEventTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
+            RegisterEventTopicRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

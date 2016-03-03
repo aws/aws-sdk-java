@@ -73,8 +73,8 @@ public class Utils {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
 
-        return name.length() < 2 ? name.toLowerCase() : name.substring(0, 1)
-                .toLowerCase() + name.substring(1);
+        return name.length() < 2 ? StringUtils.lowerCase(name) : StringUtils.lowerCase(name.substring(0, 1))
+                 + name.substring(1);
 
     }
 
@@ -83,8 +83,8 @@ public class Utils {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
 
-        return name.length() < 2 ? name.toUpperCase() : name.substring(0, 1)
-                .toUpperCase() + name.substring(1);
+        return name.length() < 2 ? StringUtils.upperCase(name) : StringUtils.upperCase(name.substring(0, 1))
+                + name.substring(1);
 
     }
 
@@ -213,7 +213,7 @@ public class Utils {
         }
         return propertyValue;
     }
-    
+
     /**
      * Retrieve optional system property by name, returning null if not found
      *

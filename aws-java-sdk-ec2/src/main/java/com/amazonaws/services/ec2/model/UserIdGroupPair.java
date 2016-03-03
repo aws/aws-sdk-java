@@ -27,7 +27,7 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account. EC2-Classic only.
+     * The ID of an AWS account.
      * </p>
      */
     private String userId;
@@ -45,14 +45,32 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * </p>
      */
     private String groupId;
+    /**
+     * <p>
+     * The ID of the VPC for the referenced security group, if applicable.
+     * </p>
+     */
+    private String vpcId;
+    /**
+     * <p>
+     * The ID of the VPC peering connection, if applicable.
+     * </p>
+     */
+    private String vpcPeeringConnectionId;
+    /**
+     * <p>
+     * The status of a VPC peering connection, if applicable.
+     * </p>
+     */
+    private String peeringStatus;
 
     /**
      * <p>
-     * The ID of an AWS account. EC2-Classic only.
+     * The ID of an AWS account.
      * </p>
      * 
      * @param userId
-     *        The ID of an AWS account. EC2-Classic only.
+     *        The ID of an AWS account.
      */
     public void setUserId(String userId) {
         this.userId = userId;
@@ -60,10 +78,10 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account. EC2-Classic only.
+     * The ID of an AWS account.
      * </p>
      * 
-     * @return The ID of an AWS account. EC2-Classic only.
+     * @return The ID of an AWS account.
      */
     public String getUserId() {
         return this.userId;
@@ -71,11 +89,11 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account. EC2-Classic only.
+     * The ID of an AWS account.
      * </p>
      * 
      * @param userId
-     *        The ID of an AWS account. EC2-Classic only.
+     *        The ID of an AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -173,6 +191,124 @@ public class UserIdGroupPair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the VPC for the referenced security group, if applicable.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC for the referenced security group, if
+     *        applicable.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for the referenced security group, if applicable.
+     * </p>
+     * 
+     * @return The ID of the VPC for the referenced security group, if
+     *         applicable.
+     */
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for the referenced security group, if applicable.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC for the referenced security group, if
+     *        applicable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UserIdGroupPair withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC peering connection, if applicable.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionId
+     *        The ID of the VPC peering connection, if applicable.
+     */
+    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC peering connection, if applicable.
+     * </p>
+     * 
+     * @return The ID of the VPC peering connection, if applicable.
+     */
+    public String getVpcPeeringConnectionId() {
+        return this.vpcPeeringConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC peering connection, if applicable.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionId
+     *        The ID of the VPC peering connection, if applicable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UserIdGroupPair withVpcPeeringConnectionId(
+            String vpcPeeringConnectionId) {
+        setVpcPeeringConnectionId(vpcPeeringConnectionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of a VPC peering connection, if applicable.
+     * </p>
+     * 
+     * @param peeringStatus
+     *        The status of a VPC peering connection, if applicable.
+     */
+    public void setPeeringStatus(String peeringStatus) {
+        this.peeringStatus = peeringStatus;
+    }
+
+    /**
+     * <p>
+     * The status of a VPC peering connection, if applicable.
+     * </p>
+     * 
+     * @return The status of a VPC peering connection, if applicable.
+     */
+    public String getPeeringStatus() {
+        return this.peeringStatus;
+    }
+
+    /**
+     * <p>
+     * The status of a VPC peering connection, if applicable.
+     * </p>
+     * 
+     * @param peeringStatus
+     *        The status of a VPC peering connection, if applicable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    public UserIdGroupPair withPeeringStatus(String peeringStatus) {
+        setPeeringStatus(peeringStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -189,7 +325,14 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         if (getGroupName() != null)
             sb.append("GroupName: " + getGroupName() + ",");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId());
+            sb.append("GroupId: " + getGroupId() + ",");
+        if (getVpcId() != null)
+            sb.append("VpcId: " + getVpcId() + ",");
+        if (getVpcPeeringConnectionId() != null)
+            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId()
+                    + ",");
+        if (getPeeringStatus() != null)
+            sb.append("PeeringStatus: " + getPeeringStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +362,23 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         if (other.getGroupId() != null
                 && other.getGroupId().equals(this.getGroupId()) == false)
             return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null
+                && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
+        if (other.getVpcPeeringConnectionId() == null
+                ^ this.getVpcPeeringConnectionId() == null)
+            return false;
+        if (other.getVpcPeeringConnectionId() != null
+                && other.getVpcPeeringConnectionId().equals(
+                        this.getVpcPeeringConnectionId()) == false)
+            return false;
+        if (other.getPeeringStatus() == null ^ this.getPeeringStatus() == null)
+            return false;
+        if (other.getPeeringStatus() != null
+                && other.getPeeringStatus().equals(this.getPeeringStatus()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +393,16 @@ public class UserIdGroupPair implements Serializable, Cloneable {
                 + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode
                 + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
+        hashCode = prime * hashCode
+                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVpcPeeringConnectionId() == null) ? 0
+                        : getVpcPeeringConnectionId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPeeringStatus() == null) ? 0 : getPeeringStatus()
+                        .hashCode());
         return hashCode;
     }
 

@@ -166,6 +166,36 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller
                                             .fromString(userIdGroupPairsListValue
                                                     .getGroupId()));
                         }
+
+                        if (userIdGroupPairsListValue.getVpcId() != null) {
+                            request.addParameter(
+                                    "IpPermissions." + ipPermissionsListIndex
+                                            + ".Groups."
+                                            + userIdGroupPairsListIndex
+                                            + ".VpcId",
+                                    StringUtils
+                                            .fromString(userIdGroupPairsListValue
+                                                    .getVpcId()));
+                        }
+
+                        if (userIdGroupPairsListValue
+                                .getVpcPeeringConnectionId() != null) {
+                            request.addParameter("IpPermissions."
+                                    + ipPermissionsListIndex + ".Groups."
+                                    + userIdGroupPairsListIndex
+                                    + ".VpcPeeringConnectionId", StringUtils
+                                    .fromString(userIdGroupPairsListValue
+                                            .getVpcPeeringConnectionId()));
+                        }
+
+                        if (userIdGroupPairsListValue.getPeeringStatus() != null) {
+                            request.addParameter("IpPermissions."
+                                    + ipPermissionsListIndex + ".Groups."
+                                    + userIdGroupPairsListIndex
+                                    + ".PeeringStatus", StringUtils
+                                    .fromString(userIdGroupPairsListValue
+                                            .getPeeringStatus()));
+                        }
                         userIdGroupPairsListIndex++;
                     }
                 }

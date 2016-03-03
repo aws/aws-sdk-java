@@ -66,9 +66,10 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 300. The default value is 300. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code>
+     * value.
      * </p>
      */
     private Integer maxResults;
@@ -330,13 +331,15 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 300. The default value is 300. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code>
+     * value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To
+     *        The maximum number of results to return in a single call. This
+     *        value can be between 5 and 300. The default value is 300. To
      *        retrieve the remaining results, make another call with the
      *        returned <code>NextToken</code> value.
      */
@@ -346,12 +349,14 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 300. The default value is 300. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code>
+     * value.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To
+     * @return The maximum number of results to return in a single call. This
+     *         value can be between 5 and 300. The default value is 300. To
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
@@ -361,13 +366,15 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned
-     * <code>NextToken</code> value.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 300. The default value is 300. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code>
+     * value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To
+     *        The maximum number of results to return in a single call. This
+     *        value can be between 5 and 300. The default value is 300. To
      *        retrieve the remaining results, make another call with the
      *        returned <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be

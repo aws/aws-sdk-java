@@ -193,7 +193,7 @@ public class Instance implements Serializable, Cloneable {
     private String virtualizationType;
     /**
      * <p>
-     * Indicates whether this is a Spot instance.
+     * Indicates whether this is a Spot instance or a Scheduled Instance.
      * </p>
      */
     private String instanceLifecycle;
@@ -1581,11 +1581,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance.
+     * Indicates whether this is a Spot instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance.
+     *        Indicates whether this is a Spot instance or a Scheduled Instance.
      * @see InstanceLifecycleType
      */
     public void setInstanceLifecycle(String instanceLifecycle) {
@@ -1594,10 +1594,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance.
+     * Indicates whether this is a Spot instance or a Scheduled Instance.
      * </p>
      * 
-     * @return Indicates whether this is a Spot instance.
+     * @return Indicates whether this is a Spot instance or a Scheduled
+     *         Instance.
      * @see InstanceLifecycleType
      */
     public String getInstanceLifecycle() {
@@ -1606,11 +1607,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance.
+     * Indicates whether this is a Spot instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance.
+     *        Indicates whether this is a Spot instance or a Scheduled Instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceLifecycleType
@@ -1622,11 +1623,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance.
+     * Indicates whether this is a Spot instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance.
+     *        Indicates whether this is a Spot instance or a Scheduled Instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceLifecycleType
@@ -1637,11 +1638,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance.
+     * Indicates whether this is a Spot instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance.
+     *        Indicates whether this is a Spot instance or a Scheduled Instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceLifecycleType

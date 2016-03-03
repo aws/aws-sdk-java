@@ -243,8 +243,8 @@ public enum CloudFrontUrlSigner {
             byte[] signatureBytes = signWithSha1RSA(cannedPolicy.getBytes(UTF8), privateKey);
             String urlSafeSignature = makeBytesUrlSafe(signatureBytes);
             String signedUrl = resourceUrlOrPath
-                             + (resourceUrlOrPath.indexOf('?') >= 0 ? "&" : "?") 
-                             + "Expires=" + MILLISECONDS.toSeconds(dateLessThan.getTime()) 
+                             + (resourceUrlOrPath.indexOf('?') >= 0 ? "&" : "?")
+                             + "Expires=" + MILLISECONDS.toSeconds(dateLessThan.getTime())
                              + "&Signature=" + urlSafeSignature
                              + "&Key-Pair-Id=" + keyPairId
                              ;
@@ -400,14 +400,14 @@ public enum CloudFrontUrlSigner {
      * be thrown.
      */
     static PrivateKey loadPrivateKey(File privateKeyFile) throws InvalidKeySpecException, IOException {
-        if ( privateKeyFile.getAbsolutePath().toLowerCase().endsWith(".pem") ) {
+        if ( StringUtils.lowerCase(privateKeyFile.getAbsolutePath()).endsWith(".pem") ) {
             InputStream is = new FileInputStream(privateKeyFile);
             try {
                 return PEM.readPrivateKey(is);
             } finally {
                 try {is.close();} catch(IOException ignore) {}
             }
-        } else if ( privateKeyFile.getAbsolutePath().toLowerCase().endsWith(".der") ) {
+        } else if ( StringUtils.lowerCase(privateKeyFile.getAbsolutePath()).endsWith(".der") ) {
             InputStream is = new FileInputStream(privateKeyFile);
             try {
                 return RSA.privateKeyFromPKCS8(IOUtils.toByteArray(is));

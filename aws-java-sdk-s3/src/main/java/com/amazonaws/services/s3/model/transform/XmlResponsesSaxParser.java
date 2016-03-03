@@ -92,6 +92,7 @@ import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -589,7 +590,7 @@ public class XmlResponsesSaxParser {
                             null : checkForEmptyString(getText()));
                 } else if (name.equals("IsTruncated")) {
                     String isTruncatedStr =
-                        getText().toLowerCase(Locale.getDefault());
+                        StringUtils.lowerCase(getText());
 
                     if (isTruncatedStr.startsWith("false")) {
                         objectListing.setTruncated(false);

@@ -55,10 +55,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "cloneReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<CloneReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<CloneReceiptRuleSetResult>",
       "syncReturnType" : "CloneReceiptRuleSetResult",
       "asyncReturnType" : "CloneReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CloneReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CloneReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CloneReceiptRuleSetRequest, CloneReceiptRuleSetResult>"
     },
     "CreateReceiptFilter" : {
@@ -87,10 +87,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReceiptFilter",
-      "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptFilterResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptFilterResult>",
       "syncReturnType" : "CreateReceiptFilterResult",
       "asyncReturnType" : "CreateReceiptFilterResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptFilterResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptFilterRequest, CreateReceiptFilterResult>"
     },
     "CreateReceiptRule" : {
@@ -134,10 +134,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReceiptRule",
-      "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptRuleResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptRuleResult>",
       "syncReturnType" : "CreateReceiptRuleResult",
       "asyncReturnType" : "CreateReceiptRuleResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptRuleResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleRequest, CreateReceiptRuleResult>"
     },
     "CreateReceiptRuleSet" : {
@@ -166,10 +166,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptRuleSetResult>",
       "syncReturnType" : "CreateReceiptRuleSetResult",
       "asyncReturnType" : "CreateReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleSetRequest, CreateReceiptRuleSetResult>"
     },
     "DeleteIdentity" : {
@@ -192,10 +192,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteIdentity",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityResult>",
       "syncReturnType" : "DeleteIdentityResult",
       "asyncReturnType" : "DeleteIdentityResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityRequest, DeleteIdentityResult>"
     },
     "DeleteIdentityPolicy" : {
@@ -218,10 +218,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteIdentityPolicy",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityPolicyResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityPolicyResult>",
       "syncReturnType" : "DeleteIdentityPolicyResult",
       "asyncReturnType" : "DeleteIdentityPolicyResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityPolicyResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityPolicyRequest, DeleteIdentityPolicyResult>"
     },
     "DeleteReceiptFilter" : {
@@ -244,10 +244,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReceiptFilter",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptFilterResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptFilterResult>",
       "syncReturnType" : "DeleteReceiptFilterResult",
       "asyncReturnType" : "DeleteReceiptFilterResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptFilterResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptFilterRequest, DeleteReceiptFilterResult>"
     },
     "DeleteReceiptRule" : {
@@ -273,10 +273,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReceiptRule",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptRuleResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptRuleResult>",
       "syncReturnType" : "DeleteReceiptRuleResult",
       "asyncReturnType" : "DeleteReceiptRuleResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptRuleResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptRuleRequest, DeleteReceiptRuleResult>"
     },
     "DeleteReceiptRuleSet" : {
@@ -302,10 +302,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptRuleSetResult>",
       "syncReturnType" : "DeleteReceiptRuleSetResult",
       "asyncReturnType" : "DeleteReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptRuleSetRequest, DeleteReceiptRuleSetResult>"
     },
     "DeleteVerifiedEmailAddress" : {
@@ -325,10 +325,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteVerifiedEmailAddress",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
+      "asyncFutureType" : "java.util.concurrent.Future<Void>",
+      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void>"
     },
     "DescribeActiveReceiptRuleSet" : {
@@ -351,10 +351,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeActiveReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<DescribeActiveReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DescribeActiveReceiptRuleSetResult>",
       "syncReturnType" : "DescribeActiveReceiptRuleSetResult",
       "asyncReturnType" : "DescribeActiveReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeActiveReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeActiveReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeActiveReceiptRuleSetRequest, DescribeActiveReceiptRuleSetResult>"
     },
     "DescribeReceiptRule" : {
@@ -383,10 +383,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReceiptRule",
-      "asyncCallableType" : "java.util.concurrent.Callable<DescribeReceiptRuleResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DescribeReceiptRuleResult>",
       "syncReturnType" : "DescribeReceiptRuleResult",
       "asyncReturnType" : "DescribeReceiptRuleResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeReceiptRuleResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeReceiptRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReceiptRuleRequest, DescribeReceiptRuleResult>"
     },
     "DescribeReceiptRuleSet" : {
@@ -412,10 +412,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<DescribeReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<DescribeReceiptRuleSetResult>",
       "syncReturnType" : "DescribeReceiptRuleSetResult",
       "asyncReturnType" : "DescribeReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReceiptRuleSetRequest, DescribeReceiptRuleSetResult>"
     },
     "GetIdentityDkimAttributes" : {
@@ -438,10 +438,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getIdentityDkimAttributes",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityDkimAttributesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityDkimAttributesResult>",
       "syncReturnType" : "GetIdentityDkimAttributesResult",
       "asyncReturnType" : "GetIdentityDkimAttributesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityDkimAttributesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityDkimAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResult>"
     },
     "GetIdentityNotificationAttributes" : {
@@ -464,10 +464,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getIdentityNotificationAttributes",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityNotificationAttributesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityNotificationAttributesResult>",
       "syncReturnType" : "GetIdentityNotificationAttributesResult",
       "asyncReturnType" : "GetIdentityNotificationAttributesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityNotificationAttributesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityNotificationAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResult>"
     },
     "GetIdentityPolicies" : {
@@ -490,10 +490,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getIdentityPolicies",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityPoliciesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityPoliciesResult>",
       "syncReturnType" : "GetIdentityPoliciesResult",
       "asyncReturnType" : "GetIdentityPoliciesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityPoliciesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityPoliciesRequest, GetIdentityPoliciesResult>"
     },
     "GetIdentityVerificationAttributes" : {
@@ -516,10 +516,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getIdentityVerificationAttributes",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityVerificationAttributesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityVerificationAttributesResult>",
       "syncReturnType" : "GetIdentityVerificationAttributesResult",
       "asyncReturnType" : "GetIdentityVerificationAttributesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetIdentityVerificationAttributesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityVerificationAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResult>"
     },
     "GetSendQuota" : {
@@ -542,10 +542,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getSendQuota",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetSendQuotaResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<GetSendQuotaResult>",
       "syncReturnType" : "GetSendQuotaResult",
       "asyncReturnType" : "GetSendQuotaResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetSendQuotaResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetSendQuotaResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSendQuotaRequest, GetSendQuotaResult>"
     },
     "GetSendStatistics" : {
@@ -568,10 +568,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getSendStatistics",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetSendStatisticsResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<GetSendStatisticsResult>",
       "syncReturnType" : "GetSendStatisticsResult",
       "asyncReturnType" : "GetSendStatisticsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetSendStatisticsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<GetSendStatisticsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSendStatisticsRequest, GetSendStatisticsResult>"
     },
     "ListIdentities" : {
@@ -594,10 +594,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listIdentities",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListIdentitiesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<ListIdentitiesResult>",
       "syncReturnType" : "ListIdentitiesResult",
       "asyncReturnType" : "ListIdentitiesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListIdentitiesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListIdentitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult>"
     },
     "ListIdentityPolicies" : {
@@ -620,10 +620,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listIdentityPolicies",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListIdentityPoliciesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<ListIdentityPoliciesResult>",
       "syncReturnType" : "ListIdentityPoliciesResult",
       "asyncReturnType" : "ListIdentityPoliciesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListIdentityPoliciesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListIdentityPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentityPoliciesRequest, ListIdentityPoliciesResult>"
     },
     "ListReceiptFilters" : {
@@ -646,10 +646,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listReceiptFilters",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListReceiptFiltersResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<ListReceiptFiltersResult>",
       "syncReturnType" : "ListReceiptFiltersResult",
       "asyncReturnType" : "ListReceiptFiltersResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListReceiptFiltersResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListReceiptFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReceiptFiltersRequest, ListReceiptFiltersResult>"
     },
     "ListReceiptRuleSets" : {
@@ -672,10 +672,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listReceiptRuleSets",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListReceiptRuleSetsResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<ListReceiptRuleSetsResult>",
       "syncReturnType" : "ListReceiptRuleSetsResult",
       "asyncReturnType" : "ListReceiptRuleSetsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListReceiptRuleSetsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListReceiptRuleSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReceiptRuleSetsRequest, ListReceiptRuleSetsResult>"
     },
     "ListVerifiedEmailAddresses" : {
@@ -698,10 +698,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listVerifiedEmailAddresses",
-      "asyncCallableType" : "java.util.concurrent.Callable<ListVerifiedEmailAddressesResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<ListVerifiedEmailAddressesResult>",
       "syncReturnType" : "ListVerifiedEmailAddressesResult",
       "asyncReturnType" : "ListVerifiedEmailAddressesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListVerifiedEmailAddressesResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListVerifiedEmailAddressesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResult>"
     },
     "PutIdentityPolicy" : {
@@ -727,10 +727,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "putIdentityPolicy",
-      "asyncCallableType" : "java.util.concurrent.Callable<PutIdentityPolicyResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<PutIdentityPolicyResult>",
       "syncReturnType" : "PutIdentityPolicyResult",
       "asyncReturnType" : "PutIdentityPolicyResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutIdentityPolicyResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutIdentityPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutIdentityPolicyRequest, PutIdentityPolicyResult>"
     },
     "ReorderReceiptRuleSet" : {
@@ -759,10 +759,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "reorderReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<ReorderReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<ReorderReceiptRuleSetResult>",
       "syncReturnType" : "ReorderReceiptRuleSetResult",
       "asyncReturnType" : "ReorderReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ReorderReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ReorderReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReorderReceiptRuleSetRequest, ReorderReceiptRuleSetResult>"
     },
     "SendBounce" : {
@@ -788,10 +788,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "sendBounce",
-      "asyncCallableType" : "java.util.concurrent.Callable<SendBounceResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SendBounceResult>",
       "syncReturnType" : "SendBounceResult",
       "asyncReturnType" : "SendBounceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SendBounceResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SendBounceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendBounceRequest, SendBounceResult>"
     },
     "SendEmail" : {
@@ -817,10 +817,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "sendEmail",
-      "asyncCallableType" : "java.util.concurrent.Callable<SendEmailResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SendEmailResult>",
       "syncReturnType" : "SendEmailResult",
       "asyncReturnType" : "SendEmailResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SendEmailResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SendEmailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendEmailRequest, SendEmailResult>"
     },
     "SendRawEmail" : {
@@ -846,10 +846,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "sendRawEmail",
-      "asyncCallableType" : "java.util.concurrent.Callable<SendRawEmailResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SendRawEmailResult>",
       "syncReturnType" : "SendRawEmailResult",
       "asyncReturnType" : "SendRawEmailResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SendRawEmailResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SendRawEmailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendRawEmailRequest, SendRawEmailResult>"
     },
     "SetActiveReceiptRuleSet" : {
@@ -875,10 +875,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "setActiveReceiptRuleSet",
-      "asyncCallableType" : "java.util.concurrent.Callable<SetActiveReceiptRuleSetResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SetActiveReceiptRuleSetResult>",
       "syncReturnType" : "SetActiveReceiptRuleSetResult",
       "asyncReturnType" : "SetActiveReceiptRuleSetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SetActiveReceiptRuleSetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SetActiveReceiptRuleSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetActiveReceiptRuleSetRequest, SetActiveReceiptRuleSetResult>"
     },
     "SetIdentityDkimEnabled" : {
@@ -901,10 +901,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "setIdentityDkimEnabled",
-      "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityDkimEnabledResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SetIdentityDkimEnabledResult>",
       "syncReturnType" : "SetIdentityDkimEnabledResult",
       "asyncReturnType" : "SetIdentityDkimEnabledResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SetIdentityDkimEnabledResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityDkimEnabledResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResult>"
     },
     "SetIdentityFeedbackForwardingEnabled" : {
@@ -927,10 +927,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "setIdentityFeedbackForwardingEnabled",
-      "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityFeedbackForwardingEnabledResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SetIdentityFeedbackForwardingEnabledResult>",
       "syncReturnType" : "SetIdentityFeedbackForwardingEnabledResult",
       "asyncReturnType" : "SetIdentityFeedbackForwardingEnabledResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SetIdentityFeedbackForwardingEnabledResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityFeedbackForwardingEnabledResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResult>"
     },
     "SetIdentityNotificationTopic" : {
@@ -953,10 +953,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "setIdentityNotificationTopic",
-      "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityNotificationTopicResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SetIdentityNotificationTopicResult>",
       "syncReturnType" : "SetIdentityNotificationTopicResult",
       "asyncReturnType" : "SetIdentityNotificationTopicResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SetIdentityNotificationTopicResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityNotificationTopicResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResult>"
     },
     "SetReceiptRulePosition" : {
@@ -985,10 +985,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "setReceiptRulePosition",
-      "asyncCallableType" : "java.util.concurrent.Callable<SetReceiptRulePositionResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<SetReceiptRulePositionResult>",
       "syncReturnType" : "SetReceiptRulePositionResult",
       "asyncReturnType" : "SetReceiptRulePositionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SetReceiptRulePositionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SetReceiptRulePositionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetReceiptRulePositionRequest, SetReceiptRulePositionResult>"
     },
     "UpdateReceiptRule" : {
@@ -1029,10 +1029,10 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updateReceiptRule",
-      "asyncCallableType" : "java.util.concurrent.Callable<UpdateReceiptRuleResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<UpdateReceiptRuleResult>",
       "syncReturnType" : "UpdateReceiptRuleResult",
       "asyncReturnType" : "UpdateReceiptRuleResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateReceiptRuleResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateReceiptRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateReceiptRuleRequest, UpdateReceiptRuleResult>"
     },
     "VerifyDomainDkim" : {
@@ -1055,10 +1055,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "verifyDomainDkim",
-      "asyncCallableType" : "java.util.concurrent.Callable<VerifyDomainDkimResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<VerifyDomainDkimResult>",
       "syncReturnType" : "VerifyDomainDkimResult",
       "asyncReturnType" : "VerifyDomainDkimResult",
+      "asyncFutureType" : "java.util.concurrent.Future<VerifyDomainDkimResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<VerifyDomainDkimResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyDomainDkimRequest, VerifyDomainDkimResult>"
     },
     "VerifyDomainIdentity" : {
@@ -1081,10 +1081,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "verifyDomainIdentity",
-      "asyncCallableType" : "java.util.concurrent.Callable<VerifyDomainIdentityResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<VerifyDomainIdentityResult>",
       "syncReturnType" : "VerifyDomainIdentityResult",
       "asyncReturnType" : "VerifyDomainIdentityResult",
+      "asyncFutureType" : "java.util.concurrent.Future<VerifyDomainIdentityResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<VerifyDomainIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyDomainIdentityRequest, VerifyDomainIdentityResult>"
     },
     "VerifyEmailAddress" : {
@@ -1104,10 +1104,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "verifyEmailAddress",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
+      "asyncFutureType" : "java.util.concurrent.Future<Void>",
+      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void>"
     },
     "VerifyEmailIdentity" : {
@@ -1130,10 +1130,10 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "verifyEmailIdentity",
-      "asyncCallableType" : "java.util.concurrent.Callable<VerifyEmailIdentityResult>",
-      "asyncFutureType" : "java.util.concurrent.Future<VerifyEmailIdentityResult>",
       "syncReturnType" : "VerifyEmailIdentityResult",
       "asyncReturnType" : "VerifyEmailIdentityResult",
+      "asyncFutureType" : "java.util.concurrent.Future<VerifyEmailIdentityResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<VerifyEmailIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyEmailIdentityRequest, VerifyEmailIdentityResult>"
     }
   },

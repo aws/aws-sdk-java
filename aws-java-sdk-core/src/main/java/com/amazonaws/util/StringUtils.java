@@ -20,7 +20,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.text.Collator;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Utilities for converting objects to strings.
@@ -32,6 +34,8 @@ public class StringUtils {
     public static final String COMMA_SEPARATOR = ",";
 
     public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
+
+    private static final Locale LOCALE_ENGLSIH = Locale.ENGLISH;
 
     public static Integer toInteger(StringBuilder value) {
         return Integer.parseInt(value.toString());
@@ -182,5 +186,50 @@ public class StringUtils {
             return true;
         }
         return value.isEmpty();
+    }
+
+    /**
+     * Converts a given String to lower case with Locale.ENGLISH
+     *
+     * @param str the string to be converted to lower case
+     * @return the lower case of string, or itself if string is null/empty
+     */
+    public static String lowerCase(String str) {
+        if(isNullOrEmpty(str)) {
+            return str;
+        }
+        return str.toLowerCase(LOCALE_ENGLSIH);
+    }
+
+    /**
+     * Converts a given String to upper case with Locale.ENGLISH
+     *
+     * @param str the string to be converted to upper case
+     * @return the upper case of string, or itself if string is null/empty
+     */
+    public static String upperCase(String str) {
+        if(isNullOrEmpty(str)) {
+            return str;
+        }
+        return str.toUpperCase(LOCALE_ENGLSIH);
+    }
+
+    /**
+     * Compare two strings with Locale.ENGLISH
+     * This method is preferred over String.compareTo() method.
+     * @param str1 String 1
+     * @param str2 String 2
+     * @return negative integer if str1 lexicographically precedes str2
+     * 		   positive integer if str1 lexicographically follows str2
+     * 			0 if both strings are equal
+     * @throws IllegalArgumentException throws exception if both or either of the strings is null
+     */
+    public static int compare(String str1, String str2) {
+        if( str1 == null || str2 == null) {
+            throw new IllegalArgumentException("Arguments cannot be null");
+        }
+
+        Collator collator = Collator.getInstance(LOCALE_ENGLSIH);
+        return collator.compare(str1, str2);
     }
 }

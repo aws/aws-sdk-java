@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.codegen.model.intermediate.customization.ShapeCustomizationInfo;
+import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -314,12 +315,12 @@ public class ShapeModel extends DocumentationModel {
     private MemberModel tryFindMemberModelByC2jName(String memberC2jName, boolean ignoreCase) {
 
         final List<MemberModel> memberModels = getMembers();
-        final String expectedName = ignoreCase ? memberC2jName.toLowerCase()
+        final String expectedName = ignoreCase ? StringUtils.lowerCase(memberC2jName)
                                                 : memberC2jName;
 
         if (memberModels != null) {
             for (MemberModel member : memberModels) {
-                String actualName = ignoreCase ? member.getC2jName().toLowerCase()
+                String actualName = ignoreCase ? StringUtils.lowerCase(member.getC2jName())
                                                 : member.getC2jName();
 
                 if (expectedName.equals(actualName)) {

@@ -35,8 +35,8 @@
         "variableType" : "CreateDeliveryStreamRequest",
         "variableDeclarationType" : "CreateDeliveryStreamRequest",
         "documentation" : "<p>Contains the parameters for <a>CreateDeliveryStream</a>.</p>",
-        "simpleType" : "CreateDeliveryStreamRequest",
-        "variableSetterType" : "CreateDeliveryStreamRequest"
+        "variableSetterType" : "CreateDeliveryStreamRequest",
+        "simpleType" : "CreateDeliveryStreamRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -70,8 +70,8 @@
         "variableType" : "DeleteDeliveryStreamRequest",
         "variableDeclarationType" : "DeleteDeliveryStreamRequest",
         "documentation" : "<p>Contains the parameters for <a>DeleteDeliveryStream</a>.</p>",
-        "simpleType" : "DeleteDeliveryStreamRequest",
-        "variableSetterType" : "DeleteDeliveryStreamRequest"
+        "variableSetterType" : "DeleteDeliveryStreamRequest",
+        "simpleType" : "DeleteDeliveryStreamRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -102,8 +102,8 @@
         "variableType" : "DescribeDeliveryStreamRequest",
         "variableDeclarationType" : "DescribeDeliveryStreamRequest",
         "documentation" : "<p>Contains the parameters for <a>DescribeDeliveryStream</a>.</p>",
-        "simpleType" : "DescribeDeliveryStreamRequest",
-        "variableSetterType" : "DescribeDeliveryStreamRequest"
+        "variableSetterType" : "DescribeDeliveryStreamRequest",
+        "simpleType" : "DescribeDeliveryStreamRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -131,8 +131,8 @@
         "variableType" : "ListDeliveryStreamsRequest",
         "variableDeclarationType" : "ListDeliveryStreamsRequest",
         "documentation" : "<p>Contains the parameters for <a>ListDeliveryStreams</a>.</p>",
-        "simpleType" : "ListDeliveryStreamsRequest",
-        "variableSetterType" : "ListDeliveryStreamsRequest"
+        "variableSetterType" : "ListDeliveryStreamsRequest",
+        "simpleType" : "ListDeliveryStreamsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -157,8 +157,8 @@
         "variableType" : "PutRecordRequest",
         "variableDeclarationType" : "PutRecordRequest",
         "documentation" : "<p>Contains the parameters for <a>PutRecord</a>.</p>",
-        "simpleType" : "PutRecordRequest",
-        "variableSetterType" : "PutRecordRequest"
+        "variableSetterType" : "PutRecordRequest",
+        "simpleType" : "PutRecordRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -192,8 +192,8 @@
         "variableType" : "PutRecordBatchRequest",
         "variableDeclarationType" : "PutRecordBatchRequest",
         "documentation" : "<p>Contains the parameters for <a>PutRecordBatch</a>.</p>",
-        "simpleType" : "PutRecordBatchRequest",
-        "variableSetterType" : "PutRecordBatchRequest"
+        "variableSetterType" : "PutRecordBatchRequest",
+        "simpleType" : "PutRecordBatchRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -227,8 +227,8 @@
         "variableType" : "UpdateDestinationRequest",
         "variableDeclarationType" : "UpdateDestinationRequest",
         "documentation" : "<p>Contains the parameters for <a>UpdateDestination</a>.</p>",
-        "simpleType" : "UpdateDestinationRequest",
-        "variableSetterType" : "UpdateDestinationRequest"
+        "variableSetterType" : "UpdateDestinationRequest",
+        "simpleType" : "UpdateDestinationRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -278,16 +278,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -329,16 +329,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -380,16 +380,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Specifies the destination ID to start returning the destination information. Currently Amazon Kinesis Firehose supports one destination per delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "exclusiveStartDestinationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -428,8 +428,8 @@
         "variableType" : "DescribeDeliveryStreamRequest",
         "variableDeclarationType" : "DescribeDeliveryStreamRequest",
         "documentation" : null,
-        "simpleType" : "DescribeDeliveryStreamRequest",
-        "variableSetterType" : "DescribeDeliveryStreamRequest"
+        "variableSetterType" : "DescribeDeliveryStreamRequest",
+        "simpleType" : "DescribeDeliveryStreamRequest"
       },
       "marshaller" : {
         "action" : "DescribeDeliveryStream",
@@ -458,16 +458,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Specifies the destination ID to start returning the destination information. Currently Amazon Kinesis Firehose supports one destination per delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "exclusiveStartDestinationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -510,16 +510,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -562,16 +562,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -623,8 +623,8 @@
         "variableType" : "ConcurrentModificationException",
         "variableDeclarationType" : "ConcurrentModificationException",
         "documentation" : null,
-        "simpleType" : "ConcurrentModificationException",
-        "variableSetterType" : "ConcurrentModificationException"
+        "variableSetterType" : "ConcurrentModificationException",
+        "simpleType" : "ConcurrentModificationException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -657,8 +657,8 @@
         "variableType" : "NoEncryptionConfig",
         "variableDeclarationType" : "NoEncryptionConfig",
         "documentation" : null,
-        "simpleType" : "NoEncryptionConfig",
-        "variableSetterType" : "NoEncryptionConfig"
+        "variableSetterType" : "NoEncryptionConfig",
+        "simpleType" : "NoEncryptionConfig"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -694,16 +694,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -742,8 +742,8 @@
         "variableType" : "CreateDeliveryStreamResult",
         "variableDeclarationType" : "CreateDeliveryStreamResult",
         "documentation" : null,
-        "simpleType" : "CreateDeliveryStreamResult",
-        "variableSetterType" : "CreateDeliveryStreamResult"
+        "variableSetterType" : "CreateDeliveryStreamResult",
+        "simpleType" : "CreateDeliveryStreamResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -768,16 +768,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -829,8 +829,8 @@
         "variableType" : "ResourceInUseException",
         "variableDeclarationType" : "ResourceInUseException",
         "documentation" : null,
-        "simpleType" : "ResourceInUseException",
-        "variableSetterType" : "ResourceInUseException"
+        "variableSetterType" : "ResourceInUseException",
+        "simpleType" : "ResourceInUseException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -869,8 +869,8 @@
         "variableType" : "DeliveryStreamStatus",
         "variableDeclarationType" : "DeliveryStreamStatus",
         "documentation" : null,
-        "simpleType" : "DeliveryStreamStatus",
-        "variableSetterType" : "DeliveryStreamStatus"
+        "variableSetterType" : "DeliveryStreamStatus",
+        "simpleType" : "DeliveryStreamStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -903,8 +903,8 @@
         "variableType" : "UpdateDestinationResult",
         "variableDeclarationType" : "UpdateDestinationResult",
         "documentation" : null,
-        "simpleType" : "UpdateDestinationResult",
-        "variableSetterType" : "UpdateDestinationResult"
+        "variableSetterType" : "UpdateDestinationResult",
+        "simpleType" : "UpdateDestinationResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -940,16 +940,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -991,16 +991,16 @@
           "variableType" : "java.util.List<Record>",
           "variableDeclarationType" : "java.util.List<Record>",
           "documentation" : "<p>One or more records.</p>",
-          "simpleType" : "List<Record>",
-          "variableSetterType" : "java.util.Collection<Record>"
+          "variableSetterType" : "java.util.Collection<Record>",
+          "simpleType" : "List<Record>"
         },
         "setterModel" : {
           "variableName" : "records",
           "variableType" : "java.util.List<Record>",
           "variableDeclarationType" : "java.util.List<Record>",
           "documentation" : "",
-          "simpleType" : "List<Record>",
-          "variableSetterType" : "java.util.Collection<Record>"
+          "variableSetterType" : "java.util.Collection<Record>",
+          "simpleType" : "List<Record>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Record>",
@@ -1036,16 +1036,16 @@
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
               "documentation" : "",
-              "simpleType" : "Record",
-              "variableSetterType" : "Record"
+              "variableSetterType" : "Record",
+              "simpleType" : "Record"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
               "documentation" : "",
-              "simpleType" : "Record",
-              "variableSetterType" : "Record"
+              "variableSetterType" : "Record",
+              "simpleType" : "Record"
             },
             "getterModel" : {
               "returnType" : "Record",
@@ -1104,8 +1104,8 @@
         "variableType" : "PutRecordBatchRequest",
         "variableDeclarationType" : "PutRecordBatchRequest",
         "documentation" : null,
-        "simpleType" : "PutRecordBatchRequest",
-        "variableSetterType" : "PutRecordBatchRequest"
+        "variableSetterType" : "PutRecordBatchRequest",
+        "simpleType" : "PutRecordBatchRequest"
       },
       "marshaller" : {
         "action" : "PutRecordBatch",
@@ -1134,16 +1134,16 @@
             "variableType" : "java.util.List<Record>",
             "variableDeclarationType" : "java.util.List<Record>",
             "documentation" : "<p>One or more records.</p>",
-            "simpleType" : "List<Record>",
-            "variableSetterType" : "java.util.Collection<Record>"
+            "variableSetterType" : "java.util.Collection<Record>",
+            "simpleType" : "List<Record>"
           },
           "setterModel" : {
             "variableName" : "records",
             "variableType" : "java.util.List<Record>",
             "variableDeclarationType" : "java.util.List<Record>",
             "documentation" : "",
-            "simpleType" : "List<Record>",
-            "variableSetterType" : "java.util.Collection<Record>"
+            "variableSetterType" : "java.util.Collection<Record>",
+            "simpleType" : "List<Record>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Record>",
@@ -1179,16 +1179,16 @@
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
                 "documentation" : "",
-                "simpleType" : "Record",
-                "variableSetterType" : "Record"
+                "variableSetterType" : "Record",
+                "simpleType" : "Record"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
                 "documentation" : "",
-                "simpleType" : "Record",
-                "variableSetterType" : "Record"
+                "variableSetterType" : "Record",
+                "simpleType" : "Record"
               },
               "getterModel" : {
                 "returnType" : "Record",
@@ -1251,16 +1251,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1312,8 +1312,8 @@
         "variableType" : "LimitExceededException",
         "variableDeclarationType" : "LimitExceededException",
         "documentation" : null,
-        "simpleType" : "LimitExceededException",
-        "variableSetterType" : "LimitExceededException"
+        "variableSetterType" : "LimitExceededException",
+        "simpleType" : "LimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1346,16 +1346,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1394,8 +1394,8 @@
         "variableType" : "DeleteDeliveryStreamRequest",
         "variableDeclarationType" : "DeleteDeliveryStreamRequest",
         "documentation" : null,
-        "simpleType" : "DeleteDeliveryStreamRequest",
-        "variableSetterType" : "DeleteDeliveryStreamRequest"
+        "variableSetterType" : "DeleteDeliveryStreamRequest",
+        "simpleType" : "DeleteDeliveryStreamRequest"
       },
       "marshaller" : {
         "action" : "DeleteDeliveryStream",
@@ -1424,16 +1424,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1485,8 +1485,8 @@
         "variableType" : "ServiceUnavailableException",
         "variableDeclarationType" : "ServiceUnavailableException",
         "documentation" : null,
-        "simpleType" : "ServiceUnavailableException",
-        "variableSetterType" : "ServiceUnavailableException"
+        "variableSetterType" : "ServiceUnavailableException",
+        "simpleType" : "ServiceUnavailableException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1519,16 +1519,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>The names of the delivery streams.</p>",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -1584,16 +1584,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Indicates whether there are more delivery streams available to list.</p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "hasMoreDeliveryStreams",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -1632,8 +1632,8 @@
         "variableType" : "ListDeliveryStreamsResult",
         "variableDeclarationType" : "ListDeliveryStreamsResult",
         "documentation" : null,
-        "simpleType" : "ListDeliveryStreamsResult",
-        "variableSetterType" : "ListDeliveryStreamsResult"
+        "variableSetterType" : "ListDeliveryStreamsResult",
+        "simpleType" : "ListDeliveryStreamsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1658,16 +1658,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Indicates whether there are more delivery streams available to list.</p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "hasMoreDeliveryStreams",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -1710,16 +1710,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>The names of the delivery streams.</p>",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -1788,16 +1788,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1839,16 +1839,16 @@
           "variableType" : "Record",
           "variableDeclarationType" : "Record",
           "documentation" : "<p>The record.</p>",
-          "simpleType" : "Record",
-          "variableSetterType" : "Record"
+          "variableSetterType" : "Record",
+          "simpleType" : "Record"
         },
         "setterModel" : {
           "variableName" : "record",
           "variableType" : "Record",
           "variableDeclarationType" : "Record",
           "documentation" : "",
-          "simpleType" : "Record",
-          "variableSetterType" : "Record"
+          "variableSetterType" : "Record",
+          "simpleType" : "Record"
         },
         "getterModel" : {
           "returnType" : "Record",
@@ -1887,8 +1887,8 @@
         "variableType" : "PutRecordRequest",
         "variableDeclarationType" : "PutRecordRequest",
         "documentation" : null,
-        "simpleType" : "PutRecordRequest",
-        "variableSetterType" : "PutRecordRequest"
+        "variableSetterType" : "PutRecordRequest",
+        "simpleType" : "PutRecordRequest"
       },
       "marshaller" : {
         "action" : "PutRecord",
@@ -1917,16 +1917,16 @@
             "variableType" : "Record",
             "variableDeclarationType" : "Record",
             "documentation" : "<p>The record.</p>",
-            "simpleType" : "Record",
-            "variableSetterType" : "Record"
+            "variableSetterType" : "Record",
+            "simpleType" : "Record"
           },
           "setterModel" : {
             "variableName" : "record",
             "variableType" : "Record",
             "variableDeclarationType" : "Record",
             "documentation" : "",
-            "simpleType" : "Record",
-            "variableSetterType" : "Record"
+            "variableSetterType" : "Record",
+            "simpleType" : "Record"
           },
           "getterModel" : {
             "returnType" : "Record",
@@ -1969,16 +1969,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2033,16 +2033,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the AWS credentials.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2084,16 +2084,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The database connection string.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "clusterJDBCURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2135,16 +2135,16 @@
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
           "documentation" : "<p>The <code>COPY</code> command.</p>",
-          "simpleType" : "CopyCommand",
-          "variableSetterType" : "CopyCommand"
+          "variableSetterType" : "CopyCommand",
+          "simpleType" : "CopyCommand"
         },
         "setterModel" : {
           "variableName" : "copyCommand",
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
           "documentation" : "",
-          "simpleType" : "CopyCommand",
-          "variableSetterType" : "CopyCommand"
+          "variableSetterType" : "CopyCommand",
+          "simpleType" : "CopyCommand"
         },
         "getterModel" : {
           "returnType" : "CopyCommand",
@@ -2186,16 +2186,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the user.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "username",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2237,16 +2237,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The user password.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "password",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2288,16 +2288,16 @@
           "variableType" : "S3DestinationConfiguration",
           "variableDeclarationType" : "S3DestinationConfiguration",
           "documentation" : "<p>The S3 configuration for the intermediate location from which Amazon Redshift obtains data. Restrictions are described in the topic for <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>",
-          "simpleType" : "S3DestinationConfiguration",
-          "variableSetterType" : "S3DestinationConfiguration"
+          "variableSetterType" : "S3DestinationConfiguration",
+          "simpleType" : "S3DestinationConfiguration"
         },
         "setterModel" : {
           "variableName" : "s3Configuration",
           "variableType" : "S3DestinationConfiguration",
           "variableDeclarationType" : "S3DestinationConfiguration",
           "documentation" : "",
-          "simpleType" : "S3DestinationConfiguration",
-          "variableSetterType" : "S3DestinationConfiguration"
+          "variableSetterType" : "S3DestinationConfiguration",
+          "simpleType" : "S3DestinationConfiguration"
         },
         "getterModel" : {
           "returnType" : "S3DestinationConfiguration",
@@ -2336,8 +2336,8 @@
         "variableType" : "RedshiftDestinationConfiguration",
         "variableDeclarationType" : "RedshiftDestinationConfiguration",
         "documentation" : null,
-        "simpleType" : "RedshiftDestinationConfiguration",
-        "variableSetterType" : "RedshiftDestinationConfiguration"
+        "variableSetterType" : "RedshiftDestinationConfiguration",
+        "simpleType" : "RedshiftDestinationConfiguration"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2362,16 +2362,16 @@
             "variableType" : "S3DestinationConfiguration",
             "variableDeclarationType" : "S3DestinationConfiguration",
             "documentation" : "<p>The S3 configuration for the intermediate location from which Amazon Redshift obtains data. Restrictions are described in the topic for <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>",
-            "simpleType" : "S3DestinationConfiguration",
-            "variableSetterType" : "S3DestinationConfiguration"
+            "variableSetterType" : "S3DestinationConfiguration",
+            "simpleType" : "S3DestinationConfiguration"
           },
           "setterModel" : {
             "variableName" : "s3Configuration",
             "variableType" : "S3DestinationConfiguration",
             "variableDeclarationType" : "S3DestinationConfiguration",
             "documentation" : "",
-            "simpleType" : "S3DestinationConfiguration",
-            "variableSetterType" : "S3DestinationConfiguration"
+            "variableSetterType" : "S3DestinationConfiguration",
+            "simpleType" : "S3DestinationConfiguration"
           },
           "getterModel" : {
             "returnType" : "S3DestinationConfiguration",
@@ -2414,16 +2414,16 @@
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
             "documentation" : "<p>The <code>COPY</code> command.</p>",
-            "simpleType" : "CopyCommand",
-            "variableSetterType" : "CopyCommand"
+            "variableSetterType" : "CopyCommand",
+            "simpleType" : "CopyCommand"
           },
           "setterModel" : {
             "variableName" : "copyCommand",
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
             "documentation" : "",
-            "simpleType" : "CopyCommand",
-            "variableSetterType" : "CopyCommand"
+            "variableSetterType" : "CopyCommand",
+            "simpleType" : "CopyCommand"
           },
           "getterModel" : {
             "returnType" : "CopyCommand",
@@ -2466,16 +2466,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the AWS credentials.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2518,16 +2518,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The user password.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "password",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2570,16 +2570,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the user.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "username",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2622,16 +2622,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The database connection string.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "clusterJDBCURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2686,16 +2686,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the AWS credentials.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2737,16 +2737,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The database connection string.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "clusterJDBCURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2788,16 +2788,16 @@
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
           "documentation" : "<p>The <code>COPY</code> command.</p>",
-          "simpleType" : "CopyCommand",
-          "variableSetterType" : "CopyCommand"
+          "variableSetterType" : "CopyCommand",
+          "simpleType" : "CopyCommand"
         },
         "setterModel" : {
           "variableName" : "copyCommand",
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
           "documentation" : "",
-          "simpleType" : "CopyCommand",
-          "variableSetterType" : "CopyCommand"
+          "variableSetterType" : "CopyCommand",
+          "simpleType" : "CopyCommand"
         },
         "getterModel" : {
           "returnType" : "CopyCommand",
@@ -2839,16 +2839,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the user.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "username",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2890,16 +2890,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The user password.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "password",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2941,16 +2941,16 @@
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
           "documentation" : "<p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>",
-          "simpleType" : "S3DestinationUpdate",
-          "variableSetterType" : "S3DestinationUpdate"
+          "variableSetterType" : "S3DestinationUpdate",
+          "simpleType" : "S3DestinationUpdate"
         },
         "setterModel" : {
           "variableName" : "s3Update",
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
           "documentation" : "",
-          "simpleType" : "S3DestinationUpdate",
-          "variableSetterType" : "S3DestinationUpdate"
+          "variableSetterType" : "S3DestinationUpdate",
+          "simpleType" : "S3DestinationUpdate"
         },
         "getterModel" : {
           "returnType" : "S3DestinationUpdate",
@@ -2989,8 +2989,8 @@
         "variableType" : "RedshiftDestinationUpdate",
         "variableDeclarationType" : "RedshiftDestinationUpdate",
         "documentation" : null,
-        "simpleType" : "RedshiftDestinationUpdate",
-        "variableSetterType" : "RedshiftDestinationUpdate"
+        "variableSetterType" : "RedshiftDestinationUpdate",
+        "simpleType" : "RedshiftDestinationUpdate"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3015,16 +3015,16 @@
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
             "documentation" : "<p>The <code>COPY</code> command.</p>",
-            "simpleType" : "CopyCommand",
-            "variableSetterType" : "CopyCommand"
+            "variableSetterType" : "CopyCommand",
+            "simpleType" : "CopyCommand"
           },
           "setterModel" : {
             "variableName" : "copyCommand",
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
             "documentation" : "",
-            "simpleType" : "CopyCommand",
-            "variableSetterType" : "CopyCommand"
+            "variableSetterType" : "CopyCommand",
+            "simpleType" : "CopyCommand"
           },
           "getterModel" : {
             "returnType" : "CopyCommand",
@@ -3067,16 +3067,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the AWS credentials.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3119,16 +3119,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The user password.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "password",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3171,16 +3171,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the user.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "username",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3223,16 +3223,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The database connection string.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "clusterJDBCURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3275,16 +3275,16 @@
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
             "documentation" : "<p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>",
-            "simpleType" : "S3DestinationUpdate",
-            "variableSetterType" : "S3DestinationUpdate"
+            "variableSetterType" : "S3DestinationUpdate",
+            "simpleType" : "S3DestinationUpdate"
           },
           "setterModel" : {
             "variableName" : "s3Update",
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
             "documentation" : "",
-            "simpleType" : "S3DestinationUpdate",
-            "variableSetterType" : "S3DestinationUpdate"
+            "variableSetterType" : "S3DestinationUpdate",
+            "simpleType" : "S3DestinationUpdate"
           },
           "getterModel" : {
             "returnType" : "S3DestinationUpdate",
@@ -3339,16 +3339,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the AWS credentials.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3390,16 +3390,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the S3 bucket.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "bucketARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3441,16 +3441,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html\">Amazon S3 Object Name Format</a> in the <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/\">guide-fh-dev</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3492,16 +3492,16 @@
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
           "documentation" : "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
-          "simpleType" : "BufferingHints",
-          "variableSetterType" : "BufferingHints"
+          "variableSetterType" : "BufferingHints",
+          "simpleType" : "BufferingHints"
         },
         "setterModel" : {
           "variableName" : "bufferingHints",
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
           "documentation" : "",
-          "simpleType" : "BufferingHints",
-          "variableSetterType" : "BufferingHints"
+          "variableSetterType" : "BufferingHints",
+          "simpleType" : "BufferingHints"
         },
         "getterModel" : {
           "returnType" : "BufferingHints",
@@ -3543,16 +3543,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "compressionFormat",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3594,16 +3594,16 @@
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
           "documentation" : "<p>The encryption configuration. If no value is specified, the default is no encryption.</p>",
-          "simpleType" : "EncryptionConfiguration",
-          "variableSetterType" : "EncryptionConfiguration"
+          "variableSetterType" : "EncryptionConfiguration",
+          "simpleType" : "EncryptionConfiguration"
         },
         "setterModel" : {
           "variableName" : "encryptionConfiguration",
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
           "documentation" : "",
-          "simpleType" : "EncryptionConfiguration",
-          "variableSetterType" : "EncryptionConfiguration"
+          "variableSetterType" : "EncryptionConfiguration",
+          "simpleType" : "EncryptionConfiguration"
         },
         "getterModel" : {
           "returnType" : "EncryptionConfiguration",
@@ -3642,8 +3642,8 @@
         "variableType" : "S3DestinationDescription",
         "variableDeclarationType" : "S3DestinationDescription",
         "documentation" : null,
-        "simpleType" : "S3DestinationDescription",
-        "variableSetterType" : "S3DestinationDescription"
+        "variableSetterType" : "S3DestinationDescription",
+        "simpleType" : "S3DestinationDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3668,16 +3668,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the AWS credentials.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3720,16 +3720,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the S3 bucket.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "bucketARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3772,16 +3772,16 @@
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
             "documentation" : "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
-            "simpleType" : "BufferingHints",
-            "variableSetterType" : "BufferingHints"
+            "variableSetterType" : "BufferingHints",
+            "simpleType" : "BufferingHints"
           },
           "setterModel" : {
             "variableName" : "bufferingHints",
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
             "documentation" : "",
-            "simpleType" : "BufferingHints",
-            "variableSetterType" : "BufferingHints"
+            "variableSetterType" : "BufferingHints",
+            "simpleType" : "BufferingHints"
           },
           "getterModel" : {
             "returnType" : "BufferingHints",
@@ -3824,16 +3824,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html\">Amazon S3 Object Name Format</a> in the <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/\">guide-fh-dev</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3876,16 +3876,16 @@
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
             "documentation" : "<p>The encryption configuration. If no value is specified, the default is no encryption.</p>",
-            "simpleType" : "EncryptionConfiguration",
-            "variableSetterType" : "EncryptionConfiguration"
+            "variableSetterType" : "EncryptionConfiguration",
+            "simpleType" : "EncryptionConfiguration"
           },
           "setterModel" : {
             "variableName" : "encryptionConfiguration",
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
             "documentation" : "",
-            "simpleType" : "EncryptionConfiguration",
-            "variableSetterType" : "EncryptionConfiguration"
+            "variableSetterType" : "EncryptionConfiguration",
+            "simpleType" : "EncryptionConfiguration"
           },
           "getterModel" : {
             "returnType" : "EncryptionConfiguration",
@@ -3928,16 +3928,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "compressionFormat",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3992,16 +3992,16 @@
           "variableType" : "DeliveryStreamDescription",
           "variableDeclarationType" : "DeliveryStreamDescription",
           "documentation" : "<p>Information about the delivery stream.</p>",
-          "simpleType" : "DeliveryStreamDescription",
-          "variableSetterType" : "DeliveryStreamDescription"
+          "variableSetterType" : "DeliveryStreamDescription",
+          "simpleType" : "DeliveryStreamDescription"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamDescription",
           "variableType" : "DeliveryStreamDescription",
           "variableDeclarationType" : "DeliveryStreamDescription",
           "documentation" : "",
-          "simpleType" : "DeliveryStreamDescription",
-          "variableSetterType" : "DeliveryStreamDescription"
+          "variableSetterType" : "DeliveryStreamDescription",
+          "simpleType" : "DeliveryStreamDescription"
         },
         "getterModel" : {
           "returnType" : "DeliveryStreamDescription",
@@ -4040,8 +4040,8 @@
         "variableType" : "DescribeDeliveryStreamResult",
         "variableDeclarationType" : "DescribeDeliveryStreamResult",
         "documentation" : null,
-        "simpleType" : "DescribeDeliveryStreamResult",
-        "variableSetterType" : "DescribeDeliveryStreamResult"
+        "variableSetterType" : "DescribeDeliveryStreamResult",
+        "simpleType" : "DescribeDeliveryStreamResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4066,16 +4066,16 @@
             "variableType" : "DeliveryStreamDescription",
             "variableDeclarationType" : "DeliveryStreamDescription",
             "documentation" : "<p>Information about the delivery stream.</p>",
-            "simpleType" : "DeliveryStreamDescription",
-            "variableSetterType" : "DeliveryStreamDescription"
+            "variableSetterType" : "DeliveryStreamDescription",
+            "simpleType" : "DeliveryStreamDescription"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamDescription",
             "variableType" : "DeliveryStreamDescription",
             "variableDeclarationType" : "DeliveryStreamDescription",
             "documentation" : "",
-            "simpleType" : "DeliveryStreamDescription",
-            "variableSetterType" : "DeliveryStreamDescription"
+            "variableSetterType" : "DeliveryStreamDescription",
+            "simpleType" : "DeliveryStreamDescription"
           },
           "getterModel" : {
             "returnType" : "DeliveryStreamDescription",
@@ -4130,16 +4130,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4181,16 +4181,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "currentDeliveryStreamVersionId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4232,16 +4232,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the destination.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4283,16 +4283,16 @@
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
           "documentation" : "",
-          "simpleType" : "S3DestinationUpdate",
-          "variableSetterType" : "S3DestinationUpdate"
+          "variableSetterType" : "S3DestinationUpdate",
+          "simpleType" : "S3DestinationUpdate"
         },
         "setterModel" : {
           "variableName" : "s3DestinationUpdate",
           "variableType" : "S3DestinationUpdate",
           "variableDeclarationType" : "S3DestinationUpdate",
           "documentation" : "",
-          "simpleType" : "S3DestinationUpdate",
-          "variableSetterType" : "S3DestinationUpdate"
+          "variableSetterType" : "S3DestinationUpdate",
+          "simpleType" : "S3DestinationUpdate"
         },
         "getterModel" : {
           "returnType" : "S3DestinationUpdate",
@@ -4334,16 +4334,16 @@
           "variableType" : "RedshiftDestinationUpdate",
           "variableDeclarationType" : "RedshiftDestinationUpdate",
           "documentation" : "",
-          "simpleType" : "RedshiftDestinationUpdate",
-          "variableSetterType" : "RedshiftDestinationUpdate"
+          "variableSetterType" : "RedshiftDestinationUpdate",
+          "simpleType" : "RedshiftDestinationUpdate"
         },
         "setterModel" : {
           "variableName" : "redshiftDestinationUpdate",
           "variableType" : "RedshiftDestinationUpdate",
           "variableDeclarationType" : "RedshiftDestinationUpdate",
           "documentation" : "",
-          "simpleType" : "RedshiftDestinationUpdate",
-          "variableSetterType" : "RedshiftDestinationUpdate"
+          "variableSetterType" : "RedshiftDestinationUpdate",
+          "simpleType" : "RedshiftDestinationUpdate"
         },
         "getterModel" : {
           "returnType" : "RedshiftDestinationUpdate",
@@ -4382,8 +4382,8 @@
         "variableType" : "UpdateDestinationRequest",
         "variableDeclarationType" : "UpdateDestinationRequest",
         "documentation" : null,
-        "simpleType" : "UpdateDestinationRequest",
-        "variableSetterType" : "UpdateDestinationRequest"
+        "variableSetterType" : "UpdateDestinationRequest",
+        "simpleType" : "UpdateDestinationRequest"
       },
       "marshaller" : {
         "action" : "UpdateDestination",
@@ -4412,16 +4412,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the destination.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4464,16 +4464,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Obtain this value from the <code>VersionId</code> result of the <a>DeliveryStreamDescription</a> operation. This value is required, and helps the service to perform conditional operations. For example, if there is a interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "currentDeliveryStreamVersionId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4516,16 +4516,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4568,16 +4568,16 @@
             "variableType" : "RedshiftDestinationUpdate",
             "variableDeclarationType" : "RedshiftDestinationUpdate",
             "documentation" : "",
-            "simpleType" : "RedshiftDestinationUpdate",
-            "variableSetterType" : "RedshiftDestinationUpdate"
+            "variableSetterType" : "RedshiftDestinationUpdate",
+            "simpleType" : "RedshiftDestinationUpdate"
           },
           "setterModel" : {
             "variableName" : "redshiftDestinationUpdate",
             "variableType" : "RedshiftDestinationUpdate",
             "variableDeclarationType" : "RedshiftDestinationUpdate",
             "documentation" : "",
-            "simpleType" : "RedshiftDestinationUpdate",
-            "variableSetterType" : "RedshiftDestinationUpdate"
+            "variableSetterType" : "RedshiftDestinationUpdate",
+            "simpleType" : "RedshiftDestinationUpdate"
           },
           "getterModel" : {
             "returnType" : "RedshiftDestinationUpdate",
@@ -4620,16 +4620,16 @@
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
             "documentation" : "",
-            "simpleType" : "S3DestinationUpdate",
-            "variableSetterType" : "S3DestinationUpdate"
+            "variableSetterType" : "S3DestinationUpdate",
+            "simpleType" : "S3DestinationUpdate"
           },
           "setterModel" : {
             "variableName" : "s3DestinationUpdate",
             "variableType" : "S3DestinationUpdate",
             "variableDeclarationType" : "S3DestinationUpdate",
             "documentation" : "",
-            "simpleType" : "S3DestinationUpdate",
-            "variableSetterType" : "S3DestinationUpdate"
+            "variableSetterType" : "S3DestinationUpdate",
+            "simpleType" : "S3DestinationUpdate"
           },
           "getterModel" : {
             "returnType" : "S3DestinationUpdate",
@@ -4681,8 +4681,8 @@
         "variableType" : "DeleteDeliveryStreamResult",
         "variableDeclarationType" : "DeleteDeliveryStreamResult",
         "documentation" : null,
-        "simpleType" : "DeleteDeliveryStreamResult",
-        "variableSetterType" : "DeleteDeliveryStreamResult"
+        "variableSetterType" : "DeleteDeliveryStreamResult",
+        "simpleType" : "DeleteDeliveryStreamResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4718,16 +4718,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the destination.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "destinationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4769,16 +4769,16 @@
           "variableType" : "S3DestinationDescription",
           "variableDeclarationType" : "S3DestinationDescription",
           "documentation" : "<p>The Amazon S3 destination.</p>",
-          "simpleType" : "S3DestinationDescription",
-          "variableSetterType" : "S3DestinationDescription"
+          "variableSetterType" : "S3DestinationDescription",
+          "simpleType" : "S3DestinationDescription"
         },
         "setterModel" : {
           "variableName" : "s3DestinationDescription",
           "variableType" : "S3DestinationDescription",
           "variableDeclarationType" : "S3DestinationDescription",
           "documentation" : "",
-          "simpleType" : "S3DestinationDescription",
-          "variableSetterType" : "S3DestinationDescription"
+          "variableSetterType" : "S3DestinationDescription",
+          "simpleType" : "S3DestinationDescription"
         },
         "getterModel" : {
           "returnType" : "S3DestinationDescription",
@@ -4820,16 +4820,16 @@
           "variableType" : "RedshiftDestinationDescription",
           "variableDeclarationType" : "RedshiftDestinationDescription",
           "documentation" : "<p>The destination in Amazon Redshift.</p>",
-          "simpleType" : "RedshiftDestinationDescription",
-          "variableSetterType" : "RedshiftDestinationDescription"
+          "variableSetterType" : "RedshiftDestinationDescription",
+          "simpleType" : "RedshiftDestinationDescription"
         },
         "setterModel" : {
           "variableName" : "redshiftDestinationDescription",
           "variableType" : "RedshiftDestinationDescription",
           "variableDeclarationType" : "RedshiftDestinationDescription",
           "documentation" : "",
-          "simpleType" : "RedshiftDestinationDescription",
-          "variableSetterType" : "RedshiftDestinationDescription"
+          "variableSetterType" : "RedshiftDestinationDescription",
+          "simpleType" : "RedshiftDestinationDescription"
         },
         "getterModel" : {
           "returnType" : "RedshiftDestinationDescription",
@@ -4868,8 +4868,8 @@
         "variableType" : "DestinationDescription",
         "variableDeclarationType" : "DestinationDescription",
         "documentation" : null,
-        "simpleType" : "DestinationDescription",
-        "variableSetterType" : "DestinationDescription"
+        "variableSetterType" : "DestinationDescription",
+        "simpleType" : "DestinationDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4894,16 +4894,16 @@
             "variableType" : "RedshiftDestinationDescription",
             "variableDeclarationType" : "RedshiftDestinationDescription",
             "documentation" : "<p>The destination in Amazon Redshift.</p>",
-            "simpleType" : "RedshiftDestinationDescription",
-            "variableSetterType" : "RedshiftDestinationDescription"
+            "variableSetterType" : "RedshiftDestinationDescription",
+            "simpleType" : "RedshiftDestinationDescription"
           },
           "setterModel" : {
             "variableName" : "redshiftDestinationDescription",
             "variableType" : "RedshiftDestinationDescription",
             "variableDeclarationType" : "RedshiftDestinationDescription",
             "documentation" : "",
-            "simpleType" : "RedshiftDestinationDescription",
-            "variableSetterType" : "RedshiftDestinationDescription"
+            "variableSetterType" : "RedshiftDestinationDescription",
+            "simpleType" : "RedshiftDestinationDescription"
           },
           "getterModel" : {
             "returnType" : "RedshiftDestinationDescription",
@@ -4946,16 +4946,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the destination.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "destinationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4998,16 +4998,16 @@
             "variableType" : "S3DestinationDescription",
             "variableDeclarationType" : "S3DestinationDescription",
             "documentation" : "<p>The Amazon S3 destination.</p>",
-            "simpleType" : "S3DestinationDescription",
-            "variableSetterType" : "S3DestinationDescription"
+            "variableSetterType" : "S3DestinationDescription",
+            "simpleType" : "S3DestinationDescription"
           },
           "setterModel" : {
             "variableName" : "s3DestinationDescription",
             "variableType" : "S3DestinationDescription",
             "variableDeclarationType" : "S3DestinationDescription",
             "documentation" : "",
-            "simpleType" : "S3DestinationDescription",
-            "variableSetterType" : "S3DestinationDescription"
+            "variableSetterType" : "S3DestinationDescription",
+            "simpleType" : "S3DestinationDescription"
           },
           "getterModel" : {
             "returnType" : "S3DestinationDescription",
@@ -5062,16 +5062,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "sizeInMBs",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -5113,16 +5113,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "intervalInSeconds",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -5161,8 +5161,8 @@
         "variableType" : "BufferingHints",
         "variableDeclarationType" : "BufferingHints",
         "documentation" : null,
-        "simpleType" : "BufferingHints",
-        "variableSetterType" : "BufferingHints"
+        "variableSetterType" : "BufferingHints",
+        "simpleType" : "BufferingHints"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5187,16 +5187,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> <p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "sizeInMBs",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -5239,16 +5239,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "intervalInSeconds",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -5303,16 +5303,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5354,16 +5354,16 @@
           "variableType" : "S3DestinationConfiguration",
           "variableDeclarationType" : "S3DestinationConfiguration",
           "documentation" : "<p>The destination in Amazon S3. This value must be specified if <code>RedshiftDestinationConfiguration</code> is specified (see restrictions listed above).</p>",
-          "simpleType" : "S3DestinationConfiguration",
-          "variableSetterType" : "S3DestinationConfiguration"
+          "variableSetterType" : "S3DestinationConfiguration",
+          "simpleType" : "S3DestinationConfiguration"
         },
         "setterModel" : {
           "variableName" : "s3DestinationConfiguration",
           "variableType" : "S3DestinationConfiguration",
           "variableDeclarationType" : "S3DestinationConfiguration",
           "documentation" : "",
-          "simpleType" : "S3DestinationConfiguration",
-          "variableSetterType" : "S3DestinationConfiguration"
+          "variableSetterType" : "S3DestinationConfiguration",
+          "simpleType" : "S3DestinationConfiguration"
         },
         "getterModel" : {
           "returnType" : "S3DestinationConfiguration",
@@ -5405,16 +5405,16 @@
           "variableType" : "RedshiftDestinationConfiguration",
           "variableDeclarationType" : "RedshiftDestinationConfiguration",
           "documentation" : "<p>The destination in Amazon Redshift. This value cannot be specified if Amazon S3 is the desired destination (see restrictions listed above).</p>",
-          "simpleType" : "RedshiftDestinationConfiguration",
-          "variableSetterType" : "RedshiftDestinationConfiguration"
+          "variableSetterType" : "RedshiftDestinationConfiguration",
+          "simpleType" : "RedshiftDestinationConfiguration"
         },
         "setterModel" : {
           "variableName" : "redshiftDestinationConfiguration",
           "variableType" : "RedshiftDestinationConfiguration",
           "variableDeclarationType" : "RedshiftDestinationConfiguration",
           "documentation" : "",
-          "simpleType" : "RedshiftDestinationConfiguration",
-          "variableSetterType" : "RedshiftDestinationConfiguration"
+          "variableSetterType" : "RedshiftDestinationConfiguration",
+          "simpleType" : "RedshiftDestinationConfiguration"
         },
         "getterModel" : {
           "returnType" : "RedshiftDestinationConfiguration",
@@ -5453,8 +5453,8 @@
         "variableType" : "CreateDeliveryStreamRequest",
         "variableDeclarationType" : "CreateDeliveryStreamRequest",
         "documentation" : null,
-        "simpleType" : "CreateDeliveryStreamRequest",
-        "variableSetterType" : "CreateDeliveryStreamRequest"
+        "variableSetterType" : "CreateDeliveryStreamRequest",
+        "simpleType" : "CreateDeliveryStreamRequest"
       },
       "marshaller" : {
         "action" : "CreateDeliveryStream",
@@ -5483,16 +5483,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5535,16 +5535,16 @@
             "variableType" : "RedshiftDestinationConfiguration",
             "variableDeclarationType" : "RedshiftDestinationConfiguration",
             "documentation" : "<p>The destination in Amazon Redshift. This value cannot be specified if Amazon S3 is the desired destination (see restrictions listed above).</p>",
-            "simpleType" : "RedshiftDestinationConfiguration",
-            "variableSetterType" : "RedshiftDestinationConfiguration"
+            "variableSetterType" : "RedshiftDestinationConfiguration",
+            "simpleType" : "RedshiftDestinationConfiguration"
           },
           "setterModel" : {
             "variableName" : "redshiftDestinationConfiguration",
             "variableType" : "RedshiftDestinationConfiguration",
             "variableDeclarationType" : "RedshiftDestinationConfiguration",
             "documentation" : "",
-            "simpleType" : "RedshiftDestinationConfiguration",
-            "variableSetterType" : "RedshiftDestinationConfiguration"
+            "variableSetterType" : "RedshiftDestinationConfiguration",
+            "simpleType" : "RedshiftDestinationConfiguration"
           },
           "getterModel" : {
             "returnType" : "RedshiftDestinationConfiguration",
@@ -5587,16 +5587,16 @@
             "variableType" : "S3DestinationConfiguration",
             "variableDeclarationType" : "S3DestinationConfiguration",
             "documentation" : "<p>The destination in Amazon S3. This value must be specified if <code>RedshiftDestinationConfiguration</code> is specified (see restrictions listed above).</p>",
-            "simpleType" : "S3DestinationConfiguration",
-            "variableSetterType" : "S3DestinationConfiguration"
+            "variableSetterType" : "S3DestinationConfiguration",
+            "simpleType" : "S3DestinationConfiguration"
           },
           "setterModel" : {
             "variableName" : "s3DestinationConfiguration",
             "variableType" : "S3DestinationConfiguration",
             "variableDeclarationType" : "S3DestinationConfiguration",
             "documentation" : "",
-            "simpleType" : "S3DestinationConfiguration",
-            "variableSetterType" : "S3DestinationConfiguration"
+            "variableSetterType" : "S3DestinationConfiguration",
+            "simpleType" : "S3DestinationConfiguration"
           },
           "getterModel" : {
             "returnType" : "S3DestinationConfiguration",
@@ -5651,16 +5651,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Specifically override existing encryption information to ensure no encryption is used.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "noEncryptionConfig",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5702,16 +5702,16 @@
           "variableType" : "KMSEncryptionConfig",
           "variableDeclarationType" : "KMSEncryptionConfig",
           "documentation" : "<p>The encryption key.</p>",
-          "simpleType" : "KMSEncryptionConfig",
-          "variableSetterType" : "KMSEncryptionConfig"
+          "variableSetterType" : "KMSEncryptionConfig",
+          "simpleType" : "KMSEncryptionConfig"
         },
         "setterModel" : {
           "variableName" : "kMSEncryptionConfig",
           "variableType" : "KMSEncryptionConfig",
           "variableDeclarationType" : "KMSEncryptionConfig",
           "documentation" : "",
-          "simpleType" : "KMSEncryptionConfig",
-          "variableSetterType" : "KMSEncryptionConfig"
+          "variableSetterType" : "KMSEncryptionConfig",
+          "simpleType" : "KMSEncryptionConfig"
         },
         "getterModel" : {
           "returnType" : "KMSEncryptionConfig",
@@ -5750,8 +5750,8 @@
         "variableType" : "EncryptionConfiguration",
         "variableDeclarationType" : "EncryptionConfiguration",
         "documentation" : null,
-        "simpleType" : "EncryptionConfiguration",
-        "variableSetterType" : "EncryptionConfiguration"
+        "variableSetterType" : "EncryptionConfiguration",
+        "simpleType" : "EncryptionConfiguration"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5776,16 +5776,16 @@
             "variableType" : "KMSEncryptionConfig",
             "variableDeclarationType" : "KMSEncryptionConfig",
             "documentation" : "<p>The encryption key.</p>",
-            "simpleType" : "KMSEncryptionConfig",
-            "variableSetterType" : "KMSEncryptionConfig"
+            "variableSetterType" : "KMSEncryptionConfig",
+            "simpleType" : "KMSEncryptionConfig"
           },
           "setterModel" : {
             "variableName" : "kMSEncryptionConfig",
             "variableType" : "KMSEncryptionConfig",
             "variableDeclarationType" : "KMSEncryptionConfig",
             "documentation" : "",
-            "simpleType" : "KMSEncryptionConfig",
-            "variableSetterType" : "KMSEncryptionConfig"
+            "variableSetterType" : "KMSEncryptionConfig",
+            "simpleType" : "KMSEncryptionConfig"
           },
           "getterModel" : {
             "returnType" : "KMSEncryptionConfig",
@@ -5828,16 +5828,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Specifically override existing encryption information to ensure no encryption is used.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "noEncryptionConfig",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5901,8 +5901,8 @@
         "variableType" : "CompressionFormat",
         "variableDeclarationType" : "CompressionFormat",
         "documentation" : null,
-        "simpleType" : "CompressionFormat",
-        "variableSetterType" : "CompressionFormat"
+        "variableSetterType" : "CompressionFormat",
+        "simpleType" : "CompressionFormat"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5938,16 +5938,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the AWS credentials.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5989,16 +5989,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The database connection string.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "clusterJDBCURL",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6040,16 +6040,16 @@
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
           "documentation" : "<p>The <code>COPY</code> command.</p>",
-          "simpleType" : "CopyCommand",
-          "variableSetterType" : "CopyCommand"
+          "variableSetterType" : "CopyCommand",
+          "simpleType" : "CopyCommand"
         },
         "setterModel" : {
           "variableName" : "copyCommand",
           "variableType" : "CopyCommand",
           "variableDeclarationType" : "CopyCommand",
           "documentation" : "",
-          "simpleType" : "CopyCommand",
-          "variableSetterType" : "CopyCommand"
+          "variableSetterType" : "CopyCommand",
+          "simpleType" : "CopyCommand"
         },
         "getterModel" : {
           "returnType" : "CopyCommand",
@@ -6091,16 +6091,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the user.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "username",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6142,16 +6142,16 @@
           "variableType" : "S3DestinationDescription",
           "variableDeclarationType" : "S3DestinationDescription",
           "documentation" : "<p>The Amazon S3 destination.</p>",
-          "simpleType" : "S3DestinationDescription",
-          "variableSetterType" : "S3DestinationDescription"
+          "variableSetterType" : "S3DestinationDescription",
+          "simpleType" : "S3DestinationDescription"
         },
         "setterModel" : {
           "variableName" : "s3DestinationDescription",
           "variableType" : "S3DestinationDescription",
           "variableDeclarationType" : "S3DestinationDescription",
           "documentation" : "",
-          "simpleType" : "S3DestinationDescription",
-          "variableSetterType" : "S3DestinationDescription"
+          "variableSetterType" : "S3DestinationDescription",
+          "simpleType" : "S3DestinationDescription"
         },
         "getterModel" : {
           "returnType" : "S3DestinationDescription",
@@ -6190,8 +6190,8 @@
         "variableType" : "RedshiftDestinationDescription",
         "variableDeclarationType" : "RedshiftDestinationDescription",
         "documentation" : null,
-        "simpleType" : "RedshiftDestinationDescription",
-        "variableSetterType" : "RedshiftDestinationDescription"
+        "variableSetterType" : "RedshiftDestinationDescription",
+        "simpleType" : "RedshiftDestinationDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6216,16 +6216,16 @@
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
             "documentation" : "<p>The <code>COPY</code> command.</p>",
-            "simpleType" : "CopyCommand",
-            "variableSetterType" : "CopyCommand"
+            "variableSetterType" : "CopyCommand",
+            "simpleType" : "CopyCommand"
           },
           "setterModel" : {
             "variableName" : "copyCommand",
             "variableType" : "CopyCommand",
             "variableDeclarationType" : "CopyCommand",
             "documentation" : "",
-            "simpleType" : "CopyCommand",
-            "variableSetterType" : "CopyCommand"
+            "variableSetterType" : "CopyCommand",
+            "simpleType" : "CopyCommand"
           },
           "getterModel" : {
             "returnType" : "CopyCommand",
@@ -6268,16 +6268,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the AWS credentials.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6320,16 +6320,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the user.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "username",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6372,16 +6372,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The database connection string.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "clusterJDBCURL",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6424,16 +6424,16 @@
             "variableType" : "S3DestinationDescription",
             "variableDeclarationType" : "S3DestinationDescription",
             "documentation" : "<p>The Amazon S3 destination.</p>",
-            "simpleType" : "S3DestinationDescription",
-            "variableSetterType" : "S3DestinationDescription"
+            "variableSetterType" : "S3DestinationDescription",
+            "simpleType" : "S3DestinationDescription"
           },
           "setterModel" : {
             "variableName" : "s3DestinationDescription",
             "variableType" : "S3DestinationDescription",
             "variableDeclarationType" : "S3DestinationDescription",
             "documentation" : "",
-            "simpleType" : "S3DestinationDescription",
-            "variableSetterType" : "S3DestinationDescription"
+            "variableSetterType" : "S3DestinationDescription",
+            "simpleType" : "S3DestinationDescription"
           },
           "getterModel" : {
             "returnType" : "S3DestinationDescription",
@@ -6488,16 +6488,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the target table. The table must already exist in the database.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataTableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6539,16 +6539,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A comma-separated list of column names.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "dataTableColumns",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6590,16 +6590,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the \"Optional Parameters\" section of <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html\">Amazon Redshift COPY command</a>. Some possible examples that would apply to Amazon Kinesis Firehose are as follows.</p> <p><code>delimiter '\\t' lzop;</code> - fields are delimited with \"\\t\" (TAB character) and compressed using lzop.</p> <p><code>delimiter '|</code> - fields are delimited with \"|\" (this is the default delimiter).</p> <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p><code>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields are fixed width in the source, with each width specified after every column in the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in JSON format, and the path specified is the format of the data.</p> <p>For more examples, see and <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html\">Amazon Redshift COPY command exmaples</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "copyOptions",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6638,8 +6638,8 @@
         "variableType" : "CopyCommand",
         "variableDeclarationType" : "CopyCommand",
         "documentation" : null,
-        "simpleType" : "CopyCommand",
-        "variableSetterType" : "CopyCommand"
+        "variableSetterType" : "CopyCommand",
+        "simpleType" : "CopyCommand"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6664,16 +6664,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A comma-separated list of column names.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataTableColumns",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6716,16 +6716,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the \"Optional Parameters\" section of <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html\">Amazon Redshift COPY command</a>. Some possible examples that would apply to Amazon Kinesis Firehose are as follows.</p> <p><code>delimiter '\\t' lzop;</code> - fields are delimited with \"\\t\" (TAB character) and compressed using lzop.</p> <p><code>delimiter '|</code> - fields are delimited with \"|\" (this is the default delimiter).</p> <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p><code>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields are fixed width in the source, with each width specified after every column in the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in JSON format, and the path specified is the format of the data.</p> <p>For more examples, see and <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html\">Amazon Redshift COPY command exmaples</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "copyOptions",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6768,16 +6768,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the target table. The table must already exist in the database.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "dataTableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6832,16 +6832,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "aWSKMSKeyARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6880,8 +6880,8 @@
         "variableType" : "KMSEncryptionConfig",
         "variableDeclarationType" : "KMSEncryptionConfig",
         "documentation" : null,
-        "simpleType" : "KMSEncryptionConfig",
-        "variableSetterType" : "KMSEncryptionConfig"
+        "variableSetterType" : "KMSEncryptionConfig",
+        "simpleType" : "KMSEncryptionConfig"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6906,16 +6906,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "aWSKMSKeyARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6970,16 +6970,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
+          "variableSetterType" : "java.nio.ByteBuffer",
+          "simpleType" : "ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "data",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
+          "variableSetterType" : "java.nio.ByteBuffer",
+          "simpleType" : "ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -7018,8 +7018,8 @@
         "variableType" : "Record",
         "variableDeclarationType" : "Record",
         "documentation" : null,
-        "simpleType" : "Record",
-        "variableSetterType" : "Record"
+        "variableSetterType" : "Record",
+        "simpleType" : "Record"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7044,16 +7044,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
+            "variableSetterType" : "java.nio.ByteBuffer",
+            "simpleType" : "ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "data",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
+            "variableSetterType" : "java.nio.ByteBuffer",
+            "simpleType" : "ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -7105,8 +7105,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "simpleType" : "ResourceNotFoundException",
-        "variableSetterType" : "ResourceNotFoundException"
+        "variableSetterType" : "ResourceNotFoundException",
+        "simpleType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7139,16 +7139,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the record.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "recordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7190,16 +7190,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error code for an individual record result.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7241,16 +7241,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error message for an individual record result.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7289,8 +7289,8 @@
         "variableType" : "PutRecordBatchResponseEntry",
         "variableDeclarationType" : "PutRecordBatchResponseEntry",
         "documentation" : null,
-        "simpleType" : "PutRecordBatchResponseEntry",
-        "variableSetterType" : "PutRecordBatchResponseEntry"
+        "variableSetterType" : "PutRecordBatchResponseEntry",
+        "simpleType" : "PutRecordBatchResponseEntry"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7315,16 +7315,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the record.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "recordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7367,16 +7367,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error message for an individual record result.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7419,16 +7419,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error code for an individual record result.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7480,8 +7480,8 @@
         "variableType" : "InvalidArgumentException",
         "variableDeclarationType" : "InvalidArgumentException",
         "documentation" : null,
-        "simpleType" : "InvalidArgumentException",
-        "variableSetterType" : "InvalidArgumentException"
+        "variableSetterType" : "InvalidArgumentException",
+        "simpleType" : "InvalidArgumentException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7514,16 +7514,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The number of unsuccessfully written records.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "failedPutCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -7565,16 +7565,16 @@
           "variableType" : "java.util.List<PutRecordBatchResponseEntry>",
           "variableDeclarationType" : "java.util.List<PutRecordBatchResponseEntry>",
           "documentation" : "<p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>",
-          "simpleType" : "List<PutRecordBatchResponseEntry>",
-          "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>"
+          "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>",
+          "simpleType" : "List<PutRecordBatchResponseEntry>"
         },
         "setterModel" : {
           "variableName" : "requestResponses",
           "variableType" : "java.util.List<PutRecordBatchResponseEntry>",
           "variableDeclarationType" : "java.util.List<PutRecordBatchResponseEntry>",
           "documentation" : "",
-          "simpleType" : "List<PutRecordBatchResponseEntry>",
-          "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>"
+          "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>",
+          "simpleType" : "List<PutRecordBatchResponseEntry>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<PutRecordBatchResponseEntry>",
@@ -7610,16 +7610,16 @@
               "variableType" : "PutRecordBatchResponseEntry",
               "variableDeclarationType" : "PutRecordBatchResponseEntry",
               "documentation" : "",
-              "simpleType" : "PutRecordBatchResponseEntry",
-              "variableSetterType" : "PutRecordBatchResponseEntry"
+              "variableSetterType" : "PutRecordBatchResponseEntry",
+              "simpleType" : "PutRecordBatchResponseEntry"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "PutRecordBatchResponseEntry",
               "variableDeclarationType" : "PutRecordBatchResponseEntry",
               "documentation" : "",
-              "simpleType" : "PutRecordBatchResponseEntry",
-              "variableSetterType" : "PutRecordBatchResponseEntry"
+              "variableSetterType" : "PutRecordBatchResponseEntry",
+              "simpleType" : "PutRecordBatchResponseEntry"
             },
             "getterModel" : {
               "returnType" : "PutRecordBatchResponseEntry",
@@ -7678,8 +7678,8 @@
         "variableType" : "PutRecordBatchResult",
         "variableDeclarationType" : "PutRecordBatchResult",
         "documentation" : null,
-        "simpleType" : "PutRecordBatchResult",
-        "variableSetterType" : "PutRecordBatchResult"
+        "variableSetterType" : "PutRecordBatchResult",
+        "simpleType" : "PutRecordBatchResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7704,16 +7704,16 @@
             "variableType" : "java.util.List<PutRecordBatchResponseEntry>",
             "variableDeclarationType" : "java.util.List<PutRecordBatchResponseEntry>",
             "documentation" : "<p>The results for the individual records. The index of each element matches the same index in which records were sent.</p>",
-            "simpleType" : "List<PutRecordBatchResponseEntry>",
-            "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>"
+            "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>",
+            "simpleType" : "List<PutRecordBatchResponseEntry>"
           },
           "setterModel" : {
             "variableName" : "requestResponses",
             "variableType" : "java.util.List<PutRecordBatchResponseEntry>",
             "variableDeclarationType" : "java.util.List<PutRecordBatchResponseEntry>",
             "documentation" : "",
-            "simpleType" : "List<PutRecordBatchResponseEntry>",
-            "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>"
+            "variableSetterType" : "java.util.Collection<PutRecordBatchResponseEntry>",
+            "simpleType" : "List<PutRecordBatchResponseEntry>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<PutRecordBatchResponseEntry>",
@@ -7749,16 +7749,16 @@
                 "variableType" : "PutRecordBatchResponseEntry",
                 "variableDeclarationType" : "PutRecordBatchResponseEntry",
                 "documentation" : "",
-                "simpleType" : "PutRecordBatchResponseEntry",
-                "variableSetterType" : "PutRecordBatchResponseEntry"
+                "variableSetterType" : "PutRecordBatchResponseEntry",
+                "simpleType" : "PutRecordBatchResponseEntry"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "PutRecordBatchResponseEntry",
                 "variableDeclarationType" : "PutRecordBatchResponseEntry",
                 "documentation" : "",
-                "simpleType" : "PutRecordBatchResponseEntry",
-                "variableSetterType" : "PutRecordBatchResponseEntry"
+                "variableSetterType" : "PutRecordBatchResponseEntry",
+                "simpleType" : "PutRecordBatchResponseEntry"
               },
               "getterModel" : {
                 "returnType" : "PutRecordBatchResponseEntry",
@@ -7821,16 +7821,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The number of unsuccessfully written records.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "failedPutCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -7885,16 +7885,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the AWS credentials.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7936,16 +7936,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the S3 bucket.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "bucketARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7987,16 +7987,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html\">Amazon S3 Object Name Format</a> in the <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/\">guide-fh-dev</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8038,16 +8038,16 @@
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
           "documentation" : "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
-          "simpleType" : "BufferingHints",
-          "variableSetterType" : "BufferingHints"
+          "variableSetterType" : "BufferingHints",
+          "simpleType" : "BufferingHints"
         },
         "setterModel" : {
           "variableName" : "bufferingHints",
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
           "documentation" : "",
-          "simpleType" : "BufferingHints",
-          "variableSetterType" : "BufferingHints"
+          "variableSetterType" : "BufferingHints",
+          "simpleType" : "BufferingHints"
         },
         "getterModel" : {
           "returnType" : "BufferingHints",
@@ -8089,16 +8089,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "compressionFormat",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8140,16 +8140,16 @@
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
           "documentation" : "<p>The encryption configuration. If no value is specified, the default is no encryption.</p>",
-          "simpleType" : "EncryptionConfiguration",
-          "variableSetterType" : "EncryptionConfiguration"
+          "variableSetterType" : "EncryptionConfiguration",
+          "simpleType" : "EncryptionConfiguration"
         },
         "setterModel" : {
           "variableName" : "encryptionConfiguration",
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
           "documentation" : "",
-          "simpleType" : "EncryptionConfiguration",
-          "variableSetterType" : "EncryptionConfiguration"
+          "variableSetterType" : "EncryptionConfiguration",
+          "simpleType" : "EncryptionConfiguration"
         },
         "getterModel" : {
           "returnType" : "EncryptionConfiguration",
@@ -8188,8 +8188,8 @@
         "variableType" : "S3DestinationUpdate",
         "variableDeclarationType" : "S3DestinationUpdate",
         "documentation" : null,
-        "simpleType" : "S3DestinationUpdate",
-        "variableSetterType" : "S3DestinationUpdate"
+        "variableSetterType" : "S3DestinationUpdate",
+        "simpleType" : "S3DestinationUpdate"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8214,16 +8214,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the AWS credentials.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8266,16 +8266,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the S3 bucket.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "bucketARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8318,16 +8318,16 @@
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
             "documentation" : "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
-            "simpleType" : "BufferingHints",
-            "variableSetterType" : "BufferingHints"
+            "variableSetterType" : "BufferingHints",
+            "simpleType" : "BufferingHints"
           },
           "setterModel" : {
             "variableName" : "bufferingHints",
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
             "documentation" : "",
-            "simpleType" : "BufferingHints",
-            "variableSetterType" : "BufferingHints"
+            "variableSetterType" : "BufferingHints",
+            "simpleType" : "BufferingHints"
           },
           "getterModel" : {
             "returnType" : "BufferingHints",
@@ -8370,16 +8370,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html\">Amazon S3 Object Name Format</a> in the <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/\">guide-fh-dev</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8422,16 +8422,16 @@
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
             "documentation" : "<p>The encryption configuration. If no value is specified, the default is no encryption.</p>",
-            "simpleType" : "EncryptionConfiguration",
-            "variableSetterType" : "EncryptionConfiguration"
+            "variableSetterType" : "EncryptionConfiguration",
+            "simpleType" : "EncryptionConfiguration"
           },
           "setterModel" : {
             "variableName" : "encryptionConfiguration",
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
             "documentation" : "",
-            "simpleType" : "EncryptionConfiguration",
-            "variableSetterType" : "EncryptionConfiguration"
+            "variableSetterType" : "EncryptionConfiguration",
+            "simpleType" : "EncryptionConfiguration"
           },
           "getterModel" : {
             "returnType" : "EncryptionConfiguration",
@@ -8474,16 +8474,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "compressionFormat",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8538,16 +8538,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the AWS credentials.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8589,16 +8589,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN of the S3 bucket.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "bucketARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8640,16 +8640,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html\">Amazon S3 Object Name Format</a> in the <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/\">guide-fh-dev</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "prefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8691,16 +8691,16 @@
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
           "documentation" : "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
-          "simpleType" : "BufferingHints",
-          "variableSetterType" : "BufferingHints"
+          "variableSetterType" : "BufferingHints",
+          "simpleType" : "BufferingHints"
         },
         "setterModel" : {
           "variableName" : "bufferingHints",
           "variableType" : "BufferingHints",
           "variableDeclarationType" : "BufferingHints",
           "documentation" : "",
-          "simpleType" : "BufferingHints",
-          "variableSetterType" : "BufferingHints"
+          "variableSetterType" : "BufferingHints",
+          "simpleType" : "BufferingHints"
         },
         "getterModel" : {
           "returnType" : "BufferingHints",
@@ -8742,16 +8742,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "compressionFormat",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8793,16 +8793,16 @@
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
           "documentation" : "<p>The encryption configuration. If no value is specified, the default is no encryption.</p>",
-          "simpleType" : "EncryptionConfiguration",
-          "variableSetterType" : "EncryptionConfiguration"
+          "variableSetterType" : "EncryptionConfiguration",
+          "simpleType" : "EncryptionConfiguration"
         },
         "setterModel" : {
           "variableName" : "encryptionConfiguration",
           "variableType" : "EncryptionConfiguration",
           "variableDeclarationType" : "EncryptionConfiguration",
           "documentation" : "",
-          "simpleType" : "EncryptionConfiguration",
-          "variableSetterType" : "EncryptionConfiguration"
+          "variableSetterType" : "EncryptionConfiguration",
+          "simpleType" : "EncryptionConfiguration"
         },
         "getterModel" : {
           "returnType" : "EncryptionConfiguration",
@@ -8841,8 +8841,8 @@
         "variableType" : "S3DestinationConfiguration",
         "variableDeclarationType" : "S3DestinationConfiguration",
         "documentation" : null,
-        "simpleType" : "S3DestinationConfiguration",
-        "variableSetterType" : "S3DestinationConfiguration"
+        "variableSetterType" : "S3DestinationConfiguration",
+        "simpleType" : "S3DestinationConfiguration"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8867,16 +8867,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the AWS credentials.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8919,16 +8919,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN of the S3 bucket.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "bucketARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8971,16 +8971,16 @@
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
             "documentation" : "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
-            "simpleType" : "BufferingHints",
-            "variableSetterType" : "BufferingHints"
+            "variableSetterType" : "BufferingHints",
+            "simpleType" : "BufferingHints"
           },
           "setterModel" : {
             "variableName" : "bufferingHints",
             "variableType" : "BufferingHints",
             "variableDeclarationType" : "BufferingHints",
             "documentation" : "",
-            "simpleType" : "BufferingHints",
-            "variableSetterType" : "BufferingHints"
+            "variableSetterType" : "BufferingHints",
+            "simpleType" : "BufferingHints"
           },
           "getterModel" : {
             "returnType" : "BufferingHints",
@@ -9023,16 +9023,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html\">Amazon S3 Object Name Format</a> in the <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/\">guide-fh-dev</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "prefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9075,16 +9075,16 @@
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
             "documentation" : "<p>The encryption configuration. If no value is specified, the default is no encryption.</p>",
-            "simpleType" : "EncryptionConfiguration",
-            "variableSetterType" : "EncryptionConfiguration"
+            "variableSetterType" : "EncryptionConfiguration",
+            "simpleType" : "EncryptionConfiguration"
           },
           "setterModel" : {
             "variableName" : "encryptionConfiguration",
             "variableType" : "EncryptionConfiguration",
             "variableDeclarationType" : "EncryptionConfiguration",
             "documentation" : "",
-            "simpleType" : "EncryptionConfiguration",
-            "variableSetterType" : "EncryptionConfiguration"
+            "variableSetterType" : "EncryptionConfiguration",
+            "simpleType" : "EncryptionConfiguration"
           },
           "getterModel" : {
             "returnType" : "EncryptionConfiguration",
@@ -9127,16 +9127,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "compressionFormat",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9191,16 +9191,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the record.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "recordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9239,8 +9239,8 @@
         "variableType" : "PutRecordResult",
         "variableDeclarationType" : "PutRecordResult",
         "documentation" : null,
-        "simpleType" : "PutRecordResult",
-        "variableSetterType" : "PutRecordResult"
+        "variableSetterType" : "PutRecordResult",
+        "simpleType" : "PutRecordResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9265,16 +9265,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the record.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "recordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9329,16 +9329,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9380,16 +9380,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9431,16 +9431,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The status of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "deliveryStreamStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9482,16 +9482,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Used when calling the <a>UpdateDestination</a> operation. Each time the destination is updated for the delivery stream, the VersionId is changed, and the current VersionId is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "versionId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9533,16 +9533,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The date and time that the delivery stream was created.</p>",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "createTimestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -9584,16 +9584,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The date and time that the delivery stream was last updated.</p>",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "lastUpdateTimestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -9635,16 +9635,16 @@
           "variableType" : "java.util.List<DestinationDescription>",
           "variableDeclarationType" : "java.util.List<DestinationDescription>",
           "documentation" : "<p>The destinations.</p>",
-          "simpleType" : "List<DestinationDescription>",
-          "variableSetterType" : "java.util.Collection<DestinationDescription>"
+          "variableSetterType" : "java.util.Collection<DestinationDescription>",
+          "simpleType" : "List<DestinationDescription>"
         },
         "setterModel" : {
           "variableName" : "destinations",
           "variableType" : "java.util.List<DestinationDescription>",
           "variableDeclarationType" : "java.util.List<DestinationDescription>",
           "documentation" : "",
-          "simpleType" : "List<DestinationDescription>",
-          "variableSetterType" : "java.util.Collection<DestinationDescription>"
+          "variableSetterType" : "java.util.Collection<DestinationDescription>",
+          "simpleType" : "List<DestinationDescription>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<DestinationDescription>",
@@ -9680,16 +9680,16 @@
               "variableType" : "DestinationDescription",
               "variableDeclarationType" : "DestinationDescription",
               "documentation" : "",
-              "simpleType" : "DestinationDescription",
-              "variableSetterType" : "DestinationDescription"
+              "variableSetterType" : "DestinationDescription",
+              "simpleType" : "DestinationDescription"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "DestinationDescription",
               "variableDeclarationType" : "DestinationDescription",
               "documentation" : "",
-              "simpleType" : "DestinationDescription",
-              "variableSetterType" : "DestinationDescription"
+              "variableSetterType" : "DestinationDescription",
+              "simpleType" : "DestinationDescription"
             },
             "getterModel" : {
               "returnType" : "DestinationDescription",
@@ -9751,16 +9751,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Indicates whether there are more destinations available to list.</p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "hasMoreDestinations",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -9799,8 +9799,8 @@
         "variableType" : "DeliveryStreamDescription",
         "variableDeclarationType" : "DeliveryStreamDescription",
         "documentation" : null,
-        "simpleType" : "DeliveryStreamDescription",
-        "variableSetterType" : "DeliveryStreamDescription"
+        "variableSetterType" : "DeliveryStreamDescription",
+        "simpleType" : "DeliveryStreamDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9825,16 +9825,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The date and time that the delivery stream was created.</p>",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "createTimestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -9877,16 +9877,16 @@
             "variableType" : "java.util.List<DestinationDescription>",
             "variableDeclarationType" : "java.util.List<DestinationDescription>",
             "documentation" : "<p>The destinations.</p>",
-            "simpleType" : "List<DestinationDescription>",
-            "variableSetterType" : "java.util.Collection<DestinationDescription>"
+            "variableSetterType" : "java.util.Collection<DestinationDescription>",
+            "simpleType" : "List<DestinationDescription>"
           },
           "setterModel" : {
             "variableName" : "destinations",
             "variableType" : "java.util.List<DestinationDescription>",
             "variableDeclarationType" : "java.util.List<DestinationDescription>",
             "documentation" : "",
-            "simpleType" : "List<DestinationDescription>",
-            "variableSetterType" : "java.util.Collection<DestinationDescription>"
+            "variableSetterType" : "java.util.Collection<DestinationDescription>",
+            "simpleType" : "List<DestinationDescription>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<DestinationDescription>",
@@ -9922,16 +9922,16 @@
                 "variableType" : "DestinationDescription",
                 "variableDeclarationType" : "DestinationDescription",
                 "documentation" : "",
-                "simpleType" : "DestinationDescription",
-                "variableSetterType" : "DestinationDescription"
+                "variableSetterType" : "DestinationDescription",
+                "simpleType" : "DestinationDescription"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "DestinationDescription",
                 "variableDeclarationType" : "DestinationDescription",
                 "documentation" : "",
-                "simpleType" : "DestinationDescription",
-                "variableSetterType" : "DestinationDescription"
+                "variableSetterType" : "DestinationDescription",
+                "simpleType" : "DestinationDescription"
               },
               "getterModel" : {
                 "returnType" : "DestinationDescription",
@@ -9994,16 +9994,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The date and time that the delivery stream was last updated.</p>",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "lastUpdateTimestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -10046,16 +10046,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10098,16 +10098,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Indicates whether there are more destinations available to list.</p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "hasMoreDestinations",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -10150,16 +10150,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Used when calling the <a>UpdateDestination</a> operation. Each time the destination is updated for the delivery stream, the VersionId is changed, and the current VersionId is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "versionId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10202,16 +10202,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10254,16 +10254,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The status of the delivery stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "deliveryStreamStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10318,16 +10318,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of delivery streams to list.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -10369,16 +10369,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the delivery stream to start the list with.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "exclusiveStartDeliveryStreamName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10417,8 +10417,8 @@
         "variableType" : "ListDeliveryStreamsRequest",
         "variableDeclarationType" : "ListDeliveryStreamsRequest",
         "documentation" : null,
-        "simpleType" : "ListDeliveryStreamsRequest",
-        "variableSetterType" : "ListDeliveryStreamsRequest"
+        "variableSetterType" : "ListDeliveryStreamsRequest",
+        "simpleType" : "ListDeliveryStreamsRequest"
       },
       "marshaller" : {
         "action" : "ListDeliveryStreams",
@@ -10447,16 +10447,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the delivery stream to start the list with.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "exclusiveStartDeliveryStreamName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10499,16 +10499,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of delivery streams to list.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",

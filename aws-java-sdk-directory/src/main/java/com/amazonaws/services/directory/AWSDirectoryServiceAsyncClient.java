@@ -615,6 +615,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
+            DeregisterEventTopicRequest request) {
+
+        return deregisterEventTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
+            final DeregisterEventTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeregisterEventTopicResult>() {
+                    @Override
+                    public DeregisterEventTopicResult call() throws Exception {
+                        DeregisterEventTopicResult result;
+
+                        try {
+                            result = deregisterEventTopic(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDirectoriesResult> describeDirectoriesAsync(
             DescribeDirectoriesRequest request) {
 
@@ -672,6 +707,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
         return describeDirectoriesAsync(new DescribeDirectoriesRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(
+            DescribeEventTopicsRequest request) {
+
+        return describeEventTopicsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(
+            final DescribeEventTopicsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventTopicsRequest, DescribeEventTopicsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeEventTopicsResult>() {
+                    @Override
+                    public DescribeEventTopicsResult call() throws Exception {
+                        DescribeEventTopicsResult result;
+
+                        try {
+                            result = describeEventTopics(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override
@@ -989,6 +1059,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = getSnapshotLimits(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
+            RegisterEventTopicRequest request) {
+
+        return registerEventTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
+            final RegisterEventTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RegisterEventTopicResult>() {
+                    @Override
+                    public RegisterEventTopicResult call() throws Exception {
+                        RegisterEventTopicResult result;
+
+                        try {
+                            result = registerEventTopic(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

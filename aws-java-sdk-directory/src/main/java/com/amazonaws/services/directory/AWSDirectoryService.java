@@ -359,6 +359,30 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Removes the specified directory as a publisher to the specified SNS
+     * topic.
+     * </p>
+     * 
+     * @param deregisterEventTopicRequest
+     *        Removes the specified directory as a publisher to the specified
+     *        SNS topic.
+     * @return Result of the DeregisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeregisterEventTopic
+     */
+    DeregisterEventTopicResult deregisterEventTopic(
+            DeregisterEventTopicRequest deregisterEventTopicRequest);
+
+    /**
+     * <p>
      * Obtains information about the directories that belong to this account.
      * </p>
      * <p>
@@ -403,6 +427,32 @@ public interface AWSDirectoryService {
      * @see #describeDirectories(DescribeDirectoriesRequest)
      */
     DescribeDirectoriesResult describeDirectories();
+
+    /**
+     * <p>
+     * Obtains information about which SNS topics receive status messages from
+     * the specified directory.
+     * </p>
+     * <p>
+     * If no input parameters are provided, such as DirectoryId or TopicName,
+     * this request describes all of the associations in the account.
+     * </p>
+     * 
+     * @param describeEventTopicsRequest
+     * @return Result of the DescribeEventTopics operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeEventTopics
+     */
+    DescribeEventTopicsResult describeEventTopics(
+            DescribeEventTopicsRequest describeEventTopicsRequest);
 
     /**
      * <p>
@@ -614,6 +664,32 @@ public interface AWSDirectoryService {
      */
     GetSnapshotLimitsResult getSnapshotLimits(
             GetSnapshotLimitsRequest getSnapshotLimitsRequest);
+
+    /**
+     * <p>
+     * Associates a directory with an SNS topic. This establishes the directory
+     * as a publisher to the specified SNS topic. You can then receive email or
+     * text (SMS) messages when the status of your directory changes. You get
+     * notified if your directory goes from an Active status to an Impaired or
+     * Inoperable status. You also receive a notification when the directory
+     * returns to an Active status.
+     * </p>
+     * 
+     * @param registerEventTopicRequest
+     * @return Result of the RegisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RegisterEventTopic
+     */
+    RegisterEventTopicResult registerEventTopic(
+            RegisterEventTopicRequest registerEventTopicRequest);
 
     /**
      * <p>

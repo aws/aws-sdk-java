@@ -41,6 +41,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
 import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -733,7 +734,7 @@ public abstract class AmazonWebServiceClient {
                     "Unrecognized AWS http client class name " + httpClientName);
         }
         String serviceName = httpClientName.substring(i + len, j);
-        return serviceName.toLowerCase();
+        return StringUtils.lowerCase(serviceName);
     }
 
     private String getHttpClientName() {

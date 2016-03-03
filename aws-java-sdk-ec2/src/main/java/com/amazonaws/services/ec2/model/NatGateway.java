@@ -74,7 +74,8 @@ public class NatGateway implements Serializable, Cloneable {
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> |
      * <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)
      * </p>
      */
     private String failureCode;
@@ -96,6 +97,9 @@ public class NatGateway implements Serializable, Cloneable {
      * <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code></li>
      * <li>For InternalError:
      * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     * </li>
+     * <li>For InvalidSubnetID.NotFound:
+     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
      * </li>
      * </ul>
      */
@@ -454,7 +458,8 @@ public class NatGateway implements Serializable, Cloneable {
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> |
      * <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)
      * </p>
      * 
      * @param failureCode
@@ -463,7 +468,8 @@ public class NatGateway implements Serializable, Cloneable {
      *        <code>Gateway.NotAttached</code> |
      *        <code>InvalidAllocationID.NotFound</code> |
      *        <code>Resource.AlreadyAssociated</code> |
-     *        <code>InternalError</code>)
+     *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>
+     *        )
      */
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
@@ -475,7 +481,8 @@ public class NatGateway implements Serializable, Cloneable {
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> |
      * <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)
      * </p>
      * 
      * @return If the NAT gateway could not be created, specifies the error code
@@ -483,7 +490,8 @@ public class NatGateway implements Serializable, Cloneable {
      *         | <code>Gateway.NotAttached</code> |
      *         <code>InvalidAllocationID.NotFound</code> |
      *         <code>Resource.AlreadyAssociated</code> |
-     *         <code>InternalError</code>)
+     *         <code>InternalError</code> |
+     *         <code>InvalidSubnetID.NotFound</code>)
      */
     public String getFailureCode() {
         return this.failureCode;
@@ -495,7 +503,8 @@ public class NatGateway implements Serializable, Cloneable {
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> |
      * <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)
      * </p>
      * 
      * @param failureCode
@@ -504,7 +513,8 @@ public class NatGateway implements Serializable, Cloneable {
      *        <code>Gateway.NotAttached</code> |
      *        <code>InvalidAllocationID.NotFound</code> |
      *        <code>Resource.AlreadyAssociated</code> |
-     *        <code>InternalError</code>)
+     *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>
+     *        )
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -532,6 +542,9 @@ public class NatGateway implements Serializable, Cloneable {
      * <li>For InternalError:
      * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
      * </li>
+     * <li>For InvalidSubnetID.NotFound:
+     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * </li>
      * </ul>
      * 
      * @param failureMessage
@@ -552,6 +565,9 @@ public class NatGateway implements Serializable, Cloneable {
      *        </li>
      *        <li>For InternalError:
      *        <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     *        </li>
+     *        <li>For InvalidSubnetID.NotFound:
+     *        <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
      *        </li>
      */
     public void setFailureMessage(String failureMessage) {
@@ -577,6 +593,9 @@ public class NatGateway implements Serializable, Cloneable {
      * <li>For InternalError:
      * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
      * </li>
+     * <li>For InvalidSubnetID.NotFound:
+     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * </li>
      * </ul>
      * 
      * @return If the NAT gateway could not be created, specifies the error
@@ -596,6 +615,9 @@ public class NatGateway implements Serializable, Cloneable {
      *         </li>
      *         <li>For InternalError:
      *         <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     *         </li>
+     *         <li>For InvalidSubnetID.NotFound:
+     *         <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
      *         </li>
      */
     public String getFailureMessage() {
@@ -621,6 +643,9 @@ public class NatGateway implements Serializable, Cloneable {
      * <li>For InternalError:
      * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
      * </li>
+     * <li>For InvalidSubnetID.NotFound:
+     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * </li>
      * </ul>
      * 
      * @param failureMessage
@@ -641,6 +666,9 @@ public class NatGateway implements Serializable, Cloneable {
      *        </li>
      *        <li>For InternalError:
      *        <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     *        </li>
+     *        <li>For InvalidSubnetID.NotFound:
+     *        <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

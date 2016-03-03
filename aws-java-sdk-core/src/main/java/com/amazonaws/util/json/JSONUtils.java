@@ -22,19 +22,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.util.StringUtils;
 
 public class JSONUtils {
-    
+
 	/**
      * Load a JSON string into an instantiated object. All the public fields of the object will
      * be set by the values in the JSON string associated with the field name.<br>
-     * Because of the naming convention in Java, the first letter of the field name will be capitalized 
+     * Because of the naming convention in Java, the first letter of the field name will be capitalized
      * for another look-up in the JSON, if the original field name is not found.
      * @param clazz
      * 			Class of the object which the JSON string would be loaded into.
      * @param source
      * 			JSON string.
-     * @return 
+     * @return
      * 			An instantiated object of the given Class
      * @throws JSONException
      */
@@ -46,7 +47,7 @@ public class JSONUtils {
 			throw new JSONException(e);
 		}
     }
-    
+
     private static <T> T toObject(Class<T> clazz, JSONObject jsonObject) throws JSONException, IllegalArgumentException, IllegalAccessException {
     	T newObject;
     	try {
@@ -61,13 +62,13 @@ public class JSONUtils {
     		try {
     			fieldValue = parseField(jsonObject, fieldType, fieldName);
     		} catch (Exception e) {
-    			fieldValue = parseField(jsonObject, fieldType, fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1));
+    			fieldValue = parseField(jsonObject, fieldType, StringUtils.upperCase(fieldName.substring(0, 1)) + fieldName.substring(1));
     		}
     		objectField.set(newObject, fieldValue);
     	}
     	return newObject;
     }
-    
+
     /**
      * Get the value associated with a key, and parse it according to the provided Class.
      */
@@ -106,7 +107,7 @@ public class JSONUtils {
 			return toObject(clazz, nestedObject);
 		}
     }
-    
+
     /**
      * Get the value associated with an index, and parse it according to the provided Class.
      */
@@ -143,9 +144,9 @@ public class JSONUtils {
 		else {
 			JSONObject nestedObject = jsonArray.getJSONObject(index);
 			return toObject(clazz, nestedObject);
-		}  	
+		}
     }
-    
+
 	private static <T> T createInstance(Class<T> clazz)
 			throws IllegalArgumentException, InstantiationException,
 			IllegalAccessException, InvocationTargetException,
@@ -164,7 +165,7 @@ public class JSONUtils {
         } else {
             instanceToReturn = clazz.newInstance();
         }
-        
+
         return instanceToReturn;
     }
 }

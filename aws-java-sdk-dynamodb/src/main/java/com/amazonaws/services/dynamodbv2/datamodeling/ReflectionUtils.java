@@ -21,6 +21,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import com.amazonaws.util.StringUtils;
+
 /**
  * Utilities for reflecting field or method annotations in a DynamoDB table
  * POJO.
@@ -54,7 +56,7 @@ class ReflectionUtils {
 
         if (forceCamelCase) {
             // Lowercase the first letter of the name
-            return fieldNameWithUpperCamelCase.substring(0, 1).toLowerCase() + fieldNameWithUpperCamelCase.substring(1);
+            return StringUtils.lowerCase(fieldNameWithUpperCamelCase.substring(0, 1)) + fieldNameWithUpperCamelCase.substring(1);
         } else {
             return fieldNameWithUpperCamelCase;
         }

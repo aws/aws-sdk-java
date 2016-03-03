@@ -66,6 +66,26 @@ public class UserIdGroupPairStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    userIdGroupPair.setVpcId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcPeeringConnectionId",
+                        targetDepth)) {
+                    userIdGroupPair
+                            .setVpcPeeringConnectionId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("peeringStatus", targetDepth)) {
+                    userIdGroupPair.setPeeringStatus(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userIdGroupPair;

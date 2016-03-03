@@ -91,6 +91,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DeregisterEventTopicResult deregisterEventTopic(
+            DeregisterEventTopicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDirectoriesResult describeDirectories(
             DescribeDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -99,6 +105,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     @Override
     public DescribeDirectoriesResult describeDirectories() {
         return describeDirectories(new DescribeDirectoriesRequest());
+    }
+
+    @Override
+    public DescribeEventTopicsResult describeEventTopics(
+            DescribeEventTopicsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -151,6 +163,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     @Override
     public GetSnapshotLimitsResult getSnapshotLimits(
             GetSnapshotLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterEventTopicResult registerEventTopic(
+            RegisterEventTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

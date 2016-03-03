@@ -51,6 +51,7 @@ import com.amazonaws.codegen.model.intermediate.VariableModel;
 import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
+import com.amazonaws.util.StringUtils;
 
 abstract class AddShapes {
     private final ServiceModel serviceModel;
@@ -233,7 +234,7 @@ abstract class AddShapes {
             final String locationName = member.getLocationName();
             if (locationName != null && !locationName.trim().isEmpty()) {
                 if (protocol.equals(Protocol.EC2.getValue())) {
-                    return locationName.substring(0, 1).toUpperCase()
+                    return StringUtils.upperCase(locationName.substring(0, 1))
                             + locationName.substring(1);
                 }
                 return locationName;

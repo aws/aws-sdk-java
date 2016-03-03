@@ -2373,10 +2373,11 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * Content length <b>must</b> be specified before data can be uploaded to
-     * Amazon S3. If the caller doesn't provide it, the library will <b>have
-     * to</b> buffer the contents of the input stream in order to calculate it
-     * because Amazon S3 explicitly requires that the content length be sent in
-     * the request headers before any of the data is sent.
+     * Amazon S3. If the caller doesn't provide it, the library will make a best
+     * effort to compute the content length by buffer the contents of the input
+     * stream into the memory because Amazon S3 explicitly requires that the
+     * content length be sent in the request headers before any of the data is
+     * sent. Please note that this operation is not guaranteed to succeed.
      * </p>
      * <p>
      * When using an {@link java.io.BufferedInputStream} as data source,

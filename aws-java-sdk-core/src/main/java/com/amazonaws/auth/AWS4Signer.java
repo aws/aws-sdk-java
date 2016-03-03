@@ -52,6 +52,7 @@ import com.amazonaws.log.InternalLogFactory;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
@@ -450,7 +451,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         final Map<String, String> requestHeaders = request.getHeaders();
         StringBuilder buffer = new StringBuilder();
         for (String header : sortedHeaders) {
-            String key = header.toLowerCase().replaceAll("\\s+", " ");
+            String key = StringUtils.lowerCase(header).replaceAll("\\s+", " ");
             String value = requestHeaders.get(header);
 
             buffer.append(key).append(":");
@@ -473,7 +474,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         for (String header : sortedHeaders) {
             if (buffer.length() > 0)
                 buffer.append(";");
-            buffer.append(header.toLowerCase());
+            buffer.append(StringUtils.lowerCase(header));
         }
 
         return buffer.toString();

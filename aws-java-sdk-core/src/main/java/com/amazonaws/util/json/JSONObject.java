@@ -35,6 +35,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeSet;
 
+import com.amazonaws.util.StringUtils;
+
 /**
  * A JSONObject is an unordered collection of name/value pairs. Its
  * external form is a string wrapped in curly braces with colons between the
@@ -949,9 +951,9 @@ public class JSONObject {
                             Character.isUpperCase(key.charAt(0)) &&
                             method.getParameterTypes().length == 0) {
                         if (key.length() == 1) {
-                            key = key.toLowerCase();
+                            key = StringUtils.lowerCase(key);
                         } else if (!Character.isUpperCase(key.charAt(1))) {
-                            key = key.substring(0, 1).toLowerCase() +
+                            key = StringUtils.lowerCase(key.substring(0, 1)) +
                                 key.substring(1);
                         }
 

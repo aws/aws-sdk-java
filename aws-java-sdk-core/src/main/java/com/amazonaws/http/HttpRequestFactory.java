@@ -36,6 +36,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.StringUtils;
 
 /** Responsible for creating Apache HttpClient 4 request objects. */
 class HttpRequestFactory {
@@ -201,7 +202,7 @@ class HttpRequestFactory {
         if (httpRequest.getHeaders("Content-Type") == null || httpRequest.getHeaders("Content-Type").length == 0) {
             httpRequest.addHeader("Content-Type",
                     "application/x-www-form-urlencoded; " +
-                    "charset=" + DEFAULT_ENCODING.toLowerCase());
+                    "charset=" + StringUtils.lowerCase(DEFAULT_ENCODING));
         }
 
         // Override the user agent string specified in the client params if the context requires it

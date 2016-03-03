@@ -130,8 +130,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
     private String availabilityZoneGroup;
     /**
      * <p>
-     * The required duration for the Spot instances, in minutes. This value must
-     * be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * The required duration for the Spot instances (also known as Spot blocks),
+     * in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300,
+     * or 360).
      * </p>
      * <p>
      * The duration period starts as soon as your Spot instance receives its
@@ -817,8 +818,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The required duration for the Spot instances, in minutes. This value must
-     * be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * The required duration for the Spot instances (also known as Spot blocks),
+     * in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300,
+     * or 360).
      * </p>
      * <p>
      * The duration period starts as soon as your Spot instance receives its
@@ -832,9 +834,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The required duration for the Spot instances, in minutes. This
-     *        value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     *        360).</p>
+     *        The required duration for the Spot instances (also known as Spot
+     *        blocks), in minutes. This value must be a multiple of 60 (60, 120,
+     *        180, 240, 300, or 360).</p>
      *        <p>
      *        The duration period starts as soon as your Spot instance receives
      *        its instance ID. At the end of the duration period, Amazon EC2
@@ -852,8 +854,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The required duration for the Spot instances, in minutes. This value must
-     * be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * The required duration for the Spot instances (also known as Spot blocks),
+     * in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300,
+     * or 360).
      * </p>
      * <p>
      * The duration period starts as soon as your Spot instance receives its
@@ -866,9 +869,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * if you specify a duration.
      * </p>
      * 
-     * @return The required duration for the Spot instances, in minutes. This
-     *         value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     *         360).</p>
+     * @return The required duration for the Spot instances (also known as Spot
+     *         blocks), in minutes. This value must be a multiple of 60 (60,
+     *         120, 180, 240, 300, or 360).</p>
      *         <p>
      *         The duration period starts as soon as your Spot instance receives
      *         its instance ID. At the end of the duration period, Amazon EC2
@@ -886,8 +889,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The required duration for the Spot instances, in minutes. This value must
-     * be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * The required duration for the Spot instances (also known as Spot blocks),
+     * in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300,
+     * or 360).
      * </p>
      * <p>
      * The duration period starts as soon as your Spot instance receives its
@@ -901,9 +905,9 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The required duration for the Spot instances, in minutes. This
-     *        value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     *        360).</p>
+     *        The required duration for the Spot instances (also known as Spot
+     *        blocks), in minutes. This value must be a multiple of 60 (60, 120,
+     *        180, 240, 300, or 360).</p>
      *        <p>
      *        The duration period starts as soon as your Spot instance receives
      *        its instance ID. At the end of the duration period, Amazon EC2

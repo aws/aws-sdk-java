@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen.model.config;
 
+import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BasicCodeGenConfig {
@@ -48,7 +49,7 @@ public class BasicCodeGenConfig {
             } else if (name.startsWith("AWS")) {
                 name = name.substring(3);
             }
-            this.packageName = PACKAGE_PREFIX + name.toLowerCase();
+            this.packageName = PACKAGE_PREFIX + StringUtils.lowerCase(name);
         }
 
         this.endPoint = endpoint;
