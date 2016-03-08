@@ -186,8 +186,9 @@ public class Topics {
         Map<String, String> sqsAttrs = sqs.getQueueAttributes(sqsQueueUrl, sqsAttrNames).getAttributes();
         String sqsQueueArn = sqsAttrs.get(QueueAttributeName.QueueArn.toString());
 
-        Policy policy = extendPolicy ? Policy.fromJson(
-                sqsAttrs.get(QueueAttributeName.Policy.toString())) : new Policy();
+        String policyJson = sqsAttrs.get(QueueAttributeName.Policy.toString());
+        Policy policy = extendPolicy || policyJson == null || policyJson.length() == 0
+                        ? Policy.fromJson(policyJson) : new Policy();
         policy.getStatements().add(new Statement(Effect.Allow)
                 .withId("topic-subscription-" + snsTopicArn)
                 .withPrincipals(Principal.AllUsers)
